@@ -162,22 +162,25 @@ def main():
             if p:
                 events.append(p)
 
-    # Pull the season in week-sized ranges; if ESPN rejects a range, go day by day.
-    d = start
-    while d <= end:
-        chunk_end = min(end, d + timedelta(days=6))
+    # ESPN's scoreboard takes one date per request. Re-check the last 3 days
+    # every run; once a night (the 1 AM Pacific run) re-check the last 14; on
+    # the very first run, or when FULL_REFRESH=1, pull the whole season.
+    local_now = now.astimezone(PT)
+    have_games = bool(load("games.json", []))
+    if os.environ.get("FULL_REFRESH") == "1" or not have_games:
+        first = start
+    elif local_now.hour == 1:
+        first = max(start, today - timedelta(days=14))
+    else:
+        first = max(start, today - timedelta(days=3))
+    day = first
+    while day <= end:
         try:
-            add(fetch(f"{d:%Y%m%d}-{chunk_end:%Y%m%d}"))
+            add(fetch(f"{day:%Y%m%d}"))
         except Exception as ex:
-            log.append(f"range {d}..{chunk_end} failed ({ex!r}); fetching day by day")
-            day = d
-            while day <= chunk_end:
-                try:
-                    add(fetch(f"{day:%Y%m%d}"))
-                except Exception as ex2:
-                    log.append(f"day {day} failed: {ex2!r}")
-                day += timedelta(days=1)
-        d = chunk_end + timedelta(days=1)
+            log.append(f"day {day} failed: {ex!r}")
+        day += timedelta(days=1)
+    log.append(f"checked {first} through {end}")
     # De-duplicate (a game can appear in two overlapping responses).
     events = list({e["id"]: e for e in events}.values())
     log.append(f"fetched {len(events)} events")
@@ -237,7 +240,15 @@ def main():
 
     # 4. Bonuses, worked out from playoff and Cup games.
     bonuses = {b["team"]: b for b in load("bonuses.json", [])}
-    playoff = [e for e in events if e["season_type"] == 3]
+    stored = {p["id"]: p for p in load("playoff_games.json", [])}
+    for e in events:
+        if e["season_type"] == 3:
+            stored[e["id"]] = {"id": e["id"], "date": e["date"], "completed": e["completed"],
+                               "home": {"name": e["home"]["name"], "winner": e["home"]["winner"]},
+                               "away": {"name": e["away"]["name"], "winner": e["away"]["winner"]}}
+    if stored and save("playoff_games.json", sorted(stored.values(), key=lambda p: (p["date"], p["id"]))):
+        changed.append("playoff games")
+    playoff = list(stored.values())
     for b in bonuses.values():
         b["made_playoffs"] = max(b.get("made_playoffs", 0), int(any(b["team"] in (e["home"]["name"], e["away"]["name"]) for e in playoff)))
         wins = sum(1 for e in playoff if e["completed"] and ((e["home"]["winner"] and e["home"]["name"] == b["team"]) or (e["away"]["winner"] and e["away"]["name"] == b["team"])))
