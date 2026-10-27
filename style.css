@@ -164,3 +164,8 @@ tr:last-child td { border-bottom: none; }
 #h2h-table td.down { color: #e0201c; font-weight: 800; }
 @media (prefers-color-scheme: dark) { .mu-net.neg, .mu-side.trail .mu-net.neg, #h2h-table td.down { color: #ff5a55; } }
 #h2h-table td.up { font-weight: 800; }
+/* Tighter matchup boxes */
+.mu-card { padding: 8px 10px 0; }
+.mu-side { grid-template-columns: 4.5rem 2.6rem 2.8rem; justify-content: center; gap: 6px; padding: 2px 0; }
+.mu-rec { text-align: center; }
+.mu-foot { margin: 4px -10px 0; padding: 5px 10px; text-align: center; }
