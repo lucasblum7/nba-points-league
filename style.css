@@ -169,3 +169,5 @@ tr:last-child td { border-bottom: none; }
 .mu-side { grid-template-columns: 4.5rem 2.6rem 2.8rem; justify-content: center; gap: 6px; padding: 2px 0; }
 .mu-rec { text-align: center; }
 .mu-foot { margin: 4px -10px 0; padding: 5px 10px; text-align: center; }
+.mu-owner { font-size: 17px; font-weight: 700; }
+.mu-side { grid-template-columns: 5rem 2.6rem 2.8rem; }
