@@ -154,3 +154,16 @@ tr:last-child td { border-bottom: none; }
 #mu-sched td:nth-child(2) { white-space: normal; }
 .mu-grid .sub { text-align: center; }
 .mu-grid > div { border: 1px solid var(--line); border-radius: 10px; padding: 12px 14px; background: var(--bg); box-shadow: 0 1px 2px rgba(0,0,0,.05), 0 3px 8px rgba(0,0,0,.06); min-width: 0; }
+/* Bolder matchup numbers, stronger reds */
+.mu-net { font-family: var(--sans); font-weight: 800; font-size: 1.35rem; }
+.mu-rec { font-weight: 700; color: var(--fg); }
+.mu-side.trail .mu-net { color: var(--muted); }
+.mu-net.neg, .mu-side.trail .mu-net.neg { color: #e0201c; }
+.mu-card.live { border: 2px solid #e0201c; }
+.mu-card.live .mu-foot::before { color: #e0201c; }
+#h2h-table td.down { color: #e0201c; font-weight: 800; }
+#h2h-table td.up { font-weight: 800; }
+@media (prefers-color-scheme: dark) {
+  .mu-net.neg, .mu-side.trail .mu-net.neg, #h2h-table td.down { color: #ff5a55; }
+  .mu-card.live { border-color: #ff5a55; }
+}

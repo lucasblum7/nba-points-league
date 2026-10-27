@@ -345,7 +345,7 @@
         [m.A, m.B].forEach((s) => {
           const lead = m.winner === s.owner;
           const line = mk('div', 'mu-side' + (lead ? ' lead' : m.winner ? ' trail' : ''));
-          line.append(mk('span', 'mu-owner', s.owner), mk('span', 'mu-rec', `${s.w}–${s.l}`), mk('span', 'mu-net', signed(s.net)));
+          line.append(mk('span', 'mu-owner', s.owner), mk('span', 'mu-rec', `${s.w}–${s.l}`), mk('span', 'mu-net' + (s.net < 0 ? ' neg' : ''), signed(s.net)));
           card.append(line);
         });
         const foot = m.status === 'upcoming' ? 'Starts ' + fmtDay(m.start)
