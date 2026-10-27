@@ -26,9 +26,12 @@ jobs:
           python-version: "3.12"
 
       - name: Pull latest scores and lines from ESPN
+        id: update
+        continue-on-error: true
         run: python scripts/update.py
 
       - name: Save changes
+        if: always()
         run: |
           if git diff --quiet -- data; then
             echo "No changes."
@@ -39,3 +42,7 @@ jobs:
           git add data
           git commit -m "Update scores $(date -u +%Y-%m-%dT%H:%MZ)"
           git push
+          if [ "${{ steps.update.outcome }}" = "failure" ]; then
+            echo "The update step failed; see data/update_log.txt"
+            exit 1
+          fi

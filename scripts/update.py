@@ -150,18 +150,41 @@ def main():
     end = today + timedelta(days=1)
 
     events = []
-    # Pull the season in month-sized chunks so no single response gets huge.
-    d = start
-    while d <= end:
-        chunk_end = min(end, d + timedelta(days=30))
-        data = fetch(f"{d:%Y%m%d}-{chunk_end:%Y%m%d}")
+    log = []
+
+    def add(data):
         for ev in data.get("events", []):
-            p = parse_event(ev)
+            try:
+                p = parse_event(ev)
+            except Exception as ex:  # one odd event shouldn't sink the run
+                log.append(f"skipped event {ev.get('id')}: {ex!r}")
+                continue
             if p:
                 events.append(p)
+
+    # Pull the season in week-sized ranges; if ESPN rejects a range, go day by day.
+    d = start
+    while d <= end:
+        chunk_end = min(end, d + timedelta(days=6))
+        try:
+            add(fetch(f"{d:%Y%m%d}-{chunk_end:%Y%m%d}"))
+        except Exception as ex:
+            log.append(f"range {d}..{chunk_end} failed ({ex!r}); fetching day by day")
+            day = d
+            while day <= chunk_end:
+                try:
+                    add(fetch(f"{day:%Y%m%d}"))
+                except Exception as ex2:
+                    log.append(f"day {day} failed: {ex2!r}")
+                day += timedelta(days=1)
         d = chunk_end + timedelta(days=1)
+    # De-duplicate (a game can appear in two overlapping responses).
+    events = list({e["id"]: e for e in events}.values())
+    log.append(f"fetched {len(events)} events")
     if not events:
-        print("ESPN returned no events; leaving data unchanged.")
+        log.append("ESPN returned no events; data left unchanged.")
+        write_log(now, "error", log)
+        print("\n".join(log))
         return 1
 
     teams = {r["team"] for r in load("rosters.json")}
@@ -239,9 +262,23 @@ def main():
 
     if changed:
         save("meta.json", {"updated": now.isoformat(timespec="seconds"), "changed": changed})
-    print("Changed:", ", ".join(changed) if changed else "nothing")
+    log.append("changed: " + (", ".join(changed) if changed else "nothing"))
+    write_log(now, "ok", log)
+    print("\n".join(log))
     return 0
 
 
+def write_log(now, status, lines):
+    with open(os.path.join(DATA, "update_log.txt"), "w") as f:
+        f.write(f"{now.isoformat(timespec='seconds')} {status}\n" + "\n".join(lines) + "\n")
+
+
 if __name__ == "__main__":
-    sys.exit(main())
+    try:
+        sys.exit(main())
+    except Exception:
+        import traceback
+        tb = traceback.format_exc()
+        print(tb)
+        write_log(datetime.now(timezone.utc), "crash", [tb])
+        sys.exit(1)
