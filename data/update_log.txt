@@ -1,5 +1,4 @@
-2026-10-27T23:26:08+00:00 ok
-range 2026-10-20..2026-10-26 failed (<HTTPError 400: 'Bad Request'>); fetching day by day
-range 2026-10-27..2026-10-28 failed (<HTTPError 400: 'Bad Request'>); fetching day by day
-fetched 68 events
-changed: games (16 new), lines, today, bonuses
+2026-10-27T23:26:54+00:00 ok
+checked 2026-10-24 through 2026-10-28
+fetched 40 events
+changed: lines
