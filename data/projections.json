@@ -1,0 +1,122 @@
+[
+ {
+  "team": "New York Knicks",
+  "projected_wins": 52.5
+ },
+ {
+  "team": "Boston Celtics",
+  "projected_wins": 51.5
+ },
+ {
+  "team": "Philadelphia 76ers",
+  "projected_wins": 50.5
+ },
+ {
+  "team": "Toronto Raptors",
+  "projected_wins": 46.5
+ },
+ {
+  "team": "Brooklyn Nets",
+  "projected_wins": 24.5
+ },
+ {
+  "team": "Detroit Pistons",
+  "projected_wins": 49.5
+ },
+ {
+  "team": "Cleveland Cavaliers",
+  "projected_wins": 48.5
+ },
+ {
+  "team": "Indiana Pacers",
+  "projected_wins": 44.5
+ },
+ {
+  "team": "Chicago Bulls",
+  "projected_wins": 29.5
+ },
+ {
+  "team": "Milwaukee Bucks",
+  "projected_wins": 25.5
+ },
+ {
+  "team": "Miami Heat",
+  "projected_wins": 46.5
+ },
+ {
+  "team": "Orlando Magic",
+  "projected_wins": 44.5
+ },
+ {
+  "team": "Atlanta Hawks",
+  "projected_wins": 44.5
+ },
+ {
+  "team": "Charlotte Hornets",
+  "projected_wins": 38.5
+ },
+ {
+  "team": "Washington Wizards",
+  "projected_wins": 34.5
+ },
+ {
+  "team": "Oklahoma City Thunder",
+  "projected_wins": 62.5
+ },
+ {
+  "team": "Denver Nuggets",
+  "projected_wins": 49.5
+ },
+ {
+  "team": "Minnesota Timberwolves",
+  "projected_wins": 48.5
+ },
+ {
+  "team": "Portland Trail Blazers",
+  "projected_wins": 41.5
+ },
+ {
+  "team": "Utah Jazz",
+  "projected_wins": 38.5
+ },
+ {
+  "team": "Los Angeles Lakers",
+  "projected_wins": 46.5
+ },
+ {
+  "team": "Phoenix Suns",
+  "projected_wins": 40.5
+ },
+ {
+  "team": "Golden State Warriors",
+  "projected_wins": 39.5
+ },
+ {
+  "team": "LA Clippers",
+  "projected_wins": 30.5
+ },
+ {
+  "team": "Sacramento Kings",
+  "projected_wins": 20.5
+ },
+ {
+  "team": "San Antonio Spurs",
+  "projected_wins": 60.5
+ },
+ {
+  "team": "Houston Rockets",
+  "projected_wins": 48.5
+ },
+ {
+  "team": "Dallas Mavericks",
+  "projected_wins": 34.5
+ },
+ {
+  "team": "Memphis Grizzlies",
+  "projected_wins": 29.5
+ },
+ {
+  "team": "New Orleans Pelicans",
+  "projected_wins": 28.5
+ }
+]

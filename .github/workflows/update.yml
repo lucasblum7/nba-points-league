@@ -1,0 +1,41 @@
+name: Update scores
+
+on:
+  schedule:
+    # Every 15 minutes from 9 AM to 1 AM Pacific (times below are UTC).
+    - cron: "*/15 16-23 * * *"
+    - cron: "*/15 0-8 * * *"
+  workflow_dispatch: {}   # lets you run it by hand from the Actions tab
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-scores
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Pull latest scores and lines from ESPN
+        run: python scripts/update.py
+
+      - name: Save changes
+        run: |
+          if git diff --quiet -- data; then
+            echo "No changes."
+            exit 0
+          fi
+          git config user.name "league-bot"
+          git config user.email "league-bot@users.noreply.github.com"
+          git add data
+          git commit -m "Update scores $(date -u +%Y-%m-%dT%H:%MZ)"
+          git push

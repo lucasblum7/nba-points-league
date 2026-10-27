@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>NBA Points League 2026–27</title>
+  <meta name="description" content="Standings, rosters and nightly scores for our NBA Points League.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Ccircle cx='24' cy='24' r='21' fill='%23E8762B' stroke='%233A1E0E' stroke-width='2.5'/%3E%3Cpath d='M24 3v42M3 24h42M9.2 9.2c7.4 7.4 7.4 22.2 0 29.6M38.8 9.2c-7.4 7.4-7.4 22.2 0 29.6' fill='none' stroke='%233A1E0E' stroke-width='2.5'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main class="pl">
+  <header class="pl-head" id="top">
+    <h1 class="pl-title">
+      <svg class="pl-ball" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="21" fill="#E8762B" stroke="#3A1E0E" stroke-width="2.5"/><path d="M24 3v42M3 24h42M9.2 9.2c7.4 7.4 7.4 22.2 0 29.6M38.8 9.2c-7.4 7.4-7.4 22.2 0 29.6" fill="none" stroke="#3A1E0E" stroke-width="2.5" stroke-linecap="round"/></svg>
+      <span>NBA Points League 2026–27</span>
+      <svg class="pl-ball pl-ball-r" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="21" fill="#E8762B" stroke="#3A1E0E" stroke-width="2.5"/><path d="M24 3v42M3 24h42M9.2 9.2c7.4 7.4 7.4 22.2 0 29.6M38.8 9.2c-7.4 7.4-7.4 22.2 0 29.6" fill="none" stroke="#3A1E0E" stroke-width="2.5" stroke-linecap="round"/></svg>
+    </h1>
+    <p class="pl-take" id="takeaway">Loading…</p>
+  </header>
+
+  <section class="sb" id="scoreboard" aria-label="Today's NBA scores">
+    <div class="sb-date" id="sb-date"><span class="sb-dow">—</span><span class="sb-md"></span></div>
+    <div class="sb-strip" id="sb-strip"></div>
+  </section>
+  <p class="sb-src" id="sb-src">Lines: spread for the favorite and each team’s moneyline, saved before tip-off. Scores refresh every minute while games are on.</p>
+
+  <section class="card" id="leaderboard-card">
+    <h2>Leaderboard</h2>
+    <p class="note">1 point per regular-season win plus playoff and NBA Cup bonuses. Ties go to most playoff series won, then most regular-season wins.</p>
+    <div class="legend"><span><i class="sw-wins"></i>Regular-season wins</span><span><i class="sw-bonus"></i>Bonus points</span></div>
+    <div class="scroll">
+      <table id="leaderboard">
+        <thead><tr>
+          <th>#</th><th>Owner</th><th class="num">Wins</th><th class="num">Bonus</th><th class="num">Points</th>
+          <th class="num">This week</th><th class="num hide-sm">Weeks won</th><th class="num hide-sm">Behind</th><th class="barcell hide-sm"></th>
+        </tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </section>
+
+  <div class="grid">
+    <section class="card" id="recap-card">
+      <h2>This week so far</h2>
+      <p class="note" id="recap-dates">Monday–Sunday.</p>
+      <div class="recap" id="recap"></div>
+    </section>
+    <section class="card" id="results-card">
+      <h2>Last night’s results</h2>
+      <p class="note" id="results-date">Winners keep their colors; the owner who picked up the win gets +1.</p>
+      <p class="empty" id="results-empty" hidden>No games last night.</p>
+      <table id="results-table"><tbody></tbody></table>
+    </section>
+  </div>
+
+  <section class="card" id="weekly-card">
+    <h2>Weekly winners</h2>
+    <p class="note">Most regular-season wins in each Monday–Sunday week. Ties are shared. “Weeks won” counts finished weeks only.</p>
+    <div class="scroll tall">
+      <table id="week-table">
+        <thead><tr><th>Week</th><th>From</th><th>To</th><th>Winner</th><th class="num">Wins</th><th>Status</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </section>
+
+  <div>
+    <h2 class="sec" id="rosters">Rosters</h2>
+    <p class="foot">* Win pace = projected final wins based on the record so far (green = ahead of the preseason line, red = behind). Dots under each team are its last 5 games, oldest to newest: filled = win, empty = loss.</p>
+  </div>
+  <div class="grid" id="owner-grid"></div>
+
+  <div class="grid">
+    <section class="card" id="bonus-card">
+      <h2>Bonuses earned</h2>
+      <p class="note">Points each team has earned for making the playoffs, winning playoff games, and the NBA Cup.</p>
+      <p class="empty" id="bonus-empty" hidden>No bonuses yet. The first chance is the NBA Cup final in December; playoff bonuses start in April.</p>
+      <div class="scroll">
+        <table id="bonus-table">
+          <thead><tr><th>Team</th><th>Owner</th><th class="num">Made playoffs</th><th class="num">Playoff W</th><th class="num">Playoff W pts</th><th class="num">Cup</th><th class="num">Total</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </section>
+    <section class="card rules" id="rules-card">
+      <h2>Scoring rules</h2>
+      <p class="note">A champion wins 16 playoff games, so it earns about 37 bonus points.</p>
+      <table>
+        <tbody>
+          <tr><td>Each regular-season win</td><td class="num total">1</td></tr>
+          <tr><td>Make the playoffs</td><td class="num total">5</td></tr>
+          <tr><td>Each playoff game won</td><td class="num total">2</td></tr>
+          <tr><td>Win the NBA Cup</td><td class="num total">5</td></tr>
+        </tbody>
+      </table>
+      <ul>
+        <li>Play-in games don’t count; play-in winners do make the playoffs.</li>
+        <li>Snake draft, same number of teams per person.</li>
+        <li>Teams picked after the season starts count wins from their pick date on.</li>
+        <li>Trades are pick swaps only, for next year’s draft.</li>
+      </ul>
+    </section>
+  </div>
+
+  <section class="card" id="upset-card">
+    <h2>Big upset watch</h2>
+    <p class="note">Side tally only, not counted in points. Logs every underdog win at +350 or longer on the pregame moneyline, in tiers: Upset +350 to +499 (+1), Big upset +500 to +799 (+2), Stunner +800 or longer (+3). “Would-be pts” is what each owner would get if the league adopts it. Tracking started Oct 24.</p>
+    <div class="grid upset-grid">
+      <div class="scroll">
+        <table id="upset-tally">
+          <thead><tr><th>Owner</th><th class="num">Upsets</th><th class="num">Big</th><th class="num">Stunners</th><th class="num">Would-be pts</th><th class="num">Longest</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+      <div class="scroll">
+        <p class="empty" id="upset-empty">No +350 upsets yet.</p>
+        <table id="upset-list" hidden>
+          <thead><tr><th>Date</th><th>Winner</th><th>Owner</th><th>Beat</th><th class="num">Line</th><th>Tier</th><th class="num">Score</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="card ideas" id="ideas-card">
+    <h2>Ideas to vote on</h2>
+    <p class="note">Not active yet. None of these count toward points until the league agrees to add them.</p>
+    <div class="grid">
+      <div>
+        <h3>Bonus point ideas</h3>
+        <ul>
+          <li><b>Underdog wins (tracked above):</b> +1 / +2 / +3 for wins at +350 / +500 / +800 or longer.</li>
+          <li><b>Beat the preseason line: +3</b> for any team that finishes above its over/under.</li>
+          <li><b>Make the play-in: +2</b> for finishing 7th–10th in its conference.</li>
+        </ul>
+      </div>
+      <div>
+        <h3>League ideas</h3>
+        <ul>
+          <li><b>Beat Vegas prize:</b> a side prize for whoever’s teams beat their preseason lines by the most combined.</li>
+          <li><b>Next year’s draft order:</b> reverse order of this year’s finish, or a lottery weighted toward the bottom.</li>
+          <li><b>Tiebreaker:</b> head-to-head record, then deepest playoff run, then most weeks won.</li>
+          <li><b>Weekly head-to-head:</b> three matchups each week, with a separate win–loss record.</li>
+          <li><b>Small stakes:</b> perks for each weekly winner and a punishment for last place.</li>
+          <li><b>End-of-season awards:</b> best value pick, biggest bust, best week, luckiest playoff run.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-foot" id="foot">Scores from ESPN’s public scoreboard, updated every 15 minutes from 9 AM to 1 AM Pacific. Preseason lines from Hoops Rumors’ over/under recap.</footer>
+</main>
+<script src="app.js"></script>
+</body>
+</html>

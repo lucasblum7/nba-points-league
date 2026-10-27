@@ -1,0 +1,27 @@
+{
+ "season_start": "2026-10-20",
+ "week1_monday": "2026-10-19",
+ "scoring": {
+  "win": 1,
+  "made_playoffs": 5,
+  "playoff_win": 2,
+  "won_cup": 5
+ },
+ "upset_tiers": [
+  {
+   "min": 800,
+   "label": "Stunner",
+   "pts": 3
+  },
+  {
+   "min": 500,
+   "label": "Big upset",
+   "pts": 2
+  },
+  {
+   "min": 350,
+   "label": "Upset",
+   "pts": 1
+  }
+ ]
+}
