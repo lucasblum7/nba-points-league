@@ -152,3 +152,4 @@ tr:last-child td { border-bottom: none; }
 .mu-card.live .mu-foot::before { content: "● "; color: var(--bad); }
 .mu-grid { margin-top: 4px; }
 #mu-sched td:nth-child(2) { white-space: normal; }
+.mu-grid .sub { text-align: center; }
