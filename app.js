@@ -92,15 +92,54 @@
     const weekly = [];
     for (let wk = 1; wk <= curWeek; wk++) {
       const tot = Object.fromEntries(owners.map((o) => [o, 0]));
+      const loss = Object.fromEntries(owners.map((o) => [o, 0]));
       for (const g of sorted) {
         if (weekOf(g.date) !== wk) continue;
-        const winner = g.home_score > g.away_score ? g.home : g.away;
+        const homeWon = g.home_score > g.away_score;
+        const winner = homeWon ? g.home : g.away, loser = homeWon ? g.away : g.home;
         if (owner.has(winner)) tot[owner.get(winner)]++;
+        if (owner.has(loser)) loss[owner.get(loser)]++;
       }
       const best = Math.max(...Object.values(tot));
       const start = isoOf(week1 + (wk - 1) * 7 * DAY), end = isoOf(week1 + ((wk - 1) * 7 + 6) * DAY);
-      weekly.push({ week: wk, start, end, tot, best, winners: best > 0 ? owners.filter((o) => tot[o] === best) : [], current: wk === curWeek });
+      weekly.push({ week: wk, start, end, tot, loss, best, winners: best > 0 ? owners.filter((o) => tot[o] === best) : [],
+        current: wk === curWeek, done: pacificToday() > end });
     }
+
+    // head-to-head matchups: net record (W − L) wins the week, most wins breaks a tie
+    const M = config.matchups;
+    const matchups = [];
+    const h2h = Object.fromEntries(owners.map((o) => [o, { owner: o, w: 0, l: 0, t: 0, net: 0, wins: 0 }]));
+    if (M) {
+      const lastWeek = Math.max(curWeek + 2, M.start_week);
+      for (let wk = M.start_week; wk <= lastWeek; wk++) {
+        const round = M.rounds[(wk - M.start_week) % M.rounds.length];
+        const info = weekly[wk - 1];
+        const start = isoOf(week1 + (wk - 1) * 7 * DAY), end = isoOf(week1 + ((wk - 1) * 7 + 6) * DAY);
+        const status = !info ? 'upcoming' : info.done ? 'final' : 'live';
+        round.forEach(([a, b]) => {
+          const side = (o) => {
+            const w = info ? info.tot[o] : 0, l = info ? info.loss[o] : 0;
+            return { owner: o, w, l, net: w - l };
+          };
+          const A = side(a), B = side(b);
+          let winner = null;
+          if (info && (A.w + A.l + B.w + B.l) > 0) {
+            if (A.net !== B.net) winner = A.net > B.net ? a : b;
+            else if (A.w !== B.w) winner = A.w > B.w ? a : b;
+          }
+          matchups.push({ week: wk, start, end, status, A, B, winner });
+          if (status === 'final') {
+            for (const [me, them] of [[A, B], [B, A]]) {
+              const r = h2h[me.owner];
+              r.net += me.net; r.wins += me.w;
+              if (!winner) r.t++; else if (winner === me.owner) r.w++; else r.l++;
+            }
+          }
+        });
+      }
+    }
+    const h2hTable = Object.values(h2h).sort((x, y) => (y.w + y.t / 2) - (x.w + x.t / 2) || y.net - x.net || y.wins - x.wins || x.owner.localeCompare(y.owner));
 
     const board = owners.map((o) => {
       const mine = teams.filter((t) => t.owner === o);
@@ -129,7 +168,7 @@
     }
     upsets.sort((a, b) => (a.date < b.date ? 1 : -1) || b.ml - a.ml);
 
-    return { owner, owners, teams, board, weekly, upsets, log, lineOf, sorted };
+    return { owner, owners, teams, board, weekly, upsets, log, lineOf, sorted, matchups, h2hTable, curWeek };
   }
 
   // ---------- live scores (straight from ESPN, if the browser allows it) ----------
@@ -178,6 +217,8 @@
         mk('td', 'num hide-sm zero', d.behind), bc);
       lb.append(tr);
     });
+
+    renderMatchups(C);
 
     // this week tiles
     const cur = weekly[weekly.length - 1];
@@ -285,6 +326,57 @@
       const t = new Date(D.meta.updated).toLocaleString('en-US', { timeZone: 'America/Los_Angeles', month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit' });
       $('foot').textContent = `Last data update: ${t} Pacific. Scores from ESPN’s public scoreboard, refreshed every 15 minutes from 9 AM to 1 AM Pacific. Preseason lines from Hoops Rumors.`;
     }
+  }
+
+  function renderMatchups(C) {
+    const { matchups, h2hTable, curWeek } = C;
+    const signed = (n) => (n > 0 ? '+' + n : n < 0 ? '−' + Math.abs(n) : '0');
+    // featured week: the current one (or the first upcoming one before matchups start)
+    const featuredWeek = matchups.some((m) => m.week === curWeek) ? curWeek : (matchups[0] || {}).week;
+    const cur = matchups.filter((m) => m.week === featuredWeek);
+    const box = $('mu-current'); box.replaceChildren();
+    if (cur.length) {
+      const m0 = cur[0];
+      const label = m0.status === 'live' ? 'In progress' : m0.status === 'final' ? 'Final' : 'Upcoming';
+      box.append(mk('div', 'mu-title', `Week ${m0.week} · ${fmtDay(m0.start)} – ${fmtDay(m0.end)} · ${label}`));
+      const row = mk('div', 'mu-row');
+      cur.forEach((m) => {
+        const card = mk('div', 'mu-card' + (m.status === 'live' ? ' live' : ''));
+        [m.A, m.B].forEach((s) => {
+          const lead = m.winner === s.owner;
+          const line = mk('div', 'mu-side' + (lead ? ' lead' : m.winner ? ' trail' : ''));
+          line.append(mk('span', 'mu-owner', s.owner), mk('span', 'mu-rec', `${s.w}–${s.l}`), mk('span', 'mu-net', signed(s.net)));
+          card.append(line);
+        });
+        const foot = m.status === 'upcoming' ? 'Starts ' + fmtDay(m.start)
+          : !m.winner ? (m.status === 'final' ? 'Tie' : 'Even so far')
+          : m.status === 'final' ? m.winner + ' wins' : m.winner + ' leads';
+        card.append(mk('div', 'mu-foot', foot));
+        row.append(card);
+      });
+      box.append(row);
+    }
+
+    const hb = document.querySelector('#h2h-table tbody'); hb.replaceChildren();
+    h2hTable.forEach((r, i) => {
+      const tr = mk('tr', i === 0 && (r.w + r.t) > 0 ? 'lead' : null);
+      tr.append(mk('td', 'rank', i + 1), mk('td', 'total', r.owner), mk('td', 'num total', r.t ? `${r.w}–${r.l}–${r.t}` : `${r.w}–${r.l}`),
+        mk('td', 'num' + (r.net > 0 ? ' up' : r.net < 0 ? ' down' : ' zero'), signed(r.net)), mk('td', 'num zero', r.wins));
+      hb.append(tr);
+    });
+
+    const sb = document.querySelector('#mu-sched tbody'); sb.replaceChildren();
+    matchups.slice().sort((a, b) => b.week - a.week).forEach((m) => {
+      const tr = mk('tr', m.status === 'live' ? 'lead' : null);
+      const res = m.status === 'upcoming' ? '—'
+        : `${m.A.w}–${m.A.l} vs ${m.B.w}–${m.B.l}` + (m.status === 'final' ? (m.winner ? ' · ' + m.winner : ' · Tie') : ' · live');
+      const who = mk('td');
+      const a = mk('span', m.status === 'final' && m.winner === m.A.owner ? 'total' : m.status === 'final' && m.winner ? 'zero' : null, m.A.owner);
+      const b = mk('span', m.status === 'final' && m.winner === m.B.owner ? 'total' : m.status === 'final' && m.winner ? 'zero' : null, m.B.owner);
+      who.append(a, ' vs ', b);
+      tr.append(mk('td', 'zero', m.week), who, mk('td', 'num' + (m.status === 'upcoming' ? ' zero' : ''), res));
+      sb.append(tr);
+    });
   }
 
   function paceClass(pace, pre) { return pace == null || pre == null || pace === pre ? 'zero' : pace > pre ? 'up' : 'down'; }

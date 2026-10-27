@@ -134,3 +134,21 @@ tr:last-child td { border-bottom: none; }
 .ideas h3 { font-size: 14px; font-weight: 600; margin-bottom: 4px; }
 .ideas b { color: var(--fg); }
 .site-foot { text-align: center; color: var(--muted); font-size: 12px; }
+
+/* Matchups */
+.sub { font-size: 14px; font-weight: 600; margin: 0 0 6px; }
+.mu-week { margin-bottom: 18px; }
+.mu-title { font-size: 12px; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: .04em; margin-bottom: 8px; }
+.mu-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 14rem), 1fr)); gap: 10px; }
+.mu-card { border: 1px solid var(--line); border-radius: 10px; padding: 10px 12px 0; background: var(--bg); box-shadow: 0 1px 2px rgba(0,0,0,.05), 0 3px 8px rgba(0,0,0,.06); }
+.mu-card.live { border-color: color-mix(in srgb, var(--bad) 45%, var(--line)); }
+.mu-side { display: grid; grid-template-columns: 1fr auto 3rem; align-items: baseline; gap: 10px; padding: 4px 0; font-variant-numeric: tabular-nums; }
+.mu-owner { font-weight: 600; font-size: 15px; }
+.mu-rec { color: var(--muted); font-size: 13px; }
+.mu-net { text-align: right; font-family: var(--serif); font-size: 1.3rem; }
+.mu-side.lead .mu-net { color: var(--ok); }
+.mu-side.trail .mu-owner, .mu-side.trail .mu-net { color: var(--muted); }
+.mu-foot { margin: 6px -12px 0; padding: 6px 12px; border-top: 1px solid var(--line); font-size: 12px; font-weight: 600; color: var(--muted); }
+.mu-card.live .mu-foot::before { content: "● "; color: var(--bad); }
+.mu-grid { margin-top: 4px; }
+#mu-sched td:nth-child(2) { white-space: normal; }
