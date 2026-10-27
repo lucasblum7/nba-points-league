@@ -158,8 +158,9 @@ tr:last-child td { border-bottom: none; }
 .mu-net { font-family: var(--sans); font-weight: 800; font-size: 1.35rem; }
 .mu-rec { font-weight: 700; color: var(--fg); }
 .mu-side.trail .mu-net { color: var(--muted); }
-.mu-net.neg, .mu-side.trail .mu-net.neg { color: var(--fg); }
+.mu-net.neg, .mu-side.trail .mu-net.neg { color: #e0201c; }
 .mu-card.live { border: 2px solid var(--fg); }
 .mu-card.live .mu-foot::before { color: var(--fg); }
-#h2h-table td.down { color: var(--fg); font-weight: 800; }
+#h2h-table td.down { color: #e0201c; font-weight: 800; }
+@media (prefers-color-scheme: dark) { .mu-net.neg, .mu-side.trail .mu-net.neg, #h2h-table td.down { color: #ff5a55; } }
 #h2h-table td.up { font-weight: 800; }
