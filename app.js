@@ -191,7 +191,16 @@
   }
 
   // ---------- player roster dropdown (click a team name) ----------
-  const ESPN_ID = { 'Houston Rockets': 10 };   // teams with the dropdown turned on (ESPN team ids)
+  const ESPN_ID = {   // ESPN team ids, for the click-to-show player roster
+    'Atlanta Hawks': 1, 'Boston Celtics': 2, 'New Orleans Pelicans': 3, 'Chicago Bulls': 4,
+    'Cleveland Cavaliers': 5, 'Dallas Mavericks': 6, 'Denver Nuggets': 7, 'Detroit Pistons': 8,
+    'Golden State Warriors': 9, 'Houston Rockets': 10, 'Indiana Pacers': 11, 'LA Clippers': 12,
+    'Los Angeles Lakers': 13, 'Miami Heat': 14, 'Milwaukee Bucks': 15, 'Minnesota Timberwolves': 16,
+    'Brooklyn Nets': 17, 'New York Knicks': 18, 'Orlando Magic': 19, 'Philadelphia 76ers': 20,
+    'Phoenix Suns': 21, 'Portland Trail Blazers': 22, 'Sacramento Kings': 23, 'San Antonio Spurs': 24,
+    'Oklahoma City Thunder': 25, 'Utah Jazz': 26, 'Washington Wizards': 27, 'Toronto Raptors': 28,
+    'Memphis Grizzlies': 29, 'Charlotte Hornets': 30,
+  };
   const playerCache = new Map();
   async function fetchPlayers(team) {
     if (playerCache.has(team)) return playerCache.get(team);
