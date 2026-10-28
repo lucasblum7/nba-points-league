@@ -231,9 +231,11 @@ tr.p1 td.rank::after { content: " ðŸ¥‡"; } tr.p2 td.rank::after { content: " ðŸ¥
 .rank { width: 3rem; }
 /* Header: bold title, orange court gradient, quick-stat chips */
 .pl-head { position: relative; overflow: hidden; border: none; color: #fff;
-  background:
+  background: radial-gradient(circle at 50% 120%, rgba(255,255,255,.10) 0 22%, transparent 22.4%),
               linear-gradient(135deg, #f08a3c 0%, #d0601f 45%, #7a3210 100%);
   box-shadow: 0 4px 10px rgba(0,0,0,.15), 0 16px 32px rgba(208,96,31,.25); padding: 26px 20px 20px; }
+.pl-head::before { content: ""; position: absolute; left: 50%; top: 0; bottom: 0; border-left: 2px solid rgba(255,255,255,.12); }
+.pl-head::after { content: ""; position: absolute; left: 50%; top: 50%; width: 150px; height: 150px; transform: translate(-50%,-50%); border: 2px solid rgba(255,255,255,.12); border-radius: 50%; }
 .pl-head > * { position: relative; z-index: 1; }
 .pl-title { font-family: "Oswald", "Arial Narrow", Impact, sans-serif; font-weight: 700; text-transform: uppercase; letter-spacing: .02em; font-size: clamp(1.9rem, 6vw, 3.1rem); line-height: 1; text-shadow: 0 2px 0 rgba(0,0,0,.18); }
 .pl-name { display: flex; flex-direction: column; align-items: center; }
@@ -440,5 +442,3 @@ h2.sec.sec-toggle { display: block; }
 .gchip { font-size: 7px; padding: 0; border-radius: 2px; line-height: 1.5; }
 .sched-lab { width: 76px; font-size: 7px; }
 .teams tr.sched-row td { padding: 0 4px 6px; }
-/* Header: full-court lines drawn behind the title */
-.pl-court { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none; }
