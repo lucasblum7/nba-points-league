@@ -611,3 +611,4 @@ button.mu-today { text-decoration: none !important; }
   /* buttons press down */
   button:active { transform: scale(.97); }
 }
+body.intro-wait main > footer { opacity: 0; }
