@@ -4,8 +4,8 @@
   {
    "id": "401909877",
    "time": "4:30 PM",
-   "state": "in",
-   "detail": "End of OT",
+   "state": "post",
+   "detail": "Final/OT",
    "away": "Brooklyn Nets",
    "home": "Boston Celtics",
    "away_score": 124,
@@ -14,12 +14,12 @@
   {
    "id": "401909878",
    "time": "5:00 PM",
-   "state": "in",
-   "detail": "7:04 - 4th",
+   "state": "post",
+   "detail": "Final",
    "away": "Detroit Pistons",
    "home": "New York Knicks",
-   "away_score": 75,
-   "home_score": 97
+   "away_score": 97,
+   "home_score": 111
   },
   {
    "id": "401909879",
@@ -34,12 +34,12 @@
   {
    "id": "401909880",
    "time": "8:00 PM",
-   "state": "pre",
-   "detail": "10/27 - 11:00 PM EDT",
+   "state": "in",
+   "detail": "2:39 - 1st",
    "away": "Portland Trail Blazers",
    "home": "Los Angeles Lakers",
-   "away_score": null,
-   "home_score": null
+   "away_score": 24,
+   "home_score": 31
   }
  ]
 }
