@@ -447,3 +447,21 @@ h2.sec.sec-toggle { display: block; }
 .sb-card.cup .sb-foot { color: color-mix(in srgb, var(--gold) 70%, var(--fg)); border-top-color: color-mix(in srgb, var(--gold) 45%, var(--line)); }
 .sb-cup { font-size: 11px; }
 .sb-card.cup .sb-foot { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+/* Bonuses earned: tappable totals and breakdown pop-up */
+.bonus-btn { font: inherit; font-weight: 800; color: var(--fg); background: color-mix(in srgb, var(--accent) 16%, transparent); border: 1px solid color-mix(in srgb, var(--accent) 50%, transparent); border-radius: 999px; padding: 2px 12px; cursor: pointer; }
+.bonus-btn:hover { background: color-mix(in srgb, var(--accent) 28%, transparent); }
+.bonus-btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.bp-overlay { position: fixed; inset: 0; z-index: 50; background: rgba(0,0,0,.55); display: flex; align-items: center; justify-content: center; padding: 16px; }
+.bp-box { background: var(--panel); color: var(--fg); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: 0 20px 50px rgba(0,0,0,.35); width: min(100%, 380px); padding: 16px 18px 12px; }
+.bp-head { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+.bp-title { display: flex; flex-direction: column; flex: 1; min-width: 0; }
+.bp-title b { font-size: 16px; }
+.bp-title span { font-size: 12px; color: var(--muted); }
+.bp-close { font: inherit; background: none; border: none; color: var(--muted); font-size: 16px; cursor: pointer; padding: 4px 6px; border-radius: 6px; }
+.bp-close:hover { color: var(--fg); background: color-mix(in srgb, var(--fg) 8%, transparent); }
+.bp-table td { white-space: normal; padding: 8px 2px; }
+.bp-table td.num { font-weight: 700; white-space: nowrap; vertical-align: middle; }
+.bp-label { display: block; font-weight: 600; }
+.bp-detail { display: block; font-size: 12px; color: var(--muted); }
+.bp-zero td.num, .bp-zero .bp-label { color: var(--muted); font-weight: 500; }
+.bp-total td { border-top: 2px solid var(--line); font-weight: 800; font-size: 15px; }

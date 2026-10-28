@@ -495,7 +495,10 @@
     $('bonus-empty').hidden = withB.length > 0; $('bonus-table').hidden = withB.length === 0;
     withB.forEach((t) => {
       const tr = mk('tr');
-      tr.append(mk('td', null, short(t.team)), mk('td', null, t.owner), mk('td', 'num', t.pts_playoffs), mk('td', 'num', t.playoff_wins), mk('td', 'num', t.pts_pw), mk('td', 'num', t.pts_cupgames), mk('td', 'num', t.pts_cup), mk('td', 'num total', t.bonus));
+      const tot = mk('td', 'num'); const btn = mk('button', 'bonus-btn', String(t.bonus)); btn.type = 'button';
+      btn.setAttribute('aria-label', `Show bonus breakdown for ${short(t.team)}`);
+      btn.addEventListener('click', () => showBonus(t)); tot.append(btn);
+      tr.append(mk('td', null, short(t.team)), mk('td', null, t.owner), tot);
       bb.append(tr);
     });
 
@@ -587,6 +590,29 @@
       sb.append(tr);
     });
   }
+
+  // ---------- bonus breakdown pop-up ----------
+  function showBonus(t) {
+    closeBonus();
+    const S = D.config.scoring;
+    const ov = mk('div', 'bp-overlay'); ov.id = 'bonus-pop';
+    const box = mk('div', 'bp-box'); box.setAttribute('role', 'dialog'); box.setAttribute('aria-modal', 'true'); box.setAttribute('aria-label', short(t.team) + ' bonus breakdown');
+    const head = mk('div', 'bp-head'); head.append(badge(t.team, 'badge'));
+    const ttl = mk('div', 'bp-title'); ttl.append(mk('b', null, t.team), mk('span', null, t.owner)); head.append(ttl);
+    const x = mk('button', 'bp-close', '✕'); x.type = 'button'; x.setAttribute('aria-label', 'Close'); x.addEventListener('click', closeBonus); head.append(x);
+    const tb = mk('table', 'bp-table'); const body = mk('tbody');
+    const row = (label, detail, pts) => { const r = mk('tr', pts ? null : 'bp-zero'); const l = mk('td'); l.append(mk('span', 'bp-label', label)); if (detail) l.append(mk('span', 'bp-detail', detail)); r.append(l, mk('td', 'num', pts ? '+' + pts : '0')); body.append(r); };
+    row('NBA Cup game wins', `${t.cup_wins} ${t.cup_wins === 1 ? 'win' : 'wins'} × 1 extra point`, t.pts_cupgames);
+    row('Made the playoffs', t.made ? 'Yes' : 'Not yet', t.pts_playoffs);
+    row('Playoff game wins', `${t.playoff_wins} ${t.playoff_wins === 1 ? 'win' : 'wins'} × ${S.playoff_win}`, t.pts_pw);
+    row('Won the NBA Cup', t.pts_cup ? 'Champions' : 'Not yet', t.pts_cup);
+    const f = mk('tr', 'bp-total'); f.append(mk('td', null, 'Total bonus'), mk('td', 'num', String(t.bonus))); body.append(f);
+    tb.append(body); box.append(head, tb); ov.append(box);
+    ov.addEventListener('click', (e) => { if (e.target === ov) closeBonus(); });
+    document.body.append(ov); document.addEventListener('keydown', bonusKey); x.focus();
+  }
+  function closeBonus() { const o = document.getElementById('bonus-pop'); if (o) o.remove(); document.removeEventListener('keydown', bonusKey); }
+  function bonusKey(e) { if (e.key === 'Escape') closeBonus(); }
 
   function medal(rank) { return rank === 1 ? 'p1' : rank === 2 ? 'p2' : rank === 3 ? 'p3' : null; }
 
