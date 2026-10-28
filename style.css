@@ -489,3 +489,9 @@ button.today-pill:focus-visible { outline: 2px solid var(--accent); outline-offs
 .tg-pts { font-weight: 800; font-size: 16px; font-variant-numeric: tabular-nums; }
 .tg-row .plus { font-size: 11px; font-weight: 800; color: var(--ok); }
 @media (max-width: 480px) { button.today-pill { font-size: 10px; } }
+/* Matchups: tap the games-today note for that owner's games */
+button.mu-today { font: inherit; font-size: 10px; font-weight: 700; letter-spacing: .02em; background: none; border: none; padding: 1px 0; margin-top: 1px; cursor: pointer; text-align: left; text-decoration: underline; text-decoration-style: dotted; text-underline-offset: 2px; color: var(--accent); }
+button.mu-today.live { color: var(--bad); }
+button.mu-today.quiet { color: var(--muted); font-weight: 600; }
+button.mu-today:hover { filter: brightness(1.2); }
+button.mu-today:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 3px; }

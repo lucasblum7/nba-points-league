@@ -552,8 +552,10 @@
           const ow = mk('span', 'mu-owner', s.owner);
           if (m.status !== 'final') {
             const tc = todayCount(s.owner, C, slate);
-            const t = mk('span', 'mu-today' + (tc.live ? ' live' : !tc.total || tc.done === tc.total ? ' quiet' : ''),
+            const t = mk('button', 'mu-today' + (tc.live ? ' live' : !tc.total || tc.done === tc.total ? ' quiet' : ''),
               tc.live ? `● ${tc.live} live` : !tc.total ? 'Off today' : tc.done === tc.total ? `${tc.total} done` : `${tc.total} today`);
+            t.type = 'button'; t.setAttribute('aria-label', `Show ${s.owner}'s games today`);
+            t.addEventListener('click', () => showToday(s.owner, C, slate));
             ow.append(t);
           }
           line.append(ow, mk('span', 'mu-rec', `${s.w}–${s.l}`), mk('span', 'mu-net' + (s.net < 0 ? ' neg' : ''), signed(s.net)));
