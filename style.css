@@ -275,3 +275,9 @@ tr.p1 td.rank::after { content: " ðŸ¥‡"; } tr.p2 td.rank::after { content: " ðŸ¥
 .card > h2::after, h2.sec::after { content: ""; display: block; width: 38px; height: 3px; border-radius: 3px; background: var(--accent); margin: 7px auto 0; }
 .card > h2 { margin-bottom: 14px; }
 #recap-card > h2 { margin-bottom: 6px; }
+/* Rosters: owner names and points in the title style */
+.owner-head h2 { font-family: "Oswald", "Arial Narrow", Impact, sans-serif; font-weight: 700; text-transform: uppercase; letter-spacing: .05em; font-size: 24px; line-height: 1.1; }
+.owner-head h2::before { content: ""; display: inline-block; width: 4px; height: .85em; border-radius: 2px; background: var(--accent); margin-right: 10px; vertical-align: -1px; }
+.owner-pts { font-family: "Oswald", "Arial Narrow", Impact, sans-serif; font-weight: 700; font-size: 2rem; line-height: 1; }
+.owner-pts small { text-transform: uppercase; letter-spacing: .06em; font-weight: 600; }
+.owner-head .projline { margin-top: 6px; }
