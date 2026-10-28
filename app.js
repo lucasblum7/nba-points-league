@@ -350,7 +350,9 @@
   }
   function todayPill(owner, C, slate) {
     const { total, live, done } = todayCount(owner, C, slate);
-    const pill = mk('span', 'today-pill' + (live ? ' live' : total && done === total ? ' done' : !total ? ' none' : ''));
+    const pill = mk('button', 'today-pill' + (live ? ' live' : total && done === total ? ' done' : !total ? ' none' : ''));
+    pill.type = 'button'; pill.setAttribute('aria-label', `Show ${owner}'s games today`);
+    pill.addEventListener('click', () => showToday(owner, C, slate));
     const two = (full, short) => { pill.append(mk('span', 'tp-full', full), mk('span', 'tp-short', short)); };
     if (live) { pill.append(mk('span', 'tp-dot', '●'), `${live} live`); if (total > live) pill.append(mk('span', 'tp-sub tp-full', ` · ${total} today`)); }
     else if (!total) two('No games today', 'Off today');
@@ -589,6 +591,40 @@
       tr.append(mk('td', 'zero', m.week), who, mk('td', 'num' + (m.status === 'upcoming' ? ' zero' : ''), res));
       sb.append(tr);
     });
+  }
+
+  // ---------- an owner's games today pop-up ----------
+  function showToday(owner, C, slate) {
+    closeBonus();
+    const gs = ((slate && slate.games) || []).filter((g) => C.owner.get(g.away) === owner || C.owner.get(g.home) === owner);
+    const ov = mk('div', 'bp-overlay'); ov.id = 'bonus-pop';
+    const box = mk('div', 'bp-box'); box.setAttribute('role', 'dialog'); box.setAttribute('aria-modal', 'true'); box.setAttribute('aria-label', owner + ' games today');
+    const head = mk('div', 'bp-head');
+    const ttl = mk('div', 'bp-title'); ttl.append(mk('b', null, `${owner}'s games today`), mk('span', null, dayName(pacificToday(), { weekday: 'long', month: 'short', day: 'numeric' }))); head.append(ttl);
+    const x = mk('button', 'bp-close', '✕'); x.type = 'button'; x.setAttribute('aria-label', 'Close'); x.addEventListener('click', closeBonus); head.append(x);
+    box.append(head);
+    if (!gs.length) box.append(mk('p', 'players-msg', 'None of their teams play today.'));
+    gs.forEach((g) => {
+      const final = g.state === 'post', live = g.state === 'in';
+      const card = mk('div', 'tg-game' + (live ? ' live' : '') + (g.cup ? ' cup' : ''));
+      const st = mk('div', 'tg-status');
+      st.append(mk('span', live ? 'tg-live' : null, final ? 'FINAL' : live ? '● ' + (g.detail || 'LIVE') : g.time));
+      if (g.cup) st.append(mk('span', 'tg-cup', '🏆 NBA Cup'));
+      card.append(st);
+      const winner = final ? (g.home_score > g.away_score ? g.home : g.away) : null;
+      [[g.away, g.away_score, true], [g.home, g.home_score, false]].forEach(([team, pts, away]) => {
+        const mine = C.owner.get(team) === owner;
+        const r = mk('div', 'tg-row' + (mine ? ' mine' : '') + (final ? (team === winner ? ' won' : ' lost') : ''));
+        const nm = mk('span', 'tg-team'); nm.append(mk('span', 'tg-name', (away ? '' : '@ ') + short(team)), mk('span', 'tg-owner', C.owner.get(team) || ''));
+        r.append(badge(team, 'sb-badge'), nm, mk('span', 'tg-pts', final || live ? String(pts ?? '') : ''));
+        if (final && team === winner && mine) r.append(mk('span', 'plus', g.cup ? '+2' : '+1'));
+        card.append(r);
+      });
+      box.append(card);
+    });
+    ov.append(box);
+    ov.addEventListener('click', (e) => { if (e.target === ov) closeBonus(); });
+    document.body.append(ov); document.addEventListener('keydown', bonusKey); x.focus();
   }
 
   // ---------- bonus breakdown pop-up ----------
