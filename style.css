@@ -225,7 +225,7 @@ tr.p3 td { background: color-mix(in srgb, var(--bronze) 18%, transparent); }
 tr.p1 td.rank, tr.p2 td.rank, tr.p3 td.rank { font-weight: 800; color: var(--fg); }
 tr.p1 td.rank::after { content: " 🥇"; } tr.p2 td.rank::after { content: " 🥈"; } tr.p3 td.rank::after { content: " 🥉"; }
 .card.p1 { background: color-mix(in srgb, var(--gold) 12%, var(--panel)); border-color: color-mix(in srgb, var(--gold) 60%, var(--line)); border-top: 4px solid var(--gold); }
-.card.p2 { background: color-mix(in srgb, var(--silver) 22%, var(--panel)); border-color: color-mix(in srgb, var(--silver) 80%, var(--line)); border-top: 4px solid var(--silver); }
+.card.p2 { background: color-mix(in srgb, var(--silver) 34%, var(--panel)); border-color: color-mix(in srgb, var(--silver) 80%, var(--line)); border-top: 4px solid var(--silver); }
 .card.p3 { background: color-mix(in srgb, var(--bronze) 11%, var(--panel)); border-color: color-mix(in srgb, var(--bronze) 55%, var(--line)); border-top: 4px solid var(--bronze); }
 .card.p1 h2::after { content: " 🥇"; } .card.p2 h2::after { content: " 🥈"; } .card.p3 h2::after { content: " 🥉"; }
 .rank { width: 3rem; }
