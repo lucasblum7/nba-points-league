@@ -372,10 +372,3 @@ tr.p1 td.rank::after { content: " ğŸ¥‡"; } tr.p2 td.rank::after { content: " ğŸ¥
   .teams .players-table td.num, .teams .players-table th.num { padding-right: 7px; }
   .teams .players-table th:last-child, .teams .players-table td:last-child { padding-right: 2px; }
 }
-/* Player dropdown: faint dividers between stat columns */
-.teams .players-table td.num, .teams .players-table th.num { text-align: center; padding-left: 0; padding-right: 0; }
-.teams .players-table th:nth-child(n+4), .teams .players-table td:nth-child(n+4) { border-left: 1px solid color-mix(in srgb, var(--muted) 35%, transparent); }
-.teams .players-table tr.pp-group td { border-left: none; }
-@media (max-width: 480px) {
-  .teams .players-table td.num, .teams .players-table th.num { padding-left: 0; padding-right: 0; }
-}
