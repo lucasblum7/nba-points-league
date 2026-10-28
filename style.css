@@ -171,3 +171,7 @@ tr:last-child td { border-bottom: none; }
 .mu-foot { margin: 4px -10px 0; padding: 5px 10px; text-align: center; }
 .mu-owner { font-size: 17px; font-weight: 700; }
 .mu-side { grid-template-columns: 5rem 2.6rem 2.8rem; }
+/* Standings and schedule side by side, same height */
+.mu-grid { align-items: stretch; grid-template-columns: repeat(auto-fit, minmax(min(100%, 20rem), 1fr)); }
+.mu-grid > div { display: flex; flex-direction: column; }
+.mu-grid > div > .scroll.tall { flex: 1; max-height: 18rem; }
