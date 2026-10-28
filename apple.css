@@ -149,8 +149,7 @@ button.mu-today { text-decoration: none !important; }
 }
 
 /* Phones: slim title bar pinned to the top once the big header scrolls away */
-.pl-mini { display: none; }
-@media (max-width: 700px) {
+@media all {
   .pl-mini { display: block; position: fixed; top: 0; left: 0; right: 0; z-index: 45; pointer-events: none;
     padding: calc(6px + env(safe-area-inset-top)) 12px 6px; transform: translateY(-110%); transition: transform .22s ease; }
   .pl-mini.show { transform: none; pointer-events: auto; }
@@ -177,7 +176,7 @@ button.mu-today { text-decoration: none !important; }
 .pl-head .chip-btn:hover { filter: brightness(1.12); }
 .pl-head .chip-btn:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
 /* Pinned bar: title on the left, games chip on the right */
-@media (max-width: 700px) {
+@media all {
   .pl-mini-in { justify-content: space-between !important; padding: 7px 8px 7px 12px !important; }
   .pl-mini-title { display: flex; align-items: center; gap: 8px; color: #fff; text-decoration: none; min-width: 0; }
   .pl-mini-title span { font-family: "Oswald", "Arial Narrow", Impact, sans-serif; font-weight: 700; text-transform: uppercase; letter-spacing: .03em; font-size: 17px; line-height: 1; text-shadow: 0 1px 0 rgba(0,0,0,.18); white-space: nowrap; }
@@ -186,4 +185,13 @@ button.mu-today { text-decoration: none !important; }
   #pl-mini-chip .chip-i { font-size: 11px; }
   #pl-mini-chip.live .chip-i { color: #ff4d4d; }
   #pl-mini-chip::after { content: "›"; font-weight: 700; opacity: .8; }
+}
+
+/* Computers: pinned bar matches the page width, a little roomier */
+@media (min-width: 701px) {
+  .pl-mini { padding-left: max(16px, calc((100vw - 1200px) / 2 + 16px)); padding-right: max(16px, calc((100vw - 1200px) / 2 + 16px)); padding-top: 8px; }
+  .pl-mini-in { padding: 9px 12px 9px 16px !important; }
+  .pl-mini-title span { font-size: 20px; }
+  .pl-mini-title svg { width: 26px; height: 26px; }
+  #pl-mini-chip { font-size: 13px; padding: 5px 12px; }
 }
