@@ -188,3 +188,7 @@ tr:last-child td { border-bottom: none; }
 
 .mu-owner { font-size: 21px; }
 .mu-side { grid-template-columns: 6rem 2.6rem 2.8rem; }
+/* Record sits evenly between the name and the net */
+.mu-side { grid-template-columns: 6rem 3.4rem 3rem; align-items: center; gap: 10px; }
+.mu-rec { font-size: 16px; font-weight: 600; color: var(--muted); text-align: center; letter-spacing: .02em; }
+.mu-net { text-align: right; }
