@@ -438,3 +438,6 @@ button.mu-today { text-decoration: none !important; }
 /* quieter week dividers */
 .tc-week { gap: 6px; margin: 3px 4px 1px; font-size: 8.5px; font-weight: 600; letter-spacing: .08em; opacity: .65; }
 .tc-week::before, .tc-week::after { height: .5px; opacity: .8; }
+/* tonight's game: same neutral gray for every team */
+.tc-tonight { background: var(--fill2) !important; box-shadow: inset 3px 0 0 color-mix(in srgb, var(--muted) 70%, transparent) !important; }
+.tc-g.is-live.tc-tonight { box-shadow: inset 3px 0 0 var(--bad) !important; }
