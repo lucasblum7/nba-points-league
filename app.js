@@ -111,7 +111,7 @@
     const matchups = [];
     const h2h = Object.fromEntries(owners.map((o) => [o, { owner: o, w: 0, l: 0, t: 0, net: 0, wins: 0 }]));
     if (M) {
-      const lastWeek = Math.max(curWeek + 1, M.start_week);  // show one week ahead
+      const lastWeek = Math.max(curWeek, M.start_week);  // through the current week only
       for (let wk = M.start_week; wk <= lastWeek; wk++) {
         const round = M.rounds[(wk - M.start_week) % M.rounds.length];
         const info = weekly[wk - 1];
