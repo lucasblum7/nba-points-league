@@ -24,19 +24,6 @@
     color-scheme: dark;
   }
 }
-/* Boxes use the opposite palette of the page: dark boxes in light mode, white boxes in dark mode */
-.pl-head, .card, .sb {
-  --bg: #161615; --panel: #1f1f1d; --fg: #ecebe6; --muted: #a3a29b; --line: #34332f;
-  --ok: #4cc27f; --bad: #ff6b66; --warn: #f0a33a; --wins: #6b9cf0; --bonus: #f0a35a;
-  color-scheme: dark; color: var(--fg);
-}
-@media (prefers-color-scheme: dark) {
-  .pl-head, .card, .sb {
-    --bg: #f6f6f4; --panel: #ffffff; --fg: #1c1c1a; --muted: #6b6b66; --line: #e2e1dc;
-    --ok: #1e8a4c; --bad: #c8322f; --warn: #c77700; --wins: #2f6fdb; --bonus: #d9822b;
-    color-scheme: light;
-  }
-}
 * { box-sizing: border-box; }
 body { margin: 0; background: var(--bg); color: var(--fg); font: 15px/1.45 var(--sans); }
 .pl { max-width: 1200px; margin: 0 auto; padding: 20px 16px 40px; display: flex; flex-direction: column; gap: 20px; }
@@ -175,7 +162,7 @@ tr:last-child td { border-bottom: none; }
 .mu-card.live { border: 2px solid var(--fg); }
 .mu-card.live .mu-foot::before { color: var(--fg); }
 #h2h-table td.down { color: #e0201c; font-weight: 800; }
-@media (prefers-color-scheme: light) { .mu-net.neg, .mu-side.trail .mu-net.neg, #h2h-table td.down { color: #ff5a55; } }
+@media (prefers-color-scheme: dark) { .mu-net.neg, .mu-side.trail .mu-net.neg, #h2h-table td.down { color: #ff5a55; } }
 #h2h-table td.up { font-weight: 800; }
 /* Tighter matchup boxes */
 .mu-card { padding: 8px 10px 0; }
