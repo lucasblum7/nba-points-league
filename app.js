@@ -497,6 +497,8 @@
       tb.append(body); card.append(tb); og.append(card);
     });
 
+    renderRace(D, C);
+
     // bonuses
     const bb = document.querySelector('#bonus-table tbody'); bb.replaceChildren();
     const withB = teams.slice().sort((a, b) => b.bonus - a.bonus || a.owner.localeCompare(b.owner) || a.team.localeCompare(b.team));
@@ -635,6 +637,106 @@
     ov.addEventListener('click', (e) => { if (e.target === ov) closeBonus(); });
     document.body.append(ov); document.addEventListener('keydown', bonusKey); x.focus();
   }
+
+  // ---------- points race chart (Home) ----------
+  // Owners keep the same color everywhere: fixed order, assigned alphabetically.
+  const RACE_COLORS = { light: ['#2a78d6', '#eb6834', '#1baf7a', '#eda100', '#e87ba4', '#008300'],
+                        dark:  ['#3987e5', '#d95926', '#199e70', '#c98500', '#d55181', '#008300'] };
+  let raceData = null;
+  function raceSeries(D, C) {
+    const S = D.config.scoring, cupExtra = (S.cup_game_win ?? S.win) - S.win;
+    const owners = [...C.owners].sort((a, b) => a.localeCompare(b));
+    const start = D.config.season_start, end = C.sorted.length ? C.sorted[C.sorted.length - 1].date : start;
+    const days = []; for (let d = new Date(start + 'T12:00:00Z'); d.toISOString().slice(0, 10) <= end; d = new Date(d.getTime() + 864e5)) days.push(d.toISOString().slice(0, 10));
+    const perDay = new Map(days.map((d) => [d, Object.fromEntries(owners.map((o) => [o, 0]))]));
+    for (const g of C.sorted) {
+      const winner = g.home_score > g.away_score ? g.home : g.away, o = C.owner.get(winner);
+      if (o && perDay.has(g.date)) perDay.get(g.date)[o] += S.win + (g.cup ? cupExtra : 0);
+    }
+    const run = Object.fromEntries(owners.map((o) => [o, 0]));
+    const pts = days.map((d) => { owners.forEach((o) => { run[o] += perDay.get(d)[o]; }); return { date: d, v: { ...run } }; });
+    // non-game bonuses (playoffs, Cup title) land on the last day
+    C.board.forEach((b) => { const gameBonus = C.teams.filter((t) => t.owner === b.owner).reduce((n, t) => n + t.pts_cupgames, 0); const extra = b.bonus - gameBonus; if (extra && pts.length) pts[pts.length - 1].v[b.owner] += extra; });
+    return { owners, pts };
+  }
+  function renderRace(D, C) {
+    const host = $('race'); if (!host) return;
+    raceData = raceSeries(D, C);
+    drawRace();
+    const btn = $('race-tbl-btn');
+    if (btn && !btn.dataset.wired) { btn.dataset.wired = '1'; btn.addEventListener('click', () => { const t = $('race-table'); t.hidden = !t.hidden; btn.setAttribute('aria-pressed', String(!t.hidden)); btn.textContent = t.hidden ? 'Table' : 'Chart'; host.hidden = !t.hidden; }); }
+    if (!host.dataset.ro && window.ResizeObserver) { host.dataset.ro = '1'; let w0 = 0; new ResizeObserver(() => { if (Math.abs(host.clientWidth - w0) > 4) { w0 = host.clientWidth; drawRace(); } }).observe(host); }
+  }
+  function drawRace() {
+    const host = $('race'), { owners, pts } = raceData || {}; if (!host || !pts || !pts.length) return;
+    const dark = matchMedia('(prefers-color-scheme: dark)').matches, pal = RACE_COLORS[dark ? 'dark' : 'light'];
+    const color = (o) => pal[owners.indexOf(o) % pal.length];
+    const W = Math.max(280, host.clientWidth), H = W < 500 ? 230 : 270;
+    const lastV = pts[pts.length - 1].v, longest = Math.max(...owners.map((o) => (o + ' ' + fmt(lastV[o])).length));
+    const M = { l: 30, r: 26 + longest * 7.6, t: 10, b: 24 }, iw = W - M.l - M.r, ih = H - M.t - M.b;
+    const maxV = Math.max(5, ...pts.map((p) => Math.max(...owners.map((o) => p.v[o]))));
+    const step = maxV <= 20 ? 5 : maxV <= 60 ? 10 : maxV <= 150 ? 25 : 50, top = Math.ceil(maxV / step) * step;
+    const X = (i) => M.l + (pts.length === 1 ? iw / 2 : (i / (pts.length - 1)) * iw), Y = (v) => M.t + ih - (v / top) * ih;
+    const NS = 'http://www.w3.org/2000/svg', el = (n, a) => { const e = document.createElementNS(NS, n); for (const k in a) e.setAttribute(k, a[k]); return e; };
+    const svg = el('svg', { viewBox: `0 0 ${W} ${H}`, width: W, height: H, class: 'race-svg', role: 'img', 'aria-label': 'Points race: total points by day for each owner' });
+    for (let v = 0; v <= top; v += step) {
+      svg.append(el('line', { x1: M.l, x2: M.l + iw, y1: Y(v), y2: Y(v), class: v ? 'race-grid' : 'race-base' }));
+      const t = el('text', { x: M.l - 6, y: Y(v) + 3.5, class: 'race-axis', 'text-anchor': 'end' }); t.textContent = v; svg.append(t);
+    }
+    // date ticks: whole-day steps, evenly spaced, never closer than ~70px
+    const maxTicks = Math.max(2, Math.floor(iw / 70)), every = Math.max(1, Math.ceil((pts.length - 1) / (maxTicks - 1)));
+    const ticks = []; for (let i = 0; i < pts.length; i += every) ticks.push(i);
+    if (ticks[ticks.length - 1] !== pts.length - 1) { if ((pts.length - 1 - ticks[ticks.length - 1]) * (iw / Math.max(1, pts.length - 1)) < 50) ticks.pop(); ticks.push(pts.length - 1); }
+    ticks.forEach((i, k) => {
+      const t = el('text', { x: X(i), y: H - 6, class: 'race-axis', 'text-anchor': k === 0 ? 'start' : k === ticks.length - 1 ? 'end' : 'middle' });
+      t.textContent = dayName(pts[i].date, { month: 'short', day: 'numeric' }); svg.append(t);
+    });
+    // lines, leader drawn last so it sits on top
+    const last = pts[pts.length - 1].v, order = owners.slice().sort((a, b) => last[a] - last[b]);
+    order.forEach((o) => {
+      const d = pts.map((p, i) => `${i ? 'L' : 'M'}${X(i).toFixed(1)},${Y(p.v[o]).toFixed(1)}`).join('');
+      svg.append(el('path', { d, class: 'race-line', stroke: color(o) }));
+      svg.append(el('circle', { cx: X(pts.length - 1), cy: Y(last[o]), r: 4.5, fill: color(o), class: 'race-end' }));
+    });
+    // end labels, nudged apart so they never overlap
+    const labs = owners.map((o) => ({ o, y: Y(last[o]) })).sort((a, b) => a.y - b.y), gap = 14;
+    for (let i = 1; i < labs.length; i++) if (labs[i].y - labs[i - 1].y < gap) labs[i].y = labs[i - 1].y + gap;
+    const over = labs.length ? labs[labs.length - 1].y - (M.t + ih) : 0; if (over > 0) labs.forEach((l) => { l.y -= over; });
+    labs.forEach(({ o, y }) => {
+      const g = el('g', {}); g.append(el('rect', { x: M.l + iw + 9, y: y - 4, width: 8, height: 8, rx: 2, fill: color(o) }));
+      const t = el('text', { x: M.l + iw + 21, y: y + 4, class: 'race-lab' }); t.textContent = `${o} ${fmt(last[o])}`; g.append(t); svg.append(g);
+    });
+    // hover crosshair + tooltip
+    const cross = el('line', { y1: M.t, y2: M.t + ih, class: 'race-cross', visibility: 'hidden' }); svg.append(cross);
+    const dots = owners.map((o) => { const c = el('circle', { r: 4, fill: color(o), class: 'race-dot', visibility: 'hidden' }); svg.append(c); return c; });
+    const hit = el('rect', { x: M.l, y: M.t, width: iw, height: ih, fill: 'transparent', class: 'race-hit' }); svg.append(hit);
+    host.replaceChildren(svg);
+    const tip = mk('div', 'race-tip'); tip.hidden = true; host.append(tip);
+    const show = (cx) => {
+      const r = svg.getBoundingClientRect(), x = (cx - r.left) * (W / r.width);
+      const i = Math.max(0, Math.min(pts.length - 1, Math.round(((x - M.l) / iw) * (pts.length - 1)))), p = pts[i];
+      cross.setAttribute('x1', X(i)); cross.setAttribute('x2', X(i)); cross.setAttribute('visibility', 'visible');
+      owners.forEach((o, k) => { dots[k].setAttribute('cx', X(i)); dots[k].setAttribute('cy', Y(p.v[o])); dots[k].setAttribute('visibility', 'visible'); });
+      tip.replaceChildren(mk('div', 'race-tip-d', dayName(p.date, { weekday: 'short', month: 'short', day: 'numeric' })));
+      owners.slice().sort((a, b) => p.v[b] - p.v[a]).forEach((o) => { const row = mk('div', 'race-tip-r'); const sw = mk('i'); sw.style.background = color(o); row.append(sw, mk('span', null, o), mk('b', null, fmt(p.v[o]))); tip.append(row); });
+      tip.hidden = false;
+      const px = (X(i) / W) * r.width, tw = tip.offsetWidth;
+      tip.style.left = Math.max(0, Math.min(r.width - tw, px + (px > r.width / 2 ? -tw - 12 : 12))) + 'px';
+    };
+    const hide = () => { tip.hidden = true; cross.setAttribute('visibility', 'hidden'); dots.forEach((d) => d.setAttribute('visibility', 'hidden')); };
+    hit.addEventListener('pointermove', (e) => show(e.clientX));
+    hit.addEventListener('pointerdown', (e) => show(e.clientX));
+    hit.addEventListener('pointerleave', hide);
+    // table view
+    const tbl = $('race-table');
+    if (tbl) {
+      const t = mk('table', 'race-tbl'); const hr = mk('tr'); hr.append(mk('th', null, 'Date'));
+      owners.forEach((o) => hr.append(mk('th', 'num', o))); const th = mk('thead'); th.append(hr); const tb = mk('tbody');
+      pts.slice().reverse().forEach((p) => { const r = mk('tr'); r.append(mk('td', 'zero', dayName(p.date, { month: 'short', day: 'numeric' }))); owners.forEach((o) => r.append(mk('td', 'num', fmt(p.v[o])))); tb.append(r); });
+      t.append(th, tb); const sc = mk('div', 'scroll tall'); sc.append(t); tbl.replaceChildren(sc);
+    }
+  }
+  matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => drawRace());
 
   // ---------- team card (tap a team in Rosters) ----------
   const fmtShort = (iso) => dayName(iso, { weekday: 'short', month: 'numeric', day: 'numeric' });
@@ -857,7 +959,7 @@
   function setupTabs() {
     const TABS = ['home', 'matchups', 'rosters', 'more'];
     const groups = {
-      home: ['scoreboard', 'leaderboard-card', 'recap-card', 'results-card'],
+      home: ['scoreboard', 'leaderboard-card', 'race-card', 'recap-card', 'results-card'],
       matchups: ['matchups-card', 'weekly-card'],
       rosters: ['rosters-card'],
       more: ['bonus-card', 'upset-card', 'ideas-card', 'league-rules'],
