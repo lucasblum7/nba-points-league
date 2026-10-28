@@ -190,6 +190,59 @@
     } catch (e) { return null; }
   }
 
+  // ---------- player roster dropdown (click a team name) ----------
+  const ESPN_ID = { 'Houston Rockets': 10 };   // teams with the dropdown turned on (ESPN team ids)
+  const playerCache = new Map();
+  async function fetchPlayers(team) {
+    if (playerCache.has(team)) return playerCache.get(team);
+    const r = await fetch(`https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/${ESPN_ID[team]}/roster`);
+    if (!r.ok) throw new Error('HTTP ' + r.status);
+    const j = await r.json();
+    let list = j.athletes || [];
+    if (list.length && Array.isArray(list[0].items)) list = list.flatMap((g) => g.items);   // grouped format
+    const players = list.map((a) => ({
+      num: a.jersey ?? '', name: a.displayName || a.fullName || '', pos: (a.position && a.position.abbreviation) || '',
+      ht: a.displayHeight || '', age: a.age ?? '',
+      out: (a.injuries && a.injuries.length) ? (a.injuries[0].status || 'Injured') : '',
+    })).sort((x, y) => (x.num === '' ? 999 : Number(x.num)) - (y.num === '' ? 999 : Number(y.num)));
+    playerCache.set(team, players);
+    return players;
+  }
+  function playersRow(team) {
+    const tr = mk('tr', 'players-row'); const td = mk('td'); td.colSpan = 6; tr.append(td);
+    const box = mk('div', 'players'); td.append(box);
+    box.append(mk('p', 'players-msg', 'Loading roster…'));
+    fetchPlayers(team).then((ps) => {
+      box.replaceChildren();
+      if (!ps.length) { box.append(mk('p', 'players-msg', 'No roster found.')); return; }
+      const t = mk('table', 'players-table'); const h = mk('tr');
+      [['#', 'num'], ['Player', ''], ['Pos', ''], ['Ht', ''], ['Age', 'num']].forEach(([x, c]) => h.append(mk('th', c, x)));
+      const th = mk('thead'); th.append(h); const tb = mk('tbody');
+      ps.forEach((p) => {
+        const r = mk('tr'); const nm = mk('td', 'pp-name', p.name);
+        if (p.out) nm.append(mk('span', 'pp-out', p.out));
+        r.append(mk('td', 'num pp-num', p.num), nm, mk('td', 'pp-pos', p.pos), mk('td', 'pp-ht', p.ht), mk('td', 'num', p.age));
+        tb.append(r);
+      });
+      t.append(th, tb); box.append(t);
+    }).catch(() => { box.replaceChildren(mk('p', 'players-msg', 'Couldn’t load the roster right now. Try again in a minute.')); playerCache.delete(team); });
+    return tr;
+  }
+  function makeExpandable(nameTd, team, anchorRow) {
+    if (!ESPN_ID[team]) return;
+    nameTd.classList.add('team-toggle'); nameTd.tabIndex = 0; nameTd.setAttribute('role', 'button'); nameTd.setAttribute('aria-expanded', 'false');
+    nameTd.title = 'Show roster';
+    let open = null;
+    const toggle = () => {
+      if (open) { open.remove(); open = null; nameTd.setAttribute('aria-expanded', 'false'); openRosters.delete(team); return; }
+      open = playersRow(team); anchorRow().after(open); nameTd.setAttribute('aria-expanded', 'true'); openRosters.add(team);
+    };
+    nameTd.addEventListener('click', toggle);
+    nameTd.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); } });
+    if (openRosters.has(team)) { openRosters.delete(team); queueMicrotask(toggle); }   // stay open across the 1-minute refresh
+  }
+  const openRosters = new Set();
+
   // ---------- last 3 / next 3 strip under each roster team ----------
   const abbr = (team) => (TEAM_BADGE[team] || [short(team).slice(0, 3).toUpperCase()])[0];
   function nextGames(team, n) {
@@ -349,7 +402,9 @@
         const name = mk('td', null, short(t.team));
         tr.append(name, mk('td', 'num', t.wins), mk('td', 'num zero', t.losses), mk('td', 'num zero', t.proj ?? ''),
           mk('td', 'num ' + paceClass(t.pace, t.proj), t.pace == null ? '' : t.pace.toFixed(1)), mk('td', 'num total', t.points));
-        body.append(tr, schedRow(t.team, t.last3));
+        const sr = schedRow(t.team, t.last3);
+        body.append(tr, sr);
+        makeExpandable(name, t.team, () => sr);
       });
       tb.append(body); card.append(tb); og.append(card);
     });
