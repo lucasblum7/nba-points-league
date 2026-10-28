@@ -305,3 +305,5 @@ tr.p1 td.rank::after { content: " ðŸ¥‡"; } tr.p2 td.rank::after { content: " ðŸ¥
 .teams thead th { white-space: normal; }
 .teams tr.team-row td:first-child { overflow: hidden; text-overflow: ellipsis; }
 .teams tr.team-row td.num.zero { color: var(--fg); }
+/* Rosters: silver cards get a cool steel tint and a full bright border so they read clearly */
+.card.p2 { --silver-card: #9db7d4; background: color-mix(in srgb, var(--silver-card) 26%, var(--panel)); border: 2px solid color-mix(in srgb, var(--silver-card) 85%, transparent); border-top: 5px solid #c9d6e3; }
