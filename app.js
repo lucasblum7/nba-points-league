@@ -202,6 +202,22 @@
       if (b) take.append(b.behind === 0 ? ', tied with ' + b.owner + '.' : ', ' + b.behind + ' ahead of ' + b.owner + '.');
     }
 
+    // quick-stat chips
+    const chips = $('chips');
+    if (chips) {
+      chips.replaceChildren();
+      const chip = (icon, text, cls) => { const c = mk('span', 'chip' + (cls ? ' ' + cls : '')); c.append(mk('span', 'chip-i', icon), text); chips.append(c); };
+      if (C.curWeek) chip('📅', 'Week ' + C.curWeek);
+      const gs = (slate && slate.games) || [];
+      const liveN = gs.filter((g) => g.state === 'in').length;
+      if (liveN) chip('●', liveN + (liveN === 1 ? ' game' : ' games') + ' live', 'live');
+      else if (gs.length) chip('🏀', gs.length + (gs.length === 1 ? ' game' : ' games') + ' today');
+      else chip('🏀', 'No games today');
+      const start = (D.config && D.config.season_start) || '2026-10-20';
+      const day = Math.floor((new Date(pacificToday()) - new Date(start)) / 864e5) + 1;
+      if (day > 0) chip('⏱', 'Day ' + day + ' of the season');
+    }
+
     // leaderboard
     const lb = document.querySelector('#leaderboard tbody'); lb.replaceChildren();
     const max = Math.max(1, ...board.map((d) => d.points));

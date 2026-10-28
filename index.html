@@ -6,6 +6,8 @@
   <title>NBA Points League 2026–27</title>
   <meta name="description" content="Standings, rosters and nightly scores for our NBA Points League.">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Ccircle cx='24' cy='24' r='21' fill='%23E8762B' stroke='%233A1E0E' stroke-width='2.5'/%3E%3Cpath d='M24 3v42M3 24h42M9.2 9.2c7.4 7.4 7.4 22.2 0 29.6M38.8 9.2c-7.4 7.4-7.4 22.2 0 29.6' fill='none' stroke='%233A1E0E' stroke-width='2.5'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -13,10 +15,11 @@
   <header class="pl-head" id="top">
     <h1 class="pl-title">
       <svg class="pl-ball" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="21" fill="#E8762B" stroke="#3A1E0E" stroke-width="2.5"/><path d="M24 3v42M3 24h42M9.2 9.2c7.4 7.4 7.4 22.2 0 29.6M38.8 9.2c-7.4 7.4-7.4 22.2 0 29.6" fill="none" stroke="#3A1E0E" stroke-width="2.5" stroke-linecap="round"/></svg>
-      <span>NBA Points League 2026–27</span>
+      <span class="pl-name">NBA Points League<small>2026–27 Season</small></span>
       <svg class="pl-ball pl-ball-r" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="21" fill="#E8762B" stroke="#3A1E0E" stroke-width="2.5"/><path d="M24 3v42M3 24h42M9.2 9.2c7.4 7.4 7.4 22.2 0 29.6M38.8 9.2c-7.4 7.4-7.4 22.2 0 29.6" fill="none" stroke="#3A1E0E" stroke-width="2.5" stroke-linecap="round"/></svg>
     </h1>
     <p class="pl-take" id="takeaway">Loading…</p>
+    <div class="pl-chips" id="chips"></div>
   </header>
 
   <section class="sb" id="scoreboard" aria-label="Today's NBA scores">
