@@ -9,7 +9,8 @@
    "away": "Miami Heat",
    "home": "Atlanta Hawks",
    "away_score": null,
-   "home_score": null
+   "home_score": null,
+   "cup": false
   },
   {
    "id": "401909882",
@@ -19,7 +20,8 @@
    "away": "Washington Wizards",
    "home": "Cleveland Cavaliers",
    "away_score": null,
-   "home_score": null
+   "home_score": null,
+   "cup": false
   },
   {
    "id": "401909883",
@@ -29,7 +31,8 @@
    "away": "Charlotte Hornets",
    "home": "Detroit Pistons",
    "away_score": null,
-   "home_score": null
+   "home_score": null,
+   "cup": false
   },
   {
    "id": "401909884",
@@ -39,7 +42,8 @@
    "away": "Philadelphia 76ers",
    "home": "Indiana Pacers",
    "away_score": null,
-   "home_score": null
+   "home_score": null,
+   "cup": false
   },
   {
    "id": "401909885",
@@ -49,7 +53,8 @@
    "away": "Orlando Magic",
    "home": "Toronto Raptors",
    "away_score": null,
-   "home_score": null
+   "home_score": null,
+   "cup": false
   },
   {
    "id": "401909886",
@@ -59,7 +64,8 @@
    "away": "New York Knicks",
    "home": "Chicago Bulls",
    "away_score": null,
-   "home_score": null
+   "home_score": null,
+   "cup": false
   },
   {
    "id": "401909887",
@@ -69,7 +75,8 @@
    "away": "Houston Rockets",
    "home": "Milwaukee Bucks",
    "away_score": null,
-   "home_score": null
+   "home_score": null,
+   "cup": false
   },
   {
    "id": "401909888",
@@ -79,7 +86,8 @@
    "away": "Golden State Warriors",
    "home": "Minnesota Timberwolves",
    "away_score": null,
-   "home_score": null
+   "home_score": null,
+   "cup": false
   },
   {
    "id": "401909889",
@@ -89,7 +97,8 @@
    "away": "Denver Nuggets",
    "home": "New Orleans Pelicans",
    "away_score": null,
-   "home_score": null
+   "home_score": null,
+   "cup": false
   },
   {
    "id": "401909890",
@@ -99,7 +108,8 @@
    "away": "San Antonio Spurs",
    "home": "Utah Jazz",
    "away_score": null,
-   "home_score": null
+   "home_score": null,
+   "cup": false
   },
   {
    "id": "401909891",
@@ -109,7 +119,8 @@
    "away": "Oklahoma City Thunder",
    "home": "Dallas Mavericks",
    "away_score": null,
-   "home_score": null
+   "home_score": null,
+   "cup": false
   },
   {
    "id": "401909892",
@@ -119,7 +130,8 @@
    "away": "Los Angeles Lakers",
    "home": "LA Clippers",
    "away_score": null,
-   "home_score": null
+   "home_score": null,
+   "cup": false
   }
  ]
 }

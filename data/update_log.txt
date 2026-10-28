@@ -1,4 +1,4 @@
-2026-10-28T10:01:47+00:00 ok
+2026-10-28T20:46:22+00:00 ok
 checked 2026-10-25 through 2026-10-29
 fetched 35 events
-changed: games (1 new), lines, today, schedule
+changed: lines, today
