@@ -361,8 +361,69 @@
     return pill;
   }
 
+  // ---------- My team: each viewer picks who they are (saved in their own browser) ----------
+  const getMe = () => { try { return localStorage.getItem('pl-me') || null; } catch (e) { return null; } };
+  const setMe = (o) => { try { o ? localStorage.setItem('pl-me', o) : localStorage.removeItem('pl-me'); } catch (e) { /* ignore */ } };
+  function pickMe(C) {
+    closeBonus();
+    const ov = mk('div', 'bp-overlay'); ov.id = 'bonus-pop';
+    const box = mk('div', 'bp-box me-pick'); box.setAttribute('role', 'dialog'); box.setAttribute('aria-modal', 'true'); box.setAttribute('aria-label', 'Pick your team');
+    const head = mk('div', 'bp-head'); const ttl = mk('div', 'bp-title'); ttl.append(mk('b', null, 'Who are you?'), mk('span', null, 'The site will highlight your teams and matchup.')); head.append(ttl);
+    const x = mk('button', 'bp-close', '✕'); x.type = 'button'; x.setAttribute('aria-label', 'Close'); x.addEventListener('click', closeBonus); head.append(x); box.append(head);
+    const grid = mk('div', 'me-grid'); const me = getMe();
+    [...C.owners].sort((a, b) => a.localeCompare(b)).forEach((o) => {
+      const b = mk('button', 'me-opt' + (o === me ? ' on' : ''), o); b.type = 'button';
+      b.addEventListener('click', () => { setMe(o); closeBonus(); rerender(); }); grid.append(b);
+    });
+    box.append(grid);
+    if (me) { const off = mk('button', 'me-off', 'Turn off My team'); off.type = 'button'; off.addEventListener('click', () => { setMe(null); closeBonus(); rerender(); }); box.append(off); }
+    ov.append(box); ov.addEventListener('click', (e) => { if (e.target === ov) closeBonus(); });
+    document.body.append(ov); document.addEventListener('keydown', bonusKey); x.focus();
+  }
+  const rerender = () => { if (D) render(D, compute(D), slate); };
+
+  function renderMe(C, slate) {
+    const host = $('me-body'); if (!host) return;
+    const me = getMe(); host.replaceChildren();
+    $('me-card').classList.toggle('me-empty', !me);
+    if (!me || !C.owners.includes(me)) {
+      host.append(mk('p', 'me-ask', 'Pick who you are and the site highlights your teams, your matchup and your games.'));
+      const grid = mk('div', 'me-grid'); [...C.owners].sort((a, b) => a.localeCompare(b)).forEach((o) => { const b = mk('button', 'me-opt', o); b.type = 'button'; b.addEventListener('click', () => { setMe(o); rerender(); }); grid.append(b); });
+      host.append(grid); return;
+    }
+    const row = C.board.find((b) => b.owner === me), lead = C.board[0];
+    const tied = C.board.filter((x) => x.points === row.points).length > 1;
+    const top = mk('div', 'me-top');
+    const who = mk('div', 'me-who'); who.append(mk('span', 'me-hi', 'Your team'), mk('b', null, me));
+    const sw = mk('button', 'me-switch', 'Switch'); sw.type = 'button'; sw.addEventListener('click', () => pickMe(C));
+    top.append(who, sw); host.append(top);
+    const tiles = mk('div', 'me-tiles');
+    const tile = (label, value, sub, cls) => { const d = mk('div', 'me-tile'); d.append(mk('span', 'me-tl', label), mk('b', cls || null, value)); if (sub) d.append(mk('span', 'me-ts', sub)); tiles.append(d); return d; };
+    const gap = lead.points - row.points, second = C.board.find((b) => b.owner !== me);
+    tile('Rank', `${tied ? 'T-' : ''}${row.place}`, `of ${C.board.length}`);
+    tile('Points', fmt(row.points), row.place === 1 && !tied ? `+${row.points - (second ? second.points : 0)} ahead` : gap ? `${gap} behind 1st` : 'tied for 1st');
+    // this week's matchup
+    const fw = C.matchups.some((m) => m.week === C.curWeek) ? C.curWeek : (C.matchups[0] || {}).week;
+    const m = C.matchups.find((x) => x.week === fw && (x.A.owner === me || x.B.owner === me));
+    if (m) {
+      const mine = m.A.owner === me ? m.A : m.B, opp = m.A.owner === me ? m.B : m.A;
+      const state = m.status === 'upcoming' ? 'Starts ' + fmtDay(m.start) : m.winner === me ? (m.status === 'final' ? 'You won' : 'You lead') : m.winner ? (m.status === 'final' ? 'You lost' : 'You trail') : (m.status === 'final' ? 'Tie' : 'Even');
+      const t = tile('Matchup vs ' + opp.owner, `${mine.w}–${mine.l}`, `${state} · ${opp.owner} ${opp.w}–${opp.l}`, m.winner === me ? 'up' : m.winner ? 'down' : null);
+      t.classList.add('me-tap'); t.tabIndex = 0; t.setAttribute('role', 'button');
+      const go = () => { location.hash = '#matchups'; }; t.addEventListener('click', go); t.addEventListener('keydown', (e) => { if (e.key === 'Enter') go(); });
+    }
+    const tc = todayCount(me, C, slate);
+    const t2 = tile('Today', tc.live ? `${tc.live} live` : `${tc.total}`, tc.live ? `of ${tc.total} games` : tc.total ? (tc.done === tc.total ? 'all played' : (tc.total === 1 ? 'game' : 'games')) : 'no games', tc.live ? 'down' : null);
+    t2.classList.add('me-tap'); t2.tabIndex = 0; t2.setAttribute('role', 'button');
+    t2.addEventListener('click', () => showToday(me, C, slate)); t2.addEventListener('keydown', (e) => { if (e.key === 'Enter') showToday(me, C, slate); });
+    host.append(tiles);
+  }
+
   function render(D, C, slate) {
     const { board, teams, weekly, upsets, owner } = C;
+    const me = getMe();
+    document.body.classList.toggle('has-me', !!me);
+    renderMe(C, slate);
 
     // takeaway
     const take = $('takeaway'); if (take) take.replaceChildren();
@@ -394,13 +455,15 @@
       const start = (D.config && D.config.season_start) || '2026-10-20';
       const day = Math.floor((new Date(pacificToday()) - new Date(start)) / 864e5) + 1;
       if (day > 0) chip('⏱', 'Day ' + day + ' of the season');
+      chip('👤', me ? me : 'Pick your team', 'me-chip', () => pickMe(C));
     }
 
     // leaderboard
     const lb = document.querySelector('#leaderboard tbody'); lb.replaceChildren();
     board.forEach((d, i) => {
-      const tr = mk('tr', d.points > 0 ? medal(d.place) : null);
-      tr.append(mk('td', 'rank', d.rank), mk('td', 'total', d.owner), mk('td', 'num', fmt(d.wins)), mk('td', 'num' + (d.bonus ? '' : ' zero'), fmt(d.bonus)),
+      const tr = mk('tr', [d.points > 0 ? medal(d.place) : null, d.owner === me ? 'is-me' : null].filter(Boolean).join(' ') || null);
+      const nmTd = mk('td', 'total', d.owner); if (d.owner === me) nmTd.append(mk('span', 'you-tag', 'You'));
+      tr.append(mk('td', 'rank', d.rank), nmTd, mk('td', 'num', fmt(d.wins)), mk('td', 'num' + (d.bonus ? '' : ' zero'), fmt(d.bonus)),
         mk('td', 'num total', fmt(d.points)), mk('td', 'num', d.this_week), mk('td', 'num hide-sm' + (d.weeks_won ? '' : ' zero'), d.weeks_won));
       lb.append(tr);
     });
@@ -456,12 +519,12 @@
     // owner cards
     const og = $('owner-grid'); og.replaceChildren();
     // Cards follow the current standings, so the order updates every time scores do.
-    const order = board.map((b) => b.owner);
+    const order = board.map((b) => b.owner).sort((a, b) => (b === me) - (a === me));
     order.forEach((o) => {
       const row = board.find((b) => b.owner === o);
-      const card = mk('section', 'card ' + (row.points > 0 ? medal(row.place) || '' : '')); card.id = 'owner-' + o.toLowerCase();
+      const card = mk('section', 'card ' + (row.points > 0 ? medal(row.place) || '' : '')); card.id = 'owner-' + o.toLowerCase(); if (o === me) card.classList.add('is-me');
       const head = mk('div', 'owner-head');
-      const nameBox = mk('div'); nameBox.append(mk('h2', null, o));
+      const nameBox = mk('div'); const h2o = mk('h2', null, o); if (o === me) h2o.append(mk('span', 'you-tag', 'You')); nameBox.append(h2o);
       const pl = mk('div', 'projline', 'Proj. wins ');
       pl.append(mk('b', null, row.proj), ' · Win pace ');
       pl.append(mk('b', paceClass(row.pace, row.proj), row.pace.toFixed(1)));
@@ -535,10 +598,11 @@
 
   function renderMatchups(C, slate) {
     const { matchups, h2hTable, curWeek } = C;
+    const me = getMe();
     const signed = (n) => (n > 0 ? '+' + n : n < 0 ? '−' + Math.abs(n) : '0');
     // featured week: the current one (or the first upcoming one before matchups start)
     const featuredWeek = matchups.some((m) => m.week === curWeek) ? curWeek : (matchups[0] || {}).week;
-    const cur = matchups.filter((m) => m.week === featuredWeek);
+    const cur = matchups.filter((m) => m.week === featuredWeek).sort((a, b) => ((b.A.owner === me || b.B.owner === me) - (a.A.owner === me || a.B.owner === me)));
     const box = $('mu-current'); box.replaceChildren();
     if (cur.length) {
       const m0 = cur[0];
@@ -546,7 +610,7 @@
       box.append(mk('div', 'mu-title', `Week ${m0.week} · ${fmtDay(m0.start)} – ${fmtDay(m0.end)} · ${label}`));
       const row = mk('div', 'mu-row');
       cur.forEach((m) => {
-        const card = mk('div', 'mu-card' + (m.status === 'live' ? ' live' : ''));
+        const card = mk('div', 'mu-card' + (m.status === 'live' ? ' live' : '') + (m.A.owner === me || m.B.owner === me ? ' is-me' : ''));
         [m.A, m.B].forEach((s) => {
           const lead = m.winner === s.owner;
           const line = mk('div', 'mu-side' + (lead ? ' lead' : m.winner ? ' trail' : ''));
@@ -573,7 +637,7 @@
 
     const hb = document.querySelector('#h2h-table tbody'); hb.replaceChildren();
     h2hTable.forEach((r, i) => {
-      const tr = mk('tr', (r.w + r.t) > 0 ? medal(i + 1) : null);
+      const tr = mk('tr', [(r.w + r.t) > 0 ? medal(i + 1) : null, r.owner === me ? 'is-me' : null].filter(Boolean).join(' ') || null);
       tr.append(mk('td', 'rank', i + 1), mk('td', 'total', r.owner), mk('td', 'num total', r.t ? `${r.w}–${r.l}–${r.t}` : `${r.w}–${r.l}`),
         mk('td', 'num' + (r.net > 0 ? ' up' : r.net < 0 ? ' down' : ' zero'), signed(r.net)), mk('td', 'num h2h-wins', r.wins));
       hb.append(tr);
@@ -685,10 +749,10 @@
       t.textContent = dayName(pts[i].date, { month: 'short', day: 'numeric' }); svg.append(t);
     });
     // lines, leader drawn last so it sits on top
-    const last = pts[pts.length - 1].v, order = owners.slice().sort((a, b) => last[a] - last[b]);
+    const me = getMe(), last = pts[pts.length - 1].v, order = owners.slice().sort((a, b) => (a === me) - (b === me) || last[a] - last[b]);
     order.forEach((o) => {
       const d = pts.map((p, i) => `${i ? 'L' : 'M'}${X(i).toFixed(1)},${Y(p.v[o]).toFixed(1)}`).join('');
-      svg.append(el('path', { d, class: 'race-line', stroke: color(o) }));
+      svg.append(el('path', { d, class: 'race-line' + (me ? (o === me ? ' race-me' : ' race-dim') : ''), stroke: color(o) }));
       svg.append(el('circle', { cx: X(pts.length - 1), cy: Y(last[o]), r: 4.5, fill: color(o), class: 'race-end' }));
     });
     // end labels, nudged apart so they never overlap
@@ -697,7 +761,7 @@
     const over = labs.length ? labs[labs.length - 1].y - (M.t + ih) : 0; if (over > 0) labs.forEach((l) => { l.y -= over; });
     labs.forEach(({ o, y }) => {
       const g = el('g', {}); g.append(el('rect', { x: M.l + iw + 9, y: y - 4, width: 8, height: 8, rx: 2, fill: color(o) }));
-      const t = el('text', { x: M.l + iw + 21, y: y + 4, class: 'race-lab' }); t.textContent = `${o} ${fmt(last[o])}`; g.append(t); svg.append(g);
+      const t = el('text', { x: M.l + iw + 21, y: y + 4, class: 'race-lab' + (me ? (o === me ? ' race-lab-me' : ' race-lab-dim') : '') }); t.textContent = `${o} ${fmt(last[o])}`; g.append(t); svg.append(g);
     });
     // hover crosshair + tooltip
     const cross = el('line', { y1: M.t, y2: M.t + ih, class: 'race-cross', visibility: 'hidden' }); svg.append(cross);
@@ -874,9 +938,10 @@
     $('sb-date').querySelector('.sb-dow').textContent = dayName(date, { weekday: 'short' }).toUpperCase();
     $('sb-date').querySelector('.sb-md').textContent = dayName(date, { month: 'short', day: 'numeric' }).toUpperCase();
     if (!slate.games.length) { strip.append(mk('div', 'sb-none', 'No games today')); return; }
-    slate.games.forEach((g) => {
+    const me = getMe(), mineG = (g) => C.owner.get(g.away) === me || C.owner.get(g.home) === me;
+    slate.games.slice().sort((a, b) => (me ? mineG(b) - mineG(a) : 0)).forEach((g) => {
       const final = g.state === 'post', live = g.state === 'in';
-      const card = mk('div', 'sb-card ' + (final ? 'final' : live ? 'live' : 'pre') + (g.cup ? ' cup' : ''));
+      const card = mk('div', 'sb-card ' + (final ? 'final' : live ? 'live' : 'pre') + (g.cup ? ' cup' : '') + (me && mineG(g) ? ' is-me' : ''));
       const ln = C.lineOf.get(date + '|' + g.away + '|' + g.home);
       const st = mk('div', 'sb-status');
       st.append(mk('span', null, final ? 'FINAL' : live ? (g.detail || 'LIVE') : g.time));
@@ -952,7 +1017,7 @@
   function setupTabs() {
     const TABS = ['home', 'matchups', 'rosters', 'more'];
     const groups = {
-      home: ['scoreboard', 'leaderboard-card', 'race-card', 'recap-card', 'results-card'],
+      home: ['scoreboard', 'me-card', 'leaderboard-card', 'race-card', 'recap-card', 'results-card'],
       matchups: ['matchups-card', 'weekly-card'],
       rosters: ['rosters-card'],
       more: ['bonus-card', 'upset-card', 'ideas-card', 'league-rules'],

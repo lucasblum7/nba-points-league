@@ -325,3 +325,40 @@ button.mu-today { text-decoration: none !important; }
 .race-tip-r i { width: 8px; height: 8px; border-radius: 2px; }
 .race-tip-r b { font-variant-numeric: tabular-nums; }
 .race-tbl th, .race-tbl td { font-size: 12.5px; }
+
+/* ======================  My team  ====================== */
+#me-card { padding: 14px 16px; background: linear-gradient(135deg, color-mix(in srgb, var(--accent) 12%, var(--panel)), var(--panel) 70%); }
+.me-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px; }
+.me-who { display: flex; flex-direction: column; line-height: 1.1; }
+.me-hi { font-size: 11px; font-weight: 700; color: var(--accent); text-transform: uppercase; letter-spacing: .05em; }
+.me-who b { font-size: 24px; font-weight: 800; letter-spacing: -.02em; }
+.me-switch { font: inherit; font-size: 13px; font-weight: 600; color: var(--accent); background: var(--fill); border: none; border-radius: 999px; padding: 5px 12px; cursor: pointer; }
+.me-tiles { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; }
+.me-tile { background: var(--panel); border-radius: 14px; padding: 10px 12px; display: flex; flex-direction: column; gap: 1px; min-width: 0; box-shadow: 0 0 0 .5px var(--line); }
+.me-tl { font-size: 11px; font-weight: 600; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.me-tile b { font-size: 22px; font-weight: 800; letter-spacing: -.02em; }
+.me-tile b.up { color: var(--ok); } .me-tile b.down { color: var(--bad); }
+.me-ts { font-size: 11.5px; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.me-tap { cursor: pointer; position: relative; }
+.me-tap::after { content: "›"; position: absolute; top: 8px; right: 10px; color: var(--muted); font-weight: 600; }
+.me-tap:hover { background: var(--fill); }
+.me-ask { margin: 0 0 10px; color: var(--muted); font-size: 14px; }
+.me-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+.me-opt { font: inherit; font-size: 15px; font-weight: 700; color: var(--fg); background: var(--fill); border: none; border-radius: 12px; padding: 12px 8px; cursor: pointer; }
+.me-opt:hover { background: var(--fill2); }
+.me-opt.on { background: var(--accent); color: #fff; }
+.me-off { font: inherit; font-size: 13px; font-weight: 600; color: var(--muted); background: none; border: none; margin: 12px auto 0; display: block; cursor: pointer; }
+@media (max-width: 600px) { .me-tiles { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+
+/* highlights wherever "you" appear */
+.you-tag { display: inline-block; margin-left: 7px; font-size: 10px; font-weight: 800; letter-spacing: .04em; text-transform: uppercase; color: #fff; background: var(--accent); border-radius: 5px; padding: 1px 5px; vertical-align: 2px; }
+#leaderboard tr.is-me td, #h2h-table tr.is-me td { box-shadow: inset 0 1px 0 color-mix(in srgb, var(--accent) 55%, transparent), inset 0 -1px 0 color-mix(in srgb, var(--accent) 55%, transparent); }
+#leaderboard tr.is-me td:first-child, #h2h-table tr.is-me td:first-child { box-shadow: inset 3px 0 0 var(--accent), inset 0 1px 0 color-mix(in srgb, var(--accent) 55%, transparent), inset 0 -1px 0 color-mix(in srgb, var(--accent) 55%, transparent); }
+.mu-card.is-me { box-shadow: inset 0 0 0 2px var(--accent) !important; }
+#rosters-card .card.is-me { box-shadow: inset 0 0 0 2px var(--accent), var(--shadow) !important; }
+.sb-card.is-me { box-shadow: inset 0 0 0 1.5px var(--accent), var(--shadow); }
+.race-dim { opacity: .28; }
+.race-me { stroke-width: 3.2; }
+.race-lab-dim { opacity: .55; }
+.race-lab-me { font-weight: 800; }
+.pl-head .me-chip { background: rgba(255,255,255,.26) !important; }
