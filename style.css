@@ -218,14 +218,14 @@ tr:last-child td { border-bottom: none; }
 .bubble .tile-detail { font-size: 12px; }
 @media (prefers-reduced-motion: reduce) { .bubble, .bubble:hover { transition: none; transform: none; } }
 /* Gold / silver / bronze for 1st, 2nd, 3rd everywhere */
-:root { --gold: #e6b422; --silver: #b4bec8; --bronze: #c27c3a; }
+:root { --gold: #e6b422; --silver: #a7b0b8; --bronze: #c27c3a; }
 tr.p1 td { background: color-mix(in srgb, var(--gold) 20%, transparent); }
-tr.p2 td { background: color-mix(in srgb, var(--silver) 34%, transparent); }
+tr.p2 td { background: color-mix(in srgb, var(--silver) 22%, transparent); }
 tr.p3 td { background: color-mix(in srgb, var(--bronze) 18%, transparent); }
 tr.p1 td.rank, tr.p2 td.rank, tr.p3 td.rank { font-weight: 800; color: var(--fg); }
 tr.p1 td.rank::after { content: " 🥇"; } tr.p2 td.rank::after { content: " 🥈"; } tr.p3 td.rank::after { content: " 🥉"; }
 .card.p1 { background: color-mix(in srgb, var(--gold) 12%, var(--panel)); border-color: color-mix(in srgb, var(--gold) 60%, var(--line)); border-top: 4px solid var(--gold); }
-.card.p2 { background: color-mix(in srgb, var(--silver) 34%, var(--panel)); border-color: color-mix(in srgb, var(--silver) 80%, var(--line)); border-top: 4px solid var(--silver); }
+.card.p2 { background: color-mix(in srgb, var(--silver) 14%, var(--panel)); border-color: color-mix(in srgb, var(--silver) 60%, var(--line)); border-top: 4px solid var(--silver); }
 .card.p3 { background: color-mix(in srgb, var(--bronze) 11%, var(--panel)); border-color: color-mix(in srgb, var(--bronze) 55%, var(--line)); border-top: 4px solid var(--bronze); }
 .card.p1 h2::after { content: " 🥇"; } .card.p2 h2::after { content: " 🥈"; } .card.p3 h2::after { content: " 🥉"; }
 .rank { width: 3rem; }
@@ -305,5 +305,3 @@ tr.p1 td.rank::after { content: " 🥇"; } tr.p2 td.rank::after { content: " �
 .teams thead th { white-space: normal; }
 .teams tr.team-row td:first-child { overflow: hidden; text-overflow: ellipsis; }
 .teams tr.team-row td.num.zero { color: var(--fg); }
-/* Rosters: silver cards get a cool steel tint and a full bright border so they read clearly */
-.card.p2 { --silver-card: #9db7d4; background: color-mix(in srgb, var(--silver-card) 26%, var(--panel)); border: 2px solid color-mix(in srgb, var(--silver-card) 85%, transparent); border-top: 5px solid #c9d6e3; }
