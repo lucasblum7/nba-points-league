@@ -361,3 +361,14 @@ tr.p1 td.rank::after { content: " ğŸ¥‡"; } tr.p2 td.rank::after { content: " ğŸ¥
   .teams .players-table th { letter-spacing: .02em; }
 }
 .owner-head .projline .rank-bit { white-space: nowrap; }
+/* Player dropdown: more room between stat columns */
+.teams .players-table th:nth-child(3) { width: 3.2em; }
+.teams .players-table th:nth-child(4), .teams .players-table th:nth-child(5), .teams .players-table th:nth-child(6), .teams .players-table th:nth-child(7) { width: 3.9em; }
+.teams .players-table td.num, .teams .players-table th.num { padding-left: 0; padding-right: 10px; }
+.teams .players-table th:last-child, .teams .players-table td:last-child { padding-right: 4px; }
+@media (max-width: 480px) {
+  .teams .players-table th:nth-child(3) { width: 2.4em; }
+  .teams .players-table th:nth-child(4), .teams .players-table th:nth-child(5), .teams .players-table th:nth-child(6), .teams .players-table th:nth-child(7) { width: 3.2em; }
+  .teams .players-table td.num, .teams .players-table th.num { padding-right: 7px; }
+  .teams .players-table th:last-child, .teams .players-table td:last-child { padding-right: 2px; }
+}

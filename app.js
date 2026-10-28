@@ -267,7 +267,7 @@
           const r = mk('tr', p.starter ? 'pp-starter' : null);
           const nm = mk('td', 'pp-name'); const parts = p.name.split(' '); const short = parts.length > 1 ? parts[0][0] + '. ' + parts.slice(1).join(' ') : p.name;
           nm.append(mk('span', 'pp-num', p.num === '' ? '' : '#' + p.num), mk('span', 'pp-full', p.name), mk('span', 'pp-short', short));
-          if (p.out) nm.append(mk('span', 'pp-out', p.out));
+          if (p.out) { const tag = mk('span', 'pp-out', /day/i.test(p.out) ? 'DTD' : p.out); tag.title = p.out; nm.append(tag); }
           const v = (k) => (p.s && p.s[k] != null ? p.s[k] : '–');
           r.append(mk('td', 'pp-pos', p.spot), nm, mk('td', 'num pp-dim', v('gamesPlayed')), mk('td', 'num pp-dim', v('avgMinutes')),
             mk('td', 'num pp-pts', v('avgPoints')), mk('td', 'num', v('avgRebounds')), mk('td', 'num', v('avgAssists')));
