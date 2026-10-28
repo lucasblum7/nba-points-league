@@ -444,3 +444,6 @@ button.mu-today { text-decoration: none !important; }
 /* team card: moneyline under the tip-off time */
 .tc-ml { font-size: 10.5px; font-weight: 700; font-variant-numeric: tabular-nums; margin-top: 1px; color: var(--muted); }
 .tc-ml.dog { color: var(--ok); }
+/* tonight row: a shade lighter */
+.tc-tonight { background: color-mix(in srgb, var(--fill2) 60%, var(--panel)) !important; box-shadow: inset 3px 0 0 color-mix(in srgb, var(--muted) 50%, transparent) !important; }
+.tc-g.is-live.tc-tonight { box-shadow: inset 3px 0 0 var(--bad) !important; }
