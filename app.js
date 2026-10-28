@@ -211,7 +211,7 @@
       c.title = `${fmtDay(x.date)}: ${x.w ? 'Won' : 'Lost'} ${x.score} ${x.home ? 'vs' : 'at'} ${short(x.opp)}`;
       past.append(c);
     });
-    if (!last3.length) past.append(mk('span', 'gchip none', 'No games yet'));
+    for (let i = last3.length; i < 3; i++) past.prepend(mk('span', 'gchip empty', '–'));
     const next = mk('div', 'sched-side next');
     const up = nextGames(team, 3);
     up.forEach((g) => {
@@ -222,7 +222,7 @@
       c.title = `${fmtDay(g.date)}${g.time ? ' ' + g.time : ''}: ${home ? 'vs' : 'at'} ${short(opp)}`;
       next.append(c);
     });
-    if (!up.length) next.append(mk('span', 'gchip none', D.schedule ? 'No games scheduled' : 'Schedule coming soon'));
+    for (let i = up.length; i < 3; i++) next.append(mk('span', 'gchip empty', '–'));
     wrap.append(past, mk('span', 'sched-div'), next);
     td.append(wrap); tr.append(td); return tr;
   }
@@ -339,7 +339,10 @@
       const tb = mk('table', 'teams');
       const th = mk('thead'); const htr = mk('tr');
       [['Team', ''], ['W', 'num'], ['L', 'num'], ['Preseason proj. wins', 'num'], ['Win pace*', 'num'], ['Pts', 'num']].forEach(([t, c]) => htr.append(mk('th', c, t)));
-      th.append(htr); tb.append(th);
+      const lab = mk('tr', 'sched-head'); const lth = mk('th'); lth.colSpan = 6;
+      const lw = mk('div', 'sched'); lw.append(mk('span', 'sched-side sched-lab', 'Last 3'), mk('span', 'sched-div'), mk('span', 'sched-side sched-lab', 'Next 3'));
+      lth.append(lw); lab.append(lth);
+      th.append(htr, lab); tb.append(th);
       const body = mk('tbody');
       teams.filter((t) => t.owner === o).sort((a, b) => b.points - a.points || a.team.localeCompare(b.team)).forEach((t) => {
         const tr = mk('tr', 'team-row');
