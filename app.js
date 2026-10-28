@@ -338,7 +338,7 @@
       card.append(head, mk('p', 'note', `Rank ${tied ? 'T-' : ''}${row.place} of ${board.length}`));
       const tb = mk('table', 'teams');
       const th = mk('thead'); const htr = mk('tr');
-      [['Team', ''], ['W', 'num'], ['L', 'num'], ['Preseason proj. wins', 'num'], ['Win pace*', 'num'], ['Pts', 'num']].forEach(([t, c]) => htr.append(mk('th', c, t)));
+      [['Team', ''], ['W', 'num'], ['L', 'num'], ['Proj. wins', 'num'], ['Win pace*', 'num'], ['Pts', 'num']].forEach(([t, c]) => htr.append(mk('th', c, t)));
       const lab = mk('tr', 'sched-head'); const lth = mk('th'); lth.colSpan = 6;
       const lw = mk('div', 'sched'); lw.append(mk('span', 'sched-side sched-lab', 'Last 3'), mk('span', 'sched-div'), mk('span', 'sched-side sched-lab', 'Next 3'));
       lth.append(lw); lab.append(lth);

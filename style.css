@@ -297,3 +297,11 @@ tr.p1 td.rank::after { content: " ðŸ¥‡"; } tr.p2 td.rank::after { content: " ðŸ¥
 .sched-lab { display: block; width: 88px; font-size: 8px; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); text-align: center; }
 /* Rosters: bolder team names */
 .teams tr.team-row td:first-child { font-weight: 700; font-size: 16px; color: var(--fg); letter-spacing: .01em; }
+/* Rosters: every stat in a team row matches the team name, columns evenly spaced */
+.teams { table-layout: fixed; }
+.teams thead th:first-child { width: 34%; }
+.teams tr.team-row td { font-weight: 700; font-size: 16px; }
+.teams th.num, .teams tr.team-row td.num { text-align: center; }
+.teams thead th { white-space: normal; }
+.teams tr.team-row td:first-child { overflow: hidden; text-overflow: ellipsis; }
+.teams tr.team-row td.num.zero { color: var(--fg); }
