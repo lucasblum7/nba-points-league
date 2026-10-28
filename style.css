@@ -337,7 +337,7 @@ tr.p1 td.rank::after { content: " ðŸ¥‡"; } tr.p2 td.rank::after { content: " ðŸ¥
 .teams .players-table th:nth-child(3) { width: 2.4em; }
 .teams .players-table th:nth-child(4), .teams .players-table th:nth-child(5), .teams .players-table th:nth-child(6), .teams .players-table th:nth-child(7) { width: 3.1em; }
 .teams .players-table td.pp-name { white-space: nowrap; }
-.pp-short { display: none; }
+.pp-full { display: none; }
 @media (max-width: 480px) {
   .pp-full { display: none; } .pp-short { display: inline; }
   .teams .players-table th:nth-child(1) { width: 2.2em; }
