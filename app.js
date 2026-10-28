@@ -65,8 +65,8 @@
     const log = new Map(rosters.map((r) => [r.team, []]));
     for (const g of sorted) {
       const homeWon = g.home_score > g.away_score;
-      if (log.has(g.home)) log.get(g.home).push({ date: g.date, opp: g.away, w: homeWon, score: `${g.home_score}-${g.away_score}` });
-      if (log.has(g.away)) log.get(g.away).push({ date: g.date, opp: g.home, w: !homeWon, score: `${g.away_score}-${g.home_score}` });
+      if (log.has(g.home)) log.get(g.home).push({ date: g.date, opp: g.away, home: true, w: homeWon, score: `${g.home_score}-${g.away_score}` });
+      if (log.has(g.away)) log.get(g.away).push({ date: g.date, opp: g.home, home: false, w: !homeWon, score: `${g.away_score}-${g.home_score}` });
     }
 
     const teams = rosters.map((r) => {
@@ -81,7 +81,7 @@
       const rate = (w + 20 * (pre / 82)) / (g + 20);
       const pace = pre == null ? null : Math.round((w + (82 - g) * rate) * 10) / 10;
       const bonus = pts_playoffs + pts_pw + pts_cup;
-      return { team: r.team, owner: r.owner, wins: w, losses: l, proj: pre, pace, last5: L.slice(-5).map((x) => (x.w ? 'W' : 'L')),
+      return { team: r.team, owner: r.owner, wins: w, losses: l, proj: pre, pace, last5: L.slice(-5).map((x) => (x.w ? 'W' : 'L')), last3: L.slice(-3),
         made: b.made_playoffs ? 1 : 0, playoff_wins: Number(b.playoff_wins) || 0, pts_playoffs, pts_pw, pts_cup, bonus,
         series: Number(b.series_won) || 0, points: w + bonus };
     });
@@ -188,6 +188,43 @@
           away: nm(a), home: nm(h), away_score: st.state === 'pre' ? null : Number(a.score), home_score: st.state === 'pre' ? null : Number(h.score) };
       });
     } catch (e) { return null; }
+  }
+
+  // ---------- last 3 / next 3 strip under each roster team ----------
+  const abbr = (team) => (TEAM_BADGE[team] || [short(team).slice(0, 3).toUpperCase()])[0];
+  function nextGames(team, n) {
+    const today = pacificToday();
+    const played = new Set((D.games || []).map((g) => g.date + '|' + g.away + '|' + g.home));
+    const started = new Set(((slate && slate.games) || []).filter((g) => g.state && g.state !== 'pre').map((g) => g.away + '|' + g.home));
+    return ((D.schedule && D.schedule.games) || [])
+      .filter((g) => (g.away === team || g.home === team) && g.date >= today && !played.has(g.date + '|' + g.away + '|' + g.home)
+        && !(g.date === today && started.has(g.away + '|' + g.home)))
+      .slice(0, n);
+  }
+  function schedRow(team, last3) {
+    const tr = mk('tr', 'sched-row'); const td = mk('td'); td.colSpan = 6;
+    const wrap = mk('div', 'sched');
+    const past = mk('div', 'sched-side past');
+    last3.forEach((x) => {
+      const c = mk('span', 'gchip ' + (x.w ? 'win' : 'loss'));
+      c.append(mk('b', null, (x.home ? '' : '@') + abbr(x.opp)), mk('small', null, x.score.replace('-', '–')));
+      c.title = `${fmtDay(x.date)}: ${x.w ? 'Won' : 'Lost'} ${x.score} ${x.home ? 'vs' : 'at'} ${short(x.opp)}`;
+      past.append(c);
+    });
+    if (!last3.length) past.append(mk('span', 'gchip none', 'No games yet'));
+    const next = mk('div', 'sched-side next');
+    const up = nextGames(team, 3);
+    up.forEach((g) => {
+      const home = g.home === team, opp = home ? g.away : g.home;
+      const c = mk('span', 'gchip up');
+      const when = g.date === pacificToday() ? 'Today' : dayName(g.date, { weekday: 'short' });
+      c.append(mk('b', null, (home ? '' : '@') + abbr(opp)), mk('small', null, when));
+      c.title = `${fmtDay(g.date)}${g.time ? ' ' + g.time : ''}: ${home ? 'vs' : 'at'} ${short(opp)}`;
+      next.append(c);
+    });
+    if (!up.length) next.append(mk('span', 'gchip none', D.schedule ? 'No games scheduled' : 'Schedule coming soon'));
+    wrap.append(past, mk('span', 'sched-div'), next);
+    td.append(wrap); tr.append(td); return tr;
   }
 
   // ---------- rendering ----------
@@ -305,13 +342,11 @@
       th.append(htr); tb.append(th);
       const body = mk('tbody');
       teams.filter((t) => t.owner === o).sort((a, b) => b.points - a.points || a.team.localeCompare(b.team)).forEach((t) => {
-        const tr = mk('tr');
+        const tr = mk('tr', 'team-row');
         const name = mk('td', null, short(t.team));
-        const l5 = mk('div', 'l5'); t.last5.forEach((r) => l5.append(mk('span', r === 'W' ? 'w' : 'l'))); l5.title = 'Last 5, oldest to newest: ' + t.last5.join(' ');
-        name.append(l5);
         tr.append(name, mk('td', 'num', t.wins), mk('td', 'num zero', t.losses), mk('td', 'num zero', t.proj ?? ''),
           mk('td', 'num ' + paceClass(t.pace, t.proj), t.pace == null ? '' : t.pace.toFixed(1)), mk('td', 'num total', t.points));
-        body.append(tr);
+        body.append(tr, schedRow(t.team, t.last3));
       });
       tb.append(body); card.append(tb); og.append(card);
     });
@@ -459,7 +494,7 @@
   // ---------- boot ----------
   let D, slate;
   async function load() {
-    const names = ['rosters', 'projections', 'games', 'lines', 'bonuses', 'config', 'today', 'meta'];
+    const names = ['rosters', 'projections', 'games', 'lines', 'bonuses', 'config', 'today', 'meta', 'schedule'];
     const vals = await Promise.all(names.map((n) => getJSON('data/' + n + '.json').catch(() => null)));
     D = Object.fromEntries(names.map((n, i) => [n, vals[i]]));
     D.games = D.games || []; D.lines = D.lines || []; D.bonuses = D.bonuses || [];

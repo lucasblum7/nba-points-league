@@ -271,6 +271,29 @@ def main():
     if save("bonuses.json", list(bonuses.values())):
         changed.append("bonuses")
 
+    # 5. Upcoming games (next ~2 weeks) for each team's "next 3" on the rosters.
+    #    Refreshed once an hour (and whenever the date rolls over) to keep requests low.
+    sched = load("schedule.json") or {}
+    if sched.get("as_of") != today.isoformat() or local_now.minute < 15:
+        upcoming = {e["id"]: e for e in events if e["state"] == "pre" and e["date"] >= today.isoformat()}
+        day, ok = end + timedelta(days=1), True
+        while day <= today + timedelta(days=14):
+            try:
+                for ev in fetch(f"{day:%Y%m%d}").get("events", []):
+                    p = parse_event(ev)
+                    if p and p["state"] == "pre":
+                        upcoming[p["id"]] = p
+            except Exception as ex:
+                ok = False
+                log.append(f"schedule day {day} failed: {ex!r}")
+            day += timedelta(days=1)
+        games_next = sorted(({"date": e["date"], "time": e["time"], "away": e["away"]["name"], "home": e["home"]["name"]}
+                             for e in upcoming.values() if e["season_type"] in (2, 3, 5)),
+                            key=lambda g: (g["date"], g["home"]))
+        if ok or not sched:
+            if save("schedule.json", {"as_of": today.isoformat(), "games": games_next}):
+                changed.append("schedule")
+
     if changed:
         save("meta.json", {"updated": now.isoformat(timespec="seconds"), "changed": changed})
     log.append("changed: " + (", ".join(changed) if changed else "nothing"))
