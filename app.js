@@ -398,7 +398,7 @@
       lb.append(tr);
     });
 
-    renderMatchups(C);
+    renderMatchups(C, slate);
 
     // this week tiles
     const cur = weekly[weekly.length - 1];
@@ -523,7 +523,7 @@
     }
   }
 
-  function renderMatchups(C) {
+  function renderMatchups(C, slate) {
     const { matchups, h2hTable, curWeek } = C;
     const signed = (n) => (n > 0 ? '+' + n : n < 0 ? '−' + Math.abs(n) : '0');
     // featured week: the current one (or the first upcoming one before matchups start)
@@ -540,7 +540,14 @@
         [m.A, m.B].forEach((s) => {
           const lead = m.winner === s.owner;
           const line = mk('div', 'mu-side' + (lead ? ' lead' : m.winner ? ' trail' : ''));
-          line.append(mk('span', 'mu-owner', s.owner), mk('span', 'mu-rec', `${s.w}–${s.l}`), mk('span', 'mu-net' + (s.net < 0 ? ' neg' : ''), signed(s.net)));
+          const ow = mk('span', 'mu-owner', s.owner);
+          if (m.status !== 'final') {
+            const tc = todayCount(s.owner, C, slate);
+            const t = mk('span', 'mu-today' + (tc.live ? ' live' : !tc.total || tc.done === tc.total ? ' quiet' : ''),
+              tc.live ? `● ${tc.live} live` : !tc.total ? 'Off today' : tc.done === tc.total ? `${tc.total} done` : `${tc.total} today`);
+            ow.append(t);
+          }
+          line.append(ow, mk('span', 'mu-rec', `${s.w}–${s.l}`), mk('span', 'mu-net' + (s.net < 0 ? ' neg' : ''), signed(s.net)));
           card.append(line);
         });
         const foot = m.status === 'upcoming' ? 'Starts ' + fmtDay(m.start)

@@ -430,3 +430,9 @@ h2.sec.sec-toggle { display: block; }
   .today-pill { font-size: 10px; padding: 2px 7px; }
   .owner-side { gap: 7px; }
 }
+/* Matchup boxes: games today under each owner's name */
+.mu-side { align-items: center; }
+.mu-owner { display: flex; flex-direction: column; line-height: 1.1; }
+.mu-today { font-size: 10px; font-weight: 700; letter-spacing: .02em; color: var(--accent); margin-top: 2px; white-space: nowrap; }
+.mu-today.live { color: var(--bad); }
+.mu-today.quiet { color: var(--muted); font-weight: 600; }
