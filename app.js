@@ -202,38 +202,82 @@
     'Memphis Grizzlies': 29, 'Charlotte Hornets': 30,
   };
   const playerCache = new Map();
+  const seasonYear = () => Number(((D.config && D.config.season_start) || '2026-10-20').slice(0, 4)) + 1;   // ESPN names a season by its end year
+  const STAT_KEYS = ['gamesPlayed', 'avgMinutes', 'avgPoints', 'avgRebounds', 'avgAssists'];
   async function fetchPlayers(team) {
     if (playerCache.has(team)) return playerCache.get(team);
-    const r = await fetch(`https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/${ESPN_ID[team]}/roster`);
-    if (!r.ok) throw new Error('HTTP ' + r.status);
-    const j = await r.json();
-    let list = j.athletes || [];
-    if (list.length && Array.isArray(list[0].items)) list = list.flatMap((g) => g.items);   // grouped format
-    const players = list.map((a) => ({
-      num: a.jersey ?? '', name: a.displayName || a.fullName || '', pos: (a.position && a.position.abbreviation) || '',
-      ht: a.displayHeight || '', age: a.age ?? '',
-      out: (a.injuries && a.injuries.length) ? (a.injuries[0].status || 'Injured') : '',
-    })).sort((x, y) => (x.num === '' ? 999 : Number(x.num)) - (y.num === '' ? 999 : Number(y.num)));
-    playerCache.set(team, players);
-    return players;
+    const id = ESPN_ID[team], yr = seasonYear();
+    const core = 'https://sports.core.api.espn.com/v2/sports/basketball/leagues/nba/seasons/' + yr;
+    const [ro, dc] = await Promise.all([
+      fetch(`https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/${id}/roster`).then((r) => { if (!r.ok) throw new Error('roster ' + r.status); return r.json(); }),
+      fetch(`${core}/teams/${id}/depthcharts`).then((r) => (r.ok ? r.json() : null)).catch(() => null),
+    ]);
+    let list = ro.athletes || [];
+    if (list.length && Array.isArray(list[0].items)) list = list.flatMap((g) => g.items);
+    // per-game stats, one request per player, all at once
+    const stats = new Map();
+    await Promise.all(list.map(async (a) => {
+      try {
+        const r = await fetch(`${core}/types/2/athletes/${a.id}/statistics`);
+        if (!r.ok) return;
+        const j = await r.json(); const f = {};
+        for (const c of (j.splits && j.splits.categories) || []) for (const st of c.stats || []) if (STAT_KEYS.includes(st.name)) f[st.name] = st.displayValue;
+        stats.set(String(a.id), f);
+      } catch (e) { /* no stats yet for this player */ }
+    }));
+    // depth chart: best (lowest) rank for each player, and who starts at each spot
+    const ORDER = ['pg', 'sg', 'sf', 'pf', 'c'];
+    const best = new Map(); const byPos = {};
+    const pos = (dc && dc.items && dc.items[0] && dc.items[0].positions) || {};
+    for (const k of ORDER) {
+      const ath = ((pos[k] && pos[k].athletes) || []).map((x) => ({ id: ((x.athlete && x.athlete.$ref) || '').match(/athletes\/(\d+)/), rank: x.rank }))
+        .filter((x) => x.id).map((x) => ({ id: x.id[1], rank: x.rank })).sort((a, b) => a.rank - b.rank);
+      byPos[k] = ath;
+      ath.forEach((x) => { const b = best.get(x.id); if (!b || x.rank < b.rank) best.set(x.id, { rank: x.rank, pos: k }); });
+    }
+    const starters = new Map(); const used = new Set();
+    for (const k of ORDER) { const pick = (byPos[k] || []).find((x) => !used.has(x.id)); if (pick) { used.add(pick.id); starters.set(pick.id, k); } }
+    const players = list.map((a) => {
+      const pid = String(a.id); const b = best.get(pid);
+      return {
+        id: pid, num: a.jersey ?? '', name: a.displayName || a.fullName || '',
+        spot: starters.has(pid) ? starters.get(pid).toUpperCase() : (b ? b.pos.toUpperCase() : ((a.position && a.position.abbreviation) || '')),
+        starter: starters.has(pid), order: starters.has(pid) ? ORDER.indexOf(starters.get(pid)) : (b ? 10 + b.rank * 5 + ORDER.indexOf(b.pos) : 999),
+        out: (a.injuries && a.injuries.length) ? (a.injuries[0].status || 'Injured') : '', s: stats.get(pid) || null,
+      };
+    }).sort((x, y) => x.order - y.order || x.name.localeCompare(y.name));
+    const res = { players, hasDepth: best.size > 0 };
+    playerCache.set(team, res);
+    return res;
   }
   function playersRow(team) {
     const tr = mk('tr', 'players-row'); const td = mk('td'); td.colSpan = 6; tr.append(td);
     const box = mk('div', 'players'); td.append(box);
     box.append(mk('p', 'players-msg', 'Loading roster…'));
-    fetchPlayers(team).then((ps) => {
+    fetchPlayers(team).then(({ players: ps, hasDepth }) => {
       box.replaceChildren();
       if (!ps.length) { box.append(mk('p', 'players-msg', 'No roster found.')); return; }
       const t = mk('table', 'players-table'); const h = mk('tr');
-      [['#', 'num'], ['Player', ''], ['Pos', ''], ['Ht', ''], ['Age', 'num']].forEach(([x, c]) => h.append(mk('th', c, x)));
-      const th = mk('thead'); th.append(h); const tb = mk('tbody');
-      ps.forEach((p) => {
-        const r = mk('tr'); const nm = mk('td', 'pp-name', p.name);
-        if (p.out) nm.append(mk('span', 'pp-out', p.out));
-        r.append(mk('td', 'num pp-num', p.num), nm, mk('td', 'pp-pos', p.pos), mk('td', 'pp-ht', p.ht), mk('td', 'num', p.age));
-        tb.append(r);
-      });
-      t.append(th, tb); box.append(t);
+      [['Pos', ''], ['Player', ''], ['GP', 'num'], ['MIN', 'num'], ['PTS', 'num'], ['REB', 'num'], ['AST', 'num']].forEach(([x, c]) => h.append(mk('th', c, x)));
+      const th = mk('thead'); th.append(h); t.append(th);
+      const section = (label, rows) => {
+        if (!rows.length) return;
+        const tb = mk('tbody'); const lr = mk('tr', 'pp-group'); const lc = mk('td', null, label); lc.colSpan = 7; lr.append(lc); tb.append(lr);
+        rows.forEach((p) => {
+          const r = mk('tr', p.starter ? 'pp-starter' : null);
+          const nm = mk('td', 'pp-name'); const parts = p.name.split(' '); const short = parts.length > 1 ? parts[0][0] + '. ' + parts.slice(1).join(' ') : p.name;
+          nm.append(mk('span', 'pp-num', p.num === '' ? '' : '#' + p.num), mk('span', 'pp-full', p.name), mk('span', 'pp-short', short));
+          if (p.out) nm.append(mk('span', 'pp-out', p.out));
+          const v = (k) => (p.s && p.s[k] != null ? p.s[k] : '–');
+          r.append(mk('td', 'pp-pos', p.spot), nm, mk('td', 'num pp-dim', v('gamesPlayed')), mk('td', 'num pp-dim', v('avgMinutes')),
+            mk('td', 'num pp-pts', v('avgPoints')), mk('td', 'num', v('avgRebounds')), mk('td', 'num', v('avgAssists')));
+          tb.append(r);
+        });
+        t.append(tb);
+      };
+      if (hasDepth) { section('Starting 5', ps.filter((p) => p.starter)); section('Bench', ps.filter((p) => !p.starter)); }
+      else section('Roster', ps);
+      box.append(t, mk('p', 'players-foot', 'Per-game averages this season. Order follows ESPN’s depth chart.'));
     }).catch(() => { box.replaceChildren(mk('p', 'players-msg', 'Couldn’t load the roster right now. Try again in a minute.')); playerCache.delete(team); });
     return tr;
   }

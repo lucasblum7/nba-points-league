@@ -316,14 +316,37 @@ tr.p1 td.rank::after { content: " ðŸ¥‡"; } tr.p2 td.rank::after { content: " ðŸ¥
 .players-msg { margin: 6px 0; font-size: 12px; color: var(--muted); }
 .teams .players-table { table-layout: fixed; width: 100%; }
 .teams .players-table th, .teams .players-table td { text-align: left; white-space: nowrap; }
-.teams .players-table th { font-size: 10px; text-transform: uppercase; letter-spacing: .05em; padding: 3px 4px; width: auto; }
-.teams .players-table td { font-size: 12.5px; padding: 4px; font-weight: 500; }
-.teams .players-table tr:last-child td { border-bottom: none; }
-.teams .players-table th:nth-child(1), .teams .players-table td:nth-child(1) { width: 2.4em; text-align: right; padding-right: 8px; }
-.teams .players-table th:nth-child(3) { width: 3em; }
-.teams .players-table th:nth-child(4) { width: 3.8em; }
-.teams .players-table th:nth-child(5), .teams .players-table td:nth-child(5) { width: 2.8em; text-align: right; }
-.teams .players-table .pp-num { color: var(--muted); }
+.teams .players-table th { font-size: 10px; text-transform: uppercase; letter-spacing: .05em; padding: 3px 3px; width: auto; color: var(--muted); }
+.teams .players-table td { font-size: 12.5px; padding: 4px 3px; font-weight: 500; }
+.teams .players-table th.num, .teams .players-table td.num { text-align: right; }
+.teams .players-table th:nth-child(1) { width: 2.6em; }
+.teams .players-table th:nth-child(3), .teams .players-table th:nth-child(4) { width: 2.6em; }
+.teams .players-table th:nth-child(5), .teams .players-table th:nth-child(6), .teams .players-table th:nth-child(7) { width: 2.8em; }
+.teams .players-table tbody tr:last-child td { border-bottom: none; }
+.teams .players-table tr.pp-group td { font-size: 9.5px; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; color: var(--accent); padding: 9px 3px 3px; border-bottom: 1px solid var(--line); }
+.teams .players-table .pp-pos { font-size: 10px; font-weight: 700; color: var(--muted); letter-spacing: .03em; }
+.teams .players-table tr.pp-starter .pp-pos { color: var(--fg); }
 .teams .players-table .pp-name { font-weight: 600; overflow: hidden; text-overflow: ellipsis; }
-.teams .players-table .pp-pos, .teams .players-table .pp-ht { color: var(--muted); }
+.teams .players-table tr.pp-starter .pp-name { font-weight: 700; }
+.teams .players-table .pp-num { color: var(--muted); font-weight: 500; font-size: 11px; margin-right: 6px; display: inline-block; min-width: 1.9em; }
+.teams .players-table .pp-dim { color: var(--muted); }
+.teams .players-table .pp-pts { font-weight: 700; }
+.players-foot { margin: 6px 0 4px; font-size: 10px; color: var(--muted); }
 .pp-out { white-space: nowrap; margin-left: 6px; font-size: 9px; font-weight: 700; text-transform: uppercase; color: var(--bad); background: color-mix(in srgb, var(--bad) 12%, transparent); padding: 1px 4px; border-radius: 3px; }
+.teams .players-table td.num, .teams .players-table th.num { padding-left: 6px; }
+.teams .players-table th:nth-child(3) { width: 2.4em; }
+.teams .players-table th:nth-child(4), .teams .players-table th:nth-child(5), .teams .players-table th:nth-child(6), .teams .players-table th:nth-child(7) { width: 3.1em; }
+.teams .players-table td.pp-name { white-space: nowrap; }
+.pp-short { display: none; }
+@media (max-width: 480px) {
+  .pp-full { display: none; } .pp-short { display: inline; }
+  .teams .players-table th:nth-child(1) { width: 2.2em; }
+  .teams .players-table th:nth-child(3) { width: 2em; }
+  .teams .players-table th:nth-child(4), .teams .players-table th:nth-child(5), .teams .players-table th:nth-child(6), .teams .players-table th:nth-child(7) { width: 2.9em; }
+  .teams .players-table td.num, .teams .players-table th.num { padding-left: 0; padding-right: 4px; }
+  .teams .players-table th:nth-child(1), .teams .players-table td:nth-child(1) { padding-right: 4px; }
+  .teams .players-table .pp-num { min-width: 1.7em; margin-right: 3px; font-size: 10px; }
+  .teams .players-table .pp-out { font-size: 7.5px; padding: 0 3px; margin-left: 3px; }
+  .teams .players-table td { font-size: 11.5px; }
+  .players { padding: 6px 6px 4px; }
+}
