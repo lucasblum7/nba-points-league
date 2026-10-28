@@ -394,3 +394,22 @@ h2.sec.sec-toggle { display: block; }
   #rosters-card #owner-grid { gap: 10px; }
   #rosters-card .card { padding: 14px 10px; }
 }
+/* Player dropdown: tighter stat columns so names and injury tags fit */
+.teams .players-table th:nth-child(3) { width: 2.3em; }
+.teams .players-table th:nth-child(4), .teams .players-table th:nth-child(5), .teams .players-table th:nth-child(6), .teams .players-table th:nth-child(7) { width: 3em; }
+.teams .players-table td.num, .teams .players-table th.num { padding-left: 0; padding-right: 6px; }
+.teams .players-table th:last-child, .teams .players-table td:last-child { padding-right: 2px; }
+@media (max-width: 480px) {
+  .teams .players-table th:nth-child(1) { width: 2.4em; }
+  .teams .players-table th:nth-child(3) { width: 1.7em; }
+  .teams .players-table th:nth-child(4), .teams .players-table th:nth-child(5), .teams .players-table th:nth-child(6), .teams .players-table th:nth-child(7) { width: 2.5em; }
+  .teams .players-table td.num, .teams .players-table th.num { padding-right: 4px; }
+  .teams .players-table th:last-child, .teams .players-table td:last-child { padding-right: 1px; }
+}
+.teams .players-table th:nth-child(4), .teams .players-table th:nth-child(5), .teams .players-table th:nth-child(6), .teams .players-table th:nth-child(7) { width: 3.4em; }
+.teams .players-table td.num, .teams .players-table th.num { padding-right: 9px; }
+@media (max-width: 480px) {
+  .teams .players-table th:nth-child(3) { width: 1.9em; }
+  .teams .players-table th:nth-child(4), .teams .players-table th:nth-child(5), .teams .players-table th:nth-child(6), .teams .players-table th:nth-child(7) { width: 2.9em; }
+  .teams .players-table td.num, .teams .players-table th.num { padding-right: 6px; }
+}
