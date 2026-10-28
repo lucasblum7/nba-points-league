@@ -295,3 +295,5 @@ tr.p1 td.rank::after { content: " ðŸ¥‡"; } tr.p2 td.rank::after { content: " ðŸ¥
 .teams thead tr.sched-head th { padding: 0 4px 5px; border-bottom: 1px solid var(--line); }
 .teams thead tr:first-child th { border-bottom: none; }
 .sched-lab { display: block; width: 88px; font-size: 8px; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); text-align: center; }
+/* Rosters: bolder team names */
+.teams tr.team-row td:first-child { font-weight: 700; font-size: 16px; color: var(--fg); letter-spacing: .01em; }
