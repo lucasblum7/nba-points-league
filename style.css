@@ -442,3 +442,8 @@ h2.sec.sec-toggle { display: block; }
 .gchip { font-size: 7px; padding: 0; border-radius: 2px; line-height: 1.5; }
 .sched-lab { width: 76px; font-size: 7px; }
 .teams tr.sched-row td { padding: 0 4px 6px; }
+/* Scoreboard: NBA Cup games highlighted in gold */
+.sb-card.cup { border: 1.5px solid var(--gold); background: color-mix(in srgb, var(--gold) 14%, var(--panel)); box-shadow: 0 0 0 1px color-mix(in srgb, var(--gold) 25%, transparent); }
+.sb-card.cup .sb-foot { color: color-mix(in srgb, var(--gold) 70%, var(--fg)); border-top-color: color-mix(in srgb, var(--gold) 45%, var(--line)); }
+.sb-cup { font-size: 11px; }
+.sb-card.cup .sb-foot { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }

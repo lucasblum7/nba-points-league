@@ -65,8 +65,8 @@
     const log = new Map(rosters.map((r) => [r.team, []]));
     for (const g of sorted) {
       const homeWon = g.home_score > g.away_score;
-      if (log.has(g.home)) log.get(g.home).push({ date: g.date, opp: g.away, home: true, w: homeWon, score: `${g.home_score}-${g.away_score}` });
-      if (log.has(g.away)) log.get(g.away).push({ date: g.date, opp: g.home, home: false, w: !homeWon, score: `${g.away_score}-${g.home_score}` });
+      if (log.has(g.home)) log.get(g.home).push({ date: g.date, opp: g.away, home: true, w: homeWon, cup: !!g.cup, score: `${g.home_score}-${g.away_score}` });
+      if (log.has(g.away)) log.get(g.away).push({ date: g.date, opp: g.home, home: false, w: !homeWon, cup: !!g.cup, score: `${g.away_score}-${g.home_score}` });
     }
 
     const teams = rosters.map((r) => {
@@ -76,13 +76,15 @@
       const pts_playoffs = b.made_playoffs ? S.made_playoffs : 0;
       const pts_pw = (Number(b.playoff_wins) || 0) * S.playoff_win;
       const pts_cup = b.won_cup ? S.won_cup : 0;
+      const cup_wins = L.filter((x) => x.w && x.cup).length;
+      const pts_cupgames = cup_wins * ((S.cup_game_win ?? S.win) - S.win);   // extra point for each NBA Cup game win
       const pre = proj.get(r.team);
       const g = w + l;
       const rate = (w + 20 * (pre / 82)) / (g + 20);
       const pace = pre == null ? null : Math.round((w + (82 - g) * rate) * 10) / 10;
-      const bonus = pts_playoffs + pts_pw + pts_cup;
+      const bonus = pts_playoffs + pts_pw + pts_cup + pts_cupgames;
       return { team: r.team, owner: r.owner, wins: w, losses: l, proj: pre, pace, last5: L.slice(-5).map((x) => (x.w ? 'W' : 'L')), last3: L.slice(-3),
-        made: b.made_playoffs ? 1 : 0, playoff_wins: Number(b.playoff_wins) || 0, pts_playoffs, pts_pw, pts_cup, bonus,
+        made: b.made_playoffs ? 1 : 0, playoff_wins: Number(b.playoff_wins) || 0, pts_playoffs, pts_pw, pts_cup, cup_wins, pts_cupgames, bonus,
         series: Number(b.series_won) || 0, points: w + bonus };
     });
 
@@ -183,7 +185,9 @@
         const side = (ha) => c.competitors.find((x) => x.homeAway === ha);
         const nm = (x) => ESPN_FIX[x.team.displayName] || x.team.displayName;
         const h = side('home'), a = side('away');
+        const notes = (c.notes || []).map((n) => n.headline || '').join(' ').toLowerCase();
         return { id: String(ev.id), state: st.state, detail: st.shortDetail || '', season_type: (ev.season || {}).type,
+          cup: notes.includes('nba cup') && !notes.includes('championship'),
           time: new Date(ev.date).toLocaleTimeString('en-US', { timeZone: 'America/Los_Angeles', hour: 'numeric', minute: '2-digit' }),
           away: nm(a), home: nm(h), away_score: st.state === 'pre' ? null : Number(a.score), home_score: st.state === 'pre' ? null : Number(h.score) };
       });
@@ -491,7 +495,7 @@
     $('bonus-empty').hidden = withB.length > 0; $('bonus-table').hidden = withB.length === 0;
     withB.forEach((t) => {
       const tr = mk('tr');
-      tr.append(mk('td', null, short(t.team)), mk('td', null, t.owner), mk('td', 'num', t.pts_playoffs), mk('td', 'num', t.playoff_wins), mk('td', 'num', t.pts_pw), mk('td', 'num', t.pts_cup), mk('td', 'num total', t.bonus));
+      tr.append(mk('td', null, short(t.team)), mk('td', null, t.owner), mk('td', 'num', t.pts_playoffs), mk('td', 'num', t.playoff_wins), mk('td', 'num', t.pts_pw), mk('td', 'num', t.pts_cupgames), mk('td', 'num', t.pts_cup), mk('td', 'num total', t.bonus));
       bb.append(tr);
     });
 
@@ -588,10 +592,10 @@
 
   function paceClass(pace, pre) { return pace == null || pre == null || pace === pre ? 'zero' : pace > pre ? 'up' : 'down'; }
 
-  function sideEl(team, ownerName, state) {
+  function sideEl(team, ownerName, state, cupGame) {
     const wrap = mk('div', 'side' + (state ? ' ' + state : ''));
     const o = mk('div', 'side-owner', ownerName || '—');
-    if (state === 'won') o.append(mk('span', 'plus', '+1'));
+    if (state === 'won') o.append(mk('span', 'plus', cupGame ? '+2' : '+1'));
     wrap.append(badge(team, 'badge'), o);
     return wrap;
   }
@@ -600,7 +604,7 @@
     const row = mk('div', 'matchup');
     const sc = mk('div', 'score');
     sc.append(mk('span', awayWon ? 'hi' : null, g.away_score), mk('span', null, '–'), mk('span', awayWon ? null : 'hi', g.home_score));
-    row.append(sideEl(g.away, owner.get(g.away), awayWon ? 'won' : 'lost'), sc, sideEl(g.home, owner.get(g.home), awayWon ? 'lost' : 'won'));
+    row.append(sideEl(g.away, owner.get(g.away), awayWon ? 'won' : 'lost', g.cup), sc, sideEl(g.home, owner.get(g.home), awayWon ? 'lost' : 'won', g.cup));
     return row;
   }
 
@@ -612,7 +616,7 @@
     if (!slate.games.length) { strip.append(mk('div', 'sb-none', 'No games today')); return; }
     slate.games.forEach((g) => {
       const final = g.state === 'post', live = g.state === 'in';
-      const card = mk('div', 'sb-card ' + (final ? 'final' : live ? 'live' : 'pre'));
+      const card = mk('div', 'sb-card ' + (final ? 'final' : live ? 'live' : 'pre') + (g.cup ? ' cup' : ''));
       const ln = C.lineOf.get(date + '|' + g.away + '|' + g.home);
       const st = mk('div', 'sb-status');
       st.append(mk('span', null, final ? 'FINAL' : live ? (g.detail || 'LIVE') : g.time));
@@ -626,8 +630,10 @@
         card.append(row);
       });
       const ao = C.owner.get(g.away), ho = C.owner.get(g.home);
-      const foot = final ? (C.owner.get(winner) || '') + ' +1' : ao === ho ? ho + ' wins either way' : `${ao || '—'} vs ${ho || '—'}`;
-      card.append(mk('div', 'sb-foot', foot));
+      const foot = final ? (C.owner.get(winner) || '') + (g.cup ? ' +2' : ' +1') : ao === ho ? ho + (g.cup ? ' either way' : ' wins either way') : `${ao || '—'} vs ${ho || '—'}`;
+      const ft = mk('div', 'sb-foot');
+      if (g.cup) { ft.append(mk('span', 'sb-cup', '🏆 ')); card.title = 'NBA Cup game: each win is worth 2 points'; }
+      ft.append(foot); card.append(ft);
       strip.append(card);
     });
   }
@@ -650,7 +656,7 @@
       const have = new Set(D.games.map((g) => g.date + '|' + g.away + '|' + g.home));
       for (const g of live) {
         if (g.state === 'post' && g.season_type === 2 && !have.has(slate.date + '|' + g.away + '|' + g.home)) {
-          D.games.push({ id: g.id, date: slate.date, away: g.away, home: g.home, away_score: g.away_score, home_score: g.home_score });
+          D.games.push({ id: g.id, date: slate.date, away: g.away, home: g.home, away_score: g.away_score, home_score: g.home_score, cup: !!g.cup });
         }
       }
     }

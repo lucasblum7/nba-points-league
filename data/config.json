@@ -5,7 +5,8 @@
   "win": 1,
   "made_playoffs": 5,
   "playoff_win": 2,
-  "won_cup": 5
+  "won_cup": 5,
+  "cup_game_win": 2
  },
  "upset_tiers": [
   {
@@ -26,7 +27,7 @@
  ],
  "matchups": {
   "start_week": 1,
-  "scoring": "Net record (wins minus losses) for the Monday\u2013Sunday week; most total wins breaks a tie; otherwise the matchup is a tie.",
+  "scoring": "Net record (wins minus losses) for the Monday–Sunday week; most total wins breaks a tie; otherwise the matchup is a tie.",
   "rounds": [
    [
     [

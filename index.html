@@ -94,11 +94,11 @@
   <div class="grid">
     <section class="card" id="bonus-card">
       <h2>Bonuses earned</h2>
-      <p class="note">Points each team has earned for making the playoffs, winning playoff games, and the NBA Cup.</p>
-      <p class="empty" id="bonus-empty" hidden>No bonuses yet. The first chance is the NBA Cup final in December; playoff bonuses start in April.</p>
+      <p class="note">Points each team has earned for NBA Cup game wins, making the playoffs, winning playoff games, and winning the NBA Cup.</p>
+      <p class="empty" id="bonus-empty" hidden>No bonuses yet. NBA Cup games start Oct 30 (each win is worth 2); playoff bonuses start in April.</p>
       <div class="scroll">
         <table id="bonus-table">
-          <thead><tr><th>Team</th><th>Owner</th><th class="num">Made playoffs</th><th class="num">Playoff W</th><th class="num">Playoff W pts</th><th class="num">Cup</th><th class="num">Total</th></tr></thead>
+          <thead><tr><th>Team</th><th>Owner</th><th class="num">Made playoffs</th><th class="num">Playoff W</th><th class="num">Playoff W pts</th><th class="num">Cup game pts</th><th class="num">Cup title</th><th class="num">Total</th></tr></thead>
           <tbody></tbody>
         </table>
       </div>
@@ -109,12 +109,14 @@
       <table>
         <tbody>
           <tr><td>Each regular-season win</td><td class="num total">1</td></tr>
+          <tr><td>Each NBA Cup game win</td><td class="num total">2</td></tr>
           <tr><td>Make the playoffs</td><td class="num total">5</td></tr>
           <tr><td>Each playoff game won</td><td class="num total">2</td></tr>
           <tr><td>Win the NBA Cup</td><td class="num total">5</td></tr>
         </tbody>
       </table>
       <ul>
+        <li>NBA Cup group-play and knockout wins count 2 points (1 win + 1 bonus); the Cup final doesn’t count as a game, but the winner gets +5.</li>
         <li>Play-in games don’t count; play-in winners do make the playoffs.</li>
         <li>Snake draft, same number of teams per person.</li>
         <li>Teams picked after the season starts count wins from their pick date on.</li>
@@ -175,6 +177,7 @@
       <h3>Leaderboard</h3>
       <ul>
         <li>1 point per regular-season win.</li>
+        <li>NBA Cup games (group play and knockouts): 2 points per win. They’re marked in gold on the scoreboard.</li>
         <li>Make the playoffs: +5 (play-in winners count; play-in losers don’t).</li>
         <li>2 points per playoff game won (play-in games don’t count). NBA Cup winner: +5.</li>
         <li><b>Ties:</b> most playoff series won, then most regular-season wins.</li>

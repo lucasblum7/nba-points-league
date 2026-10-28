@@ -101,6 +101,13 @@ def parse_event(ev):
     }
 
 
+def is_cup_game(e):
+    """NBA Cup group-play and knockout games ("NBA Cup - Group Play", "NBA Cup - Quarterfinals", ...).
+    The Cup championship isn't a regular-season game, so it's left out."""
+    n = (e.get("notes") or "").lower()
+    return "nba cup" in n and "championship" not in n
+
+
 def parse_odds(odds, teams):
     if not odds:
         return None
@@ -211,6 +218,8 @@ def main():
             "away": e["away"]["name"], "home": e["home"]["name"],
             "away_score": e["away"]["score"], "home_score": e["home"]["score"],
         }
+        if is_cup_game(e):
+            games[key]["cup"] = True
     games_list = sorted(games.values(), key=lambda g: (g["date"], g["home"]))
     if save("games.json", games_list):
         changed.append(f"games ({len(games_list) - len(old_games)} new)")
@@ -233,6 +242,7 @@ def main():
             "away": e["away"]["name"], "home": e["home"]["name"],
             "away_score": e["away"]["score"] if e["state"] != "pre" else None,
             "home_score": e["home"]["score"] if e["state"] != "pre" else None,
+            "cup": is_cup_game(e),
         } for e in todays],
     }
     if save("today.json", slate):
