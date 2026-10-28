@@ -750,6 +750,37 @@
   }
   setupCollapsibles();
 
+  // ---------- bottom tab bar: each tab shows its own group of sections ----------
+  function setupTabs() {
+    const TABS = ['home', 'matchups', 'rosters', 'more'];
+    const groups = {
+      home: ['scoreboard', 'leaderboard-card', 'recap-card', 'results-card'],
+      matchups: ['matchups-card', 'weekly-card'],
+      rosters: ['rosters-card'],
+      more: ['bonus-card', 'upset-card', 'ideas-card', 'league-rules'],
+    };
+    Object.entries(groups).forEach(([tab, ids]) => ids.forEach((id) => {
+      let el = document.getElementById(id); if (!el) return;
+      if (id === 'bonus-card' && el.parentElement.classList.contains('grid')) el = el.parentElement;   // bonuses + scoring rules sit side by side
+      el.dataset.tab = tab;
+    }));
+    const btns = [...document.querySelectorAll('#tabbar button')];
+    const go = (tab, scroll) => {
+      if (!TABS.includes(tab)) tab = 'home';
+      document.body.dataset.tab = tab;
+      btns.forEach((b) => { const on = b.dataset.go === tab; b.classList.toggle('on', on); b.setAttribute('aria-current', on ? 'page' : 'false'); });
+      try { localStorage.setItem('pl-tab', tab); } catch (e) { /* ignore */ }
+      if (location.hash !== '#' + tab) history.replaceState(null, '', '#' + tab);
+      if (scroll) window.scrollTo({ top: 0 });
+    };
+    btns.forEach((b) => b.addEventListener('click', () => go(b.dataset.go, true)));
+    window.addEventListener('hashchange', () => go(location.hash.slice(1), true));
+    let start = location.hash.slice(1);
+    if (!TABS.includes(start)) { try { start = localStorage.getItem('pl-tab') || 'home'; } catch (e) { start = 'home'; } }
+    go(start, false);
+  }
+  setupTabs();
+
   (async () => {
     try {
       await load();

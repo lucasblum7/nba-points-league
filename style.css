@@ -495,3 +495,21 @@ button.mu-today.live { color: var(--bad); }
 button.mu-today.quiet { color: var(--muted); font-weight: 600; }
 button.mu-today:hover { filter: brightness(1.2); }
 button.mu-today:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 3px; }
+/* Bottom tab bar: Home / Matchups / Rosters / More */
+body[data-tab] [data-tab] { display: none !important; }
+body[data-tab="home"] [data-tab="home"], body[data-tab="matchups"] [data-tab="matchups"],
+body[data-tab="rosters"] [data-tab="rosters"], body[data-tab="more"] [data-tab="more"] { display: revert !important; }
+body[data-tab="more"] .grid[data-tab="more"] { display: grid !important; }
+body[data-tab="home"] #scoreboard[data-tab="home"] { display: flex !important; }
+body { padding-bottom: calc(72px + env(safe-area-inset-bottom)); }
+.tabbar { position: fixed; left: 0; right: 0; bottom: 0; z-index: 40; display: grid; grid-template-columns: repeat(4, 1fr);
+  background: color-mix(in srgb, var(--panel) 92%, transparent); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+  border-top: 1px solid var(--line); padding: 6px max(8px, calc((100vw - 640px) / 2)) calc(6px + env(safe-area-inset-bottom)); box-shadow: 0 -4px 18px rgba(0,0,0,.12); }
+.tabbar button { font: inherit; background: none; border: none; color: var(--muted); display: flex; flex-direction: column; align-items: center; gap: 2px; padding: 6px 0 4px; cursor: pointer; border-radius: 10px; position: relative; }
+.tabbar .tb-i { font-size: 20px; line-height: 1; filter: grayscale(1); opacity: .7; transition: transform .15s ease; }
+.tabbar .tb-l { font-size: 11px; font-weight: 700; letter-spacing: .02em; }
+.tabbar button.on { color: var(--fg); }
+.tabbar button.on .tb-i { filter: none; opacity: 1; transform: translateY(-1px); }
+.tabbar button.on::before { content: ""; position: absolute; top: -7px; left: 30%; right: 30%; height: 3px; border-radius: 0 0 3px 3px; background: var(--accent); }
+.tabbar button:hover { color: var(--fg); }
+.tabbar button:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; }
