@@ -161,3 +161,12 @@ button.mu-today { text-decoration: none !important; }
   .pl-mini-in span { font-family: "Oswald", "Arial Narrow", Impact, sans-serif; font-weight: 700; text-transform: uppercase; letter-spacing: .03em; font-size: 18px; line-height: 1; text-shadow: 0 1px 0 rgba(0,0,0,.18); }
 }
 @media (prefers-reduced-motion: reduce) { .pl-mini { transition: none; } }
+
+/* Rosters: bigger games-today pill; team badge lined up with the team name */
+.owner-side .today-pill, .owner-side button.today-pill { font-size: 13px !important; padding: 6px 12px !important; }
+.teams tr.team-row td.team-cell { vertical-align: middle; }
+.teams tr.team-row td.team-cell .team-logo { vertical-align: middle !important; position: relative; top: 1px; }
+.teams tr.team-row td.team-cell .team-nm { vertical-align: middle; }
+@media (max-width: 480px) {
+  .owner-side .today-pill, .owner-side button.today-pill { font-size: 12px !important; padding: 5px 10px !important; }
+}
