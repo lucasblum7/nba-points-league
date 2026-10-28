@@ -809,7 +809,7 @@
   matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => drawRace());
 
   // ---------- team card (tap a team in Rosters) ----------
-  const fmtShort = (iso) => dayName(iso, { weekday: 'short', month: 'numeric', day: 'numeric' });
+  const fmtShort = (iso) => dayName(iso, { weekday: 'short', month: 'numeric', day: 'numeric' }).replace(',', '');
   const lastName = (n) => { const p = n.split(' '); return p.length > 1 ? p[0][0] + '. ' + p.slice(1).join(' ') : n; };
   function jersey(team, num, cls) {
     const b = TEAM_BADGE[team] || ['', '#888', '#fff'];
@@ -851,21 +851,50 @@
     box.append(tiles);
     // last 5 / next 5
     const games = mk('div', 'tc-games');
-    const col = (title) => { const c = mk('div', 'tc-col'); c.append(mk('h4', 'tc-h', title)); games.append(c); return c; };
-    const last = col('Last 5');
-    if (!t.last5g.length) last.append(mk('p', 'tc-empty', 'No games yet.'));
-    t.last5g.slice().reverse().forEach((g) => {
-      const r = mk('div', 'tc-g'); const opp = mk('span', 'tc-opp'); opp.append(mk('span', 'tc-at', g.home ? 'vs' : '@'), badge(g.opp, 'sb-badge'), mk('span', null, abbr(g.opp)));
+    const col = (title) => { const c = mk('div', 'tc-col'); const h = mk('div', 'tc-colhead'); h.append(mk('h4', 'tc-h', title)); c.append(h); games.append(c); return c; };
+    const prevDay = (iso) => { const d = new Date(iso + 'T12:00:00Z'); d.setUTCDate(d.getUTCDate() - 1); return d.toISOString().slice(0, 10); };
+    const teamName = (x) => mk('span', 'tc-oname', abbr(x));
+    const fullName = (x) => mk('span', 'tc-ofull', short(x));
+    const oppEl = (home, o) => { const e = mk('span', 'tc-opp'); e.append(mk('span', 'tc-at', home ? 'vs' : '@'), badge(o, 'sb-badge tc-obadge'), teamName(o), fullName(o)); return e; };
+    // Last 5
+    const last = col('Last 5'), lg = t.last5g;
+    if (lg.length) {
+      // streak strip, oldest -> newest, plus current streak and record
+      const strip = mk('div', 'tc-streak');
+      const sq = mk('span', 'tc-sq'); lg.forEach((g) => { const b = mk('i', g.w ? 'w' : 'l'); b.title = `${fmtShort(g.date)}: ${g.w ? 'W' : 'L'} ${g.score.replace('-', '–')}`; sq.append(b); });
+      for (let k = lg.length; k < 5; k++) sq.append(mk('i', 'none'));
+      let n = 0; const lw = lg[lg.length - 1].w; for (let k = lg.length - 1; k >= 0 && lg[k].w === lw; k--) n++;
+      const wins = lg.filter((g) => g.w).length;
+      const lab = mk('span', 'tc-slab'); lab.append(mk('b', lw ? 'up' : 'down', (lw ? 'W' : 'L') + n), ` · ${wins}–${lg.length - wins} last ${lg.length}`);
+      strip.append(sq, lab); last.firstChild.append(strip);
+    } else last.append(mk('p', 'tc-empty', 'No games yet.'));
+    lg.slice().reverse().forEach((g, k, arr) => {
+      const [a, b] = g.score.split('-').map(Number), m = a - b;
+      const r = mk('div', 'tc-g tc-res-row ' + (g.w ? 'win' : 'loss'));
       const res = mk('span', 'tc-res ' + (g.w ? 'win' : 'loss')); res.append(mk('b', null, g.w ? 'W' : 'L'), ' ' + g.score.replace('-', '–'));
-      r.append(mk('span', 'tc-date', fmtShort(g.date)), opp, res); if (g.cup) r.append(mk('span', 'tc-cup', '🏆')); last.append(r);
+      const meta = mk('span', 'tc-meta'); meta.append(mk('span', 'tc-margin ' + (m > 0 ? 'up' : 'down'), (m > 0 ? '+' : '−') + Math.abs(m)));
+      const older = arr[k + 1]; if (older && older.date === prevDay(g.date)) meta.append(mk('span', 'tc-b2b', 'B2B'));
+      if (g.cup) meta.append(mk('span', 'tc-cup', '🏆'));
+      r.append(mk('span', 'tc-date', fmtShort(g.date)), oppEl(g.home, g.opp), res, meta); last.append(r);
     });
+    // Next 5 (tonight's game, live or not, goes first and stands out)
     const next = col('Next 5');
-    const up = nextGames(t.team, 5);
-    if (!up.length) next.append(mk('p', 'tc-empty', D.schedule ? 'No games scheduled.' : 'Schedule coming soon.'));
-    up.forEach((g) => {
-      const home = g.home === t.team, o = home ? g.away : g.home;
-      const r = mk('div', 'tc-g'); const opp = mk('span', 'tc-opp'); opp.append(mk('span', 'tc-at', home ? 'vs' : '@'), badge(o, 'sb-badge'), mk('span', null, abbr(o)));
-      r.append(mk('span', 'tc-date', g.date === pacificToday() ? 'Today' : fmtShort(g.date)), opp, mk('span', 'tc-time', g.time || '')); next.append(r);
+    const today = pacificToday();
+    const liveG = ((slate && slate.games) || []).find((g) => (g.away === t.team || g.home === t.team) && g.state === 'in');
+    const up = nextGames(t.team, liveG ? 4 : 5);
+    const rows = (liveG ? [{ ...liveG, date: today, live: true }] : []).concat(up);
+    if (!rows.length) next.append(mk('p', 'tc-empty', D.schedule ? 'No games scheduled.' : 'Schedule coming soon.'));
+    let prev = lg.length ? lg[lg.length - 1].date : null;
+    rows.forEach((g) => {
+      const home = g.home === t.team, o = home ? g.away : g.home, isToday = g.date === today;
+      const r = mk('div', 'tc-g' + (isToday ? ' tc-tonight' : '') + (g.live ? ' is-live' : ''));
+      const when = mk('span', 'tc-date'); when.textContent = g.live ? '● Live' : isToday ? 'Tonight' : fmtShort(g.date);
+      const right = mk('span', 'tc-time');
+      if (g.live) { const mine = home ? g.home_score : g.away_score, theirs = home ? g.away_score : g.home_score; right.append(mk('b', mine >= theirs ? 'up' : 'down', `${mine}–${theirs}`), mk('small', 'tc-clock', g.detail || '')); }
+      else right.textContent = g.time || '';
+      const meta = mk('span', 'tc-meta'); if (prev && prev === prevDay(g.date)) meta.append(mk('span', 'tc-b2b', 'B2B'));
+      if (g.cup) meta.append(mk('span', 'tc-cup', '🏆'));
+      r.append(when, oppEl(home, o), right, meta); next.append(r); prev = g.date;
     });
     box.append(games);
     // roster

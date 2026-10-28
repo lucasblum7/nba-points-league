@@ -383,3 +383,51 @@ button.mu-today { text-decoration: none !important; }
   .tc-box.tc-colored { padding-top: 30px !important; }
   .tc-box.tc-colored::before { z-index: 2; background: rgba(255,255,255,.75) !important; top: 14px !important; }
 }
+
+/* Team card: richer Last 5 / Next 5 */
+.tc-colhead { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-bottom: 4px; }
+.tc-colhead .tc-h { margin: 0; }
+.tc-streak { display: flex; align-items: center; gap: 8px; }
+.tc-sq { display: flex; gap: 3px; }
+.tc-sq i { width: 14px; height: 14px; border-radius: 4px; display: block; }
+.tc-sq i.w { background: var(--ok); } .tc-sq i.l { background: var(--bad); } .tc-sq i.none { background: var(--fill2); }
+.tc-slab { font-size: 12px; color: var(--muted); white-space: nowrap; }
+.tc-slab b { font-weight: 800; } .tc-slab b.up { color: var(--ok); } .tc-slab b.down { color: var(--bad); }
+.tc-g { grid-template-columns: 4.4em minmax(0, 1fr) auto 3.4em !important; padding: 7px 8px !important; margin: 0 -8px; border-radius: 10px; }
+.tc-res-row.win { background: color-mix(in srgb, var(--ok) 9%, transparent); }
+.tc-res-row.loss { background: color-mix(in srgb, var(--bad) 8%, transparent); }
+.tc-res-row + .tc-res-row { border-top: none !important; margin-top: 3px; }
+.tc-meta { display: flex; align-items: center; justify-content: flex-end; gap: 4px; }
+.tc-margin { font-size: 11px; font-weight: 700; font-variant-numeric: tabular-nums; }
+.tc-margin.up { color: var(--ok); } .tc-margin.down { color: var(--bad); }
+.tc-b2b { font-size: 9px; font-weight: 800; letter-spacing: .04em; color: var(--warn); background: color-mix(in srgb, var(--warn) 15%, transparent); border-radius: 4px; padding: 1px 4px; }
+.tc-obadge { width: 24px !important; height: 24px !important; font-size: 7px !important; }
+.tc-oname { font-weight: 800; }
+.tc-ofull { display: none; font-weight: 700; }
+@media (min-width: 700px) { .tc-oname { display: none; } .tc-ofull { display: inline; } }
+.tc-tonight { background: color-mix(in srgb, var(--tc1, var(--accent)) 14%, var(--panel)); box-shadow: inset 3px 0 0 var(--tc1, var(--accent)); border-top: none !important; margin-top: 2px; }
+.tc-tonight + .tc-g { border-top: none !important; }
+.tc-tonight .tc-date { color: var(--fg); font-weight: 800; }
+.tc-tonight .tc-time { color: var(--fg); font-weight: 700; }
+.tc-g.is-live .tc-date { color: var(--bad); }
+.tc-g.is-live .tc-time b { font-weight: 800; } .tc-g.is-live .tc-time b.up { color: var(--ok); } .tc-g.is-live .tc-time b.down { color: var(--bad); }
+@media (max-width: 600px) { .tc-colhead { flex-wrap: wrap; } .tc-g { grid-template-columns: 4.2em minmax(0, 1fr) auto 3.2em !important; } }
+.tc-g { grid-template-columns: 5.4em minmax(0, 1fr) auto 3.4em !important; column-gap: 8px !important; }
+.tc-col .tc-g { border-top: none !important; margin-top: 3px; }
+.tc-col .tc-g:not(.tc-res-row):not(.tc-tonight) { background: var(--panel); }
+.tc-date { white-space: nowrap; }
+.tc-time { display: flex; flex-direction: column; align-items: flex-end; line-height: 1.15; }
+.tc-clock { font-size: 10px; color: var(--muted); font-weight: 600; }
+@media (max-width: 600px) { .tc-g { grid-template-columns: 4.9em minmax(0, 1fr) auto 3em !important; column-gap: 6px !important; } }
+.tc-g { grid-template-columns: 5.4em minmax(0, 1fr) auto 5em !important; }
+.tc-opp { min-width: 0; overflow: hidden; }
+.tc-opp .tc-ofull, .tc-opp .tc-oname { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.tc-meta { gap: 5px; }
+@media (max-width: 600px) { .tc-g { grid-template-columns: 4.9em minmax(0, 1fr) auto 4.6em !important; } }
+/* full names don't fit two columns side by side: abbreviations everywhere, badges never squish */
+.tc-opp .tc-ofull { display: none !important; }
+.tc-opp .tc-oname { display: inline !important; }
+.tc-obadge { flex: none; }
+/* stack Last 5 over Next 5 everywhere; full team names when there's room */
+.tc-games { grid-template-columns: 1fr !important; }
+@media (min-width: 700px) { .tc-opp .tc-ofull { display: inline !important; } .tc-opp .tc-oname { display: none !important; } }
