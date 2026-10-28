@@ -680,6 +680,45 @@
   }
   setupCollapsibles();
 
+  // ---------- full basketball court drawn behind the header title ----------
+  function drawCourt() {
+    const head = document.querySelector('.pl-head'); if (!head) return;
+    let svg = head.querySelector('svg.pl-court');
+    if (!svg) { svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg'); svg.classList.add('pl-court'); svg.setAttribute('aria-hidden', 'true'); head.prepend(svg); }
+    const W = head.clientWidth, H = head.clientHeight; if (!W || !H) return;
+    svg.setAttribute('viewBox', `0 0 ${W} ${H}`);
+    const pad = Math.max(6, H * 0.06);                 // inset of the court boundary
+    const ft = (H - 2 * pad) / 50;                     // court is 50 ft wide; keep circles round
+    const L = pad, R = W - pad, T = pad, B = H - pad, cy = H / 2, cx = W / 2;
+    const line = 'rgba(255,255,255,.17)', fill = 'rgba(255,255,255,.07)', sw = Math.max(1.2, ft * 0.18);
+    const parts = [];
+    parts.push(`<rect x="${L}" y="${T}" width="${R - L}" height="${B - T}" rx="2" fill="none" stroke="${line}" stroke-width="${sw}"/>`);
+    parts.push(`<line x1="${cx}" y1="${T}" x2="${cx}" y2="${B}" stroke="${line}" stroke-width="${sw}"/>`);
+    parts.push(`<circle cx="${cx}" cy="${cy}" r="${6 * ft}" fill="none" stroke="${line}" stroke-width="${sw}"/>`);
+    parts.push(`<circle cx="${cx}" cy="${cy}" r="${2 * ft}" fill="none" stroke="${line}" stroke-width="${sw}"/>`);
+    [1, -1].forEach((dir) => {                         // 1 = left end, -1 = right end
+      const base = dir === 1 ? L : R, x = (f) => base + dir * f * ft;
+      const keyTop = cy - 8 * ft, keyH = 16 * ft;
+      parts.push(`<rect x="${Math.min(x(0), x(19))}" y="${keyTop}" width="${19 * ft}" height="${keyH}" fill="${fill}" stroke="${line}" stroke-width="${sw}"/>`);
+      // free-throw circle: solid toward center court, dashed inside the key
+      const fx = x(19), r6 = 6 * ft, sweepOut = dir === 1 ? 1 : 0;
+      parts.push(`<path d="M ${fx} ${cy - r6} A ${r6} ${r6} 0 0 ${sweepOut} ${fx} ${cy + r6}" fill="none" stroke="${line}" stroke-width="${sw}"/>`);
+      parts.push(`<path d="M ${fx} ${cy - r6} A ${r6} ${r6} 0 0 ${1 - sweepOut} ${fx} ${cy + r6}" fill="none" stroke="${line}" stroke-width="${sw}" stroke-dasharray="${ft * 1.2} ${ft * 1.2}"/>`);
+      // three-point line: corner straights 3 ft from the sidelines, arc 23.75 ft from the hoop
+      const hx = x(5.25), r3 = 23.75 * ft, yTop = T + 3 * ft, yBot = B - 3 * ft;
+      const dy = cy - yTop, run = Math.sqrt(Math.max(0, r3 * r3 - dy * dy)), xc = hx + dir * run;
+      parts.push(`<path d="M ${x(0)} ${yTop} L ${xc} ${yTop} A ${r3} ${r3} 0 0 ${sweepOut} ${xc} ${yBot} L ${x(0)} ${yBot}" fill="none" stroke="${line}" stroke-width="${sw}"/>`);
+      // backboard, hoop, restricted-area arc
+      parts.push(`<line x1="${x(4)}" y1="${cy - 3 * ft}" x2="${x(4)}" y2="${cy + 3 * ft}" stroke="${line}" stroke-width="${sw * 1.4}"/>`);
+      parts.push(`<circle cx="${hx}" cy="${cy}" r="${0.75 * ft}" fill="none" stroke="${line}" stroke-width="${sw}"/>`);
+      parts.push(`<path d="M ${hx} ${cy - 4 * ft} A ${4 * ft} ${4 * ft} 0 0 ${sweepOut} ${hx} ${cy + 4 * ft}" fill="none" stroke="${line}" stroke-width="${sw}"/>`);
+    });
+    svg.innerHTML = parts.join('');
+  }
+  drawCourt();
+  if (window.ResizeObserver) new ResizeObserver(drawCourt).observe(document.querySelector('.pl-head'));
+  else window.addEventListener('resize', drawCourt);
+
   (async () => {
     try {
       await load();
