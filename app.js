@@ -268,7 +268,8 @@
 
     // owner cards
     const og = $('owner-grid'); og.replaceChildren();
-    const order = ['Lucas', 'Parker', 'Rahul', 'Darin', 'Dom', 'OJ'].filter((o) => C.owners.includes(o)).concat(C.owners.filter((o) => !['Lucas', 'Parker', 'Rahul', 'Darin', 'Dom', 'OJ'].includes(o)));
+    // Cards follow the current standings, so the order updates every time scores do.
+    const order = board.map((b) => b.owner);
     order.forEach((o) => {
       const row = board.find((b) => b.owner === o);
       const card = mk('section', 'card ' + (row.points > 0 ? medal(row.place) || '' : '')); card.id = 'owner-' + o.toLowerCase();
