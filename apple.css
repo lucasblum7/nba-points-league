@@ -147,3 +147,17 @@ button.mu-today { text-decoration: none !important; }
   .teams tr.sched-row td, .teams thead tr.sched-head th { padding-left: 28px !important; }
   .teams thead th:first-child { width: 41%; }
 }
+
+/* Phones: slim title bar pinned to the top once the big header scrolls away */
+.pl-mini { display: none; }
+@media (max-width: 700px) {
+  .pl-mini { display: block; position: fixed; top: 0; left: 0; right: 0; z-index: 45; pointer-events: none;
+    padding: calc(6px + env(safe-area-inset-top)) 12px 6px; transform: translateY(-110%); transition: transform .22s ease; }
+  .pl-mini.show { transform: none; pointer-events: auto; }
+  .pl-mini-in { display: flex; align-items: center; justify-content: center; gap: 10px; text-decoration: none; color: #fff;
+    background: linear-gradient(135deg, #f08a3c 0%, #d0601f 45%, #7a3210 100%); border-radius: 14px; padding: 8px 12px;
+    box-shadow: 0 4px 14px rgba(0,0,0,.18); }
+  .pl-mini-in svg { width: 22px; height: 22px; flex: none; }
+  .pl-mini-in span { font-family: "Oswald", "Arial Narrow", Impact, sans-serif; font-weight: 700; text-transform: uppercase; letter-spacing: .03em; font-size: 18px; line-height: 1; text-shadow: 0 1px 0 rgba(0,0,0,.18); }
+}
+@media (prefers-reduced-motion: reduce) { .pl-mini { transition: none; } }

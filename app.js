@@ -783,6 +783,14 @@
   }
   setupTabs();
 
+  // ---------- slim title bar pinned to the top once the big header scrolls away (phones) ----------
+  (function pinnedTitle() {
+    const head = document.querySelector('.pl-head'), mini = document.getElementById('pl-mini');
+    if (!head || !mini || !window.IntersectionObserver) return;
+    new IntersectionObserver(([e]) => { mini.classList.toggle('show', !e.isIntersecting); }, { rootMargin: '-8px 0px 0px 0px' }).observe(head);
+    mini.querySelector('a').addEventListener('click', (ev) => { ev.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); });
+  })();
+
   (async () => {
     try {
       await load();
