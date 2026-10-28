@@ -1,0 +1,156 @@
+/* =====================================================================
+   Apple-style theme (iOS Human Interface look)
+   Loaded after style.css and overrides it: system font, large titles,
+   inset-grouped cards, hairline separators, frosted tab bar, sheets.
+   ===================================================================== */
+:root {
+  --bg: #f2f2f7;            /* systemGroupedBackground */
+  --panel: #ffffff;         /* secondarySystemGroupedBackground */
+  --fill: rgba(120,120,128,.12);
+  --fill2: rgba(120,120,128,.20);
+  --fg: #000000;
+  --muted: #6e6e73;
+  --line: rgba(60,60,67,.16);
+  --ok: #34c759; --bad: #ff3b30; --warn: #ff9500;
+  --accent: #ff7a00;
+  --wins: #007aff; --bonus: #ff9500;
+  --radius: 16px;
+  --shadow: 0 1px 2px rgba(0,0,0,.04), 0 6px 20px rgba(0,0,0,.05);
+  --sans: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "Helvetica Neue", Inter, system-ui, sans-serif;
+  --serif: var(--sans);
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #000000; --panel: #1c1c1e; --fill: rgba(118,118,128,.24); --fill2: rgba(118,118,128,.32);
+    --fg: #ffffff; --muted: #98989f; --line: rgba(84,84,88,.55);
+    --ok: #30d158; --bad: #ff453a; --warn: #ff9f0a; --accent: #ff8a1f; --wins: #0a84ff; --bonus: #ff9f0a;
+    --shadow: none; color-scheme: dark;
+  }
+}
+body { font: 15px/1.4 var(--sans); -webkit-font-smoothing: antialiased; letter-spacing: -.005em; background: var(--bg); }
+.pl { gap: 22px; padding-top: 8px; }
+
+/* ---------- Large title header ---------- */
+.pl-head { background: none !important; box-shadow: none !important; border: none !important; color: var(--fg); text-align: left; padding: 14px 4px 0 !important; overflow: visible; }
+.pl-head::before, .pl-head::after { display: none !important; }
+.pl-title { font-family: var(--sans) !important; text-transform: none !important; text-shadow: none !important; letter-spacing: -.025em !important;
+  font-weight: 800 !important; font-size: clamp(30px, 6.5vw, 40px) !important; line-height: 1.05 !important; justify-content: flex-start !important; gap: 12px !important; }
+.pl-ball { width: 46px !important; height: 46px !important; animation: none !important; padding: 7px; border-radius: 12px; flex: none;
+  background: linear-gradient(160deg, #ff9a3c, #e8620c); box-shadow: 0 2px 8px rgba(232,98,12,.35); }
+.pl-ball circle { fill: #ff8f2e; stroke: #3a1e0e; }
+.pl-ball-r { display: none !important; }
+.pl-name { display: flex !important; flex-direction: column-reverse !important; align-items: flex-start !important; }
+.pl-name small { font-size: 12px !important; font-weight: 700 !important; letter-spacing: .04em !important; text-transform: uppercase; color: var(--accent); opacity: 1 !important; margin: 0 0 3px !important; }
+.pl-chips { justify-content: flex-start !important; margin-top: 14px !important; gap: 8px !important; }
+.chip { background: var(--fill) !important; border: none !important; color: var(--fg) !important; backdrop-filter: none !important; font-size: 13px !important; font-weight: 600 !important; padding: 6px 12px !important; }
+.chip .chip-i { display: none; }
+.chip.live .chip-i { display: inline; color: var(--bad) !important; font-size: 9px; }
+body[data-tab]:not([data-tab="home"]) .pl-head { padding: 10px 4px 0 !important; }
+body[data-tab]:not([data-tab="home"]) .pl-title { font-size: clamp(30px, 6.5vw, 40px) !important; }
+body[data-tab]:not([data-tab="home"]) .pl-ball { width: 38px !important; height: 38px !important; padding: 6px; border-radius: 10px; }
+
+/* ---------- Cards: inset grouped ---------- */
+.card, .pl .card { background: var(--panel); border: none !important; border-radius: var(--radius); box-shadow: var(--shadow); padding: 16px 16px 14px; }
+.card > h2, h2.sec, #recap-card h2 { font-family: var(--sans) !important; text-transform: none !important; letter-spacing: -.02em !important;
+  font-size: 22px !important; font-weight: 700 !important; text-align: left !important; margin-bottom: 12px !important; }
+.card > h2::after, h2.sec::after { display: none !important; }
+.card > h2.sec-toggle::before, h2.sec.sec-toggle::before { content: "›" !important; font: 600 24px/1 var(--sans) !important; color: var(--muted) !important;
+  top: -2px !important; right: 2px !important; transform: rotate(90deg); transition: transform .2s ease; }
+.collapsed > h2.sec-toggle::before { transform: rotate(0deg) !important; }
+.note, .foot, .players-foot { color: var(--muted); }
+#recap-card { text-align: left; }
+.legend { justify-content: flex-start !important; }
+.card .sub, .mu-grid .sub { text-align: left !important; font-size: 15px; font-weight: 600; }
+
+/* ---------- Tables: hairlines, quiet headers ---------- */
+th { color: var(--muted); font-size: 12px; font-weight: 600; border-bottom: .5px solid var(--line); }
+td { border-bottom: .5px solid var(--line); }
+tr.p1 td { background: color-mix(in srgb, var(--gold) 14%, transparent); }
+tr.p2 td { background: color-mix(in srgb, var(--silver) 16%, transparent); }
+tr.p3 td { background: color-mix(in srgb, var(--bronze) 13%, transparent); }
+.bar { height: 6px; border-radius: 3px; background: var(--fill); }
+.legend i { border-radius: 50%; }
+
+/* ---------- Scoreboard ---------- */
+.sb { background: none !important; border: none !important; box-shadow: none !important; padding: 0 !important; gap: 8px !important; margin-top: 0 !important; }
+.sb-date { background: var(--panel) !important; border-radius: 14px !important; box-shadow: var(--shadow); width: 3rem !important; }
+.sb-card { background: var(--panel) !important; border: none !important; border-radius: 14px !important; box-shadow: var(--shadow); padding: 6px 8px 0 !important; }
+.sb-card.live { box-shadow: inset 0 0 0 1.5px var(--bad), var(--shadow); }
+.sb-card.cup { box-shadow: inset 0 0 0 1.5px var(--gold), var(--shadow); background: color-mix(in srgb, var(--gold) 10%, var(--panel)) !important; }
+.sb-foot { border-top: .5px solid var(--line) !important; }
+
+/* ---------- Matchups ---------- */
+.mu-card, .mu-card.live { background: var(--bg) !important; border: none !important; box-shadow: none !important; border-radius: 14px !important; }
+.mu-card.live { box-shadow: inset 0 0 0 1.5px var(--bad) !important; }
+.mu-grid > div { background: var(--bg) !important; border: none !important; box-shadow: none !important; border-radius: 14px !important; }
+.mu-title { color: var(--muted); font-weight: 600; letter-spacing: .02em; }
+.mu-net { font-family: var(--sans) !important; font-weight: 700 !important; }
+
+/* ---------- This week / results ---------- */
+.bubble { border-radius: 18px !important; box-shadow: none !important; background: var(--bg); }
+.bubble .tile-name { letter-spacing: -.02em; }
+
+/* ---------- Rosters: the owner cards are the cards ---------- */
+#rosters-card { background: none !important; box-shadow: none !important; padding: 0 !important; }
+#rosters-card > h2 { padding: 0 4px; }
+#rosters-card .foot { text-align: left !important; padding: 0 4px; }
+#rosters-card .card { box-shadow: var(--shadow) !important; }
+#rosters-card .card:not(.p1):not(.p2):not(.p3) { background: var(--panel) !important; }
+.card.p1 { background: color-mix(in srgb, var(--gold) 10%, var(--panel)) !important; border: none !important; box-shadow: inset 0 3px 0 var(--gold), var(--shadow) !important; }
+.card.p2 { background: color-mix(in srgb, var(--silver) 12%, var(--panel)) !important; border: none !important; box-shadow: inset 0 3px 0 var(--silver), var(--shadow) !important; }
+.card.p3 { background: color-mix(in srgb, var(--bronze) 10%, var(--panel)) !important; border: none !important; box-shadow: inset 0 3px 0 var(--bronze), var(--shadow) !important; }
+.owner-head h2 { font-family: var(--sans) !important; text-transform: none !important; letter-spacing: -.02em !important; font-size: 22px !important; font-weight: 700 !important; }
+.owner-head h2::before { display: none !important; }
+.owner-pts { font-family: var(--sans) !important; font-weight: 700 !important; letter-spacing: -.03em; }
+.owner-pts small { text-transform: none !important; letter-spacing: 0 !important; }
+.players { background: var(--bg) !important; border: none !important; border-radius: 12px !important; }
+.teams tr.team-row td:first-child { font-weight: 600 !important; }
+.team-toggle::after { content: "›" !important; font-size: 16px !important; transform: rotate(90deg); margin-left: 6px !important; }
+.team-toggle[aria-expanded="true"]::after { transform: rotate(-90deg) !important; }
+.gchip { border-radius: 4px !important; }
+
+/* ---------- Pills & buttons ---------- */
+.today-pill, button.today-pill { border: none !important; background: var(--fill) !important; color: var(--fg) !important; font-weight: 600 !important; }
+.today-pill.live { background: color-mix(in srgb, var(--bad) 16%, transparent) !important; }
+.bonus-btn { border: none !important; background: color-mix(in srgb, var(--accent) 15%, transparent) !important; color: var(--accent) !important; font-weight: 700 !important; }
+.bonus-btn.zero-btn { background: var(--fill) !important; color: var(--muted) !important; }
+button.mu-today { text-decoration: none !important; }
+#league-rules > summary { font-weight: 600 !important; }
+
+/* ---------- Sheets (pop-ups) ---------- */
+.bp-overlay { background: rgba(0,0,0,.35) !important; backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); animation: fadeIn .2s ease; }
+.bp-box { border: none !important; border-radius: 20px !important; box-shadow: 0 20px 60px rgba(0,0,0,.25) !important; animation: sheetUp .28s cubic-bezier(.2,.9,.3,1); }
+.bp-close { width: 30px; height: 30px; border-radius: 50% !important; background: var(--fill) !important; font-size: 13px !important; font-weight: 700; padding: 0 !important; }
+.tg-game { border: none !important; background: var(--bg); border-radius: 12px !important; }
+.tg-game.live { box-shadow: inset 0 0 0 1.5px var(--bad); }
+.tg-game.cup { box-shadow: inset 0 0 0 1.5px var(--gold); }
+@media (max-width: 600px) {
+  .bp-overlay { align-items: flex-end !important; padding: 0 !important; }
+  .bp-box { width: 100% !important; max-height: 88vh; overflow-y: auto; border-radius: 20px 20px 0 0 !important; padding: 22px 18px calc(18px + env(safe-area-inset-bottom)) !important; position: relative; }
+  .bp-box::before { content: ""; position: absolute; top: 7px; left: 50%; width: 36px; height: 5px; margin-left: -18px; border-radius: 3px; background: var(--fill2); }
+}
+@keyframes sheetUp { from { transform: translateY(24px); opacity: 0; } to { transform: none; opacity: 1; } }
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+@media (prefers-reduced-motion: reduce) { .bp-overlay, .bp-box { animation: none !important; } }
+
+/* ---------- Tab bar: frosted material, line icons ---------- */
+.tabbar { background: color-mix(in srgb, var(--panel) 78%, transparent) !important; backdrop-filter: saturate(180%) blur(20px) !important; -webkit-backdrop-filter: saturate(180%) blur(20px) !important;
+  border-top: .5px solid var(--line) !important; box-shadow: none !important; padding-top: 4px !important; }
+.tabbar button { color: var(--muted) !important; padding: 4px 0 2px !important; gap: 3px !important; }
+.tabbar button.on { color: var(--accent) !important; }
+.tabbar button.on::before { display: none !important; }
+.tabbar .tb-i { filter: none !important; opacity: 1 !important; transform: none !important; display: flex; }
+.tabbar .tb-i svg { width: 27px; height: 27px; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+.tabbar .tb-i svg .dot { fill: currentColor; stroke-width: 1.4; }
+.tabbar button.on .tb-i svg { stroke-width: 2; }
+.tabbar .tb-l { font-size: 10.5px !important; font-weight: 600 !important; letter-spacing: 0 !important; }
+
+/* ---------- Footer ---------- */
+.site-foot { font-size: 11px; }
+
+/* The tab's large title already names these sections */
+body[data-tab="matchups"] #matchups-card > h2, body[data-tab="rosters"] #rosters-card > h2 { display: none !important; }
+/* A matchup "in progress" lasts all week: keep it neutral, not red */
+.mu-card.live { box-shadow: none !important; }
+.mu-card.live .mu-foot::before { color: var(--accent) !important; }
