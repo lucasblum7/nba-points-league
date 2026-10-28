@@ -83,7 +83,7 @@
       const rate = (w + 20 * (pre / 82)) / (g + 20);
       const pace = pre == null ? null : Math.round((w + (82 - g) * rate) * 10) / 10;
       const bonus = pts_playoffs + pts_pw + pts_cup + pts_cupgames;
-      return { team: r.team, owner: r.owner, wins: w, losses: l, proj: pre, pace, last5: L.slice(-5).map((x) => (x.w ? 'W' : 'L')), last3: L.slice(-3),
+      return { team: r.team, owner: r.owner, wins: w, losses: l, proj: pre, pace, last5: L.slice(-5).map((x) => (x.w ? 'W' : 'L')), last3: L.slice(-3), last5g: L.slice(-5),
         made: b.made_playoffs ? 1 : 0, playoff_wins: Number(b.playoff_wins) || 0, pts_playoffs, pts_pw, pts_cup, cup_wins, pts_cupgames, bonus,
         series: Number(b.series_won) || 0, points: w + bonus };
     });
@@ -479,22 +479,20 @@
       const tied = board.filter((x) => x.points === row.points).length > 1;
       const rk = mk('span', 'rank-bit', 'Rank '); rk.append(mk('b', null, `${tied ? 'T-' : ''}${row.place} of ${board.length}`)); pl.append(' · ', rk);
       card.append(head, plLine);
-      const tb = mk('table', 'teams');
+      const tb = mk('table', 'teams teams-simple');
       const th = mk('thead'); const htr = mk('tr');
-      [['Team', ''], ['W', 'num'], ['L', 'num'], ['Proj. wins', 'num'], ['Win pace', 'num'], ['Pts', 'num']].forEach(([t, c]) => htr.append(mk('th', c, t)));
-      const lab = mk('tr', 'sched-head'); const lth = mk('th'); lth.colSpan = 6;
-      const lw = mk('div', 'sched'); lw.append(mk('span', 'sched-side sched-lab', 'Last 3'), mk('span', 'sched-div'), mk('span', 'sched-side sched-lab', 'Next 3'));
-      lth.append(lw); lab.append(lth);
-      th.append(htr, lab); tb.append(th);
+      [['Team', ''], ['W', 'num'], ['L', 'num'], ['Win pace', 'num']].forEach(([t, c]) => htr.append(mk('th', c, t)));
+      th.append(htr); tb.append(th);
       const body = mk('tbody');
       teams.filter((t) => t.owner === o).sort((a, b) => b.points - a.points || a.team.localeCompare(b.team)).forEach((t) => {
         const tr = mk('tr', 'team-row');
         const name = mk('td', 'team-cell'); name.append(badge(t.team, 'sb-badge team-logo'), mk('span', 'team-nm', short(t.team)));
-        tr.append(name, mk('td', 'num', t.wins), mk('td', 'num zero', t.losses), mk('td', 'num zero', t.proj ?? ''),
-          mk('td', 'num ' + paceClass(t.pace, t.proj), t.pace == null ? '' : t.pace.toFixed(1)), mk('td', 'num total', t.points));
-        const sr = schedRow(t.team, t.last3);
-        body.append(tr, sr);
-        makeExpandable(name, t.team, () => sr);
+        const pace = mk('td', 'num pace-cell ' + paceClass(t.pace, t.proj), t.pace == null ? '–' : t.pace.toFixed(1)); pace.append(mk('span', 'row-go', '›'));
+        tr.append(name, mk('td', 'num', t.wins), mk('td', 'num', t.losses), pace);
+        tr.tabIndex = 0; tr.setAttribute('role', 'button'); tr.setAttribute('aria-label', `Open the ${t.team} team card`);
+        tr.addEventListener('click', () => showTeam(t, C, slate));
+        tr.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); showTeam(t, C, slate); } });
+        body.append(tr);
       });
       tb.append(body); card.append(tb); og.append(card);
     });
@@ -636,6 +634,100 @@
     ov.append(box);
     ov.addEventListener('click', (e) => { if (e.target === ov) closeBonus(); });
     document.body.append(ov); document.addEventListener('keydown', bonusKey); x.focus();
+  }
+
+  // ---------- team card (tap a team in Rosters) ----------
+  const fmtShort = (iso) => dayName(iso, { weekday: 'short', month: 'numeric', day: 'numeric' });
+  const lastName = (n) => { const p = n.split(' '); return p.length > 1 ? p[0][0] + '. ' + p.slice(1).join(' ') : n; };
+  function jersey(team, num, cls) {
+    const b = TEAM_BADGE[team] || ['', '#888', '#fff'];
+    const j = mk('span', 'jersey' + (cls ? ' ' + cls : ''), num === '' ? '–' : String(num));
+    j.style.background = b[1]; j.style.color = b[2]; return j;
+  }
+  function playerLink(p, text) {
+    const a = mk('a', 'pp-link', text);
+    a.href = 'https://www.espn.com/nba/player/_/id/' + encodeURIComponent(p.id);
+    a.target = '_blank'; a.rel = 'noopener'; a.title = p.name + ' on ESPN';
+    return a;
+  }
+  function showTeam(t, C, slate) {
+    closeBonus();
+    const ov = mk('div', 'bp-overlay'); ov.id = 'bonus-pop';
+    const box = mk('div', 'bp-box tc-box'); box.setAttribute('role', 'dialog'); box.setAttribute('aria-modal', 'true'); box.setAttribute('aria-label', t.team + ' team card');
+    // header
+    const head = mk('div', 'tc-head');
+    head.append(badge(t.team, 'badge tc-badge'));
+    const ttl = mk('div', 'bp-title tc-title'); ttl.append(mk('b', null, t.team), mk('span', null, t.owner + "'s team"));
+    const pts = mk('div', 'tc-pts', fmt(t.points)); pts.append(mk('small', null, t.points === 1 ? 'pt' : 'pts'));
+    const x = mk('button', 'bp-close', '✕'); x.type = 'button'; x.setAttribute('aria-label', 'Close'); x.addEventListener('click', closeBonus);
+    head.append(ttl, pts, x); box.append(head);
+    // record / pace / projection
+    const tiles = mk('div', 'tc-tiles');
+    const tile = (label, value, cls, sub) => { const d = mk('div', 'tc-tile'); d.append(mk('span', 'tc-tl', label), mk('b', cls || null, value)); if (sub) d.append(mk('span', 'tc-ts ' + (cls || ''), sub)); tiles.append(d); };
+    tile('Record', `${t.wins}–${t.losses}`);
+    const diff = t.pace != null && t.proj != null ? Math.round((t.pace - t.proj) * 10) / 10 : null;
+    tile('Win pace', t.pace == null ? '–' : t.pace.toFixed(1), paceClass(t.pace, t.proj), diff == null ? '' : (diff > 0 ? '+' : diff < 0 ? '−' : '±') + Math.abs(diff).toFixed(1) + ' vs line');
+    tile('Preseason line', t.proj ?? '–');
+    if (t.bonus) tile('Bonus pts', '+' + t.bonus, 'up');
+    box.append(tiles);
+    // last 5 / next 5
+    const games = mk('div', 'tc-games');
+    const col = (title) => { const c = mk('div', 'tc-col'); c.append(mk('h4', 'tc-h', title)); games.append(c); return c; };
+    const last = col('Last 5');
+    if (!t.last5g.length) last.append(mk('p', 'tc-empty', 'No games yet.'));
+    t.last5g.slice().reverse().forEach((g) => {
+      const r = mk('div', 'tc-g'); const opp = mk('span', 'tc-opp'); opp.append(mk('span', 'tc-at', g.home ? 'vs' : '@'), badge(g.opp, 'sb-badge'), mk('span', null, abbr(g.opp)));
+      const res = mk('span', 'tc-res ' + (g.w ? 'win' : 'loss')); res.append(mk('b', null, g.w ? 'W' : 'L'), ' ' + g.score.replace('-', '–'));
+      r.append(mk('span', 'tc-date', fmtShort(g.date)), opp, res); if (g.cup) r.append(mk('span', 'tc-cup', '🏆')); last.append(r);
+    });
+    const next = col('Next 5');
+    const up = nextGames(t.team, 5);
+    if (!up.length) next.append(mk('p', 'tc-empty', D.schedule ? 'No games scheduled.' : 'Schedule coming soon.'));
+    up.forEach((g) => {
+      const home = g.home === t.team, o = home ? g.away : g.home;
+      const r = mk('div', 'tc-g'); const opp = mk('span', 'tc-opp'); opp.append(mk('span', 'tc-at', home ? 'vs' : '@'), badge(o, 'sb-badge'), mk('span', null, abbr(o)));
+      r.append(mk('span', 'tc-date', g.date === pacificToday() ? 'Today' : fmtShort(g.date)), opp, mk('span', 'tc-time', g.time || '')); next.append(r);
+    });
+    box.append(games);
+    // roster
+    const ros = mk('div', 'tc-roster'); ros.append(mk('p', 'players-msg', 'Loading roster…')); box.append(ros);
+    ov.append(box);
+    ov.addEventListener('click', (e) => { if (e.target === ov) closeBonus(); });
+    document.body.append(ov); document.addEventListener('keydown', bonusKey); x.focus();
+    fetchPlayers(t.team).then(({ players: ps, hasDepth }) => {
+      ros.replaceChildren();
+      if (!ps.length) { ros.append(mk('p', 'players-msg', 'No roster found.')); return; }
+      const v = (p, k) => (p.s && p.s[k] != null ? p.s[k] : '–');
+      const starters = hasDepth ? ps.filter((p) => p.starter) : [];
+      const bench = hasDepth ? ps.filter((p) => !p.starter) : ps;
+      if (starters.length) {
+        ros.append(mk('h4', 'tc-h', 'Starting five'));
+        const row = mk('div', 'tc-five');
+        starters.forEach((p) => {
+          const c = mk('div', 'tc-p' + (p.out ? ' is-out' : ''));
+          c.append(jersey(t.team, p.num, 'jersey-lg'), mk('span', 'tc-pos', p.spot));
+          const nm = mk('div', 'tc-pname'); nm.append(playerLink(p, lastName(p.name))); c.append(nm);
+          if (p.out) c.append(mk('span', 'pp-out tc-outtag', /day/i.test(p.out) ? 'DTD' : p.out));
+          const st = mk('div', 'tc-pstats');
+          [['PTS', 'avgPoints'], ['REB', 'avgRebounds'], ['AST', 'avgAssists']].forEach(([l, k]) => { const s1 = mk('div', 'tc-ps'); s1.append(mk('b', null, v(p, k)), mk('span', null, l)); st.append(s1); });
+          c.append(st); row.append(c);
+        });
+        ros.append(row);
+      }
+      ros.append(mk('h4', 'tc-h', starters.length ? 'Bench' : 'Roster'));
+      const tb = mk('table', 'tc-bench'); const hr = mk('tr');
+      [['Player', ''], ['Pos', ''], ['MIN', 'num'], ['PTS', 'num'], ['REB', 'num'], ['AST', 'num']].forEach(([l, c]) => hr.append(mk('th', c, l)));
+      const thd = mk('thead'); thd.append(hr); const tbd = mk('tbody');
+      bench.forEach((p) => {
+        const r = mk('tr', p.out ? 'is-out' : null);
+        const nm = mk('td', 'tc-bname'); const inner = mk('div', 'tc-bin'); inner.append(jersey(t.team, p.num), playerLink(p, lastName(p.name)));
+        if (p.out) inner.append(mk('span', 'pp-out', /day/i.test(p.out) ? 'DTD' : p.out)); nm.append(inner);
+        r.append(nm, mk('td', 'tc-bpos', p.spot), mk('td', 'num dim', v(p, 'avgMinutes')), mk('td', 'num strong', v(p, 'avgPoints')), mk('td', 'num', v(p, 'avgRebounds')), mk('td', 'num', v(p, 'avgAssists')));
+        tbd.append(r);
+      });
+      tb.append(thd, tbd); ros.append(tb);
+      ros.append(mk('p', 'players-foot', 'Season averages per game · Lineup from ESPN’s depth chart · Tap a player for their ESPN page'));
+    }).catch(() => { ros.replaceChildren(mk('p', 'players-msg', 'Couldn’t load the roster right now. Try again in a minute.')); playerCache.delete(t.team); });
   }
 
   // ---------- bonus breakdown pop-up ----------
