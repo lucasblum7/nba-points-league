@@ -252,21 +252,26 @@ tr.p1 td.rank::after { content: " 🥇"; } tr.p2 td.rank::after { content: " �
 #h2h-table th:first-child, #h2h-table td:first-child { padding-left: 8px; }
 #h2h-table th:last-child, #h2h-table td:last-child { padding-right: 10px; }
 /* League rules: collapsible button at the bottom */
-.rules { padding: 0; }
-.rules > summary { list-style: none; cursor: pointer; padding: 14px 18px; font-weight: 700; font-size: 16px; display: flex; align-items: center; justify-content: center; gap: 8px; }
-.rules > summary::-webkit-details-marker { display: none; }
-.rules > summary::before { content: "📖"; }
-.rules > summary::after { content: "▾"; color: var(--muted); transition: transform .15s ease; }
-.rules[open] > summary::after { transform: rotate(180deg); }
-.rules[open] > summary { border-bottom: 1px solid var(--line); }
-.rules-body { padding: 4px 18px 16px; }
-.rules-body h3 { font-size: 14px; margin: 14px 0 4px; }
-.rules-body ul { margin: 0; padding-left: 20px; font-size: 14px; }
-.rules-body li { margin: 3px 0; }
+#league-rules { padding: 0; }
+#league-rules > summary { list-style: none; cursor: pointer; padding: 14px 18px; font-weight: 700; font-size: 16px; display: flex; align-items: center; justify-content: center; gap: 8px; }
+#league-rules > summary::-webkit-details-marker { display: none; }
+#league-rules > summary::before { content: "📖"; }
+#league-rules > summary::after { content: "▾"; color: var(--muted); transition: transform .15s ease; }
+#league-rules[open] > summary::after { transform: rotate(180deg); }
+#league-rules[open] > summary { border-bottom: 1px solid var(--line); }
+#league-rules .rules-body { padding: 4px 18px 16px; }
+#league-rules .rules-body h3 { font-size: 14px; margin: 14px 0 4px; }
+#league-rules .rules-body ul { margin: 0; padding-left: 20px; font-size: 14px; }
+#league-rules .rules-body li { margin: 3px 0; }
 /* Space under section titles now that the notes are gone */
 .card > h2 { margin-bottom: 12px; }
 #recap-card > h2 { margin-bottom: 4px; }
 /* Center every section title (and the small labels right under them) */
-.card h2, h2.sec { text-align: center; }
+.card > h2, h2.sec { text-align: center; }
 .legend { justify-content: center; }
 .mu-week > :first-child, #mu-current > .mu-label, .mu-week-label { text-align: center; }
+/* Section titles: header font, uppercase, with a short orange underline */
+.card > h2, h2.sec, #recap-card h2 { font-family: "Oswald", "Arial Narrow", Impact, sans-serif; font-weight: 700; text-transform: uppercase; letter-spacing: .05em; font-size: 22px; line-height: 1.15; }
+.card > h2::after, h2.sec::after { content: ""; display: block; width: 38px; height: 3px; border-radius: 3px; background: var(--accent); margin: 7px auto 0; }
+.card > h2 { margin-bottom: 14px; }
+#recap-card > h2 { margin-bottom: 6px; }
