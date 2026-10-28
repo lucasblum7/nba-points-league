@@ -42,8 +42,8 @@
     const [h, mi] = new Intl.DateTimeFormat('en-GB', { timeZone: 'America/Los_Angeles', hour: '2-digit', minute: '2-digit', hourCycle: 'h23' }).format(new Date()).split(':').map(Number);
     return tip - (h * 60 + mi);
   };
-  // "Starts in 12 min" when tip-off is 15 minutes away or less
-  const soonLabel = (date, time) => { const n = minsToTip(date, time); return n != null && n <= 15 && n >= -5 ? (n <= 0 ? 'Tipping off' : `In ${n} min`) : null; };
+  // "In 24 min" when tip-off is 30 minutes away or less
+  const soonLabel = (date, time) => { const n = minsToTip(date, time); return n != null && n <= 30 && n >= -5 ? (n <= 0 ? 'Tipping off' : `In ${n} min`) : null; };
   const ml = (v) => (v == null || isNaN(v) ? '' : v > 0 ? '+' + v : '−' + Math.abs(v));
   const badge = (team, cls) => {
     const b = TEAM_BADGE[team];
