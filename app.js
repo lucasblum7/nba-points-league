@@ -275,9 +275,9 @@
         });
         t.append(tb);
       };
-      if (hasDepth) { section('Starting 5', ps.filter((p) => p.starter)); section('Bench', ps.filter((p) => !p.starter)); }
+      if (hasDepth) { section('Starters', ps.filter((p) => p.starter)); section('Bench', ps.filter((p) => !p.starter)); }
       else section('Roster', ps);
-      box.append(t, mk('p', 'players-foot', 'Per-game averages this season. Order follows ESPN’s depth chart.'));
+      box.append(t, mk('p', 'players-foot', 'Season averages per game · Lineup from ESPN’s depth chart'));
     }).catch(() => { box.replaceChildren(mk('p', 'players-msg', 'Couldn’t load the roster right now. Try again in a minute.')); playerCache.delete(team); });
     return tr;
   }
@@ -434,17 +434,18 @@
       const card = mk('section', 'card ' + (row.points > 0 ? medal(row.place) || '' : '')); card.id = 'owner-' + o.toLowerCase();
       const head = mk('div', 'owner-head');
       const nameBox = mk('div'); nameBox.append(mk('h2', null, o));
-      const pl = mk('div', 'projline', 'Preseason proj. wins: ');
-      pl.append(mk('b', null, row.proj), ' · Win pace*: ');
+      const pl = mk('div', 'projline', 'Proj. wins ');
+      pl.append(mk('b', null, row.proj), ' · Win pace ');
       pl.append(mk('b', paceClass(row.pace, row.proj), row.pace.toFixed(1)));
       nameBox.append(pl);
       const pts = mk('div', 'owner-pts', fmt(row.points)); pts.append(mk('small', null, 'pts'));
       head.append(nameBox, pts);
       const tied = board.filter((x) => x.points === row.points).length > 1;
-      card.append(head, mk('p', 'note', `Rank ${tied ? 'T-' : ''}${row.place} of ${board.length}`));
+      const rk = mk('span', 'rank-bit', 'Rank '); rk.append(mk('b', null, `${tied ? 'T-' : ''}${row.place} of ${board.length}`)); pl.append(' · ', rk);
+      card.append(head);
       const tb = mk('table', 'teams');
       const th = mk('thead'); const htr = mk('tr');
-      [['Team', ''], ['W', 'num'], ['L', 'num'], ['Proj. wins', 'num'], ['Win pace*', 'num'], ['Pts', 'num']].forEach(([t, c]) => htr.append(mk('th', c, t)));
+      [['Team', ''], ['W', 'num'], ['L', 'num'], ['Proj. wins', 'num'], ['Win pace', 'num'], ['Pts', 'num']].forEach(([t, c]) => htr.append(mk('th', c, t)));
       const lab = mk('tr', 'sched-head'); const lth = mk('th'); lth.colSpan = 6;
       const lw = mk('div', 'sched'); lw.append(mk('span', 'sched-side sched-lab', 'Last 3'), mk('span', 'sched-div'), mk('span', 'sched-side sched-lab', 'Next 3'));
       lth.append(lw); lab.append(lth);

@@ -350,3 +350,14 @@ tr.p1 td.rank::after { content: " ðŸ¥‡"; } tr.p2 td.rank::after { content: " ðŸ¥
   .teams .players-table td { font-size: 11.5px; }
   .players { padding: 6px 6px 4px; }
 }
+/* Tidy roster card wording: one info line, aligned dropdown headers */
+.owner-head .projline { margin: 6px 0 12px; }
+.teams .players-table th:nth-child(1), .teams .players-table td:nth-child(1) { padding-left: 2px; padding-right: 6px; }
+.teams .players-table th:nth-child(2) { padding-left: 3px; }
+.teams .players-table td.pp-name .pp-num { text-align: left; }
+.owner-head .projline b { white-space: nowrap; }
+@media (max-width: 480px) {
+  .teams .players-table th:nth-child(1) { width: 2.7em; }
+  .teams .players-table th { letter-spacing: .02em; }
+}
+.owner-head .projline .rank-bit { white-space: nowrap; }
