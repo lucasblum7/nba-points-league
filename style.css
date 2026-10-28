@@ -175,3 +175,6 @@ tr:last-child td { border-bottom: none; }
 .mu-grid { align-items: stretch; grid-template-columns: repeat(auto-fit, minmax(min(100%, 20rem), 1fr)); }
 .mu-grid > div { display: flex; flex-direction: column; }
 .mu-grid > div > .scroll.tall { flex: 1; max-height: 18rem; }
+/* Stretch the standings rows to fill the box so both boxes line up */
+.mu-grid > div > #h2h-table { flex: 1; height: 100%; }
+#h2h-table thead tr { height: 1px; }
