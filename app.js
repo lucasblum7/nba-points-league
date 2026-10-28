@@ -195,8 +195,8 @@
     const { board, teams, weekly, upsets, owner } = C;
 
     // takeaway
-    const take = $('takeaway'); take.replaceChildren();
-    if (board.length) {
+    const take = $('takeaway'); if (take) take.replaceChildren();
+    if (take && board.length) {
       const [a, b] = board;
       take.append(mk('b', null, a.owner), ' leads with ', mk('b', null, fmt(a.points)), ' points');
       if (b) take.append(b.behind === 0 ? ', tied with ' + b.owner + '.' : ', ' + b.behind + ' ahead of ' + b.owner + '.');
@@ -490,7 +490,7 @@
       setInterval(async () => { await load(); await refreshLive(); }, 10 * 60 * 1000);
     } catch (e) {
       console.error(e);
-      $('takeaway').textContent = 'Couldn’t load the league data. Try refreshing in a minute.';
+      ($('takeaway') || $('chips')).textContent = 'Couldn’t load the league data. Try refreshing in a minute.';
     }
   })();
 })();
