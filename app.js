@@ -334,6 +334,27 @@
   }
 
   // ---------- rendering ----------
+  // how many of an owner's teams play today, and how many are live right now
+  function todayCount(owner, C, slate) {
+    const gs = (slate && slate.games) || [];
+    let total = 0, live = 0, done = 0;
+    gs.forEach((g) => [g.away, g.home].forEach((t) => {
+      if (C.owner.get(t) !== owner) return;
+      total++; if (g.state === 'in') live++; else if (g.state === 'post') done++;
+    }));
+    return { total, live, done };
+  }
+  function todayPill(owner, C, slate) {
+    const { total, live, done } = todayCount(owner, C, slate);
+    const pill = mk('span', 'today-pill' + (live ? ' live' : total && done === total ? ' done' : !total ? ' none' : ''));
+    const two = (full, short) => { pill.append(mk('span', 'tp-full', full), mk('span', 'tp-short', short)); };
+    if (live) { pill.append(mk('span', 'tp-dot', '●'), `${live} live`); if (total > live) pill.append(mk('span', 'tp-sub tp-full', ` · ${total} today`)); }
+    else if (!total) two('No games today', 'Off today');
+    else if (done === total) two(`${total} played today`, `${total} done`);
+    else two(`🏀 ${total} ${total === 1 ? 'game' : 'games'} today`, `🏀 ${total} today`);
+    return pill;
+  }
+
   function render(D, C, slate) {
     const { board, teams, weekly, upsets, owner } = C;
 
@@ -437,12 +458,13 @@
       const pl = mk('div', 'projline', 'Proj. wins ');
       pl.append(mk('b', null, row.proj), ' · Win pace ');
       pl.append(mk('b', paceClass(row.pace, row.proj), row.pace.toFixed(1)));
-      nameBox.append(pl);
+      const plLine = pl;
       const pts = mk('div', 'owner-pts', fmt(row.points)); pts.append(mk('small', null, 'pts'));
-      head.append(nameBox, pts);
+      const side = mk('div', 'owner-side'); side.append(todayPill(o, C, slate), pts);
+      head.append(nameBox, side);
       const tied = board.filter((x) => x.points === row.points).length > 1;
       const rk = mk('span', 'rank-bit', 'Rank '); rk.append(mk('b', null, `${tied ? 'T-' : ''}${row.place} of ${board.length}`)); pl.append(' · ', rk);
-      card.append(head);
+      card.append(head, plLine);
       const tb = mk('table', 'teams');
       const th = mk('thead'); const htr = mk('tr');
       [['Team', ''], ['W', 'num'], ['L', 'num'], ['Proj. wins', 'num'], ['Win pace', 'num'], ['Pts', 'num']].forEach(([t, c]) => htr.append(mk('th', c, t)));

@@ -413,3 +413,20 @@ h2.sec.sec-toggle { display: block; }
   .teams .players-table th:nth-child(4), .teams .players-table th:nth-child(5), .teams .players-table th:nth-child(6), .teams .players-table th:nth-child(7) { width: 2.9em; }
   .teams .players-table td.num, .teams .players-table th.num { padding-right: 6px; }
 }
+/* Owner cards: games today pill under the points */
+.owner-head { align-items: center; }
+.owner-side { display: flex; align-items: center; gap: 10px; flex: none; }
+.card > .projline { margin: 4px 0 12px; }
+.today-pill { font-size: 11px; font-weight: 700; padding: 3px 9px; border-radius: 999px; white-space: nowrap; color: var(--fg); background: color-mix(in srgb, var(--accent) 18%, transparent); border: 1px solid color-mix(in srgb, var(--accent) 45%, transparent); }
+.today-pill.live { color: var(--fg); background: color-mix(in srgb, var(--bad) 16%, transparent); border-color: color-mix(in srgb, var(--bad) 45%, transparent); }
+.today-pill .tp-dot { color: var(--bad); margin-right: 4px; animation: blink 1.2s ease-in-out infinite; }
+.today-pill .tp-sub { font-weight: 500; color: var(--muted); }
+.today-pill.done, .today-pill.none { color: var(--muted); background: color-mix(in srgb, var(--fg) 6%, transparent); border-color: color-mix(in srgb, var(--muted) 35%, transparent); font-weight: 600; }
+@media (prefers-reduced-motion: reduce) { .today-pill .tp-dot { animation: none; } }
+.card > .projline b, .card > .projline .rank-bit { white-space: nowrap; }
+.today-pill .tp-short { display: none; }
+@media (max-width: 480px) {
+  .today-pill .tp-full { display: none; } .today-pill .tp-short { display: inline; }
+  .today-pill { font-size: 10px; padding: 2px 7px; }
+  .owner-side { gap: 7px; }
+}
