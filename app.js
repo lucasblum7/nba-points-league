@@ -231,13 +231,21 @@
     const up = teams.slice().sort((a, b) => diff(b) - diff(a))[0], down = teams.slice().sort((a, b) => diff(a) - diff(b))[0];
     const sign = (x) => (x >= 0 ? '+' : '') + x.toFixed(1);
     const tiles = [
-      ['Week leader', cur ? cur.winners.join(' & ') || '—' : '—', cur ? cur.best + ' wins this week' : ''],
-      ['Hottest team', hot ? hot.team : '—', hot ? teamWeek.get(hot.team) + ' wins this week · ' + hot.owner : ''],
-      ['Biggest overachiever', up ? up.team : '—', up ? 'Win pace ' + sign(diff(up)) + ' vs preseason · ' + up.owner : ''],
-      ['Biggest letdown', down ? down.team : '—', down ? 'Win pace ' + sign(diff(down)) + ' vs preseason · ' + down.owner : ''],
+      ['👑', 'Week leader', cur ? cur.winners.join(' & ') || '—' : '—', cur ? cur.best + (cur.best === 1 ? ' win' : ' wins') + ' this week' : '', null, 'gold'],
+      ['🔥', 'Hottest team', hot ? hot.team : '—', hot ? teamWeek.get(hot.team) + (teamWeek.get(hot.team) === 1 ? ' win' : ' wins') + ' this week · ' + hot.owner : '', hot && hot.team, 'fire'],
+      ['📈', 'Biggest overachiever', up ? up.team : '—', up ? 'Win pace ' + sign(diff(up)) + ' vs preseason · ' + up.owner : '', up && up.team, 'up'],
+      ['📉', 'Biggest letdown', down ? down.team : '—', down ? 'Win pace ' + sign(diff(down)) + ' vs preseason · ' + down.owner : '', down && down.team, 'down'],
     ];
     const rc = $('recap'); rc.replaceChildren();
-    tiles.forEach(([l, n, d]) => { const t = mk('div', 'tile'); t.append(mk('div', 'tile-label', l), mk('div', 'tile-name', n), mk('div', 'tile-detail', d)); rc.append(t); });
+    tiles.forEach(([icon, l, n, d, team, tone]) => {
+      const t = mk('div', 'tile bubble ' + tone);
+      const top = mk('div', 'bubble-icon');
+      if (team && TEAM_BADGE[team]) top.append(badge(team, 'badge bubble-badge'));
+      else top.append(mk('span', 'bubble-emoji', icon));
+      const label = mk('div', 'tile-label'); label.append(team ? icon + ' ' : '', l);
+      t.append(top, label, mk('div', 'tile-name', n), mk('div', 'tile-detail', d));
+      rc.append(t);
+    });
 
     // last night's results
     const today = slate.date || pacificToday();
