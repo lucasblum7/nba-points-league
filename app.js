@@ -149,7 +149,7 @@
         this_week: weekly.length ? weekly[weekly.length - 1].tot[o] : 0,
         weeks_won: weekly.filter((w) => !w.current && w.winners.includes(o)).length };
     }).sort((a, b) => b.points - a.points || b.series - a.series || b.wins - a.wins);
-    board.forEach((b, i) => { b.rank = i + 1; b.behind = board[0].points - b.points; });
+    board.forEach((b, i) => { b.rank = i + 1; b.place = 1 + board.filter((x) => x.points > b.points).length; b.behind = board[0].points - b.points; });
 
     // upsets
     const tiers = config.upset_tiers.slice().sort((a, b) => b.min - a.min);
@@ -206,7 +206,7 @@
     const lb = document.querySelector('#leaderboard tbody'); lb.replaceChildren();
     const max = Math.max(1, ...board.map((d) => d.points));
     board.forEach((d, i) => {
-      const tr = mk('tr', i === 0 && d.points > 0 ? 'lead' : null);
+      const tr = mk('tr', d.points > 0 ? medal(d.place) : null);
       const bar = mk('div', 'bar');
       const w = mk('span'); w.style.width = (d.wins / max * 100) + '%';
       const bo = mk('span'); bo.style.width = (d.bonus / max * 100) + '%';
@@ -271,7 +271,7 @@
     const order = ['Lucas', 'Parker', 'Rahul', 'Darin', 'Dom', 'OJ'].filter((o) => C.owners.includes(o)).concat(C.owners.filter((o) => !['Lucas', 'Parker', 'Rahul', 'Darin', 'Dom', 'OJ'].includes(o)));
     order.forEach((o) => {
       const row = board.find((b) => b.owner === o);
-      const card = mk('section', 'card'); card.id = 'owner-' + o.toLowerCase();
+      const card = mk('section', 'card ' + (row.points > 0 ? medal(row.place) || '' : '')); card.id = 'owner-' + o.toLowerCase();
       const head = mk('div', 'owner-head');
       const nameBox = mk('div'); nameBox.append(mk('h2', null, o));
       const pl = mk('div', 'projline', 'Preseason proj. wins: ');
@@ -280,7 +280,8 @@
       nameBox.append(pl);
       const pts = mk('div', 'owner-pts', fmt(row.points)); pts.append(mk('small', null, 'pts'));
       head.append(nameBox, pts);
-      card.append(head, mk('p', 'note', `Rank ${row.rank} of ${board.length}`));
+      const tied = board.filter((x) => x.points === row.points).length > 1;
+      card.append(head, mk('p', 'note', `Rank ${tied ? 'T-' : ''}${row.place} of ${board.length}`));
       const tb = mk('table', 'teams');
       const th = mk('thead'); const htr = mk('tr');
       [['Team', ''], ['W', 'num'], ['L', 'num'], ['Preseason proj. wins', 'num'], ['Win pace*', 'num'], ['Pts', 'num']].forEach(([t, c]) => htr.append(mk('th', c, t)));
@@ -314,8 +315,8 @@
       const m = upsets.filter((u) => u.owner === o);
       return { o, u: m.filter((x) => x.pts === 1).length, b: m.filter((x) => x.pts === 2).length, s: m.filter((x) => x.pts === 3).length,
         pts: m.reduce((a, x) => a + x.pts, 0), longest: m.length ? Math.max(...m.map((x) => x.ml)) : null };
-    }).sort((a, b) => b.pts - a.pts || (b.longest || 0) - (a.longest || 0) || a.o.localeCompare(b.o)).forEach((d) => {
-      const tr = mk('tr'); const c = (n) => mk('td', 'num' + (n ? '' : ' zero'), n);
+    }).sort((a, b) => b.pts - a.pts || (b.longest || 0) - (a.longest || 0) || a.o.localeCompare(b.o)).forEach((d, i) => {
+      const tr = mk('tr', d.pts > 0 ? medal(i + 1) : null); const c = (n) => mk('td', 'num' + (n ? '' : ' zero'), n);
       tr.append(mk('td', 'total', d.o), c(d.u), c(d.b), c(d.s), mk('td', 'num' + (d.pts ? ' total' : ' zero'), d.pts), mk('td', 'num zero', d.longest ? '+' + d.longest : '—'));
       ut.append(tr);
     });
@@ -367,7 +368,7 @@
 
     const hb = document.querySelector('#h2h-table tbody'); hb.replaceChildren();
     h2hTable.forEach((r, i) => {
-      const tr = mk('tr', i === 0 && (r.w + r.t) > 0 ? 'lead' : null);
+      const tr = mk('tr', (r.w + r.t) > 0 ? medal(i + 1) : null);
       tr.append(mk('td', 'rank', i + 1), mk('td', 'total', r.owner), mk('td', 'num total', r.t ? `${r.w}–${r.l}–${r.t}` : `${r.w}–${r.l}`),
         mk('td', 'num' + (r.net > 0 ? ' up' : r.net < 0 ? ' down' : ' zero'), signed(r.net)), mk('td', 'num zero', r.wins));
       hb.append(tr);
@@ -389,6 +390,8 @@
       sb.append(tr);
     });
   }
+
+  function medal(rank) { return rank === 1 ? 'p1' : rank === 2 ? 'p2' : rank === 3 ? 'p3' : null; }
 
   function paceClass(pace, pre) { return pace == null || pre == null || pace === pre ? 'zero' : pace > pre ? 'up' : 'down'; }
 

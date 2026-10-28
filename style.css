@@ -217,3 +217,15 @@ tr:last-child td { border-bottom: none; }
 .bubble .tile-name { font-size: 1.3rem; font-weight: 700; font-family: var(--sans); margin: 2px 0; }
 .bubble .tile-detail { font-size: 12px; }
 @media (prefers-reduced-motion: reduce) { .bubble, .bubble:hover { transition: none; transform: none; } }
+/* Gold / silver / bronze for 1st, 2nd, 3rd everywhere */
+:root { --gold: #e6b422; --silver: #a7b0b8; --bronze: #c27c3a; }
+tr.p1 td { background: color-mix(in srgb, var(--gold) 20%, transparent); }
+tr.p2 td { background: color-mix(in srgb, var(--silver) 22%, transparent); }
+tr.p3 td { background: color-mix(in srgb, var(--bronze) 18%, transparent); }
+tr.p1 td.rank, tr.p2 td.rank, tr.p3 td.rank { font-weight: 800; color: var(--fg); }
+tr.p1 td.rank::after { content: " 🥇"; } tr.p2 td.rank::after { content: " 🥈"; } tr.p3 td.rank::after { content: " 🥉"; }
+.card.p1 { background: color-mix(in srgb, var(--gold) 12%, var(--panel)); border-color: color-mix(in srgb, var(--gold) 60%, var(--line)); border-top: 4px solid var(--gold); }
+.card.p2 { background: color-mix(in srgb, var(--silver) 14%, var(--panel)); border-color: color-mix(in srgb, var(--silver) 60%, var(--line)); border-top: 4px solid var(--silver); }
+.card.p3 { background: color-mix(in srgb, var(--bronze) 11%, var(--panel)); border-color: color-mix(in srgb, var(--bronze) 55%, var(--line)); border-top: 4px solid var(--bronze); }
+.card.p1 h2::after { content: " 🥇"; } .card.p2 h2::after { content: " 🥈"; } .card.p3 h2::after { content: " 🥉"; }
+.rank { width: 3rem; }
