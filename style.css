@@ -180,7 +180,7 @@ tr:last-child td { border-bottom: none; }
 #h2h-table thead tr { height: 1px; }
 /* Current-week matchups: greener, with winning names green and losing names red */
 .mu-card, .mu-card.live { background: var(--panel); }
-.mu-live-row td { background: none; }
+.mu-live-row td { background: color-mix(in srgb, var(--fg) 7%, transparent); }
 .mu-side.lead .mu-owner { color: var(--ok); font-weight: 800; }
 .mu-win, .mu-lose { color: var(--fg); font-weight: 400; }
 .mu-side.trail .mu-owner { color: #e0201c; font-weight: 700; }
