@@ -134,3 +134,16 @@ button.mu-today { text-decoration: none !important; }
 /* A matchup "in progress" lasts all week: keep it neutral, not red */
 .mu-card.live { box-shadow: none !important; }
 .mu-card.live .mu-foot::before { color: var(--accent) !important; }
+
+/* Rosters: team badge + bold name, tighter W / L columns */
+.teams tr.team-row td.team-cell { font-weight: 800 !important; white-space: nowrap; }
+.teams tr.team-row td.team-cell .team-logo { width: 22px; height: 22px; font-size: 7px; margin-right: 7px; vertical-align: -5px; display: inline-flex; flex: none; }
+.teams thead th:nth-child(2), .teams thead th:nth-child(3) { width: 2.1em; }
+.teams thead th:first-child { width: 40%; }
+.teams tr.sched-row td { padding-left: 33px !important; }
+.teams thead tr.sched-head th { padding-left: 33px !important; }
+@media (max-width: 480px) {
+  .teams tr.team-row td.team-cell .team-logo { width: 19px; height: 19px; margin-right: 5px; font-size: 6px; }
+  .teams tr.sched-row td, .teams thead tr.sched-head th { padding-left: 28px !important; }
+  .teams thead th:first-child { width: 41%; }
+}

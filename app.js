@@ -481,7 +481,7 @@
       const body = mk('tbody');
       teams.filter((t) => t.owner === o).sort((a, b) => b.points - a.points || a.team.localeCompare(b.team)).forEach((t) => {
         const tr = mk('tr', 'team-row');
-        const name = mk('td', null, short(t.team));
+        const name = mk('td', 'team-cell'); name.append(badge(t.team, 'sb-badge team-logo'), mk('span', 'team-nm', short(t.team)));
         tr.append(name, mk('td', 'num', t.wins), mk('td', 'num zero', t.losses), mk('td', 'num zero', t.proj ?? ''),
           mk('td', 'num ' + paceClass(t.pace, t.proj), t.pace == null ? '' : t.pace.toFixed(1)), mk('td', 'num total', t.points));
         const sr = schedRow(t.team, t.last3);
