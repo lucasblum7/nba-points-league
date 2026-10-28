@@ -192,3 +192,10 @@ tr:last-child td { border-bottom: none; }
 .mu-side { grid-template-columns: 6rem 3.4rem 3rem; align-items: center; gap: 10px; }
 .mu-rec { font-size: 16px; font-weight: 600; color: var(--muted); text-align: center; letter-spacing: .02em; }
 .mu-net { text-align: right; }
+/* This week so far: one wide row of tiles */
+#recap-card .recap { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+@media (max-width: 760px) { #recap-card .recap { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+/* Last night's results: games laid out across the full width */
+#results-table tbody { display: grid; grid-template-columns: repeat(auto-fill, minmax(13rem, 1fr)); gap: 0 12px; }
+#results-table tr { display: block; border-bottom: 1px solid var(--line); }
+#results-table td { display: block; border: none; }
