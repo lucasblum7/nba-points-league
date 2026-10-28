@@ -387,7 +387,7 @@
     h2hTable.forEach((r, i) => {
       const tr = mk('tr', (r.w + r.t) > 0 ? medal(i + 1) : null);
       tr.append(mk('td', 'rank', i + 1), mk('td', 'total', r.owner), mk('td', 'num total', r.t ? `${r.w}–${r.l}–${r.t}` : `${r.w}–${r.l}`),
-        mk('td', 'num' + (r.net > 0 ? ' up' : r.net < 0 ? ' down' : ' zero'), signed(r.net)), mk('td', 'num zero', r.wins));
+        mk('td', 'num' + (r.net > 0 ? ' up' : r.net < 0 ? ' down' : ' zero'), signed(r.net)), mk('td', 'num h2h-wins', r.wins));
       hb.append(tr);
     });
 

@@ -247,3 +247,7 @@ tr.p1 td.rank::after { content: " ğŸ¥‡"; } tr.p2 td.rank::after { content: " ğŸ¥
 .chip-i { font-size: 12px; }
 .chip.live .chip-i { color: #ff4d4d; animation: blink 1.2s ease-in-out infinite; }
 @keyframes blink { 50% { opacity: .3; } }
+/* Head-to-head standings: Wins column matches the rest of the row and isn't jammed against the edge */
+#h2h-table td.h2h-wins { color: var(--fg); font-weight: 600; }
+#h2h-table th:first-child, #h2h-table td:first-child { padding-left: 8px; }
+#h2h-table th:last-child, #h2h-table td:last-child { padding-right: 10px; }
