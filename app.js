@@ -459,14 +459,27 @@
     }
 
     // leaderboard
-    const lb = document.querySelector('#leaderboard tbody'); lb.replaceChildren();
+    const lb = document.querySelector('#leaderboard tbody');
+    // remember where each owner's row was and their points, so changes can animate
+    const prevTop = new Map([...lb.children].map((r) => [r.dataset.owner, r.getBoundingClientRect().top]));
+    const prevPts = new Map([...lb.children].map((r) => [r.dataset.owner, r.dataset.pts]));
+    lb.replaceChildren();
     board.forEach((d, i) => {
       const tr = mk('tr', [d.points > 0 ? medal(d.place) : null, d.owner === me ? 'is-me' : null].filter(Boolean).join(' ') || null);
       const nmTd = mk('td', 'total', d.owner); if (d.owner === me) nmTd.append(mk('span', 'you-tag', 'You'));
       tr.append(mk('td', 'rank', d.rank), nmTd, mk('td', 'num', fmt(d.wins)), mk('td', 'num' + (d.bonus ? '' : ' zero'), fmt(d.bonus)),
         mk('td', 'num total', fmt(d.points)), mk('td', 'num', d.this_week), mk('td', 'num hide-sm' + (d.weeks_won ? '' : ' zero'), d.weeks_won));
+      tr.dataset.owner = d.owner; tr.dataset.pts = d.points;
+      if (prevPts.size && prevPts.has(d.owner) && prevPts.get(d.owner) !== String(d.points)) tr.classList.add('pts-up');
       lb.append(tr);
     });
+    if (prevTop.size && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      [...lb.children].forEach((r) => {
+        const was = prevTop.get(r.dataset.owner); if (was == null) return;
+        const dy = was - r.getBoundingClientRect().top; if (Math.abs(dy) < 2) return;
+        r.animate([{ transform: `translateY(${dy}px)` }, { transform: 'translateY(0)' }], { duration: 650, easing: 'cubic-bezier(.2,.8,.2,1)' });
+      });
+    }
 
     renderMatchups(C, slate);
 
@@ -962,6 +975,7 @@
     return row;
   }
 
+  const prevScores = new Map();
   function renderStrip(slate, C) {
     const strip = $('sb-strip'); strip.replaceChildren();
     const date = slate.date || pacificToday();
@@ -981,7 +995,9 @@
       [[g.away, g.away_score, ln && ln.away_ml], [g.home, g.home_score, ln && ln.home_ml]].forEach(([team, pts, line]) => {
         const row = mk('div', 'sb-row' + (final ? (team === winner ? ' won-row' : ' lost-row') : ''));
         const nm = mk('span', 'sb-team'); nm.append(mk('span', 'sb-name', short(team)), mk('span', 'sb-owner', C.owner.get(team) || ''));
-        row.append(badge(team, 'sb-badge'), nm, final || live ? mk('span', 'sb-pts', pts ?? '') : mk('span', 'sb-ml', ml(line)), mk('span', 'sb-arrow', team === winner ? '◂' : ''));
+        const key = g.id + '|' + team, ptsEl = final || live ? mk('span', 'sb-pts', pts ?? '') : null;
+        if (ptsEl) { const was = prevScores.get(key); if (was != null && was !== pts) ptsEl.classList.add('score-pop'); prevScores.set(key, pts); }
+        row.append(badge(team, 'sb-badge'), nm, ptsEl || mk('span', 'sb-ml', ml(line)), mk('span', 'sb-arrow', team === winner ? '◂' : ''));
         card.append(row);
       });
       const ao = C.owner.get(g.away), ho = C.owner.get(g.home);

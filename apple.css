@@ -364,3 +364,11 @@ button.mu-today { text-decoration: none !important; }
 .pl-head .me-chip { background: rgba(255,255,255,.26) !important; }
 /* bigger grab handle so it's easy to swipe from */
 @media (max-width: 600px) { .bp-box::before { width: 40px; height: 5px; top: 8px; margin-left: -20px; } .bp-box { overscroll-behavior: contain; } }
+
+/* Live changes: scores glow, leaderboard points flash */
+@keyframes scorePop { 0% { color: var(--accent); transform: scale(1.35); text-shadow: 0 0 10px color-mix(in srgb, var(--accent) 70%, transparent); } 100% { transform: scale(1); text-shadow: none; } }
+.sb-pts.score-pop { display: inline-block; animation: scorePop 1.4s cubic-bezier(.2,.8,.2,1); }
+@keyframes rowFlash { 0% { background: color-mix(in srgb, var(--ok) 28%, transparent); } 100% { background: transparent; } }
+#leaderboard tr.pts-up td { animation: rowFlash 2s ease-out; }
+#leaderboard tbody tr { position: relative; }
+@media (prefers-reduced-motion: reduce) { .sb-pts.score-pop, #leaderboard tr.pts-up td { animation: none; } }
