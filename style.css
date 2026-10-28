@@ -383,3 +383,14 @@ tr.p1 td.rank::after { content: " ðŸ¥‡"; } tr.p2 td.rank::after { content: " ðŸ¥
 div.collapsed > :not(h2) { display: none; }
 h2.sec.sec-toggle { display: block; }
 #owner-grid[hidden] { display: none !important; }
+/* Rosters section boxed like the others; owner cards sit inside it */
+#rosters-card .foot { text-align: center; margin: 0 0 14px; }
+#rosters-card #owner-grid { margin: 0; }
+#rosters-card .card { box-shadow: 0 1px 2px rgba(0,0,0,.05), 0 3px 8px rgba(0,0,0,.06); }
+#rosters-card .card:not(.p1):not(.p2):not(.p3) { background: var(--bg); }
+@media (max-width: 480px) {
+  #rosters-card { padding: 16px 6px 8px; }
+  #rosters-card .foot { padding: 0 8px; }
+  #rosters-card #owner-grid { gap: 10px; }
+  #rosters-card .card { padding: 14px 10px; }
+}

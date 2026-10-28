@@ -636,8 +636,6 @@
     const save = () => { try { localStorage.setItem(KEY, JSON.stringify([...closed])); } catch (e) { /* ignore */ } };
     const sections = [...document.querySelectorAll('section.card')].filter((c) => c.id !== 'league-rules' && c.querySelector(':scope > h2'))
       .map((c) => ({ id: c.id, el: c, h: c.querySelector(':scope > h2') }));
-    const rh = document.getElementById('rosters');
-    if (rh) sections.push({ id: 'rosters', el: rh.parentElement, h: rh, extra: document.getElementById('owner-grid') });
     sections.forEach(({ id, el, h, extra }) => {
       h.classList.add('sec-toggle'); h.tabIndex = 0; h.setAttribute('role', 'button');
       const apply = () => {
