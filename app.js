@@ -688,9 +688,13 @@
     const W = head.clientWidth, H = head.clientHeight; if (!W || !H) return;
     svg.setAttribute('viewBox', `0 0 ${W} ${H}`);
     const pad = Math.max(6, H * 0.06);                 // inset of the court boundary
-    const ft = Math.min((H - 2 * pad) / 50, (W - 2 * pad) / 94);   // real 94 x 50 ft proportions
-    const cx = W / 2, cy = H / 2;
-    const L = cx - 47 * ft, R = cx + 47 * ft, T = cy - 25 * ft, B = cy + 25 * ft;
+    const ft = (H - 2 * pad) / 50;                     // court is 50 ft wide; keep circles and keys true to shape
+    const cx = W / 2, cy = H / 2, T = pad, B = H - pad;
+    // baselines line up with the outer edges of the two basketballs in the title
+    const hr = head.getBoundingClientRect(), balls = head.querySelectorAll('.pl-ball');
+    let L = cx - 47 * ft, R = cx + 47 * ft;
+    if (balls.length === 2) { L = balls[0].getBoundingClientRect().left - hr.left; R = balls[1].getBoundingClientRect().right - hr.left; }
+    const half = Math.max(30 * ft, Math.min(cx - L, R - cx)); L = cx - half; R = cx + half;   // keep it symmetric and roomy enough for both ends
     const line = 'rgba(255,255,255,.17)', fill = 'rgba(255,255,255,.07)', sw = Math.max(1.2, ft * 0.18);
     const parts = [];
     parts.push(`<rect x="${L}" y="${T}" width="${R - L}" height="${B - T}" rx="2" fill="none" stroke="${line}" stroke-width="${sw}"/>`);
