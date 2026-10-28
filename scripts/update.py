@@ -297,8 +297,13 @@ def main():
                 ok = False
                 log.append(f"schedule day {day} failed: {ex!r}")
             day += timedelta(days=1)
-        games_next = sorted(({"date": e["date"], "time": e["time"], "away": e["away"]["name"], "home": e["home"]["name"]}
-                             for e in upcoming.values() if e["season_type"] in (2, 3, 5)),
+        def sched_row(e):
+            row = {"date": e["date"], "time": e["time"], "away": e["away"]["name"], "home": e["home"]["name"]}
+            o = e.get("odds") or {}
+            if o.get("away_ml") is not None or o.get("home_ml") is not None:
+                row.update({"away_ml": o.get("away_ml"), "home_ml": o.get("home_ml")})
+            return row
+        games_next = sorted((sched_row(e) for e in upcoming.values() if e["season_type"] in (2, 3, 5)),
                             key=lambda g: (g["date"], g["home"]))
         if ok or not sched:
             if save("schedule.json", {"as_of": today.isoformat(), "games": games_next}):

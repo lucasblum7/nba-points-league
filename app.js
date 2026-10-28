@@ -897,7 +897,13 @@
       const when = mk('span', 'tc-date'); when.textContent = g.live ? '● Live' : isToday ? 'Tonight' : fmtShort(g.date);
       const right = mk('span', 'tc-time');
       if (g.live) { const mine = home ? g.home_score : g.away_score, theirs = home ? g.away_score : g.home_score; right.append(mk('b', mine >= theirs ? 'up' : 'down', `${mine}–${theirs}`), mk('small', 'tc-clock', g.detail || '')); }
-      else right.textContent = g.time || '';
+      else {
+        right.append(mk('span', null, g.time || ''));
+        // moneyline for this team: saved pregame line first, then the schedule's
+        const ln = C.lineOf.get(g.date + '|' + g.away + '|' + g.home) || g;
+        const v = home ? ln.home_ml : ln.away_ml;
+        if (v != null && !isNaN(v)) right.append(mk('small', 'tc-ml ' + (v < 0 ? 'fav' : 'dog'), 'ML ' + ml(v)));
+      }
       const meta = mk('span', 'tc-meta'); if (prev && prev === prevDay(g.date)) meta.append(mk('span', 'tc-b2b', 'B2B'));
       if (g.cup) meta.append(mk('span', 'tc-cup', '🏆'));
       r.append(when, oppEl(home, o), right, meta); next.append(r); prev = g.date;

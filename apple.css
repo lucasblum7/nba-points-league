@@ -441,3 +441,6 @@ button.mu-today { text-decoration: none !important; }
 /* tonight's game: same neutral gray for every team */
 .tc-tonight { background: var(--fill2) !important; box-shadow: inset 3px 0 0 color-mix(in srgb, var(--muted) 70%, transparent) !important; }
 .tc-g.is-live.tc-tonight { box-shadow: inset 3px 0 0 var(--bad) !important; }
+/* team card: moneyline under the tip-off time */
+.tc-ml { font-size: 10.5px; font-weight: 700; font-variant-numeric: tabular-nums; margin-top: 1px; color: var(--muted); }
+.tc-ml.dog { color: var(--ok); }
