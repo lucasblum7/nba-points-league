@@ -768,9 +768,6 @@
     const go = (tab, scroll) => {
       if (!TABS.includes(tab)) tab = 'home';
       document.body.dataset.tab = tab;
-      const T = { home: ['NBA Points League', '2026–27 Season'], matchups: ['Matchups', 'NBA Points League'], rosters: ['Rosters', 'NBA Points League'], more: ['More', 'NBA Points League'] }[tab];
-      const pm = document.querySelector('.pl-main'), ps = document.querySelector('.pl-sub');
-      if (pm && ps && document.querySelector('link[href="apple.css"]')) { pm.textContent = T[0]; ps.textContent = T[1]; }
       btns.forEach((b) => { const on = b.dataset.go === tab; b.classList.toggle('on', on); b.setAttribute('aria-current', on ? 'page' : 'false'); });
       try { localStorage.setItem('pl-tab', tab); } catch (e) { /* ignore */ }
       if (location.hash !== '#' + tab) history.replaceState(null, '', '#' + tab);

@@ -31,25 +31,6 @@
 body { font: 15px/1.4 var(--sans); -webkit-font-smoothing: antialiased; letter-spacing: -.005em; background: var(--bg); }
 .pl { gap: 22px; padding-top: 8px; }
 
-/* ---------- Large title header ---------- */
-.pl-head { background: none !important; box-shadow: none !important; border: none !important; color: var(--fg); text-align: left; padding: 14px 4px 0 !important; overflow: visible; }
-.pl-head::before, .pl-head::after { display: none !important; }
-.pl-title { font-family: var(--sans) !important; text-transform: none !important; text-shadow: none !important; letter-spacing: -.025em !important;
-  font-weight: 800 !important; font-size: clamp(30px, 6.5vw, 40px) !important; line-height: 1.05 !important; justify-content: flex-start !important; gap: 12px !important; }
-.pl-ball { width: 46px !important; height: 46px !important; animation: none !important; padding: 7px; border-radius: 12px; flex: none;
-  background: linear-gradient(160deg, #ff9a3c, #e8620c); box-shadow: 0 2px 8px rgba(232,98,12,.35); }
-.pl-ball circle { fill: #ff8f2e; stroke: #3a1e0e; }
-.pl-ball-r { display: none !important; }
-.pl-name { display: flex !important; flex-direction: column-reverse !important; align-items: flex-start !important; }
-.pl-name small { font-size: 12px !important; font-weight: 700 !important; letter-spacing: .04em !important; text-transform: uppercase; color: var(--accent); opacity: 1 !important; margin: 0 0 3px !important; }
-.pl-chips { justify-content: flex-start !important; margin-top: 14px !important; gap: 8px !important; }
-.chip { background: var(--fill) !important; border: none !important; color: var(--fg) !important; backdrop-filter: none !important; font-size: 13px !important; font-weight: 600 !important; padding: 6px 12px !important; }
-.chip .chip-i { display: none; }
-.chip.live .chip-i { display: inline; color: var(--bad) !important; font-size: 9px; }
-body[data-tab]:not([data-tab="home"]) .pl-head { padding: 10px 4px 0 !important; }
-body[data-tab]:not([data-tab="home"]) .pl-title { font-size: clamp(30px, 6.5vw, 40px) !important; }
-body[data-tab]:not([data-tab="home"]) .pl-ball { width: 38px !important; height: 38px !important; padding: 6px; border-radius: 10px; }
-
 /* ---------- Cards: inset grouped ---------- */
 .card, .pl .card { background: var(--panel); border: none !important; border-radius: var(--radius); box-shadow: var(--shadow); padding: 16px 16px 14px; }
 .card > h2, h2.sec, #recap-card h2 { font-family: var(--sans) !important; text-transform: none !important; letter-spacing: -.02em !important;
@@ -149,8 +130,7 @@ button.mu-today { text-decoration: none !important; }
 /* ---------- Footer ---------- */
 .site-foot { font-size: 11px; }
 
-/* The tab's large title already names these sections */
-body[data-tab="matchups"] #matchups-card > h2, body[data-tab="rosters"] #rosters-card > h2 { display: none !important; }
+
 /* A matchup "in progress" lasts all week: keep it neutral, not red */
 .mu-card.live { box-shadow: none !important; }
 .mu-card.live .mu-foot::before { color: var(--accent) !important; }
