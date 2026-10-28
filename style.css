@@ -436,3 +436,9 @@ h2.sec.sec-toggle { display: block; }
 .mu-today { font-size: 10px; font-weight: 700; letter-spacing: .02em; color: var(--accent); margin-top: 2px; white-space: nowrap; }
 .mu-today.live { color: var(--bad); }
 .mu-today.quiet { color: var(--muted); font-weight: 600; }
+/* Rosters: slightly smaller Last 3 / Next 3 chips */
+.sched-side { grid-template-columns: repeat(3, 24px); gap: 2px; }
+.sched-div { height: 8px; margin: 0 5px; }
+.gchip { font-size: 7px; padding: 0; border-radius: 2px; line-height: 1.5; }
+.sched-lab { width: 76px; font-size: 7px; }
+.teams tr.sched-row td { padding: 0 4px 6px; }
