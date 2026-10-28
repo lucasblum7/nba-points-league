@@ -426,6 +426,7 @@
     const t2 = tile('Today', tc.live ? `${tc.live} live` : `${tc.total}`, tc.live ? `of ${tc.total} games` : tc.total ? (tc.done === tc.total ? 'all played' : (tc.total === 1 ? 'game' : 'games')) : 'no games', tc.live ? 'down' : null);
     t2.classList.add('me-tap'); t2.tabIndex = 0; t2.setAttribute('role', 'button');
     t2.addEventListener('click', () => showToday(me, C, slate)); t2.addEventListener('keydown', (e) => { if (e.key === 'Enter') showToday(me, C, slate); });
+    tiles.querySelectorAll('b').forEach((b) => { if (/^\d+$/.test(b.textContent)) b.classList.add('count'); });
     host.append(tiles);
   }
 
@@ -478,9 +479,13 @@
       const tr = mk('tr', [d.points > 0 ? medal(d.place) : null, d.owner === me ? 'is-me' : null].filter(Boolean).join(' ') || null);
       const nmTd = mk('td', 'total', d.owner); if (d.owner === me) nmTd.append(mk('span', 'you-tag', 'You'));
       tr.append(mk('td', 'rank', d.rank), nmTd, mk('td', 'num', fmt(d.wins)), mk('td', 'num' + (d.bonus ? '' : ' zero'), fmt(d.bonus)),
-        mk('td', 'num total', fmt(d.points)), mk('td', 'num', d.this_week), mk('td', 'num hide-sm' + (d.weeks_won ? '' : ' zero'), d.weeks_won));
+        mk('td', 'num total count', fmt(d.points)), mk('td', 'num', d.this_week), mk('td', 'num hide-sm' + (d.weeks_won ? '' : ' zero'), d.weeks_won));
       tr.dataset.owner = d.owner; tr.dataset.pts = d.points;
-      if (prevPts.size && prevPts.has(d.owner) && prevPts.get(d.owner) !== String(d.points)) tr.classList.add('pts-up');
+      if (prevPts.size && prevPts.has(d.owner) && prevPts.get(d.owner) !== String(d.points)) {
+        tr.classList.add('pts-up');
+        const gain = d.points - Number(prevPts.get(d.owner));
+        if (gain > 0) { const ptd = tr.children[4]; ptd.style.position = 'relative'; ptd.append(mk('span', 'float-plus', '+' + gain)); }
+      }
       lb.append(tr);
     });
     if (prevTop.size && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
@@ -552,7 +557,7 @@
       pl.append(mk('b', null, row.proj), ' · Win pace ');
       pl.append(mk('b', paceClass(row.pace, row.proj), row.pace.toFixed(1)));
       const plLine = pl;
-      const pts = mk('div', 'owner-pts', fmt(row.points)); pts.append(mk('small', null, 'pts'));
+      const pts = mk('div', 'owner-pts'); pts.append(mk('span', 'count', fmt(row.points)), mk('small', null, 'pts'));
       const side = mk('div', 'owner-side'); side.append(todayPill(o, C, slate), pts);
       head.append(nameBox, side);
       const tied = board.filter((x) => x.points === row.points).length > 1;
@@ -825,7 +830,7 @@
     if (btn && !btn.dataset.wired) { btn.dataset.wired = '1'; btn.addEventListener('click', () => { const t = $('race-table'); t.hidden = !t.hidden; btn.setAttribute('aria-pressed', String(!t.hidden)); btn.textContent = t.hidden ? 'Table' : 'Chart'; host.hidden = !t.hidden; }); }
     if (!host.dataset.ro && window.ResizeObserver) { host.dataset.ro = '1'; let w0 = 0; new ResizeObserver(() => { if (Math.abs(host.clientWidth - w0) > 4) { w0 = host.clientWidth; drawRace(); } }).observe(host); }
   }
-  function drawRace() {
+  function drawRace(animate) {
     const host = $('race'), { owners, pts } = raceData || {}; if (!host || !pts || !pts.length) return;
     const dark = matchMedia('(prefers-color-scheme: dark)').matches, pal = RACE_COLORS[dark ? 'dark' : 'light'];
     const color = (o) => pal[owners.indexOf(o) % pal.length];
@@ -853,7 +858,7 @@
     const me = getMe(), last = pts[pts.length - 1].v, order = owners.slice().sort((a, b) => (a === me) - (b === me) || last[a] - last[b]);
     order.forEach((o) => {
       const d = pts.map((p, i) => `${i ? 'L' : 'M'}${X(i).toFixed(1)},${Y(p.v[o]).toFixed(1)}`).join('');
-      svg.append(el('path', { d, class: 'race-line' + (me ? (o === me ? ' race-me' : ' race-dim') : ''), stroke: color(o) }));
+      svg.append(el('path', { d, class: 'race-line' + (me ? (o === me ? ' race-me' : ' race-dim') : '') + (animate ? ' race-draw' : ''), stroke: color(o), pathLength: 1 }));
       svg.append(el('circle', { cx: X(pts.length - 1), cy: Y(last[o]), r: 4.5, fill: color(o), class: 'race-end' }));
     });
     // end labels, nudged apart so they never overlap
@@ -1087,7 +1092,30 @@
     box.addEventListener('touchmove', move, { passive: false });
     box.addEventListener('touchend', end); box.addEventListener('touchcancel', end);
   }
-  new MutationObserver((ms) => ms.forEach((m) => m.addedNodes.forEach((n) => { if (n.id === 'bonus-pop') enableSwipe(n); }))).observe(document.body, { childList: true });
+  new MutationObserver((ms) => ms.forEach((m) => m.addedNodes.forEach((n) => { if (n.id === 'bonus-pop') { enableSwipe(n); staggerIn(n.querySelectorAll('.tg-game, .tc-tile, .tc-g, .tc-week, .mx-g, .me-opt, .bp-table tr')); } }))).observe(document.body, { childList: true });
+
+  // ---------- motion: entrances, count-ups, chart draw ----------
+  const calm = () => matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function staggerIn(nodes, step = 35, max = 14) {
+    if (calm()) return;
+    [...nodes].forEach((el, i) => { el.classList.remove('rise'); void el.offsetWidth; el.style.animationDelay = Math.min(i, max) * step + 'ms'; el.classList.add('rise'); });
+  }
+  function countUp(el) {
+    const to = parseInt(el.textContent.replace(/[^\d-]/g, ''), 10); if (isNaN(to) || to === 0 || calm()) return;
+    const t0 = performance.now(), dur = 750, fmtN = (n) => (typeof fmt === 'function' ? fmt(n) : String(n));
+    const step = (t) => { const k = Math.min(1, (t - t0) / dur), e = 1 - Math.pow(1 - k, 3); el.textContent = fmtN(Math.round(to * e)); if (k < 1) requestAnimationFrame(step); };
+    el.textContent = fmtN(0); requestAnimationFrame(step);
+  }
+  function runIntro(tab) {
+    if (!D) return;
+    const secs = [...document.querySelectorAll(`[data-tab="${tab}"]`)];
+    staggerIn(secs, 70);
+    secs.forEach((sec) => {
+      sec.querySelectorAll('.count').forEach(countUp);
+      staggerIn(sec.querySelectorAll('#leaderboard tbody tr, .mw-card, #h2h-table tbody tr, #owner-grid > .card, .bubble, .matchup'), 45);
+    });
+    if (tab === 'home') drawRace(true);
+  }
 
   function closeBonus() { const o = document.getElementById('bonus-pop'); if (o) o.remove(); document.removeEventListener('keydown', bonusKey); }
   function bonusKey(e) { if (e.key === 'Escape') closeBonus(); }
@@ -1112,7 +1140,7 @@
     return row;
   }
 
-  const prevScores = new Map();
+  const prevScores = new Map(), prevState = new Map();
   function renderStrip(slate, C) {
     const strip = $('sb-strip'); strip.replaceChildren();
     const date = slate.date || pacificToday();
@@ -1122,7 +1150,8 @@
     const me = getMe(), mineG = (g) => C.owner.get(g.away) === me || C.owner.get(g.home) === me;
     slate.games.slice().sort((a, b) => (me ? mineG(b) - mineG(a) : 0)).forEach((g) => {
       const final = g.state === 'post', live = g.state === 'in';
-      const card = mk('div', 'sb-card ' + (final ? 'final' : live ? 'live' : 'pre') + (g.cup ? ' cup' : '') + (me && mineG(g) ? ' is-me' : ''));
+      const wasPre = prevState.get(g.id) === 'pre'; prevState.set(g.id, g.state);
+      const card = mk('div', (live && wasPre ? 'tipoff ' : '') + 'sb-card ' + (final ? 'final' : live ? 'live' : 'pre') + (g.cup ? ' cup' : '') + (me && mineG(g) ? ' is-me' : ''));
       const ln = C.lineOf.get(date + '|' + g.away + '|' + g.home);
       const st = mk('div', 'sb-status');
       const soon = !final && !live ? soonLabel(date, g.time) : null;
@@ -1221,7 +1250,7 @@
       if (location.hash !== '#' + tab) history.replaceState(null, '', '#' + tab);
       if (scroll) window.scrollTo({ top: 0 });
     };
-    btns.forEach((b) => b.addEventListener('click', () => go(b.dataset.go, true)));
+    btns.forEach((b) => b.addEventListener('click', () => { go(b.dataset.go, true); b.classList.remove('bounce'); void b.offsetWidth; b.classList.add('bounce'); runIntro(b.dataset.go); }));
     window.addEventListener('hashchange', () => go(location.hash.slice(1), true));
     let start = location.hash.slice(1);
     if (!TABS.includes(start)) { try { start = localStorage.getItem('pl-tab') || 'home'; } catch (e) { start = 'home'; } }
@@ -1237,11 +1266,16 @@
     mini.querySelector('a').addEventListener('click', (ev) => { ev.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); });
   })();
 
+  if (!matchMedia('(prefers-reduced-motion: reduce)').matches) document.body.classList.add('intro-wait');
+  setTimeout(() => document.body.classList.remove('intro-wait'), 4000);   // never stay hidden
   (async () => {
     try {
       await load();
       render(D, compute(D), slate);
-      await refreshLive();
+      // wait briefly for the first live-score refresh so the intro isn't cut short by a re-render
+      await Promise.race([refreshLive(), new Promise((r) => setTimeout(r, 1500))]);
+      document.body.classList.remove('intro-wait');
+      runIntro(document.body.dataset.tab || 'home');
       setInterval(refreshLive, 60 * 1000);
       setInterval(async () => { await load(); await refreshLive(); }, 10 * 60 * 1000);
     } catch (e) {
