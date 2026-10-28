@@ -688,8 +688,9 @@
     const W = head.clientWidth, H = head.clientHeight; if (!W || !H) return;
     svg.setAttribute('viewBox', `0 0 ${W} ${H}`);
     const pad = Math.max(6, H * 0.06);                 // inset of the court boundary
-    const ft = (H - 2 * pad) / 50;                     // court is 50 ft wide; keep circles round
-    const L = pad, R = W - pad, T = pad, B = H - pad, cy = H / 2, cx = W / 2;
+    const ft = Math.min((H - 2 * pad) / 50, (W - 2 * pad) / 94);   // real 94 x 50 ft proportions
+    const cx = W / 2, cy = H / 2;
+    const L = cx - 47 * ft, R = cx + 47 * ft, T = cy - 25 * ft, B = cy + 25 * ft;
     const line = 'rgba(255,255,255,.17)', fill = 'rgba(255,255,255,.07)', sw = Math.max(1.2, ft * 0.18);
     const parts = [];
     parts.push(`<rect x="${L}" y="${T}" width="${R - L}" height="${B - T}" rx="2" fill="none" stroke="${line}" stroke-width="${sw}"/>`);
