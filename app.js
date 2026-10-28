@@ -690,11 +690,15 @@
     const pad = Math.max(6, H * 0.06);                 // inset of the court boundary
     const ft = (H - 2 * pad) / 50;                     // court is 50 ft wide; keep circles and keys true to shape
     const cx = W / 2, cy = H / 2, T = pad, B = H - pad;
-    // baselines line up with the outer edges of the two basketballs in the title
-    const hr = head.getBoundingClientRect(), balls = head.querySelectorAll('.pl-ball');
+    // baselines line up with the ends of the title text
+    const hr = head.getBoundingClientRect(), title = head.querySelector('.pl-name');
     let L = cx - 47 * ft, R = cx + 47 * ft;
-    if (balls.length === 2) { L = balls[0].getBoundingClientRect().left - hr.left; R = balls[1].getBoundingClientRect().right - hr.left; }
-    const half = Math.max(30 * ft, Math.min(cx - L, R - cx)); L = cx - half; R = cx + half;   // keep it symmetric and roomy enough for both ends
+    if (title) { const tr = title.getBoundingClientRect(); L = tr.left - hr.left; R = tr.right - hr.left; }
+    // when the title wraps (phones), fall back to the basketballs' outer edges, up to real court length
+    const balls = head.querySelectorAll('.pl-ball');
+    let ballHalf = 30 * ft;
+    if (balls.length === 2) ballHalf = (balls[1].getBoundingClientRect().right - balls[0].getBoundingClientRect().left) / 2;
+    const half = Math.max(30 * ft, Math.min(cx - L, R - cx), Math.min(47 * ft, ballHalf)); L = cx - half; R = cx + half;
     const line = 'rgba(255,255,255,.17)', fill = 'rgba(255,255,255,.07)', sw = Math.max(1.2, ft * 0.18);
     const parts = [];
     parts.push(`<rect x="${L}" y="${T}" width="${R - L}" height="${B - T}" rx="2" fill="none" stroke="${line}" stroke-width="${sw}"/>`);
