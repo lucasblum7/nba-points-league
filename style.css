@@ -181,10 +181,10 @@ tr:last-child td { border-bottom: none; }
 /* Current-week matchups: greener, with winning names green and losing names red */
 .mu-card, .mu-card.live { background: var(--bg); }
 .mu-live-row td { background: color-mix(in srgb, var(--fg) 7%, transparent); }
-.mu-side.lead .mu-owner { color: var(--ok); font-weight: 800; }
+.mu-side.lead .mu-owner { color: var(--fg); font-weight: 800; }
 .mu-win, .mu-lose { color: var(--fg); font-weight: 400; }
-.mu-side.trail .mu-owner { color: #e0201c; font-weight: 700; }
-@media (prefers-color-scheme: dark) { .mu-side.trail .mu-owner { color: #ff5a55; } }
+.mu-side.trail .mu-owner { color: var(--fg); font-weight: 500; }
+
 
 .mu-owner { font-size: 21px; }
 .mu-side { grid-template-columns: 6rem 2.6rem 2.8rem; }
