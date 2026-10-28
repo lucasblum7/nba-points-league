@@ -207,7 +207,7 @@
     const past = mk('div', 'sched-side past');
     last3.forEach((x) => {
       const c = mk('span', 'gchip ' + (x.w ? 'win' : 'loss'));
-      c.append(mk('b', null, (x.home ? '' : '@') + abbr(x.opp)), mk('small', null, x.score.replace('-', '–')));
+      c.textContent = (x.home ? '' : '@') + abbr(x.opp);
       c.title = `${fmtDay(x.date)}: ${x.w ? 'Won' : 'Lost'} ${x.score} ${x.home ? 'vs' : 'at'} ${short(x.opp)}`;
       past.append(c);
     });
@@ -218,7 +218,7 @@
       const home = g.home === team, opp = home ? g.away : g.home;
       const c = mk('span', 'gchip up');
       const when = g.date === pacificToday() ? 'Today' : dayName(g.date, { weekday: 'short' });
-      c.append(mk('b', null, (home ? '' : '@') + abbr(opp)), mk('small', null, when));
+      c.textContent = (home ? '' : '@') + abbr(opp);
       c.title = `${fmtDay(g.date)}${g.time ? ' ' + g.time : ''}: ${home ? 'vs' : 'at'} ${short(opp)}`;
       next.append(c);
     });
