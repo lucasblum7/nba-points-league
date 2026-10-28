@@ -367,12 +367,15 @@
 
     const sb = document.querySelector('#mu-sched tbody'); sb.replaceChildren();
     matchups.slice().sort((a, b) => b.week - a.week).forEach((m) => {
-      const tr = mk('tr', m.status === 'live' ? 'lead' : null);
+      const tr = mk('tr', m.status === 'live' ? 'mu-live-row' : null);
       const res = m.status === 'upcoming' ? '—'
         : `${m.A.w}–${m.A.l} vs ${m.B.w}–${m.B.l}` + (m.status === 'final' ? (m.winner ? ' · ' + m.winner : ' · Tie') : ' · live');
       const who = mk('td');
-      const a = mk('span', m.status === 'final' && m.winner === m.A.owner ? 'total' : m.status === 'final' && m.winner ? 'zero' : null, m.A.owner);
-      const b = mk('span', m.status === 'final' && m.winner === m.B.owner ? 'total' : m.status === 'final' && m.winner ? 'zero' : null, m.B.owner);
+      const cls = (o) => !m.winner ? null
+        : m.status === 'live' ? (m.winner === o ? 'mu-win' : 'mu-lose')
+        : m.status === 'final' ? (m.winner === o ? 'total' : 'zero') : null;
+      const a = mk('span', cls(m.A.owner), m.A.owner);
+      const b = mk('span', cls(m.B.owner), m.B.owner);
       who.append(a, ' vs ', b);
       tr.append(mk('td', 'zero', m.week), who, mk('td', 'num' + (m.status === 'upcoming' ? ' zero' : ''), res));
       sb.append(tr);
