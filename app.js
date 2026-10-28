@@ -825,7 +825,14 @@
   function showTeam(t, C, slate) {
     closeBonus();
     const ov = mk('div', 'bp-overlay'); ov.id = 'bonus-pop';
-    const box = mk('div', 'bp-box tc-box'); box.setAttribute('role', 'dialog'); box.setAttribute('aria-modal', 'true'); box.setAttribute('aria-label', t.team + ' team card');
+    const box = mk('div', 'bp-box tc-box'); box.setAttribute('role', 'dialog');
+    { // team colors: a band across the top and a soft wash behind the header
+      const tb = TEAM_BADGE[t.team] || ['', '#888888', '#bbbbbb'];
+      const light = (h) => { const n = parseInt(h.slice(1), 16); return (0.299 * (n >> 16) + 0.587 * ((n >> 8) & 255) + 0.114 * (n & 255)) > 225; };
+      box.style.setProperty('--tc1', tb[1]);
+      box.style.setProperty('--tc2', light(tb[2]) ? `color-mix(in srgb, ${tb[1]} 55%, #000)` : tb[2]);
+      box.classList.add('tc-colored');
+    } box.setAttribute('aria-modal', 'true'); box.setAttribute('aria-label', t.team + ' team card');
     // header
     const head = mk('div', 'tc-head');
     head.append(badge(t.team, 'badge tc-badge'));

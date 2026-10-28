@@ -372,3 +372,14 @@ button.mu-today { text-decoration: none !important; }
 #leaderboard tr.pts-up td { animation: rowFlash 2s ease-out; }
 #leaderboard tbody tr { position: relative; }
 @media (prefers-reduced-motion: reduce) { .sb-pts.score-pop, #leaderboard tr.pts-up td { animation: none; } }
+
+/* Team card: team colors */
+.tc-box.tc-colored { position: relative; padding-top: 26px !important;
+  background: linear-gradient(180deg, color-mix(in srgb, var(--tc1) 14%, var(--panel)) 0, var(--panel) 150px) !important; }
+.tc-box.tc-colored::after { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 8px; border-radius: 20px 20px 0 0;
+  background: linear-gradient(90deg, var(--tc1) 0 68%, var(--tc2) 68% 100%); }
+.tc-box.tc-colored .tc-badge { box-shadow: 0 0 0 3px var(--panel), 0 0 0 5px var(--tc2) !important; }
+@media (max-width: 600px) {
+  .tc-box.tc-colored { padding-top: 30px !important; }
+  .tc-box.tc-colored::before { z-index: 2; background: rgba(255,255,255,.75) !important; top: 14px !important; }
+}
