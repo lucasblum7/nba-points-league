@@ -376,13 +376,21 @@
     const chips = $('chips');
     if (chips) {
       chips.replaceChildren();
-      const chip = (icon, text, cls) => { const c = mk('span', 'chip' + (cls ? ' ' + cls : '')); c.append(mk('span', 'chip-i', icon), text); chips.append(c); };
+      const chip = (icon, text, cls, onTap) => {
+        const c = mk(onTap ? 'button' : 'span', 'chip' + (cls ? ' ' + cls : '') + (onTap ? ' chip-btn' : '')); c.append(mk('span', 'chip-i', icon), text);
+        if (onTap) { c.type = 'button'; c.setAttribute('aria-label', text + ': show today\'s games'); c.addEventListener('click', onTap); }
+        chips.append(c); return c;
+      };
+      const openAll = () => showToday(null, C, slate);
       if (C.curWeek) chip('📅', 'Week ' + C.curWeek);
       const gs = (slate && slate.games) || [];
       const liveN = gs.filter((g) => g.state === 'in').length;
-      if (liveN) chip('●', liveN + (liveN === 1 ? ' game' : ' games') + ' live', 'live');
-      else if (gs.length) chip('🏀', gs.length + (gs.length === 1 ? ' game' : ' games') + ' today');
-      else chip('🏀', 'No games today');
+      const gc = liveN ? chip('●', liveN + (liveN === 1 ? ' game' : ' games') + ' live', 'live', openAll)
+        : gs.length ? chip('🏀', gs.length + (gs.length === 1 ? ' game' : ' games') + ' today', null, openAll)
+        : chip('🏀', 'No games today', null, openAll);
+      // same chip in the slim bar that pins to the top while scrolling
+      const mc = $('pl-mini-chip');
+      if (mc) { mc.replaceChildren(...[...gc.childNodes].map((n) => n.cloneNode(true))); mc.className = 'chip chip-btn' + (liveN ? ' live' : ''); mc.onclick = openAll; }
       const start = (D.config && D.config.season_start) || '2026-10-20';
       const day = Math.floor((new Date(pacificToday()) - new Date(start)) / 864e5) + 1;
       if (day > 0) chip('⏱', 'Day ' + day + ' of the season');
@@ -598,14 +606,15 @@
   // ---------- an owner's games today pop-up ----------
   function showToday(owner, C, slate) {
     closeBonus();
-    const gs = ((slate && slate.games) || []).filter((g) => C.owner.get(g.away) === owner || C.owner.get(g.home) === owner);
+    const all = owner == null;   // no owner = every game in the league today
+    const gs = ((slate && slate.games) || []).filter((g) => all || C.owner.get(g.away) === owner || C.owner.get(g.home) === owner);
     const ov = mk('div', 'bp-overlay'); ov.id = 'bonus-pop';
-    const box = mk('div', 'bp-box'); box.setAttribute('role', 'dialog'); box.setAttribute('aria-modal', 'true'); box.setAttribute('aria-label', owner + ' games today');
+    const box = mk('div', 'bp-box'); box.setAttribute('role', 'dialog'); box.setAttribute('aria-modal', 'true'); box.setAttribute('aria-label', all ? "Today's games" : owner + ' games today');
     const head = mk('div', 'bp-head');
-    const ttl = mk('div', 'bp-title'); ttl.append(mk('b', null, `${owner}'s games today`), mk('span', null, dayName(pacificToday(), { weekday: 'long', month: 'short', day: 'numeric' }))); head.append(ttl);
+    const ttl = mk('div', 'bp-title'); ttl.append(mk('b', null, all ? "Today's games" : `${owner}'s games today`), mk('span', null, dayName(pacificToday(), { weekday: 'long', month: 'short', day: 'numeric' }))); head.append(ttl);
     const x = mk('button', 'bp-close', '✕'); x.type = 'button'; x.setAttribute('aria-label', 'Close'); x.addEventListener('click', closeBonus); head.append(x);
     box.append(head);
-    if (!gs.length) box.append(mk('p', 'players-msg', 'None of their teams play today.'));
+    if (!gs.length) box.append(mk('p', 'players-msg', all ? 'No NBA games today.' : 'None of their teams play today.'));
     gs.forEach((g) => {
       const final = g.state === 'post', live = g.state === 'in';
       const card = mk('div', 'tg-game' + (live ? ' live' : '') + (g.cup ? ' cup' : ''));
@@ -615,7 +624,7 @@
       card.append(st);
       const winner = final ? (g.home_score > g.away_score ? g.home : g.away) : null;
       [[g.away, g.away_score, true], [g.home, g.home_score, false]].forEach(([team, pts, away]) => {
-        const mine = C.owner.get(team) === owner;
+        const mine = all || C.owner.get(team) === owner;
         const r = mk('div', 'tg-row' + (mine ? ' mine' : '') + (final ? (team === winner ? ' won' : ' lost') : ''));
         const nm = mk('span', 'tg-team'); nm.append(mk('span', 'tg-name', (away ? '' : '@ ') + short(team)), mk('span', 'tg-owner', C.owner.get(team) || ''));
         r.append(badge(team, 'sb-badge'), nm, mk('span', 'tg-pts', final || live ? String(pts ?? '') : ''));

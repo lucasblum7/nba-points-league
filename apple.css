@@ -157,8 +157,8 @@ button.mu-today { text-decoration: none !important; }
   .pl-mini-in { display: flex; align-items: center; justify-content: center; gap: 10px; text-decoration: none; color: #fff;
     background: linear-gradient(135deg, #f08a3c 0%, #d0601f 45%, #7a3210 100%); border-radius: 14px; padding: 8px 12px;
     box-shadow: 0 4px 14px rgba(0,0,0,.18); }
-  .pl-mini-in svg { width: 22px; height: 22px; flex: none; }
-  .pl-mini-in span { font-family: "Oswald", "Arial Narrow", Impact, sans-serif; font-weight: 700; text-transform: uppercase; letter-spacing: .03em; font-size: 18px; line-height: 1; text-shadow: 0 1px 0 rgba(0,0,0,.18); }
+  .pl-mini-title svg { width: 22px; height: 22px; flex: none; }
+  .pl-mini-title span { font-family: "Oswald", "Arial Narrow", Impact, sans-serif; font-weight: 700; text-transform: uppercase; letter-spacing: .03em; font-size: 18px; line-height: 1; text-shadow: 0 1px 0 rgba(0,0,0,.18); }
 }
 @media (prefers-reduced-motion: reduce) { .pl-mini { transition: none; } }
 
@@ -169,4 +169,21 @@ button.mu-today { text-decoration: none !important; }
 .teams tr.team-row td.team-cell .team-nm { vertical-align: middle; }
 @media (max-width: 480px) {
   .owner-side .today-pill, .owner-side button.today-pill { font-size: 12px !important; padding: 5px 10px !important; }
+}
+
+/* Header chips: the games chip is tappable (opens today's games) */
+.pl-head button.chip-btn { font: inherit; cursor: pointer; }
+.pl-head .chip-btn::after { content: "›"; margin-left: 2px; font-weight: 700; opacity: .8; }
+.pl-head .chip-btn:hover { filter: brightness(1.12); }
+.pl-head .chip-btn:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
+/* Pinned bar: title on the left, games chip on the right */
+@media (max-width: 700px) {
+  .pl-mini-in { justify-content: space-between !important; padding: 7px 8px 7px 12px !important; }
+  .pl-mini-title { display: flex; align-items: center; gap: 8px; color: #fff; text-decoration: none; min-width: 0; }
+  .pl-mini-title span { font-family: "Oswald", "Arial Narrow", Impact, sans-serif; font-weight: 700; text-transform: uppercase; letter-spacing: .03em; font-size: 17px; line-height: 1; text-shadow: 0 1px 0 rgba(0,0,0,.18); white-space: nowrap; }
+  .pl-mini-title svg { width: 22px; height: 22px; flex: none; }
+  #pl-mini-chip { font: inherit; font-size: 12px; font-weight: 700; color: #fff; background: rgba(255,255,255,.18); border: 1px solid rgba(255,255,255,.3); border-radius: 999px; padding: 4px 10px; white-space: nowrap; cursor: pointer; display: inline-flex; align-items: center; gap: 5px; }
+  #pl-mini-chip .chip-i { font-size: 11px; }
+  #pl-mini-chip.live .chip-i { color: #ff4d4d; }
+  #pl-mini-chip::after { content: "›"; font-weight: 700; opacity: .8; }
 }
