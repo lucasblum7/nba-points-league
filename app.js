@@ -852,6 +852,9 @@
     // last 5 / next 5
     const games = mk('div', 'tc-games');
     const col = (title) => { const c = mk('div', 'tc-col'); const h = mk('div', 'tc-colhead'); h.append(mk('h4', 'tc-h', title)); c.append(h); games.append(c); return c; };
+    const wk1 = Date.parse(D.config.week1_monday + 'T00:00:00Z');
+    const weekOf = (iso) => Math.floor((Date.parse(iso + 'T00:00:00Z') - wk1) / 864e5 / 7) + 1;
+    const weekBreak = (c, w) => { const d = mk('div', 'tc-week'); d.append(mk('span', null, 'Week ' + w)); c.append(d); };
     const prevDay = (iso) => { const d = new Date(iso + 'T12:00:00Z'); d.setUTCDate(d.getUTCDate() - 1); return d.toISOString().slice(0, 10); };
     const teamName = (x) => mk('span', 'tc-oname', abbr(x));
     const fullName = (x) => mk('span', 'tc-ofull', short(x));
@@ -869,6 +872,7 @@
       strip.append(sq, lab); last.firstChild.append(strip);
     } else last.append(mk('p', 'tc-empty', 'No games yet.'));
     lg.slice().reverse().forEach((g, k, arr) => {
+      if (k && weekOf(g.date) !== weekOf(arr[k - 1].date)) weekBreak(last, weekOf(g.date));
       const [a, b] = g.score.split('-').map(Number), m = a - b;
       const r = mk('div', 'tc-g tc-res-row ' + (g.w ? 'win' : 'loss'));
       const res = mk('span', 'tc-res ' + (g.w ? 'win' : 'loss')); res.append(mk('b', null, g.w ? 'W' : 'L'), ' ' + g.score.replace('-', '–'));
@@ -885,7 +889,9 @@
     const rows = (liveG ? [{ ...liveG, date: today, live: true }] : []).concat(up);
     if (!rows.length) next.append(mk('p', 'tc-empty', D.schedule ? 'No games scheduled.' : 'Schedule coming soon.'));
     let prev = lg.length ? lg[lg.length - 1].date : null;
+    let lastWk = weekOf(today);
     rows.forEach((g) => {
+      if (weekOf(g.date) !== lastWk) { lastWk = weekOf(g.date); weekBreak(next, lastWk); }
       const home = g.home === t.team, o = home ? g.away : g.home, isToday = g.date === today;
       const r = mk('div', 'tc-g' + (isToday ? ' tc-tonight' : '') + (g.live ? ' is-live' : ''));
       const when = mk('span', 'tc-date'); when.textContent = g.live ? '● Live' : isToday ? 'Tonight' : fmtShort(g.date);

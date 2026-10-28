@@ -431,3 +431,7 @@ button.mu-today { text-decoration: none !important; }
 /* stack Last 5 over Next 5 everywhere; full team names when there's room */
 .tc-games { grid-template-columns: 1fr !important; }
 @media (min-width: 700px) { .tc-opp .tc-ofull { display: inline !important; } .tc-opp .tc-oname { display: none !important; } }
+/* small week divider between games in the team card */
+.tc-week { display: flex; align-items: center; gap: 8px; margin: 7px 2px 3px; font-size: 10px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
+.tc-week::before, .tc-week::after { content: ""; flex: 1; height: 1px; background: var(--line); }
+.tc-week + .tc-g { margin-top: 0 !important; }
