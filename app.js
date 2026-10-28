@@ -491,11 +491,11 @@
 
     // bonuses
     const bb = document.querySelector('#bonus-table tbody'); bb.replaceChildren();
-    const withB = teams.filter((t) => t.bonus > 0).sort((a, b) => b.bonus - a.bonus);
-    $('bonus-empty').hidden = withB.length > 0; $('bonus-table').hidden = withB.length === 0;
+    const withB = teams.slice().sort((a, b) => b.bonus - a.bonus || a.owner.localeCompare(b.owner) || a.team.localeCompare(b.team));
+    $('bonus-empty').hidden = teams.some((t) => t.bonus > 0); $('bonus-table').hidden = false;
     withB.forEach((t) => {
-      const tr = mk('tr');
-      const tot = mk('td', 'num'); const btn = mk('button', 'bonus-btn', String(t.bonus)); btn.type = 'button';
+      const tr = mk('tr', t.bonus ? 'has-bonus' : 'no-bonus');
+      const tot = mk('td', 'num'); const btn = mk('button', 'bonus-btn' + (t.bonus ? '' : ' zero-btn'), String(t.bonus)); btn.type = 'button';
       btn.setAttribute('aria-label', `Show bonus breakdown for ${short(t.team)}`);
       btn.addEventListener('click', () => showBonus(t)); tot.append(btn);
       tr.append(mk('td', null, short(t.team)), mk('td', null, t.owner), tot);
