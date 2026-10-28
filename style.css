@@ -251,3 +251,18 @@ tr.p1 td.rank::after { content: " 🥇"; } tr.p2 td.rank::after { content: " �
 #h2h-table td.h2h-wins { color: var(--fg); font-weight: 600; }
 #h2h-table th:first-child, #h2h-table td:first-child { padding-left: 8px; }
 #h2h-table th:last-child, #h2h-table td:last-child { padding-right: 10px; }
+/* League rules: collapsible button at the bottom */
+.rules { padding: 0; }
+.rules > summary { list-style: none; cursor: pointer; padding: 14px 18px; font-weight: 700; font-size: 16px; display: flex; align-items: center; justify-content: center; gap: 8px; }
+.rules > summary::-webkit-details-marker { display: none; }
+.rules > summary::before { content: "📖"; }
+.rules > summary::after { content: "▾"; color: var(--muted); transition: transform .15s ease; }
+.rules[open] > summary::after { transform: rotate(180deg); }
+.rules[open] > summary { border-bottom: 1px solid var(--line); }
+.rules-body { padding: 4px 18px 16px; }
+.rules-body h3 { font-size: 14px; margin: 14px 0 4px; }
+.rules-body ul { margin: 0; padding-left: 20px; font-size: 14px; }
+.rules-body li { margin: 3px 0; }
+/* Space under section titles now that the notes are gone */
+.card > h2 { margin-bottom: 12px; }
+#recap-card > h2 { margin-bottom: 4px; }

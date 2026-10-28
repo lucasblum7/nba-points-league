@@ -270,7 +270,7 @@
     const res = prior.filter((g) => g.date === lastDay);
     const rb = document.querySelector('#results-table tbody'); rb.replaceChildren();
     $('results-empty').hidden = res.length > 0;
-    if (lastDay) $('results-date').textContent = fmtDay(lastDay) + ' · winners keep their colors; the owner who picked up the win gets +1.';
+    if (lastDay && $('results-date')) $('results-date').textContent = fmtDay(lastDay) + ' · winners keep their colors; the owner who picked up the win gets +1.';
     res.forEach((g) => { const tr = mk('tr'); const td = mk('td'); td.append(resultRow(g, owner)); tr.append(td); rb.append(tr); });
 
     // weekly winners

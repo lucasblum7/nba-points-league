@@ -28,7 +28,6 @@
 
   <section class="card" id="leaderboard-card">
     <h2>Leaderboard</h2>
-    <p class="note">1 point per regular-season win plus playoff and NBA Cup bonuses. Ties go to most playoff series won, then most regular-season wins.</p>
     <div class="legend"><span><i class="sw-wins"></i>Regular-season wins</span><span><i class="sw-bonus"></i>Bonus points</span></div>
     <div class="scroll">
       <table id="leaderboard">
@@ -43,7 +42,6 @@
 
   <section class="card" id="matchups-card">
     <h2>Matchups</h2>
-    <p class="note" id="mu-note">Head-to-head each Monday–Sunday week. Best net record (wins minus losses) wins the week; most total wins breaks a tie.</p>
     <div class="mu-week" id="mu-current"></div>
     <div class="grid mu-grid">
       <div>
@@ -67,7 +65,6 @@
 
   <section class="card" id="weekly-card">
     <h2>Weekly winners</h2>
-    <p class="note">Most regular-season wins in each Monday–Sunday week. Ties are shared. “Weeks won” counts finished weeks only.</p>
     <div class="scroll tall">
       <table id="week-table">
         <thead><tr><th>Week</th><th>From</th><th>To</th><th>Winner</th><th class="num">Wins</th><th>Status</th></tr></thead>
@@ -83,7 +80,6 @@
   </section>
   <section class="card" id="results-card">
     <h2>Last night’s results</h2>
-    <p class="note" id="results-date">Winners keep their colors; the owner who picked up the win gets +1.</p>
     <p class="empty" id="results-empty" hidden>No games last night.</p>
     <table id="results-table"><tbody></tbody></table>
   </section>
@@ -172,6 +168,35 @@
       </div>
     </div>
   </section>
+
+  <details class="card rules" id="league-rules">
+    <summary>League rules</summary>
+    <div class="rules-body">
+      <h3>Leaderboard</h3>
+      <ul>
+        <li>1 point per regular-season win.</li>
+        <li>Make the playoffs: +5 (play-in winners count; play-in losers don’t).</li>
+        <li>2 points per playoff game won (play-in games don’t count). NBA Cup winner: +5.</li>
+        <li><b>Ties:</b> most playoff series won, then most regular-season wins.</li>
+      </ul>
+      <h3>Matchups</h3>
+      <ul>
+        <li>Three head-to-head matchups each Monday–Sunday week; everyone plays everyone once every 5 weeks.</li>
+        <li>Best net record that week (wins minus losses of your 5 teams) wins.</li>
+        <li><b>Ties:</b> most total wins that week breaks it; otherwise the matchup is a tie.</li>
+        <li><b>Standings order:</b> matchup record, then season net, then total wins.</li>
+      </ul>
+      <h3>Weekly winners</h3>
+      <ul>
+        <li>Most regular-season wins in each Monday–Sunday week.</li>
+        <li><b>Ties:</b> shared. “Weeks won” counts finished weeks only.</li>
+      </ul>
+      <h3>Last night’s results</h3>
+      <ul>
+        <li>Winners keep their team colors; the owner who picked up the win gets +1.</li>
+      </ul>
+    </div>
+  </details>
 
   <footer class="site-foot" id="foot">Scores from ESPN’s public scoreboard, updated every 15 minutes from 9 AM to 1 AM Pacific. Preseason lines from Hoops Rumors’ over/under recap.</footer>
 </main>
