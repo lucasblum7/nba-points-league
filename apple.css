@@ -362,3 +362,5 @@ button.mu-today { text-decoration: none !important; }
 .race-lab-dim { opacity: .55; }
 .race-lab-me { font-weight: 800; }
 .pl-head .me-chip { background: rgba(255,255,255,.26) !important; }
+/* bigger grab handle so it's easy to swipe from */
+@media (max-width: 600px) { .bp-box::before { width: 40px; height: 5px; top: 8px; margin-left: -20px; } .bp-box { overscroll-behavior: contain; } }

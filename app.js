@@ -909,6 +909,36 @@
     ov.addEventListener('click', (e) => { if (e.target === ov) closeBonus(); });
     document.body.append(ov); document.addEventListener('keydown', bonusKey); x.focus();
   }
+  // ---------- phones: swipe a sheet down to close it, like iOS ----------
+  function enableSwipe(ov) {
+    const box = ov.querySelector('.bp-box'); if (!box || !matchMedia('(max-width: 600px)').matches) return;
+    let y0 = null, dy = 0, t0 = 0, dragging = false;
+    const start = (e) => {
+      const t = e.touches ? e.touches[0] : e; const r = box.getBoundingClientRect();
+      // drag from the grab-handle area, or anywhere once the sheet is scrolled to the top
+      if (t.clientY - r.top > 44 && box.scrollTop > 0) return;
+      y0 = t.clientY; dy = 0; t0 = Date.now(); dragging = false;
+    };
+    const move = (e) => {
+      if (y0 == null) return; const t = e.touches ? e.touches[0] : e; dy = t.clientY - y0;
+      if (!dragging) { if (dy > 6 && box.scrollTop <= 0) { dragging = true; box.style.transition = 'none'; } else if (dy < -4) { y0 = null; return; } else return; }
+      e.preventDefault();
+      const d = Math.max(0, dy); box.style.transform = `translateY(${d}px)`; ov.style.background = `rgba(0,0,0,${Math.max(0, .35 - d / 900)})`;
+    };
+    const end = () => {
+      if (y0 == null) return; const fast = dy / Math.max(1, Date.now() - t0) > 0.6; y0 = null;
+      if (!dragging) return;
+      box.style.transition = 'transform .22s ease';
+      if (dy > 110 || (fast && dy > 30)) { box.style.transform = 'translateY(100%)'; ov.style.transition = 'opacity .22s ease'; ov.style.opacity = '0'; setTimeout(closeBonus, 210); }
+      else { box.style.transform = ''; ov.style.background = ''; }
+      dragging = false;
+    };
+    box.addEventListener('touchstart', start, { passive: true });
+    box.addEventListener('touchmove', move, { passive: false });
+    box.addEventListener('touchend', end); box.addEventListener('touchcancel', end);
+  }
+  new MutationObserver((ms) => ms.forEach((m) => m.addedNodes.forEach((n) => { if (n.id === 'bonus-pop') enableSwipe(n); }))).observe(document.body, { childList: true });
+
   function closeBonus() { const o = document.getElementById('bonus-pop'); if (o) o.remove(); document.removeEventListener('keydown', bonusKey); }
   function bonusKey(e) { if (e.key === 'Escape') closeBonus(); }
 
