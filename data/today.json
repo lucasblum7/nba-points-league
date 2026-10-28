@@ -1,45 +1,125 @@
 {
- "date": "2026-10-27",
+ "date": "2026-10-28",
  "games": [
   {
-   "id": "401909877",
+   "id": "401909881",
+   "time": "4:00 PM",
+   "state": "pre",
+   "detail": "10/28 - 7:00 PM EDT",
+   "away": "Miami Heat",
+   "home": "Atlanta Hawks",
+   "away_score": null,
+   "home_score": null
+  },
+  {
+   "id": "401909882",
+   "time": "4:00 PM",
+   "state": "pre",
+   "detail": "10/28 - 7:00 PM EDT",
+   "away": "Washington Wizards",
+   "home": "Cleveland Cavaliers",
+   "away_score": null,
+   "home_score": null
+  },
+  {
+   "id": "401909883",
+   "time": "4:00 PM",
+   "state": "pre",
+   "detail": "10/28 - 7:00 PM EDT",
+   "away": "Charlotte Hornets",
+   "home": "Detroit Pistons",
+   "away_score": null,
+   "home_score": null
+  },
+  {
+   "id": "401909884",
+   "time": "4:00 PM",
+   "state": "pre",
+   "detail": "10/28 - 7:00 PM EDT",
+   "away": "Philadelphia 76ers",
+   "home": "Indiana Pacers",
+   "away_score": null,
+   "home_score": null
+  },
+  {
+   "id": "401909885",
    "time": "4:30 PM",
-   "state": "post",
-   "detail": "Final/OT",
-   "away": "Brooklyn Nets",
-   "home": "Boston Celtics",
-   "away_score": 124,
-   "home_score": 125
+   "state": "pre",
+   "detail": "10/28 - 7:30 PM EDT",
+   "away": "Orlando Magic",
+   "home": "Toronto Raptors",
+   "away_score": null,
+   "home_score": null
   },
   {
-   "id": "401909878",
+   "id": "401909886",
    "time": "5:00 PM",
-   "state": "post",
-   "detail": "Final",
-   "away": "Detroit Pistons",
-   "home": "New York Knicks",
-   "away_score": 97,
-   "home_score": 111
+   "state": "pre",
+   "detail": "10/28 - 8:00 PM EDT",
+   "away": "New York Knicks",
+   "home": "Chicago Bulls",
+   "away_score": null,
+   "home_score": null
   },
   {
-   "id": "401909879",
+   "id": "401909887",
    "time": "5:00 PM",
-   "state": "post",
-   "detail": "Final",
-   "away": "Sacramento Kings",
-   "home": "San Antonio Spurs",
-   "away_score": 103,
-   "home_score": 130
+   "state": "pre",
+   "detail": "10/28 - 8:00 PM EDT",
+   "away": "Houston Rockets",
+   "home": "Milwaukee Bucks",
+   "away_score": null,
+   "home_score": null
   },
   {
-   "id": "401909880",
-   "time": "8:00 PM",
-   "state": "in",
-   "detail": "2:39 - 1st",
-   "away": "Portland Trail Blazers",
-   "home": "Los Angeles Lakers",
-   "away_score": 24,
-   "home_score": 31
+   "id": "401909888",
+   "time": "5:00 PM",
+   "state": "pre",
+   "detail": "10/28 - 8:00 PM EDT",
+   "away": "Golden State Warriors",
+   "home": "Minnesota Timberwolves",
+   "away_score": null,
+   "home_score": null
+  },
+  {
+   "id": "401909889",
+   "time": "5:00 PM",
+   "state": "pre",
+   "detail": "10/28 - 8:00 PM EDT",
+   "away": "Denver Nuggets",
+   "home": "New Orleans Pelicans",
+   "away_score": null,
+   "home_score": null
+  },
+  {
+   "id": "401909890",
+   "time": "6:00 PM",
+   "state": "pre",
+   "detail": "10/28 - 9:00 PM EDT",
+   "away": "San Antonio Spurs",
+   "home": "Utah Jazz",
+   "away_score": null,
+   "home_score": null
+  },
+  {
+   "id": "401909891",
+   "time": "6:30 PM",
+   "state": "pre",
+   "detail": "10/28 - 9:30 PM EDT",
+   "away": "Oklahoma City Thunder",
+   "home": "Dallas Mavericks",
+   "away_score": null,
+   "home_score": null
+  },
+  {
+   "id": "401909892",
+   "time": "7:30 PM",
+   "state": "pre",
+   "detail": "10/28 - 10:30 PM EDT",
+   "away": "Los Angeles Lakers",
+   "home": "LA Clippers",
+   "away_score": null,
+   "home_score": null
   }
  ]
 }
