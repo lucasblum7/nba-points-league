@@ -400,7 +400,7 @@
       const bc = mk('td', 'barcell hide-sm'); bc.append(bar);
       tr.append(mk('td', 'rank', d.rank), mk('td', 'total', d.owner), mk('td', 'num', fmt(d.wins)), mk('td', 'num' + (d.bonus ? '' : ' zero'), fmt(d.bonus)),
         mk('td', 'num total', fmt(d.points)), mk('td', 'num', d.this_week), mk('td', 'num hide-sm' + (d.weeks_won ? '' : ' zero'), d.weeks_won),
-        mk('td', 'num hide-sm zero', d.behind), bc);
+        bc);
       lb.append(tr);
     });
 
