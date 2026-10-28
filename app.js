@@ -733,7 +733,9 @@
     let closed = new Set();
     try { closed = new Set(JSON.parse(localStorage.getItem(KEY) || '[]')); } catch (e) { /* storage unavailable */ }
     const save = () => { try { localStorage.setItem(KEY, JSON.stringify([...closed])); } catch (e) { /* ignore */ } };
-    const sections = [...document.querySelectorAll('section.card')].filter((c) => c.id !== 'league-rules' && c.querySelector(':scope > h2'))
+    // only the More tab's sections fold up; Home, Matchups and Rosters always stay open
+    const FOLDABLE = ['bonus-card', 'rules-card', 'upset-card', 'ideas-card'];
+    const sections = [...document.querySelectorAll('section.card')].filter((c) => FOLDABLE.includes(c.id) && c.querySelector(':scope > h2'))
       .map((c) => ({ id: c.id, el: c, h: c.querySelector(':scope > h2') }));
     sections.forEach(({ id, el, h, extra }) => {
       h.classList.add('sec-toggle'); h.tabIndex = 0; h.setAttribute('role', 'button');
