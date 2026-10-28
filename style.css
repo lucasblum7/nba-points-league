@@ -266,3 +266,7 @@ tr.p1 td.rank::after { content: " ðŸ¥‡"; } tr.p2 td.rank::after { content: " ðŸ¥
 /* Space under section titles now that the notes are gone */
 .card > h2 { margin-bottom: 12px; }
 #recap-card > h2 { margin-bottom: 4px; }
+/* Center every section title (and the small labels right under them) */
+.card h2, h2.sec { text-align: center; }
+.legend { justify-content: center; }
+.mu-week > :first-child, #mu-current > .mu-label, .mu-week-label { text-align: center; }
