@@ -34,6 +34,16 @@
   const dayName = (iso, opts) => new Date(utc(iso)).toLocaleDateString('en-US', { timeZone: 'UTC', ...opts });
   const fmtDay = (iso) => dayName(iso, { weekday: 'short', month: 'short', day: 'numeric' });
   const pacificToday = () => new Intl.DateTimeFormat('en-CA', { timeZone: 'America/Los_Angeles' }).format(new Date());
+  // minutes until a game's tip-off ("7:30 PM" Pacific on its date); null if not today or unknown
+  const minsToTip = (date, time) => {
+    if (!time || date !== pacificToday()) return null;
+    const m = /^(\d{1,2}):(\d{2})\s*([AP]M)$/i.exec(String(time).trim()); if (!m) return null;
+    const tip = ((+m[1] % 12) + (/p/i.test(m[3]) ? 12 : 0)) * 60 + +m[2];
+    const [h, mi] = new Intl.DateTimeFormat('en-GB', { timeZone: 'America/Los_Angeles', hour: '2-digit', minute: '2-digit', hourCycle: 'h23' }).format(new Date()).split(':').map(Number);
+    return tip - (h * 60 + mi);
+  };
+  // "Starts in 12 min" when tip-off is 15 minutes away or less
+  const soonLabel = (date, time) => { const n = minsToTip(date, time); return n != null && n <= 15 && n >= -5 ? (n <= 0 ? 'Tipping off' : `In ${n} min`) : null; };
   const ml = (v) => (v == null || isNaN(v) ? '' : v > 0 ? '+' + v : '−' + Math.abs(v));
   const badge = (team, cls) => {
     const b = TEAM_BADGE[team];
@@ -706,8 +716,9 @@
       const f = form.get(r.owner).slice(-4); f.forEach((x) => dots.append(mk('i', x))); for (let k = f.length; k < 4; k++) dots.append(mk('i', 'none'));
       fd.append(dots);
       const nm = mk('td', 'total', r.owner); if (r.owner === me) nm.append(mk('span', 'you-tag', 'You'));
-      tr.append(mk('td', 'rank', i + 1), nm, mk('td', 'num total', r.t ? `${r.w}–${r.l}–${r.t}` : `${r.w}–${r.l}`),
-        mk('td', 'num' + (r.net > 0 ? ' up' : r.net < 0 ? ' down' : ' zero'), signedN(r.net)), mk('td', 'num h2h-wins', r.wins), fd);
+      const netTd = mk('td', 'num'); netTd.append(mk('span', 'h2h-net ' + (r.net > 0 ? 'up' : r.net < 0 ? 'down' : 'even'), signedN(r.net)));
+      tr.append(mk('td', 'rank', i + 1), nm, mk('td', 'num h2h-rec', r.t ? `${r.w}–${r.l}–${r.t}` : `${r.w}–${r.l}`),
+        netTd, mk('td', 'num h2h-wins', r.wins), fd);
       hb.append(tr);
     });
   }
@@ -764,7 +775,9 @@
       const final = g.state === 'post', live = g.state === 'in';
       const card = mk('div', 'tg-game' + (live ? ' live' : '') + (g.cup ? ' cup' : ''));
       const st = mk('div', 'tg-status');
-      st.append(mk('span', live ? 'tg-live' : null, final ? 'FINAL' : live ? '● ' + (g.detail || 'LIVE') : g.time));
+      const soon = !final && !live ? soonLabel(pacificToday(), g.time) : null;
+      if (soon) card.classList.add('soon');
+      st.append(mk('span', live ? 'tg-live' : soon ? 'tg-soon' : null, final ? 'FINAL' : live ? '● ' + (g.detail || 'LIVE') : soon ? `⏱ ${soon} · ${g.time}` : g.time));
       if (g.cup) st.append(mk('span', 'tg-cup', '🏆 NBA Cup'));
       card.append(st);
       const winner = final ? (g.home_score > g.away_score ? g.home : g.away) : null;
@@ -969,7 +982,8 @@
       if (weekOf(g.date) !== lastWk) { lastWk = weekOf(g.date); weekBreak(next, lastWk); }
       const home = g.home === t.team, o = home ? g.away : g.home, isToday = g.date === today;
       const r = mk('div', 'tc-g' + (isToday ? ' tc-tonight' : '') + (g.live ? ' is-live' : ''));
-      const when = mk('span', 'tc-date'); when.textContent = g.live ? '● Live' : isToday ? 'Tonight' : fmtShort(g.date);
+      const soonT = !g.live && isToday ? soonLabel(g.date, g.time) : null;
+      const when = mk('span', 'tc-date' + (soonT ? ' tc-soon' : '')); when.textContent = g.live ? '● Live' : soonT || (isToday ? 'Tonight' : fmtShort(g.date));
       const right = mk('span', 'tc-time');
       if (g.live) { const mine = home ? g.home_score : g.away_score, theirs = home ? g.away_score : g.home_score; right.append(mk('b', mine >= theirs ? 'up' : 'down', `${mine}–${theirs}`), mk('small', 'tc-clock', g.detail || '')); }
       else {
@@ -1111,7 +1125,9 @@
       const card = mk('div', 'sb-card ' + (final ? 'final' : live ? 'live' : 'pre') + (g.cup ? ' cup' : '') + (me && mineG(g) ? ' is-me' : ''));
       const ln = C.lineOf.get(date + '|' + g.away + '|' + g.home);
       const st = mk('div', 'sb-status');
-      st.append(mk('span', null, final ? 'FINAL' : live ? (g.detail || 'LIVE') : g.time));
+      const soon = !final && !live ? soonLabel(date, g.time) : null;
+      if (soon) card.classList.add('soon');
+      st.append(mk('span', soon ? 'sb-soon' : null, final ? 'FINAL' : live ? (g.detail || 'LIVE') : soon || g.time));
       if (ln && ln.fav && ln.spread != null) st.append(mk('span', 'sb-line', ln.spread === 0 ? 'PK' : (TEAM_BADGE[ln.fav] || [short(ln.fav)])[0] + ' −' + ln.spread));
       card.append(st);
       const winner = final ? (g.home_score > g.away_score ? g.home : g.away) : null;
