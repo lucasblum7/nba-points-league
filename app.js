@@ -871,13 +871,13 @@
       const lab = mk('span', 'tc-slab'); lab.append(mk('b', lw ? 'up' : 'down', (lw ? 'W' : 'L') + n), ` · ${wins}–${lg.length - wins} last ${lg.length}`);
       strip.append(sq, lab); last.firstChild.append(strip);
     } else last.append(mk('p', 'tc-empty', 'No games yet.'));
-    lg.slice().reverse().forEach((g, k, arr) => {
+    lg.forEach((g, k, arr) => {   // oldest at the top, most recent at the bottom
       if (k && weekOf(g.date) !== weekOf(arr[k - 1].date)) weekBreak(last, weekOf(g.date));
       const [a, b] = g.score.split('-').map(Number), m = a - b;
       const r = mk('div', 'tc-g tc-res-row ' + (g.w ? 'win' : 'loss'));
       const res = mk('span', 'tc-res ' + (g.w ? 'win' : 'loss')); res.append(mk('b', null, g.w ? 'W' : 'L'), ' ' + g.score.replace('-', '–'));
       const meta = mk('span', 'tc-meta'); meta.append(mk('span', 'tc-margin ' + (m > 0 ? 'up' : 'down'), (m > 0 ? '+' : '−') + Math.abs(m)));
-      const older = arr[k + 1]; if (older && older.date === prevDay(g.date)) meta.append(mk('span', 'tc-b2b', 'B2B'));
+      const older = arr[k - 1]; if (older && older.date === prevDay(g.date)) meta.append(mk('span', 'tc-b2b', 'B2B'));
       if (g.cup) meta.append(mk('span', 'tc-cup', '🏆'));
       r.append(mk('span', 'tc-date', fmtShort(g.date)), oppEl(g.home, g.opp), res, meta); last.append(r);
     });
