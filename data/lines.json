@@ -155,8 +155,8 @@
   "home": "Dallas Mavericks",
   "fav": "Oklahoma City Thunder",
   "spread": 5.5,
-  "away_ml": -205,
-  "home_ml": 170,
+  "away_ml": -192,
+  "home_ml": 160,
   "book": "DraftKings"
  },
  {
@@ -234,9 +234,19 @@
   "away": "San Antonio Spurs",
   "home": "Utah Jazz",
   "fav": "San Antonio Spurs",
-  "spread": 13.5,
-  "away_ml": -650,
-  "home_ml": 470,
+  "spread": 14.5,
+  "away_ml": -800,
+  "home_ml": 550,
+  "book": "DraftKings"
+ },
+ {
+  "date": "2026-10-29",
+  "away": "Memphis Grizzlies",
+  "home": "Portland Trail Blazers",
+  "fav": "Portland Trail Blazers",
+  "spread": 6.5,
+  "away_ml": 205,
+  "home_ml": -250,
   "book": "DraftKings"
  }
 ]
