@@ -992,6 +992,20 @@
   }
   // ---------- playoff odds (team card) ----------
   const pctText = (p) => (p >= 99.5 && p < 100 ? '>99' : p > 0 && p < 0.5 ? '<1' : String(Math.round(p))) + '%';
+  function closeWhy() { const o = document.getElementById('why-pop'); if (o) o.remove(); document.removeEventListener('keydown', whyKey, true); }
+  function whyKey(e) { if (e.key === 'Escape') { e.stopImmediatePropagation(); closeWhy(); } }
+  function showWhy(team, o, body) {
+    closeWhy();
+    const ov = mk('div', 'bp-overlay why-overlay'); ov.id = 'why-pop';
+    const box = mk('div', 'bp-box why-box'); box.setAttribute('role', 'dialog'); box.setAttribute('aria-modal', 'true'); box.setAttribute('aria-label', "What's driving " + team + "'s playoff odds");
+    const head = mk('div', 'why-head');
+    head.append(badge(team, 'badge why-badge'));
+    const ttl = mk('div', 'why-title'); ttl.append(mk('b', null, "What's driving it"), mk('span', null, `${short(team)} · ${pctText(o.playoffs)} to make the playoffs`));
+    const x = mk('button', 'bp-close', '✕'); x.type = 'button'; x.setAttribute('aria-label', 'Close'); x.addEventListener('click', closeWhy);
+    head.append(ttl, x); box.append(head, body);
+    ov.append(box); ov.addEventListener('click', (e) => { if (e.target === ov) closeWhy(); });
+    document.body.append(ov); document.addEventListener('keydown', whyKey, true); x.focus();
+  }
   function playoffOdds(team) {
     const o = D.odds && D.odds.teams && D.odds.teams[team]; if (!o) return null;
     const sec = mk('div', 'tc-po');
@@ -1013,13 +1027,12 @@
     cell('Top-6 seed', pctText(o.top6)); cell('Play-in (7–10)', pctText(o.playin)); cell('Projected', Math.round(o.proj_w) + '–' + Math.round(o.proj_l));
     sec.append(split);
     // what's driving it
-    // "What's driving it": tap to open or close (the choice is remembered)
-    let open = false; try { open = localStorage.getItem('pl-why') === '1'; } catch (e) { /* ignore */ }
-    const why = mk('div', 'po-why' + (open ? ' open' : ''));
-    const wh = mk('button', 'po-why-h'); wh.type = 'button'; wh.setAttribute('aria-expanded', String(open));
+    // "What's driving it": a button that opens the breakdown in its own pop-up
+    const wh = mk('button', 'po-why-h'); wh.type = 'button';
     wh.append(mk('span', null, "What's driving it"), mk('span', 'po-chev', '›'));
-    const body = mk('div', 'po-why-body'); why.append(wh, body);
-    wh.addEventListener('click', () => { open = !open; why.classList.toggle('open', open); wh.setAttribute('aria-expanded', String(open)); try { localStorage.setItem('pl-why', open ? '1' : '0'); } catch (e) { /* ignore */ } });
+    const body = mk('div', 'po-why-body');
+    wh.addEventListener('click', () => showWhy(team, o, body));
+    const why = mk('div', 'po-why'); why.append(wh);
     const row = (icon, label, value, note, cls) => { const r = mk('div', 'po-row'); r.append(mk('span', 'po-ic', icon), mk('span', 'po-l', label), mk('b', 'po-v ' + (cls || ''), value)); if (note) r.append(mk('span', 'po-n', note)); body.append(r); };
     if (o.prior_wins != null) row('📋', 'Preseason line', o.prior_wins + ' wins', 'Where the season started');
     const dw = o.prior_wins != null ? o.rating_wins - o.prior_wins : 0;
@@ -1232,7 +1245,7 @@
   }
   new MutationObserver((ms) => ms.forEach((m) => m.addedNodes.forEach((n) => { if (n.id === 'bonus-pop') enableSwipe(n); }))).observe(document.body, { childList: true });
 
-  function closeBonus() { const o = document.getElementById('bonus-pop'); if (o) o.remove(); document.removeEventListener('keydown', bonusKey); }
+  function closeBonus() { closeWhy(); const o = document.getElementById('bonus-pop'); if (o) o.remove(); document.removeEventListener('keydown', bonusKey); }
   function bonusKey(e) { if (e.key === 'Escape') closeBonus(); }
 
   function medal(rank) { return rank === 1 ? 'p1' : rank === 2 ? 'p2' : rank === 3 ? 'p3' : null; }
