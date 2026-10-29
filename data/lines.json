@@ -247,7 +247,7 @@
   "spread": 1.5,
   "away_ml": -110,
   "home_ml": -110,
-  "book": "Draft Kings"
+  "book": "DraftKings"
  },
  {
   "date": "2026-10-29",
@@ -257,7 +257,7 @@
   "spread": 5.5,
   "away_ml": 180,
   "home_ml": -218,
-  "book": "Draft Kings"
+  "book": "DraftKings"
  },
  {
   "date": "2026-10-29",
@@ -267,6 +267,6 @@
   "spread": 7.5,
   "away_ml": 215,
   "home_ml": -265,
-  "book": "Draft Kings"
+  "book": "DraftKings"
  }
 ]

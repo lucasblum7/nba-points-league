@@ -3,9 +3,9 @@
  "sims": 5000,
  "teams": {
   "Atlanta Hawks": {
-   "playoffs": 75.3,
-   "top6": 52.3,
-   "playin": 40.1,
+   "playoffs": 75.4,
+   "top6": 52.2,
+   "playin": 40.0,
    "proj_w": 45.2,
    "proj_l": 36.8,
    "seed": 6.3,
@@ -22,9 +22,9 @@
    "prev": null
   },
   "Boston Celtics": {
-   "playoffs": 90.6,
+   "playoffs": 90.5,
    "top6": 78.8,
-   "playin": 19.1,
+   "playin": 19.0,
    "proj_w": 50.9,
    "proj_l": 31.1,
    "seed": 4.3,
@@ -51,9 +51,9 @@
   "Brooklyn Nets": {
    "playoffs": 1.5,
    "top6": 0.2,
-   "playin": 5.9,
-   "proj_w": 23.7,
-   "proj_l": 58.3,
+   "playin": 5.3,
+   "proj_w": 23.8,
+   "proj_l": 58.2,
    "seed": 13.5,
    "conf": "East",
    "rating": -6.7,
@@ -68,9 +68,9 @@
    "prev": null
   },
   "Charlotte Hornets": {
-   "playoffs": 28.8,
-   "top6": 12.0,
-   "playin": 44.2,
+   "playoffs": 28.7,
+   "top6": 11.8,
+   "playin": 44.0,
    "proj_w": 36.2,
    "proj_l": 45.8,
    "seed": 9.8,
@@ -109,11 +109,11 @@
    "prev": null
   },
   "Chicago Bulls": {
-   "playoffs": 2.9,
-   "top6": 0.6,
+   "playoffs": 3.4,
+   "top6": 0.8,
    "playin": 9.9,
-   "proj_w": 26.4,
-   "proj_l": 55.6,
+   "proj_w": 26.3,
+   "proj_l": 55.7,
    "seed": 12.9,
    "conf": "East",
    "rating": -5.8,
@@ -136,9 +136,9 @@
    "prev": null
   },
   "Cleveland Cavaliers": {
-   "playoffs": 85.6,
-   "top6": 67.5,
-   "playin": 28.4,
+   "playoffs": 85.0,
+   "top6": 67.7,
+   "playin": 28.5,
    "proj_w": 48.0,
    "proj_l": 34.0,
    "seed": 5.2,
@@ -155,8 +155,8 @@
    "prev": null
   },
   "Dallas Mavericks": {
-   "playoffs": 45.3,
-   "top6": 23.1,
+   "playoffs": 45.4,
+   "top6": 22.9,
    "playin": 49.8,
    "proj_w": 40.2,
    "proj_l": 41.8,
@@ -182,11 +182,11 @@
    "prev": null
   },
   "Denver Nuggets": {
-   "playoffs": 71.5,
-   "top6": 47.6,
-   "playin": 41.2,
-   "proj_w": 45.0,
-   "proj_l": 37.0,
+   "playoffs": 70.9,
+   "top6": 46.8,
+   "playin": 42.3,
+   "proj_w": 45.1,
+   "proj_l": 36.9,
    "seed": 6.8,
    "conf": "West",
    "rating": 1.6,
@@ -216,9 +216,9 @@
    "prev": null
   },
   "Detroit Pistons": {
-   "playoffs": 93.9,
-   "top6": 84.9,
-   "playin": 13.9,
+   "playoffs": 94.6,
+   "top6": 85.4,
+   "playin": 13.2,
    "proj_w": 52.3,
    "proj_l": 29.7,
    "seed": 3.7,
@@ -243,9 +243,9 @@
    "prev": null
   },
   "Golden State Warriors": {
-   "playoffs": 37.2,
-   "top6": 15.0,
-   "playin": 47.2,
+   "playoffs": 36.8,
+   "top6": 15.7,
+   "playin": 47.4,
    "proj_w": 38.1,
    "proj_l": 43.9,
    "seed": 9.4,
@@ -285,8 +285,8 @@
   },
   "Houston Rockets": {
    "playoffs": 96.9,
-   "top6": 91.5,
-   "playin": 7.9,
+   "top6": 91.3,
+   "playin": 8.1,
    "proj_w": 55.4,
    "proj_l": 26.6,
    "seed": 3.3,
@@ -304,8 +304,8 @@
   },
   "Indiana Pacers": {
    "playoffs": 40.0,
-   "top6": 19.2,
-   "playin": 46.2,
+   "top6": 19.0,
+   "playin": 46.3,
    "proj_w": 38.1,
    "proj_l": 43.9,
    "seed": 9.1,
@@ -344,12 +344,12 @@
    "prev": null
   },
   "LA Clippers": {
-   "playoffs": 16.8,
-   "top6": 5.4,
-   "playin": 31.1,
-   "proj_w": 33.2,
-   "proj_l": 48.8,
-   "seed": 11.0,
+   "playoffs": 17.0,
+   "top6": 5.7,
+   "playin": 29.8,
+   "proj_w": 33.1,
+   "proj_l": 48.9,
+   "seed": 11.1,
    "conf": "West",
    "rating": -2.8,
    "rating_wins": 33.3,
@@ -392,9 +392,9 @@
    "prev": null
   },
   "Los Angeles Lakers": {
-   "playoffs": 84.3,
-   "top6": 67.0,
-   "playin": 28.3,
+   "playoffs": 84.7,
+   "top6": 65.9,
+   "playin": 29.6,
    "proj_w": 48.4,
    "proj_l": 33.6,
    "seed": 5.6,
@@ -411,9 +411,9 @@
    "prev": null
   },
   "Memphis Grizzlies": {
-   "playoffs": 32.0,
-   "top6": 14.7,
-   "playin": 44.5,
+   "playoffs": 33.5,
+   "top6": 15.6,
+   "playin": 43.6,
    "proj_w": 37.6,
    "proj_l": 44.4,
    "seed": 9.5,
@@ -430,9 +430,9 @@
    "prev": null
   },
   "Miami Heat": {
-   "playoffs": 57.6,
-   "top6": 33.2,
-   "playin": 48.7,
+   "playoffs": 58.0,
+   "top6": 32.6,
+   "playin": 49.8,
    "proj_w": 41.6,
    "proj_l": 40.4,
    "seed": 7.8,
@@ -449,11 +449,11 @@
    "prev": null
   },
   "Milwaukee Bucks": {
-   "playoffs": 1.6,
-   "top6": 0.4,
-   "playin": 5.3,
-   "proj_w": 24.4,
-   "proj_l": 57.6,
+   "playoffs": 1.7,
+   "top6": 0.2,
+   "playin": 5.9,
+   "proj_w": 24.3,
+   "proj_l": 57.7,
    "seed": 13.4,
    "conf": "East",
    "rating": -6.9,
@@ -468,9 +468,9 @@
    "prev": null
   },
   "Minnesota Timberwolves": {
-   "playoffs": 83.8,
-   "top6": 63.4,
-   "playin": 30.9,
+   "playoffs": 83.6,
+   "top6": 63.8,
+   "playin": 30.1,
    "proj_w": 48.1,
    "proj_l": 33.9,
    "seed": 5.7,
@@ -502,9 +502,9 @@
    "prev": null
   },
   "New Orleans Pelicans": {
-   "playoffs": 2.8,
-   "top6": 0.6,
-   "playin": 8.3,
+   "playoffs": 2.7,
+   "top6": 0.5,
+   "playin": 8.7,
    "proj_w": 26.6,
    "proj_l": 55.4,
    "seed": 13.0,
@@ -529,11 +529,11 @@
    "prev": null
   },
   "New York Knicks": {
-   "playoffs": 90.5,
-   "top6": 75.6,
-   "playin": 22.0,
-   "proj_w": 49.5,
-   "proj_l": 32.5,
+   "playoffs": 90.1,
+   "top6": 75.4,
+   "playin": 22.2,
+   "proj_w": 49.6,
+   "proj_l": 32.4,
    "seed": 4.7,
    "conf": "East",
    "rating": 3.5,
@@ -548,9 +548,9 @@
    "prev": null
   },
   "Oklahoma City Thunder": {
-   "playoffs": 97.7,
-   "top6": 92.3,
-   "playin": 7.2,
+   "playoffs": 97.5,
+   "top6": 92.5,
+   "playin": 7.0,
    "proj_w": 56.0,
    "proj_l": 26.0,
    "seed": 3.2,
@@ -596,7 +596,7 @@
    "prev": null
   },
   "Orlando Magic": {
-   "playoffs": 39.2,
+   "playoffs": 40.0,
    "top6": 19.4,
    "playin": 46.1,
    "proj_w": 38.2,
@@ -630,12 +630,12 @@
    "prev": null
   },
   "Philadelphia 76ers": {
-   "playoffs": 94.9,
+   "playoffs": 94.8,
    "top6": 86.8,
-   "playin": 12.2,
-   "proj_w": 52.8,
-   "proj_l": 29.2,
-   "seed": 3.5,
+   "playin": 12.4,
+   "proj_w": 52.9,
+   "proj_l": 29.1,
+   "seed": 3.6,
    "conf": "East",
    "rating": 4.1,
    "rating_wins": 52.0,
@@ -657,12 +657,12 @@
    "prev": null
   },
   "Phoenix Suns": {
-   "playoffs": 49.3,
-   "top6": 27.0,
-   "playin": 45.9,
+   "playoffs": 49.2,
+   "top6": 26.7,
+   "playin": 46.1,
    "proj_w": 40.6,
    "proj_l": 41.4,
-   "seed": 8.4,
+   "seed": 8.5,
    "conf": "West",
    "rating": -0.1,
    "rating_wins": 40.8,
@@ -684,11 +684,11 @@
    "prev": null
   },
   "Portland Trail Blazers": {
-   "playoffs": 75.5,
-   "top6": 52.2,
-   "playin": 39.4,
-   "proj_w": 46.0,
-   "proj_l": 36.0,
+   "playoffs": 74.8,
+   "top6": 52.4,
+   "playin": 39.1,
+   "proj_w": 46.1,
+   "proj_l": 35.9,
    "seed": 6.5,
    "conf": "West",
    "rating": 2.2,
@@ -713,9 +713,9 @@
   "Sacramento Kings": {
    "playoffs": 0.2,
    "top6": 0.1,
-   "playin": 0.8,
-   "proj_w": 18.6,
-   "proj_l": 63.4,
+   "playin": 0.7,
+   "proj_w": 18.7,
+   "proj_l": 63.3,
    "seed": 14.5,
    "conf": "West",
    "rating": -9.2,
@@ -752,9 +752,9 @@
    "prev": null
   },
   "San Antonio Spurs": {
-   "playoffs": 99.5,
+   "playoffs": 99.7,
    "top6": 98.3,
-   "playin": 1.6,
+   "playin": 1.7,
    "proj_w": 59.8,
    "proj_l": 22.2,
    "seed": 2.1,
@@ -771,9 +771,9 @@
    "prev": null
   },
   "Toronto Raptors": {
-   "playoffs": 83.8,
-   "top6": 65.1,
-   "playin": 29.9,
+   "playoffs": 82.5,
+   "top6": 65.5,
+   "playin": 29.8,
    "proj_w": 47.9,
    "proj_l": 34.1,
    "seed": 5.3,
@@ -798,12 +798,12 @@
    "prev": null
   },
   "Utah Jazz": {
-   "playoffs": 7.3,
-   "top6": 1.7,
-   "playin": 16.1,
+   "playoffs": 7.0,
+   "top6": 1.9,
+   "playin": 16.0,
    "proj_w": 29.3,
    "proj_l": 52.7,
-   "seed": 12.3,
+   "seed": 12.2,
    "conf": "West",
    "rating": -4.0,
    "rating_wins": 30.2,
@@ -840,10 +840,10 @@
   },
   "Washington Wizards": {
    "playoffs": 13.8,
-   "top6": 3.9,
-   "playin": 28.0,
-   "proj_w": 31.8,
-   "proj_l": 50.2,
+   "top6": 4.1,
+   "playin": 27.6,
+   "proj_w": 31.9,
+   "proj_l": 50.1,
    "seed": 11.3,
    "conf": "East",
    "rating": -3.5,
