@@ -502,7 +502,7 @@
             seg.setAttribute('aria-label', `Your matchup vs ${o.owner}: ${upc ? 'not started' : signedN(y.net) + ' to ' + signedN(o.net)}. Open matchups`);
             seg.append(odot(me), mk('b', null, upc ? '–' : signedN(y.net)), mk('span', 'pm-vs', 'vs'), mk('b', null, upc ? '–' : signedN(o.net)), odot(o.owner));
             seg.addEventListener('click', () => { location.hash = '#matchups'; });
-            mp.append(seg, mk('span', 'pm-sep'));
+            mp.append(seg);
           }
           const tied = C.board.filter((x) => x.points === row.points).length > 1;
           const seg2 = mk('button', 'pm-seg pm-pts'); seg2.type = 'button';
