@@ -912,6 +912,76 @@
     a.target = '_blank'; a.rel = 'noopener'; a.title = p.name + ' on ESPN';
     return a;
   }
+  // ---------- game card: tap a game on the scoreboard ----------
+  function showGame(g, C, slate, date) {
+    closeBonus();
+    const final = g.state === 'post', live = g.state === 'in';
+    const T = { away: C.teams.find((x) => x.team === g.away), home: C.teams.find((x) => x.team === g.home) };
+    const ln = C.lineOf.get(date + '|' + g.away + '|' + g.home) || {};
+    const winner = final ? (g.home_score > g.away_score ? g.home : g.away) : null;
+    const ov = mk('div', 'bp-overlay'); ov.id = 'bonus-pop';
+    const box = mk('div', 'bp-box gc-box'); box.setAttribute('role', 'dialog'); box.setAttribute('aria-modal', 'true'); box.setAttribute('aria-label', `${g.away} at ${g.home}`);
+    // status bar
+    const top = mk('div', 'gc-top');
+    const soon = !final && !live ? soonLabel(date, g.time) : null;
+    top.append(mk('span', 'gc-status ' + (live ? 'live' : final ? 'final' : soon ? 'soon' : ''), final ? 'Final' : live ? '● ' + (g.detail || 'Live') : soon ? `⏱ ${soon}` : `${dayName(date, { weekday: 'short', month: 'short', day: 'numeric' })} · ${g.time || ''}`));
+    if (g.cup) top.append(mk('span', 'gc-cup', '🏆 NBA Cup · wins count 2'));
+    const x = mk('button', 'bp-close', '✕'); x.type = 'button'; x.setAttribute('aria-label', 'Close'); x.addEventListener('click', closeBonus); top.append(x);
+    box.append(top);
+    // the two teams
+    const face = mk('div', 'gc-face');
+    const side = (key) => {
+      const team = g[key], t = T[key], el = mk('button', 'gc-team' + (winner === team ? ' won' : winner ? ' lost' : '')); el.type = 'button';
+      el.setAttribute('aria-label', `Open the ${team} team card`);
+      el.append(badge(team, 'badge gc-badge'), mk('b', 'gc-name', short(team)), mk('span', 'gc-rec', t ? `${t.wins}–${t.losses}` : ''), mk('span', 'gc-owner', C.owner.get(team) || ''));
+      if (t) el.addEventListener('click', () => showTeam(t, C, slate));
+      return el;
+    };
+    const mid = mk('div', 'gc-mid');
+    if (final || live) { mid.append(mk('span', 'gc-score' + (winner === g.away ? ' hi' : ''), String(g.away_score ?? '')), mk('span', 'gc-dash', '–'), mk('span', 'gc-score' + (winner === g.home ? ' hi' : ''), String(g.home_score ?? ''))); }
+    else mid.append(mk('span', 'gc-at', '@'));
+    face.append(side('away'), mid, side('home')); box.append(face);
+    // fantasy impact
+    const ao = C.owner.get(g.away), ho = C.owner.get(g.home), pts = g.cup ? 2 : 1;
+    const imp = mk('div', 'gc-impact');
+    if (final) imp.append(mk('b', null, `${C.owner.get(winner)} +${pts}`), ` · ${short(winner)} won`);
+    else if (ao && ao === ho) imp.append(mk('b', null, `${ao} wins either way`), ` · +${pts} guaranteed`);
+    else imp.append(mk('span', null, 'Winner earns '), mk('b', null, `+${pts}`), ` · ${ao || '—'} vs ${ho || '—'}`);
+    const fw = C.matchups.find((m) => m.week === C.curWeek && ((m.A.owner === ao && m.B.owner === ho) || (m.A.owner === ho && m.B.owner === ao)));
+    if (fw) imp.append(mk('span', 'gc-h2h', '⚔️ This week\'s matchup'));
+    box.append(imp);
+    // odds
+    if (ln.away_ml != null || ln.home_ml != null || ln.spread != null) {
+      const od = mk('div', 'gc-odds');
+      const cell = (label, a, b) => { const r = mk('div', 'gc-orow'); r.append(mk('span', 'gc-ov', a), mk('span', 'gc-ol', label), mk('span', 'gc-ov', b)); od.append(r); };
+      cell('Moneyline', ml(ln.away_ml) || '–', ml(ln.home_ml) || '–');
+      if (ln.spread != null) { const sp = ln.spread === 0 ? 'PK' : '−' + ln.spread; cell('Spread', ln.fav === g.away ? sp : ln.spread === 0 ? 'PK' : '+' + ln.spread, ln.fav === g.home ? sp : ln.spread === 0 ? 'PK' : '+' + ln.spread); }
+      box.append(od);
+    }
+    // tale of the tape
+    if (T.away && T.home) {
+      const cmp = mk('div', 'gc-cmp'); cmp.append(mk('h4', 'tc-h', 'Tale of the tape'));
+      const row = (label, a, b, better) => { const r = mk('div', 'gc-crow'); const ea = mk('span', 'gc-cv' + (better === 'a' ? ' best' : ''), a), eb = mk('span', 'gc-cv' + (better === 'b' ? ' best' : ''), b); r.append(ea, mk('span', 'gc-cl', label), eb); cmp.append(r); };
+      const cmpN = (a, b) => (a == null || b == null || a === b ? null : a > b ? 'a' : 'b');
+      row('Record', `${T.away.wins}–${T.away.losses}`, `${T.home.wins}–${T.home.losses}`, cmpN(T.away.wins - T.away.losses, T.home.wins - T.home.losses));
+      row('Win pace', T.away.pace == null ? '–' : T.away.pace.toFixed(1), T.home.pace == null ? '–' : T.home.pace.toFixed(1), cmpN(T.away.pace, T.home.pace));
+      row('Preseason line', T.away.proj ?? '–', T.home.proj ?? '–', cmpN(T.away.proj, T.home.proj));
+      const form = (t) => { const f = mk('span', 'gc-form'); t.last5g.forEach((x) => f.append(mk('i', x.w ? 'w' : 'l'))); for (let k = t.last5g.length; k < 5; k++) f.append(mk('i', 'none')); return f; };
+      const fr = mk('div', 'gc-crow'); const fa = mk('span', 'gc-cv'); fa.append(form(T.away)); const fb = mk('span', 'gc-cv'); fb.append(form(T.home)); fr.append(fa, mk('span', 'gc-cl', 'Last 5'), fb); cmp.append(fr);
+      box.append(cmp);
+      // earlier meetings this season
+      const met = C.sorted.filter((x) => ((x.away === g.away && x.home === g.home) || (x.away === g.home && x.home === g.away)) && !(final && x.date === date));
+      if (met.length) {
+        const mt = mk('div', 'gc-met'); mt.append(mk('h4', 'tc-h', 'Earlier this season'));
+        met.forEach((x) => { const w = x.home_score > x.away_score ? x.home : x.away; const r = mk('div', 'gc-mrow'); r.append(mk('span', 'tc-date', fmtShort(x.date)), mk('span', null, `${abbr(x.away)} ${x.away_score} – ${x.home_score} ${abbr(x.home)}`), mk('b', null, abbr(w) + ' won')); mt.append(r); });
+        box.append(mt);
+      }
+    }
+    box.append(mk('p', 'players-foot', 'Tap a team for its full team card'));
+    ov.append(box); ov.addEventListener('click', (e) => { if (e.target === ov) closeBonus(); });
+    document.body.append(ov); document.addEventListener('keydown', bonusKey); x.focus();
+  }
+
   // tap any team (scoreboard, results, today's games) to open its team card
   function openTeam(name, C, slate) { const t = C.teams.find((x) => x.team === name); if (t) showTeam(t, C, slate); }
   function makeTap(el, name, C, slate) {
@@ -1154,7 +1224,7 @@
       card.append(st);
       const winner = final ? (g.home_score > g.away_score ? g.home : g.away) : null;
       [[g.away, g.away_score, ln && ln.away_ml], [g.home, g.home_score, ln && ln.home_ml]].forEach(([team, pts, line]) => {
-        const row = mk('div', 'sb-row' + (final ? (team === winner ? ' won-row' : ' lost-row') : '')); makeTap(row, team, C, slate);
+        const row = mk('div', 'sb-row' + (final ? (team === winner ? ' won-row' : ' lost-row') : ''));
         const nm = mk('span', 'sb-team'); nm.append(mk('span', 'sb-name', short(team)), mk('span', 'sb-owner', C.owner.get(team) || ''));
         const key = g.id + '|' + team, ptsEl = final || live ? mk('span', 'sb-pts', pts ?? '') : null;
         if (ptsEl) { const was = prevScores.get(key); if (was != null && was !== pts) ptsEl.classList.add('score-pop'); prevScores.set(key, pts); }
@@ -1166,6 +1236,9 @@
       const ft = mk('div', 'sb-foot');
       if (g.cup) { ft.append(mk('span', 'sb-cup', '🏆 ')); card.title = 'NBA Cup game: each win is worth 2 points'; }
       ft.append(foot); card.append(ft);
+      card.classList.add('sb-tap'); card.tabIndex = 0; card.setAttribute('role', 'button'); card.setAttribute('aria-label', `${short(g.away)} at ${short(g.home)}: open game card`);
+      card.addEventListener('click', () => showGame(g, C, slate, date));
+      card.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); showGame(g, C, slate, date); } });
       strip.append(card);
     });
   }
