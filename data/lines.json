@@ -245,19 +245,19 @@
   "home": "Atlanta Hawks",
   "fav": "Atlanta Hawks",
   "spread": 1.5,
-  "away_ml": -110,
-  "home_ml": -110,
-  "book": "DraftKings"
+  "away_ml": -108,
+  "home_ml": -112,
+  "book": "Draft Kings"
  },
  {
   "date": "2026-10-29",
   "away": "Sacramento Kings",
   "home": "New Orleans Pelicans",
   "fav": "New Orleans Pelicans",
-  "spread": 5.5,
-  "away_ml": 180,
-  "home_ml": -218,
-  "book": "DraftKings"
+  "spread": 6.5,
+  "away_ml": 195,
+  "home_ml": -238,
+  "book": "Draft Kings"
  },
  {
   "date": "2026-10-29",
@@ -265,8 +265,108 @@
   "home": "Portland Trail Blazers",
   "fav": "Portland Trail Blazers",
   "spread": 7.5,
-  "away_ml": 215,
-  "home_ml": -265,
-  "book": "DraftKings"
+  "away_ml": 235,
+  "home_ml": -290,
+  "book": "Draft Kings"
+ },
+ {
+  "date": "2026-10-30",
+  "away": "Chicago Bulls",
+  "home": "Boston Celtics",
+  "fav": "Boston Celtics",
+  "spread": 15.5,
+  "away_ml": 575,
+  "home_ml": -850,
+  "book": "Draft Kings"
+ },
+ {
+  "date": "2026-10-30",
+  "away": "Detroit Pistons",
+  "home": "Brooklyn Nets",
+  "fav": "Detroit Pistons",
+  "spread": 7.5,
+  "away_ml": -258,
+  "home_ml": 210,
+  "book": "Draft Kings"
+ },
+ {
+  "date": "2026-10-30",
+  "away": "Houston Rockets",
+  "home": "Dallas Mavericks",
+  "fav": "Houston Rockets",
+  "spread": 5.5,
+  "away_ml": -192,
+  "home_ml": 160,
+  "book": "Draft Kings"
+ },
+ {
+  "date": "2026-10-30",
+  "away": "Los Angeles Lakers",
+  "home": "Golden State Warriors",
+  "fav": "Los Angeles Lakers",
+  "spread": 1.5,
+  "away_ml": -125,
+  "home_ml": 105,
+  "book": "Draft Kings"
+ },
+ {
+  "date": "2026-10-30",
+  "away": "Indiana Pacers",
+  "home": "Miami Heat",
+  "fav": "Miami Heat",
+  "spread": 5.5,
+  "away_ml": 170,
+  "home_ml": -205,
+  "book": "Draft Kings"
+ },
+ {
+  "date": "2026-10-30",
+  "away": "LA Clippers",
+  "home": "Minnesota Timberwolves",
+  "fav": "Minnesota Timberwolves",
+  "spread": 7.5,
+  "away_ml": 200,
+  "home_ml": -245,
+  "book": "Draft Kings"
+ },
+ {
+  "date": "2026-10-30",
+  "away": "New York Knicks",
+  "home": "Philadelphia 76ers",
+  "fav": "Philadelphia 76ers",
+  "spread": 1.5,
+  "away_ml": -110,
+  "home_ml": -110,
+  "book": "Draft Kings"
+ },
+ {
+  "date": "2026-10-30",
+  "away": "Denver Nuggets",
+  "home": "Phoenix Suns",
+  "fav": "Denver Nuggets",
+  "spread": 4.5,
+  "away_ml": -170,
+  "home_ml": 142,
+  "book": "Draft Kings"
+ },
+ {
+  "date": "2026-10-30",
+  "away": "Orlando Magic",
+  "home": "Toronto Raptors",
+  "fav": "Toronto Raptors",
+  "spread": 5.5,
+  "away_ml": 160,
+  "home_ml": -192,
+  "book": "Draft Kings"
+ },
+ {
+  "date": "2026-10-30",
+  "away": "Charlotte Hornets",
+  "home": "Washington Wizards",
+  "fav": "Charlotte Hornets",
+  "spread": 1.5,
+  "away_ml": -115,
+  "home_ml": -105,
+  "book": "Draft Kings"
  }
 ]
