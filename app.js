@@ -656,19 +656,21 @@
       if (g.date < m.start || g.date > m.end) continue;
       const mine = [g.away, g.home].filter((x) => C.owner.get(x) === owner); if (!mine.length) continue;
       seen.add(g.date + '|' + g.away + '|' + g.home);
-      { const team = mine.length === 2 ? (g.home_score > g.away_score ? g.home : g.away) : mine[0];
+      // one entry per team: when an owner has both sides, that's a win AND a loss (both count in W–L and net)
+      for (const team of mine) {
         const home = g.home === team, us = home ? g.home_score : g.away_score, them = home ? g.away_score : g.home_score;
         out.push({ date: g.date, team, opp: home ? g.away : g.home, home, state: 'final', w: us > them, score: `${us}–${them}`, cup: g.cup, both: mine.length === 2 }); }
     }
     const pending = [];
     ((slate && slate.games) || []).forEach((g) => { if (g.state === 'in') pending.push({ ...g, date: today, live: true }); });
     ((D.schedule && D.schedule.games) || []).forEach((g) => pending.push(g));
+    ((D.season_schedule && D.season_schedule.games) || []).forEach((g) => pending.push(g));   // weeks past the 2-week schedule
     for (const g of pending) {
       if (g.date < m.start || g.date > m.end || g.date < today) continue;
       const key = g.date + '|' + g.away + '|' + g.home; if (seen.has(key)) continue;
       const mine = [g.away, g.home].filter((x) => C.owner.get(x) === owner); if (!mine.length) continue;
       seen.add(key);
-      { const team = mine[mine.length === 2 ? 1 : 0], home = g.home === team;
+      for (const team of mine) { const home = g.home === team;
         out.push({ date: g.date, team, opp: home ? g.away : g.home, home, state: g.live ? 'live' : 'pre', time: g.time, detail: g.detail,
           score: g.live ? `${home ? g.home_score : g.away_score}–${home ? g.away_score : g.home_score}` : '', cup: g.cup, both: mine.length === 2 }); }
     }
