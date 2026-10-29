@@ -690,3 +690,32 @@ button.mu-today { text-decoration: none !important; }
 /* Big header: "Hoop" over "Squads" (the scroll bar keeps them on one line) */
 .pl-main { display: flex; flex-direction: column; align-items: center; line-height: .92; }
 .pl-main .pl-w { display: block; }
+
+/* ---------- Playoff odds (team card) ---------- */
+.tc-po { background: var(--fill); border-radius: 14px; padding: 12px 14px; margin: 12px 0; }
+.po-head { display: flex; align-items: baseline; justify-content: space-between; gap: 8px; }
+.po-head .tc-h { margin: 0; }
+.po-conf { font-size: 12px; color: var(--muted); font-weight: 600; }
+.po-main { margin-top: 6px; }
+.po-big { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; }
+.po-big b { font-size: 40px; font-weight: 800; letter-spacing: -.03em; line-height: 1; }
+.po-main.hi .po-big b { color: var(--ok); } .po-main.mid .po-big b { color: var(--warn); } .po-main.lo .po-big b { color: var(--bad); }
+.po-chg { font-size: 13px; font-weight: 600; color: var(--muted); }
+.po-chg.up { color: var(--ok); } .po-chg.down { color: var(--bad); }
+.po-bar { display: flex; height: 8px; border-radius: 99px; background: var(--fill2); overflow: hidden; margin-top: 8px; }
+.po-bar i { display: block; height: 100%; }
+.po-top { background: var(--ok); } .po-pin { background: color-mix(in srgb, var(--ok) 45%, transparent); }
+.po-split { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; margin-top: 10px; }
+.po-cell { background: var(--panel); border-radius: 10px; padding: 7px 8px; display: flex; flex-direction: column; min-width: 0; }
+.po-cell b { font-size: 17px; font-weight: 800; letter-spacing: -.02em; }
+.po-cell span { font-size: 11px; color: var(--muted); font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.po-why { margin-top: 12px; }
+.po-why-h { font-size: 11px; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: .05em; margin-bottom: 2px; }
+.po-row { display: grid; grid-template-columns: 22px 1fr auto; column-gap: 6px; align-items: baseline; padding: 6px 0; border-top: .5px solid var(--line); }
+.po-row:first-of-type { border-top: none; }
+.po-ic { font-size: 14px; }
+.po-l { font-size: 14px; font-weight: 600; }
+.po-v { font-size: 14px; font-weight: 700; text-align: right; }
+.po-v.up { color: var(--ok); } .po-v.down { color: var(--bad); }
+.po-n { grid-column: 2 / 4; font-size: 12px; color: var(--muted); line-height: 1.3; }
+.po-foot { font-size: 11.5px; color: var(--muted); margin: 8px 0 0; }

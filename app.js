@@ -990,6 +990,50 @@
     el.addEventListener('click', (e) => { e.stopPropagation(); openTeam(name, C, slate); });
     el.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openTeam(name, C, slate); } });
   }
+  // ---------- playoff odds (team card) ----------
+  const pctText = (p) => (p >= 99.5 && p < 100 ? '>99' : p > 0 && p < 0.5 ? '<1' : String(Math.round(p))) + '%';
+  function playoffOdds(team) {
+    const o = D.odds && D.odds.teams && D.odds.teams[team]; if (!o) return null;
+    const sec = mk('div', 'tc-po');
+    const head = mk('div', 'po-head'); head.append(mk('h4', 'tc-h', 'Playoff odds'), mk('span', 'po-conf', o.conf + ' · avg seed ' + o.seed.toFixed(1)));
+    sec.append(head);
+    // big number + bar
+    const lvl = o.playoffs >= 75 ? 'hi' : o.playoffs >= 35 ? 'mid' : 'lo';
+    const main = mk('div', 'po-main ' + lvl);
+    const big = mk('div', 'po-big'); big.append(mk('b', null, pctText(o.playoffs)));
+    if (o.prev != null) { const d = Math.round((o.playoffs - o.prev) * 10) / 10;
+      big.append(mk('span', 'po-chg ' + (d > 0 ? 'up' : d < 0 ? 'down' : ''), d === 0 ? 'No change since yesterday' : (d > 0 ? '▲ ' : '▼ ') + Math.abs(d).toFixed(1) + ' since yesterday')); }
+    else big.append(mk('span', 'po-chg', 'to make the playoffs'));
+    const bar = mk('div', 'po-bar'); const top = mk('i', 'po-top'), pin = mk('i', 'po-pin');
+    top.style.width = o.top6 + '%'; pin.style.width = Math.max(0, o.playoffs - o.top6) + '%'; bar.append(top, pin);
+    main.append(big, bar); sec.append(main);
+    // split + projection
+    const split = mk('div', 'po-split');
+    const cell = (l, v) => { const c = mk('div', 'po-cell'); c.append(mk('b', null, v), mk('span', null, l)); split.append(c); };
+    cell('Top-6 seed', pctText(o.top6)); cell('Play-in (7–10)', pctText(o.playin)); cell('Projected', Math.round(o.proj_w) + '–' + Math.round(o.proj_l));
+    sec.append(split);
+    // what's driving it
+    const why = mk('div', 'po-why'); why.append(mk('div', 'po-why-h', "What's driving it"));
+    const row = (icon, label, value, note, cls) => { const r = mk('div', 'po-row'); r.append(mk('span', 'po-ic', icon), mk('span', 'po-l', label), mk('b', 'po-v ' + (cls || ''), value)); if (note) r.append(mk('span', 'po-n', note)); why.append(r); };
+    if (o.prior_wins != null) row('📋', 'Preseason line', o.prior_wins + ' wins', 'Where the season started');
+    const dw = o.prior_wins != null ? o.rating_wins - o.prior_wins : 0;
+    row('📊', 'Playing like', Math.round(o.rating_wins) + '-win team', (o.rating >= 0 ? '+' : '−') + Math.abs(o.rating).toFixed(1) + ' pts/game vs average, from results and betting lines', dw > 1.5 ? 'up' : dw < -1.5 ? 'down' : '');
+    const gp = 82 - o.games_left, sgn = (v) => (v > 0 ? '+' : v < 0 ? '−' : '±') + Math.abs(v).toFixed(1);
+    if (o.last5_margin != null && gp < 8) row('🔥', 'Momentum', sgn(o.last5_margin) + ' per game', 'Average margin so far. Too early to compare with a hot or cold stretch', o.last5_margin > 3 ? 'up' : o.last5_margin < -3 ? 'down' : '');
+    else if (o.last5_margin != null && o.season_margin != null) {
+      const m = o.last5_margin - o.season_margin, word = m > 3 ? 'Heating up' : m < -3 ? 'Cooling off' : 'Steady';
+      row('🔥', 'Momentum', word, `Last 5: ${o.last5_margin > 0 ? '+' : '−'}${Math.abs(o.last5_margin).toFixed(1)} per game · season ${o.season_margin > 0 ? '+' : '−'}${Math.abs(o.season_margin).toFixed(1)}`, m > 3 ? 'up' : m < -3 ? 'down' : '');
+    }
+    const inj = (o.injuries || []).filter((x) => x.impact >= 0.5);
+    if (inj.length && o.injury_wins <= -0.2) row('🩹', 'Injuries', '−' + Math.abs(o.injury_wins).toFixed(1) + ' wins', inj.slice(0, 2).map((x) => `${x.name} (${/day/i.test(x.status) ? 'day-to-day' : 'out ~' + x.games + (x.games === 1 ? ' game' : ' games')})`).join(' · '), 'down');
+    else row('🩹', 'Injuries', 'Healthy', 'No key players out', 'up');
+    const sr = o.sos_rank; row('🗓️', 'Schedule left', sr <= 10 ? 'Tough' : sr >= 21 ? 'Easy' : 'Average', `#${sr} hardest of 30 · ${o.games_left} games left`, sr <= 10 ? 'down' : sr >= 21 ? 'up' : '');
+    sec.append(why);
+    const bonus = (D.config && D.config.scoring && D.config.scoring.made_playoffs) || 0;
+    sec.append(mk('p', 'po-foot', `Rest of the season simulated ${(D.odds.sims || 5000).toLocaleString()} times, play-in included.` + (bonus ? ` Making the playoffs is worth +${bonus} pts.` : '')));
+    return sec;
+  }
+
   function showTeam(t, C, slate, from) {
     closeBonus();
     const ov = mk('div', 'bp-overlay'); ov.id = 'bonus-pop';
@@ -1022,6 +1066,7 @@
     tile('Preseason line', t.proj ?? '–');
     if (t.bonus) tile('Bonus pts', '+' + t.bonus, 'up');
     box.append(tiles);
+    const po = playoffOdds(t.team); if (po) box.append(po);
     // last 5 / next 5
     const games = mk('div', 'tc-games');
     const col = (title) => { const c = mk('div', 'tc-col'); const h = mk('div', 'tc-colhead'); h.append(mk('h4', 'tc-h', title)); c.append(h); games.append(c); return c; };
@@ -1246,7 +1291,7 @@
   // ---------- boot ----------
   let D, slate;
   async function load() {
-    const names = ['rosters', 'projections', 'games', 'lines', 'bonuses', 'config', 'today', 'meta', 'schedule'];
+    const names = ['rosters', 'projections', 'games', 'lines', 'bonuses', 'config', 'today', 'meta', 'schedule', 'odds'];
     const vals = await Promise.all(names.map((n) => getJSON('data/' + n + '.json').catch(() => null)));
     D = Object.fromEntries(names.map((n, i) => [n, vals[i]]));
     D.games = D.games || []; D.lines = D.lines || []; D.bonuses = D.bonuses || [];

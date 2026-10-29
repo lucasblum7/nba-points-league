@@ -357,6 +357,14 @@ def compute(today, games, lines, projections, remaining, injuries, history):
         inj_wins[h] -= phi(base / GAME_SD) - phi((base - ph) / GAME_SD)
         inj_wins[a] -= (1 - phi(base / GAME_SD)) - (1 - phi((base + pa) / GAME_SD))
 
+    # Games not on the schedule yet (the two NBA Cup games set after group
+    # play): count them as neutral-site games against an average team.
+    AVG = "__avg__"
+    rating[AVG], sd[AVG] = 0.0, 0.0
+    for t in teams:
+        for _ in range(max(0, SEASON_GAMES - wins[t] - losses[t] - len(team_dates[t]))):
+            plan.append((t, AVG, rating[t]))
+
     # Monte Carlo.
     rng = random.Random(f"{today.isoformat()}|{len(games)}")
     made = {t: 0 for t in teams}
@@ -370,7 +378,9 @@ def compute(today, games, lines, projections, remaining, injuries, history):
     rand = rng.random
     for _ in range(SIMS):
         shock = {t: rng.gauss(0.0, sd[t]) for t in teams}
+        shock[AVG] = 0.0
         w = dict(wins)
+        w[AVG] = 0
         for h, a, mu in plan:
             p = 0.5 * (1.0 + erf((mu + shock[h] - shock[a]) * inv))
             if rand() < p:
@@ -432,7 +442,7 @@ def compute(today, games, lines, projections, remaining, injuries, history):
             "injuries": sorted(inj_by_team[t], key=lambda x: -x["impact"] * x["games"])[:4],
             "injury_wins": round(inj_wins[t], 1),
             "sos_rank": sos_rank[t],
-            "games_left": left_sum[t],
+            "games_left": SEASON_GAMES - wins[t] - losses[t],
             "prev": (prev or {}).get(t),
         }
     return out
