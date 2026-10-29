@@ -821,3 +821,20 @@ button.sb-date:hover { background: var(--fill) !important; }
 .sb-cuptag { font-size: 9.5px; font-weight: 800; letter-spacing: .04em; color: #7a5a00; background: color-mix(in srgb, var(--gold) 55%, #fff); border-radius: 999px; padding: 1px 6px; white-space: nowrap; }
 @media (prefers-color-scheme: dark) { .sb-cuptag { color: #1c1400; background: var(--gold); } }
 .mx-cup { font-size: 10px; font-weight: 800; color: color-mix(in srgb, var(--gold) 70%, var(--fg)); white-space: nowrap; }
+
+/* ---------- Game card: story-style next / previous ---------- */
+.gc-story { display: flex; gap: 3px; margin: -6px 0 10px; }
+.gc-story i { flex: 1; height: 3px; border-radius: 3px; background: var(--fill2); }
+.gc-story i.seen { background: color-mix(in srgb, var(--fg) 45%, transparent); }
+.gc-story i.on { background: var(--accent); }
+.bp-overlay.gc-nav { animation: none !important; }
+.gc-in-next { animation: gcInNext .24s cubic-bezier(.2,.8,.2,1) both !important; }
+.gc-in-prev { animation: gcInPrev .24s cubic-bezier(.2,.8,.2,1) both !important; }
+@keyframes gcInNext { from { transform: translateX(42%); opacity: 0; } to { transform: none; opacity: 1; } }
+@keyframes gcInPrev { from { transform: translateX(-42%); opacity: 0; } to { transform: none; opacity: 1; } }
+.gc-side { position: fixed; top: 50%; transform: translateY(-50%); z-index: 2; width: 44px; height: 44px; border-radius: 50%; border: none; cursor: pointer;
+  font: 600 26px/1 var(--sans); color: var(--fg); background: color-mix(in srgb, var(--panel) 85%, transparent); box-shadow: 0 4px 16px rgba(0,0,0,.2); }
+.gc-side.prev { left: max(16px, calc(50% - 300px)); } .gc-side.next { right: max(16px, calc(50% - 300px)); }
+.gc-side:disabled { opacity: .3; cursor: default; }
+@media (hover: none), (max-width: 600px) { .gc-side { display: none; } }
+@media (prefers-reduced-motion: reduce) { .gc-in-next, .gc-in-prev { animation: none !important; } }

@@ -926,14 +926,20 @@
     return a;
   }
   // ---------- game card: tap a game on the scoreboard ----------
-  function showGame(g, C, slate, date) {
+  function showGame(g, C, slate, date, dir) {
     closeBonus();
+    const list = sbOrder.some((x) => x.g === g) ? sbOrder : [{ g, slate, date }];
+    const idx = list.findIndex((x) => x.g === g);
     const final = g.state === 'post', live = g.state === 'in';
     const T = { away: C.teams.find((x) => x.team === g.away), home: C.teams.find((x) => x.team === g.home) };
     const ln = C.lineOf.get(date + '|' + g.away + '|' + g.home) || {};
     const winner = final ? (g.home_score > g.away_score ? g.home : g.away) : null;
-    const ov = mk('div', 'bp-overlay'); ov.id = 'bonus-pop';
-    const box = mk('div', 'bp-box gc-box'); box.setAttribute('role', 'dialog'); box.setAttribute('aria-modal', 'true'); box.setAttribute('aria-label', `${g.away} at ${g.home}`);
+    const ov = mk('div', 'bp-overlay' + (dir ? ' gc-nav' : '')); ov.id = 'bonus-pop';
+    const box = mk('div', 'bp-box gc-box' + (dir ? (dir > 0 ? ' gc-in-next' : ' gc-in-prev') : '')); box.setAttribute('role', 'dialog'); box.setAttribute('aria-modal', 'true'); box.setAttribute('aria-label', `${g.away} at ${g.home}` + (list.length > 1 ? `, game ${idx + 1} of ${list.length}` : ''));
+    // story-style progress: one segment per game on this day
+    if (list.length > 1) {
+      const bars = mk('div', 'gc-story'); list.forEach((_, k) => bars.append(mk('i', k < idx ? 'seen' : k === idx ? 'on' : null))); box.append(bars);
+    }
     // status bar
     const top = mk('div', 'gc-top');
     const soon = !final && !live ? soonLabel(date, g.time) : null;
@@ -990,9 +996,38 @@
         box.append(mt);
       }
     }
-    box.append(mk('p', 'players-foot', 'Tap a team for its full team card'));
+    box.append(mk('p', 'players-foot', list.length > 1 ? 'Swipe for the next game · tap a team for its team card' : 'Tap a team for its full team card'));
     ov.append(box); ov.addEventListener('click', (e) => { if (e.target === ov) closeBonus(); });
+    // next / previous game: swipe sideways, arrow keys, or the side buttons
+    const go = (k) => {
+      const n = list[idx + k];
+      if (!n) { box.animate([{ transform: 'translateX(0)' }, { transform: `translateX(${k > 0 ? -18 : 18}px)` }, { transform: 'translateX(0)' }], { duration: 260, easing: 'ease-out' }); return; }
+      showGame(n.g, C, n.slate, n.date, k);
+    };
+    if (list.length > 1) {
+      const side = (k, label, sym) => { const b = mk('button', 'gc-side ' + (k > 0 ? 'next' : 'prev'), sym); b.type = 'button'; b.setAttribute('aria-label', label); b.disabled = !list[idx + k]; b.addEventListener('click', (e) => { e.stopPropagation(); go(k); }); ov.append(b); };
+      side(-1, 'Previous game', '‹'); side(1, 'Next game', '›');
+      let x0 = null, y0 = 0, dx = 0, t0 = 0, horiz = false;
+      box.addEventListener('touchstart', (e) => { const t = e.touches[0]; x0 = t.clientX; y0 = t.clientY; dx = 0; t0 = Date.now(); horiz = false; }, { passive: true });
+      box.addEventListener('touchmove', (e) => {
+        if (x0 == null) return; const t = e.touches[0]; dx = t.clientX - x0; const dy = t.clientY - y0;
+        if (!horiz) { if (Math.abs(dx) > 10 && Math.abs(dx) > Math.abs(dy) * 1.2) { horiz = true; box.style.transition = 'none'; } else if (Math.abs(dy) > 10) { x0 = null; return; } else return; }
+        e.preventDefault(); e.stopImmediatePropagation();
+        const edge = !list[idx + (dx < 0 ? 1 : -1)];
+        const d = edge ? dx / 4 : dx; box.style.transform = `translateX(${d}px) rotate(${d / 60}deg)`; box.style.opacity = String(1 - Math.min(0.5, Math.abs(d) / 600));
+      }, { passive: false });
+      const end = () => {
+        if (x0 == null) return; x0 = null; if (!horiz) return;
+        const k = dx < 0 ? 1 : -1, fast = Math.abs(dx) / Math.max(1, Date.now() - t0) > 0.5;
+        if (list[idx + k] && (Math.abs(dx) > 70 || (fast && Math.abs(dx) > 25))) {
+          box.style.transition = 'transform .16s ease-in, opacity .16s ease-in'; box.style.transform = `translateX(${k > 0 ? -110 : 110}%) rotate(${k > 0 ? -4 : 4}deg)`; box.style.opacity = '0';
+          setTimeout(() => go(k), 150);
+        } else { box.style.transition = 'transform .22s ease, opacity .22s ease'; box.style.transform = ''; box.style.opacity = ''; }
+      };
+      box.addEventListener('touchend', end); box.addEventListener('touchcancel', end);
+    }
     document.body.append(ov); document.addEventListener('keydown', bonusKey); x.focus();
+    gcNav = list.length > 1 ? go : null;
   }
 
   // tap any team (scoreboard, results, today's games) to open its team card
@@ -1231,16 +1266,16 @@
   // ---------- phones: swipe a sheet down to close it, like iOS ----------
   function enableSwipe(ov, close = closeBonus) {
     const box = ov.querySelector('.bp-box'); if (!box || !matchMedia('(max-width: 600px)').matches) return;
-    let y0 = null, dy = 0, t0 = 0, dragging = false;
+    let y0 = null, x0 = 0, dy = 0, t0 = 0, dragging = false;
     const start = (e) => {
-      const t = e.touches ? e.touches[0] : e; const r = box.getBoundingClientRect();
+      const t = e.touches ? e.touches[0] : e; const r = box.getBoundingClientRect(); x0 = t.clientX;
       // drag from the grab-handle area, or anywhere once the sheet is scrolled to the top
       if (t.clientY - r.top > 44 && box.scrollTop > 0) return;
       y0 = t.clientY; dy = 0; t0 = Date.now(); dragging = false;
     };
     const move = (e) => {
       if (y0 == null) return; const t = e.touches ? e.touches[0] : e; dy = t.clientY - y0;
-      if (!dragging) { if (dy > 6 && box.scrollTop <= 0) { dragging = true; box.style.transition = 'none'; } else if (dy < -4) { y0 = null; return; } else return; }
+      if (!dragging) { if (dy > 6 && dy > Math.abs(t.clientX - x0) && box.scrollTop <= 0) { dragging = true; box.style.transition = 'none'; } else if (dy < -4) { y0 = null; return; } else return; }
       e.preventDefault();
       const d = Math.max(0, dy); box.style.transform = `translateY(${d}px)`; ov.style.background = `rgba(0,0,0,${Math.max(0, .35 - d / 900)})`;
     };
@@ -1258,8 +1293,8 @@
   }
   new MutationObserver((ms) => ms.forEach((m) => m.addedNodes.forEach((n) => { if (n.id === 'bonus-pop') enableSwipe(n); else if (n.id === 'why-pop') enableSwipe(n, closeWhy); }))).observe(document.body, { childList: true });
 
-  function closeBonus() { closeWhy(); const o = document.getElementById('bonus-pop'); if (o) o.remove(); document.removeEventListener('keydown', bonusKey); }
-  function bonusKey(e) { if (e.key === 'Escape') closeBonus(); }
+  function closeBonus() { closeWhy(); gcNav = null; const o = document.getElementById('bonus-pop'); if (o) o.remove(); document.removeEventListener('keydown', bonusKey); }
+  function bonusKey(e) { if (e.key === 'Escape') closeBonus(); else if (gcNav && (e.key === 'ArrowRight' || e.key === 'ArrowLeft')) { e.preventDefault(); gcNav(e.key === 'ArrowRight' ? 1 : -1); } }
 
   function medal(rank) { return rank === 1 ? 'p1' : rank === 2 ? 'p2' : rank === 3 ? 'p3' : null; }
 
@@ -1283,7 +1318,7 @@
 
   const prevScores = new Map();
   // ---------- scoreboard day picker: look back or ahead at any day's games ----------
-  let sbDate = null, sbC = null, sbSlate = null;
+  let sbDate = null, sbC = null, sbSlate = null, sbOrder = [], gcNav = null;
   function slateFor(date) {
     const today = pacificToday();
     if (date < today) return { date, games: D.games.filter((g) => g.date === date).map((g) => ({ ...g, time: '', state: 'post', detail: 'Final' })) };
@@ -1356,7 +1391,9 @@
     $('sb-back').hidden = !other;
     if (!slate.games.length) { strip.append(mk('div', 'sb-none', date === today ? 'No games today' : 'No games this day')); return; }
     const me = getMe(), mineG = (g) => C.owner.get(g.away) === me || C.owner.get(g.home) === me;
-    slate.games.slice().sort((a, b) => (me ? mineG(b) - mineG(a) : 0)).forEach((g) => {
+    const order = slate.games.slice().sort((a, b) => (me ? mineG(b) - mineG(a) : 0));
+    sbOrder = order.map((g) => ({ g, slate, date }));
+    order.forEach((g) => {
       const final = g.state === 'post', live = g.state === 'in';
       const card = mk('div', 'sb-card ' + (final ? 'final' : live ? 'live' : 'pre') + (g.cup ? ' cup' : '') + (me && mineG(g) ? ' is-me' : ''));
       const ln = C.lineOf.get(date + '|' + g.away + '|' + g.home) || (g.away_ml != null || g.home_ml != null ? g : null);
