@@ -787,7 +787,11 @@ button.sb-date:hover { background: var(--fill) !important; }
 .sb-date .sb-pick { font-size: 10px; color: var(--muted); line-height: 1; margin-top: 2px; }
 .sb-date.other { background: color-mix(in srgb, var(--accent) 16%, var(--panel)) !important; box-shadow: inset 0 0 0 1.5px var(--accent) !important; }
 .sb-date.other .sb-pick, .sb-date.other .sb-dow { color: var(--accent); }
-.sb-back { flex: none; align-self: center; scroll-snap-align: start; font: inherit; font-size: 12px; font-weight: 700; color: var(--accent); background: var(--panel); border: none; border-radius: 999px; padding: 8px 12px; box-shadow: 0 0 0 1px color-mix(in srgb, var(--accent) 45%, transparent); cursor: pointer; white-space: nowrap; }
+.sb-side { flex: none; display: flex; flex-direction: column; gap: 4px; }
+.sb-side .sb-date { flex: 1; }
+.sb-back { font: inherit; font-size: 10px; font-weight: 700; color: var(--accent); background: var(--panel); border: none; border-radius: 999px; padding: 4px 0; width: 3rem;
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--accent) 45%, transparent); cursor: pointer; line-height: 1; }
+.sb-back[hidden] { display: none; }
 .dp-box { max-width: 380px; width: 100%; }
 .dp-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 6px; }
 .dp-title { font-size: 20px; font-weight: 800; letter-spacing: -.01em; }

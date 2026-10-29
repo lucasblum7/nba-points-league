@@ -1340,6 +1340,7 @@
     document.body.append(ov); document.addEventListener('keydown', bonusKey); x.focus();
   }
   $('sb-date').addEventListener('click', showDayPicker);
+  $('sb-back').addEventListener('click', () => { sbDate = null; renderStrip(sbSlate, sbC); });
 
   function renderStrip(liveSlate, C) {
     sbC = C; sbSlate = liveSlate;
@@ -1351,7 +1352,7 @@
     const dt = $('sb-date'); dt.classList.toggle('other', !!other);
     dt.querySelector('.sb-dow').textContent = (date === today ? 'TODAY' : dayName(date, { weekday: 'short' }).toUpperCase());
     dt.querySelector('.sb-md').textContent = dayName(date, { month: 'short', day: 'numeric' }).toUpperCase();
-    if (other) { const back = mk('button', 'sb-back', '↩ Today'); back.type = 'button'; back.addEventListener('click', () => { sbDate = null; renderStrip(sbSlate, sbC); }); strip.append(back); }
+    $('sb-back').hidden = !other;
     if (!slate.games.length) { strip.append(mk('div', 'sb-none', date === today ? 'No games today' : 'No games this day')); return; }
     const me = getMe(), mineG = (g) => C.owner.get(g.away) === me || C.owner.get(g.home) === me;
     slate.games.slice().sort((a, b) => (me ? mineG(b) - mineG(a) : 0)).forEach((g) => {
