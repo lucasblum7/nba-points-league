@@ -25,7 +25,7 @@
     --bg: #000000; --panel: #1c1c1e; --fill: rgba(118,118,128,.24); --fill2: rgba(118,118,128,.32);
     --fg: #ffffff; --muted: #98989f; --line: rgba(84,84,88,.55);
     --ok: #30d158; --bad: #ff453a; --warn: #ff9f0a; --accent: #ff8a1f; --wins: #0a84ff; --bonus: #ff9f0a;
-    --shadow: none; color-scheme: dark;
+    --shadow: 0 0 0 transparent; color-scheme: dark;
   }
 }
 body { font: 15px/1.4 var(--sans); -webkit-font-smoothing: antialiased; letter-spacing: -.005em; background: var(--bg); }
@@ -677,3 +677,9 @@ button.mu-today { text-decoration: none !important; }
 .gc-form i.w { background: var(--ok); } .gc-form i.l { background: var(--bad); } .gc-form i.none { background: var(--fill2); }
 .gc-mrow { display: flex; justify-content: space-between; gap: 8px; padding: 5px 0; font-size: 13px; border-top: .5px solid var(--line); }
 .gc-met h4 + .gc-mrow { border-top: none; }
+
+/* My team: tint your team's rows on the scoreboard */
+.sb-row.my-row { background: color-mix(in srgb, var(--accent) 16%, transparent); border-radius: 7px; margin: 0 -4px; padding: 0 4px; }
+.sb-row.my-row .sb-name { font-weight: 800; }
+.sb-row.my-row .sb-owner { color: var(--accent); font-weight: 700; }
+.sb-card.is-me { background: color-mix(in srgb, var(--accent) 6%, var(--panel)) !important; }

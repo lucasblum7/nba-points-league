@@ -1224,7 +1224,7 @@
       card.append(st);
       const winner = final ? (g.home_score > g.away_score ? g.home : g.away) : null;
       [[g.away, g.away_score, ln && ln.away_ml], [g.home, g.home_score, ln && ln.home_ml]].forEach(([team, pts, line]) => {
-        const row = mk('div', 'sb-row' + (final ? (team === winner ? ' won-row' : ' lost-row') : ''));
+        const row = mk('div', 'sb-row' + (final ? (team === winner ? ' won-row' : ' lost-row') : '') + (me && C.owner.get(team) === me ? ' my-row' : ''));
         const nm = mk('span', 'sb-team'); nm.append(mk('span', 'sb-name', short(team)), mk('span', 'sb-owner', C.owner.get(team) || ''));
         const key = g.id + '|' + team, ptsEl = final || live ? mk('span', 'sb-pts', pts ?? '') : null;
         if (ptsEl) { const was = prevScores.get(key); if (was != null && was !== pts) ptsEl.classList.add('score-pop'); prevScores.set(key, pts); }
