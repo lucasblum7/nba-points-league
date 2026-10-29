@@ -681,7 +681,7 @@
     const card = mk('button', 'muh ' + m.status); card.type = 'button';
     card.style.setProperty('--you', ownerVar(you.owner)); card.style.setProperty('--opp', ownerVar(opp.owner));
     card.setAttribute('aria-label', `Your week ${m.week} matchup vs ${opp.owner}. Show details`);
-    card.addEventListener('click', () => showMatchup(m, C, slate));
+    card.addEventListener('click', () => showWeek(m, me, C, slate));
     const top = mk('div', 'muh-top');
     top.append(mk('span', 'muh-kicker', 'Your matchup'));
     const ga = ownerWeekGames(you.owner, m, C, slate), gb = ownerWeekGames(opp.owner, m, C, slate);
@@ -709,22 +709,15 @@
       : m.winner ? (m.status === 'final' ? `You lost by ${gap || 'the tiebreak'}` : gap ? `You trail by ${gap}` : 'You trail on total wins')
       : (m.status === 'final' ? 'It ended in a tie' : 'All square');
     card.append(mk('div', 'muh-verdict' + (m.winner === me ? ' up' : m.winner ? ' down' : ''), verdict));
-    // games still to play this week: one row per day, your teams | day | their teams
-    if (m.status !== 'final') {
-      const restA = ga.filter((g) => g.state !== 'final'), restB = gb.filter((g) => g.state !== 'final');
-      const days = [...new Set(restA.concat(restB).map((g) => g.date))].sort();
-      const games = mk('div', 'muh-days');
-      const hd = mk('div', 'muh-day muh-dayh'); hd.append(mk('span', null, 'You'), mk('span', null, 'Left'), mk('span', null, opp.owner)); games.append(hd);
-      if (!days.length) games.append(mk('div', 'muh-none', 'No games left this week'));
-      const teams = (list) => { const t = mk('span', 'muh-teams'); list.forEach((g) => { const bd = badge(g.team, 'sb-badge muh-gb' + (g.state === 'live' ? ' live' : '')); bd.title = `${g.team} ${g.home ? 'vs' : '@'} ${g.opp}` + (g.state === 'live' ? ` · ${g.score}` : ''); t.append(bd); }); if (!list.length) t.append(mk('span', 'muh-dash', '–')); return t; };
-      days.forEach((d) => {
-        const ya = restA.filter((g) => g.date === d), yb = restB.filter((g) => g.date === d), cup = ya.concat(yb).some((g) => g.cup);
-        const row = mk('div', 'muh-day' + (cup ? ' cup' : ''));
-        const lab = mk('span', 'muh-dl'); lab.append(mk('b', null, d === pacificToday() ? 'Tonight' : dayName(d, { weekday: 'short' })));
-        if (cup) lab.append(mk('span', 'muh-cup', '🏆 ±2'));
-        row.append(teams(ya), lab, teams(yb)); games.append(row);
-      });
-      card.append(games);
+    // the week's games live in their own pop-up; the card just shows a summary button
+    if (m.status !== 'final' || ga.length || gb.length) {
+      const la = ga.filter((g) => g.state !== 'final').length, lb = gb.filter((g) => g.state !== 'final').length;
+      const cupN = ga.concat(gb).filter((g) => g.cup && g.state !== 'final').length;
+      const wk = mk('span', 'muh-week'); wk.setAttribute('role', 'button'); wk.tabIndex = 0;
+      wk.append(mk('b', null, '📅 Full week'), mk('span', null, m.status === 'final' ? 'Every game, day by day' : (la === lb ? `${la} games left each` : `You ${la} · ${opp.owner} ${lb} left`) + (cupN ? ` · 🏆 ${cupN}` : '')), mk('span', 'muh-chev', '›'));
+      const open = (e) => { e.stopPropagation(); showWeek(m, me, C, slate); };
+      wk.addEventListener('click', open); wk.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(e); } });
+      card.append(wk);
     }
     // season series and what's next
     const met = C.matchups.filter((x) => x.status === 'final' && ((x.A.owner === me && x.B.owner === opp.owner) || (x.B.owner === me && x.A.owner === opp.owner)));
@@ -733,9 +726,62 @@
     const foot = mk('div', 'muh-foot');
     foot.append(mk('span', null, met.length ? `Series vs ${opp.owner}: ${sw}–${sl}${st ? '–' + st : ''}` : `First time facing ${opp.owner}`));
     if (nextM) { const n = mk('span', null, 'Next: vs '); const no = nextM.A.owner === me ? nextM.B.owner : nextM.A.owner; n.append(odot(no), no); foot.append(n); }
-    foot.append(mk('span', 'muh-more', 'Details ›'));
     card.append(foot);
     return card;
+  }
+
+  // full week, day by day: your teams | day | their teams, with results for days already played
+  function showWeek(m, me, C, slate) {
+    closeBonus();
+    const you = m.A.owner === me ? m.A : m.B, opp = m.A.owner === me ? m.B : m.A, up = m.status === 'upcoming';
+    const ga = ownerWeekGames(you.owner, m, C, slate), gb = ownerWeekGames(opp.owner, m, C, slate), today = pacificToday();
+    const ov = mk('div', 'bp-overlay'); ov.id = 'bonus-pop';
+    const box = mk('div', 'bp-box wk-box'); box.setAttribute('role', 'dialog'); box.setAttribute('aria-modal', 'true'); box.setAttribute('aria-label', `Week ${m.week}: you vs ${opp.owner}, day by day`);
+    box.style.setProperty('--you', ownerVar(you.owner)); box.style.setProperty('--opp', ownerVar(opp.owner));
+    const head = mk('div', 'wk-head');
+    const ttl = mk('div', 'wk-title'); ttl.append(mk('b', null, `Week ${m.week}`), mk('span', null, `${dayName(m.start, { month: 'short', day: 'numeric' })} – ${dayName(m.end, { month: 'short', day: 'numeric' })}`));
+    const x = mk('button', 'bp-close', '✕'); x.type = 'button'; x.setAttribute('aria-label', 'Close'); x.addEventListener('click', closeBonus);
+    head.append(ttl, x); box.append(head);
+    // score strip
+    const sc = mk('div', 'wk-score');
+    const sd = (o, right) => { const d = mk('div', 'wk-side' + (right ? ' r' : '') + (m.winner === o.owner ? ' lead' : '')); const n = mk('span', 'wk-n'); n.append(odot(o.owner), o === you ? 'You' : o.owner); d.append(n, mk('b', null, up ? '–' : signedN(o.net)), mk('span', 'wk-rec', `${o.w}–${o.l}`)); return d; };
+    sc.append(sd(you, false), mk('span', 'wk-vs', 'vs'), sd(opp, true)); box.append(sc);
+    // one row per day, Monday to Sunday
+    const list = mk('div', 'wk-days');
+    for (let k = 0; k < 7; k++) {
+      const d = new Date(m.start + 'T12:00:00Z'); d.setUTCDate(d.getUTCDate() + k); const iso = d.toISOString().slice(0, 10);
+      const ya = ga.filter((g) => g.date === iso), yb = gb.filter((g) => g.date === iso), all = ya.concat(yb);
+      const cup = all.some((g) => g.cup), past = iso < today, isToday = iso === today;
+      const row = mk('div', 'wk-day' + (cup ? ' cup' : '') + (past ? ' past' : '') + (isToday ? ' today' : '') + (!all.length ? ' empty' : ''));
+      const teams = (gl, right) => {
+        const t = mk('div', 'wk-teams' + (right ? ' r' : ''));
+        gl.forEach((g) => {
+          const c = mk('span', 'wk-g ' + (g.state === 'final' ? (g.w ? 'w' : 'l') : g.state));
+          c.append(badge(g.team, 'sb-badge wk-b'));
+          c.title = `${g.team} ${g.home ? 'vs' : '@'} ${g.opp}` + (g.state === 'final' ? ` · ${g.w ? 'W' : 'L'} ${g.score}` : g.state === 'live' ? ` · ${g.score}` : g.time ? ` · ${g.time}` : '');
+          if (g.state === 'final') c.append(mk('span', 'wk-r', g.w ? 'W' : 'L'));
+          else if (g.state === 'live') c.append(mk('span', 'wk-r', g.score));
+          t.append(c);
+        });
+        return t;
+      };
+      const lab = mk('div', 'wk-dl');
+      lab.append(mk('b', null, isToday ? 'Today' : dayName(iso, { weekday: 'short' })), mk('span', null, dayName(iso, { month: 'short', day: 'numeric' })));
+      if (cup) lab.append(mk('span', 'wk-cup', '🏆 ±2'));
+      row.append(teams(ya, false), lab, teams(yb, true));
+      if (!all.length) { row.replaceChildren(mk('span'), lab, mk('span')); row.classList.add('off'); }
+      // day result: how each side did that day
+      if (past && all.length) {
+        const net = (gl) => gl.reduce((n, g) => n + (g.state === 'final' ? (g.w ? 1 : -1) * (g.cup ? 2 : 1) : 0), 0);
+        const na = net(ya), nb = net(yb);
+        lab.append(mk('span', 'wk-dn', `${signedN(na)} · ${signedN(nb)}`));
+      }
+      list.append(row);
+    }
+    box.append(list);
+    box.append(mk('p', 'players-foot', 'W / L show results · numbers under each day are that day’s net (you · ' + opp.owner + ')'));
+    ov.append(box); ov.addEventListener('click', (e) => { if (e.target === ov) closeBonus(); });
+    document.body.append(ov); document.addEventListener('keydown', bonusKey); x.focus();
   }
 
   function renderMatchups(C, slate) {
