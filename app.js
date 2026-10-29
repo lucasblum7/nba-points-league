@@ -1,4 +1,4 @@
-/* NBA Points League — renders the league from the JSON files in /data.
+/* HoopSquads — renders the league from the JSON files in /data.
    The GitHub Action refreshes those files every 15 minutes; while games are on,
    the page also asks ESPN for live scores directly every minute. */
 (() => {

@@ -683,3 +683,7 @@ button.mu-today { text-decoration: none !important; }
 .sb-row.my-row .sb-name { font-weight: 800; }
 .sb-row.my-row .sb-owner { color: var(--accent); font-weight: 700; }
 .sb-card.is-me { background: color-mix(in srgb, var(--accent) 6%, var(--panel)) !important; }
+
+/* League name: keep "HoopSquads" in its own capitalization */
+.pl-title, .pl-main, .pl-mini-title span { text-transform: none !important; letter-spacing: .01em !important; }
+.pl-title .pl-sub { text-transform: uppercase !important; letter-spacing: .3em !important; }
