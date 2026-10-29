@@ -686,7 +686,7 @@
     top.append(mk('span', 'muh-kicker', 'Your matchup'));
     const ga = ownerWeekGames(you.owner, m, C, slate), gb = ownerWeekGames(opp.owner, m, C, slate);
     const liveNow = ga.concat(gb).some((g) => g.state === 'live');
-    top.append(mk('span', 'muh-status ' + (liveNow ? 'live' : m.status), liveNow ? '● Live now' : m.status === 'live' ? 'In progress' : m.status === 'final' ? 'Final' : 'Starts ' + dayName(m.start, { weekday: 'short', month: 'short', day: 'numeric' })));
+    top.append(mk('span', 'muh-status' + (liveNow ? ' live' : ''), liveNow ? '● Live now' : m.status === 'live' ? 'In progress' : m.status === 'final' ? 'Final' : 'Starts ' + dayName(m.start, { weekday: 'short', month: 'short', day: 'numeric' })));
     card.append(top);
     const side = (sd, gl, right) => {
       const d = mk('div', 'muh-side' + (right ? ' r' : '') + (m.winner === sd.owner ? ' lead' : ''));
@@ -709,24 +709,22 @@
       : m.winner ? (m.status === 'final' ? `You lost by ${gap || 'the tiebreak'}` : gap ? `You trail by ${gap}` : 'You trail on total wins')
       : (m.status === 'final' ? 'It ended in a tie' : 'All square');
     card.append(mk('div', 'muh-verdict' + (m.winner === me ? ' up' : m.winner ? ' down' : ''), verdict));
-    // games still to play this week, side by side
+    // games still to play this week: one row per day, your teams | day | their teams
     if (m.status !== 'final') {
-      const games = mk('div', 'muh-games');
-      const col = (gl, who) => {
-        const c = mk('div', 'muh-col'); c.append(mk('span', 'muh-colh', who));
-        const rest = gl.filter((g) => g.state !== 'final');
-        if (!rest.length) c.append(mk('span', 'muh-none', 'No games left'));
-        rest.slice(0, 8).forEach((g) => {
-          const chip = mk('span', 'muh-g' + (g.state === 'live' ? ' live' : '') + (g.cup ? ' cup' : ''));
-          chip.append(badge(g.team, 'sb-badge muh-gb'));
-          chip.append(mk('span', 'muh-gt', g.state === 'live' ? g.score : g.date === pacificToday() ? 'Tonight' : dayName(g.date, { weekday: 'short' })));
-          if (g.cup) chip.append(mk('span', 'muh-cup', '±2'));
-          c.append(chip);
-        });
-        if (rest.length > 8) c.append(mk('span', 'muh-none', `+${rest.length - 8} more`));
-        return c;
-      };
-      games.append(col(ga, 'Your games left'), col(gb, `${opp.owner}'s games left`)); card.append(games);
+      const restA = ga.filter((g) => g.state !== 'final'), restB = gb.filter((g) => g.state !== 'final');
+      const days = [...new Set(restA.concat(restB).map((g) => g.date))].sort();
+      const games = mk('div', 'muh-days');
+      const hd = mk('div', 'muh-day muh-dayh'); hd.append(mk('span', null, 'You'), mk('span', null, 'Left'), mk('span', null, opp.owner)); games.append(hd);
+      if (!days.length) games.append(mk('div', 'muh-none', 'No games left this week'));
+      const teams = (list) => { const t = mk('span', 'muh-teams'); list.forEach((g) => { const bd = badge(g.team, 'sb-badge muh-gb' + (g.state === 'live' ? ' live' : '')); bd.title = `${g.team} ${g.home ? 'vs' : '@'} ${g.opp}` + (g.state === 'live' ? ` · ${g.score}` : ''); t.append(bd); }); if (!list.length) t.append(mk('span', 'muh-dash', '–')); return t; };
+      days.forEach((d) => {
+        const ya = restA.filter((g) => g.date === d), yb = restB.filter((g) => g.date === d), cup = ya.concat(yb).some((g) => g.cup);
+        const row = mk('div', 'muh-day' + (cup ? ' cup' : ''));
+        const lab = mk('span', 'muh-dl'); lab.append(mk('b', null, d === pacificToday() ? 'Tonight' : dayName(d, { weekday: 'short' })));
+        if (cup) lab.append(mk('span', 'muh-cup', '🏆 ±2'));
+        row.append(teams(ya), lab, teams(yb)); games.append(row);
+      });
+      card.append(games);
     }
     // season series and what's next
     const met = C.matchups.filter((x) => x.status === 'final' && ((x.A.owner === me && x.B.owner === opp.owner) || (x.B.owner === me && x.A.owner === opp.owner)));
