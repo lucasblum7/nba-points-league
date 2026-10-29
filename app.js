@@ -723,18 +723,19 @@
     matchups.filter((m) => m.status === 'final').sort((a, b) => a.week - b.week).forEach((m) => {
       [m.A, m.B].forEach((sd) => form.get(sd.owner).push(!m.winner ? 't' : m.winner === sd.owner ? 'w' : 'l'));
     });
-    const hb = document.querySelector('#h2h-table tbody'); hb.replaceChildren();
+    const hb = $('h2h-body'); hb.replaceChildren();
     h2hTable.forEach((r, i) => {
-      const tr = mk('tr', [(r.w + r.t) > 0 ? medal(i + 1) : null, r.owner === me ? 'is-me' : null].filter(Boolean).join(' ') || null);
-      const fd = mk('td', 'h2h-form'); const dots = mk('span', 'h2h-dots');
-      const f = form.get(r.owner).slice(-4); f.forEach((x) => dots.append(mk('i', x))); for (let k = f.length; k < 4; k++) dots.append(mk('i', 'none'));
-      fd.append(dots);
-      const nm = mk('td', 'total'); const md = (r.w + r.t) > 0 ? ['🥇', '🥈', '🥉'][i] : null;
-      if (md) nm.append(mk('span', 'h2h-medal', md)); nm.append(r.owner); if (r.owner === me) nm.append(mk('span', 'you-tag', 'You'));
-      const netTd = mk('td', 'num'); netTd.append(mk('span', 'h2h-net ' + (r.net > 0 ? 'up' : r.net < 0 ? 'down' : 'even'), signedN(r.net)));
-      tr.append(mk('td', 'rank', i + 1), nm, mk('td', 'num h2h-rec', r.t ? `${r.w}–${r.l}–${r.t}` : `${r.w}–${r.l}`),
-        netTd, mk('td', 'num h2h-wins', r.wins), fd);
-      hb.append(tr);
+      const row = mk('div', ['h2h-row', (r.w + r.t) > 0 ? medal(i + 1) : null, r.owner === me ? 'is-me' : null].filter(Boolean).join(' ')); row.setAttribute('role', 'row');
+      const cell = (cls, content) => { const c = mk('span', cls); c.setAttribute('role', 'cell'); if (content != null) c.append(content); row.append(c); return c; };
+      cell('h2h-rank', String(i + 1));
+      const nm = cell('h2h-name'); const md = (r.w + r.t) > 0 ? ['🥇', '🥈', '🥉'][i] : null;
+      if (md) nm.append(mk('span', 'h2h-medal', md)); nm.append(mk('span', 'h2h-owner', r.owner)); if (r.owner === me) nm.append(mk('span', 'you-tag', 'You'));
+      cell('h2h-rec', r.t ? `${r.w}–${r.l}–${r.t}` : `${r.w}–${r.l}`);
+      cell('h2h-netc', mk('span', 'h2h-net ' + (r.net > 0 ? 'up' : r.net < 0 ? 'down' : 'even'), signedN(r.net)));
+      cell('h2h-wins', String(r.wins));
+      const dots = mk('span', 'h2h-dots'); const f = form.get(r.owner).slice(-4); f.forEach((x) => dots.append(mk('i', x))); for (let k = f.length; k < 4; k++) dots.append(mk('i', 'none'));
+      cell('h2h-form', dots);
+      hb.append(row);
     });
   }
 
