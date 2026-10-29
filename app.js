@@ -719,14 +719,7 @@
       wk.addEventListener('click', open); wk.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(e); } });
       card.append(wk);
     }
-    // season series and what's next
-    const met = C.matchups.filter((x) => x.status === 'final' && ((x.A.owner === me && x.B.owner === opp.owner) || (x.B.owner === me && x.A.owner === opp.owner)));
-    const sw = met.filter((x) => x.winner === me).length, sl = met.filter((x) => x.winner === opp.owner).length, st = met.length - sw - sl;
-    const nextM = C.matchups.find((x) => x.week === m.week + 1 && (x.A.owner === me || x.B.owner === me));
-    const foot = mk('div', 'muh-foot');
-    foot.append(mk('span', null, met.length ? `Series vs ${opp.owner}: ${sw}–${sl}${st ? '–' + st : ''}` : `First time facing ${opp.owner}`));
-    if (nextM) { const n = mk('span', null, 'Next: vs '); const no = nextM.A.owner === me ? nextM.B.owner : nextM.A.owner; n.append(odot(no), no); foot.append(n); }
-    card.append(foot);
+
     return card;
   }
 
