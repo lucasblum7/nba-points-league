@@ -907,3 +907,26 @@ button.sb-date:hover { background: var(--fill) !important; }
 .me-small .me-ts { font-size: 10.5px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .me-small .me-tap::after { top: 5px; right: 8px; font-size: 13px; }
 .sb-yday { font-size: 9px; letter-spacing: -.01em; white-space: normal; line-height: 1.15; padding: 4px 2px !important; border-radius: 10px !important; }
+
+/* ---------- Owner colors: one color per owner, used for chart lines and the dot by each name ----------
+   Validated (dataviz validator, all pairs): light normal ΔE ≥ 23, CVD ≥ 11.9; dark normal ≥ 17, CVD ≥ 10.
+   Sub-3:1 swatches are relieved by the names/labels always shown beside them. */
+:root { --oc1: #0754c6; --oc2: #df7789; --oc3: #3fbcf0; --oc4: #85c425; --oc5: #9d1a7e; --oc6: #2f6e1f; }
+@media (prefers-color-scheme: dark) { :root { --oc1: #3c53cd; --oc2: #d16e8f; --oc3: #3496ef; --oc4: #46ac2a; --oc5: #9a2a95; --oc6: #137738; } }
+.odot { display: inline-block; width: 9px; height: 9px; border-radius: 50%; margin-right: 6px; vertical-align: 1px; flex: none; box-shadow: 0 0 0 1.5px var(--panel); }
+.owner-head h2 .odot { width: 12px; height: 12px; margin-right: 8px; vertical-align: 3px; }
+.owner-head h2::before { display: none !important; }
+.race-dim { opacity: .5 !important; }
+
+/* ---------- Calmer color: orange = you, gold = NBA Cup & medals, green/red = good/bad ---------- */
+tr.p1 td, tr.p2 td, tr.p3 td { background: none !important; }
+.h2h-row.p1, .h2h-row.p2, .h2h-row.p3 { background: none !important; border-top-color: var(--line) !important; }
+.h2h-row.p1:first-child { border-top-color: transparent !important; }
+#rosters-card .card.p1, #rosters-card .card.p2, #rosters-card .card.p3, .card.p1, .card.p2, .card.p3 { background: var(--panel) !important; box-shadow: var(--shadow) !important; }
+#rosters-card .card.is-me { box-shadow: inset 0 0 0 2px var(--accent), var(--shadow) !important; }
+.bubble.gold, .bubble.fire, .bubble.up, .bubble.down { background: var(--bg) !important; }
+.h2h-name .h2h-medal { width: 1.15em !important; text-align: center; }
+.h2h-name .odot { margin-right: 2px; }
+.mw-status.live { color: var(--bad) !important; }
+.mw-card.live .mw-foot > span:first-child::before { color: var(--bad) !important; }
+@media (prefers-color-scheme: dark) { .race-dim { opacity: .7 !important; } }

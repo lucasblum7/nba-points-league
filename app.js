@@ -393,6 +393,10 @@
   }
   const rerender = () => { if (D) render(D, compute(D), slate); };
 
+  // each owner keeps one color everywhere (chart lines, dots by names): fixed alphabetical order
+  let OWNER_ORDER = [];
+  const ownerVar = (o) => `var(--oc${(Math.max(0, OWNER_ORDER.indexOf(o)) % 6) + 1})`;
+  const odot = (o) => { const s = mk('span', 'odot'); s.style.background = ownerVar(o); s.setAttribute('aria-hidden', 'true'); return s; };
   // jump to an owner's roster on the Rosters tab and pulse it
   function goToRoster(owner) {
     location.hash = '#rosters';
@@ -434,7 +438,7 @@
       t.append(mk('span', 'me-tl', `Week ${m.week} matchup`));
       const face = mk('div', 'me-mu-face');
       const side = (sd, you) => { const d = mk('div', 'me-mu-side' + (you ? ' you' : '') + (m.winner === sd.owner ? ' lead' : ''));
-        d.append(mk('span', 'me-mu-name', you ? 'You' : sd.owner), mk('b', 'me-mu-net', up ? '–' : signedN(sd.net)), mk('span', 'me-mu-rec', `${sd.w}–${sd.l}`)); return d; };
+        const nmE = mk('span', 'me-mu-name'); nmE.append(odot(sd.owner), you ? 'You' : sd.owner); d.append(nmE, mk('b', 'me-mu-net', up ? '–' : signedN(sd.net)), mk('span', 'me-mu-rec', `${sd.w}–${sd.l}`)); return d; };
       face.append(side(mine, true), mk('span', 'me-mu-vs', 'vs'), side(opp, false));
       t.append(face, mk('span', 'me-ts me-mu-state' + (m.winner === me ? ' up' : m.winner ? ' down' : ''), state));
       big.append(t); tap(t, () => { location.hash = '#matchups'; }, `Week ${m.week} matchup vs ${opp.owner}: ${state}. Open matchups`);
@@ -450,6 +454,7 @@
   }
 
   function render(D, C, slate) {
+    OWNER_ORDER = [...C.owners].sort((a, b) => a.localeCompare(b));
     const { board, teams, weekly, upsets, owner } = C;
     const me = getMe();
     document.body.classList.toggle('has-me', !!me);
@@ -497,7 +502,7 @@
     board.forEach((d, i) => {
       const tr = mk('tr', [d.points > 0 ? medal(d.place) : null, d.owner === me ? 'is-me' : null].filter(Boolean).join(' ') || null);
       const nmTd = mk('td', 'total lb-owner'); const nb = mk('button', 'lb-name', d.owner); nb.type = 'button'; nb.setAttribute('aria-label', `Open ${d.owner}'s roster`);
-      nb.addEventListener('click', () => goToRoster(d.owner)); nmTd.append(nb); if (d.owner === me) nmTd.append(mk('span', 'you-tag', 'You'));
+      nb.addEventListener('click', () => goToRoster(d.owner)); nmTd.append(odot(d.owner), nb); if (d.owner === me) nmTd.append(mk('span', 'you-tag', 'You'));
       tr.append(mk('td', 'rank', d.rank), nmTd, mk('td', 'num', fmt(d.wins)), mk('td', 'num' + (d.bonus ? '' : ' zero'), fmt(d.bonus)),
         mk('td', 'num total', fmt(d.points)), mk('td', 'num', d.this_week), mk('td', 'num hide-sm' + (d.weeks_won ? '' : ' zero'), d.weeks_won));
       tr.dataset.owner = d.owner; tr.dataset.pts = d.points;
@@ -569,7 +574,7 @@
       const row = board.find((b) => b.owner === o);
       const card = mk('section', 'card ' + (row.points > 0 ? medal(row.place) || '' : '')); card.id = 'owner-' + o.toLowerCase(); if (o === me) card.classList.add('is-me');
       const head = mk('div', 'owner-head');
-      const nameBox = mk('div'); const h2o = mk('h2', null, o); if (o === me) h2o.append(mk('span', 'you-tag', 'You')); nameBox.append(h2o);
+      const nameBox = mk('div'); const h2o = mk('h2'); h2o.append(odot(o), o); if (o === me) h2o.append(mk('span', 'you-tag', 'You')); nameBox.append(h2o);
       const pl = mk('div', 'projline', 'Proj. wins ');
       pl.append(mk('b', null, row.proj), ' · Win pace ');
       pl.append(mk('b', paceClass(row.pace, row.proj), row.pace.toFixed(1)));
@@ -703,7 +708,7 @@
         const sideEl = (sd, right) => {
           const gl = ownerWeekGames(sd.owner, m, C, slate), left = gl.filter((g) => g.state !== 'final').length, live = gl.filter((g) => g.state === 'live').length;
           const el = mk('div', 'mw-side' + (right ? ' r' : '') + (m.winner === sd.owner ? ' lead' : m.winner ? ' trail' : ''));
-          el.append(mk('span', 'mw-name', sd.owner));
+          const nmEl = mk('span', 'mw-name'); nmEl.append(odot(sd.owner), sd.owner); el.append(nmEl);
           const sub = mk('span', 'mw-sub2'); sub.append(mk('span', 'mw-rec', `${sd.w}–${sd.l}`));
           if (m.status !== 'final') sub.append(mk('span', 'mw-left' + (live ? ' live' : ''), live ? ` · ● ${live} live` : ` · ${left} left`));
           el.append(sub); return el;
@@ -716,6 +721,7 @@
         const pos = Math.max(8, Math.min(92, 50 + diff * 7));
         const bar = mk('div', 'mw-bar'); const fillA = mk('i', 'a'); fillA.style.width = pos + '%'; const fillB = mk('i', 'b'); fillB.style.width = (100 - pos) + '%';
         if (m.winner === m.B.owner) { fillA.className = 'b'; fillB.className = 'a'; }
+        if (m.winner) (m.winner === m.B.owner ? fillB : fillA).style.background = ownerVar(m.winner);   // the leader's bar wears their color
         if (m.status === 'upcoming') bar.classList.add('idle');
         bar.append(fillA, fillB);
         const foot = m.status === 'upcoming' ? 'Starts ' + dayName(m.start, { weekday: 'short', month: 'short', day: 'numeric' })
@@ -737,7 +743,7 @@
       const cell = (cls, content) => { const c = mk('span', cls); c.setAttribute('role', 'cell'); if (content != null) c.append(content); row.append(c); return c; };
       cell('h2h-rank', String(i + 1));
       const nm = cell('h2h-name'); const md = (r.w + r.t) > 0 ? ['🥇', '🥈', '🥉'][i] : null;
-      if (md) nm.append(mk('span', 'h2h-medal', md)); nm.append(mk('span', 'h2h-owner', r.owner)); if (r.owner === me) nm.append(mk('span', 'you-tag', 'You'));
+      nm.append(mk('span', 'h2h-medal', md || ''), odot(r.owner), mk('span', 'h2h-owner', r.owner)); if (r.owner === me) nm.append(mk('span', 'you-tag', 'You'));
       cell('h2h-rec', r.t ? `${r.w}–${r.l}–${r.t}` : `${r.w}–${r.l}`);
       cell('h2h-netc', mk('span', 'h2h-net ' + (r.net > 0 ? 'up' : r.net < 0 ? 'down' : 'even'), signedN(r.net)));
       cell('h2h-wins', String(r.wins));
@@ -822,8 +828,6 @@
 
   // ---------- points race chart (Home) ----------
   // Owners keep the same color everywhere: fixed order, assigned alphabetically.
-  const RACE_COLORS = { light: ['#2a78d6', '#eb6834', '#1baf7a', '#eda100', '#e87ba4', '#008300'],
-                        dark:  ['#3987e5', '#d95926', '#199e70', '#c98500', '#d55181', '#008300'] };
   let raceData = null;
   function raceSeries(D, C) {
     const S = D.config.scoring, cupExtra = (S.cup_game_win ?? S.win) - S.win;
@@ -851,8 +855,8 @@
   }
   function drawRace() {
     const host = $('race'), { owners, pts } = raceData || {}; if (!host || !pts || !pts.length) return;
-    const dark = matchMedia('(prefers-color-scheme: dark)').matches, pal = RACE_COLORS[dark ? 'dark' : 'light'];
-    const color = (o) => pal[owners.indexOf(o) % pal.length];
+    const css = getComputedStyle(document.documentElement);
+    const color = (o) => css.getPropertyValue(`--oc${(owners.indexOf(o) % 6) + 1}`).trim() || '#888';
     const W = Math.max(280, host.clientWidth), H = W < 500 ? 230 : 270;
     const lastV = pts[pts.length - 1].v, longest = Math.max(...owners.map((o) => (o + ' ' + fmt(lastV[o])).length));
     const M = { l: 30, r: 26 + longest * 7.6, t: 10, b: 24 }, iw = W - M.l - M.r, ih = H - M.t - M.b;
