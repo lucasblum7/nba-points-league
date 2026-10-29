@@ -299,6 +299,8 @@ def main():
             day += timedelta(days=1)
         def sched_row(e):
             row = {"date": e["date"], "time": e["time"], "away": e["away"]["name"], "home": e["home"]["name"]}
+            if is_cup_game(e):
+                row["cup"] = True
             o = e.get("odds") or {}
             if o.get("away_ml") is not None or o.get("home_ml") is not None:
                 row.update({"away_ml": o.get("away_ml"), "home_ml": o.get("home_ml")})

@@ -101,6 +101,9 @@ def fetch_schedule(season, log):
                     except Exception:
                         d, tm = (ev.get("date") or "")[:10], ""
                     games[str(ev.get("id"))] = {"date": d, "time": tm, "away": side["away"], "home": side["home"]}
+                    notes = " ".join((n.get("headline") or "") for n in (comp.get("notes") or [])).lower()
+                    if "nba cup" in notes and "championship" not in notes:
+                        games[str(ev.get("id"))]["cup"] = True
     log.append(f"odds: schedule {len(games)} games left ({failed} team requests failed)")
     if failed > 5:
         return None

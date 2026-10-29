@@ -1363,7 +1363,8 @@
       const soon = !final && !live && date === today ? soonLabel(date, g.time) : null;
       if (soon) card.classList.add('soon');
       st.append(mk('span', soon ? 'sb-soon' : null, final ? 'FINAL' : live ? (g.detail || 'LIVE') : soon || g.time));
-      if (ln && ln.fav && ln.spread != null) st.append(mk('span', 'sb-line', ln.spread === 0 ? 'PK' : (TEAM_BADGE[ln.fav] || [short(ln.fav)])[0] + ' −' + ln.spread));
+      if (g.cup) st.append(mk('span', 'sb-cuptag', '🏆 CUP'));
+      else if (ln && ln.fav && ln.spread != null) st.append(mk('span', 'sb-line', ln.spread === 0 ? 'PK' : (TEAM_BADGE[ln.fav] || [short(ln.fav)])[0] + ' −' + ln.spread));
       card.append(st);
       const winner = final ? (g.home_score > g.away_score ? g.home : g.away) : null;
       [[g.away, g.away_score, ln && ln.away_ml], [g.home, g.home_score, ln && ln.home_ml]].forEach(([team, pts, line]) => {
