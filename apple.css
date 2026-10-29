@@ -687,3 +687,6 @@ button.mu-today { text-decoration: none !important; }
 /* League name: keep "HoopSquads" in its own capitalization */
 .pl-title, .pl-main, .pl-mini-title span { text-transform: none !important; letter-spacing: .01em !important; }
 .pl-title .pl-sub { text-transform: uppercase !important; letter-spacing: .3em !important; }
+/* Big header: "Hoop" over "Squads" (the scroll bar keeps them on one line) */
+.pl-main { display: flex; flex-direction: column; align-items: center; line-height: .92; }
+.pl-main .pl-w { display: block; }
