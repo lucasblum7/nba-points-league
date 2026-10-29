@@ -1238,6 +1238,21 @@
     mini.querySelector('a').addEventListener('click', (ev) => { ev.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); });
   })();
 
+  // ---------- always show the newest version: if a newer one is published, reload into it ----------
+  async function checkVersion() {
+    try {
+      const r = await fetch('version.json?t=' + Date.now(), { cache: 'no-store' }); if (!r.ok) return;
+      const { v } = await r.json();
+      if (v && window.SITE_VERSION && v !== window.SITE_VERSION) {
+        const u = new URL(location.href); if (u.searchParams.get('v') === v) return;   // already tried this version
+        u.searchParams.set('v', v); location.replace(u.toString());
+      }
+    } catch (e) { /* offline or blocked: keep the current copy */ }
+  }
+  checkVersion();
+  setInterval(checkVersion, 5 * 60 * 1000);
+  document.addEventListener('visibilitychange', () => { if (document.visibilityState === 'visible') checkVersion(); });
+
   (async () => {
     try {
       await load();
