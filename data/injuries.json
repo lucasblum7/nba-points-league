@@ -1,5 +1,5 @@
 {
- "as_of": "2026-10-29T00",
+ "as_of": "2026-10-29T03",
  "players": [
   {
    "team": "Atlanta Hawks",
@@ -71,11 +71,11 @@
    "return": "2026-10-29",
    "fantasy": "GTD",
    "stats": {
-    "gp": 3.0,
-    "min": 18.666666,
-    "pts": 7.3333335,
-    "reb": 2.3333333,
-    "ast": 4.0,
+    "gp": 4.0,
+    "min": 16.0,
+    "pts": 6.0,
+    "reb": 2.0,
+    "ast": 3.0,
     "this_season": true
    }
   },
