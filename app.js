@@ -426,6 +426,18 @@
     const t2 = tile('Today', tc.live ? `${tc.live} live` : `${tc.total}`, tc.live ? `of ${tc.total} games` : tc.total ? (tc.done === tc.total ? 'all played' : (tc.total === 1 ? 'game' : 'games')) : 'no games', tc.live ? 'down' : null);
     t2.classList.add('me-tap'); t2.tabIndex = 0; t2.setAttribute('role', 'button');
     t2.addEventListener('click', () => showToday(me, C, slate)); t2.addEventListener('keydown', (e) => { if (e.key === 'Enter') showToday(me, C, slate); });
+    // my teams: the roster at a glance; tap to jump to it on the Rosters tab
+    const mine = C.teams.filter((x) => x.owner === me);
+    const w = mine.reduce((a, x) => a + x.wins, 0), l = mine.reduce((a, x) => a + x.losses, 0);
+    const t3 = tile('My teams', `${w}–${l}`, 'combined record');
+    t3.classList.add('me-tap', 'me-roster'); t3.tabIndex = 0; t3.setAttribute('role', 'button'); t3.setAttribute('aria-label', `My teams, ${w}–${l}: open my roster`);
+    const strip = mk('span', 'me-badges'); mine.forEach((x) => strip.append(badge(x.team, 'sb-badge me-badge'))); t3.append(strip);
+    const goRoster = () => {
+      location.hash = '#rosters';
+      setTimeout(() => { const c = document.getElementById('owner-' + me.toLowerCase()); if (!c) return;
+        c.scrollIntoView({ behavior: 'smooth', block: 'start' }); c.classList.remove('me-flash'); void c.offsetWidth; c.classList.add('me-flash'); }, 60);
+    };
+    t3.addEventListener('click', goRoster); t3.addEventListener('keydown', (e) => { if (e.key === 'Enter') goRoster(); });
     host.append(tiles);
   }
 
