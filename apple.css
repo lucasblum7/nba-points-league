@@ -581,3 +581,30 @@ button.mu-today { text-decoration: none !important; }
   #h2h-table th, #h2h-table td { padding-left: 1px; padding-right: 1px; }
   #h2h-table td:nth-child(2) { padding-left: 6px; }
 }
+
+/* H2H: even spacing and alignment */
+#h2h-table th, #h2h-table td { padding: 9px 4px !important; vertical-align: middle; }
+#h2h-table th { padding-top: 6px !important; padding-bottom: 6px !important; }
+#h2h-table th:nth-child(1), #h2h-table td:nth-child(1) { width: 3.4em; text-align: left; padding-left: 8px !important; white-space: nowrap; }
+#h2h-table td.rank::after { margin-left: 4px; }
+#h2h-table th:nth-child(2), #h2h-table td:nth-child(2) { text-align: left; padding-left: 10px !important; }
+#h2h-table th:nth-child(3), #h2h-table td:nth-child(3),
+#h2h-table th:nth-child(4), #h2h-table td:nth-child(4),
+#h2h-table th:nth-child(5), #h2h-table td:nth-child(5),
+#h2h-table th:nth-child(6), #h2h-table td:nth-child(6) { text-align: center !important; }
+#h2h-table th:nth-child(3) { width: 4em; } #h2h-table th:nth-child(4) { width: 4em; } #h2h-table th:nth-child(5) { width: 4em; } #h2h-table th:nth-child(6) { width: 5.2em; }
+#h2h-table .h2h-net { min-width: 2.6em; text-align: center; }
+#h2h-table .h2h-dots { justify-content: center; }
+@media (max-width: 480px) {
+  #h2h-table th, #h2h-table td { padding: 8px 2px !important; }
+  #h2h-table th:nth-child(1), #h2h-table td:nth-child(1) { width: 3.1em; padding-left: 6px !important; }
+  #h2h-table th:nth-child(2), #h2h-table td:nth-child(2) { padding-left: 8px !important; }
+  #h2h-table th:nth-child(3), #h2h-table th:nth-child(4), #h2h-table th:nth-child(5) { width: 3.2em; }
+  #h2h-table th:nth-child(6) { width: 4.2em; }
+  #h2h-table .h2h-net { min-width: 2.3em; }
+}
+#h2h-table td.rank::after { content: none !important; }
+#h2h-table th:nth-child(1), #h2h-table td:nth-child(1) { width: 2.2em !important; }
+.h2h-medal { display: inline-block; width: 1.4em; margin-right: 4px; }
+#h2h-table tbody tr:not(.p1):not(.p2):not(.p3) td:nth-child(2) { padding-left: calc(10px + 1.4em + 4px) !important; }
+@media (max-width: 480px) { #h2h-table tbody tr:not(.p1):not(.p2):not(.p3) td:nth-child(2) { padding-left: calc(8px + 1.4em + 4px) !important; } }

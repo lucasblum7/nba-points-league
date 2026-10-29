@@ -715,7 +715,8 @@
       const fd = mk('td', 'h2h-form'); const dots = mk('span', 'h2h-dots');
       const f = form.get(r.owner).slice(-4); f.forEach((x) => dots.append(mk('i', x))); for (let k = f.length; k < 4; k++) dots.append(mk('i', 'none'));
       fd.append(dots);
-      const nm = mk('td', 'total', r.owner); if (r.owner === me) nm.append(mk('span', 'you-tag', 'You'));
+      const nm = mk('td', 'total'); const md = (r.w + r.t) > 0 ? ['🥇', '🥈', '🥉'][i] : null;
+      if (md) nm.append(mk('span', 'h2h-medal', md)); nm.append(r.owner); if (r.owner === me) nm.append(mk('span', 'you-tag', 'You'));
       const netTd = mk('td', 'num'); netTd.append(mk('span', 'h2h-net ' + (r.net > 0 ? 'up' : r.net < 0 ? 'down' : 'even'), signedN(r.net)));
       tr.append(mk('td', 'rank', i + 1), nm, mk('td', 'num h2h-rec', r.t ? `${r.w}–${r.l}–${r.t}` : `${r.w}–${r.l}`),
         netTd, mk('td', 'num h2h-wins', r.wins), fd);
