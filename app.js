@@ -1216,7 +1216,7 @@
     document.body.append(ov); document.addEventListener('keydown', bonusKey); x.focus();
   }
   // ---------- phones: swipe a sheet down to close it, like iOS ----------
-  function enableSwipe(ov) {
+  function enableSwipe(ov, close = closeBonus) {
     const box = ov.querySelector('.bp-box'); if (!box || !matchMedia('(max-width: 600px)').matches) return;
     let y0 = null, dy = 0, t0 = 0, dragging = false;
     const start = (e) => {
@@ -1235,7 +1235,7 @@
       if (y0 == null) return; const fast = dy / Math.max(1, Date.now() - t0) > 0.6; y0 = null;
       if (!dragging) return;
       box.style.transition = 'transform .22s ease';
-      if (dy > 110 || (fast && dy > 30)) { box.style.transform = 'translateY(100%)'; ov.style.transition = 'opacity .22s ease'; ov.style.opacity = '0'; setTimeout(closeBonus, 210); }
+      if (dy > 110 || (fast && dy > 30)) { box.style.transform = 'translateY(100%)'; ov.style.transition = 'opacity .22s ease'; ov.style.opacity = '0'; setTimeout(close, 210); }
       else { box.style.transform = ''; ov.style.background = ''; }
       dragging = false;
     };
@@ -1243,7 +1243,7 @@
     box.addEventListener('touchmove', move, { passive: false });
     box.addEventListener('touchend', end); box.addEventListener('touchcancel', end);
   }
-  new MutationObserver((ms) => ms.forEach((m) => m.addedNodes.forEach((n) => { if (n.id === 'bonus-pop') enableSwipe(n); }))).observe(document.body, { childList: true });
+  new MutationObserver((ms) => ms.forEach((m) => m.addedNodes.forEach((n) => { if (n.id === 'bonus-pop') enableSwipe(n); else if (n.id === 'why-pop') enableSwipe(n, closeWhy); }))).observe(document.body, { childList: true });
 
   function closeBonus() { closeWhy(); const o = document.getElementById('bonus-pop'); if (o) o.remove(); document.removeEventListener('keydown', bonusKey); }
   function bonusKey(e) { if (e.key === 'Escape') closeBonus(); }
