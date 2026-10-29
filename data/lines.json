@@ -241,12 +241,32 @@
  },
  {
   "date": "2026-10-29",
+  "away": "Cleveland Cavaliers",
+  "home": "Atlanta Hawks",
+  "fav": "Cleveland Cavaliers",
+  "spread": 1.5,
+  "away_ml": -110,
+  "home_ml": -110,
+  "book": "DraftKings"
+ },
+ {
+  "date": "2026-10-29",
+  "away": "Sacramento Kings",
+  "home": "New Orleans Pelicans",
+  "fav": "New Orleans Pelicans",
+  "spread": 5.5,
+  "away_ml": 170,
+  "home_ml": -205,
+  "book": "DraftKings"
+ },
+ {
+  "date": "2026-10-29",
   "away": "Memphis Grizzlies",
   "home": "Portland Trail Blazers",
   "fav": "Portland Trail Blazers",
-  "spread": 6.5,
-  "away_ml": 205,
-  "home_ml": -250,
+  "spread": 7.5,
+  "away_ml": 215,
+  "home_ml": -265,
   "book": "DraftKings"
  }
 ]

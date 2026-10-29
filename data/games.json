@@ -446,5 +446,85 @@
   "home": "San Antonio Spurs",
   "away_score": 103,
   "home_score": 130
+ },
+ {
+  "id": "401909881",
+  "date": "2026-10-28",
+  "away": "Miami Heat",
+  "home": "Atlanta Hawks",
+  "away_score": 129,
+  "home_score": 117
+ },
+ {
+  "id": "401909886",
+  "date": "2026-10-28",
+  "away": "New York Knicks",
+  "home": "Chicago Bulls",
+  "away_score": 133,
+  "home_score": 127
+ },
+ {
+  "id": "401909882",
+  "date": "2026-10-28",
+  "away": "Washington Wizards",
+  "home": "Cleveland Cavaliers",
+  "away_score": 111,
+  "home_score": 121
+ },
+ {
+  "id": "401909883",
+  "date": "2026-10-28",
+  "away": "Charlotte Hornets",
+  "home": "Detroit Pistons",
+  "away_score": 89,
+  "home_score": 97
+ },
+ {
+  "id": "401909884",
+  "date": "2026-10-28",
+  "away": "Philadelphia 76ers",
+  "home": "Indiana Pacers",
+  "away_score": 114,
+  "home_score": 109
+ },
+ {
+  "id": "401909887",
+  "date": "2026-10-28",
+  "away": "Houston Rockets",
+  "home": "Milwaukee Bucks",
+  "away_score": 132,
+  "home_score": 100
+ },
+ {
+  "id": "401909888",
+  "date": "2026-10-28",
+  "away": "Golden State Warriors",
+  "home": "Minnesota Timberwolves",
+  "away_score": 119,
+  "home_score": 114
+ },
+ {
+  "id": "401909889",
+  "date": "2026-10-28",
+  "away": "Denver Nuggets",
+  "home": "New Orleans Pelicans",
+  "away_score": 104,
+  "home_score": 91
+ },
+ {
+  "id": "401909885",
+  "date": "2026-10-28",
+  "away": "Orlando Magic",
+  "home": "Toronto Raptors",
+  "away_score": 99,
+  "home_score": 129
+ },
+ {
+  "id": "401909890",
+  "date": "2026-10-28",
+  "away": "San Antonio Spurs",
+  "home": "Utah Jazz",
+  "away_score": 117,
+  "home_score": 111
  }
 ]
