@@ -2,94 +2,28 @@
  "as_of": "2026-10-28",
  "games": [
   {
-   "date": "2026-10-28",
-   "time": "4:00 PM",
-   "away": "Miami Heat",
-   "home": "Atlanta Hawks"
-  },
-  {
-   "date": "2026-10-28",
-   "time": "5:00 PM",
-   "away": "New York Knicks",
-   "home": "Chicago Bulls"
-  },
-  {
-   "date": "2026-10-28",
-   "time": "4:00 PM",
-   "away": "Washington Wizards",
-   "home": "Cleveland Cavaliers"
-  },
-  {
-   "date": "2026-10-28",
-   "time": "6:30 PM",
-   "away": "Oklahoma City Thunder",
-   "home": "Dallas Mavericks"
-  },
-  {
-   "date": "2026-10-28",
-   "time": "4:00 PM",
-   "away": "Charlotte Hornets",
-   "home": "Detroit Pistons"
-  },
-  {
-   "date": "2026-10-28",
-   "time": "4:00 PM",
-   "away": "Philadelphia 76ers",
-   "home": "Indiana Pacers"
-  },
-  {
-   "date": "2026-10-28",
-   "time": "7:30 PM",
-   "away": "Los Angeles Lakers",
-   "home": "LA Clippers"
-  },
-  {
-   "date": "2026-10-28",
-   "time": "5:00 PM",
-   "away": "Houston Rockets",
-   "home": "Milwaukee Bucks"
-  },
-  {
-   "date": "2026-10-28",
-   "time": "5:00 PM",
-   "away": "Golden State Warriors",
-   "home": "Minnesota Timberwolves"
-  },
-  {
-   "date": "2026-10-28",
-   "time": "5:00 PM",
-   "away": "Denver Nuggets",
-   "home": "New Orleans Pelicans"
-  },
-  {
-   "date": "2026-10-28",
-   "time": "4:30 PM",
-   "away": "Orlando Magic",
-   "home": "Toronto Raptors"
-  },
-  {
-   "date": "2026-10-28",
-   "time": "6:00 PM",
-   "away": "San Antonio Spurs",
-   "home": "Utah Jazz"
-  },
-  {
    "date": "2026-10-29",
    "time": "5:00 PM",
    "away": "Cleveland Cavaliers",
-   "home": "Atlanta Hawks"
+   "home": "Atlanta Hawks",
+   "away_ml": -110,
+   "home_ml": -110
   },
   {
    "date": "2026-10-29",
    "time": "5:00 PM",
    "away": "Sacramento Kings",
-   "home": "New Orleans Pelicans"
+   "home": "New Orleans Pelicans",
+   "away_ml": 180,
+   "home_ml": -218
   },
   {
    "date": "2026-10-29",
    "time": "7:00 PM",
    "away": "Memphis Grizzlies",
-   "home": "Portland Trail Blazers"
+   "home": "Portland Trail Blazers",
+   "away_ml": 215,
+   "home_ml": -265
   },
   {
    "date": "2026-10-30",
