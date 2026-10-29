@@ -243,7 +243,7 @@
   "date": "2026-10-29",
   "away": "Cleveland Cavaliers",
   "home": "Atlanta Hawks",
-  "fav": "Cleveland Cavaliers",
+  "fav": "Atlanta Hawks",
   "spread": 1.5,
   "away_ml": -110,
   "home_ml": -110,
@@ -255,8 +255,8 @@
   "home": "New Orleans Pelicans",
   "fav": "New Orleans Pelicans",
   "spread": 5.5,
-  "away_ml": 170,
-  "home_ml": -205,
+  "away_ml": 180,
+  "home_ml": -218,
   "book": "DraftKings"
  },
  {

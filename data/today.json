@@ -114,23 +114,23 @@
   {
    "id": "401909891",
    "time": "6:30 PM",
-   "state": "in",
-   "detail": "4:41 - 4th",
+   "state": "post",
+   "detail": "Final",
    "away": "Oklahoma City Thunder",
    "home": "Dallas Mavericks",
-   "away_score": 93,
-   "home_score": 113,
+   "away_score": 96,
+   "home_score": 120,
    "cup": false
   },
   {
    "id": "401909892",
    "time": "7:30 PM",
-   "state": "in",
-   "detail": "Halftime",
+   "state": "post",
+   "detail": "Final",
    "away": "Los Angeles Lakers",
    "home": "LA Clippers",
-   "away_score": 56,
-   "home_score": 38,
+   "away_score": 103,
+   "home_score": 87,
    "cup": false
   }
  ]

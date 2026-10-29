@@ -472,6 +472,14 @@
   "home_score": 121
  },
  {
+  "id": "401909891",
+  "date": "2026-10-28",
+  "away": "Oklahoma City Thunder",
+  "home": "Dallas Mavericks",
+  "away_score": 96,
+  "home_score": 120
+ },
+ {
   "id": "401909883",
   "date": "2026-10-28",
   "away": "Charlotte Hornets",
@@ -486,6 +494,14 @@
   "home": "Indiana Pacers",
   "away_score": 114,
   "home_score": 109
+ },
+ {
+  "id": "401909892",
+  "date": "2026-10-28",
+  "away": "Los Angeles Lakers",
+  "home": "LA Clippers",
+  "away_score": 103,
+  "home_score": 87
  },
  {
   "id": "401909887",
