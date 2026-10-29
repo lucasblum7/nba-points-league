@@ -1037,3 +1037,6 @@ tr.p1 td, tr.p2 td, tr.p3 td { background: none !important; }
 .wk-g.live .wk-b { box-shadow: 0 0 0 2px var(--bad); }
 .wk-r { position: absolute; right: -3px; bottom: -4px; font-size: 8.5px; font-weight: 900; color: #fff; border-radius: 6px; padding: 0 3px; line-height: 12px; }
 .wk-g.w .wk-r { background: var(--ok); } .wk-g.l .wk-r { background: var(--bad); } .wk-g.live .wk-r { background: var(--bad); font-size: 7.5px; }
+
+/* No double-tap-to-zoom (pinch zoom still works, for accessibility) */
+html, body, button, a, [role="button"] { touch-action: manipulation; }
