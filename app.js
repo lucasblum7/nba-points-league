@@ -414,34 +414,39 @@
     const who = mk('div', 'me-who'); who.append(mk('span', 'me-hi', 'Your team'), mk('b', null, me));
     const sw = mk('button', 'me-switch', 'Switch'); sw.type = 'button'; sw.addEventListener('click', () => pickMe(C));
     top.append(who, sw); host.append(top);
-    const tiles = mk('div', 'me-tiles');
-    const tile = (label, value, sub, cls) => { const d = mk('div', 'me-tile'); d.append(mk('span', 'me-tl', label), mk('b', cls || null, value)); if (sub) d.append(mk('span', 'me-ts', sub)); tiles.append(d); return d; };
+    // layout: Rank · Points · Today in a slim row, then the matchup, then My Hoop Squad
+    const small = mk('div', 'me-small'), big = mk('div', 'me-big');
+    const tile = (label, value, sub, cls, into = small) => { const d = mk('div', 'me-tile'); d.append(mk('span', 'me-tl', label), mk('b', cls || null, value)); if (sub) d.append(mk('span', 'me-ts', sub)); into.append(d); return d; };
+    const tap = (el, fn, label) => { el.classList.add('me-tap'); el.tabIndex = 0; el.setAttribute('role', 'button'); if (label) el.setAttribute('aria-label', label); el.addEventListener('click', fn); el.addEventListener('keydown', (e) => { if (e.key === 'Enter') fn(); }); };
     const gap = lead.points - row.points, second = C.board.find((b) => b.owner !== me);
     tile('Rank', `${tied ? 'T-' : ''}${row.place}`, `of ${C.board.length}`);
     tile('Points', fmt(row.points), row.place === 1 && !tied ? `+${row.points - (second ? second.points : 0)} ahead` : gap ? `${gap} behind 1st` : 'tied for 1st');
-    // this week's matchup
+    const tc = todayCount(me, C, slate);
+    const t2 = tile('Today', tc.live ? `${tc.live} live` : `${tc.total}`, tc.live ? `of ${tc.total} games` : tc.total ? (tc.done === tc.total ? 'all played' : (tc.total === 1 ? 'game' : 'games')) : 'no games', tc.live ? 'down' : null);
+    tap(t2, () => showToday(me, C, slate));
+    // this week's matchup: net score on top, both records underneath
     const fw = C.matchups.some((m) => m.week === C.curWeek) ? C.curWeek : (C.matchups[0] || {}).week;
     const m = C.matchups.find((x) => x.week === fw && (x.A.owner === me || x.B.owner === me));
     if (m) {
-      const mine = m.A.owner === me ? m.A : m.B, opp = m.A.owner === me ? m.B : m.A;
-      const state = m.status === 'upcoming' ? 'Starts ' + fmtDay(m.start) : m.winner === me ? (m.status === 'final' ? 'You won' : 'You lead') : m.winner ? (m.status === 'final' ? 'You lost' : 'You trail') : (m.status === 'final' ? 'Tie' : 'Even');
-      const t = tile('Matchup vs ' + opp.owner, `${mine.w}–${mine.l}`, `${state} · ${opp.owner} ${opp.w}–${opp.l}`, m.winner === me ? 'up' : m.winner ? 'down' : null);
-      t.classList.add('me-tap'); t.tabIndex = 0; t.setAttribute('role', 'button');
-      const go = () => { location.hash = '#matchups'; }; t.addEventListener('click', go); t.addEventListener('keydown', (e) => { if (e.key === 'Enter') go(); });
+      const mine = m.A.owner === me ? m.A : m.B, opp = m.A.owner === me ? m.B : m.A, up = m.status === 'upcoming';
+      const state = up ? 'Starts ' + fmtDay(m.start) : m.winner === me ? (m.status === 'final' ? 'You won' : 'You lead') : m.winner ? (m.status === 'final' ? 'You lost' : 'You trail') : (m.status === 'final' ? 'Tie' : 'All even');
+      const t = mk('div', 'me-tile me-mu' + (m.winner === me ? ' ahead' : m.winner ? ' behind' : ''));
+      t.append(mk('span', 'me-tl', `Week ${m.week} matchup`));
+      const face = mk('div', 'me-mu-face');
+      const side = (sd, you) => { const d = mk('div', 'me-mu-side' + (you ? ' you' : '') + (m.winner === sd.owner ? ' lead' : ''));
+        d.append(mk('span', 'me-mu-name', you ? 'You' : sd.owner), mk('b', 'me-mu-net', up ? '–' : signedN(sd.net)), mk('span', 'me-mu-rec', `${sd.w}–${sd.l}`)); return d; };
+      face.append(side(mine, true), mk('span', 'me-mu-vs', 'vs'), side(opp, false));
+      t.append(face, mk('span', 'me-ts me-mu-state' + (m.winner === me ? ' up' : m.winner ? ' down' : ''), state));
+      big.append(t); tap(t, () => { location.hash = '#matchups'; }, `Week ${m.week} matchup vs ${opp.owner}: ${state}. Open matchups`);
     }
-    const tc = todayCount(me, C, slate);
-    const t2 = tile('Today', tc.live ? `${tc.live} live` : `${tc.total}`, tc.live ? `of ${tc.total} games` : tc.total ? (tc.done === tc.total ? 'all played' : (tc.total === 1 ? 'game' : 'games')) : 'no games', tc.live ? 'down' : null);
-    t2.classList.add('me-tap'); t2.tabIndex = 0; t2.setAttribute('role', 'button');
-    t2.addEventListener('click', () => showToday(me, C, slate)); t2.addEventListener('keydown', (e) => { if (e.key === 'Enter') showToday(me, C, slate); });
     // my teams: the roster at a glance; tap to jump to it on the Rosters tab
     const mine = C.teams.filter((x) => x.owner === me);
     const w = mine.reduce((a, x) => a + x.wins, 0), l = mine.reduce((a, x) => a + x.losses, 0);
-    const t3 = tile('My Hoop Squad', `${w}–${l}`, 'combined record');
-    t3.classList.add('me-tap', 'me-roster'); t3.tabIndex = 0; t3.setAttribute('role', 'button'); t3.setAttribute('aria-label', `My Hoop Squad, ${w}–${l}: open my roster`);
+    const t3 = tile('My Hoop Squad', `${w}–${l}`, 'combined record', null, big);
+    t3.classList.add('me-roster');
     const strip = mk('span', 'me-badges'); mine.forEach((x) => strip.append(badge(x.team, 'sb-badge me-badge'))); t3.append(strip);
-    const goRoster = () => goToRoster(me);
-    t3.addEventListener('click', goRoster); t3.addEventListener('keydown', (e) => { if (e.key === 'Enter') goRoster(); });
-    host.append(tiles);
+    tap(t3, () => goToRoster(me), `My Hoop Squad, ${w}–${l}: open my roster`);
+    host.append(small, big);
   }
 
   function render(D, C, slate) {
