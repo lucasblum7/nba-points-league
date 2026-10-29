@@ -309,6 +309,38 @@ def main():
             if save("schedule.json", {"as_of": today.isoformat(), "games": games_next}):
                 changed.append("schedule")
 
+    # 6. Playoff odds. The full remaining schedule is refreshed once a day and
+    #    the injury list every 3 hours; the odds are recomputed from them each run
+    #    (they only change when an input does).
+    try:
+        import odds
+        season = int(cfg["season_start"][:4]) + 1
+        rest = load("season_schedule.json") or {}
+        if rest.get("as_of") != today.isoformat():
+            got = odds.fetch_schedule(season, log)
+            if got is not None:
+                rest = {"as_of": today.isoformat(), "games": got}
+                save("season_schedule.json", rest)
+        inj = load("injuries.json") or {}
+        stamp = f"{today.isoformat()}T{local_now.hour // 3 * 3:02d}"
+        if inj.get("as_of") != stamp:
+            got = odds.fetch_injuries(season, log)
+            if got is not None:
+                inj = {"as_of": stamp, "players": got}
+                if save("injuries.json", inj):
+                    changed.append("injuries")
+        if rest.get("games"):
+            hist = load("odds_history.json", {})
+            table = odds.compute(today, games_list, load("lines.json", []), load("projections.json", []),
+                                 rest["games"], inj.get("players") or [], hist)
+            hist[today.isoformat()] = {t: v["playoffs"] for t, v in table.items()}
+            hist = {d: hist[d] for d in sorted(hist)[-45:]}
+            save("odds_history.json", hist)
+            if save("odds.json", {"as_of": today.isoformat(), "sims": odds.SIMS, "teams": table}):
+                changed.append("odds")
+    except Exception as ex:
+        log.append(f"odds failed: {ex!r}")
+
     if changed:
         save("meta.json", {"updated": now.isoformat(timespec="seconds"), "changed": changed})
     log.append("changed: " + (", ".join(changed) if changed else "nothing"))
