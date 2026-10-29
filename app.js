@@ -529,6 +529,7 @@
     $('results-empty').hidden = res.length > 0;
     if (lastDay && $('results-date')) $('results-date').textContent = fmtDay(lastDay) + ' · winners keep their colors; the owner who picked up the win gets +1.';
     res.forEach((g) => { const tr = mk('tr'); const td = mk('td'); td.append(resultRow(g, owner)); tr.append(td); rb.append(tr); });
+    rb.querySelectorAll('[data-team]').forEach((el) => makeTap(el, el.dataset.team, C, slate));
 
     // weekly winners
     const wb = document.querySelector('#week-table tbody'); if (wb) wb.replaceChildren();
@@ -784,7 +785,7 @@
       const winner = final ? (g.home_score > g.away_score ? g.home : g.away) : null;
       [[g.away, g.away_score, true], [g.home, g.home_score, false]].forEach(([team, pts, away]) => {
         const mine = all || C.owner.get(team) === owner;
-        const r = mk('div', 'tg-row' + (mine ? ' mine' : '') + (final ? (team === winner ? ' won' : ' lost') : ''));
+        const r = mk('div', 'tg-row' + (mine ? ' mine' : '') + (final ? (team === winner ? ' won' : ' lost') : '')); makeTap(r, team, C, slate);
         const nm = mk('span', 'tg-team'); nm.append(mk('span', 'tg-name', (away ? '' : '@ ') + short(team)), mk('span', 'tg-owner', C.owner.get(team) || ''));
         r.append(badge(team, 'sb-badge'), nm, mk('span', 'tg-pts', final || live ? String(pts ?? '') : ''));
         if (final && team === winner && mine) r.append(mk('span', 'plus', g.cup ? '+2' : '+1'));
@@ -910,6 +911,14 @@
     a.href = 'https://www.espn.com/nba/player/_/id/' + encodeURIComponent(p.id);
     a.target = '_blank'; a.rel = 'noopener'; a.title = p.name + ' on ESPN';
     return a;
+  }
+  // tap any team (scoreboard, results, today's games) to open its team card
+  function openTeam(name, C, slate) { const t = C.teams.find((x) => x.team === name); if (t) showTeam(t, C, slate); }
+  function makeTap(el, name, C, slate) {
+    if (!C.teams.some((x) => x.team === name)) return;
+    el.classList.add('team-tap'); el.tabIndex = 0; el.setAttribute('role', 'button'); el.setAttribute('aria-label', `Open the ${name} team card`);
+    el.addEventListener('click', (e) => { e.stopPropagation(); openTeam(name, C, slate); });
+    el.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openTeam(name, C, slate); } });
   }
   function showTeam(t, C, slate) {
     closeBonus();
@@ -1101,7 +1110,7 @@
     const wrap = mk('div', 'side' + (state ? ' ' + state : ''));
     const o = mk('div', 'side-owner', ownerName || '—');
     if (state === 'won') o.append(mk('span', 'plus', cupGame ? '+2' : '+1'));
-    wrap.append(badge(team, 'badge'), o);
+    wrap.dataset.team = team; wrap.append(badge(team, 'badge'), o);
     return wrap;
   }
   function resultRow(g, owner) {
@@ -1133,7 +1142,7 @@
       card.append(st);
       const winner = final ? (g.home_score > g.away_score ? g.home : g.away) : null;
       [[g.away, g.away_score, ln && ln.away_ml], [g.home, g.home_score, ln && ln.home_ml]].forEach(([team, pts, line]) => {
-        const row = mk('div', 'sb-row' + (final ? (team === winner ? ' won-row' : ' lost-row') : ''));
+        const row = mk('div', 'sb-row' + (final ? (team === winner ? ' won-row' : ' lost-row') : '')); makeTap(row, team, C, slate);
         const nm = mk('span', 'sb-team'); nm.append(mk('span', 'sb-name', short(team)), mk('span', 'sb-owner', C.owner.get(team) || ''));
         const key = g.id + '|' + team, ptsEl = final || live ? mk('span', 'sb-pts', pts ?? '') : null;
         if (ptsEl) { const was = prevScores.get(key); if (was != null && was !== pts) ptsEl.classList.add('score-pop'); prevScores.set(key, pts); }

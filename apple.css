@@ -622,3 +622,11 @@ button.mu-today { text-decoration: none !important; }
   #h2h-table .h2h-dots { gap: 2px; }
   #h2h-table th:last-child, #h2h-table td:last-child { padding-right: 6px !important; }
 }
+
+/* tappable teams */
+.team-tap { cursor: pointer; border-radius: 8px; transition: background .15s ease; }
+@media (hover: hover) { .team-tap:hover { background: var(--fill); } }
+.team-tap:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+.team-tap:active { background: var(--fill2); }
+.sb-row.team-tap { margin: 0 -4px; padding-left: 4px; padding-right: 4px; }
+.tg-row.team-tap { margin: 0 -6px; padding-left: 6px; padding-right: 6px; }
