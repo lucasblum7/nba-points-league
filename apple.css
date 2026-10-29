@@ -906,3 +906,4 @@ button.sb-date:hover { background: var(--fill) !important; }
 .me-small .me-tile b { font-size: 17px !important; line-height: 1.15; }
 .me-small .me-ts { font-size: 10.5px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .me-small .me-tap::after { top: 5px; right: 8px; font-size: 13px; }
+.sb-yday { font-size: 9px; letter-spacing: -.01em; white-space: normal; line-height: 1.15; padding: 4px 2px !important; border-radius: 10px !important; }

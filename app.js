@@ -546,11 +546,11 @@
     const prior = C.sorted.filter((g) => g.date < today);
     const lastDay = prior.length ? prior[prior.length - 1].date : null;
     const res = prior.filter((g) => g.date === lastDay);
-    const rb = document.querySelector('#results-table tbody'); rb.replaceChildren();
-    $('results-empty').hidden = res.length > 0;
+    const rb = document.querySelector('#results-table tbody'); if (rb) rb.replaceChildren();
+    if ($('results-empty')) $('results-empty').hidden = res.length > 0;
     if (lastDay && $('results-date')) $('results-date').textContent = fmtDay(lastDay) + ' · winners keep their colors; the owner who picked up the win gets +1.';
-    res.forEach((g) => { const tr = mk('tr'); const td = mk('td'); td.append(resultRow(g, owner)); tr.append(td); rb.append(tr); });
-    rb.querySelectorAll('[data-team]').forEach((el) => makeTap(el, el.dataset.team, C, slate));
+    if (rb) res.forEach((g) => { const tr = mk('tr'); const td = mk('td'); td.append(resultRow(g, owner)); tr.append(td); rb.append(tr); });
+    if (rb) rb.querySelectorAll('[data-team]').forEach((el) => makeTap(el, el.dataset.team, C, slate));
 
     // weekly winners
     const wb = document.querySelector('#week-table tbody'); if (wb) wb.replaceChildren();
@@ -1386,6 +1386,7 @@
   }
   $('sb-date').addEventListener('click', showDayPicker);
   $('sb-back').addEventListener('click', () => { sbDate = null; renderStrip(sbSlate, sbC); });
+  $('sb-yday').addEventListener('click', () => { const d = new Date(pacificToday() + 'T12:00:00Z'); d.setUTCDate(d.getUTCDate() - 1); sbDate = d.toISOString().slice(0, 10); renderStrip(sbSlate, sbC); });
 
   function renderStrip(liveSlate, C) {
     sbC = C; sbSlate = liveSlate;
@@ -1398,6 +1399,8 @@
     dt.querySelector('.sb-dow').textContent = (date === today ? 'TODAY' : dayName(date, { weekday: 'short' }).toUpperCase());
     dt.querySelector('.sb-md').textContent = dayName(date, { month: 'short', day: 'numeric' }).toUpperCase();
     $('sb-back').hidden = !other;
+    // before today's first tip-off, offer a one-tap jump to last night's finals
+    $('sb-yday').hidden = !!other || liveSlate.games.some((g) => g.state !== 'pre');
     if (!slate.games.length) { strip.append(mk('div', 'sb-none', date === today ? 'No games today' : 'No games this day')); return; }
     const me = getMe(), mineG = (g) => C.owner.get(g.away) === me || C.owner.get(g.home) === me;
     const order = slate.games.slice().sort((a, b) => (me ? mineG(b) - mineG(a) : 0));
@@ -1488,7 +1491,7 @@
   function setupTabs() {
     const TABS = ['home', 'matchups', 'rosters', 'more'];
     const groups = {
-      home: ['scoreboard', 'me-card', 'leaderboard-card', 'race-card', 'recap-card', 'results-card'],
+      home: ['scoreboard', 'me-card', 'leaderboard-card', 'race-card', 'recap-card'],
       matchups: ['matchups-card'],
       rosters: ['rosters-card'],
       more: ['bonus-card', 'upset-card', 'ideas-card', 'league-rules'],
