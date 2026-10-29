@@ -920,7 +920,7 @@
     el.addEventListener('click', (e) => { e.stopPropagation(); openTeam(name, C, slate); });
     el.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openTeam(name, C, slate); } });
   }
-  function showTeam(t, C, slate) {
+  function showTeam(t, C, slate, from) {
     closeBonus();
     const ov = mk('div', 'bp-overlay'); ov.id = 'bonus-pop';
     const box = mk('div', 'bp-box tc-box'); box.setAttribute('role', 'dialog');
@@ -937,7 +937,12 @@
     const ttl = mk('div', 'bp-title tc-title'); ttl.append(mk('b', null, t.team), mk('span', null, t.owner + "'s team"));
     const pts = mk('div', 'tc-pts', fmt(t.points)); pts.append(mk('small', null, t.points === 1 ? 'pt' : 'pts'));
     const x = mk('button', 'bp-close', '✕'); x.type = 'button'; x.setAttribute('aria-label', 'Close'); x.addEventListener('click', closeBonus);
-    head.append(ttl, pts, x); box.append(head);
+    head.append(ttl, pts, x);
+    if (from) {   // opened from another team's card: offer a way back
+      const back = mk('button', 'tc-back', '‹ ' + short(from.team)); back.type = 'button'; back.setAttribute('aria-label', 'Back to ' + from.team);
+      back.addEventListener('click', () => showTeam(from, C, slate)); box.append(back);
+    }
+    box.append(head);
     // record / pace / projection
     const tiles = mk('div', 'tc-tiles');
     const tile = (label, value, cls, sub) => { const d = mk('div', 'tc-tile'); d.append(mk('span', 'tc-tl', label), mk('b', cls || null, value)); if (sub) d.append(mk('span', 'tc-ts ' + (cls || ''), sub)); tiles.append(d); };
@@ -956,7 +961,14 @@
     const prevDay = (iso) => { const d = new Date(iso + 'T12:00:00Z'); d.setUTCDate(d.getUTCDate() - 1); return d.toISOString().slice(0, 10); };
     const teamName = (x) => mk('span', 'tc-oname', abbr(x));
     const fullName = (x) => mk('span', 'tc-ofull', short(x));
-    const oppEl = (home, o) => { const e = mk('span', 'tc-opp'); e.append(mk('span', 'tc-at', home ? 'vs' : '@'), badge(o, 'sb-badge tc-obadge'), teamName(o), fullName(o)); return e; };
+    const oppEl = (home, o) => {
+      const e = mk('span', 'tc-opp'); e.append(mk('span', 'tc-at', home ? 'vs' : '@'), badge(o, 'sb-badge tc-obadge'), teamName(o), fullName(o));
+      const ot = C.teams.find((x) => x.team === o);
+      if (ot) { e.classList.add('tc-opp-tap'); e.tabIndex = 0; e.setAttribute('role', 'button'); e.setAttribute('aria-label', `Open the ${o} team card`);
+        const go = (ev) => { ev.stopPropagation(); showTeam(ot, C, slate, t); };
+        e.addEventListener('click', go); e.addEventListener('keydown', (ev) => { if (ev.key === 'Enter' || ev.key === ' ') { ev.preventDefault(); go(ev); } }); }
+      return e;
+    };
     // Last 5
     const last = col('Last 5'), lg = t.last5g;
     if (lg.length) {

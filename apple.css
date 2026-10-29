@@ -630,3 +630,10 @@ button.mu-today { text-decoration: none !important; }
 .team-tap:active { background: var(--fill2); }
 .sb-row.team-tap { margin: 0 -4px; padding-left: 4px; padding-right: 4px; }
 .tg-row.team-tap { margin: 0 -6px; padding-left: 6px; padding-right: 6px; }
+
+/* team card: tap an opponent to open their card; back button */
+.tc-opp-tap { cursor: pointer; border-radius: 8px; padding: 2px 6px 2px 2px; margin: -2px 0 -2px -2px; transition: background .15s ease; justify-self: start; }
+@media (hover: hover) { .tc-opp-tap:hover { background: var(--fill2); } }
+.tc-opp-tap:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+.tc-opp-tap .tc-oname, .tc-opp-tap .tc-ofull { text-decoration: underline; text-decoration-color: color-mix(in srgb, var(--muted) 45%, transparent); text-underline-offset: 3px; text-decoration-thickness: 1px; }
+.tc-back { font: inherit; font-size: 13px; font-weight: 700; color: var(--accent); background: var(--fill); border: none; border-radius: 999px; padding: 4px 12px; margin: 0 0 10px; cursor: pointer; }
