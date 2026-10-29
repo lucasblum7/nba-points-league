@@ -820,3 +820,4 @@ button.sb-date:hover { background: var(--fill) !important; }
 .sb-card.cup.is-me { box-shadow: inset 0 0 0 2px var(--accent), 0 4px 14px color-mix(in srgb, var(--gold) 22%, transparent); }
 .sb-cuptag { font-size: 9.5px; font-weight: 800; letter-spacing: .04em; color: #7a5a00; background: color-mix(in srgb, var(--gold) 55%, #fff); border-radius: 999px; padding: 1px 6px; white-space: nowrap; }
 @media (prefers-color-scheme: dark) { .sb-cuptag { color: #1c1400; background: var(--gold); } }
+.mx-cup { font-size: 10px; font-weight: 800; color: color-mix(in srgb, var(--gold) 70%, var(--fg)); white-space: nowrap; }

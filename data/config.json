@@ -27,7 +27,7 @@
  ],
  "matchups": {
   "start_week": 1,
-  "scoring": "Net record (wins minus losses) for the Monday–Sunday week; most total wins breaks a tie; otherwise the matchup is a tie.",
+  "scoring": "Net record (wins minus losses) for the Monday–Sunday week, with NBA Cup games counting double (+2 for a win, −2 for a loss); most total wins breaks a tie; otherwise the matchup is a tie.",
   "rounds": [
    [
     [

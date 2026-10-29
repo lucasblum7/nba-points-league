@@ -105,20 +105,21 @@
     for (let wk = 1; wk <= curWeek; wk++) {
       const tot = Object.fromEntries(owners.map((o) => [o, 0]));
       const loss = Object.fromEntries(owners.map((o) => [o, 0]));
+      const net = Object.fromEntries(owners.map((o) => [o, 0]));   // matchup score: NBA Cup games count double both ways
       for (const g of sorted) {
         if (weekOf(g.date) !== wk) continue;
-        const homeWon = g.home_score > g.away_score;
+        const homeWon = g.home_score > g.away_score, wt = g.cup ? 2 : 1;
         const winner = homeWon ? g.home : g.away, loser = homeWon ? g.away : g.home;
-        if (owner.has(winner)) tot[owner.get(winner)]++;
-        if (owner.has(loser)) loss[owner.get(loser)]++;
+        if (owner.has(winner)) { tot[owner.get(winner)]++; net[owner.get(winner)] += wt; }
+        if (owner.has(loser)) { loss[owner.get(loser)]++; net[owner.get(loser)] -= wt; }
       }
       const best = Math.max(...Object.values(tot));
       const start = isoOf(week1 + (wk - 1) * 7 * DAY), end = isoOf(week1 + ((wk - 1) * 7 + 6) * DAY);
-      weekly.push({ week: wk, start, end, tot, loss, best, winners: best > 0 ? owners.filter((o) => tot[o] === best) : [],
+      weekly.push({ week: wk, start, end, tot, loss, net, best, winners: best > 0 ? owners.filter((o) => tot[o] === best) : [],
         current: wk === curWeek, done: pacificToday() > end });
     }
 
-    // head-to-head matchups: net record (W − L) wins the week, most wins breaks a tie
+    // head-to-head matchups: net record (W − L, NBA Cup games ±2) wins the week, most wins breaks a tie
     const M = config.matchups;
     const matchups = [];
     const h2h = Object.fromEntries(owners.map((o) => [o, { owner: o, w: 0, l: 0, t: 0, net: 0, wins: 0 }]));
@@ -132,7 +133,7 @@
         round.forEach(([a, b]) => {
           const side = (o) => {
             const w = info ? info.tot[o] : 0, l = info ? info.loss[o] : 0;
-            return { owner: o, w, l, net: w - l };
+            return { owner: o, w, l, net: info ? info.net[o] : 0 };
           };
           const A = side(a), B = side(b);
           let winner = null;
@@ -764,7 +765,7 @@
         else if (g.state === 'live') rs.append(mk('b', null, '● ' + g.score), mk('small', null, ' ' + (g.detail || '')));
         else rs.textContent = g.time || '';
         if (g.both) tm.append(mk('span', 'mx-both', 'both yours'));
-        r.append(tm, rs); if (g.cup) r.append(mk('span', 'tc-cup', '🏆')); col.append(r);
+        r.append(tm, rs); if (g.cup) { const cu = mk('span', 'tc-cup mx-cup', '🏆 ±2'); cu.title = 'NBA Cup game: counts +2 for a win, −2 for a loss in matchups'; r.append(cu); } col.append(r);
       });
       cols.append(col);
     });
@@ -937,7 +938,7 @@
     const top = mk('div', 'gc-top');
     const soon = !final && !live ? soonLabel(date, g.time) : null;
     top.append(mk('span', 'gc-status ' + (live ? 'live' : final ? 'final' : soon ? 'soon' : ''), final ? 'Final' : live ? '● ' + (g.detail || 'Live') : soon ? `⏱ ${soon}` : `${dayName(date, { weekday: 'short', month: 'short', day: 'numeric' })} · ${g.time || ''}`));
-    if (g.cup) top.append(mk('span', 'gc-cup', '🏆 NBA Cup · wins count 2'));
+    if (g.cup) top.append(mk('span', 'gc-cup', '🏆 NBA Cup · +2 pts · ±2 in matchups'));
     const x = mk('button', 'bp-close', '✕'); x.type = 'button'; x.setAttribute('aria-label', 'Close'); x.addEventListener('click', closeBonus); top.append(x);
     box.append(top);
     // the two teams
@@ -1378,7 +1379,7 @@
       const ao = C.owner.get(g.away), ho = C.owner.get(g.home);
       const foot = final ? (C.owner.get(winner) || '') + (g.cup ? ' +2' : ' +1') : ao === ho ? ho + (g.cup ? ' either way' : ' wins either way') : `${ao || '—'} vs ${ho || '—'}`;
       const ft = mk('div', 'sb-foot');
-      if (g.cup) { ft.append(mk('span', 'sb-cup', '🏆 ')); card.title = 'NBA Cup game: each win is worth 2 points'; }
+      if (g.cup) { ft.append(mk('span', 'sb-cup', '🏆 ')); card.title = 'NBA Cup game: a win is worth 2 points, and counts +2 (win) or −2 (loss) in matchups'; }
       ft.append(foot); card.append(ft);
       card.classList.add('sb-tap'); card.tabIndex = 0; card.setAttribute('role', 'button'); card.setAttribute('aria-label', `${short(g.away)} at ${short(g.home)}: open game card`);
       card.addEventListener('click', () => showGame(g, C, slate, date));
