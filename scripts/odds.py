@@ -31,6 +31,9 @@ import re
 import urllib.request
 from concurrent.futures import ThreadPoolExecutor
 from datetime import date, datetime, timedelta
+from zoneinfo import ZoneInfo
+
+PT = ZoneInfo("America/Los_Angeles")
 
 SITE = "https://site.api.espn.com/apis/site/v2/sports/basketball/nba"
 CORE = "https://sports.core.api.espn.com/v2/sports/basketball/leagues/nba/seasons"
@@ -92,8 +95,12 @@ def fetch_schedule(season, log):
                     nm = (c.get("team") or {}).get("displayName")
                     side[c.get("homeAway")] = NAME_FIX.get(nm, nm)
                 if side.get("home") in ESPN_ID and side.get("away") in ESPN_ID:
-                    d = (ev.get("date") or "")[:10]
-                    games[str(ev.get("id"))] = {"date": d, "away": side["away"], "home": side["home"]}
+                    try:
+                        start = datetime.fromisoformat(ev["date"].replace("Z", "+00:00")).astimezone(PT)
+                        d, tm = start.date().isoformat(), start.strftime("%-I:%M %p")
+                    except Exception:
+                        d, tm = (ev.get("date") or "")[:10], ""
+                    games[str(ev.get("id"))] = {"date": d, "time": tm, "away": side["away"], "home": side["home"]}
     log.append(f"odds: schedule {len(games)} games left ({failed} team requests failed)")
     if failed > 5:
         return None

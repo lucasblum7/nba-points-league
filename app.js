@@ -1281,19 +1281,85 @@
   }
 
   const prevScores = new Map();
-  function renderStrip(slate, C) {
+  // ---------- scoreboard day picker: look back or ahead at any day's games ----------
+  let sbDate = null, sbC = null, sbSlate = null;
+  function slateFor(date) {
+    const today = pacificToday();
+    if (date < today) return { date, games: D.games.filter((g) => g.date === date).map((g) => ({ ...g, time: '', state: 'post', detail: 'Final' })) };
+    let games = ((D.schedule && D.schedule.games) || []).filter((g) => g.date === date);
+    if (!games.length) games = ((D.season_schedule && D.season_schedule.games) || []).filter((g) => g.date === date);
+    return { date, games: games.map((g) => ({ ...g, time: g.time || 'TBD', state: 'pre' })) };
+  }
+  function gameDays() {   // date -> number of games, for the whole season
+    const n = new Map(); const add = (d) => n.set(d, (n.get(d) || 0) + 1);
+    D.games.forEach((g) => add(g.date));
+    const fut = new Map(); const addF = (g) => { const k = g.date + '|' + g.away + '|' + g.home; if (!fut.has(k)) fut.set(k, g.date); };
+    ((D.schedule && D.schedule.games) || []).forEach(addF); ((D.season_schedule && D.season_schedule.games) || []).forEach(addF);
+    const today = pacificToday();
+    for (const d of fut.values()) if (d >= today) add(d);
+    if (sbSlate && sbSlate.games.length) n.set(today, sbSlate.games.length);
+    return n;
+  }
+  function showDayPicker() {
+    closeBonus();
+    const today = pacificToday(), sel = sbDate || today, counts = gameDays();
+    const days = [...counts.keys()].sort(); const first = days[0] || today, last = days[days.length - 1] || today;
+    let ym = sel.slice(0, 7);
+    const ov = mk('div', 'bp-overlay'); ov.id = 'bonus-pop';
+    const box = mk('div', 'bp-box dp-box'); box.setAttribute('role', 'dialog'); box.setAttribute('aria-modal', 'true'); box.setAttribute('aria-label', 'Pick a day');
+    const head = mk('div', 'dp-head'); const ttl = mk('b', 'dp-title', 'Pick a day');
+    const x = mk('button', 'bp-close', '✕'); x.type = 'button'; x.setAttribute('aria-label', 'Close'); x.addEventListener('click', closeBonus);
+    head.append(ttl, x); box.append(head);
+    const nav = mk('div', 'dp-nav'); const prev = mk('button', 'dp-arrow', '‹'), next = mk('button', 'dp-arrow', '›'), mon = mk('span', 'dp-month');
+    prev.type = next.type = 'button'; prev.setAttribute('aria-label', 'Previous month'); next.setAttribute('aria-label', 'Next month');
+    nav.append(prev, mon, next); box.append(nav);
+    const grid = mk('div', 'dp-grid'); box.append(grid);
+    const pick = (d) => { sbDate = d === today ? null : d; closeBonus(); renderStrip(sbSlate, sbC); };
+    const foot = mk('div', 'dp-foot'); const tb = mk('button', 'dp-today', '↩ Today'); tb.type = 'button'; tb.addEventListener('click', () => pick(today));
+    foot.append(tb, mk('span', 'dp-hint', 'Numbers show how many games are on each day')); box.append(foot);
+    const shift = (k) => { const [y, m] = ym.split('-').map(Number); const d = new Date(Date.UTC(y, m - 1 + k, 1)); ym = d.toISOString().slice(0, 7); draw(); };
+    prev.addEventListener('click', () => shift(-1)); next.addEventListener('click', () => shift(1));
+    function draw() {
+      const [y, m] = ym.split('-').map(Number);
+      mon.textContent = new Date(Date.UTC(y, m - 1, 1)).toLocaleDateString('en-US', { timeZone: 'UTC', month: 'long', year: 'numeric' });
+      prev.disabled = ym <= first.slice(0, 7); next.disabled = ym >= last.slice(0, 7);
+      grid.replaceChildren(); ['S', 'M', 'T', 'W', 'T', 'F', 'S'].forEach((d) => grid.append(mk('span', 'dp-dow', d)));
+      const lead = new Date(Date.UTC(y, m - 1, 1)).getUTCDay(), len = new Date(Date.UTC(y, m, 0)).getUTCDate();
+      for (let k = 0; k < lead; k++) grid.append(mk('span', 'dp-blank'));
+      for (let dd = 1; dd <= len; dd++) {
+        const iso = `${ym}-${String(dd).padStart(2, '0')}`, c = counts.get(iso) || 0;
+        const b = mk('button', 'dp-day' + (iso === today ? ' today' : '') + (iso === sel ? ' on' : '') + (iso < today ? ' past' : ''));
+        b.type = 'button'; b.append(mk('span', 'dp-n', String(dd)), mk('span', 'dp-c', c ? String(c) : ''));
+        if (!c && iso !== today) b.disabled = true;
+        b.setAttribute('aria-label', dayName(iso, { weekday: 'long', month: 'long', day: 'numeric' }) + (c ? `, ${c} games` : ', no games'));
+        b.addEventListener('click', () => pick(iso)); grid.append(b);
+      }
+    }
+    draw();
+    ov.append(box); ov.addEventListener('click', (e) => { if (e.target === ov) closeBonus(); });
+    document.body.append(ov); document.addEventListener('keydown', bonusKey); x.focus();
+  }
+  $('sb-date').addEventListener('click', showDayPicker);
+
+  function renderStrip(liveSlate, C) {
+    sbC = C; sbSlate = liveSlate;
+    const today = pacificToday(), other = sbDate && sbDate !== today;
+    const slate = other ? slateFor(sbDate) : liveSlate;
     const strip = $('sb-strip'); strip.replaceChildren();
-    const date = slate.date || pacificToday();
-    $('sb-date').querySelector('.sb-dow').textContent = dayName(date, { weekday: 'short' }).toUpperCase();
-    $('sb-date').querySelector('.sb-md').textContent = dayName(date, { month: 'short', day: 'numeric' }).toUpperCase();
-    if (!slate.games.length) { strip.append(mk('div', 'sb-none', 'No games today')); return; }
+    const date = slate.date || today;
+    if (strip.dataset.day !== date) { strip.dataset.day = date; strip.scrollLeft = 0; }
+    const dt = $('sb-date'); dt.classList.toggle('other', !!other);
+    dt.querySelector('.sb-dow').textContent = (date === today ? 'TODAY' : dayName(date, { weekday: 'short' }).toUpperCase());
+    dt.querySelector('.sb-md').textContent = dayName(date, { month: 'short', day: 'numeric' }).toUpperCase();
+    if (other) { const back = mk('button', 'sb-back', '↩ Today'); back.type = 'button'; back.addEventListener('click', () => { sbDate = null; renderStrip(sbSlate, sbC); }); strip.append(back); }
+    if (!slate.games.length) { strip.append(mk('div', 'sb-none', date === today ? 'No games today' : 'No games this day')); return; }
     const me = getMe(), mineG = (g) => C.owner.get(g.away) === me || C.owner.get(g.home) === me;
     slate.games.slice().sort((a, b) => (me ? mineG(b) - mineG(a) : 0)).forEach((g) => {
       const final = g.state === 'post', live = g.state === 'in';
       const card = mk('div', 'sb-card ' + (final ? 'final' : live ? 'live' : 'pre') + (g.cup ? ' cup' : '') + (me && mineG(g) ? ' is-me' : ''));
-      const ln = C.lineOf.get(date + '|' + g.away + '|' + g.home);
+      const ln = C.lineOf.get(date + '|' + g.away + '|' + g.home) || (g.away_ml != null || g.home_ml != null ? g : null);
       const st = mk('div', 'sb-status');
-      const soon = !final && !live ? soonLabel(date, g.time) : null;
+      const soon = !final && !live && date === today ? soonLabel(date, g.time) : null;
       if (soon) card.classList.add('soon');
       st.append(mk('span', soon ? 'sb-soon' : null, final ? 'FINAL' : live ? (g.detail || 'LIVE') : soon || g.time));
       if (ln && ln.fav && ln.spread != null) st.append(mk('span', 'sb-line', ln.spread === 0 ? 'PK' : (TEAM_BADGE[ln.fav] || [short(ln.fav)])[0] + ' −' + ln.spread));
@@ -1303,7 +1369,7 @@
         const row = mk('div', 'sb-row' + (final ? (team === winner ? ' won-row' : ' lost-row') : '') + (me && C.owner.get(team) === me ? ' my-row' : ''));
         const nm = mk('span', 'sb-team'); nm.append(mk('span', 'sb-name', short(team)), mk('span', 'sb-owner', C.owner.get(team) || ''));
         const key = g.id + '|' + team, ptsEl = final || live ? mk('span', 'sb-pts', pts ?? '') : null;
-        if (ptsEl) { const was = prevScores.get(key); if (was != null && was !== pts) ptsEl.classList.add('score-pop'); prevScores.set(key, pts); }
+        if (ptsEl && !other) { const was = prevScores.get(key); if (was != null && was !== pts) ptsEl.classList.add('score-pop'); prevScores.set(key, pts); }
         row.append(badge(team, 'sb-badge'), nm, ptsEl || mk('span', 'sb-ml', ml(line)), mk('span', 'sb-arrow', team === winner ? '◂' : ''));
         card.append(row);
       });
@@ -1322,7 +1388,7 @@
   // ---------- boot ----------
   let D, slate;
   async function load() {
-    const names = ['rosters', 'projections', 'games', 'lines', 'bonuses', 'config', 'today', 'meta', 'schedule', 'odds'];
+    const names = ['rosters', 'projections', 'games', 'lines', 'bonuses', 'config', 'today', 'meta', 'schedule', 'odds', 'season_schedule'];
     const vals = await Promise.all(names.map((n) => getJSON('data/' + n + '.json').catch(() => null)));
     D = Object.fromEntries(names.map((n, i) => [n, vals[i]]));
     D.games = D.games || []; D.lines = D.lines || []; D.bonuses = D.bonuses || [];

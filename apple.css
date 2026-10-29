@@ -780,3 +780,32 @@ html.intro-on, html.intro-on body { overflow: hidden; }
 @keyframes introUp { from { opacity: 0; transform: translateY(12px); } to { opacity: .9; transform: none; } }
 @keyframes introPop { from { opacity: 0; transform: scale(.6) translateY(18px); } to { opacity: 1; transform: none; } }
 @media (prefers-reduced-motion: reduce) { .intro { display: none; } }
+
+/* ---------- Scoreboard day picker ---------- */
+button.sb-date { font: inherit; color: var(--fg); border: none; cursor: pointer; gap: 1px; padding: 6px 0; }
+button.sb-date:hover { background: var(--fill) !important; }
+.sb-date .sb-pick { font-size: 10px; color: var(--muted); line-height: 1; margin-top: 2px; }
+.sb-date.other { background: color-mix(in srgb, var(--accent) 16%, var(--panel)) !important; box-shadow: inset 0 0 0 1.5px var(--accent) !important; }
+.sb-date.other .sb-pick, .sb-date.other .sb-dow { color: var(--accent); }
+.sb-back { flex: none; align-self: center; scroll-snap-align: start; font: inherit; font-size: 12px; font-weight: 700; color: var(--accent); background: var(--panel); border: none; border-radius: 999px; padding: 8px 12px; box-shadow: 0 0 0 1px color-mix(in srgb, var(--accent) 45%, transparent); cursor: pointer; white-space: nowrap; }
+.dp-box { max-width: 380px; width: 100%; }
+.dp-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 6px; }
+.dp-title { font-size: 20px; font-weight: 800; letter-spacing: -.01em; }
+.dp-nav { display: flex; align-items: center; justify-content: space-between; margin: 4px 0 8px; }
+.dp-month { font-size: 16px; font-weight: 700; }
+.dp-arrow { font: 600 22px/1 var(--sans); width: 36px; height: 36px; border-radius: 50%; border: none; background: var(--fill); color: var(--fg); cursor: pointer; }
+.dp-arrow:disabled { opacity: .3; cursor: default; }
+.dp-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 4px; }
+.dp-dow { text-align: center; font-size: 11px; font-weight: 700; color: var(--muted); padding: 2px 0 4px; }
+.dp-day { font: inherit; aspect-ratio: 1; border: none; border-radius: 12px; background: var(--fill); color: var(--fg); cursor: pointer; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1px; padding: 0; }
+.dp-day:hover:not(:disabled) { background: var(--fill2); }
+.dp-day:disabled { background: none; color: var(--muted); opacity: .45; cursor: default; }
+.dp-day.past:not(:disabled) { color: var(--muted); }
+.dp-n { font-size: 15px; font-weight: 700; line-height: 1; }
+.dp-c { font-size: 10px; font-weight: 700; color: var(--accent); line-height: 1; min-height: 10px; }
+.dp-day.today { box-shadow: inset 0 0 0 1.5px var(--accent); }
+.dp-day.on { background: var(--accent); color: #fff !important; }
+.dp-day.on .dp-c { color: #fff; }
+.dp-foot { display: flex; align-items: center; gap: 10px; margin-top: 12px; }
+.dp-today { font: inherit; font-size: 14px; font-weight: 700; color: var(--accent); background: var(--fill); border: none; border-radius: 999px; padding: 8px 14px; cursor: pointer; flex: none; }
+.dp-hint { font-size: 11.5px; color: var(--muted); }

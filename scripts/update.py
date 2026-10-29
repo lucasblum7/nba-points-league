@@ -316,7 +316,7 @@ def main():
         import odds
         season = int(cfg["season_start"][:4]) + 1
         rest = load("season_schedule.json") or {}
-        if rest.get("as_of") != today.isoformat():
+        if rest.get("as_of") != today.isoformat() or not all("time" in g for g in (rest.get("games") or [])[:1]):
             got = odds.fetch_schedule(season, log)
             if got is not None:
                 rest = {"as_of": today.isoformat(), "games": got}
