@@ -608,3 +608,17 @@ button.mu-today { text-decoration: none !important; }
 .h2h-medal { display: inline-block; width: 1.4em; margin-right: 4px; }
 #h2h-table tbody tr:not(.p1):not(.p2):not(.p3) td:nth-child(2) { padding-left: calc(10px + 1.4em + 4px) !important; }
 @media (max-width: 480px) { #h2h-table tbody tr:not(.p1):not(.p2):not(.p3) td:nth-child(2) { padding-left: calc(8px + 1.4em + 4px) !important; } }
+
+/* H2H on phones: let columns size to their content so nothing overlaps (any browser / font) */
+@media (max-width: 480px) {
+  #h2h-table { table-layout: auto !important; }
+  #h2h-table th, #h2h-table td { width: auto !important; white-space: nowrap; }
+  #h2h-table th:nth-child(2), #h2h-table td:nth-child(2) { width: 100% !important; }
+  #h2h-table th:nth-child(n+3), #h2h-table td:nth-child(n+3) { padding-left: 5px !important; padding-right: 5px !important; }
+  #h2h-table td:nth-child(1), #h2h-table th:nth-child(1) { padding-left: 6px !important; padding-right: 2px !important; }
+  #h2h-table .h2h-rec { font-size: 15px; }
+  #h2h-table th { letter-spacing: 0; }
+  #h2h-table .h2h-net { min-width: 2.2em; padding: 2px 5px; }
+  #h2h-table .h2h-dots { gap: 2px; }
+  #h2h-table th:last-child, #h2h-table td:last-child { padding-right: 6px !important; }
+}
