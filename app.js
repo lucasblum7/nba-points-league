@@ -393,6 +393,12 @@
   }
   const rerender = () => { if (D) render(D, compute(D), slate); };
 
+  // jump to an owner's roster on the Rosters tab and pulse it
+  function goToRoster(owner) {
+    location.hash = '#rosters';
+    setTimeout(() => { const c = document.getElementById('owner-' + owner.toLowerCase()); if (!c) return;
+      c.scrollIntoView({ behavior: 'smooth', block: 'start' }); c.classList.remove('me-flash'); void c.offsetWidth; c.classList.add('me-flash'); }, 60);
+  }
   function renderMe(C, slate) {
     const host = $('me-body'); if (!host) return;
     const me = getMe(); host.replaceChildren();
@@ -433,11 +439,7 @@
     const t3 = tile('My Hoop Squad', `${w}–${l}`, 'combined record');
     t3.classList.add('me-tap', 'me-roster'); t3.tabIndex = 0; t3.setAttribute('role', 'button'); t3.setAttribute('aria-label', `My Hoop Squad, ${w}–${l}: open my roster`);
     const strip = mk('span', 'me-badges'); mine.forEach((x) => strip.append(badge(x.team, 'sb-badge me-badge'))); t3.append(strip);
-    const goRoster = () => {
-      location.hash = '#rosters';
-      setTimeout(() => { const c = document.getElementById('owner-' + me.toLowerCase()); if (!c) return;
-        c.scrollIntoView({ behavior: 'smooth', block: 'start' }); c.classList.remove('me-flash'); void c.offsetWidth; c.classList.add('me-flash'); }, 60);
-    };
+    const goRoster = () => goToRoster(me);
     t3.addEventListener('click', goRoster); t3.addEventListener('keydown', (e) => { if (e.key === 'Enter') goRoster(); });
     host.append(tiles);
   }
@@ -489,7 +491,8 @@
     lb.replaceChildren();
     board.forEach((d, i) => {
       const tr = mk('tr', [d.points > 0 ? medal(d.place) : null, d.owner === me ? 'is-me' : null].filter(Boolean).join(' ') || null);
-      const nmTd = mk('td', 'total', d.owner); if (d.owner === me) nmTd.append(mk('span', 'you-tag', 'You'));
+      const nmTd = mk('td', 'total lb-owner'); const nb = mk('button', 'lb-name', d.owner); nb.type = 'button'; nb.setAttribute('aria-label', `Open ${d.owner}'s roster`);
+      nb.addEventListener('click', () => goToRoster(d.owner)); nmTd.append(nb); if (d.owner === me) nmTd.append(mk('span', 'you-tag', 'You'));
       tr.append(mk('td', 'rank', d.rank), nmTd, mk('td', 'num', fmt(d.wins)), mk('td', 'num' + (d.bonus ? '' : ' zero'), fmt(d.bonus)),
         mk('td', 'num total', fmt(d.points)), mk('td', 'num', d.this_week), mk('td', 'num hide-sm' + (d.weeks_won ? '' : ' zero'), d.weeks_won));
       tr.dataset.owner = d.owner; tr.dataset.pts = d.points;
