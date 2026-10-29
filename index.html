@@ -8,10 +8,56 @@
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Ccircle cx='24' cy='24' r='21' fill='%23E8762B' stroke='%233A1E0E' stroke-width='2.5'/%3E%3Cpath d='M24 3v42M3 24h42M9.2 9.2c7.4 7.4 7.4 22.2 0 29.6M38.8 9.2c-7.4 7.4-7.4 22.2 0 29.6' fill='none' stroke='%233A1E0E' stroke-width='2.5'/%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=20261029064329">
-  <link rel="stylesheet" href="apple.css?v=20261029064329">
+  <link rel="stylesheet" href="style.css?v=20261029064646">
+  <link rel="stylesheet" href="apple.css?v=20261029064646">
 </head>
 <body>
+<div class="intro" id="intro" aria-hidden="true">
+  <div class="intro-bg"></div>
+  <div class="intro-ball"><svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="21" fill="#E8762B" stroke="#3A1E0E" stroke-width="2.5"/><path d="M24 3v42M3 24h42M9.2 9.2c7.4 7.4 7.4 22.2 0 29.6M38.8 9.2c-7.4 7.4-7.4 22.2 0 29.6" fill="none" stroke="#3A1E0E" stroke-width="2.5" stroke-linecap="round"/></svg></div>
+  <div class="intro-c"><div class="intro-w">Welcome to</div><div class="intro-t"><span>Hoop</span><span>Squads</span></div></div>
+</div>
+<script>
+/* Opening screen: "Welcome to Hoop Squads", then it shrinks into the title box. */
+(function () {
+  var el = document.getElementById('intro'); if (!el) return;
+  var now = Date.now(), last = 0;
+  try { last = +sessionStorage.getItem('pl-intro-at') || 0; } catch (e) {}
+  var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduce || !el.animate || now - last < 15000) { el.remove(); return; }   // skip right after an auto-update reload
+  try { sessionStorage.setItem('pl-intro-at', String(now)); } catch (e) {}
+  document.documentElement.classList.add('intro-on');
+  var done = false, timer;
+  function finish() {
+    if (done) return; done = true; clearTimeout(timer);
+    document.documentElement.classList.remove('intro-on');
+    var a = el.animate([{ opacity: 1 }, { opacity: 0 }], { duration: 260, easing: 'ease-out', fill: 'forwards' });
+    a.onfinish = function () { el.remove(); };
+  }
+  function morph() {
+    if (done) return;
+    var head = document.querySelector('.pl-head'), title = document.querySelector('.pl-main'), ball = document.querySelector('.pl-ball');
+    var h = head && head.getBoundingClientRect();
+    if (!h || h.bottom < 0 || h.top > innerHeight) { finish(); return; }
+    var E = 'cubic-bezier(.65,0,.25,1)', D = 620;
+    var bg = el.querySelector('.intro-bg'), t = el.querySelector('.intro-t'), w = el.querySelector('.intro-w'), b = el.querySelector('.intro-ball');
+    var r = parseFloat(getComputedStyle(head).borderTopLeftRadius) || 16;
+    bg.animate([{ top: '0px', left: '0px', width: innerWidth + 'px', height: innerHeight + 'px', borderRadius: '0px' },
+                { top: h.top + 'px', left: h.left + 'px', width: h.width + 'px', height: h.height + 'px', borderRadius: r + 'px' }], { duration: D, easing: E, fill: 'forwards' });
+    w.animate([{ opacity: 1, transform: 'none' }, { opacity: 0, transform: 'translateY(-10px)' }], { duration: D * 0.45, easing: 'ease-in', fill: 'forwards' });
+    function fly(node, target) {
+      if (!target) return;
+      var a = node.getBoundingClientRect(), z = target.getBoundingClientRect(); if (!a.height) return;
+      var s = z.height / a.height, dx = (z.left + z.width / 2) - (a.left + a.width / 2), dy = (z.top + z.height / 2) - (a.top + a.height / 2);
+      node.animate([{ transform: 'none' }, { transform: 'translate(' + dx + 'px,' + dy + 'px) scale(' + s + ')' }], { duration: D, easing: E, fill: 'forwards' });
+    }
+    fly(t, title); fly(b, ball);
+    timer = setTimeout(finish, D + 60);
+  }
+  el.addEventListener('click', finish);
+  timer = setTimeout(morph, 1500);
+})();
+</script>
 <div class="pl-mini" id="pl-mini"><div class="pl-mini-in"><a href="#top" class="pl-mini-title"><svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="21" fill="#E8762B" stroke="#3A1E0E" stroke-width="2.5"/><path d="M24 3v42M3 24h42M9.2 9.2c7.4 7.4 7.4 22.2 0 29.6M38.8 9.2c-7.4 7.4-7.4 22.2 0 29.6" fill="none" stroke="#3A1E0E" stroke-width="2.5" stroke-linecap="round"/></svg><span>Hoop Squads</span></a><button type="button" class="chip chip-btn" id="pl-mini-chip"></button></div></div>
 <main class="pl">
   <header class="pl-head" id="top">
@@ -204,7 +250,7 @@
   <button type="button" data-go="rosters"><span class="tb-i"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3.2"/><path d="M3 19.5c.6-3.4 3-5.3 6-5.3s5.4 1.9 6 5.3"/><circle cx="16.8" cy="9" r="2.5"/><path d="M16.3 14.3c2.4.1 4.1 1.7 4.7 4.6"/></svg></span><span class="tb-l">Rosters</span></button>
   <button type="button" data-go="more"><span class="tb-i"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="7.8" cy="12" r=".6" class="dot"/><circle cx="12" cy="12" r=".6" class="dot"/><circle cx="16.2" cy="12" r=".6" class="dot"/></svg></span><span class="tb-l">More</span></button>
 </nav>
-<script>window.SITE_VERSION = "20261029064329";</script>
-<script src="app.js?v=20261029064329"></script>
+<script>window.SITE_VERSION = "20261029064646";</script>
+<script src="app.js?v=20261029064646"></script>
 </body>
 </html>
