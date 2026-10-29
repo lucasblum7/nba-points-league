@@ -930,3 +930,48 @@ tr.p1 td, tr.p2 td, tr.p3 td { background: none !important; }
 .mw-status.live { color: var(--bad) !important; }
 .mw-card.live .mw-foot > span:first-child::before { color: var(--bad) !important; }
 @media (prefers-color-scheme: dark) { .race-dim { opacity: .7 !important; } }
+
+/* ---------- Matchups: your matchup as a big personal card ---------- */
+.muh { font: inherit; color: var(--fg); text-align: left; width: 100%; display: block; cursor: pointer; border: none; border-radius: 20px; padding: 14px 16px 12px; margin: 4px 0 6px;
+  background: linear-gradient(135deg, color-mix(in srgb, var(--you) 16%, var(--panel)) 0%, var(--panel) 48%, var(--panel) 52%, color-mix(in srgb, var(--opp) 14%, var(--panel)) 100%);
+  box-shadow: inset 0 0 0 2px var(--accent), 0 8px 24px rgba(0,0,0,.08); }
+.muh:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+.muh-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
+.muh-kicker { font-size: 11.5px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: var(--accent); }
+.muh-status { font-size: 12px; font-weight: 700; color: var(--muted); }
+.muh-status.live { color: var(--bad); }
+.muh-face { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; }
+.muh-side { display: flex; flex-direction: column; align-items: flex-start; min-width: 0; }
+.muh-side.r { align-items: flex-end; text-align: right; }
+.muh-head { display: flex; align-items: center; gap: 8px; min-width: 0; }
+.muh-side.r .muh-head { flex-direction: row-reverse; }
+.muh-av { width: 34px; height: 34px; border-radius: 50%; color: #fff; font-weight: 800; font-size: 16px; display: flex; align-items: center; justify-content: center; flex: none; box-shadow: 0 0 0 2px var(--panel); }
+.muh-nm { display: flex; flex-direction: column; line-height: 1.1; min-width: 0; }
+.muh-nm b { font-size: 16px; font-weight: 800; }
+.muh-nm span { font-size: 11px; color: var(--muted); font-weight: 600; }
+.muh-net { font-size: 46px; font-weight: 800; letter-spacing: -.04em; line-height: 1; margin-top: 8px; color: var(--muted); font-variant-numeric: tabular-nums; }
+.muh-side.lead .muh-net { color: var(--fg); }
+.muh-rec { font-size: 13px; font-weight: 700; color: var(--muted); margin-top: 2px; }
+.muh-vs { font-size: 13px; font-weight: 700; color: var(--muted); padding: 22px 8px 0; }
+.muh-bar { display: flex; height: 8px; border-radius: 99px; overflow: hidden; gap: 3px; margin: 12px 0 8px; }
+.muh-bar i { display: block; height: 100%; transition: width .5s ease; }
+.muh-bar i.y { background: var(--you); border-radius: 99px 0 0 99px; }
+.muh-bar i.o { background: var(--opp); border-radius: 0 99px 99px 0; opacity: .85; }
+.muh.upcoming .muh-bar i { background: var(--fill2); }
+.muh-verdict { font-size: 15px; font-weight: 800; text-align: center; }
+.muh-verdict.up { color: var(--ok); } .muh-verdict.down { color: var(--bad); }
+.muh-games { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 12px; padding-top: 10px; border-top: .5px solid var(--line); }
+.muh-col { display: flex; flex-wrap: wrap; gap: 5px; align-content: flex-start; min-width: 0; }
+.muh-col:last-child { justify-content: flex-end; }
+.muh-colh { flex-basis: 100%; font-size: 11px; font-weight: 700; color: var(--muted); }
+.muh-col:last-child .muh-colh { text-align: right; }
+.muh-g { display: inline-flex; align-items: center; gap: 4px; background: var(--fill); border-radius: 999px; padding: 2px 8px 2px 2px; font-size: 11px; font-weight: 700; white-space: nowrap; }
+.muh-g.live { box-shadow: inset 0 0 0 1.5px var(--bad); }
+.muh-g.cup { box-shadow: inset 0 0 0 1.5px var(--gold); }
+.muh-gb { width: 20px !important; height: 20px !important; font-size: 6px !important; }
+.muh-cup { color: color-mix(in srgb, var(--gold) 70%, var(--fg)); font-weight: 800; }
+.muh-none { font-size: 12px; color: var(--muted); }
+.muh-foot { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin-top: 12px; font-size: 12px; color: var(--muted); font-weight: 600; }
+.muh-foot .muh-more { margin-left: auto; color: var(--fg); }
+.muh-around { font-size: 13px; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: .05em; margin: 16px 0 8px; }
+.muh-ask { display: flex; align-items: center; justify-content: space-between; gap: 10px; background: var(--fill); border-radius: 14px; padding: 10px 12px; margin: 4px 0 10px; font-size: 13px; color: var(--muted); }
