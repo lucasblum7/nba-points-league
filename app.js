@@ -1013,8 +1013,14 @@
     cell('Top-6 seed', pctText(o.top6)); cell('Play-in (7–10)', pctText(o.playin)); cell('Projected', Math.round(o.proj_w) + '–' + Math.round(o.proj_l));
     sec.append(split);
     // what's driving it
-    const why = mk('div', 'po-why'); why.append(mk('div', 'po-why-h', "What's driving it"));
-    const row = (icon, label, value, note, cls) => { const r = mk('div', 'po-row'); r.append(mk('span', 'po-ic', icon), mk('span', 'po-l', label), mk('b', 'po-v ' + (cls || ''), value)); if (note) r.append(mk('span', 'po-n', note)); why.append(r); };
+    // "What's driving it": tap to open or close (the choice is remembered)
+    let open = false; try { open = localStorage.getItem('pl-why') === '1'; } catch (e) { /* ignore */ }
+    const why = mk('div', 'po-why' + (open ? ' open' : ''));
+    const wh = mk('button', 'po-why-h'); wh.type = 'button'; wh.setAttribute('aria-expanded', String(open));
+    wh.append(mk('span', null, "What's driving it"), mk('span', 'po-chev', '›'));
+    const body = mk('div', 'po-why-body'); why.append(wh, body);
+    wh.addEventListener('click', () => { open = !open; why.classList.toggle('open', open); wh.setAttribute('aria-expanded', String(open)); try { localStorage.setItem('pl-why', open ? '1' : '0'); } catch (e) { /* ignore */ } });
+    const row = (icon, label, value, note, cls) => { const r = mk('div', 'po-row'); r.append(mk('span', 'po-ic', icon), mk('span', 'po-l', label), mk('b', 'po-v ' + (cls || ''), value)); if (note) r.append(mk('span', 'po-n', note)); body.append(r); };
     if (o.prior_wins != null) row('📋', 'Preseason line', o.prior_wins + ' wins', 'Where the season started');
     const dw = o.prior_wins != null ? o.rating_wins - o.prior_wins : 0;
     row('📊', 'Playing like', Math.round(o.rating_wins) + '-win team', (o.rating >= 0 ? '+' : '−') + Math.abs(o.rating).toFixed(1) + ' pts/game vs average, from results and betting lines', dw > 1.5 ? 'up' : dw < -1.5 ? 'down' : '');

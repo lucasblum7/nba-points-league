@@ -710,7 +710,13 @@ button.mu-today { text-decoration: none !important; }
 .po-cell b { font-size: 17px; font-weight: 800; letter-spacing: -.02em; }
 .po-cell span { font-size: 11px; color: var(--muted); font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .po-why { margin-top: 12px; }
-.po-why-h { font-size: 11px; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: .05em; margin-bottom: 2px; }
+.po-why-h { font: inherit; width: 100%; display: flex; align-items: center; justify-content: space-between; background: var(--panel); border: none; border-radius: 10px; padding: 9px 12px; cursor: pointer;
+  font-size: 13px; font-weight: 700; color: var(--fg); }
+.po-why-h:hover { background: color-mix(in srgb, var(--panel) 85%, var(--fg)); }
+.po-chev { font-size: 18px; line-height: 1; color: var(--muted); transition: transform .2s ease; }
+.po-why.open .po-chev { transform: rotate(90deg); }
+.po-why-body { display: none; padding: 2px 2px 0; }
+.po-why.open .po-why-body { display: block; }
 .po-row { display: grid; grid-template-columns: 22px 1fr auto; column-gap: 6px; align-items: baseline; padding: 6px 0; border-top: .5px solid var(--line); }
 .po-row:first-of-type { border-top: none; }
 .po-ic { font-size: 14px; }
