@@ -734,3 +734,12 @@ button.mu-today { text-decoration: none !important; }
 .why-box .why-head { margin-bottom: 10px; }
 .why-box .po-why-body { display: flex !important; flex-direction: column; gap: 8px; padding: 0; }
 .why-box .po-row { background: var(--fill); border-top: none; border-radius: 12px; padding: 10px 12px; }
+
+/* ---------- Tab bar: each tab its own box, lifted off the bottom edge ---------- */
+.tabbar { background: none !important; backdrop-filter: none !important; -webkit-backdrop-filter: none !important; border-top: none !important;
+  gap: 8px; padding: 0 max(12px, calc((100vw - 640px) / 2)) calc(14px + env(safe-area-inset-bottom)) !important; pointer-events: none; }
+.tabbar button { pointer-events: auto; background: color-mix(in srgb, var(--panel) 82%, transparent) !important;
+  backdrop-filter: saturate(180%) blur(20px); -webkit-backdrop-filter: saturate(180%) blur(20px);
+  border-radius: 16px !important; padding: 7px 0 5px !important; box-shadow: 0 0 0 .5px var(--line), 0 4px 16px rgba(0,0,0,.12); }
+.tabbar button.on { background: color-mix(in srgb, var(--accent) 14%, var(--panel)) !important; box-shadow: 0 0 0 1.5px var(--accent), 0 4px 16px rgba(0,0,0,.12); }
+body { padding-bottom: calc(92px + env(safe-area-inset-bottom)) !important; }
