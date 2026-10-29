@@ -1040,3 +1040,24 @@ tr.p1 td, tr.p2 td, tr.p3 td { background: none !important; }
 
 /* No double-tap-to-zoom (pinch zoom still works, for accessibility) */
 html, body, button, a, [role="button"] { touch-action: manipulation; }
+
+/* ---------- Slim top bar: your matchup + points/rank pill ---------- */
+.pl-mini-right { display: flex; align-items: center; gap: 6px; min-width: 0; }
+.pl-mini-me { flex: none; display: inline-flex; align-items: stretch; background: rgba(255,255,255,.95); border-radius: 999px; box-shadow: 0 1px 4px rgba(0,0,0,.18); overflow: hidden; }
+.pl-mini-me[hidden] { display: none; }
+.pm-seg { font: inherit; border: none; background: none; cursor: pointer; display: inline-flex; align-items: center; gap: 4px; padding: 4px 9px; color: #1c1c1e; font-size: 12px; font-weight: 700; white-space: nowrap; font-variant-numeric: tabular-nums; }
+.pm-seg b { font-weight: 800; font-size: 13px; }
+.pm-seg .odot { width: 7px; height: 7px; margin: 0; box-shadow: none; }
+.pm-vs { color: #8e8e93; font-size: 10.5px; font-weight: 700; }
+.pm-mu.up b:first-of-type { color: #1f9d4a; } .pm-mu.down b:last-of-type { color: #d6352b; }
+.pm-sep { width: 1px; background: rgba(0,0,0,.12); margin: 5px 0; }
+.pm-pts span { color: #6e6e73; font-weight: 600; font-size: 11px; }
+.pm-pts .pm-rank { color: #fff; background: #d0601f; border-radius: 999px; padding: 1px 6px; font-size: 11px; font-weight: 800; margin-left: 2px; }
+@media (max-width: 600px) {
+  .pl-mini.has-me .pl-mini-title span { display: none; }
+  .pl-mini.has-me .pl-mini-title svg { width: 26px; height: 26px; }
+  .pl-mini.has-me #pl-mini-chip { padding: 4px 8px; gap: 3px; font-size: 0; }
+  .pl-mini.has-me #pl-mini-chip .chip-i { font-size: 12px; }
+  .pl-mini.has-me #pl-mini-chip::before { content: attr(data-short); font-size: 12px; order: 2; }
+  .pl-mini.has-me #pl-mini-chip::after { display: none; }
+}

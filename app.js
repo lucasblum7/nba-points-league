@@ -486,7 +486,32 @@
         : chip('🏀', 'No games today', null, openAll);
       // same chip in the slim bar that pins to the top while scrolling
       const mc = $('pl-mini-chip');
-      if (mc) { mc.replaceChildren(...[...gc.childNodes].map((n) => n.cloneNode(true))); mc.className = 'chip chip-btn' + (liveN ? ' live' : ''); mc.onclick = openAll; }
+      if (mc) { mc.replaceChildren(...[...gc.childNodes].map((n) => n.cloneNode(true))); mc.className = 'chip chip-btn' + (liveN ? ' live' : ''); mc.onclick = openAll;
+        mc.dataset.short = liveN ? String(liveN) : String(gs.length); mc.setAttribute('aria-label', gc.textContent); }
+      // your matchup + points/rank pill in the slim bar
+      const mp = $('pl-mini-me');
+      if (mp) {
+        mp.replaceChildren(); const row = me && C.board.find((b) => b.owner === me);
+        const fw = C.matchups.some((x) => x.week === C.curWeek) ? C.curWeek : (C.matchups[0] || {}).week;
+        const mm = me && C.matchups.find((x) => x.week === fw && (x.A.owner === me || x.B.owner === me));
+        mp.hidden = !row; document.getElementById('pl-mini').classList.toggle('has-me', !!row);
+        if (row) {
+          if (mm) {
+            const y = mm.A.owner === me ? mm.A : mm.B, o = mm.A.owner === me ? mm.B : mm.A, upc = mm.status === 'upcoming';
+            const seg = mk('button', 'pm-seg pm-mu ' + (mm.winner === me ? 'up' : mm.winner ? 'down' : 'even')); seg.type = 'button';
+            seg.setAttribute('aria-label', `Your matchup vs ${o.owner}: ${upc ? 'not started' : signedN(y.net) + ' to ' + signedN(o.net)}. Open matchups`);
+            seg.append(odot(me), mk('b', null, upc ? '–' : signedN(y.net)), mk('span', 'pm-vs', 'vs'), mk('b', null, upc ? '–' : signedN(o.net)), odot(o.owner));
+            seg.addEventListener('click', () => { location.hash = '#matchups'; });
+            mp.append(seg, mk('span', 'pm-sep'));
+          }
+          const tied = C.board.filter((x) => x.points === row.points).length > 1;
+          const seg2 = mk('button', 'pm-seg pm-pts'); seg2.type = 'button';
+          seg2.setAttribute('aria-label', `${row.points} points, ${tied ? 'tied for ' : ''}rank ${row.place}. Open The Win Column`);
+          seg2.append(mk('b', null, fmt(row.points)), mk('span', null, 'pts'), mk('span', 'pm-rank', (tied ? 'T-' : '#') + row.place));
+          seg2.addEventListener('click', () => { location.hash = '#home'; setTimeout(() => { const lb = document.getElementById('leaderboard-card'); if (lb) lb.scrollIntoView({ behavior: 'smooth', block: 'start' }); }, 60); });
+          mp.append(seg2);
+        }
+      }
       const start = (D.config && D.config.season_start) || '2026-10-20';
       const day = Math.floor((new Date(pacificToday()) - new Date(start)) / 864e5) + 1;
       if (day > 0) chip('⏱', 'Day ' + day + ' of the season');
