@@ -285,8 +285,8 @@
   "home": "Brooklyn Nets",
   "fav": "Detroit Pistons",
   "spread": 7.5,
-  "away_ml": -258,
-  "home_ml": 210,
+  "away_ml": -285,
+  "home_ml": 230,
   "book": "DraftKings"
  },
  {
@@ -295,8 +295,8 @@
   "home": "Dallas Mavericks",
   "fav": "Houston Rockets",
   "spread": 5.5,
-  "away_ml": -192,
-  "home_ml": 160,
+  "away_ml": -218,
+  "home_ml": 180,
   "book": "DraftKings"
  },
  {
@@ -315,8 +315,8 @@
   "home": "Miami Heat",
   "fav": "Miami Heat",
   "spread": 7.5,
-  "away_ml": 205,
-  "home_ml": -250,
+  "away_ml": 215,
+  "home_ml": -265,
   "book": "DraftKings"
  },
  {
@@ -325,8 +325,8 @@
   "home": "Minnesota Timberwolves",
   "fav": "Minnesota Timberwolves",
   "spread": 7.5,
-  "away_ml": 205,
-  "home_ml": -250,
+  "away_ml": 215,
+  "home_ml": -265,
   "book": "DraftKings"
  },
  {
@@ -355,8 +355,8 @@
   "home": "Toronto Raptors",
   "fav": "Toronto Raptors",
   "spread": 5.5,
-  "away_ml": 160,
-  "home_ml": -192,
+  "away_ml": 170,
+  "home_ml": -205,
   "book": "DraftKings"
  },
  {
@@ -365,8 +365,8 @@
   "home": "Washington Wizards",
   "fav": "Washington Wizards",
   "spread": 1.5,
-  "away_ml": -110,
-  "home_ml": -110,
+  "away_ml": -105,
+  "home_ml": -115,
   "book": "DraftKings"
  }
 ]

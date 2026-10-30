@@ -542,5 +542,21 @@
   "home": "Utah Jazz",
   "away_score": 117,
   "home_score": 111
+ },
+ {
+  "id": "401909893",
+  "date": "2026-10-29",
+  "away": "Cleveland Cavaliers",
+  "home": "Atlanta Hawks",
+  "away_score": 111,
+  "home_score": 114
+ },
+ {
+  "id": "401909894",
+  "date": "2026-10-29",
+  "away": "Sacramento Kings",
+  "home": "New Orleans Pelicans",
+  "away_score": 120,
+  "home_score": 132
  }
 ]
