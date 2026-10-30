@@ -343,21 +343,6 @@ def main():
     except Exception as ex:
         log.append(f"odds failed: {ex!r}")
 
-    # TEMP: capture one ESPN game summary so the site's box score view can be built against the real format
-    try:
-        if not os.path.exists(os.path.join(DATA, "sample_summary.json")):
-            done = [g for g in games_list if g.get("id")][-1]
-            req = urllib.request.Request(f"https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event={done['id']}", headers={"User-Agent": "nba-points-league/1.0"})
-            with urllib.request.urlopen(req, timeout=60) as r:
-                js = json.load(r)
-            keep = {k: js.get(k) for k in ("header", "boxscore", "leaders", "gameInfo", "predictor", "winprobability") if k in js}
-            if "winprobability" in keep and isinstance(keep["winprobability"], list):
-                keep["winprobability"] = keep["winprobability"][:3]
-            keep["_top_keys"] = list(js.keys())
-            save("sample_summary.json", keep)
-    except Exception as ex:
-        log.append(f"sample summary failed: {ex!r}")
-
     if changed:
         save("meta.json", {"updated": now.isoformat(timespec="seconds"), "changed": changed})
     log.append("changed: " + (", ".join(changed) if changed else "nothing"))

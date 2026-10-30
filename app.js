@@ -1076,6 +1076,113 @@
     return a;
   }
   // ---------- game card: tap a game on the scoreboard ----------
+  // ---------- ESPN-style box score inside the game card ----------
+  let gcTab = 'box', boxTimer = null;
+  const boxCache = new Map();
+  async function getSummary(id, fresh) {
+    const c = boxCache.get(id);
+    if (c && (!fresh || Date.now() - c.t < 25000)) return c.js;
+    const r = await fetch('https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=' + id);
+    if (!r.ok) throw new Error('summary ' + r.status);
+    const js = await r.json(); boxCache.set(id, { t: Date.now(), js }); return js;
+  }
+  function loadBox(id, host, g, live) {
+    if (!host.dataset.loaded) host.replaceChildren(mk('p', 'players-msg', 'Loading box score…'));
+    const run = (fresh) => getSummary(id, fresh).then((js) => { if (!host.isConnected) return; renderBox(host, js); host.dataset.loaded = '1'; })
+      .catch(() => { if (!host.dataset.loaded) host.replaceChildren(mk('p', 'players-msg', 'Box score isn’t available right now.')); });
+    run(live);
+    clearInterval(boxTimer);
+    if (live) boxTimer = setInterval(() => { if (!host.isConnected) { clearInterval(boxTimer); return; } run(true); }, 30000);
+  }
+  function renderBox(host, js) {
+    host.replaceChildren();
+    const comp = (js.header && js.header.competitions && js.header.competitions[0]) || {};
+    const cs = comp.competitors || [], away = cs.find((c) => c.homeAway === 'away') || {}, home = cs.find((c) => c.homeAway === 'home') || {};
+    const ab = (c) => (c.team && c.team.abbreviation) || '';
+    const nameOf = (c) => NAME_FIX_JS[(c.team && c.team.displayName)] || (c.team && c.team.displayName) || ab(c);
+    // line score
+    const per = Math.max((away.linescores || []).length, (home.linescores || []).length);
+    if (per) {
+      const ls = mk('div', 'bx-line'); ls.style.gridTemplateColumns = `minmax(64px, 1fr) repeat(${per}, minmax(22px, 34px)) minmax(30px, 40px)`;
+      ls.append(mk('span', 'bx-lh'));
+      for (let k = 0; k < per; k++) ls.append(mk('span', 'bx-lh', k < 4 ? String(k + 1) : (per > 5 ? 'OT' + (k - 3) : 'OT')));
+      ls.append(mk('span', 'bx-lh', 'T'));
+      [away, home].forEach((c) => {
+        const o = [away, home].find((x) => x !== c), won = Number(c.score) > Number(o.score);
+        const tm = mk('span', 'bx-lt'); tm.append(badge(nameOf(c), 'sb-badge bx-lb'), mk('b', null, ab(c))); ls.append(tm);
+        for (let k = 0; k < per; k++) ls.append(mk('span', 'bx-lq', ((c.linescores || [])[k] || {}).displayValue ?? ''));
+        ls.append(mk('span', 'bx-ltot' + (won ? ' won' : ''), c.score ?? ''));
+      });
+      host.append(ls);
+    }
+    // game leaders
+    const L = js.leaders || [];
+    const lead = (c, cat) => { const tl = L.find((x) => x.team && c.team && String(x.team.id) === String(c.team.id)); const g = tl && (tl.leaders || []).find((y) => y.name === cat); return g && g.leaders && g.leaders[0]; };
+    const cats = [['points', 'Points'], ['rebounds', 'Rebounds'], ['assists', 'Assists']].filter(([k]) => lead(away, k) || lead(home, k));
+    if (cats.length) {
+      const gl = mk('div', 'bx-sec'); gl.append(mk('h4', 'tc-h', 'Game leaders'));
+      cats.forEach(([k, label]) => {
+        const a = lead(away, k), h = lead(home, k), r = mk('div', 'bx-ldr');
+        const cell = (x, right) => { const d = mk('div', 'bx-lp' + (right ? ' r' : '')); if (x) d.append(mk('b', null, x.displayValue), mk('span', null, (x.athlete && (x.athlete.shortName || x.athlete.displayName)) || '')); return d; };
+        r.append(cell(a, false), mk('span', 'bx-lc', label), cell(h, true)); gl.append(r);
+      });
+      host.append(gl);
+    }
+    // team stats, side by side with bars
+    const bt = (js.boxscore && js.boxscore.teams) || [];
+    const ta = bt.find((t) => t.homeAway === 'away') || bt[0], th = bt.find((t) => t.homeAway === 'home') || bt[1];
+    if (ta && th) {
+      const sv = (t, name) => { const x = (t.statistics || []).find((y) => y.name === name); return x ? x.displayValue : null; };
+      const sec = mk('div', 'bx-sec'); sec.append(mk('h4', 'tc-h', 'Team stats'));
+      const rows = [
+        ['Field goals', 'fieldGoalsMade-fieldGoalsAttempted', 'fieldGoalPct'], ['3-pointers', 'threePointFieldGoalsMade-threePointFieldGoalsAttempted', 'threePointFieldGoalPct'],
+        ['Free throws', 'freeThrowsMade-freeThrowsAttempted', 'freeThrowPct'], ['Rebounds', 'totalRebounds'], ['Assists', 'assists'], ['Steals', 'steals'], ['Blocks', 'blocks'],
+        ['Turnovers', 'totalTurnovers', null, true], ['Points in paint', 'pointsInPaint'], ['Fast break pts', 'fastBreakPoints'], ['Largest lead', 'largestLead']];
+      rows.forEach(([label, key, pctKey, lowWins]) => {
+        let a = sv(ta, key), h = sv(th, key); if (a == null && h == null) return;
+        let na = parseFloat(pctKey ? sv(ta, pctKey) : a) || 0, nh = parseFloat(pctKey ? sv(th, pctKey) : h) || 0;
+        if (pctKey) { a = `${a} · ${sv(ta, pctKey)}%`; h = `${sv(th, pctKey)}% · ${h}`; }
+        const better = na === nh ? null : (na > nh) !== !!lowWins ? 'a' : 'h';
+        const r = mk('div', 'bx-ts'); r.append(mk('span', 'bx-tv' + (better === 'a' ? ' best' : ''), a), mk('span', 'bx-tl', label), mk('span', 'bx-tv r' + (better === 'h' ? ' best' : ''), h));
+        const bar = mk('div', 'bx-tb'); const tot = na + nh || 1; const ia = mk('i', 'a' + (better === 'a' ? ' best' : '')), ih = mk('i', 'h' + (better === 'h' ? ' best' : ''));
+        ia.style.width = (na / tot * 100) + '%'; ih.style.width = (nh / tot * 100) + '%'; bar.append(ia, ih); r.append(bar);
+        sec.append(r);
+      });
+      host.append(sec);
+    }
+    // player stats, one team at a time
+    const bp = (js.boxscore && js.boxscore.players) || [];
+    if (bp.length) {
+      const sec = mk('div', 'bx-sec'); sec.append(mk('h4', 'tc-h', 'Player stats'));
+      const sw = mk('div', 'bx-sw'); const wrap = mk('div');
+      const order = [away, home].map((c) => bp.find((p) => p.team && c.team && String(p.team.id) === String(c.team.id))).filter(Boolean);
+      const showT = (p) => {
+        [...sw.children].forEach((b) => b.classList.toggle('on', b.dataset.t === String(p.team.id)));
+        wrap.replaceChildren();
+        const st = (p.statistics || [])[0]; if (!st) return;
+        const want = ['MIN', 'PTS', 'REB', 'AST', 'FG', '3PT', 'FT', 'STL', 'BLK', 'TO', 'PF', '+/-'];
+        const labels = st.labels || st.names || [], idx = want.map((w) => labels.indexOf(w)).filter((i) => i >= 0);
+        const scroll = mk('div', 'bx-scroll'); const tbl = mk('table', 'bx-ptab');
+        const hr = mk('tr'); hr.append(mk('th', 'bx-pn', p.team.abbreviation || '')); idx.forEach((i) => hr.append(mk('th', null, labels[i]))); tbl.append(hr);
+        const played = (st.athletes || []).filter((a) => a.stats && a.stats.length && !a.didNotPlay), dnp = (st.athletes || []).filter((a) => !a.stats || !a.stats.length || a.didNotPlay);
+        const group = (title, list) => {
+          if (!list.length) return; const gr = mk('tr', 'bx-grp'); const td = mk('td', null, title); td.colSpan = idx.length + 1; gr.append(td); tbl.append(gr);
+          list.forEach((a) => { const tr = mk('tr'); const nm = mk('td', 'bx-pn'); nm.append(mk('b', null, (a.athlete && (a.athlete.shortName || a.athlete.displayName)) || ''), mk('span', null, (a.athlete && a.athlete.position && a.athlete.position.abbreviation) || ''));
+            tr.append(nm); idx.forEach((i) => tr.append(mk('td', labels[i] === 'PTS' ? 'bx-pts' : null, a.stats[i] ?? ''))); tbl.append(tr); });
+        };
+        group('Starters', played.filter((a) => a.starter)); group('Bench', played.filter((a) => !a.starter));
+        if (st.totals && st.totals.length) { const tr = mk('tr', 'bx-tot'); tr.append(mk('td', 'bx-pn', 'Team')); idx.forEach((i) => tr.append(mk('td', null, st.totals[i] ?? ''))); tbl.append(tr); }
+        scroll.append(tbl); wrap.append(scroll);
+        if (dnp.length) wrap.append(mk('p', 'bx-dnp', 'Did not play: ' + dnp.map((a) => ((a.athlete && a.athlete.shortName) || '') + (a.reason ? ` (${a.reason.toLowerCase()})` : '')).join(', ')));
+      };
+      order.forEach((p) => { const b = mk('button', 'bx-swb'); b.type = 'button'; b.dataset.t = String(p.team.id); b.append(badge(nameOf(cs.find((c) => String(c.team.id) === String(p.team.id)) || {}), 'sb-badge bx-lb'), mk('span', null, p.team.shortDisplayName || p.team.abbreviation || '')); b.addEventListener('click', () => showT(p)); sw.append(b); });
+      sec.append(sw, wrap); host.append(sec);
+      if (order[0]) showT(order[0]);
+    }
+    host.append(mk('p', 'players-foot', 'Stats from ESPN' + (comp.status && comp.status.type && comp.status.type.state === 'in' ? ' · updates every 30 seconds' : '')));
+  }
+  const NAME_FIX_JS = { 'Los Angeles Clippers': 'LA Clippers' };
+
   function showGame(g, C, slate, date, dir) {
     closeBonus();
     const list = sbOrder.some((x) => x.g === g) ? sbOrder : [{ g, slate, date }];
@@ -1119,13 +1226,22 @@
     const fw = C.matchups.find((m) => m.week === C.curWeek && ((m.A.owner === ao && m.B.owner === ho) || (m.A.owner === ho && m.B.owner === ao)));
     if (fw) imp.append(mk('span', 'gc-h2h', '⚔️ This week\'s matchup'));
     box.append(imp);
+    // tabs: Box score (once a game has started) | Matchup
+    const gid = g.id && /^\d+$/.test(String(g.id)) ? String(g.id) : null, hasBox = !!gid && (final || live);
+    const ovw = mk('div', 'gc-pane gc-ovw'), bxw = mk('div', 'gc-pane gc-bxw');
+    if (hasBox) {
+      const tabs = mk('div', 'gc-tabs'); const tb1 = mk('button', 'gc-tab', 'Box score'), tb2 = mk('button', 'gc-tab', 'Matchup'); tb1.type = tb2.type = 'button';
+      const pick = (t) => { gcTab = t; tb1.classList.toggle('on', t === 'box'); tb2.classList.toggle('on', t !== 'box'); bxw.hidden = t !== 'box'; ovw.hidden = t === 'box'; if (t === 'box') loadBox(gid, bxw, g, live); };
+      tb1.addEventListener('click', () => pick('box')); tb2.addEventListener('click', () => pick('ovw'));
+      tabs.append(tb1, tb2); box.append(tabs); setTimeout(() => pick(gcTab === 'ovw' ? 'ovw' : 'box'), 0);
+    } else bxw.hidden = true;
     // odds
     if (ln.away_ml != null || ln.home_ml != null || ln.spread != null) {
       const od = mk('div', 'gc-odds');
       const cell = (label, a, b) => { const r = mk('div', 'gc-orow'); r.append(mk('span', 'gc-ov', a), mk('span', 'gc-ol', label), mk('span', 'gc-ov', b)); od.append(r); };
       cell('Moneyline', ml(ln.away_ml) || '–', ml(ln.home_ml) || '–');
       if (ln.spread != null) { const sp = ln.spread === 0 ? 'PK' : '−' + ln.spread; cell('Spread', ln.fav === g.away ? sp : ln.spread === 0 ? 'PK' : '+' + ln.spread, ln.fav === g.home ? sp : ln.spread === 0 ? 'PK' : '+' + ln.spread); }
-      box.append(od);
+      ovw.append(od);
     }
     // tale of the tape
     if (T.away && T.home) {
@@ -1137,15 +1253,16 @@
       row('Preseason line', T.away.proj ?? '–', T.home.proj ?? '–', cmpN(T.away.proj, T.home.proj));
       const form = (t) => { const f = mk('span', 'gc-form'); t.last5g.forEach((x) => f.append(mk('i', x.w ? 'w' : 'l'))); for (let k = t.last5g.length; k < 5; k++) f.append(mk('i', 'none')); return f; };
       const fr = mk('div', 'gc-crow'); const fa = mk('span', 'gc-cv'); fa.append(form(T.away)); const fb = mk('span', 'gc-cv'); fb.append(form(T.home)); fr.append(fa, mk('span', 'gc-cl', 'Last 5'), fb); cmp.append(fr);
-      box.append(cmp);
+      ovw.append(cmp);
       // earlier meetings this season
       const met = C.sorted.filter((x) => ((x.away === g.away && x.home === g.home) || (x.away === g.home && x.home === g.away)) && !(final && x.date === date));
       if (met.length) {
         const mt = mk('div', 'gc-met'); mt.append(mk('h4', 'tc-h', 'Earlier this season'));
         met.forEach((x) => { const w = x.home_score > x.away_score ? x.home : x.away; const r = mk('div', 'gc-mrow'); r.append(mk('span', 'tc-date', fmtShort(x.date)), mk('span', null, `${abbr(x.away)} ${x.away_score} – ${x.home_score} ${abbr(x.home)}`), mk('b', null, abbr(w) + ' won')); mt.append(r); });
-        box.append(mt);
+        ovw.append(mt);
       }
     }
+    box.append(bxw, ovw);
     box.append(mk('p', 'players-foot', list.length > 1 ? 'Swipe for the next game · tap a team for its team card' : 'Tap a team for its full team card'));
     ov.append(box); ov.addEventListener('click', (e) => { if (e.target === ov) closeBonus(); });
     // next / previous game: swipe sideways, arrow keys, or the side buttons
@@ -1158,7 +1275,7 @@
       const side = (k, label, sym) => { const b = mk('button', 'gc-side ' + (k > 0 ? 'next' : 'prev'), sym); b.type = 'button'; b.setAttribute('aria-label', label); b.disabled = !list[idx + k]; b.addEventListener('click', (e) => { e.stopPropagation(); go(k); }); ov.append(b); };
       side(-1, 'Previous game', '‹'); side(1, 'Next game', '›');
       let x0 = null, y0 = 0, dx = 0, t0 = 0, horiz = false;
-      box.addEventListener('touchstart', (e) => { const t = e.touches[0]; x0 = t.clientX; y0 = t.clientY; dx = 0; t0 = Date.now(); horiz = false; }, { passive: true });
+      box.addEventListener('touchstart', (e) => { if (e.target.closest && e.target.closest('.bx-scroll')) { x0 = null; return; } const t = e.touches[0]; x0 = t.clientX; y0 = t.clientY; dx = 0; t0 = Date.now(); horiz = false; }, { passive: true });
       box.addEventListener('touchmove', (e) => {
         if (x0 == null) return; const t = e.touches[0]; dx = t.clientX - x0; const dy = t.clientY - y0;
         if (!horiz) { if (Math.abs(dx) > 10 && Math.abs(dx) > Math.abs(dy) * 1.2) { horiz = true; box.style.transition = 'none'; } else if (Math.abs(dy) > 10) { x0 = null; return; } else return; }
@@ -1443,7 +1560,7 @@
   }
   new MutationObserver((ms) => ms.forEach((m) => m.addedNodes.forEach((n) => { if (n.id === 'bonus-pop') enableSwipe(n); else if (n.id === 'why-pop') enableSwipe(n, closeWhy); }))).observe(document.body, { childList: true });
 
-  function closeBonus() { closeWhy(); gcNav = null; const o = document.getElementById('bonus-pop'); if (o) o.remove(); document.removeEventListener('keydown', bonusKey); }
+  function closeBonus() { closeWhy(); gcNav = null; clearInterval(boxTimer); const o = document.getElementById('bonus-pop'); if (o) o.remove(); document.removeEventListener('keydown', bonusKey); }
   function bonusKey(e) { if (e.key === 'Escape') closeBonus(); else if (gcNav && (e.key === 'ArrowRight' || e.key === 'ArrowLeft')) { e.preventDefault(); gcNav(e.key === 'ArrowRight' ? 1 : -1); } }
 
   function medal(rank) { return rank === 1 ? 'p1' : rank === 2 ? 'p2' : rank === 3 ? 'p3' : null; }
