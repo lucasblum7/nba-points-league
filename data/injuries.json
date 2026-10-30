@@ -1,5 +1,5 @@
 {
- "as_of": "2026-10-30T03",
+ "as_of": "2026-10-30T12",
  "players": [
   {
    "team": "Atlanta Hawks",
@@ -148,23 +148,6 @@
    }
   },
   {
-   "team": "Chicago Bulls",
-   "id": "4431687",
-   "name": "Patrick Williams",
-   "status": "Out",
-   "comment": "Williams (adductor) is questionable for Friday's game in Boston.",
-   "return": "2026-10-30",
-   "fantasy": "GTD",
-   "stats": {
-    "gp": 72.0,
-    "min": 20.472221,
-    "pts": 7.013889,
-    "reb": 2.9861112,
-    "ast": 1.4583334,
-    "this_season": false
-   }
-  },
-  {
    "team": "Cleveland Cavaliers",
    "id": "5041951",
    "name": "Meleek Thomas",
@@ -281,7 +264,7 @@
    "id": "3138196",
    "name": "Cameron Johnson",
    "status": "Out",
-   "comment": "Johnson (ankle) is questionable for Friday's game against Phoenix.",
+   "comment": "Johnson (ankle) is expected to play in Friday's game against the Suns, per John Gambadoro of Arizona Sports 98.7 FM.",
    "return": "2026-10-30",
    "fantasy": "GTD",
    "stats": {
@@ -468,7 +451,7 @@
    "id": "4711272",
    "name": "Reed Sheppard",
    "status": "Out",
-   "comment": "Sheppard (back) is out for Friday's game against the Mavericks.",
+   "comment": "Houston picked up Sheppard's (back) fourth-year team option Friday, per Lachard Binkley of SI.com.",
    "return": "2026-10-31",
    "fantasy": "OUT",
    "stats": {
@@ -502,7 +485,7 @@
    "id": "5157066",
    "name": "Johnny Furphy",
    "status": "Out",
-   "comment": "Furphy was diagnosed with a torn right ACL on Monday and will miss the remainder of the season, Michael Scotto of USA Today reports.",
+   "comment": "Furphy (knee) is practicing with the G League's Noblesville Boom, per Alex Golden of SI.com.",
    "return": "2027-01-02",
    "fantasy": "OUT",
    "stats": {
@@ -536,7 +519,7 @@
    "id": "2530530",
    "name": "T.J. McConnell",
    "status": "Out",
-   "comment": "Pacers head coach Rick Carlisle stated McConnell (hamstring) is \"doing better\" and \"getting closer\" to a return, Alex Golden of SI.com reports.",
+   "comment": "McConnell (hamstring) is practicing in the G League at Noblesville Boom training camp, per Alex Golden of SI.com.",
    "return": "2026-11-02",
    "fantasy": "OUT",
    "stats": {
@@ -638,7 +621,7 @@
    "id": "4066648",
    "name": "Rui Hachimura",
    "status": "Day-To-Day",
-   "comment": "Hachimura (quadriceps) is questionable for Friday's game against Minnesota, Tomer Azarly of ClutchPoints.com reports.",
+   "comment": "Hachimura (quadriceps) is probable for Friday's game against Minnesota, per Ohm Youngmisuk of ESPN.com.",
    "return": "2026-10-30",
    "fantasy": "GTD",
    "stats": {
@@ -717,16 +700,6 @@
     "ast": 2.0,
     "this_season": false
    }
-  },
-  {
-   "team": "Los Angeles Lakers",
-   "id": "5113969",
-   "name": "Cameron Carr",
-   "status": "Out",
-   "comment": "Carr (oblique) has been ruled out for Friday's game against Golden State.",
-   "return": "2026-11-01",
-   "fantasy": "OUT",
-   "stats": null
   },
   {
    "team": "Los Angeles Lakers",
@@ -822,6 +795,23 @@
    "return": "2026-11-01",
    "fantasy": "OUT",
    "stats": null
+  },
+  {
+   "team": "Brooklyn Nets",
+   "id": "4712896",
+   "name": "Noah Clowney",
+   "status": "Day-To-Day",
+   "comment": "Clowney (illness) was downgraded to questionable for Friday's game versus Detroit, Erik Slater of ClutchPoints.com reports.",
+   "return": "2026-10-30",
+   "fantasy": "GTD",
+   "stats": {
+    "gp": 4.0,
+    "min": 21.5,
+    "pts": 6.25,
+    "reb": 4.0,
+    "ast": 0.75,
+    "this_season": true
+   }
   },
   {
    "team": "Brooklyn Nets",
@@ -1051,10 +1041,10 @@
    "team": "Portland Trail Blazers",
    "id": "4279888",
    "name": "Ja Morant",
-   "status": "Day-To-Day",
-   "comment": "Morant won't return to Thursday's game against the Grizzlies due to a left hamstring injury. He'll end with 14 points (6-14 FG, 2-5 3Pt), two rebounds and three assists in 23 minutes.",
-   "return": "2026-10-31",
-   "fantasy": "GTD",
+   "status": "Out",
+   "comment": "Morant has been diagnosed with a Grade 2 left hamstring strain and is expected to miss four weeks, Portland announced Friday.",
+   "return": "2026-12-01",
+   "fantasy": "OUT",
    "stats": {
     "gp": 4.0,
     "min": 25.75,
@@ -1510,7 +1500,7 @@
    "id": "5061575",
    "name": "Kon Knueppel",
    "status": "Out",
-   "comment": "Knueppel (hamstring) will practice with the G League's Greensboro Swarm on Thursday, the Hornets announced.",
+   "comment": "Knueppel (hamstring) was recalled from the G League's Greensboro Swarm on Friday. He remains out for Friday's contest against the Wizards.",
    "return": "2026-11-02",
    "fantasy": "OUT",
    "stats": {
@@ -1527,7 +1517,7 @@
    "id": "3032979",
    "name": "Dennis Schroder",
    "status": "Day-To-Day",
-   "comment": "Schroder (foot) is questionable for Friday's game against the Wizards.",
+   "comment": "Schroder (foot) is probable for Friday against the Wizards.",
    "return": "2026-10-30",
    "fantasy": "GTD",
    "stats": {
