@@ -919,7 +919,7 @@ button.sb-date:hover { background: var(--fill) !important; }
 .race-dim { opacity: .5 !important; }
 
 /* ---------- Calmer color: orange = you, gold = NBA Cup & medals, green/red = good/bad ---------- */
-tr.p1 td, tr.p2 td, tr.p3 td { background: none !important; }
+#h2h-table tr.p1 td, #h2h-table tr.p2 td, #h2h-table tr.p3 td { background: none !important; }
 .h2h-row.p1, .h2h-row.p2, .h2h-row.p3 { background: none !important; border-top-color: var(--line) !important; }
 .h2h-row.p1:first-child { border-top-color: transparent !important; }
 #rosters-card .card.p1, #rosters-card .card.p2, #rosters-card .card.p3, .card.p1, .card.p2, .card.p3 { background: var(--panel) !important; box-shadow: var(--shadow) !important; }
@@ -1101,3 +1101,7 @@ html, body, button, a, [role="button"] { touch-action: manipulation; }
 .bx-grp td { font-size: 10.5px; font-weight: 800; color: var(--muted); text-transform: uppercase; letter-spacing: .05em; text-align: left; padding-top: 10px; position: sticky; left: 0; background: var(--panel); }
 .bx-tot td { font-weight: 800; border-bottom: none; }
 .bx-dnp { font-size: 11.5px; color: var(--muted); margin: 8px 0 0; }
+/* The Win Column keeps its gold / silver / bronze rows */
+#leaderboard tr.p1 td { background: color-mix(in srgb, var(--gold) 16%, transparent) !important; }
+#leaderboard tr.p2 td { background: color-mix(in srgb, var(--silver) 18%, transparent) !important; }
+#leaderboard tr.p3 td { background: color-mix(in srgb, var(--bronze) 15%, transparent) !important; }
