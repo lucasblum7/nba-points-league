@@ -4,23 +4,23 @@
   {
    "id": "401909893",
    "time": "5:00 PM",
-   "state": "pre",
-   "detail": "10/29 - 8:00 PM EDT",
+   "state": "in",
+   "detail": "End of 1st",
    "away": "Cleveland Cavaliers",
    "home": "Atlanta Hawks",
-   "away_score": null,
-   "home_score": null,
+   "away_score": 28,
+   "home_score": 16,
    "cup": false
   },
   {
    "id": "401909894",
    "time": "5:00 PM",
-   "state": "pre",
-   "detail": "10/29 - 8:00 PM EDT",
+   "state": "in",
+   "detail": "1:16 - 1st",
    "away": "Sacramento Kings",
    "home": "New Orleans Pelicans",
-   "away_score": null,
-   "home_score": null,
+   "away_score": 28,
+   "home_score": 24,
    "cup": false
   },
   {

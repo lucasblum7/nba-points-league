@@ -1,5 +1,5 @@
 {
- "as_of": "2026-10-29T12",
+ "as_of": "2026-10-29T15",
  "players": [
   {
    "team": "Atlanta Hawks",
@@ -64,12 +64,29 @@
   },
   {
    "team": "New Orleans Pelicans",
+   "id": "3907497",
+   "name": "Dejounte Murray",
+   "status": "Out",
+   "comment": "Murray (personal) is out for Thursday's game against the Kings, Jim Eichenhofer of the Pelicans' official site reports.",
+   "return": "2026-10-31",
+   "fantasy": "OUT",
+   "stats": {
+    "gp": 4.0,
+    "min": 32.25,
+    "pts": 17.75,
+    "reb": 5.75,
+    "ast": 6.0,
+    "this_season": true
+   }
+  },
+  {
+   "team": "New Orleans Pelicans",
    "id": "4277956",
    "name": "Jordan Poole",
-   "status": "Day-To-Day",
-   "comment": "Poole (ankle) is now doubtful for Thursday against the Kings.",
-   "return": "2026-10-29",
-   "fantasy": "GTD",
+   "status": "Out",
+   "comment": "Poole (ankle) has been ruled out for Thursday's game against the Kings.",
+   "return": "2026-10-31",
+   "fantasy": "OUT",
    "stats": {
     "gp": 4.0,
     "min": 16.0,
@@ -151,10 +168,10 @@
    "team": "Cleveland Cavaliers",
    "id": "5041951",
    "name": "Meleek Thomas",
-   "status": "Day-To-Day",
-   "comment": "Thomas (foot) is questionable for Thursday's game in Atlanta.",
-   "return": "2026-10-29",
-   "fantasy": "GTD",
+   "status": "Out",
+   "comment": "Thomas (foot) has been ruled out for Thursday's game against the Hawks, Serena Winters of FanDuel Sports Network Ohio reports.",
+   "return": "2026-10-31",
+   "fantasy": "OUT",
    "stats": {
     "gp": 2.0,
     "min": 20.0,
@@ -165,28 +182,11 @@
    }
   },
   {
-   "team": "Cleveland Cavaliers",
-   "id": "4683747",
-   "name": "Jaylon Tyson",
-   "status": "Day-To-Day",
-   "comment": "Tyson (neck) is questionable for Thursday's game against the Hawks.",
-   "return": "2026-10-29",
-   "fantasy": "GTD",
-   "stats": {
-    "gp": 4.0,
-    "min": 21.5,
-    "pts": 9.0,
-    "reb": 3.0,
-    "ast": 3.25,
-    "this_season": true
-   }
-  },
-  {
    "team": "Dallas Mavericks",
    "id": "4593125",
    "name": "Santi Aldama",
    "status": "Out",
-   "comment": "Aldama (knee) is out for Wednesday's game against the Thunder.",
+   "comment": "Aldama (knee) is listed as doubtful for Friday's game against Houston.",
    "return": "2026-10-30",
    "fantasy": "GTD",
    "stats": {
@@ -203,7 +203,7 @@
    "id": "5148538",
    "name": "Tarik Biberovic",
    "status": "Out",
-   "comment": "Biberovic (knee) is out for Wednesday's game against the Thunder.",
+   "comment": "Biberovic (heel) is listed as doubtful for Friday's game versus the Rockets.",
    "return": "2026-10-30",
    "fantasy": "GTD",
    "stats": null
@@ -212,10 +212,10 @@
    "team": "Dallas Mavericks",
    "id": "5279129",
    "name": "Sergio de Larrea",
-   "status": "Day-To-Day",
-   "comment": "De Larrea (knee) has been ruled out for Wednesday's game against the Thunder.",
-   "return": "2026-10-30",
-   "fantasy": "GTD",
+   "status": "Out",
+   "comment": "De Larrea (knee) is out for Friday's game against the Rockets.",
+   "return": "2026-11-02",
+   "fantasy": "OUT",
    "stats": {
     "gp": 4.0,
     "min": 11.5,
@@ -247,7 +247,7 @@
    "id": "4278594",
    "name": "Naji Marshall",
    "status": "Day-To-Day",
-   "comment": "Marshall (illness) won't play in Wednesday's game against Oklahoma City.",
+   "comment": "Marshall is questionable for Friday's game against the Rockets with an illness.",
    "return": "2026-10-30",
    "fantasy": "GTD",
    "stats": {
@@ -264,7 +264,7 @@
    "id": "4065813",
    "name": "Alpha Diallo",
    "status": "Out",
-   "comment": "Diallo is out for Wednesday's game against the Pelicans due to personal reasons.",
+   "comment": "Diallo (personal) is listed as questionable for Friday's game against the Suns.",
    "return": "2026-10-30",
    "fantasy": "GTD",
    "stats": {
@@ -281,7 +281,7 @@
    "id": "3138196",
    "name": "Cameron Johnson",
    "status": "Out",
-   "comment": "Johnson (ankle) is listed as out for Wednesday's game against the Pelicans.",
+   "comment": "Johnson (ankle) is questionable for Friday's game against Phoenix.",
    "return": "2026-10-30",
    "fantasy": "GTD",
    "stats": {
@@ -417,7 +417,7 @@
    "id": "4997536",
    "name": "Gui Santos",
    "status": "Day-To-Day",
-   "comment": "Santos has been ruled out for Wednesday's game against the Timberwolves due to left knee tendinitis.",
+   "comment": "Santos (knee) is listed as doubtful for Friday's game against the Warriors.",
    "return": "2026-10-30",
    "fantasy": "GTD",
    "stats": {
@@ -550,6 +550,40 @@
   },
   {
    "team": "Indiana Pacers",
+   "id": "4395712",
+   "name": "Andrew Nembhard",
+   "status": "Day-To-Day",
+   "comment": "Nembhard (neck) is listed as probable for Friday's game against Miami.",
+   "return": "2026-10-30",
+   "fantasy": "GTD",
+   "stats": {
+    "gp": 4.0,
+    "min": 32.75,
+    "pts": 16.5,
+    "reb": 2.0,
+    "ast": 7.75,
+    "this_season": true
+   }
+  },
+  {
+   "team": "Indiana Pacers",
+   "id": "4396909",
+   "name": "Aaron Nesmith",
+   "status": "Day-To-Day",
+   "comment": "Nesmith (hamstring) is probable for Friday's game against the Heat.",
+   "return": "2026-10-30",
+   "fantasy": "GTD",
+   "stats": {
+    "gp": 4.0,
+    "min": 21.75,
+    "pts": 13.25,
+    "reb": 1.75,
+    "ast": 1.25,
+    "this_season": true
+   }
+  },
+  {
+   "team": "Indiana Pacers",
    "id": "4433076",
    "name": "Ben Sheppard",
    "status": "Out",
@@ -569,10 +603,10 @@
    "team": "Indiana Pacers",
    "id": "4017837",
    "name": "Ivica Zubac",
-   "status": "Day-To-Day",
-   "comment": "Zubac (ankle) is out for Wednesday's game against the 76ers.",
-   "return": "2026-10-30",
-   "fantasy": "GTD",
+   "status": "Out",
+   "comment": "Zubac (ankle) is out for Friday's game against the Heat.",
+   "return": "2026-11-01",
+   "fantasy": "OUT",
    "stats": {
     "gp": 3.0,
     "min": 21.333334,
@@ -604,7 +638,7 @@
    "id": "4066648",
    "name": "Rui Hachimura",
    "status": "Day-To-Day",
-   "comment": "Hachimura (quadriceps) has been ruled out for Wednesday's game against the Lakers, Joey Linn of SI.com reports.",
+   "comment": "Hachimura (quadriceps) is questionable for Friday's game against Minnesota, Tomer Azarly of ClutchPoints.com reports.",
    "return": "2026-10-30",
    "fantasy": "GTD",
    "stats": {
@@ -689,36 +723,19 @@
    "id": "5113969",
    "name": "Cameron Carr",
    "status": "Out",
-   "comment": "Carr (oblique) is out for Wednesday's game against the Clippers.",
-   "return": "2026-10-30",
-   "fantasy": "GTD",
+   "comment": "Carr (oblique) has been ruled out for Friday's game against Golden State.",
+   "return": "2026-11-01",
+   "fantasy": "OUT",
    "stats": null
-  },
-  {
-   "team": "Los Angeles Lakers",
-   "id": "3945274",
-   "name": "Luka Doncic",
-   "status": "Day-To-Day",
-   "comment": "Doncic (back) is out for Wednesday's game against the Clippers.",
-   "return": "2026-10-30",
-   "fantasy": "GTD",
-   "stats": {
-    "gp": 4.0,
-    "min": 35.5,
-    "pts": 36.0,
-    "reb": 6.75,
-    "ast": 8.25,
-    "this_season": true
-   }
   },
   {
    "team": "Los Angeles Lakers",
    "id": "5060631",
    "name": "Adou Thiero",
    "status": "Out",
-   "comment": "Thiero (knee) is out for Wednesday's game against the Clippers.",
-   "return": "2026-10-30",
-   "fantasy": "GTD",
+   "comment": "Thiero (knee) has been ruled out for Friday's game against the Warriors.",
+   "return": "2026-11-01",
+   "fantasy": "OUT",
    "stats": {
     "gp": 25.0,
     "min": 5.96,
@@ -733,7 +750,7 @@
    "id": "4433137",
    "name": "Ziaire Williams",
    "status": "Day-To-Day",
-   "comment": "Williams (foot) is out for Wednesday's game against the Clippers.",
+   "comment": "Williams (foot) is questionable for Friday's game against Golden State.",
    "return": "2026-10-30",
    "fantasy": "GTD",
    "stats": {
@@ -750,7 +767,7 @@
    "id": "3899664",
    "name": "Simone Fontecchio",
    "status": "Day-To-Day",
-   "comment": "Fontecchio (illness) is out for Wednesday's game against the Hawks.",
+   "comment": "Fontecchio (illness) is listed as questionable for Friday's game against Indiana.",
    "return": "2026-10-30",
    "fantasy": "GTD",
    "stats": {
@@ -802,8 +819,8 @@
    "name": "Tyler Bilodeau",
    "status": "Out",
    "comment": "Bilodeau (shoulder) has been ruled out for Sunday's game against Indiana.",
-   "return": "2026-10-30",
-   "fantasy": "GTD",
+   "return": "2026-11-01",
+   "fantasy": "OUT",
    "stats": null
   },
   {
@@ -828,9 +845,9 @@
    "id": "4277869",
    "name": "Jose Alvarado",
    "status": "Out",
-   "comment": "Alvarado (ankle) is out for Wednesday's game against the Bulls.",
-   "return": "2026-10-30",
-   "fantasy": "GTD",
+   "comment": "Alvarado (ankle) has been ruled out for Friday's game against Philadelphia.",
+   "return": "2026-11-04",
+   "fantasy": "OUT",
    "stats": {
     "gp": 2.0,
     "min": 13.5,
@@ -937,6 +954,23 @@
   },
   {
    "team": "Philadelphia 76ers",
+   "id": "3917376",
+   "name": "Jaylen Brown",
+   "status": "Day-To-Day",
+   "comment": "Brown (knee) is questionable for Friday's game against the Knicks.",
+   "return": "2026-10-30",
+   "fantasy": "GTD",
+   "stats": {
+    "gp": 5.0,
+    "min": 36.4,
+    "pts": 20.6,
+    "reb": 6.6,
+    "ast": 4.2,
+    "this_season": true
+   }
+  },
+  {
+   "team": "Philadelphia 76ers",
    "id": "3904625",
    "name": "Tacko Fall",
    "status": "Out",
@@ -966,10 +1000,10 @@
    "team": "Philadelphia 76ers",
    "id": "4432446",
    "name": "Jabari Walker",
-   "status": "Day-To-Day",
-   "comment": "Walker (knee) has been ruled out for Wednesday's game against the Pacers.",
-   "return": "2026-10-30",
-   "fantasy": "GTD",
+   "status": "Out",
+   "comment": "Walker (knee) has been ruled out for Friday's game versus New York.",
+   "return": "2026-10-31",
+   "fantasy": "OUT",
    "stats": {
     "gp": 3.0,
     "min": 6.3333335,
@@ -984,7 +1018,7 @@
    "id": "4601023",
    "name": "Oso Ighodaro",
    "status": "Day-To-Day",
-   "comment": "Ighodaro (oblique) is feeling better and considered day-to-day ahead of Friday's game against the Nuggets, John Gambadoro of Arizona Sports 98.7 FM reports.",
+   "comment": "Ighodaro (oblique) is listed as questionable for Friday's game against Denver.",
    "return": "2026-10-30",
    "fantasy": "GTD",
    "stats": {
@@ -1354,7 +1388,7 @@
    "id": "5238230",
    "name": "Tre Johnson",
    "status": "Day-To-Day",
-   "comment": "Johnson has been ruled out for Wednesday's game against the Cavaliers due to right Achilles soreness.",
+   "comment": "Johnson (Achilles) is listed as questionable for Friday's game against Charlotte.",
    "return": "2026-10-30",
    "fantasy": "GTD",
    "stats": {
@@ -1452,6 +1486,23 @@
     "reb": 5.3333335,
     "ast": 3.382716,
     "this_season": false
+   }
+  },
+  {
+   "team": "Charlotte Hornets",
+   "id": "3032979",
+   "name": "Dennis Schroder",
+   "status": "Day-To-Day",
+   "comment": "Schroder (foot) is questionable for Friday's game against the Wizards.",
+   "return": "2026-10-30",
+   "fantasy": "GTD",
+   "stats": {
+    "gp": 5.0,
+    "min": 32.4,
+    "pts": 14.0,
+    "reb": 4.0,
+    "ast": 4.8,
+    "this_season": true
    }
   },
   {
