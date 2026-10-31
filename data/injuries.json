@@ -1,5 +1,5 @@
 {
- "as_of": "2026-10-30T18",
+ "as_of": "2026-10-31T00",
  "players": [
   {
    "team": "Atlanta Hawks",
@@ -100,10 +100,10 @@
    "team": "Chicago Bulls",
    "id": "4848625",
    "name": "Dailyn Swain",
-   "status": "Out",
+   "status": "Day-To-Day",
    "comment": "Swain (back) has been ruled out for Friday's game against Boston.",
    "return": "2026-11-02",
-   "fantasy": "OUT",
+   "fantasy": "GTD",
    "stats": {
     "gp": 1.0,
     "min": 12.0,
@@ -171,7 +171,7 @@
    "status": "Out",
    "comment": "Biberovic (heel) is out for Friday's game against the Rockets.",
    "return": "2026-11-02",
-   "fantasy": "OUT",
+   "fantasy": "GTD",
    "stats": null
   },
   {
@@ -215,7 +215,7 @@
    "status": "Out",
    "comment": "Diallo (personal/wrist) has been ruled out for Friday's game against Phoenix, Vic Lombardi of Altitude Sports reports.",
    "return": "2026-11-02",
-   "fantasy": "OUT",
+   "fantasy": "GTD",
    "stats": {
     "gp": 1.0,
     "min": 22.0,
@@ -283,7 +283,7 @@
    "status": "Out",
    "comment": "Joe (hip) has been ruled out for Friday's game against the Nets.",
    "return": "2026-11-02",
-   "fantasy": "OUT",
+   "fantasy": "GTD",
    "stats": {
     "gp": 3.0,
     "min": 14.0,
@@ -365,10 +365,10 @@
    "team": "Houston Rockets",
    "id": "4871144",
    "name": "Alperen Sengun",
-   "status": "Out",
+   "status": "Day-To-Day",
    "comment": "Sengun (back) has been ruled out for Friday's game against the Mavericks, Mike Curtis of The Dallas Morning News reports.",
    "return": "2026-10-31",
-   "fantasy": "OUT",
+   "fantasy": "GTD",
    "stats": {
     "gp": 4.0,
     "min": 34.0,
@@ -382,10 +382,10 @@
    "team": "Houston Rockets",
    "id": "4711272",
    "name": "Reed Sheppard",
-   "status": "Out",
+   "status": "Day-To-Day",
    "comment": "Houston picked up Sheppard's (back) fourth-year team option Friday, per Lachard Binkley of SI.com.",
    "return": "2026-10-31",
-   "fantasy": "OUT",
+   "fantasy": "GTD",
    "stats": {
     "gp": 4.0,
     "min": 23.25,
@@ -467,10 +467,10 @@
    "team": "Indiana Pacers",
    "id": "4278355",
    "name": "Obi Toppin",
-   "status": "Out",
+   "status": "Day-To-Day",
    "comment": "Toppin (back) has been ruled out for Friday's game against Miami.",
    "return": "2026-11-01",
-   "fantasy": "OUT",
+   "fantasy": "GTD",
    "stats": {
     "gp": 5.0,
     "min": 22.8,
@@ -589,7 +589,7 @@
    "status": "Out",
    "comment": "Thiero (knee) has been ruled out for Friday's game against the Warriors.",
    "return": "2026-11-01",
-   "fantasy": "OUT",
+   "fantasy": "GTD",
    "stats": {
     "gp": 25.0,
     "min": 5.96,
@@ -603,10 +603,10 @@
    "team": "Los Angeles Lakers",
    "id": "4433137",
    "name": "Ziaire Williams",
-   "status": "Out",
+   "status": "Day-To-Day",
    "comment": "Williams has been ruled out for Friday's game against the Warriors due to left foot injury management, Mark Medina of TheSportingTribune.com reports.",
    "return": "2026-11-01",
-   "fantasy": "OUT",
+   "fantasy": "GTD",
    "stats": {
     "gp": 4.0,
     "min": 28.5,
@@ -793,10 +793,10 @@
    "team": "Philadelphia 76ers",
    "id": "3917376",
    "name": "Jaylen Brown",
-   "status": "Out",
+   "status": "Day-To-Day",
    "comment": "Brown (knee) is out for Friday's game against the Knicks.",
    "return": "2026-10-31",
-   "fantasy": "OUT",
+   "fantasy": "GTD",
    "stats": {
     "gp": 5.0,
     "min": 36.4,
@@ -840,7 +840,7 @@
    "status": "Out",
    "comment": "Walker (knee) has been ruled out for Friday's game versus New York.",
    "return": "2026-10-31",
-   "fantasy": "OUT",
+   "fantasy": "GTD",
    "stats": {
     "gp": 3.0,
     "min": 6.3333335,
@@ -1349,7 +1349,7 @@
    "status": "Out",
    "comment": "Knueppel (hamstring) was recalled from the G League's Greensboro Swarm on Friday. He remains out for Friday's contest against the Wizards.",
    "return": "2026-11-02",
-   "fantasy": "OUT",
+   "fantasy": "GTD",
    "stats": {
     "gp": 81.0,
     "min": 31.493828,
@@ -1366,7 +1366,7 @@
    "status": "Out",
    "comment": "Head coach Charles Lee said Monday that White (calf) remains without a timeline for a return, though Lee added that he'll have a better idea of where things stand following the Hornets' two-game road trip, Rod Boone of The Charlotte Observer reports.",
    "return": "2026-11-02",
-   "fantasy": "OUT",
+   "fantasy": "GTD",
    "stats": {
     "gp": 50.0,
     "min": 25.0,
