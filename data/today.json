@@ -4,12 +4,12 @@
   {
    "id": "401909896",
    "time": "12:00 PM",
-   "state": "pre",
-   "detail": "10/31 - 3:00 PM EDT",
+   "state": "in",
+   "detail": "11:28 - 2nd",
    "away": "Portland Trail Blazers",
    "home": "Utah Jazz",
-   "away_score": null,
-   "home_score": null,
+   "away_score": 27,
+   "home_score": 18,
    "cup": false
   },
   {

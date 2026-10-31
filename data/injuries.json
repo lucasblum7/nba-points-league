@@ -1,5 +1,5 @@
 {
- "as_of": "2026-10-31T00",
+ "as_of": "2026-10-31T12",
  "players": [
   {
    "team": "Atlanta Hawks",
@@ -118,7 +118,7 @@
    "id": "5041951",
    "name": "Meleek Thomas",
    "status": "Day-To-Day",
-   "comment": "Thomas (foot) is questionable for Saturday's game against the Bucks.",
+   "comment": "Thomas (foot) has been upgraded to probable ahead of Saturday's meeting in Milwaukee.",
    "return": "2026-10-31",
    "fantasy": "GTD",
    "stats": {
@@ -154,7 +154,7 @@
    "status": "Out",
    "comment": "Aldama (knee) is listed as out for Friday's game against the Rockets.",
    "return": "2026-11-02",
-   "fantasy": "OUT",
+   "fantasy": "GTD",
    "stats": {
     "gp": 43.0,
     "min": 27.860466,
@@ -198,7 +198,7 @@
    "status": "Out",
    "comment": "Lively (foot) has been ruled out for Friday's game against the Pacers.",
    "return": "2026-11-02",
-   "fantasy": "OUT",
+   "fantasy": "GTD",
    "stats": {
     "gp": 7.0,
     "min": 16.428572,
@@ -232,7 +232,7 @@
    "status": "Out",
    "comment": "Jones (hamstring) has been ruled out for Wednesday's game against New Orleans.",
    "return": "2026-11-02",
-   "fantasy": "OUT",
+   "fantasy": "GTD",
    "stats": {
     "gp": 64.0,
     "min": 22.140625,
@@ -363,35 +363,35 @@
   },
   {
    "team": "Houston Rockets",
-   "id": "4871144",
-   "name": "Alperen Sengun",
-   "status": "Day-To-Day",
-   "comment": "Sengun (back) has been ruled out for Friday's game against the Mavericks, Mike Curtis of The Dallas Morning News reports.",
-   "return": "2026-10-31",
-   "fantasy": "GTD",
-   "stats": {
-    "gp": 4.0,
-    "min": 34.0,
-    "pts": 24.5,
-    "reb": 9.0,
-    "ast": 7.0,
-    "this_season": true
-   }
-  },
-  {
-   "team": "Houston Rockets",
    "id": "4711272",
    "name": "Reed Sheppard",
-   "status": "Day-To-Day",
-   "comment": "Houston picked up Sheppard's (back) fourth-year team option Friday, per Lachard Binkley of SI.com.",
-   "return": "2026-10-31",
-   "fantasy": "GTD",
+   "status": "Out",
+   "comment": "Sheppard (back) is out for Saturday's game against the Thunder.",
+   "return": "2026-11-02",
+   "fantasy": "OUT",
    "stats": {
     "gp": 4.0,
     "min": 23.25,
     "pts": 10.5,
     "reb": 2.75,
     "ast": 4.75,
+    "this_season": true
+   }
+  },
+  {
+   "team": "Houston Rockets",
+   "id": "2991230",
+   "name": "Fred VanVleet",
+   "status": "Out",
+   "comment": "VanVleet (knee) won't play Saturday against the Thunder.",
+   "return": "2026-11-02",
+   "fantasy": "OUT",
+   "stats": {
+    "gp": 5.0,
+    "min": 30.4,
+    "pts": 13.0,
+    "reb": 4.0,
+    "ast": 6.4,
     "this_season": true
    }
   },
@@ -487,7 +487,7 @@
    "status": "Out",
    "comment": "Zubac (ankle) is out for Friday's game against the Heat.",
    "return": "2026-11-01",
-   "fantasy": "OUT",
+   "fantasy": "GTD",
    "stats": {
     "gp": 3.0,
     "min": 21.333334,
@@ -651,12 +651,29 @@
    }
   },
   {
+   "team": "Minnesota Timberwolves",
+   "id": "3032976",
+   "name": "Rudy Gobert",
+   "status": "Day-To-Day",
+   "comment": "Gobert (back) is listed as questionable for Saturday's game at San Antonio.",
+   "return": "2026-10-31",
+   "fantasy": "GTD",
+   "stats": {
+    "gp": 6.0,
+    "min": 30.0,
+    "pts": 7.0,
+    "reb": 12.333333,
+    "ast": 1.5,
+    "this_season": true
+   }
+  },
+  {
    "team": "Brooklyn Nets",
    "id": "5105626",
    "name": "Tyler Bilodeau",
    "status": "Out",
    "comment": "Bilodeau (shoulder) has been ruled out for Sunday's game against Indiana.",
-   "return": "2026-11-01",
+   "return": "2026-11-06",
    "fantasy": "OUT",
    "stats": null
   },
@@ -794,7 +811,7 @@
    "id": "3917376",
    "name": "Jaylen Brown",
    "status": "Day-To-Day",
-   "comment": "Brown (knee) is out for Friday's game against the Knicks.",
+   "comment": "Brown (knee) is questionable for Saturday's game in Charlotte.",
    "return": "2026-10-31",
    "fantasy": "GTD",
    "stats": {
@@ -808,12 +825,29 @@
   },
   {
    "team": "Philadelphia 76ers",
+   "id": "3059318",
+   "name": "Joel Embiid",
+   "status": "Out",
+   "comment": "Embiid (foot) is out for Saturday's game in Charlotte.",
+   "return": "2026-11-02",
+   "fantasy": "OUT",
+   "stats": {
+    "gp": 5.0,
+    "min": 35.2,
+    "pts": 19.2,
+    "reb": 9.4,
+    "ast": 5.2,
+    "this_season": true
+   }
+  },
+  {
+   "team": "Philadelphia 76ers",
    "id": "3904625",
    "name": "Tacko Fall",
    "status": "Out",
-   "comment": "Fall (quadriceps) is out for Wednesday's game in Indiana.",
-   "return": "2026-11-04",
-   "fantasy": "OUT",
+   "comment": "Fall (quad) is questionable to face the Hornets on Saturday.",
+   "return": "2026-10-31",
+   "fantasy": "GTD",
    "stats": null
   },
   {
@@ -835,10 +869,27 @@
   },
   {
    "team": "Philadelphia 76ers",
+   "id": "1966",
+   "name": "LeBron James",
+   "status": "Out",
+   "comment": "James (back) has been ruled out for Saturday's meeting in Charlotte.",
+   "return": "2026-11-02",
+   "fantasy": "OUT",
+   "stats": {
+    "gp": 5.0,
+    "min": 33.4,
+    "pts": 16.4,
+    "reb": 7.0,
+    "ast": 7.0,
+    "this_season": true
+   }
+  },
+  {
+   "team": "Philadelphia 76ers",
    "id": "4432446",
    "name": "Jabari Walker",
    "status": "Out",
-   "comment": "Walker (knee) has been ruled out for Friday's game versus New York.",
+   "comment": "Walker (knee) is questionable for Saturday's game in Charlotte.",
    "return": "2026-10-31",
    "fantasy": "GTD",
    "stats": {
@@ -902,40 +953,6 @@
    }
   },
   {
-   "team": "Portland Trail Blazers",
-   "id": "4066211",
-   "name": "Robert Williams III",
-   "status": "Day-To-Day",
-   "comment": "Williams (knee) is questionable for Saturday's game against the Jazz.",
-   "return": "2026-10-31",
-   "fantasy": "GTD",
-   "stats": {
-    "gp": 3.0,
-    "min": 18.0,
-    "pts": 9.666667,
-    "reb": 8.666667,
-    "ast": 0.6666667,
-    "this_season": true
-   }
-  },
-  {
-   "team": "Portland Trail Blazers",
-   "id": "4706557",
-   "name": "Chris Youngblood",
-   "status": "Out",
-   "comment": "Youngblood (ankle) is questionable for Saturday's game against Utah.",
-   "return": "2026-10-31",
-   "fantasy": "GTD",
-   "stats": {
-    "gp": 34.0,
-    "min": 5.4411764,
-    "pts": 2.0882354,
-    "reb": 0.8235294,
-    "ast": 0.3529412,
-    "this_season": false
-   }
-  },
-  {
    "team": "Sacramento Kings",
    "id": "4433174",
    "name": "Dylan Cardwell",
@@ -995,6 +1012,23 @@
    "return": "2027-10-01",
    "fantasy": "OFS",
    "stats": null
+  },
+  {
+   "team": "San Antonio Spurs",
+   "id": "4845367",
+   "name": "Stephon Castle",
+   "status": "Day-To-Day",
+   "comment": "Castle (migraine) is questionable for Saturday's game against the Timberwolves, Paul Garcia of ProjectSpurs.com reports.",
+   "return": "2026-10-31",
+   "fantasy": "GTD",
+   "stats": {
+    "gp": 5.0,
+    "min": 31.0,
+    "pts": 17.4,
+    "reb": 5.8,
+    "ast": 5.4,
+    "this_season": true
+   }
   },
   {
    "team": "San Antonio Spurs",
@@ -1137,23 +1171,6 @@
   },
   {
    "team": "Utah Jazz",
-   "id": "4396963",
-   "name": "Blake Hinson",
-   "status": "Out",
-   "comment": "",
-   "return": "",
-   "fantasy": "",
-   "stats": {
-    "gp": 14.0,
-    "min": 20.357143,
-    "pts": 11.928572,
-    "reb": 2.357143,
-    "ast": 1.1428572,
-    "this_season": false
-   }
-  },
-  {
-   "team": "Utah Jazz",
    "id": "4277961",
    "name": "Jaren Jackson Jr.",
    "status": "Out",
@@ -1166,23 +1183,6 @@
     "pts": 16.25,
     "reb": 5.0,
     "ast": 2.0,
-    "this_season": true
-   }
-  },
-  {
-   "team": "Utah Jazz",
-   "id": "4066336",
-   "name": "Lauri Markkanen",
-   "status": "Day-To-Day",
-   "comment": "Markkanen (wrist) is listed as questionable for Saturday's game against Portland.",
-   "return": "2026-10-31",
-   "fantasy": "GTD",
-   "stats": {
-    "gp": 4.0,
-    "min": 28.5,
-    "pts": 16.0,
-    "reb": 5.5,
-    "ast": 1.75,
     "this_season": true
    }
   },
@@ -1349,7 +1349,7 @@
    "status": "Out",
    "comment": "Knueppel (hamstring) was recalled from the G League's Greensboro Swarm on Friday. He remains out for Friday's contest against the Wizards.",
    "return": "2026-11-02",
-   "fantasy": "GTD",
+   "fantasy": "OUT",
    "stats": {
     "gp": 81.0,
     "min": 31.493828,
@@ -1366,7 +1366,7 @@
    "status": "Out",
    "comment": "Head coach Charles Lee said Monday that White (calf) remains without a timeline for a return, though Lee added that he'll have a better idea of where things stand following the Hornets' two-game road trip, Rod Boone of The Charlotte Observer reports.",
    "return": "2026-11-02",
-   "fantasy": "GTD",
+   "fantasy": "OUT",
    "stats": {
     "gp": 50.0,
     "min": 25.0,
