@@ -1,5 +1,5 @@
 {
- "as_of": "2026-10-31T12",
+ "as_of": "2026-10-31T15",
  "players": [
   {
    "team": "Atlanta Hawks",
@@ -46,6 +46,23 @@
    }
   },
   {
+   "team": "Boston Celtics",
+   "id": "4351852",
+   "name": "Mitchell Robinson",
+   "status": "Day-To-Day",
+   "comment": "Robinson (rest) is questionable for Sunday's game in Orlando, Jay King of The Athletic reports.",
+   "return": "2026-11-01",
+   "fantasy": "GTD",
+   "stats": {
+    "gp": 5.0,
+    "min": 20.0,
+    "pts": 6.6,
+    "reb": 4.6,
+    "ast": 0.6,
+    "this_season": true
+   }
+  },
+  {
    "team": "New Orleans Pelicans",
    "id": "5061589",
    "name": "Yves Missi",
@@ -59,6 +76,23 @@
     "pts": 9.5,
     "reb": 7.5,
     "ast": 2.5,
+    "this_season": true
+   }
+  },
+  {
+   "team": "New Orleans Pelicans",
+   "id": "3907497",
+   "name": "Dejounte Murray",
+   "status": "Out",
+   "comment": "Murray (personal) won't play in Saturday's game against the Hawks, Jim Eichenhofer of the Pelicans' official site reports.",
+   "return": "2026-11-02",
+   "fantasy": "OUT",
+   "stats": {
+    "gp": 4.0,
+    "min": 32.25,
+    "pts": 17.75,
+    "reb": 5.75,
+    "ast": 6.0,
     "this_season": true
    }
   },
@@ -312,6 +346,40 @@
   },
   {
    "team": "Golden State Warriors",
+   "id": "3975",
+   "name": "Stephen Curry",
+   "status": "Out",
+   "comment": "Curry (rest) won't play Sunday against the Clippers, Brett Siegel of ClutchPoints.com reports.",
+   "return": "2026-11-02",
+   "fantasy": "OUT",
+   "stats": {
+    "gp": 5.0,
+    "min": 28.0,
+    "pts": 29.2,
+    "reb": 3.8,
+    "ast": 4.0,
+    "this_season": true
+   }
+  },
+  {
+   "team": "Golden State Warriors",
+   "id": "6589",
+   "name": "Draymond Green",
+   "status": "Out",
+   "comment": "Green (back) is out for Sunday's game against the Clippers.",
+   "return": "2026-11-02",
+   "fantasy": "OUT",
+   "stats": {
+    "gp": 5.0,
+    "min": 28.6,
+    "pts": 3.0,
+    "reb": 5.2,
+    "ast": 7.2,
+    "this_season": true
+   }
+  },
+  {
+   "team": "Golden State Warriors",
    "id": "4432171",
    "name": "Moses Moody",
    "status": "Out",
@@ -342,6 +410,23 @@
     "reb": 5.21875,
     "ast": 2.53125,
     "this_season": false
+   }
+  },
+  {
+   "team": "Golden State Warriors",
+   "id": "4997536",
+   "name": "Gui Santos",
+   "status": "Day-To-Day",
+   "comment": "Santos (knee) is probable for Sunday's game against the Clippers.",
+   "return": "2026-11-01",
+   "fantasy": "GTD",
+   "stats": {
+    "gp": 5.0,
+    "min": 22.4,
+    "pts": 7.8,
+    "reb": 4.2,
+    "ast": 1.4,
+    "this_season": true
    }
   },
   {
@@ -448,6 +533,23 @@
   },
   {
    "team": "Indiana Pacers",
+   "id": "4396909",
+   "name": "Aaron Nesmith",
+   "status": "Day-To-Day",
+   "comment": "Nesmith (hamstring) is listed as probable for Sunday's game against Brooklyn.",
+   "return": "2026-11-01",
+   "fantasy": "GTD",
+   "stats": {
+    "gp": 5.0,
+    "min": 21.6,
+    "pts": 12.4,
+    "reb": 2.0,
+    "ast": 1.4,
+    "this_season": true
+   }
+  },
+  {
+   "team": "Indiana Pacers",
    "id": "4433076",
    "name": "Ben Sheppard",
    "status": "Out",
@@ -468,7 +570,7 @@
    "id": "4278355",
    "name": "Obi Toppin",
    "status": "Day-To-Day",
-   "comment": "Toppin (back) has been ruled out for Friday's game against Miami.",
+   "comment": "Toppin (back) is questionable for Sunday's game against the Nets.",
    "return": "2026-11-01",
    "fantasy": "GTD",
    "stats": {
@@ -485,9 +587,9 @@
    "id": "4017837",
    "name": "Ivica Zubac",
    "status": "Out",
-   "comment": "Zubac (ankle) is out for Friday's game against the Heat.",
-   "return": "2026-11-01",
-   "fantasy": "GTD",
+   "comment": "Zubac (ankle) will remain on the inactive list for Sunday's game against the Nets.",
+   "return": "2026-11-02",
+   "fantasy": "OUT",
    "stats": {
     "gp": 3.0,
     "min": 21.333334,
@@ -654,10 +756,10 @@
    "team": "Minnesota Timberwolves",
    "id": "3032976",
    "name": "Rudy Gobert",
-   "status": "Day-To-Day",
-   "comment": "Gobert (back) is listed as questionable for Saturday's game at San Antonio.",
-   "return": "2026-10-31",
-   "fantasy": "GTD",
+   "status": "Out",
+   "comment": "Gobert (back) is out for Saturday's game against the Spurs, Dane Moore of 'The Dane Moore NBA Podcast' reports.",
+   "return": "2026-11-02",
+   "fantasy": "OUT",
    "stats": {
     "gp": 6.0,
     "min": 30.0,
@@ -676,6 +778,23 @@
    "return": "2026-11-06",
    "fantasy": "OUT",
    "stats": null
+  },
+  {
+   "team": "Brooklyn Nets",
+   "id": "5101761",
+   "name": "Mikel Brown Jr.",
+   "status": "Out",
+   "comment": "Brown (rest) is out for Sunday's game in Indiana.",
+   "return": "2026-11-02",
+   "fantasy": "OUT",
+   "stats": {
+    "gp": 4.0,
+    "min": 22.5,
+    "pts": 10.25,
+    "reb": 2.5,
+    "ast": 4.25,
+    "this_season": true
+   }
   },
   {
    "team": "Brooklyn Nets",
@@ -808,23 +927,6 @@
   },
   {
    "team": "Philadelphia 76ers",
-   "id": "3917376",
-   "name": "Jaylen Brown",
-   "status": "Day-To-Day",
-   "comment": "Brown (knee) is questionable for Saturday's game in Charlotte.",
-   "return": "2026-10-31",
-   "fantasy": "GTD",
-   "stats": {
-    "gp": 5.0,
-    "min": 36.4,
-    "pts": 20.6,
-    "reb": 6.6,
-    "ast": 4.2,
-    "this_season": true
-   }
-  },
-  {
-   "team": "Philadelphia 76ers",
    "id": "3059318",
    "name": "Joel Embiid",
    "status": "Out",
@@ -839,16 +941,6 @@
     "ast": 5.2,
     "this_season": true
    }
-  },
-  {
-   "team": "Philadelphia 76ers",
-   "id": "3904625",
-   "name": "Tacko Fall",
-   "status": "Out",
-   "comment": "Fall (quad) is questionable to face the Hornets on Saturday.",
-   "return": "2026-10-31",
-   "fantasy": "GTD",
-   "stats": null
   },
   {
    "team": "Philadelphia 76ers",
@@ -881,23 +973,6 @@
     "pts": 16.4,
     "reb": 7.0,
     "ast": 7.0,
-    "this_season": true
-   }
-  },
-  {
-   "team": "Philadelphia 76ers",
-   "id": "4432446",
-   "name": "Jabari Walker",
-   "status": "Out",
-   "comment": "Walker (knee) is questionable for Saturday's game in Charlotte.",
-   "return": "2026-10-31",
-   "fantasy": "GTD",
-   "stats": {
-    "gp": 3.0,
-    "min": 6.3333335,
-    "pts": 2.6666667,
-    "reb": 1.3333334,
-    "ast": 0.6666667,
     "this_season": true
    }
   },

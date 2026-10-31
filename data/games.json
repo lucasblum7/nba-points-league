@@ -656,5 +656,13 @@
   "away_score": 79,
   "home_score": 95,
   "cup": true
+ },
+ {
+  "id": "401909896",
+  "date": "2026-10-31",
+  "away": "Portland Trail Blazers",
+  "home": "Utah Jazz",
+  "away_score": 112,
+  "home_score": 90
  }
 ]
