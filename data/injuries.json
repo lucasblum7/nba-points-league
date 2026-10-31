@@ -1,5 +1,5 @@
 {
- "as_of": "2026-10-30T15",
+ "as_of": "2026-10-30T18",
  "players": [
   {
    "team": "Atlanta Hawks",
@@ -213,32 +213,15 @@
    "id": "4065813",
    "name": "Alpha Diallo",
    "status": "Out",
-   "comment": "Diallo (personal) is doubtful for Friday's game against the Suns.",
-   "return": "2026-10-30",
-   "fantasy": "GTD",
+   "comment": "Diallo (personal/wrist) has been ruled out for Friday's game against Phoenix, Vic Lombardi of Altitude Sports reports.",
+   "return": "2026-11-02",
+   "fantasy": "OUT",
    "stats": {
     "gp": 1.0,
     "min": 22.0,
     "pts": 4.0,
     "reb": 2.0,
     "ast": 2.0,
-    "this_season": true
-   }
-  },
-  {
-   "team": "Denver Nuggets",
-   "id": "3138196",
-   "name": "Cameron Johnson",
-   "status": "Out",
-   "comment": "Johnson (ankle) is expected to play in Friday's game against the Suns, per John Gambadoro of Arizona Sports 98.7 FM.",
-   "return": "2026-10-30",
-   "fantasy": "GTD",
-   "stats": {
-    "gp": 1.0,
-    "min": 11.0,
-    "pts": 5.0,
-    "reb": 2.0,
-    "ast": 1.0,
     "this_season": true
    }
   },
@@ -359,23 +342,6 @@
     "reb": 5.21875,
     "ast": 2.53125,
     "this_season": false
-   }
-  },
-  {
-   "team": "Golden State Warriors",
-   "id": "4997536",
-   "name": "Gui Santos",
-   "status": "Day-To-Day",
-   "comment": "Santos (knee) is questionable for Friday's game against the Lakers.",
-   "return": "2026-10-30",
-   "fantasy": "GTD",
-   "stats": {
-    "gp": 4.0,
-    "min": 24.0,
-    "pts": 9.25,
-    "reb": 4.0,
-    "ast": 1.5,
-    "this_season": true
    }
   },
   {
@@ -886,23 +852,6 @@
   },
   {
    "team": "Phoenix Suns",
-   "id": "4601023",
-   "name": "Oso Ighodaro",
-   "status": "Day-To-Day",
-   "comment": "Ighodaro (oblique) is listed as questionable for Friday's game against Denver.",
-   "return": "2026-10-30",
-   "fantasy": "GTD",
-   "stats": {
-    "gp": 1.0,
-    "min": 15.0,
-    "pts": 8.0,
-    "reb": 3.0,
-    "ast": 3.0,
-    "this_season": true
-   }
-  },
-  {
-   "team": "Phoenix Suns",
    "id": "4701232",
    "name": "Mark Williams",
    "status": "Out",
@@ -1096,8 +1045,8 @@
    "id": "4433255",
    "name": "Chet Holmgren",
    "status": "Out",
-   "comment": "Holmgren (knee) remains out for Saturday's road game against Houston, Justin Martinez of The Oklahoman reports.",
-   "return": "2026-11-02",
+   "comment": "Holmgren underwent a biological treatment Friday to address a small patellar tendon tear and will miss at least 8-10 weeks, Nick Crain of Slam reports.",
+   "return": "2027-01-02",
    "fantasy": "OUT",
    "stats": {
     "gp": 3.0,
@@ -1140,7 +1089,7 @@
    "id": "4683692",
    "name": "Cason Wallace",
    "status": "Out",
-   "comment": "Wallace has been diagnosed with a torn labrum in his left shoulder and will require surgery, Shams Charania of ESPN reports.",
+   "comment": "Wallace underwent surgery Friday to repair a torn labrum in his left shoulder and will be re-evaluated before the end of the regular season, Clemente Almanza of USA Today reports.",
    "return": "2027-03-02",
    "fantasy": "OUT",
    "stats": {
