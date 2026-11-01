@@ -444,10 +444,10 @@
   "away": "LA Clippers",
   "home": "Golden State Warriors",
   "fav": "Golden State Warriors",
-  "spread": 2.5,
-  "away_ml": 110,
-  "home_ml": -130,
-  "book": "Draft Kings"
+  "spread": 1.5,
+  "away_ml": 105,
+  "home_ml": -125,
+  "book": "DraftKings"
  },
  {
   "date": "2026-11-01",
@@ -465,9 +465,9 @@
   "home": "Los Angeles Lakers",
   "fav": "Los Angeles Lakers",
   "spread": 2.5,
-  "away_ml": 124,
-  "home_ml": -148,
-  "book": "Draft Kings"
+  "away_ml": 130,
+  "home_ml": -155,
+  "book": "DraftKings"
  },
  {
   "date": "2026-11-01",
@@ -478,5 +478,55 @@
   "away_ml": -298,
   "home_ml": 240,
   "book": "Draft Kings"
+ },
+ {
+  "date": "2026-11-02",
+  "away": "Detroit Pistons",
+  "home": "Charlotte Hornets",
+  "fav": "Detroit Pistons",
+  "spread": 4.5,
+  "away_ml": -175,
+  "home_ml": 145,
+  "book": "DraftKings"
+ },
+ {
+  "date": "2026-11-02",
+  "away": "Oklahoma City Thunder",
+  "home": "Cleveland Cavaliers",
+  "fav": "Cleveland Cavaliers",
+  "spread": 4.5,
+  "away_ml": 154,
+  "home_ml": -185,
+  "book": "DraftKings"
+ },
+ {
+  "date": "2026-11-02",
+  "away": "Portland Trail Blazers",
+  "home": "Denver Nuggets",
+  "fav": "Denver Nuggets",
+  "spread": 4.5,
+  "away_ml": 136,
+  "home_ml": -162,
+  "book": "DraftKings"
+ },
+ {
+  "date": "2026-11-02",
+  "away": "Brooklyn Nets",
+  "home": "New York Knicks",
+  "fav": "New York Knicks",
+  "spread": 14.5,
+  "away_ml": 575,
+  "home_ml": -850,
+  "book": "DraftKings"
+ },
+ {
+  "date": "2026-11-02",
+  "away": "Washington Wizards",
+  "home": "Orlando Magic",
+  "fav": "Orlando Magic",
+  "spread": 1.5,
+  "away_ml": 100,
+  "home_ml": -120,
+  "book": "DraftKings"
  }
 ]

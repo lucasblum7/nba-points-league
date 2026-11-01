@@ -4,23 +4,23 @@
   {
    "id": "401909903",
    "time": "12:30 PM",
-   "state": "pre",
-   "detail": "11/1 - 3:30 PM EST",
+   "state": "post",
+   "detail": "Final",
    "away": "Boston Celtics",
    "home": "Orlando Magic",
-   "away_score": null,
-   "home_score": null,
+   "away_score": 108,
+   "home_score": 97,
    "cup": false
   },
   {
    "id": "401909904",
    "time": "2:00 PM",
-   "state": "pre",
-   "detail": "11/1 - 5:00 PM EST",
+   "state": "in",
+   "detail": "10:53 - 3rd",
    "away": "Brooklyn Nets",
    "home": "Indiana Pacers",
-   "away_score": null,
-   "home_score": null,
+   "away_score": 43,
+   "home_score": 40,
    "cup": false
   },
   {
