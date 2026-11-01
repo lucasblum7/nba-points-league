@@ -438,5 +438,25 @@
   "away_ml": -245,
   "home_ml": 200,
   "book": "DraftKings"
+ },
+ {
+  "date": "2026-11-01",
+  "away": "Brooklyn Nets",
+  "home": "Indiana Pacers",
+  "fav": "Indiana Pacers",
+  "spread": 4.5,
+  "away_ml": 142,
+  "home_ml": -170,
+  "book": "Draft Kings"
+ },
+ {
+  "date": "2026-11-01",
+  "away": "Boston Celtics",
+  "home": "Orlando Magic",
+  "fav": "Boston Celtics",
+  "spread": 6.5,
+  "away_ml": -258,
+  "home_ml": 210,
+  "book": "Draft Kings"
  }
 ]

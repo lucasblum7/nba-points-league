@@ -658,6 +658,22 @@
   "cup": true
  },
  {
+  "id": "401909897",
+  "date": "2026-10-31",
+  "away": "Philadelphia 76ers",
+  "home": "Charlotte Hornets",
+  "away_score": 109,
+  "home_score": 104
+ },
+ {
+  "id": "401909898",
+  "date": "2026-10-31",
+  "away": "Atlanta Hawks",
+  "home": "New Orleans Pelicans",
+  "away_score": 99,
+  "home_score": 121
+ },
+ {
   "id": "401909896",
   "date": "2026-10-31",
   "away": "Portland Trail Blazers",

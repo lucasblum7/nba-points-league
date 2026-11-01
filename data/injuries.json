@@ -1,5 +1,5 @@
 {
- "as_of": "2026-10-31T15",
+ "as_of": "2026-10-31T18",
  "players": [
   {
    "team": "Atlanta Hawks",
@@ -16,6 +16,40 @@
     "reb": 3.5714285,
     "ast": 0.8961039,
     "this_season": false
+   }
+  },
+  {
+   "team": "Atlanta Hawks",
+   "id": "4701230",
+   "name": "Jalen Johnson",
+   "status": "Day-To-Day",
+   "comment": "Johnson (ankle) is questionable to return to Saturday's game against the Pelicans.",
+   "return": "2026-11-02",
+   "fantasy": "GTD",
+   "stats": {
+    "gp": 6.0,
+    "min": 33.333332,
+    "pts": 19.0,
+    "reb": 9.333333,
+    "ast": 8.5,
+    "this_season": true
+   }
+  },
+  {
+   "team": "Atlanta Hawks",
+   "id": "3146557",
+   "name": "Jock Landale",
+   "status": "Out",
+   "comment": "Landale (hip) won't return to Saturday's game against the Pelicans.",
+   "return": "2026-11-02",
+   "fantasy": "OUT",
+   "stats": {
+    "gp": 6.0,
+    "min": 17.5,
+    "pts": 7.3333335,
+    "reb": 5.6666665,
+    "ast": 2.3333333,
+    "this_season": true
    }
   },
   {
@@ -144,23 +178,6 @@
     "pts": 2.0,
     "reb": 2.0,
     "ast": 2.0,
-    "this_season": true
-   }
-  },
-  {
-   "team": "Cleveland Cavaliers",
-   "id": "5041951",
-   "name": "Meleek Thomas",
-   "status": "Day-To-Day",
-   "comment": "Thomas (foot) has been upgraded to probable ahead of Saturday's meeting in Milwaukee.",
-   "return": "2026-10-31",
-   "fantasy": "GTD",
-   "stats": {
-    "gp": 2.0,
-    "min": 20.0,
-    "pts": 13.0,
-    "reb": 3.0,
-    "ast": 0.5,
     "this_season": true
    }
   },
@@ -706,7 +723,7 @@
    "id": "4433137",
    "name": "Ziaire Williams",
    "status": "Day-To-Day",
-   "comment": "Williams has been ruled out for Friday's game against the Warriors due to left foot injury management, Mark Medina of TheSportingTribune.com reports.",
+   "comment": "Williams (foot) is questionable for Sunday's game against the Raptors, Law Murray of The Athletic reports.",
    "return": "2026-11-01",
    "fantasy": "GTD",
    "stats": {
@@ -1090,23 +1107,6 @@
   },
   {
    "team": "San Antonio Spurs",
-   "id": "4845367",
-   "name": "Stephon Castle",
-   "status": "Day-To-Day",
-   "comment": "Castle (migraine) is questionable for Saturday's game against the Timberwolves, Paul Garcia of ProjectSpurs.com reports.",
-   "return": "2026-10-31",
-   "fantasy": "GTD",
-   "stats": {
-    "gp": 5.0,
-    "min": 31.0,
-    "pts": 17.4,
-    "reb": 5.8,
-    "ast": 5.4,
-    "this_season": true
-   }
-  },
-  {
-   "team": "San Antonio Spurs",
    "id": "6440",
    "name": "Tobias Harris",
    "status": "Out",
@@ -1360,10 +1360,10 @@
    "team": "Memphis Grizzlies",
    "id": "4065733",
    "name": "Ty Jerome",
-   "status": "Day-To-Day",
-   "comment": "Jerome (back) is listed as questionable for Saturday's game against the Kings.",
-   "return": "2026-10-31",
-   "fantasy": "GTD",
+   "status": "Out",
+   "comment": "Jerome (back) won't play in Saturday's game versus Sacramento, Chris Herrington of The Daily Memphian.",
+   "return": "2026-11-02",
+   "fantasy": "OUT",
    "stats": {
     "gp": 5.0,
     "min": 29.8,
@@ -1377,10 +1377,10 @@
    "team": "Memphis Grizzlies",
    "id": "4431785",
    "name": "Scotty Pippen Jr.",
-   "status": "Day-To-Day",
-   "comment": "Pippen (back) is listed as questionable for Saturday's game against the Kings.",
-   "return": "2026-10-31",
-   "fantasy": "GTD",
+   "status": "Out",
+   "comment": "Pippen (back) has been ruled out for Saturday's game against the Kings, Chris Herrington of The Daily Memphian reports.",
+   "return": "2026-11-02",
+   "fantasy": "OUT",
    "stats": {
     "gp": 5.0,
     "min": 16.0,
@@ -1394,10 +1394,10 @@
    "team": "Memphis Grizzlies",
    "id": "4593016",
    "name": "Quinten Post",
-   "status": "Day-To-Day",
-   "comment": "Post (ankle) is doubtful for Friday's game against the Kings.",
-   "return": "2026-10-31",
-   "fantasy": "GTD",
+   "status": "Out",
+   "comment": "Post (ankle) has been ruled out for Saturday's game versus Sacramento, Chris Herrington of The Daily Memphian reports.",
+   "return": "2026-11-02",
+   "fantasy": "OUT",
    "stats": {
     "gp": 5.0,
     "min": 15.2,
