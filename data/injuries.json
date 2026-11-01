@@ -1,5 +1,5 @@
 {
- "as_of": "2026-11-01T00",
+ "as_of": "2026-11-01T12",
  "players": [
   {
    "team": "Atlanta Hawks",
@@ -83,10 +83,10 @@
    "team": "Boston Celtics",
    "id": "4351852",
    "name": "Mitchell Robinson",
-   "status": "Day-To-Day",
-   "comment": "Robinson (rest) is questionable for Sunday's game in Orlando, Jay King of The Athletic reports.",
-   "return": "2026-11-01",
-   "fantasy": "GTD",
+   "status": "Out",
+   "comment": "Robinson (rest) has been ruled out for Sunday's game against the Magic.",
+   "return": "2026-11-02",
+   "fantasy": "OUT",
    "stats": {
     "gp": 5.0,
     "min": 20.0,
@@ -152,7 +152,7 @@
    "id": "4278067",
    "name": "Nic Claxton",
    "status": "Out",
-   "comment": "Claxton (hamstring) participated in individual drills Monday morning and hopes to join the team for practice next week, Joe Cowley of the Chicago Sun-Times reports.",
+   "comment": "Claxton (hamstring) was a full participant in Sunday's practice, K.C. Johnson of Chicago Sports Network.",
    "return": "2026-11-04",
    "fantasy": "OUT",
    "stats": {
@@ -452,7 +452,7 @@
    "name": "Steven Adams",
    "status": "Out",
    "comment": "Head coach Ime Udoka said Monday that Adams could be out \"a week or two\" due to his right soleus strain, Lachard Binkley of SI.com reports.",
-   "return": "2026-11-02",
+   "return": "2026-11-09",
    "fantasy": "OUT",
    "stats": {
     "gp": 1.0,
@@ -536,7 +536,7 @@
    "id": "2530530",
    "name": "T.J. McConnell",
    "status": "Out",
-   "comment": "McConnell (hamstring) is practicing in the G League at Noblesville Boom training camp, per Alex Golden of SI.com.",
+   "comment": "Indiana recalled McConnell (hamstring) from the G League's Noblesville Boom on Saturday.",
    "return": "2026-11-02",
    "fantasy": "OUT",
    "stats": {
@@ -635,23 +635,6 @@
   },
   {
    "team": "LA Clippers",
-   "id": "3913176",
-   "name": "Brandon Ingram",
-   "status": "Out",
-   "comment": "Ingram (Achilles) is making progress but is set to miss at least one more week, Ohm Youngmisuk of ESPN.com reports.",
-   "return": "2026-11-08",
-   "fantasy": "OUT",
-   "stats": {
-    "gp": 77.0,
-    "min": 33.81818,
-    "pts": 21.493507,
-    "reb": 5.5844154,
-    "ast": 3.6883116,
-    "this_season": false
-   }
-  },
-  {
-   "team": "LA Clippers",
    "id": "4396818",
    "name": "Jordan Miller",
    "status": "Out",
@@ -664,23 +647,6 @@
     "pts": 9.966666,
     "reb": 3.0333333,
     "ast": 2.2666667,
-    "this_season": false
-   }
-  },
-  {
-   "team": "LA Clippers",
-   "id": "5108024",
-   "name": "Yanic Konan Niederhauser",
-   "status": "Out",
-   "comment": "Niederhauser (foot) had his third-year team option picked up Thursday by the Clippers, Ohm Youngmisuk of ESPN.com reports.",
-   "return": "2026-11-08",
-   "fantasy": "OUT",
-   "stats": {
-    "gp": 41.0,
-    "min": 10.341463,
-    "pts": 4.292683,
-    "reb": 2.8536584,
-    "ast": 0.29268292,
     "this_season": false
    }
   },
@@ -706,9 +672,9 @@
    "id": "5060631",
    "name": "Adou Thiero",
    "status": "Out",
-   "comment": "Thiero (knee) has been ruled out for Friday's game against the Warriors.",
-   "return": "2026-11-01",
-   "fantasy": "GTD",
+   "comment": "Thiero (knee) has been ruled out for Sunday's game against the Raptors.",
+   "return": "2026-11-09",
+   "fantasy": "OUT",
    "stats": {
     "gp": 25.0,
     "min": 5.96,
@@ -1302,7 +1268,7 @@
    "status": "Out",
    "comment": "The Wizards announced Thursday that Vukcevic (hip) will be re-evaluated in four weeks.",
    "return": "2026-11-02",
-   "fantasy": "OUT",
+   "fantasy": "GTD",
    "stats": {
     "gp": 49.0,
     "min": 13.693877,
@@ -1414,7 +1380,7 @@
    "status": "Out",
    "comment": "Boswell (knee) is out for Wednesday's season opener against the Nets.",
    "return": "2026-11-02",
-   "fantasy": "OUT",
+   "fantasy": "GTD",
    "stats": null
   },
   {
@@ -1424,7 +1390,7 @@
    "status": "Out",
    "comment": "Knueppel (hamstring) was recalled from the G League's Greensboro Swarm on Friday. He remains out for Friday's contest against the Wizards.",
    "return": "2026-11-02",
-   "fantasy": "OUT",
+   "fantasy": "GTD",
    "stats": {
     "gp": 81.0,
     "min": 31.493828,
@@ -1441,7 +1407,7 @@
    "status": "Out",
    "comment": "Head coach Charles Lee said Monday that White (calf) remains without a timeline for a return, though Lee added that he'll have a better idea of where things stand following the Hornets' two-game road trip, Rod Boone of The Charlotte Observer reports.",
    "return": "2026-11-02",
-   "fantasy": "OUT",
+   "fantasy": "GTD",
    "stats": {
     "gp": 50.0,
     "min": 25.0,
@@ -1458,7 +1424,7 @@
    "status": "Out",
    "comment": "Williams (hamstring) will be re-evaluated following Charlotte's upcoming two-game road trip, Rod Boone reports.",
    "return": "2026-11-02",
-   "fantasy": "OUT",
+   "fantasy": "GTD",
    "stats": {
     "gp": 36.0,
     "min": 19.75,
