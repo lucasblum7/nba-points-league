@@ -666,11 +666,43 @@
   "home_score": 104
  },
  {
+  "id": "401909902",
+  "date": "2026-10-31",
+  "away": "Oklahoma City Thunder",
+  "home": "Houston Rockets",
+  "away_score": 98,
+  "home_score": 119
+ },
+ {
+  "id": "401909899",
+  "date": "2026-10-31",
+  "away": "Sacramento Kings",
+  "home": "Memphis Grizzlies",
+  "away_score": 105,
+  "home_score": 136
+ },
+ {
+  "id": "401909900",
+  "date": "2026-10-31",
+  "away": "Cleveland Cavaliers",
+  "home": "Milwaukee Bucks",
+  "away_score": 136,
+  "home_score": 111
+ },
+ {
   "id": "401909898",
   "date": "2026-10-31",
   "away": "Atlanta Hawks",
   "home": "New Orleans Pelicans",
   "away_score": 99,
+  "home_score": 121
+ },
+ {
+  "id": "401909901",
+  "date": "2026-10-31",
+  "away": "Minnesota Timberwolves",
+  "home": "San Antonio Spurs",
+  "away_score": 111,
   "home_score": 121
  },
  {
