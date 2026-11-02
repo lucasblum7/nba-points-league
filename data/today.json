@@ -27,22 +27,22 @@
    "id": "401909905",
    "time": "5:30 PM",
    "state": "in",
-   "detail": "Halftime",
+   "detail": "33.3 - 4th",
    "away": "LA Clippers",
    "home": "Golden State Warriors",
-   "away_score": 57,
-   "home_score": 63,
+   "away_score": 112,
+   "home_score": 124,
    "cup": false
   },
   {
    "id": "401909906",
    "time": "6:00 PM",
    "state": "in",
-   "detail": "9:19 - 2nd",
+   "detail": "11:25 - 4th",
    "away": "Toronto Raptors",
    "home": "Los Angeles Lakers",
-   "away_score": 28,
-   "home_score": 38,
+   "away_score": 86,
+   "home_score": 104,
    "cup": false
   }
  ]
