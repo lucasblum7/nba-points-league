@@ -1105,3 +1105,8 @@ html, body, button, a, [role="button"] { touch-action: manipulation; }
 #leaderboard tr.p1 td { background: color-mix(in srgb, var(--gold) 16%, transparent) !important; }
 #leaderboard tr.p2 td { background: color-mix(in srgb, var(--silver) 18%, transparent) !important; }
 #leaderboard tr.p3 td { background: color-mix(in srgb, var(--bronze) 15%, transparent) !important; }
+/* every matchup uses the big card; only yours gets the orange outline */
+.muh.other { box-shadow: 0 0 0 .5px var(--line), 0 6px 18px rgba(0,0,0,.06); margin: 0 0 10px; }
+.mw-row:has(.muh) { display: grid; grid-template-columns: 1fr; gap: 0; }
+@media (min-width: 900px) { .mw-row:has(.muh) { grid-template-columns: 1fr 1fr; gap: 12px; } .mw-row .muh.other { margin: 0; } }
+.muh.other .muh-kicker { color: var(--muted); }

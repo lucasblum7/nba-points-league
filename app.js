@@ -704,13 +704,14 @@
 
   // the signed-in owner's matchup as a big personal card
   function muHero(m, me, C, slate) {
-    const you = m.A.owner === me ? m.A : m.B, opp = m.A.owner === me ? m.B : m.A, up = m.status === 'upcoming';
-    const card = mk('button', 'muh ' + m.status); card.type = 'button';
+    const own = m.A.owner === me || m.B.owner === me;   // your matchup, or one around the league
+    const you = m.B.owner === me ? m.B : m.A, opp = you === m.A ? m.B : m.A, up = m.status === 'upcoming';
+    const card = mk('button', 'muh ' + m.status + (own ? ' mine' : ' other')); card.type = 'button';
     card.style.setProperty('--you', ownerVar(you.owner)); card.style.setProperty('--opp', ownerVar(opp.owner));
-    card.setAttribute('aria-label', `Your week ${m.week} matchup vs ${opp.owner}. Show details`);
+    card.setAttribute('aria-label', own ? `Your week ${m.week} matchup vs ${opp.owner}. Show the full week` : `Week ${m.week}: ${you.owner} vs ${opp.owner}. Show the full week`);
     card.addEventListener('click', () => showWeek(m, me, C, slate));
     const top = mk('div', 'muh-top');
-    top.append(mk('span', 'muh-kicker', 'Your matchup'));
+    top.append(mk('span', 'muh-kicker', own ? 'Your matchup' : 'Matchup'));
     const ga = ownerWeekGames(you.owner, m, C, slate), gb = ownerWeekGames(opp.owner, m, C, slate);
     const liveNow = ga.concat(gb).some((g) => g.state === 'live');
     top.append(mk('span', 'muh-status' + (liveNow ? ' live' : ''), liveNow ? '● Live now' : m.status === 'live' ? 'In progress' : m.status === 'final' ? 'Final' : 'Starts ' + dayName(m.start, { weekday: 'short', month: 'short', day: 'numeric' })));
@@ -718,7 +719,8 @@
     const side = (sd, gl, right) => {
       const d = mk('div', 'muh-side' + (right ? ' r' : '') + (m.winner === sd.owner ? ' lead' : ''));
       const av = mk('span', 'muh-av', sd.owner.slice(0, 1).toUpperCase()); av.style.background = ownerVar(sd.owner);
-      const nm = mk('div', 'muh-nm'); nm.append(mk('b', null, sd === you ? 'You' : sd.owner), mk('span', null, sd === you ? sd.owner : 'Opponent'));
+      const nm = mk('div', 'muh-nm'); if (own) nm.append(mk('b', null, sd === you ? 'You' : sd.owner), mk('span', null, sd === you ? sd.owner : 'Opponent'));
+      else nm.append(mk('b', null, sd.owner));
       const head = mk('div', 'muh-head'); head.append(av, nm); d.append(head);
       d.append(mk('div', 'muh-net', up ? '–' : signedN(sd.net)));
       const left = gl.filter((g) => g.state !== 'final').length;
@@ -731,17 +733,19 @@
     const pos = up ? 50 : Math.max(8, Math.min(92, 50 + diff * 7));
     const bar = mk('div', 'muh-bar'); const a = mk('i', 'y'), b = mk('i', 'o'); a.style.width = pos + '%'; b.style.width = (100 - pos) + '%'; bar.append(a, b); card.append(bar);
     const gap = Math.abs(you.net - opp.net);
+    const lead = m.winner, other = lead === you.owner ? opp.owner : you.owner;
     const verdict = up ? `Week ${m.week} starts ${dayName(m.start, { weekday: 'long' })}`
+      : !own ? (lead ? (m.status === 'final' ? `${lead} beat ${other} by ${gap || 'the tiebreak'}` : gap ? `${lead} leads by ${gap}` : `${lead} leads on total wins`) : (m.status === 'final' ? 'It ended in a tie' : 'All square'))
       : m.winner === me ? (m.status === 'final' ? `You won by ${gap || 'the tiebreak'}` : gap ? `You lead by ${gap}` : 'You lead on total wins')
       : m.winner ? (m.status === 'final' ? `You lost by ${gap || 'the tiebreak'}` : gap ? `You trail by ${gap}` : 'You trail on total wins')
       : (m.status === 'final' ? 'It ended in a tie' : 'All square');
-    card.append(mk('div', 'muh-verdict' + (m.winner === me ? ' up' : m.winner ? ' down' : ''), verdict));
+    card.append(mk('div', 'muh-verdict' + (!own ? '' : m.winner === me ? ' up' : m.winner ? ' down' : ''), verdict));
     // the week's games live in their own pop-up; the card just shows a summary button
     if (m.status !== 'final' || ga.length || gb.length) {
       const la = ga.filter((g) => g.state !== 'final').length, lb = gb.filter((g) => g.state !== 'final').length;
       const cupN = ga.concat(gb).filter((g) => g.cup && g.state !== 'final').length;
       const wk = mk('span', 'muh-week'); wk.setAttribute('role', 'button'); wk.tabIndex = 0;
-      wk.append(mk('b', null, '📅 Full week'), mk('span', null, m.status === 'final' ? 'Every game, day by day' : (la === lb ? `${la} games left each` : `You ${la} · ${opp.owner} ${lb} left`) + (cupN ? ` · 🏆 ${cupN}` : '')), mk('span', 'muh-chev', '›'));
+      wk.append(mk('b', null, '📅 Full week'), mk('span', null, m.status === 'final' ? 'Every game, day by day' : (la === lb ? `${la} games left each` : `${own ? 'You' : you.owner} ${la} · ${opp.owner} ${lb} left`) + (cupN ? ` · 🏆 ${cupN}` : '')), mk('span', 'muh-chev', '›'));
       const open = (e) => { e.stopPropagation(); showWeek(m, me, C, slate); };
       wk.addEventListener('click', open); wk.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(e); } });
       card.append(wk);
@@ -753,10 +757,11 @@
   // full week, day by day: your teams | day | their teams, with results for days already played
   function showWeek(m, me, C, slate) {
     closeBonus();
-    const you = m.A.owner === me ? m.A : m.B, opp = m.A.owner === me ? m.B : m.A, up = m.status === 'upcoming';
+    const own = m.A.owner === me || m.B.owner === me;
+    const you = m.B.owner === me ? m.B : m.A, opp = you === m.A ? m.B : m.A, up = m.status === 'upcoming';
     const ga = ownerWeekGames(you.owner, m, C, slate), gb = ownerWeekGames(opp.owner, m, C, slate), today = pacificToday();
     const ov = mk('div', 'bp-overlay'); ov.id = 'bonus-pop';
-    const box = mk('div', 'bp-box wk-box'); box.setAttribute('role', 'dialog'); box.setAttribute('aria-modal', 'true'); box.setAttribute('aria-label', `Week ${m.week}: you vs ${opp.owner}, day by day`);
+    const box = mk('div', 'bp-box wk-box'); box.setAttribute('role', 'dialog'); box.setAttribute('aria-modal', 'true'); box.setAttribute('aria-label', `Week ${m.week}: ${own ? 'you' : you.owner} vs ${opp.owner}, day by day`);
     box.style.setProperty('--you', ownerVar(you.owner)); box.style.setProperty('--opp', ownerVar(opp.owner));
     const head = mk('div', 'wk-head');
     const ttl = mk('div', 'wk-title'); ttl.append(mk('b', null, `Week ${m.week}`), mk('span', null, `${dayName(m.start, { month: 'short', day: 'numeric' })} – ${dayName(m.end, { month: 'short', day: 'numeric' })}`));
@@ -764,7 +769,7 @@
     head.append(ttl, x); box.append(head);
     // score strip
     const sc = mk('div', 'wk-score');
-    const sd = (o, right) => { const d = mk('div', 'wk-side' + (right ? ' r' : '') + (m.winner === o.owner ? ' lead' : '')); const n = mk('span', 'wk-n'); n.append(odot(o.owner), o === you ? 'You' : o.owner); d.append(n, mk('b', null, up ? '–' : signedN(o.net)), mk('span', 'wk-rec', `${o.w}–${o.l}`)); return d; };
+    const sd = (o, right) => { const d = mk('div', 'wk-side' + (right ? ' r' : '') + (m.winner === o.owner ? ' lead' : '')); const n = mk('span', 'wk-n'); n.append(odot(o.owner), o === you && own ? 'You' : o.owner); d.append(n, mk('b', null, up ? '–' : signedN(o.net)), mk('span', 'wk-rec', `${o.w}–${o.l}`)); return d; };
     sc.append(sd(you, false), mk('span', 'wk-vs', 'vs'), sd(opp, true)); box.append(sc);
     // one row per day, Monday to Sunday
     const list = mk('div', 'wk-days');
@@ -799,7 +804,7 @@
       list.append(row);
     }
     box.append(list);
-    box.append(mk('p', 'players-foot', 'W / L show results · numbers under each day are that day’s net (you · ' + opp.owner + ')'));
+    box.append(mk('p', 'players-foot', 'W / L show results · numbers under each day are that day’s net (' + (own ? 'you' : you.owner) + ' · ' + opp.owner + ')'));
     ov.append(box); ov.addEventListener('click', (e) => { if (e.target === ov) closeBonus(); });
     document.body.append(ov); document.addEventListener('keydown', bonusKey); x.focus();
   }
@@ -837,35 +842,7 @@
       if (mine) box.append(mk('h4', 'muh-around', 'Around the league'));
       // scoreboard cards
       const row = mk('div', 'mw-row');
-      cur.filter((m) => m !== mine).forEach((m) => {
-        const isMe = m.A.owner === me || m.B.owner === me;
-        const card = mk('button', 'mw-card ' + m.status + (isMe ? ' is-me' : '')); card.type = 'button';
-        card.setAttribute('aria-label', `Week ${m.week}: ${m.A.owner} vs ${m.B.owner}. Show details`);
-        card.addEventListener('click', () => showMatchup(m, C, slate));
-        const sideEl = (sd, right) => {
-          const gl = ownerWeekGames(sd.owner, m, C, slate), left = gl.filter((g) => g.state !== 'final').length, live = gl.filter((g) => g.state === 'live').length;
-          const el = mk('div', 'mw-side' + (right ? ' r' : '') + (m.winner === sd.owner ? ' lead' : m.winner ? ' trail' : ''));
-          const nmEl = mk('span', 'mw-name'); nmEl.append(odot(sd.owner), sd.owner); el.append(nmEl);
-          const sub = mk('span', 'mw-sub2'); sub.append(mk('span', 'mw-rec', `${sd.w}–${sd.l}`));
-          if (m.status !== 'final') sub.append(mk('span', 'mw-left' + (live ? ' live' : ''), live ? ` · ● ${live} live` : ` · ${left} left`));
-          el.append(sub); return el;
-        };
-        const score = mk('div', 'mw-score');
-        score.append(mk('span', 'mw-net' + (m.A.net > m.B.net ? ' hi' : ''), m.status === 'upcoming' ? '–' : signedN(m.A.net)), mk('span', 'mw-vs', 'vs'), mk('span', 'mw-net' + (m.B.net > m.A.net ? ' hi' : ''), m.status === 'upcoming' ? '–' : signedN(m.B.net)));
-        const top = mk('div', 'mw-top'); top.append(sideEl(m.A, false), score, sideEl(m.B, true));
-        // tug-of-war bar: tips toward whoever leads
-        const diff = (m.A.net - m.B.net) + (m.A.net === m.B.net ? (m.A.w - m.B.w) * 0.25 : 0);
-        const pos = Math.max(8, Math.min(92, 50 + diff * 7));
-        const bar = mk('div', 'mw-bar'); const fillA = mk('i', 'a'); fillA.style.width = pos + '%'; const fillB = mk('i', 'b'); fillB.style.width = (100 - pos) + '%';
-        if (m.winner === m.B.owner) { fillA.className = 'b'; fillB.className = 'a'; }
-        if (m.winner) (m.winner === m.B.owner ? fillB : fillA).style.background = ownerVar(m.winner);   // the leader's bar wears their color
-        if (m.status === 'upcoming') bar.classList.add('idle');
-        bar.append(fillA, fillB);
-        const foot = m.status === 'upcoming' ? 'Starts ' + dayName(m.start, { weekday: 'short', month: 'short', day: 'numeric' })
-          : !m.winner ? (m.status === 'final' ? 'Tie' : 'Even so far') : m.status === 'final' ? m.winner + ' wins' : m.winner + ' leads';
-        const ft = mk('div', 'mw-foot'); ft.append(mk('span', null, foot), mk('span', 'mw-more', 'Details ›'));
-        card.append(top, bar, ft); row.append(card);
-      });
+      cur.filter((m) => m !== mine).forEach((m) => { row.append(muHero(m, me, C, slate)); });
       box.append(row);
     }
 
