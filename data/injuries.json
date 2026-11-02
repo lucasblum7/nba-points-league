@@ -1,6 +1,23 @@
 {
- "as_of": "2026-11-01T15",
+ "as_of": "2026-11-01T18",
  "players": [
+  {
+   "team": "Atlanta Hawks",
+   "id": "5149077",
+   "name": "Kingston Flemings",
+   "status": "Suspension",
+   "comment": "Flemings (suspension) won't play in Monday's game against Indiana, Andrew Schlecht of The Athletic reports.",
+   "return": "2026-11-04",
+   "fantasy": "OUT",
+   "stats": {
+    "gp": 7.0,
+    "min": 20.285715,
+    "pts": 7.142857,
+    "reb": 2.857143,
+    "ast": 4.714286,
+    "this_season": true
+   }
+  },
   {
    "team": "Atlanta Hawks",
    "id": "4712863",
@@ -332,7 +349,7 @@
    "id": "4065813",
    "name": "Alpha Diallo",
    "status": "Out",
-   "comment": "Diallo (personal/wrist) has been ruled out for Friday's game against Phoenix, Vic Lombardi of Altitude Sports reports.",
+   "comment": "Diallo (wrist) is listed as questionable for Monday's game versus Portland.",
    "return": "2026-11-02",
    "fantasy": "GTD",
    "stats": {
@@ -349,9 +366,9 @@
    "id": "4592427",
    "name": "Spencer Jones",
    "status": "Out",
-   "comment": "Jones (hamstring) has been ruled out for Wednesday's game against New Orleans.",
-   "return": "2026-11-02",
-   "fantasy": "GTD",
+   "comment": "Jones (hamstring) is listed as out for Monday's game against the Trail Blazers.",
+   "return": "2026-11-04",
+   "fantasy": "OUT",
    "stats": {
     "gp": 64.0,
     "min": 22.140625,
@@ -498,23 +515,6 @@
    }
   },
   {
-   "team": "Golden State Warriors",
-   "id": "4997536",
-   "name": "Gui Santos",
-   "status": "Day-To-Day",
-   "comment": "Santos (knee) is probable for Sunday's game against the Clippers.",
-   "return": "2026-11-01",
-   "fantasy": "GTD",
-   "stats": {
-    "gp": 5.0,
-    "min": 22.4,
-    "pts": 7.8,
-    "reb": 4.2,
-    "ast": 1.4,
-    "this_season": true
-   }
-  },
-  {
    "team": "Houston Rockets",
    "id": "2991235",
    "name": "Steven Adams",
@@ -606,7 +606,7 @@
    "status": "Out",
    "comment": "Indiana recalled McConnell (hamstring) from the G League's Noblesville Boom on Saturday.",
    "return": "2026-11-02",
-   "fantasy": "OUT",
+   "fantasy": "GTD",
    "stats": {
     "gp": 56.0,
     "min": 17.196428,
@@ -637,10 +637,10 @@
    "team": "Indiana Pacers",
    "id": "4278355",
    "name": "Obi Toppin",
-   "status": "Out",
+   "status": "Day-To-Day",
    "comment": "Toppin (back) is out for Sunday's game against the Nets, Alex Golden of SI.com reports.",
    "return": "2026-11-02",
-   "fantasy": "OUT",
+   "fantasy": "GTD",
    "stats": {
     "gp": 5.0,
     "min": 22.8,
@@ -740,7 +740,7 @@
    "id": "4065778",
    "name": "Max Strus",
    "status": "Out",
-   "comment": "Los Angeles assigned Strus (foot) to the G League's San Diego Clippers on Friday.",
+   "comment": "Strus (foot) practiced and participated in 5-on-5 with the San Diego Clippers on Saturday, Los Angeles Clippers sideline reporter/host Ohm Youngmisuk reports.",
    "return": "2026-11-08",
    "fantasy": "OUT",
    "stats": {
@@ -783,6 +783,23 @@
     "pts": 11.25,
     "reb": 3.0,
     "ast": 2.25,
+    "this_season": true
+   }
+  },
+  {
+   "team": "Miami Heat",
+   "id": "2528210",
+   "name": "Tim Hardaway Jr.",
+   "status": "Day-To-Day",
+   "comment": "Hardaway (personal) is listed as questionable for Monday's game against the Lakers.",
+   "return": "2026-11-02",
+   "fantasy": "GTD",
+   "stats": {
+    "gp": 6.0,
+    "min": 18.166666,
+    "pts": 6.1666665,
+    "reb": 2.1666667,
+    "ast": 0.8333333,
     "this_season": true
    }
   },
@@ -834,10 +851,10 @@
    "team": "Brooklyn Nets",
    "id": "5101761",
    "name": "Mikel Brown Jr.",
-   "status": "Out",
+   "status": "Day-To-Day",
    "comment": "Brown (rest) is out for Sunday's game in Indiana.",
    "return": "2026-11-02",
-   "fantasy": "OUT",
+   "fantasy": "GTD",
    "stats": {
     "gp": 4.0,
     "min": 22.5,
@@ -1205,7 +1222,7 @@
    "id": "5061603",
    "name": "Thomas Sorber",
    "status": "Out",
-   "comment": "Sorber (knee) has been ruled out for Wednesday's game against the Mavericks.",
+   "comment": "Oklahoma City exercised the third-year team option on Sorber (knee) on Sunday, Clemente Almanza of USA Today reports.",
    "return": "2026-11-04",
    "fantasy": "OUT",
    "stats": null
@@ -1421,6 +1438,23 @@
     "pts": 19.5,
     "reb": 7.5,
     "ast": 1.5,
+    "this_season": true
+   }
+  },
+  {
+   "team": "Toronto Raptors",
+   "id": "3134908",
+   "name": "Jakob Poeltl",
+   "status": "Out",
+   "comment": "Poeltl (shoulder) won't play in Sunday's game against the Lakers, Vivek Jacob of the Raptors' official site reports.",
+   "return": "2026-11-02",
+   "fantasy": "OUT",
+   "stats": {
+    "gp": 5.0,
+    "min": 20.2,
+    "pts": 4.6,
+    "reb": 5.8,
+    "ast": 1.0,
     "this_season": true
    }
   },
