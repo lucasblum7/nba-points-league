@@ -1,5 +1,5 @@
 {
- "as_of": "2026-11-01T18",
+ "as_of": "2026-11-02T03",
  "players": [
   {
    "team": "Atlanta Hawks",
@@ -515,6 +515,23 @@
    }
   },
   {
+   "team": "Golden State Warriors",
+   "id": "4997536",
+   "name": "Gui Santos",
+   "status": "Day-To-Day",
+   "comment": "Santos did not play in the second half of Sunday's 124-112 win over the Clippers due to a knee injury and will not play against the Suns on Monday, Danny Emerman of SFStandard.com reports.",
+   "return": "2026-11-05",
+   "fantasy": "GTD",
+   "stats": {
+    "gp": 6.0,
+    "min": 20.166666,
+    "pts": 7.1666665,
+    "reb": 4.0,
+    "ast": 1.3333334,
+    "this_season": true
+   }
+  },
+  {
    "team": "Houston Rockets",
    "id": "2991235",
    "name": "Steven Adams",
@@ -689,7 +706,7 @@
    "id": "3913176",
    "name": "Brandon Ingram",
    "status": "Out",
-   "comment": "Ingram (Achilles) is making progress but is set to miss at least one more week, Ohm Youngmisuk of ESPN.com reports.",
+   "comment": "Los Angeles assigned Ingram (Achilles) to the G League's San Diego Clippers on Saturday.",
    "return": "2026-11-08",
    "fantasy": "OUT",
    "stats": {
@@ -699,6 +716,23 @@
     "reb": 5.5844154,
     "ast": 3.6883116,
     "this_season": false
+   }
+  },
+  {
+   "team": "LA Clippers",
+   "id": "3936099",
+   "name": "Derrick Jones Jr.",
+   "status": "Day-To-Day",
+   "comment": "Jones (right knee) has been ruled out for the rest of Sunday's game against the Clippers, Ohm Youngmisuk of ESPN.com reports.",
+   "return": "2026-11-02",
+   "fantasy": "GTD",
+   "stats": {
+    "gp": 6.0,
+    "min": 28.666666,
+    "pts": 11.5,
+    "reb": 4.8333335,
+    "ast": 1.5,
+    "this_season": true
    }
   },
   {
@@ -1445,10 +1479,10 @@
    "team": "Toronto Raptors",
    "id": "3134908",
    "name": "Jakob Poeltl",
-   "status": "Out",
+   "status": "Day-To-Day",
    "comment": "Poeltl (shoulder) won't play in Sunday's game against the Lakers, Vivek Jacob of the Raptors' official site reports.",
    "return": "2026-11-02",
-   "fantasy": "OUT",
+   "fantasy": "GTD",
    "stats": {
     "gp": 5.0,
     "min": 20.2,

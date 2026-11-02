@@ -1,127 +1,125 @@
 {
- "as_of": "2026-11-01",
+ "as_of": "2026-11-02",
  "games": [
-  {
-   "date": "2026-11-01",
-   "time": "5:30 PM",
-   "away": "LA Clippers",
-   "home": "Golden State Warriors",
-   "away_ml": 110,
-   "home_ml": -130
-  },
-  {
-   "date": "2026-11-01",
-   "time": "2:00 PM",
-   "away": "Brooklyn Nets",
-   "home": "Indiana Pacers",
-   "away_ml": 142,
-   "home_ml": -170
-  },
-  {
-   "date": "2026-11-01",
-   "time": "6:00 PM",
-   "away": "Toronto Raptors",
-   "home": "Los Angeles Lakers",
-   "away_ml": 124,
-   "home_ml": -148
-  },
-  {
-   "date": "2026-11-01",
-   "time": "12:30 PM",
-   "away": "Boston Celtics",
-   "home": "Orlando Magic",
-   "away_ml": -298,
-   "home_ml": 240
-  },
   {
    "date": "2026-11-02",
    "time": "4:30 PM",
    "away": "Detroit Pistons",
-   "home": "Charlotte Hornets"
+   "home": "Charlotte Hornets",
+   "away_ml": -175,
+   "home_ml": 145
   },
   {
    "date": "2026-11-02",
    "time": "4:00 PM",
    "away": "Oklahoma City Thunder",
-   "home": "Cleveland Cavaliers"
+   "home": "Cleveland Cavaliers",
+   "away_ml": 150,
+   "home_ml": -180
   },
   {
    "date": "2026-11-02",
    "time": "5:00 PM",
    "away": "Sacramento Kings",
-   "home": "Dallas Mavericks"
+   "home": "Dallas Mavericks",
+   "away_ml": 310,
+   "home_ml": -395
   },
   {
    "date": "2026-11-02",
    "time": "6:00 PM",
    "away": "Portland Trail Blazers",
-   "home": "Denver Nuggets"
+   "home": "Denver Nuggets",
+   "away_ml": 145,
+   "home_ml": -175
   },
   {
    "date": "2026-11-02",
    "time": "7:00 PM",
    "away": "Phoenix Suns",
-   "home": "Golden State Warriors"
+   "home": "Golden State Warriors",
+   "away_ml": 150,
+   "home_ml": -180
   },
   {
    "date": "2026-11-02",
    "time": "5:30 PM",
    "away": "Boston Celtics",
-   "home": "Houston Rockets"
+   "home": "Houston Rockets",
+   "away_ml": 164,
+   "home_ml": -198
   },
   {
    "date": "2026-11-02",
    "time": "4:30 PM",
    "away": "Atlanta Hawks",
-   "home": "Indiana Pacers"
+   "home": "Indiana Pacers",
+   "away_ml": -198,
+   "home_ml": 164
   },
   {
    "date": "2026-11-02",
    "time": "7:00 PM",
    "away": "Toronto Raptors",
-   "home": "LA Clippers"
+   "home": "LA Clippers",
+   "away_ml": -205,
+   "home_ml": 170
   },
   {
    "date": "2026-11-02",
    "time": "7:00 PM",
    "away": "Miami Heat",
-   "home": "Los Angeles Lakers"
+   "home": "Los Angeles Lakers",
+   "away_ml": 114,
+   "home_ml": -135
   },
   {
    "date": "2026-11-02",
    "time": "5:00 PM",
    "away": "New Orleans Pelicans",
-   "home": "Memphis Grizzlies"
+   "home": "Memphis Grizzlies",
+   "away_ml": 180,
+   "home_ml": -218
   },
   {
    "date": "2026-11-02",
    "time": "5:00 PM",
    "away": "Milwaukee Bucks",
-   "home": "Minnesota Timberwolves"
+   "home": "Minnesota Timberwolves",
+   "away_ml": 350,
+   "home_ml": -455
   },
   {
    "date": "2026-11-02",
    "time": "4:30 PM",
    "away": "Brooklyn Nets",
-   "home": "New York Knicks"
+   "home": "New York Knicks",
+   "away_ml": 600,
+   "home_ml": -900
   },
   {
    "date": "2026-11-02",
    "time": "4:30 PM",
    "away": "Washington Wizards",
-   "home": "Orlando Magic"
+   "home": "Orlando Magic",
+   "away_ml": 110,
+   "home_ml": -130
   },
   {
    "date": "2026-11-02",
    "time": "4:30 PM",
    "away": "Chicago Bulls",
-   "home": "Philadelphia 76ers"
+   "home": "Philadelphia 76ers",
+   "away_ml": 425,
+   "home_ml": -575
   },
   {
    "date": "2026-11-02",
    "time": "5:30 PM",
    "away": "Utah Jazz",
-   "home": "San Antonio Spurs"
+   "home": "San Antonio Spurs",
+   "away_ml": 750,
+   "home_ml": -1200
   },
   {
    "date": "2026-11-04",
@@ -679,6 +677,54 @@
    "date": "2026-11-15",
    "time": "4:00 PM",
    "away": "Houston Rockets",
+   "home": "Washington Wizards"
+  },
+  {
+   "date": "2026-11-16",
+   "time": "4:00 PM",
+   "away": "Orlando Magic",
+   "home": "Boston Celtics"
+  },
+  {
+   "date": "2026-11-16",
+   "time": "4:30 PM",
+   "away": "Philadelphia 76ers",
+   "home": "Brooklyn Nets"
+  },
+  {
+   "date": "2026-11-16",
+   "time": "4:00 PM",
+   "away": "Chicago Bulls",
+   "home": "Cleveland Cavaliers"
+  },
+  {
+   "date": "2026-11-16",
+   "time": "6:00 PM",
+   "away": "Phoenix Suns",
+   "home": "Denver Nuggets"
+  },
+  {
+   "date": "2026-11-16",
+   "time": "4:30 PM",
+   "away": "Houston Rockets",
+   "home": "Miami Heat"
+  },
+  {
+   "date": "2026-11-16",
+   "time": "5:00 PM",
+   "away": "Portland Trail Blazers",
+   "home": "Minnesota Timberwolves"
+  },
+  {
+   "date": "2026-11-16",
+   "time": "5:00 PM",
+   "away": "Golden State Warriors",
+   "home": "New Orleans Pelicans"
+  },
+  {
+   "date": "2026-11-16",
+   "time": "4:00 PM",
+   "away": "Memphis Grizzlies",
    "home": "Washington Wizards"
   }
  ]
