@@ -1,0 +1,31 @@
+/* ===== ARENA theme — condensed sports type, navy + orange ===== */
+@font-face { font-family: "Barlow Condensed"; src: url("fonts/BarlowCondensed-SemiBold.ttf") format("truetype"); font-weight: 600; font-display: swap; }
+@font-face { font-family: "Barlow Condensed"; src: url("fonts/BarlowCondensed-Bold.ttf") format("truetype"); font-weight: 700; font-display: swap; }
+@font-face { font-family: "Barlow Condensed"; src: url("fonts/BarlowCondensed-ExtraBold.ttf") format("truetype"); font-weight: 800; font-display: swap; }
+:root { --disp: "Barlow Condensed", "Arial Narrow", sans-serif; --bg: #eceff4; --panel: #ffffff; --fg: #0f172a; --muted: #64748b; --line: rgba(15,23,42,.12); --accent: #f26b1d; --navy: #0f172a; --navy2: #1e293b; }
+@media (prefers-color-scheme: dark) { :root { --bg: #070b16; --panel: #121a2c; --fg: #f1f5f9; --muted: #94a3b8; --line: rgba(148,163,184,.18); --fill: rgba(148,163,184,.14); --fill2: rgba(148,163,184,.24); --accent: #ff7a2e; --navy: #0b1222; --navy2: #17223a; } }
+/* display type everywhere numbers and names matter */
+.card > h2, h2.sec, #recap-card h2, .mu-grid .sub, .pl-main, .pl-mini-title span, .intro-t, .owner-head h2, .tc-title b, .tc-pts, .bp-title b,
+.me-who b, .me-tile b, .me-mu-net, .muh-net, .muh-nm b, .muh-verdict, .mw-net, .mw-mid b, .h2h-rec, .h2h-owner, .h2h-rank, #leaderboard td,
+.sb-name, .sb-pts, .sb-dow, .sb-md, .gc-name, .gc-score, .wk-title b, .wk-side b, .dp-title, .dp-month, .tile-name, .race-lab, .pm-seg b, .pm-nm,
+.teams td, .projline b, .owner-pts, .po-big b, .po-cell b, .bx-ltot, .bx-lp b, .wk-dl b, .muh-dl b, .tc-tile b, .tc-bname { font-family: var(--disp) !important; }
+.card > h2, h2.sec, #recap-card h2 { text-transform: uppercase !important; letter-spacing: .02em !important; font-size: 26px !important; font-weight: 800 !important; }
+.mu-grid .sub, .muh-kicker, .me-hi, .tc-h, .po-why-h, .muh-around { font-family: var(--disp) !important; text-transform: uppercase; letter-spacing: .06em; }
+#leaderboard td { font-size: 19px; font-weight: 700; } #leaderboard td.total { font-weight: 800; }
+.h2h-rec, .h2h-owner { font-size: 18px !important; } .sb-name { font-size: 16px; font-weight: 700; letter-spacing: .01em; } .sb-pts { font-size: 18px !important; font-weight: 800; }
+.muh-net { font-size: 56px !important; } .me-mu-net { font-size: 36px !important; } .tc-pts { font-size: 40px !important; }
+.owner-head h2 { font-size: 30px !important; font-weight: 800 !important; } .owner-pts { font-weight: 800; }
+.teams td { font-size: 18px; font-weight: 600; } .tc-bname, .teams .tname { font-weight: 700; }
+/* navy headers with an orange stripe */
+.pl-head, .intro-bg, .pl-mini-in { background: linear-gradient(160deg, var(--navy2) 0%, var(--navy) 70%) !important; box-shadow: inset 0 -4px 0 var(--accent), 0 10px 26px rgba(2,6,23,.35) !important; }
+.pl-main { font-size: 1.15em; letter-spacing: .02em !important; text-transform: uppercase !important; }
+.pl-main .pl-w:last-child { color: var(--accent); }
+.pl-mini-title span { text-transform: uppercase !important; letter-spacing: .04em !important; }
+.chip { background: rgba(255,255,255,.08) !important; border-color: rgba(255,255,255,.18) !important; }
+.card, .pl .card { border-radius: 12px !important; }
+.sb-card, .mw-card, .muh, .me-tile, .tc-tile { border-radius: 12px !important; }
+.tabbar button.on { box-shadow: 0 0 0 1.5px var(--accent), 0 4px 16px rgba(0,0,0,.12) !important; }
+/* opening screen matches the Arena header: uppercase, orange "SQUADS" */
+.intro-t { text-transform: uppercase; letter-spacing: .02em; font-weight: 800; }
+.intro-t span:last-child { color: var(--accent); }
+.intro-w { font-family: var(--disp); font-weight: 700; }
