@@ -1,0 +1,23 @@
+/* ===== Style preview: RETRO HARDWOOD — Bebas Neue + DM Sans, warm cream and brown ===== */
+@font-face { font-family: "Bebas Neue"; src: url("../fonts/BebasNeue-Regular.ttf") format("truetype"); font-weight: 400; font-display: swap; }
+@font-face { font-family: "DM Sans"; src: url("../fonts/DMSans-var.ttf") format("truetype"); font-weight: 100 1000; font-display: swap; }
+:root { --disp: "Bebas Neue", Impact, sans-serif; --sans: "DM Sans", -apple-system, system-ui, sans-serif; --serif: var(--sans);
+  --bg: #f3ebdf; --panel: #fffaf2; --fg: #2a1a10; --muted: #7d6553; --line: rgba(92,58,32,.16); --fill: rgba(140,95,55,.10); --fill2: rgba(140,95,55,.18); --accent: #c4471a; --radius: 10px;
+  --shadow: 0 1px 0 rgba(92,58,32,.08), 0 6px 18px rgba(92,58,32,.08); }
+@media (prefers-color-scheme: dark) { :root { --bg: #17100b; --panel: #241912; --fg: #f6e9da; --muted: #b59a84; --line: rgba(246,233,218,.12); --fill: rgba(246,233,218,.07); --fill2: rgba(246,233,218,.13); --accent: #e8662f; } }
+body, button, input { font-family: var(--sans) !important; }
+.card > h2, h2.sec, #recap-card h2, .pl-main, .pl-mini-title span, .intro-t, .owner-head h2, .tc-title b, .tc-pts, .bp-title b, .me-who b, .me-tile b, .me-mu-net,
+.muh-net, .muh-nm b, .muh-verdict, .mw-net, .mw-mid b, .h2h-rec, .h2h-owner, #leaderboard td.total, .sb-pts, .gc-score, .wk-title b, .wk-side b, .dp-title, .tile-name,
+.owner-pts, .po-big b, .bx-ltot, .tc-tile b, .muh-kicker, .me-hi, .tc-h, .mu-grid .sub, .muh-around { font-family: var(--disp) !important; font-weight: 400 !important; letter-spacing: .03em !important; }
+.card > h2, h2.sec, #recap-card h2 { font-size: 34px !important; line-height: 1 !important; }
+.owner-head h2 { font-size: 36px !important; } #leaderboard td.total { font-size: 24px; } .h2h-rec, .h2h-owner { font-size: 21px !important; }
+.muh-net { font-size: 64px !important; } .me-mu-net { font-size: 42px !important; } .tc-pts { font-size: 46px !important; } .sb-pts { font-size: 20px !important; }
+.muh-kicker, .me-hi, .tc-h, .muh-around { font-size: 15px !important; letter-spacing: .1em !important; }
+.card, .pl .card { border-radius: 10px !important; border: 1px solid var(--line) !important; }
+.sb-card, .mw-card, .muh, .me-tile, .tc-tile, .bubble { border-radius: 8px !important; }
+.pl-head, .intro-bg, .pl-mini-in { background:
+    repeating-linear-gradient(90deg, rgba(0,0,0,.05) 0 2px, transparent 2px 46px),
+    linear-gradient(160deg, #b8501f 0%, #8a3412 55%, #4a1d0b 100%) !important; border-radius: 10px !important; box-shadow: 0 6px 0 #3a1608, 0 14px 26px rgba(58,22,8,.3) !important; }
+.pl-main { font-size: 1.35em; letter-spacing: .04em !important; text-transform: uppercase !important; color: #fff3e3; }
+.chip { background: rgba(255,243,227,.12) !important; border-color: rgba(255,243,227,.3) !important; }
+.tabbar button { border-radius: 10px !important; }

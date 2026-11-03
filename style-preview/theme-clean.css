@@ -1,0 +1,17 @@
+/* ===== Style preview: CLEAN MODERN — Plus Jakarta Sans, soft and airy ===== */
+@font-face { font-family: "Plus Jakarta Sans"; src: url("../fonts/PlusJakartaSans-var.ttf") format("truetype"); font-weight: 200 800; font-display: swap; }
+:root { --sans: "Plus Jakarta Sans", -apple-system, system-ui, sans-serif; --serif: var(--sans); --bg: #f5f6f8; --panel: #ffffff; --fg: #111318; --muted: #6b7280; --line: rgba(17,19,24,.08); --accent: #ff6a3d; --radius: 22px;
+  --shadow: 0 1px 2px rgba(17,19,24,.04), 0 12px 32px rgba(17,19,24,.06); }
+@media (prefers-color-scheme: dark) { :root { --bg: #0d0e11; --panel: #17191e; --fg: #f3f4f6; --muted: #9ca3af; --line: rgba(255,255,255,.08); --accent: #ff7a50; } }
+body, button, input, .pl-mini-title span, .pl-main, .intro-t, .intro-w { font-family: var(--sans) !important; }
+body { letter-spacing: -.01em; }
+.card > h2, h2.sec, #recap-card h2 { font-size: 24px !important; font-weight: 800 !important; letter-spacing: -.03em !important; }
+.card, .pl .card { border-radius: 22px !important; padding: 18px 18px 16px; }
+.sb-card, .mw-card, .muh, .me-tile, .tc-tile, .bubble { border-radius: 18px !important; }
+.pl-head, .intro-bg, .pl-mini-in { background: linear-gradient(135deg, #ff8a4c 0%, #ff5f3a 55%, #e2412b 100%) !important; box-shadow: 0 14px 30px rgba(255,95,58,.28) !important; }
+.pl-head { border-radius: 26px !important; }
+.pl-main { font-weight: 800 !important; letter-spacing: -.04em !important; font-size: 1.05em; }
+.pl-head::before, .pl-head::after, .intro-bg::before, .intro-bg::after { opacity: .5; }
+.chip { background: rgba(255,255,255,.2) !important; border: none !important; font-weight: 700 !important; }
+#leaderboard td { font-weight: 600; } #leaderboard td.total, .muh-net, .me-mu-net, .tc-pts { font-weight: 800 !important; letter-spacing: -.04em; }
+.tabbar button { border-radius: 20px !important; }

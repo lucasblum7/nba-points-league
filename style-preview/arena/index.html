@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <base href="../../">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Preview (Arena) · Hoop Squads 2026–27</title>
+  <meta name="description" content="Standings, rosters and nightly scores for our Hoop Squads league.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Ccircle cx='24' cy='24' r='21' fill='%23E8762B' stroke='%233A1E0E' stroke-width='2.5'/%3E%3Cpath d='M24 3v42M3 24h42M9.2 9.2c7.4 7.4 7.4 22.2 0 29.6M38.8 9.2c-7.4 7.4-7.4 22.2 0 29.6' fill='none' stroke='%233A1E0E' stroke-width='2.5'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=20261103181142">
+  <link rel="stylesheet" href="apple.css?v=20261103181142">
+  <link rel="stylesheet" href="style-preview/theme-arena.css">
+</head>
+<body>
+<div style="font:600 12px/1.3 -apple-system,system-ui,sans-serif;text-align:center;padding:8px 12px;background:#111;color:#bbb">Style preview: <b>Arena</b> · <a href="style-preview/clean/">Clean modern</a> · <a href="style-preview/retro/">Retro hardwood</a> · <a href="./">Current site</a></div><style>body>div:first-of-type a{color:#ffb27a}</style>
+<div class="intro" id="intro" aria-hidden="true">
+  <div class="intro-bg"></div>
+  <div class="intro-ball"><svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="21" fill="#E8762B" stroke="#3A1E0E" stroke-width="2.5"/><path d="M24 3v42M3 24h42M9.2 9.2c7.4 7.4 7.4 22.2 0 29.6M38.8 9.2c-7.4 7.4-7.4 22.2 0 29.6" fill="none" stroke="#3A1E0E" stroke-width="2.5" stroke-linecap="round"/></svg></div>
+  <div class="intro-c"><div class="intro-w">Welcome to</div><div class="intro-t"><span>Hoop</span><span>Squads</span></div></div>
+</div>
+<script>
+/* Opening screen: "Welcome to Hoop Squads", then it shrinks into the title box. */
+(function () {
+  var el = document.getElementById('intro'); if (!el) return;
+  var now = Date.now(), last = 0;
+  try { last = +sessionStorage.getItem('pl-intro-at') || 0; } catch (e) {}
+  var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduce || !el.animate || now - last < 15000) { el.remove(); return; }   // skip right after an auto-update reload
+  try { sessionStorage.setItem('pl-intro-at', String(now)); } catch (e) {}
+  document.documentElement.classList.add('intro-on');
+  var done = false, timer;
+  function finish() {
+    if (done) return; done = true; clearTimeout(timer);
+    document.documentElement.classList.remove('intro-on');
+    var a = el.animate([{ opacity: 1 }, { opacity: 0 }], { duration: 260, easing: 'ease-out', fill: 'forwards' });
+    a.onfinish = function () { el.remove(); };
+  }
+  function morph() {
+    if (done) return;
+    var head = document.querySelector('.pl-head'), title = document.querySelector('.pl-main'), ball = document.querySelector('.pl-ball');
+    var h = head && head.getBoundingClientRect();
+    if (!h || h.bottom < 0 || h.top > innerHeight) { finish(); return; }
+    var E = 'cubic-bezier(.65,0,.25,1)', D = 620;
+    var bg = el.querySelector('.intro-bg'), t = el.querySelector('.intro-t'), w = el.querySelector('.intro-w'), b = el.querySelector('.intro-ball');
+    var r = parseFloat(getComputedStyle(head).borderTopLeftRadius) || 16;
+    bg.animate([{ top: '0px', left: '0px', width: innerWidth + 'px', height: innerHeight + 'px', borderRadius: '0px' },
+                { top: h.top + 'px', left: h.left + 'px', width: h.width + 'px', height: h.height + 'px', borderRadius: r + 'px' }], { duration: D, easing: E, fill: 'forwards' });
+    w.animate([{ opacity: 1, transform: 'none' }, { opacity: 0, transform: 'translateY(-10px)' }], { duration: D * 0.45, easing: 'ease-in', fill: 'forwards' });
+    function fly(node, target) {
+      if (!target) return;
+      var a = node.getBoundingClientRect(), z = target.getBoundingClientRect(); if (!a.height) return;
+      var s = z.height / a.height, dx = (z.left + z.width / 2) - (a.left + a.width / 2), dy = (z.top + z.height / 2) - (a.top + a.height / 2);
+      node.animate([{ transform: 'none' }, { transform: 'translate(' + dx + 'px,' + dy + 'px) scale(' + s + ')' }], { duration: D, easing: E, fill: 'forwards' });
+    }
+    fly(t, title); fly(b, ball);
+    timer = setTimeout(finish, D + 60);
+  }
+  el.addEventListener('click', finish);
+  timer = setTimeout(morph, 1500);
+})();
+</script>
+<div class="pl-mini" id="pl-mini"><div class="pl-mini-in"><a href="javascript:void(0)" class="pl-mini-title"><svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="21" fill="#E8762B" stroke="#3A1E0E" stroke-width="2.5"/><path d="M24 3v42M3 24h42M9.2 9.2c7.4 7.4 7.4 22.2 0 29.6M38.8 9.2c-7.4 7.4-7.4 22.2 0 29.6" fill="none" stroke="#3A1E0E" stroke-width="2.5" stroke-linecap="round"/></svg><span>Hoop Squads</span></a><button type="button" class="chip chip-btn" id="pl-mini-chip"></button></div><div class="pl-mini-me" id="pl-mini-me" hidden></div></div>
+<main class="pl">
+  <header class="pl-head" id="top">
+    <h1 class="pl-title">
+      <svg class="pl-ball" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="21" fill="#E8762B" stroke="#3A1E0E" stroke-width="2.5"/><path d="M24 3v42M3 24h42M9.2 9.2c7.4 7.4 7.4 22.2 0 29.6M38.8 9.2c-7.4 7.4-7.4 22.2 0 29.6" fill="none" stroke="#3A1E0E" stroke-width="2.5" stroke-linecap="round"/></svg>
+      <span class="pl-name"><span class="pl-main"><span class="pl-w">Hoop</span> <span class="pl-w">Squads</span></span><small class="pl-sub">2026–27 Season</small></span>
+      <svg class="pl-ball pl-ball-r" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="21" fill="#E8762B" stroke="#3A1E0E" stroke-width="2.5"/><path d="M24 3v42M3 24h42M9.2 9.2c7.4 7.4 7.4 22.2 0 29.6M38.8 9.2c-7.4 7.4-7.4 22.2 0 29.6" fill="none" stroke="#3A1E0E" stroke-width="2.5" stroke-linecap="round"/></svg>
+    </h1>
+    <div class="pl-chips" id="chips"></div>
+  </header>
+
+  <section class="sb" id="scoreboard" aria-label="Today's NBA scores">
+    <div class="sb-side"><button type="button" class="sb-date" id="sb-date" aria-label="Pick a day to show on the scoreboard"><span class="sb-dow">—</span><span class="sb-md"></span><span class="sb-pick">▾</span></button><button type="button" class="sb-back" id="sb-back" hidden>Today</button><button type="button" class="sb-back sb-yday" id="sb-yday" hidden>Last night’s games</button></div>
+    <div class="sb-strip" id="sb-strip"></div>
+  </section>
+
+  <section class="card" id="me-card" aria-label="My team">
+    <div id="me-body"></div>
+  </section>
+
+  <section class="card" id="leaderboard-card">
+    <h2>The Win Column</h2>
+    <div class="scroll">
+      <table id="leaderboard">
+        <thead><tr>
+          <th>#</th><th>Owner</th><th class="num">Wins</th><th class="num">Bonus</th><th class="num">Points</th>
+          <th class="num">This week</th><th class="num hide-sm">Weeks won</th>
+        </tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="card" id="race-card">
+    <h2>Points race</h2>
+    <div class="race-top"><p class="note race-note">Total points by day.</p><button type="button" class="race-tbl-btn" id="race-tbl-btn" aria-pressed="false">Table</button></div>
+    <div class="race" id="race"></div>
+    <div class="race-table" id="race-table" hidden></div>
+  </section>
+
+  <section class="card" id="matchups-card">
+    <h2>Matchups</h2>
+    <div class="mu-week" id="mu-current"></div>
+    <div class="grid mu-grid">
+      <div>
+        <h3 class="sub">Head-to-head standings</h3>
+        <div class="h2h-list" id="h2h-list" role="table" aria-label="Head-to-head standings">
+          <div class="h2h-row h2h-head" role="row"><span role="columnheader">#</span><span role="columnheader">Owner</span><span role="columnheader">W–L</span><span role="columnheader">Net</span><span role="columnheader">Wins</span><span role="columnheader">Last 4</span></div>
+          <div id="h2h-body" role="rowgroup"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="card" id="recap-card">
+    <h2>This week so far</h2>
+    <p class="note" id="recap-dates">Monday–Sunday.</p>
+    <div class="recap" id="recap"></div>
+  </section>
+
+
+  <section class="card" id="rosters-card">
+    <h2 id="rosters">Rosters</h2>
+    <p class="foot">Win pace: projected final wins (green = ahead of the preseason line, red = behind). Tap a team for its team card: last and next 5 games, projections, and roster.</p>
+    <div class="grid" id="owner-grid"></div>
+  </section>
+
+  <div class="grid">
+    <section class="card" id="bonus-card">
+      <h2>Bonuses earned</h2>
+      <p class="note">Bonus points from NBA Cup games, the playoffs, and the NBA Cup title. Tap a total for the breakdown.</p>
+      <p class="empty" id="bonus-empty" hidden>No bonuses yet. NBA Cup games start Oct 30 (each win is worth 2).</p>
+      <div class="scroll tall">
+        <table id="bonus-table">
+          <thead><tr><th>Team</th><th>Owner</th><th class="num">Total</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </section>
+    <section class="card rules" id="rules-card">
+      <h2>Scoring rules</h2>
+      <p class="note">A champion wins 16 playoff games, so it earns about 37 bonus points.</p>
+      <table>
+        <tbody>
+          <tr><td>Each regular-season win</td><td class="num total">1</td></tr>
+          <tr><td>Each NBA Cup game win</td><td class="num total">2</td></tr>
+          <tr><td>Make the playoffs</td><td class="num total">5</td></tr>
+          <tr><td>Each playoff game won</td><td class="num total">2</td></tr>
+          <tr><td>Win the NBA Cup</td><td class="num total">5</td></tr>
+        </tbody>
+      </table>
+      <ul>
+        <li>NBA Cup group-play and knockout wins count 2 points (1 win + 1 bonus); the Cup final doesn’t count as a game, but the winner gets +5.</li>
+        <li>Play-in games don’t count; play-in winners do make the playoffs.</li>
+        <li>Snake draft, same number of teams per person.</li>
+        <li>Teams picked after the season starts count wins from their pick date on.</li>
+        <li>Trades are pick swaps only, for next year’s draft.</li>
+      </ul>
+    </section>
+  </div>
+
+  <section class="card" id="upset-card">
+    <h2>Big upset watch</h2>
+    <p class="note">Side tally only, not counted in points. Logs every underdog win at +350 or longer on the pregame moneyline, in tiers: Upset +350 to +499 (+1), Big upset +500 to +799 (+2), Stunner +800 or longer (+3). “Would-be pts” is what each owner would get if the league adopts it. Tracking started Oct 24.</p>
+    <div class="grid upset-grid">
+      <div class="scroll">
+        <table id="upset-tally">
+          <thead><tr><th>Owner</th><th class="num">Upsets</th><th class="num">Big</th><th class="num">Stunners</th><th class="num">Would-be pts</th><th class="num">Longest</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+      <div class="scroll">
+        <p class="empty" id="upset-empty">No +350 upsets yet.</p>
+        <table id="upset-list" hidden>
+          <thead><tr><th>Date</th><th>Winner</th><th>Owner</th><th>Beat</th><th class="num">Line</th><th>Tier</th><th class="num">Score</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="card ideas" id="ideas-card">
+    <h2>Ideas to vote on</h2>
+    <p class="note">Not active yet. None of these count toward points until the league agrees to add them.</p>
+    <div class="grid">
+      <div>
+        <h3>Bonus point ideas</h3>
+        <ul>
+          <li><b>Underdog wins (tracked above):</b> +1 / +2 / +3 for wins at +350 / +500 / +800 or longer.</li>
+          <li><b>Beat the preseason line: +3</b> for any team that finishes above its over/under.</li>
+          <li><b>Make the play-in: +2</b> for finishing 7th–10th in its conference.</li>
+          <li><b>Weekly player picks:</b> before each Monday–Sunday week, every manager picks one NBA player for each of points, rebounds, and assists. The pick with the league’s highest weekly average in a category gets bonus points (for example +2 each).</li>
+        </ul>
+      </div>
+      <div>
+        <h3>League ideas</h3>
+        <ul>
+          <li><b>Beat Vegas prize:</b> a side prize for whoever’s teams beat their preseason lines by the most combined.</li>
+          <li><b>Next year’s draft order:</b> reverse order of this year’s finish, or a lottery weighted toward the bottom.</li>
+          <li><b>Tiebreaker:</b> head-to-head record, then deepest playoff run, then most weeks won.</li>
+          <li><b>Weekly head-to-head:</b> three matchups each week, with a separate win–loss record.</li>
+          <li><b>Small stakes:</b> perks for each weekly winner and a punishment for last place.</li>
+          <li><b>End-of-season awards:</b> best value pick, biggest bust, best week, luckiest playoff run.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <details class="card rules" id="league-rules">
+    <summary>League rules</summary>
+    <div class="rules-body">
+      <h3>The Win Column</h3>
+      <ul>
+        <li>1 point per regular-season win.</li>
+        <li>NBA Cup games (group play and knockouts): 2 points per win. They’re marked in gold on the scoreboard.</li>
+        <li>Make the playoffs: +5 (play-in winners count; play-in losers don’t).</li>
+        <li>2 points per playoff game won (play-in games don’t count). NBA Cup winner: +5.</li>
+        <li><b>Ties:</b> most playoff series won, then most regular-season wins.</li>
+      </ul>
+      <h3>Matchups</h3>
+      <ul>
+        <li>Three head-to-head matchups each Monday–Sunday week; everyone plays everyone once every 5 weeks.</li>
+        <li>Best net record that week (wins minus losses of your 5 teams) wins.</li>
+        <li><b>NBA Cup games count double:</b> +2 for a win, −2 for a loss toward your net that week.</li>
+        <li><b>Ties:</b> most total wins that week breaks it; otherwise the matchup is a tie.</li>
+        <li><b>Standings order:</b> matchup record, then season net, then total wins.</li>
+      </ul>
+      <h3>Weekly winners</h3>
+      <ul>
+        <li>Most regular-season wins in each Monday–Sunday week.</li>
+        <li><b>Ties:</b> shared. “Weeks won” counts finished weeks only.</li>
+      </ul>
+      <h3>Last night’s results</h3>
+      <ul>
+        <li>Winners keep their team colors; the owner who picked up the win gets +1.</li>
+      </ul>
+    </div>
+  </details>
+
+  <footer class="site-foot" id="foot">Scores from ESPN’s public scoreboard, updated every 15 minutes from 9 AM to 1 AM Pacific. Preseason lines from Hoops Rumors’ over/under recap.</footer>
+</main>
+<nav class="tabbar" id="tabbar" aria-label="Sections">
+  <button type="button" data-go="home"><span class="tb-i"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 10.5 12 3.5l8.5 7"/><path d="M5.5 9v10.5h4.5v-6h4v6h4.5V9"/></svg></span><span class="tb-l">Home</span></button>
+  <button type="button" data-go="matchups"><span class="tb-i"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="5" width="19" height="14" rx="2.5"/><path d="M12 5v14"/><circle cx="12" cy="12" r="2.6"/><path d="M2.5 9.5h3v5h-3M21.5 9.5h-3v5h3"/></svg></span><span class="tb-l">Matchups</span></button>
+  <button type="button" data-go="rosters"><span class="tb-i"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3.2"/><path d="M3 19.5c.6-3.4 3-5.3 6-5.3s5.4 1.9 6 5.3"/><circle cx="16.8" cy="9" r="2.5"/><path d="M16.3 14.3c2.4.1 4.1 1.7 4.7 4.6"/></svg></span><span class="tb-l">Rosters</span></button>
+  <button type="button" data-go="more"><span class="tb-i"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="7.8" cy="12" r=".6" class="dot"/><circle cx="12" cy="12" r=".6" class="dot"/><circle cx="16.2" cy="12" r=".6" class="dot"/></svg></span><span class="tb-l">More</span></button>
+</nav>
+<script>window.SITE_VERSION = "20261103181142";</script>
+<script src="app.js?v=20261103181142"></script>
+</body>
+</html>
