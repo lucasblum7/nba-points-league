@@ -500,14 +500,15 @@
             const y = mm.A.owner === me ? mm.A : mm.B, o = mm.A.owner === me ? mm.B : mm.A, upc = mm.status === 'upcoming';
             const seg = mk('button', 'pm-seg pm-mu ' + (mm.winner === me ? 'up' : mm.winner ? 'down' : 'even')); seg.type = 'button';
             seg.setAttribute('aria-label', `Your matchup vs ${o.owner}: ${upc ? 'not started' : signedN(y.net) + ' to ' + signedN(o.net)}. Open matchups`);
-            seg.append(odot(me), mk('b', null, upc ? '–' : signedN(y.net)), mk('span', 'pm-vs', 'vs'), mk('b', null, upc ? '–' : signedN(o.net)), odot(o.owner));
+            seg.append(odot(me), mk('span', 'pm-nm', me), mk('b', 'pm-n1', upc ? '–' : signedN(y.net)), mk('span', 'pm-vs', 'vs'), mk('b', 'pm-n2', upc ? '–' : signedN(o.net)), mk('span', 'pm-nm', o.owner), odot(o.owner));
             seg.addEventListener('click', () => { location.hash = '#matchups'; });
             mp.append(seg);
           }
           const tied = C.board.filter((x) => x.points === row.points).length > 1;
           const seg2 = mk('button', 'pm-seg pm-pts'); seg2.type = 'button';
           seg2.setAttribute('aria-label', `${row.points} points, ${tied ? 'tied for ' : ''}rank ${row.place}. Open The Win Column`);
-          seg2.append(mk('b', null, fmt(row.points)), mk('span', null, 'pts'), mk('span', 'pm-rank', (tied ? 'T-' : '#') + row.place));
+          const ord = (n) => n + (['th', 'st', 'nd', 'rd'][(n % 100 - 20) % 10] || ['th', 'st', 'nd', 'rd'][n % 100] || 'th');
+          seg2.append(mk('b', null, fmt(row.points)), mk('span', null, 'pts'), mk('span', 'pm-rank', (tied ? 'T-' : '') + ord(row.place)));
           seg2.addEventListener('click', () => { location.hash = '#home'; setTimeout(() => { const lb = document.getElementById('leaderboard-card'); if (lb) lb.scrollIntoView({ behavior: 'smooth', block: 'start' }); }, 60); });
           mp.append(seg2);
         }

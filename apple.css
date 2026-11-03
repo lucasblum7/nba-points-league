@@ -1110,3 +1110,14 @@ html, body, button, a, [role="button"] { touch-action: manipulation; }
 .mw-row:has(.muh) { display: grid; grid-template-columns: 1fr; gap: 0; }
 @media (min-width: 900px) { .mw-row:has(.muh) { grid-template-columns: 1fr 1fr; gap: 12px; } .mw-row .muh.other { margin: 0; } }
 .muh.other .muh-kicker { color: var(--muted); }
+/* flags: darker, with owner names */
+.pm-seg { background: #1f1f22 !important; color: #fff !important; padding: 15px 14px 7px !important; gap: 6px !important;
+  box-shadow: 0 6px 16px rgba(0,0,0,.28), inset 0 -2px 0 var(--accent) !important; }
+.pm-nm { font-size: 12px; font-weight: 700; color: rgba(255,255,255,.78); max-width: 74px; overflow: hidden; text-overflow: ellipsis; }
+.pm-seg .odot { box-shadow: 0 0 0 1.5px #1f1f22 !important; }
+.pm-vs, .pm-pts span { color: rgba(255,255,255,.55) !important; }
+.pm-mu.up .pm-n1 { color: #4ade80 !important; } .pm-mu.down .pm-n2 { color: #ff6b61 !important; }
+.pm-mu.up .pm-n2, .pm-mu.down .pm-n1, .pm-mu.even b { color: #fff !important; }
+.pm-pts .pm-rank { color: #fff !important; background: var(--accent) !important; }
+@media (max-width: 380px) { .pm-nm { max-width: 44px; } .pm-seg { padding: 15px 10px 7px !important; } }
+@media (max-width: 370px) { .pl-mini-title span { display: none; } }
