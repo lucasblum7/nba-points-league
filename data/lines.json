@@ -628,5 +628,55 @@
   "away_ml": 740,
   "home_ml": -1180,
   "book": "DraftKings"
+ },
+ {
+  "date": "2026-11-04",
+  "away": "Charlotte Hornets",
+  "home": "Brooklyn Nets",
+  "fav": "Charlotte Hornets",
+  "spread": 2.5,
+  "away_ml": -136,
+  "home_ml": 115,
+  "book": "Draft Kings"
+ },
+ {
+  "date": "2026-11-04",
+  "away": "Philadelphia 76ers",
+  "home": "Detroit Pistons",
+  "fav": "Detroit Pistons",
+  "spread": 1.5,
+  "away_ml": 106,
+  "home_ml": -125,
+  "book": "Draft Kings"
+ },
+ {
+  "date": "2026-11-04",
+  "away": "Minnesota Timberwolves",
+  "home": "Houston Rockets",
+  "fav": "Houston Rockets",
+  "spread": 9.5,
+  "away_ml": 276,
+  "home_ml": -345,
+  "book": "Draft Kings"
+ },
+ {
+  "date": "2026-11-04",
+  "away": "Cleveland Cavaliers",
+  "home": "Oklahoma City Thunder",
+  "fav": "Oklahoma City Thunder",
+  "spread": 2.5,
+  "away_ml": 117,
+  "home_ml": -138,
+  "book": "Draft Kings"
+ },
+ {
+  "date": "2026-11-04",
+  "away": "Dallas Mavericks",
+  "home": "San Antonio Spurs",
+  "fav": "San Antonio Spurs",
+  "spread": 12.5,
+  "away_ml": 474,
+  "home_ml": -650,
+  "book": "Draft Kings"
  }
 ]

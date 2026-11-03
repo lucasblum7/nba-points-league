@@ -778,6 +778,14 @@
   "home_score": 110
  },
  {
+  "id": "401909919",
+  "date": "2026-11-02",
+  "away": "Phoenix Suns",
+  "home": "Golden State Warriors",
+  "away_score": 113,
+  "home_score": 116
+ },
+ {
   "id": "401909916",
   "date": "2026-11-02",
   "away": "Boston Celtics",
@@ -792,6 +800,22 @@
   "home": "Indiana Pacers",
   "away_score": 108,
   "home_score": 104
+ },
+ {
+  "id": "401909920",
+  "date": "2026-11-02",
+  "away": "Toronto Raptors",
+  "home": "LA Clippers",
+  "away_score": 125,
+  "home_score": 118
+ },
+ {
+  "id": "401909921",
+  "date": "2026-11-02",
+  "away": "Miami Heat",
+  "home": "Los Angeles Lakers",
+  "away_score": 117,
+  "home_score": 138
  },
  {
   "id": "401909914",
