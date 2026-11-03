@@ -1,5 +1,5 @@
 {
- "as_of": "2026-11-03T03",
+ "as_of": "2026-11-03T12",
  "players": [
   {
    "team": "Atlanta Hawks",
@@ -81,18 +81,35 @@
   },
   {
    "team": "Boston Celtics",
-   "id": "4251",
-   "name": "Paul George",
+   "id": "4066354",
+   "name": "Payton Pritchard",
    "status": "Day-To-Day",
-   "comment": "George will be rested Monday against Houston.",
+   "comment": "Pritchard is listed as questionable for Wednesday's game against Milwaukee due to a right shoulder contusion, Taylor Snow of the Celtics' official site reports.",
    "return": "2026-11-04",
    "fantasy": "GTD",
    "stats": {
-    "gp": 6.0,
-    "min": 31.0,
-    "pts": 20.666666,
+    "gp": 7.0,
+    "min": 28.0,
+    "pts": 13.428572,
+    "reb": 3.0,
+    "ast": 3.4285715,
+    "this_season": true
+   }
+  },
+  {
+   "team": "Boston Celtics",
+   "id": "4065648",
+   "name": "Jayson Tatum",
+   "status": "Day-To-Day",
+   "comment": "Tatum (rest) is questionable for Wednesday against the Bucks, Taylor Snow of the Celtics' official site reports.",
+   "return": "2026-11-04",
+   "fantasy": "GTD",
+   "stats": {
+    "gp": 7.0,
+    "min": 35.142857,
+    "pts": 27.0,
     "reb": 6.0,
-    "ast": 5.0,
+    "ast": 7.857143,
     "this_season": true
    }
   },
@@ -152,7 +169,7 @@
    "id": "4278067",
    "name": "Nic Claxton",
    "status": "Out",
-   "comment": "Claxton (hamstring) is out for Monday's game against the 76ers.",
+   "comment": "Claxton (hamstring) is questionable for Wednesday against the Knicks.",
    "return": "2026-11-04",
    "fantasy": "GTD",
    "stats": {
@@ -162,6 +179,23 @@
     "reb": 6.927536,
     "ast": 3.6666667,
     "this_season": false
+   }
+  },
+  {
+   "team": "Chicago Bulls",
+   "id": "4397189",
+   "name": "Jalen Smith",
+   "status": "Day-To-Day",
+   "comment": "Smith is probable for Wednesday's game against the Knicks with a left finger sprain.",
+   "return": "2026-11-04",
+   "fantasy": "GTD",
+   "stats": {
+    "gp": 7.0,
+    "min": 24.714285,
+    "pts": 12.142858,
+    "reb": 8.571428,
+    "ast": 2.0,
+    "this_season": true
    }
   },
   {
@@ -205,7 +239,7 @@
    "status": "Out",
    "comment": "Aldama (knee) has been ruled out for Monday's matchup with Sacramento.",
    "return": "2026-11-04",
-   "fantasy": "OUT",
+   "fantasy": "GTD",
    "stats": {
     "gp": 43.0,
     "min": 27.860466,
@@ -249,7 +283,7 @@
    "status": "Out",
    "comment": "Head coach Dusty May said Friday that de Larrea (knee) will be re-evaluated next week, Noah Weber of TheSmokingCuban.com reports.",
    "return": "2026-11-04",
-   "fantasy": "OUT",
+   "fantasy": "GTD",
    "stats": {
     "gp": 4.0,
     "min": 11.5,
@@ -300,7 +334,7 @@
    "status": "Out",
    "comment": "Jones (hamstring) is listed as out for Monday's game against the Trail Blazers.",
    "return": "2026-11-04",
-   "fantasy": "OUT",
+   "fantasy": "GTD",
    "stats": {
     "gp": 64.0,
     "min": 22.140625,
@@ -349,7 +383,7 @@
    "id": "4395702",
    "name": "Isaiah Joe",
    "status": "Out",
-   "comment": "Joe (hip) is out for Monday against the Hornets.",
+   "comment": "Joe (hip) has been ruled out for Wednesday's game against Philadelphia.",
    "return": "2026-11-04",
    "fantasy": "GTD",
    "stats": {
@@ -484,10 +518,10 @@
    "team": "Houston Rockets",
    "id": "3102529",
    "name": "Clint Capela",
-   "status": "Out",
+   "status": "Day-To-Day",
    "comment": "Capela (ankle) has been ruled out for Monday's game against the Celtics.",
    "return": "2026-11-04",
-   "fantasy": "OUT",
+   "fantasy": "GTD",
    "stats": {
     "gp": 6.0,
     "min": 14.166667,
@@ -839,6 +873,23 @@
   },
   {
    "team": "Minnesota Timberwolves",
+   "id": "4592699",
+   "name": "Enrique Freeman",
+   "status": "Out",
+   "comment": "",
+   "return": "",
+   "fantasy": "",
+   "stats": {
+    "gp": 4.0,
+    "min": 9.25,
+    "pts": 3.25,
+    "reb": 2.5,
+    "ast": 0.5,
+    "this_season": false
+   }
+  },
+  {
+   "team": "Minnesota Timberwolves",
    "id": "4432847",
    "name": "Terrence Shannon Jr.",
    "status": "Day-To-Day",
@@ -983,7 +1034,7 @@
    "status": "Out",
    "comment": "Barlow (back) has been on the court \"a little bit\" and will be re-evaluated Tuesday, Austin Krell of OnPattison.com reports.",
    "return": "2026-11-04",
-   "fantasy": "OUT",
+   "fantasy": "GTD",
    "stats": {
     "gp": 71.0,
     "min": 23.788733,
@@ -1145,7 +1196,7 @@
    "name": "Tobias Harris",
    "status": "Out",
    "comment": "Harris (calf) is listed as out for Saturday's game against Minnesota.",
-   "return": "2026-11-06",
+   "return": "2026-11-09",
    "fantasy": "OUT",
    "stats": {
     "gp": 63.0,
@@ -1216,7 +1267,7 @@
    "name": "Nikola Topic",
    "status": "Out",
    "comment": "Topic (back) will remain on the inactive list for Wednesday's game in Dallas.",
-   "return": "2026-11-06",
+   "return": "2026-11-04",
    "fantasy": "GTD",
    "stats": {
     "gp": 10.0,
@@ -1302,7 +1353,7 @@
    "status": "Out",
    "comment": "Nurkic will miss at least the next four weeks due to a partial plantar plate tear of second toe in right foot, Chris Haynes of NBA TV reports.",
    "return": "2026-11-04",
-   "fantasy": "OUT",
+   "fantasy": "GTD",
    "stats": {
     "gp": 41.0,
     "min": 26.414635,
