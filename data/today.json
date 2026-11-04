@@ -1,4 +1,159 @@
 {
- "date": "2026-11-03",
- "games": []
+ "date": "2026-11-04",
+ "games": [
+  {
+   "id": "401909922",
+   "time": "4:00 PM",
+   "state": "pre",
+   "detail": "11/4 - 7:00 PM EST",
+   "away": "Philadelphia 76ers",
+   "home": "Detroit Pistons",
+   "away_score": null,
+   "home_score": null,
+   "cup": false
+  },
+  {
+   "id": "401909923",
+   "time": "4:00 PM",
+   "state": "pre",
+   "detail": "11/4 - 7:00 PM EST",
+   "away": "Atlanta Hawks",
+   "home": "Washington Wizards",
+   "away_score": null,
+   "home_score": null,
+   "cup": false
+  },
+  {
+   "id": "401909924",
+   "time": "4:30 PM",
+   "state": "pre",
+   "detail": "11/4 - 7:30 PM EST",
+   "away": "Milwaukee Bucks",
+   "home": "Boston Celtics",
+   "away_score": null,
+   "home_score": null,
+   "cup": false
+  },
+  {
+   "id": "401909925",
+   "time": "4:30 PM",
+   "state": "pre",
+   "detail": "11/4 - 7:30 PM EST",
+   "away": "Charlotte Hornets",
+   "home": "Brooklyn Nets",
+   "away_score": null,
+   "home_score": null,
+   "cup": false
+  },
+  {
+   "id": "401909926",
+   "time": "4:30 PM",
+   "state": "pre",
+   "detail": "11/4 - 7:30 PM EST",
+   "away": "Chicago Bulls",
+   "home": "New York Knicks",
+   "away_score": null,
+   "home_score": null,
+   "cup": false
+  },
+  {
+   "id": "401909927",
+   "time": "5:00 PM",
+   "state": "pre",
+   "detail": "11/4 - 8:00 PM EST",
+   "away": "Indiana Pacers",
+   "home": "Memphis Grizzlies",
+   "away_score": null,
+   "home_score": null,
+   "cup": false
+  },
+  {
+   "id": "401909928",
+   "time": "5:00 PM",
+   "state": "pre",
+   "detail": "11/4 - 8:00 PM EST",
+   "away": "Utah Jazz",
+   "home": "New Orleans Pelicans",
+   "away_score": null,
+   "home_score": null,
+   "cup": false
+  },
+  {
+   "id": "401909929",
+   "time": "5:00 PM",
+   "state": "pre",
+   "detail": "11/4 - 8:00 PM EST",
+   "away": "Cleveland Cavaliers",
+   "home": "Oklahoma City Thunder",
+   "away_score": null,
+   "home_score": null,
+   "cup": false
+  },
+  {
+   "id": "401909930",
+   "time": "5:30 PM",
+   "state": "pre",
+   "detail": "11/4 - 8:30 PM EST",
+   "away": "Minnesota Timberwolves",
+   "home": "Houston Rockets",
+   "away_score": null,
+   "home_score": null,
+   "cup": false
+  },
+  {
+   "id": "401909931",
+   "time": "6:00 PM",
+   "state": "pre",
+   "detail": "11/4 - 9:00 PM EST",
+   "away": "Toronto Raptors",
+   "home": "Denver Nuggets",
+   "away_score": null,
+   "home_score": null,
+   "cup": false
+  },
+  {
+   "id": "401909932",
+   "time": "6:00 PM",
+   "state": "pre",
+   "detail": "11/4 - 9:00 PM EST",
+   "away": "Portland Trail Blazers",
+   "home": "Phoenix Suns",
+   "away_score": null,
+   "home_score": null,
+   "cup": false
+  },
+  {
+   "id": "401909933",
+   "time": "6:30 PM",
+   "state": "pre",
+   "detail": "11/4 - 9:30 PM EST",
+   "away": "Dallas Mavericks",
+   "home": "San Antonio Spurs",
+   "away_score": null,
+   "home_score": null,
+   "cup": false
+  },
+  {
+   "id": "401909934",
+   "time": "7:00 PM",
+   "state": "pre",
+   "detail": "11/4 - 10:00 PM EST",
+   "away": "Los Angeles Lakers",
+   "home": "Sacramento Kings",
+   "away_score": null,
+   "home_score": null,
+   "cup": false
+  },
+  {
+   "id": "401909935",
+   "time": "7:30 PM",
+   "state": "pre",
+   "detail": "11/4 - 10:30 PM EST",
+   "away": "Miami Heat",
+   "home": "LA Clippers",
+   "away_score": null,
+   "home_score": null,
+   "cup": false
+  }
+ ]
 }
