@@ -1,5 +1,5 @@
 {
- "as_of": "2026-11-03T15",
+ "as_of": "2026-11-03T18",
  "players": [
   {
    "team": "Atlanta Hawks",
@@ -818,23 +818,6 @@
     "reb": 4.75,
     "ast": 3.5,
     "this_season": true
-   }
-  },
-  {
-   "team": "Minnesota Timberwolves",
-   "id": "4592699",
-   "name": "Enrique Freeman",
-   "status": "Out",
-   "comment": "",
-   "return": "",
-   "fantasy": "",
-   "stats": {
-    "gp": 4.0,
-    "min": 9.25,
-    "pts": 3.25,
-    "reb": 2.5,
-    "ast": 0.5,
-    "this_season": false
    }
   },
   {
