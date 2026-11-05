@@ -654,9 +654,9 @@
   "away": "Toronto Raptors",
   "home": "Denver Nuggets",
   "fav": "Denver Nuggets",
-  "spread": 4.5,
-  "away_ml": 160,
-  "home_ml": -191,
+  "spread": 5.5,
+  "away_ml": 169,
+  "home_ml": -203,
   "book": "DraftKings"
  },
  {
@@ -734,9 +734,9 @@
   "away": "Portland Trail Blazers",
   "home": "Phoenix Suns",
   "fav": "Portland Trail Blazers",
-  "spread": 2.5,
-  "away_ml": -148,
-  "home_ml": 125,
+  "spread": 3.5,
+  "away_ml": -143,
+  "home_ml": 121,
   "book": "DraftKings"
  },
  {
@@ -745,8 +745,8 @@
   "home": "Sacramento Kings",
   "fav": "Los Angeles Lakers",
   "spread": 12.5,
-  "away_ml": -620,
-  "home_ml": 454,
+  "away_ml": -650,
+  "home_ml": 470,
   "book": "DraftKings"
  },
  {
@@ -755,8 +755,8 @@
   "home": "San Antonio Spurs",
   "fav": "San Antonio Spurs",
   "spread": 12.5,
-  "away_ml": 443,
-  "home_ml": -597,
+  "away_ml": 458,
+  "home_ml": -620,
   "book": "DraftKings"
  },
  {
