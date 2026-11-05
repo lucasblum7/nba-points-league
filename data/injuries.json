@@ -1,5 +1,5 @@
 {
- "as_of": "2026-11-04T15",
+ "as_of": "2026-11-04T18",
  "players": [
   {
    "team": "Atlanta Hawks",
@@ -98,6 +98,23 @@
   },
   {
    "team": "Boston Celtics",
+   "id": "4066354",
+   "name": "Payton Pritchard",
+   "status": "Day-To-Day",
+   "comment": "Pritchard exited Wednesday's 109-102 win over the Bucks and did not return due to a right eye abrasion, finishing with 10 points (4-7 FG, 2-2 FT), five assists and one rebound across 18 minutes.",
+   "return": "2026-11-06",
+   "fantasy": "GTD",
+   "stats": {
+    "gp": 7.0,
+    "min": 28.0,
+    "pts": 13.428572,
+    "reb": 3.0,
+    "ast": 3.4285715,
+    "this_season": true
+   }
+  },
+  {
+   "team": "Boston Celtics",
    "id": "4065648",
    "name": "Jayson Tatum",
    "status": "Out",
@@ -166,6 +183,23 @@
   },
   {
    "team": "Chicago Bulls",
+   "id": "4066650",
+   "name": "Zach Collins",
+   "status": "Day-To-Day",
+   "comment": "Collins (undisclosed) exited to the locker room in the fourth quarter of Wednesday's 135-105 loss to the Knicks, finishing with three points (1-4 FG, 0-2 3Pt, 1-1 FT), three assists, one rebound and one steal across 14 minutes.",
+   "return": "2026-11-08",
+   "fantasy": "GTD",
+   "stats": {
+    "gp": 5.0,
+    "min": 7.6,
+    "pts": 1.2,
+    "reb": 2.6,
+    "ast": 0.2,
+    "this_season": true
+   }
+  },
+  {
+   "team": "Chicago Bulls",
    "id": "4397189",
    "name": "Jalen Smith",
    "status": "Day-To-Day",
@@ -186,15 +220,32 @@
    "id": "4066328",
    "name": "Jarrett Allen",
    "status": "Day-To-Day",
-   "comment": "",
-   "return": "",
-   "fantasy": "",
+   "comment": "Allen (knee) exited to the locker room in the first quarter of Wednesday's 124-116 loss to the Thunder and did not return, finishing with zero points (0-1 FG) and one rebound in seven minutes.",
+   "return": "2026-11-06",
+   "fantasy": "GTD",
    "stats": {
     "gp": 7.0,
     "min": 27.857143,
     "pts": 15.142858,
     "reb": 8.714286,
     "ast": 1.4285715,
+    "this_season": true
+   }
+  },
+  {
+   "team": "Cleveland Cavaliers",
+   "id": "5023693",
+   "name": "Tyrese Proctor",
+   "status": "Day-To-Day",
+   "comment": "Proctor exited Wednesday's 124-116 loss to the Thunder in the fourth quarter and did not return due to an apparent ankle injury, finishing with 11 points (4-7 FG, 2-3 3Pt, 1-1 FT), one rebound and one steal across 22 minutes.",
+   "return": "2026-11-06",
+   "fantasy": "GTD",
+   "stats": {
+    "gp": 6.0,
+    "min": 13.0,
+    "pts": 5.5,
+    "reb": 2.8333333,
+    "ast": 2.1666667,
     "this_season": true
    }
   },
@@ -308,6 +359,23 @@
     "reb": 5.285714,
     "ast": 1.8571428,
     "this_season": false
+   }
+  },
+  {
+   "team": "Denver Nuggets",
+   "id": "3978",
+   "name": "DeMar DeRozan",
+   "status": "Out",
+   "comment": "DeRozan has been ruled out for Wednesday's game against the Raptors due to lower-back spasms.",
+   "return": "2026-11-07",
+   "fantasy": "OUT",
+   "stats": {
+    "gp": 6.0,
+    "min": 25.0,
+    "pts": 10.666667,
+    "reb": 2.0,
+    "ast": 2.6666667,
+    "this_season": true
    }
   },
   {
@@ -601,23 +669,6 @@
   },
   {
    "team": "LA Clippers",
-   "id": "4432170",
-   "name": "Isaiah Jackson",
-   "status": "Day-To-Day",
-   "comment": "Jackson is questionable for Wednesday's game against the Heat with left groin soreness, per Law Murray of The Athletic.",
-   "return": "2026-11-04",
-   "fantasy": "GTD",
-   "stats": {
-    "gp": 7.0,
-    "min": 22.142857,
-    "pts": 9.571428,
-    "reb": 6.428571,
-    "ast": 2.2857144,
-    "this_season": true
-   }
-  },
-  {
-   "team": "LA Clippers",
    "id": "4396818",
    "name": "Jordan Miller",
    "status": "Out",
@@ -665,23 +716,6 @@
     "reb": 1.12,
     "ast": 0.4,
     "this_season": false
-   }
-  },
-  {
-   "team": "Miami Heat",
-   "id": "3032977",
-   "name": "Giannis Antetokounmpo",
-   "status": "Day-To-Day",
-   "comment": "Antetokounmpo is probable to play Wednesday against the Clippers due to a sprained right wrist.",
-   "return": "2026-11-04",
-   "fantasy": "GTD",
-   "stats": {
-    "gp": 7.0,
-    "min": 31.857143,
-    "pts": 28.428572,
-    "reb": 12.285714,
-    "ast": 5.714286,
-    "this_season": true
    }
   },
   {
@@ -764,6 +798,23 @@
   },
   {
    "team": "Brooklyn Nets",
+   "id": "4712896",
+   "name": "Noah Clowney",
+   "status": "Day-To-Day",
+   "comment": "Clowney won't return to Wednesday's game against the Hornets due to right knee soreness. He'll finish with seven points (3-6 FG, 1-4 3Pt), one rebound and one assist across 17 minutes.",
+   "return": "2026-11-07",
+   "fantasy": "GTD",
+   "stats": {
+    "gp": 7.0,
+    "min": 21.571428,
+    "pts": 5.428571,
+    "reb": 4.857143,
+    "ast": 0.85714287,
+    "this_season": true
+   }
+  },
+  {
+   "team": "Brooklyn Nets",
    "id": "5175643",
    "name": "Egor Demin",
    "status": "Out",
@@ -776,6 +827,23 @@
     "pts": 7.75,
     "reb": 2.25,
     "ast": 2.75,
+    "this_season": true
+   }
+  },
+  {
+   "team": "Brooklyn Nets",
+   "id": "4432194",
+   "name": "Day'Ron Sharpe",
+   "status": "Day-To-Day",
+   "comment": "Sharpe registered 15 points (5-7 FG, 1-1 3Pt, 4-5 FT), 13 rebounds and four assists across 26 minutes in Sunday's 98-90 win over the Pacers.",
+   "return": "2026-11-04",
+   "fantasy": "GTD",
+   "stats": {
+    "gp": 7.0,
+    "min": 22.428572,
+    "pts": 7.428571,
+    "reb": 7.428571,
+    "ast": 1.8571428,
     "this_season": true
    }
   },
@@ -893,6 +961,23 @@
   },
   {
    "team": "Philadelphia 76ers",
+   "id": "5105637",
+   "name": "Adem Bona",
+   "status": "Day-To-Day",
+   "comment": "Bona exited Wednesday's 112-106 win over the Pistons in the fourth quarter and did not return due to an apparent head injury, finishing with five points (2-4 FG, 1-1 FT), two rebounds, one assist and one steal across 15 minutes.",
+   "return": "2026-11-06",
+   "fantasy": "GTD",
+   "stats": {
+    "gp": 8.0,
+    "min": 14.125,
+    "pts": 1.75,
+    "reb": 4.125,
+    "ast": 0.75,
+    "this_season": true
+   }
+  },
+  {
+   "team": "Philadelphia 76ers",
    "id": "4871141",
    "name": "Ariel Hukporti",
    "status": "Out",
@@ -957,6 +1042,23 @@
     "reb": 7.95,
     "ast": 0.96666664,
     "this_season": false
+   }
+  },
+  {
+   "team": "Portland Trail Blazers",
+   "id": "4578893",
+   "name": "Vit Krejci",
+   "status": "Out",
+   "comment": "Krejci won't return to Wednesday's game against the Suns due to a left ankle injury.",
+   "return": "2026-11-06",
+   "fantasy": "OUT",
+   "stats": {
+    "gp": 6.0,
+    "min": 10.0,
+    "pts": 2.3333333,
+    "reb": 1.3333334,
+    "ast": 1.0,
+    "this_season": true
    }
   },
   {
@@ -1340,12 +1442,29 @@
    }
   },
   {
+   "team": "Memphis Grizzlies",
+   "id": "4432810",
+   "name": "Isaiah Stewart",
+   "status": "Day-To-Day",
+   "comment": "Stewart (knee) exited Wednesday's 107-103 loss to the Pacers and did not return, finishing with six points (3-4 FG) and one rebound in 10 minutes.",
+   "return": "2026-11-06",
+   "fantasy": "GTD",
+   "stats": {
+    "gp": 6.0,
+    "min": 19.666666,
+    "pts": 12.833333,
+    "reb": 3.8333333,
+    "ast": 0.6666667,
+    "this_season": true
+   }
+  },
+  {
    "team": "Charlotte Hornets",
    "id": "5061575",
    "name": "Kon Knueppel",
    "status": "Out",
-   "comment": "Knueppel (hamstring) exited to the locker room in the first quarter of Wednesday's game against the Nets, Brian Lewis of the New York Post reports.",
-   "return": "2026-11-04",
+   "comment": "Knueppel exited Wednesday's game against the Nets after experiencing soreness in his left leg and he will not return, Brett Siegel of ClutchPoints.com reports.",
+   "return": "2026-11-06",
    "fantasy": "GTD",
    "stats": {
     "gp": 81.0,
@@ -1354,23 +1473,6 @@
     "reb": 5.3333335,
     "ast": 3.382716,
     "this_season": false
-   }
-  },
-  {
-   "team": "Charlotte Hornets",
-   "id": "4395651",
-   "name": "Coby White",
-   "status": "Day-To-Day",
-   "comment": "",
-   "return": "",
-   "fantasy": "",
-   "stats": {
-    "gp": 1.0,
-    "min": 16.0,
-    "pts": 7.0,
-    "reb": 0,
-    "ast": 3.0,
-    "this_season": true
    }
   },
   {
