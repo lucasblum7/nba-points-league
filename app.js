@@ -1773,6 +1773,53 @@
       }
     } catch (e) { /* offline or blocked: keep the current copy */ }
   }
+
+  // ---------- landing page: what new members see the first time they open the site ----------
+  const LANDING_AUTO = false;   // flip to true to show it automatically to anyone who hasn't picked their team yet
+  const wantLanding = () => { const q = new URLSearchParams(location.search); if (q.has('welcome')) return true; if (!LANDING_AUTO) return false;
+    let seen = false; try { seen = localStorage.getItem('pl-welcomed') === '1'; } catch (e) { /* ignore */ } return !getMe() && !seen; };
+  function showLanding(C) {
+    if (document.getElementById('landing')) return;
+    const S = (D.config && D.config.scoring) || {}, me = getMe();
+    const L = mk('div', 'landing'); L.id = 'landing'; L.setAttribute('role', 'dialog'); L.setAttribute('aria-modal', 'true'); L.setAttribute('aria-label', 'Welcome to Hoop Squads');
+    const inner = mk('div', 'ld-in'); L.append(inner);
+    // hero
+    const hero = mk('div', 'ld-hero');
+    const ball = mk('div', 'ld-ball'); ball.innerHTML = '<svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="21" fill="#E8762B" stroke="#3A1E0E" stroke-width="2.5"/><path d="M24 3v42M3 24h42M9.2 9.2c7.4 7.4 7.4 22.2 0 29.6M38.8 9.2c-7.4 7.4-7.4 22.2 0 29.6" fill="none" stroke="#3A1E0E" stroke-width="2.5" stroke-linecap="round"/></svg>';
+    const ttl = mk('h1', 'ld-title'); ttl.append(mk('span', null, 'Hoop'), mk('span', 'ld-o', 'Squads'));
+    hero.append(ball, mk('div', 'ld-kick', 'Welcome to'), ttl, mk('div', 'ld-season', '2026–27 season · ' + C.owners.length + ' owners · ' + C.teams.length + ' teams'),
+      mk('p', 'ld-tag', 'Everyone drafted five NBA teams. Every win your teams get is a point for you. Most points at the end of the season wins.'));
+    inner.append(hero);
+    // how it works
+    const how = mk('div', 'ld-how'); how.append(mk('h2', 'ld-h', 'How it works'));
+    const card = (icon, title, body) => { const c = mk('div', 'ld-card'); c.append(mk('span', 'ld-ic', icon), mk('b', null, title), mk('p', null, body)); how.append(c); };
+    card('🏀', 'Every win counts', `Your five teams earn you ${S.win || 1} point per regular-season win, all season long.`);
+    card('🏆', 'NBA Cup = double', `NBA Cup games are worth ${S.cup_game_win || 2} points a win, and winning the Cup adds +${S.won_cup || 5}.`);
+    card('🎟️', 'Playoff bonus', `Making the playoffs is +${S.made_playoffs || 5}, plus ${S.playoff_win || 2} for every playoff win.`);
+    card('⚔️', 'Weekly matchups', 'Each week you face another owner head-to-head. Best net record (wins minus losses) takes the week. Cup games count ±2.');
+    inner.append(how);
+    // pick who you are
+    const pick = mk('div', 'ld-pick'); pick.append(mk('h2', 'ld-h', 'Who are you?'), mk('p', 'ld-sub', 'Pick your name and the site highlights your teams, your matchup and your games.'));
+    const grid = mk('div', 'ld-grid');
+    const finish = (o) => {
+      if (o) setMe(o); try { localStorage.setItem('pl-welcomed', '1'); } catch (e) { /* ignore */ }
+      if (new URLSearchParams(location.search).has('welcome')) { const u = new URL(location.href); u.searchParams.delete('welcome'); history.replaceState(null, '', u.toString()); }
+      document.documentElement.classList.remove('ld-on');
+      L.classList.add('out'); setTimeout(() => L.remove(), 420); window.scrollTo({ top: 0 }); rerender();
+    };
+    [...C.board].forEach((b) => {
+      const o = b.owner, btn = mk('button', 'ld-owner' + (o === me ? ' on' : '')); btn.type = 'button'; btn.style.setProperty('--oc', ownerVar(o));
+      const top = mk('div', 'ld-ot'); const av = mk('span', 'ld-av', o.slice(0, 1).toUpperCase()); top.append(av, mk('b', null, o), mk('span', 'ld-rank', (b.place === 1 ? '🥇 ' : '') + fmt(b.points) + ' pts'));
+      const bs = mk('div', 'ld-badges'); C.teams.filter((t) => t.owner === o).forEach((t) => bs.append(badge(t.team, 'sb-badge ld-b')));
+      btn.append(top, bs); btn.setAttribute('aria-label', `I'm ${o}`);
+      btn.addEventListener('click', () => finish(o)); grid.append(btn);
+    });
+    pick.append(grid);
+    const skip = mk('button', 'ld-skip', 'Just looking around ›'); skip.type = 'button'; skip.addEventListener('click', () => finish(null)); pick.append(skip);
+    inner.append(pick);
+    inner.append(mk('p', 'ld-foot', 'Scores update every 15 minutes from ESPN · you can switch who you are any time from the home page'));
+    document.body.append(L); document.documentElement.classList.add('ld-on');
+  }
   checkVersion();
   setInterval(checkVersion, 5 * 60 * 1000);
   document.addEventListener('visibilitychange', () => { if (document.visibilityState === 'visible') checkVersion(); });
@@ -1781,6 +1828,7 @@
     try {
       await load();
       render(D, compute(D), slate);
+      if (wantLanding()) showLanding(compute(D));
       await refreshLive();
       setInterval(refreshLive, 60 * 1000);
       setInterval(async () => { await load(); await refreshLive(); }, 10 * 60 * 1000);
