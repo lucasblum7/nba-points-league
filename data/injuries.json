@@ -1,5 +1,5 @@
 {
- "as_of": "2026-11-04T18",
+ "as_of": "2026-11-05T03",
  "players": [
   {
    "team": "Atlanta Hawks",
@@ -29,7 +29,7 @@
    "stats": {
     "gp": 7.0,
     "min": 32.57143,
-    "pts": 18.142857,
+    "pts": 18.285715,
     "reb": 9.0,
     "ast": 7.857143,
     "this_season": true
@@ -61,11 +61,11 @@
    "return": "2026-11-06",
    "fantasy": "GTD",
    "stats": {
-    "gp": 4.0,
-    "min": 11.25,
-    "pts": 4.0,
-    "reb": 2.5,
-    "ast": 0.5,
+    "gp": 5.0,
+    "min": 11.0,
+    "pts": 3.6,
+    "reb": 2.6,
+    "ast": 1.0,
     "this_season": true
    }
   },
@@ -105,11 +105,11 @@
    "return": "2026-11-06",
    "fantasy": "GTD",
    "stats": {
-    "gp": 7.0,
-    "min": 28.0,
-    "pts": 13.428572,
-    "reb": 3.0,
-    "ast": 3.4285715,
+    "gp": 8.0,
+    "min": 26.75,
+    "pts": 13.0,
+    "reb": 2.75,
+    "ast": 3.625,
     "this_season": true
    }
   },
@@ -190,11 +190,11 @@
    "return": "2026-11-08",
    "fantasy": "GTD",
    "stats": {
-    "gp": 5.0,
-    "min": 7.6,
-    "pts": 1.2,
-    "reb": 2.6,
-    "ast": 0.2,
+    "gp": 6.0,
+    "min": 8.666667,
+    "pts": 1.5,
+    "reb": 2.3333333,
+    "ast": 0.6666667,
     "this_season": true
    }
   },
@@ -207,11 +207,11 @@
    "return": "2026-11-08",
    "fantasy": "GTD",
    "stats": {
-    "gp": 7.0,
-    "min": 24.714285,
-    "pts": 12.142858,
-    "reb": 8.571428,
-    "ast": 2.0,
+    "gp": 8.0,
+    "min": 22.5,
+    "pts": 11.0,
+    "reb": 7.75,
+    "ast": 1.75,
     "this_season": true
    }
   },
@@ -224,11 +224,11 @@
    "return": "2026-11-06",
    "fantasy": "GTD",
    "stats": {
-    "gp": 7.0,
-    "min": 27.857143,
-    "pts": 15.142858,
-    "reb": 8.714286,
-    "ast": 1.4285715,
+    "gp": 8.0,
+    "min": 25.25,
+    "pts": 13.25,
+    "reb": 7.75,
+    "ast": 1.25,
     "this_season": true
    }
   },
@@ -241,11 +241,11 @@
    "return": "2026-11-06",
    "fantasy": "GTD",
    "stats": {
-    "gp": 6.0,
-    "min": 13.0,
-    "pts": 5.5,
-    "reb": 2.8333333,
-    "ast": 2.1666667,
+    "gp": 7.0,
+    "min": 14.285714,
+    "pts": 6.285714,
+    "reb": 2.5714285,
+    "ast": 1.8571428,
     "this_season": true
    }
   },
@@ -801,15 +801,15 @@
    "id": "4712896",
    "name": "Noah Clowney",
    "status": "Day-To-Day",
-   "comment": "Clowney won't return to Wednesday's game against the Hornets due to right knee soreness. He'll finish with seven points (3-6 FG, 1-4 3Pt), one rebound and one assist across 17 minutes.",
+   "comment": "Clowney (knee) supplied seven points (3-6 FG, 1-4 3Pt), one rebound and one assist over 17 minutes during Wednesday's 114-104 victory over the Hornets.",
    "return": "2026-11-07",
    "fantasy": "GTD",
    "stats": {
-    "gp": 7.0,
-    "min": 21.571428,
-    "pts": 5.428571,
-    "reb": 4.857143,
-    "ast": 0.85714287,
+    "gp": 8.0,
+    "min": 21.0,
+    "pts": 5.625,
+    "reb": 4.375,
+    "ast": 0.875,
     "this_season": true
    }
   },
@@ -839,11 +839,11 @@
    "return": "2026-11-04",
    "fantasy": "GTD",
    "stats": {
-    "gp": 7.0,
-    "min": 22.428572,
-    "pts": 7.428571,
-    "reb": 7.428571,
-    "ast": 1.8571428,
+    "gp": 8.0,
+    "min": 23.125,
+    "pts": 7.125,
+    "reb": 7.125,
+    "ast": 2.625,
     "this_season": true
    }
   },
@@ -968,11 +968,11 @@
    "return": "2026-11-06",
    "fantasy": "GTD",
    "stats": {
-    "gp": 8.0,
-    "min": 14.125,
-    "pts": 1.75,
-    "reb": 4.125,
-    "ast": 0.75,
+    "gp": 9.0,
+    "min": 14.222222,
+    "pts": 2.1111112,
+    "reb": 3.8888888,
+    "ast": 0.7777778,
     "this_season": true
    }
   },
@@ -1049,15 +1049,15 @@
    "id": "4578893",
    "name": "Vit Krejci",
    "status": "Out",
-   "comment": "Krejci won't return to Wednesday's game against the Suns due to a left ankle injury.",
-   "return": "2026-11-06",
+   "comment": "Head coach Micah Nori said that Krejci suffered a left leg fracture during Wednesday's 132-119 win over the Suns, Brett Siegel of ClutchPoints.com reports.",
+   "return": "2027-01-02",
    "fantasy": "OUT",
    "stats": {
-    "gp": 6.0,
-    "min": 10.0,
-    "pts": 2.3333333,
-    "reb": 1.3333334,
-    "ast": 1.0,
+    "gp": 7.0,
+    "min": 10.285714,
+    "pts": 2.7142856,
+    "reb": 1.5714285,
+    "ast": 1.1428572,
     "this_season": true
    }
   },
@@ -1450,11 +1450,11 @@
    "return": "2026-11-06",
    "fantasy": "GTD",
    "stats": {
-    "gp": 6.0,
-    "min": 19.666666,
-    "pts": 12.833333,
-    "reb": 3.8333333,
-    "ast": 0.6666667,
+    "gp": 7.0,
+    "min": 18.285715,
+    "pts": 11.857142,
+    "reb": 3.4285715,
+    "ast": 0.5714286,
     "this_season": true
    }
   },
@@ -1467,12 +1467,12 @@
    "return": "2026-11-06",
    "fantasy": "GTD",
    "stats": {
-    "gp": 81.0,
-    "min": 31.493828,
-    "pts": 18.493828,
-    "reb": 5.3333335,
-    "ast": 3.382716,
-    "this_season": false
+    "gp": 1.0,
+    "min": 6.0,
+    "pts": 3.0,
+    "reb": 0,
+    "ast": 0,
+    "this_season": true
    }
   },
   {

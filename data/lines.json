@@ -768,5 +768,25 @@
   "away_ml": -154,
   "home_ml": 130,
   "book": "DraftKings"
+ },
+ {
+  "date": "2026-11-05",
+  "away": "Miami Heat",
+  "home": "Golden State Warriors",
+  "fav": "Golden State Warriors",
+  "spread": 7.5,
+  "away_ml": 230,
+  "home_ml": -281,
+  "book": "DraftKings"
+ },
+ {
+  "date": "2026-11-05",
+  "away": "Orlando Magic",
+  "home": "Phoenix Suns",
+  "fav": "Phoenix Suns",
+  "spread": 1.5,
+  "away_ml": -104,
+  "home_ml": -114,
+  "book": "DraftKings"
  }
 ]
