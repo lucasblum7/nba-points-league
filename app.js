@@ -1775,7 +1775,7 @@
   }
 
   // ---------- landing page: what new members see the first time they open the site ----------
-  const LANDING_AUTO = false;   // flip to true to show it automatically to anyone who hasn't picked their team yet
+  const LANDING_AUTO = true;    // flip to true to show it automatically to anyone who hasn't picked their team yet
   const wantLanding = () => { const q = new URLSearchParams(location.search); if (q.has('welcome')) return true; if (!LANDING_AUTO) return false;
     let seen = false; try { seen = localStorage.getItem('pl-welcomed') === '1'; } catch (e) { /* ignore */ } return !getMe() && !seen; };
   function showLanding(C) {
