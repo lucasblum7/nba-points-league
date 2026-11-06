@@ -4,23 +4,23 @@
   {
    "id": "401909936",
    "time": "6:00 PM",
-   "state": "pre",
-   "detail": "11/5 - 9:00 PM EST",
+   "state": "post",
+   "detail": "Final",
    "away": "Orlando Magic",
    "home": "Phoenix Suns",
-   "away_score": null,
-   "home_score": null,
+   "away_score": 104,
+   "home_score": 117,
    "cup": false
   },
   {
    "id": "401909937",
    "time": "7:00 PM",
-   "state": "pre",
-   "detail": "11/5 - 10:00 PM EST",
+   "state": "in",
+   "detail": "5:40 - 3rd",
    "away": "Miami Heat",
    "home": "Golden State Warriors",
-   "away_score": null,
-   "home_score": null,
+   "away_score": 64,
+   "home_score": 75,
    "cup": false
   }
  ]
