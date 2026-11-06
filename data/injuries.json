@@ -1,5 +1,5 @@
 {
- "as_of": "2026-11-05T18",
+ "as_of": "2026-11-06T03",
  "players": [
   {
    "team": "Atlanta Hawks",
@@ -501,10 +501,10 @@
    "team": "Golden State Warriors",
    "id": "4997536",
    "name": "Gui Santos",
-   "status": "Out",
+   "status": "Day-To-Day",
    "comment": "Santos (knee) has been ruled out for Thursday's game against the Heat.",
    "return": "2026-11-07",
-   "fantasy": "OUT",
+   "fantasy": "GTD",
    "stats": {
     "gp": 6.0,
     "min": 20.166666,
@@ -997,10 +997,10 @@
    "team": "Phoenix Suns",
    "id": "5105977",
    "name": "Rasheer Fleming",
-   "status": "Out",
+   "status": "Day-To-Day",
    "comment": "Fleming is out for Thursday's game against the Magic due to a sprained left ankle.",
    "return": "2026-11-07",
-   "fantasy": "OUT",
+   "fantasy": "GTD",
    "stats": {
     "gp": 2.0,
     "min": 7.5,
@@ -1014,10 +1014,10 @@
    "team": "Phoenix Suns",
    "id": "4278402",
    "name": "Jordan Goodwin",
-   "status": "Out",
+   "status": "Day-To-Day",
    "comment": "Goodwin (calf) is out for Thursday's game against Orlando.",
    "return": "2026-11-07",
-   "fantasy": "OUT",
+   "fantasy": "GTD",
    "stats": {
     "gp": 5.0,
     "min": 18.6,
