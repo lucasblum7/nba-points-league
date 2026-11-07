@@ -1,13 +1,13 @@
 {
- "as_of": "2026-11-07T03",
+ "as_of": "2026-11-07T09",
  "players": [
   {
    "team": "Atlanta Hawks",
    "id": "4585618",
    "name": "Keshon Gilbert",
    "status": "Out",
-   "comment": "Gilbert is out for Friday's game against the Wizards due to left knee inflammation.",
-   "return": "2026-11-07",
+   "comment": "Gilbert (knee) is out for Saturday's game against Brooklyn.",
+   "return": "2026-11-09",
    "fantasy": "OUT",
    "stats": {
     "gp": 4.0,
@@ -40,9 +40,9 @@
    "id": "4701230",
    "name": "Jalen Johnson",
    "status": "Out",
-   "comment": "Johnson (ankle) is out for Friday's game against the Wizards.",
+   "comment": "Johnson (ankle) is probable for Saturday's game against Brooklyn.",
    "return": "2026-11-07",
-   "fantasy": "OUT",
+   "fantasy": "GTD",
    "stats": {
     "gp": 7.0,
     "min": 32.57143,
@@ -57,8 +57,8 @@
    "id": "3146557",
    "name": "Jock Landale",
    "status": "Out",
-   "comment": "Landale (hip) has been ruled out for Friday's game against the Wizards.",
-   "return": "2026-11-07",
+   "comment": "Landale (hip) has been ruled out for Saturday's game against the Nets.",
+   "return": "2026-11-09",
    "fantasy": "OUT",
    "stats": {
     "gp": 7.0,
@@ -74,8 +74,8 @@
    "id": "4873201",
    "name": "Asa Newell",
    "status": "Out",
-   "comment": "Newell (toe) is out for Friday's game against Washington.",
-   "return": "2026-11-07",
+   "comment": "Newell (toe)  is out for Saturday's game against the Nets.",
+   "return": "2026-11-09",
    "fantasy": "OUT",
    "stats": {
     "gp": 5.0,
@@ -95,23 +95,6 @@
    "return": "2027-07-01",
    "fantasy": "OFS",
    "stats": null
-  },
-  {
-   "team": "Boston Celtics",
-   "id": "4433188",
-   "name": "Devin Carter",
-   "status": "Out",
-   "comment": "Carter (illness) practiced with the G League's Maine Celtics on Wednesday.",
-   "return": "2026-11-06",
-   "fantasy": "GTD",
-   "stats": {
-    "gp": 38.0,
-    "min": 18.421053,
-    "pts": 8.921053,
-    "reb": 3.2894738,
-    "ast": 2.6578948,
-    "this_season": false
-   }
   },
   {
    "team": "New Orleans Pelicans",
@@ -186,8 +169,8 @@
    "id": "4066328",
    "name": "Jarrett Allen",
    "status": "Out",
-   "comment": "Allen (knee) is out for Friday's game against the 76ers.",
-   "return": "2026-11-07",
+   "comment": "Allen (knee) is out for Saturday's game against the Knicks",
+   "return": "2026-11-09",
    "fantasy": "OUT",
    "stats": {
     "gp": 8.0,
@@ -203,15 +186,15 @@
    "id": "4066757",
    "name": "Sam Merrill",
    "status": "Out",
-   "comment": "Merrill (elbow) won't return to Friday's game against the 76ers, Dave McMenamin of ESPN.com reports.",
-   "return": "2026-11-07",
+   "comment": "Merrill (elbow) is out for Saturday's game against the Knicks.",
+   "return": "2026-11-09",
    "fantasy": "OUT",
    "stats": {
-    "gp": 8.0,
-    "min": 24.375,
-    "pts": 8.625,
-    "reb": 3.5,
-    "ast": 2.125,
+    "gp": 9.0,
+    "min": 23.11111,
+    "pts": 7.6666665,
+    "reb": 3.4444444,
+    "ast": 1.8888888,
     "this_season": true
    }
   },
@@ -220,8 +203,8 @@
    "id": "4683747",
    "name": "Jaylon Tyson",
    "status": "Out",
-   "comment": "Tyson (ankle) is out for Friday's game against the 76ers.",
-   "return": "2026-11-07",
+   "comment": "Tyson (ankle) is out for Saturday's game against the Knicks.",
+   "return": "2026-11-09",
    "fantasy": "OUT",
    "stats": {
     "gp": 5.0,
@@ -634,30 +617,13 @@
    }
   },
   {
-   "team": "Milwaukee Bucks",
-   "id": "4697268",
-   "name": "Kam Jones",
-   "status": "Day-To-Day",
-   "comment": "Jones (ankle/two-way player) is out for Friday's game against Toronto.",
-   "return": "2026-11-06",
-   "fantasy": "GTD",
-   "stats": {
-    "gp": 37.0,
-    "min": 16.64865,
-    "pts": 4.3783784,
-    "reb": 1.6216216,
-    "ast": 3.2162163,
-    "this_season": false
-   }
-  },
-  {
    "team": "Minnesota Timberwolves",
    "id": "5279133",
    "name": "Joan Beringer",
-   "status": "Out",
+   "status": "Day-To-Day",
    "comment": "Beringer was ruled out for the second half of Friday's game against the Pelicans due to a nasal fracture, Dane Moore of 'The Dane Moore NBA Podcast' reports.",
    "return": "2026-11-08",
-   "fantasy": "OUT",
+   "fantasy": "GTD",
    "stats": {
     "gp": 10.0,
     "min": 16.5,
@@ -720,13 +686,20 @@
   },
   {
    "team": "Brooklyn Nets",
-   "id": "5105626",
-   "name": "Tyler Bilodeau",
-   "status": "Out",
-   "comment": "Bilodeau (shoulder) has been ruled out for Sunday's game against Indiana.",
-   "return": "2026-11-06",
+   "id": "4712896",
+   "name": "Noah Clowney",
+   "status": "Day-To-Day",
+   "comment": "Clowney is listed as questionable for Saturday's game against the Hawks due to an illness.",
+   "return": "2026-11-07",
    "fantasy": "GTD",
-   "stats": null
+   "stats": {
+    "gp": 8.0,
+    "min": 21.0,
+    "pts": 5.625,
+    "reb": 4.375,
+    "ast": 0.875,
+    "this_season": true
+   }
   },
   {
    "team": "Brooklyn Nets",
@@ -793,6 +766,23 @@
     "pts": 24.5,
     "reb": 6.5,
     "ast": 7.5,
+    "this_season": true
+   }
+  },
+  {
+   "team": "Orlando Magic",
+   "id": "4066320",
+   "name": "Desmond Bane",
+   "status": "Out",
+   "comment": "Bane delivered 19 points (7-13 FG, 5-9 3Pt), two rebounds, an assist, two steals and a block across 40 minutes in Sunday's 108-97 loss to the Celtics.",
+   "return": "2026-11-10",
+   "fantasy": "OUT",
+   "stats": {
+    "gp": 8.0,
+    "min": 34.5,
+    "pts": 17.5,
+    "reb": 3.875,
+    "ast": 2.25,
     "this_season": true
    }
   },
@@ -878,10 +868,10 @@
    "team": "Philadelphia 76ers",
    "id": "5105637",
    "name": "Adem Bona",
-   "status": "Out",
+   "status": "Day-To-Day",
    "comment": "Bona (neck) is listed as out for Friday's game versus the Cavaliers.",
    "return": "2026-11-08",
-   "fantasy": "OUT",
+   "fantasy": "GTD",
    "stats": {
     "gp": 9.0,
     "min": 14.222222,
@@ -1014,10 +1004,10 @@
    "team": "Sacramento Kings",
    "id": "4065732",
    "name": "De'Andre Hunter",
-   "status": "Out",
+   "status": "Day-To-Day",
    "comment": "Hunter (illness) is listed as out for Friday's game against San Antonio.",
    "return": "2026-11-08",
-   "fantasy": "OUT",
+   "fantasy": "GTD",
    "stats": {
     "gp": 8.0,
     "min": 31.125,
@@ -1127,23 +1117,6 @@
   },
   {
    "team": "Oklahoma City Thunder",
-   "id": "5159925",
-   "name": "Nikola Topic",
-   "status": "Out",
-   "comment": "Topic (back) is listed as out for Wednesday's game against Cleveland.",
-   "return": "2026-11-13",
-   "fantasy": "OUT",
-   "stats": {
-    "gp": 10.0,
-    "min": 16.0,
-    "pts": 5.2,
-    "reb": 1.9,
-    "ast": 4.4,
-    "this_season": false
-   }
-  },
-  {
-   "team": "Oklahoma City Thunder",
    "id": "4683692",
    "name": "Cason Wallace",
    "status": "Out",
@@ -1181,8 +1154,8 @@
    "id": "4432823",
    "name": "Jaylin Williams",
    "status": "Out",
-   "comment": "Williams (back) has been ruled out for Friday's game against the Grizzlies.",
-   "return": "2026-11-07",
+   "comment": "Williams (back) has been ruled out for Saturday's game against the Wizards, Brandon Rahbar of DailyThunder.com reports.",
+   "return": "2026-11-10",
    "fantasy": "OUT",
    "stats": {
     "gp": 7.0,
@@ -1191,23 +1164,6 @@
     "reb": 4.0,
     "ast": 1.5714285,
     "this_season": true
-   }
-  },
-  {
-   "team": "Utah Jazz",
-   "id": "4433268",
-   "name": "Trey Alexander",
-   "status": "Out",
-   "comment": "Alexander won't play Wednesday against the Grizzlies due to a left knee bone bruise.",
-   "return": "2026-11-06",
-   "fantasy": "GTD",
-   "stats": {
-    "gp": 9.0,
-    "min": 12.333333,
-    "pts": 5.2222223,
-    "reb": 1.2222222,
-    "ast": 1.0,
-    "this_season": false
    }
   },
   {
@@ -1282,10 +1238,10 @@
    "team": "Washington Wizards",
    "id": "6583",
    "name": "Anthony Davis",
-   "status": "Out",
-   "comment": "Davis (ankle) is listed as out for Friday's game against the Hawks.",
+   "status": "Day-To-Day",
+   "comment": "Davis (ankle) is questionable for Saturday's game against the Thunder.",
    "return": "2026-11-07",
-   "fantasy": "OUT",
+   "fantasy": "GTD",
    "stats": {
     "gp": 8.0,
     "min": 33.0,
@@ -1333,10 +1289,10 @@
    "team": "Toronto Raptors",
    "id": "4433134",
    "name": "Scottie Barnes",
-   "status": "Out",
+   "status": "Day-To-Day",
    "comment": "Barnes (adductor) is listed as out for Friday's game against Milwaukee, Michael Grange of Sportsnet.ca reports.",
    "return": "2026-11-09",
-   "fantasy": "OUT",
+   "fantasy": "GTD",
    "stats": {
     "gp": 8.0,
     "min": 33.25,
@@ -1377,10 +1333,10 @@
    "team": "Toronto Raptors",
    "id": "4395724",
    "name": "Immanuel Quickley",
-   "status": "Out",
+   "status": "Day-To-Day",
    "comment": "Quickley (hamstring) won't play Friday in Milwaukee, Michael Grange of Sportsnet.ca reports.",
    "return": "2026-11-09",
-   "fantasy": "OUT",
+   "fantasy": "GTD",
    "stats": {
     "gp": 8.0,
     "min": 31.75,
@@ -1409,6 +1365,16 @@
   },
   {
    "team": "Memphis Grizzlies",
+   "id": "5105462",
+   "name": "Richie Saunders",
+   "status": "Out",
+   "comment": "Saunders signed a two-way contract with the Grizzlies on Saturday, Shams Charania of ESPN reports.",
+   "return": "2026-12-01",
+   "fantasy": "OUT",
+   "stats": null
+  },
+  {
+   "team": "Memphis Grizzlies",
    "id": "4432810",
    "name": "Isaiah Stewart",
    "status": "Out",
@@ -1428,10 +1394,10 @@
    "team": "Charlotte Hornets",
    "id": "4433249",
    "name": "Moussa Diabate",
-   "status": "Out",
+   "status": "Day-To-Day",
    "comment": "Diabate (quadriceps) has been ruled out for Friday's game against Boston, according to the Hornets' official injury report.",
    "return": "2026-11-09",
-   "fantasy": "OUT",
+   "fantasy": "GTD",
    "stats": {
     "gp": 9.0,
     "min": 28.777779,
