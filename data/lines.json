@@ -825,8 +825,8 @@
   "home": "Dallas Mavericks",
   "fav": "Dallas Mavericks",
   "spread": 6.5,
-  "away_ml": 217,
-  "home_ml": -264,
+  "away_ml": 211,
+  "home_ml": -257,
   "book": "DraftKings"
  },
  {
@@ -844,9 +844,9 @@
   "away": "Oklahoma City Thunder",
   "home": "Memphis Grizzlies",
   "fav": "Oklahoma City Thunder",
-  "spread": 4.5,
-  "away_ml": -173,
-  "home_ml": 145,
+  "spread": 3.5,
+  "away_ml": -174,
+  "home_ml": 146,
   "book": "DraftKings"
  },
  {
@@ -854,9 +854,9 @@
   "away": "Toronto Raptors",
   "home": "Milwaukee Bucks",
   "fav": "Toronto Raptors",
-  "spread": 4.5,
-  "away_ml": -184,
-  "home_ml": 154,
+  "spread": 3.5,
+  "away_ml": -162,
+  "home_ml": 136,
   "book": "DraftKings"
  },
  {
