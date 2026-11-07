@@ -1,5 +1,6 @@
-2026-11-07T04:11:23+00:00 ok
-checked 2026-11-03 through 2026-11-07
-fetched 32 events
+2026-11-07T11:03:35+00:00 ok
+checked 2026-11-04 through 2026-11-08
+fetched 39 events
+odds: schedule 1068 games left (0 team requests failed)
 odds: 92 injured players, 92 in ESPN's report
-changed: games (7 new), lines, today, schedule, injuries, odds
+changed: games (2 new), lines, today, schedule, injuries, odds

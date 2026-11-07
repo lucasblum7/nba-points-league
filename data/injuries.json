@@ -1,5 +1,5 @@
 {
- "as_of": "2026-11-06T18",
+ "as_of": "2026-11-07T03",
  "players": [
   {
    "team": "Atlanta Hawks",
@@ -659,11 +659,11 @@
    "return": "2026-11-08",
    "fantasy": "OUT",
    "stats": {
-    "gp": 9.0,
-    "min": 17.555555,
-    "pts": 6.2222223,
-    "reb": 6.888889,
-    "ast": 0.7777778,
+    "gp": 10.0,
+    "min": 16.5,
+    "pts": 5.8,
+    "reb": 6.5,
+    "ast": 0.7,
     "this_season": true
    }
   },
@@ -1463,15 +1463,15 @@
    "id": "4433287",
    "name": "Brandon Miller",
    "status": "Day-To-Day",
-   "comment": "Miller (groin) won't return to Friday's game against the Celtics, Brett Siegel of ClutchPoints.com reports.",
+   "comment": "Head coach Charles Lee said Miller (groin) will be re-evaluated over the weekend, and they expect to have more information by Monday, Steve Reed of The Associated Press reports.",
    "return": "2026-11-09",
    "fantasy": "GTD",
    "stats": {
-    "gp": 9.0,
-    "min": 32.88889,
-    "pts": 22.0,
-    "reb": 5.3333335,
-    "ast": 2.3333333,
+    "gp": 10.0,
+    "min": 31.0,
+    "pts": 20.6,
+    "reb": 5.0,
+    "ast": 2.2,
     "this_season": true
    }
   },

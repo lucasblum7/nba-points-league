@@ -1,61 +1,61 @@
 {
- "as_of": "2026-11-06",
+ "as_of": "2026-11-07",
  "games": [
   {
    "date": "2026-11-07",
    "time": "4:30 PM",
    "away": "Brooklyn Nets",
    "home": "Atlanta Hawks",
-   "away_ml": 208,
-   "home_ml": -253
+   "away_ml": 212,
+   "home_ml": -258
   },
   {
    "date": "2026-11-07",
    "time": "5:00 PM",
    "away": "New York Knicks",
    "home": "Cleveland Cavaliers",
-   "away_ml": -171,
-   "home_ml": 144
+   "away_ml": -191,
+   "home_ml": 160
   },
   {
    "date": "2026-11-07",
    "time": "5:30 PM",
    "away": "Orlando Magic",
    "home": "Golden State Warriors",
-   "away_ml": 208,
-   "home_ml": -253
+   "away_ml": 212,
+   "home_ml": -258
   },
   {
    "date": "2026-11-07",
    "time": "2:00 PM",
    "away": "Denver Nuggets",
    "home": "Indiana Pacers",
-   "away_ml": -263,
-   "home_ml": 216
+   "away_ml": -268,
+   "home_ml": 220
   },
   {
    "date": "2026-11-07",
    "time": "5:00 PM",
    "away": "Washington Wizards",
    "home": "Oklahoma City Thunder",
-   "away_ml": 373,
-   "home_ml": -486
+   "away_ml": 349,
+   "home_ml": -449
   },
   {
    "date": "2026-11-07",
    "time": "6:00 PM",
    "away": "Houston Rockets",
    "home": "Phoenix Suns",
-   "away_ml": -253,
-   "home_ml": 208
+   "away_ml": -308,
+   "home_ml": 249
   },
   {
    "date": "2026-11-07",
    "time": "7:00 PM",
    "away": "San Antonio Spurs",
    "home": "Portland Trail Blazers",
-   "away_ml": -169,
-   "home_ml": 142
+   "away_ml": -204,
+   "home_ml": 170
   },
   {
    "date": "2026-11-08",
@@ -650,6 +650,42 @@
    "away": "Phoenix Suns",
    "home": "Utah Jazz",
    "cup": true
+  },
+  {
+   "date": "2026-11-21",
+   "time": "5:00 PM",
+   "away": "LA Clippers",
+   "home": "Dallas Mavericks"
+  },
+  {
+   "date": "2026-11-21",
+   "time": "5:00 PM",
+   "away": "Memphis Grizzlies",
+   "home": "Minnesota Timberwolves"
+  },
+  {
+   "date": "2026-11-21",
+   "time": "4:30 PM",
+   "away": "Portland Trail Blazers",
+   "home": "New York Knicks"
+  },
+  {
+   "date": "2026-11-21",
+   "time": "10:00 AM",
+   "away": "Milwaukee Bucks",
+   "home": "Philadelphia 76ers"
+  },
+  {
+   "date": "2026-11-21",
+   "time": "7:00 PM",
+   "away": "Boston Celtics",
+   "home": "Sacramento Kings"
+  },
+  {
+   "date": "2026-11-21",
+   "time": "5:00 PM",
+   "away": "New Orleans Pelicans",
+   "home": "San Antonio Spurs"
   }
  ]
 }
