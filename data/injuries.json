@@ -1,5 +1,5 @@
 {
- "as_of": "2026-11-06T15",
+ "as_of": "2026-11-06T18",
  "players": [
   {
    "team": "Atlanta Hawks",
@@ -195,6 +195,23 @@
     "pts": 13.25,
     "reb": 7.75,
     "ast": 1.25,
+    "this_season": true
+   }
+  },
+  {
+   "team": "Cleveland Cavaliers",
+   "id": "4066757",
+   "name": "Sam Merrill",
+   "status": "Out",
+   "comment": "Merrill (elbow) won't return to Friday's game against the 76ers, Dave McMenamin of ESPN.com reports.",
+   "return": "2026-11-07",
+   "fantasy": "OUT",
+   "stats": {
+    "gp": 8.0,
+    "min": 24.375,
+    "pts": 8.625,
+    "reb": 3.5,
+    "ast": 2.125,
     "this_season": true
    }
   },
@@ -631,6 +648,23 @@
     "reb": 1.6216216,
     "ast": 3.2162163,
     "this_season": false
+   }
+  },
+  {
+   "team": "Minnesota Timberwolves",
+   "id": "5279133",
+   "name": "Joan Beringer",
+   "status": "Out",
+   "comment": "Beringer was ruled out for the second half of Friday's game against the Pelicans due to a nasal fracture, Dane Moore of 'The Dane Moore NBA Podcast' reports.",
+   "return": "2026-11-08",
+   "fantasy": "OUT",
+   "stats": {
+    "gp": 9.0,
+    "min": 17.555555,
+    "pts": 6.2222223,
+    "reb": 6.888889,
+    "ast": 0.7777778,
+    "this_season": true
    }
   },
   {
@@ -1421,6 +1455,23 @@
     "pts": 3.0,
     "reb": 0,
     "ast": 0,
+    "this_season": true
+   }
+  },
+  {
+   "team": "Charlotte Hornets",
+   "id": "4433287",
+   "name": "Brandon Miller",
+   "status": "Day-To-Day",
+   "comment": "Miller (groin) won't return to Friday's game against the Celtics, Brett Siegel of ClutchPoints.com reports.",
+   "return": "2026-11-09",
+   "fantasy": "GTD",
+   "stats": {
+    "gp": 9.0,
+    "min": 32.88889,
+    "pts": 22.0,
+    "reb": 5.3333335,
+    "ast": 2.3333333,
     "this_season": true
    }
   },

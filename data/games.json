@@ -992,5 +992,68 @@
   "home": "Phoenix Suns",
   "away_score": 104,
   "home_score": 117
+ },
+ {
+  "id": "401909287",
+  "date": "2026-11-06",
+  "away": "Washington Wizards",
+  "home": "Atlanta Hawks",
+  "away_score": 132,
+  "home_score": 139,
+  "cup": true
+ },
+ {
+  "id": "401909288",
+  "date": "2026-11-06",
+  "away": "Boston Celtics",
+  "home": "Charlotte Hornets",
+  "away_score": 119,
+  "home_score": 80,
+  "cup": true
+ },
+ {
+  "id": "401909289",
+  "date": "2026-11-06",
+  "away": "Philadelphia 76ers",
+  "home": "Cleveland Cavaliers",
+  "away_score": 95,
+  "home_score": 119,
+  "cup": true
+ },
+ {
+  "id": "401909290",
+  "date": "2026-11-06",
+  "away": "Utah Jazz",
+  "home": "Dallas Mavericks",
+  "away_score": 100,
+  "home_score": 112,
+  "cup": true
+ },
+ {
+  "id": "401909291",
+  "date": "2026-11-06",
+  "away": "Oklahoma City Thunder",
+  "home": "Memphis Grizzlies",
+  "away_score": 128,
+  "home_score": 97,
+  "cup": true
+ },
+ {
+  "id": "401909292",
+  "date": "2026-11-06",
+  "away": "Toronto Raptors",
+  "home": "Milwaukee Bucks",
+  "away_score": 121,
+  "home_score": 107,
+  "cup": true
+ },
+ {
+  "id": "401909293",
+  "date": "2026-11-06",
+  "away": "Minnesota Timberwolves",
+  "home": "New Orleans Pelicans",
+  "away_score": 115,
+  "home_score": 109,
+  "cup": true
  }
 ]
