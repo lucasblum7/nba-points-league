@@ -4,12 +4,12 @@
   {
    "id": "401909938",
    "time": "2:00 PM",
-   "state": "pre",
-   "detail": "11/7 - 5:00 PM EST",
+   "state": "in",
+   "detail": "Halftime",
    "away": "Denver Nuggets",
    "home": "Indiana Pacers",
-   "away_score": null,
-   "home_score": null,
+   "away_score": 64,
+   "home_score": 41,
    "cup": false
   },
   {
