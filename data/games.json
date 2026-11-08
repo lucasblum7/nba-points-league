@@ -1129,5 +1129,13 @@
   "home": "Portland Trail Blazers",
   "away_score": 125,
   "home_score": 103
+ },
+ {
+  "id": "401909945",
+  "date": "2026-11-08",
+  "away": "Philadelphia 76ers",
+  "home": "Chicago Bulls",
+  "away_score": 127,
+  "home_score": 121
  }
 ]
