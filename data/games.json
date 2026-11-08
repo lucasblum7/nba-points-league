@@ -1075,11 +1075,35 @@
   "cup": true
  },
  {
+  "id": "401909939",
+  "date": "2026-11-07",
+  "away": "Brooklyn Nets",
+  "home": "Atlanta Hawks",
+  "away_score": 121,
+  "home_score": 124
+ },
+ {
+  "id": "401909940",
+  "date": "2026-11-07",
+  "away": "New York Knicks",
+  "home": "Cleveland Cavaliers",
+  "away_score": 109,
+  "home_score": 97
+ },
+ {
   "id": "401909938",
   "date": "2026-11-07",
   "away": "Denver Nuggets",
   "home": "Indiana Pacers",
   "away_score": 114,
   "home_score": 102
+ },
+ {
+  "id": "401909941",
+  "date": "2026-11-07",
+  "away": "Washington Wizards",
+  "home": "Oklahoma City Thunder",
+  "away_score": 75,
+  "home_score": 114
  }
 ]
