@@ -1073,5 +1073,13 @@
   "away_score": 124,
   "home_score": 109,
   "cup": true
+ },
+ {
+  "id": "401909938",
+  "date": "2026-11-07",
+  "away": "Denver Nuggets",
+  "home": "Indiana Pacers",
+  "away_score": 114,
+  "home_score": 102
  }
 ]
