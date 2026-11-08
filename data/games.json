@@ -1091,6 +1091,14 @@
   "home_score": 97
  },
  {
+  "id": "401909942",
+  "date": "2026-11-07",
+  "away": "Orlando Magic",
+  "home": "Golden State Warriors",
+  "away_score": 119,
+  "home_score": 126
+ },
+ {
   "id": "401909938",
   "date": "2026-11-07",
   "away": "Denver Nuggets",
@@ -1105,5 +1113,21 @@
   "home": "Oklahoma City Thunder",
   "away_score": 75,
   "home_score": 114
+ },
+ {
+  "id": "401909943",
+  "date": "2026-11-07",
+  "away": "Houston Rockets",
+  "home": "Phoenix Suns",
+  "away_score": 99,
+  "home_score": 102
+ },
+ {
+  "id": "401909944",
+  "date": "2026-11-07",
+  "away": "San Antonio Spurs",
+  "home": "Portland Trail Blazers",
+  "away_score": 125,
+  "home_score": 103
  }
 ]

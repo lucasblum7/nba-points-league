@@ -1,5 +1,5 @@
 {
- "as_of": "2026-11-07T18",
+ "as_of": "2026-11-08T00",
  "players": [
   {
    "team": "Atlanta Hawks",
@@ -554,8 +554,8 @@
    "name": "Yanic Konan Niederhauser",
    "status": "Out",
    "comment": "The Clippers recalled Niederhauser (foot) from the G League's San Diego Clippers on Sunday.",
-   "return": "2026-11-08",
-   "fantasy": "GTD",
+   "return": "2026-11-10",
+   "fantasy": "OUT",
    "stats": {
     "gp": 41.0,
     "min": 10.341463,
@@ -635,6 +635,23 @@
   },
   {
    "team": "Brooklyn Nets",
+   "id": "5101761",
+   "name": "Mikel Brown Jr.",
+   "status": "Out",
+   "comment": "Brown, who finished with 18 points (5-13 FG, 3-8 3Pt, 5-7 FT), one rebound, three assists and one steal over 25 minutes in Saturday's 124-121 loss to Atlanta, won't play in Sunday's game against Dallas, Erik Slater of ClutchPoints.com reports.",
+   "return": "2026-11-11",
+   "fantasy": "OUT",
+   "stats": {
+    "gp": 6.0,
+    "min": 22.833334,
+    "pts": 12.0,
+    "reb": 2.3333333,
+    "ast": 4.0,
+    "this_season": true
+   }
+  },
+  {
+   "team": "Brooklyn Nets",
    "id": "5175643",
    "name": "Egor Demin",
    "status": "Out",
@@ -647,23 +664,6 @@
     "pts": 7.75,
     "reb": 2.25,
     "ast": 2.75,
-    "this_season": true
-   }
-  },
-  {
-   "team": "Brooklyn Nets",
-   "id": "4432194",
-   "name": "Day'Ron Sharpe",
-   "status": "Day-To-Day",
-   "comment": "Sharpe registered 15 points (5-7 FG, 1-1 3Pt, 4-5 FT), 13 rebounds and four assists across 26 minutes in Sunday's 98-90 win over the Pacers.",
-   "return": "2026-11-04",
-   "fantasy": "GTD",
-   "stats": {
-    "gp": 8.0,
-    "min": 23.125,
-    "pts": 7.125,
-    "reb": 7.125,
-    "ast": 2.625,
     "this_season": true
    }
   },
@@ -1147,6 +1147,23 @@
     "reb": 10.365853,
     "ast": 4.780488,
     "this_season": false
+   }
+  },
+  {
+   "team": "Washington Wizards",
+   "id": "4278129",
+   "name": "Deandre Ayton",
+   "status": "Out",
+   "comment": "Ayton won't return to Saturday's game against the Thunder due to a lower leg injury.",
+   "return": "2026-11-09",
+   "fantasy": "OUT",
+   "stats": {
+    "gp": 10.0,
+    "min": 15.2,
+    "pts": 5.3,
+    "reb": 4.8,
+    "ast": 1.0,
+    "this_season": true
    }
   },
   {
