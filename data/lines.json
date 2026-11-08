@@ -955,29 +955,29 @@
   "home": "Chicago Bulls",
   "fav": "Philadelphia 76ers",
   "spread": 9.5,
-  "away_ml": -395,
-  "home_ml": 312,
-  "book": "Draft Kings"
+  "away_ml": -449,
+  "home_ml": 348,
+  "book": "DraftKings"
  },
  {
   "date": "2026-11-08",
   "away": "Brooklyn Nets",
   "home": "Dallas Mavericks",
   "fav": "Dallas Mavericks",
-  "spread": 9.5,
-  "away_ml": 331,
-  "home_ml": -423,
-  "book": "Draft Kings"
+  "spread": 7.5,
+  "away_ml": 249,
+  "home_ml": -308,
+  "book": "DraftKings"
  },
  {
   "date": "2026-11-08",
   "away": "Los Angeles Lakers",
   "home": "Detroit Pistons",
   "fav": "Detroit Pistons",
-  "spread": 4.5,
-  "away_ml": 155,
-  "home_ml": -185,
-  "book": "Draft Kings"
+  "spread": 6.5,
+  "away_ml": 220,
+  "home_ml": -269,
+  "book": "DraftKings"
  },
  {
   "date": "2026-11-08",
@@ -985,19 +985,19 @@
   "home": "LA Clippers",
   "fav": "New Orleans Pelicans",
   "spread": 1.5,
-  "away_ml": -119,
-  "home_ml": 100,
-  "book": "Draft Kings"
+  "away_ml": -121,
+  "home_ml": 103,
+  "book": "DraftKings"
  },
  {
   "date": "2026-11-08",
   "away": "Boston Celtics",
   "home": "Milwaukee Bucks",
   "fav": "Boston Celtics",
-  "spread": 12.5,
-  "away_ml": -790,
-  "home_ml": 553,
-  "book": "Draft Kings"
+  "spread": 13.5,
+  "away_ml": -740,
+  "home_ml": 527,
+  "book": "DraftKings"
  },
  {
   "date": "2026-11-08",
@@ -1005,18 +1005,38 @@
   "home": "Minnesota Timberwolves",
   "fav": "Minnesota Timberwolves",
   "spread": 11.5,
-  "away_ml": 443,
-  "home_ml": -597,
-  "book": "Draft Kings"
+  "away_ml": 470,
+  "home_ml": -650,
+  "book": "DraftKings"
  },
  {
   "date": "2026-11-08",
   "away": "Miami Heat",
   "home": "Sacramento Kings",
   "fav": "Miami Heat",
+  "spread": 10.5,
+  "away_ml": -446,
+  "home_ml": 346,
+  "book": "DraftKings"
+ },
+ {
+  "date": "2026-11-09",
+  "away": "Denver Nuggets",
+  "home": "Houston Rockets",
+  "fav": "Houston Rockets",
+  "spread": 4.5,
+  "away_ml": 139,
+  "home_ml": -166,
+  "book": "DraftKings"
+ },
+ {
+  "date": "2026-11-09",
+  "away": "San Antonio Spurs",
+  "home": "Phoenix Suns",
+  "fav": "San Antonio Spurs",
   "spread": 7.5,
-  "away_ml": -352,
-  "home_ml": 281,
-  "book": "Draft Kings"
+  "away_ml": -243,
+  "home_ml": 200,
+  "book": "DraftKings"
  }
 ]
