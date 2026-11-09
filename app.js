@@ -529,8 +529,8 @@
       const tr = mk('tr', [d.points > 0 ? medal(d.place) : null, d.owner === me ? 'is-me' : null].filter(Boolean).join(' ') || null);
       const nmTd = mk('td', 'total lb-owner'); const nb = mk('button', 'lb-name', d.owner); nb.type = 'button'; nb.setAttribute('aria-label', `Open ${d.owner}'s roster`);
       nb.addEventListener('click', () => goToRoster(d.owner)); nmTd.append(odot(d.owner), nb); if (d.owner === me) nmTd.append(mk('span', 'you-tag', 'You'));
-      tr.append(mk('td', 'rank', d.rank), nmTd, mk('td', 'num', fmt(d.wins)), mk('td', 'num' + (d.bonus ? '' : ' zero'), fmt(d.bonus)),
-        mk('td', 'num total', fmt(d.points)), mk('td', 'num', d.this_week), mk('td', 'num hide-sm' + (d.weeks_won ? '' : ' zero'), d.weeks_won));
+      tr.append(mk('td', 'rank', d.rank), nmTd, mk('td', 'num total', fmt(d.points)), mk('td', 'num', fmt(d.wins)), mk('td', 'num' + (d.bonus ? '' : ' zero'), fmt(d.bonus)),
+        mk('td', 'num', d.this_week), mk('td', 'num hide-sm' + (d.weeks_won ? '' : ' zero'), d.weeks_won));
       tr.dataset.owner = d.owner; tr.dataset.pts = d.points;
       if (prevPts.size && prevPts.has(d.owner) && prevPts.get(d.owner) !== String(d.points)) tr.classList.add('pts-up');
       lb.append(tr);
