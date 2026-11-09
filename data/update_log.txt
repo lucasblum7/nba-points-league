@@ -1,6 +1,4 @@
-2026-11-09T03:00:07+00:00 ok
-day 2026-11-06 failed: URLError(ConnectionResetError(104, 'Connection reset by peer'))
+2026-11-09T04:09:42+00:00 ok
 checked 2026-11-05 through 2026-11-09
-fetched 24 events
-odds: 95 injured players, 95 in ESPN's report
-changed: games (2 new), lines, today, schedule, injuries, odds
+fetched 33 events
+changed: games (2 new), lines, today, schedule, odds

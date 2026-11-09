@@ -1139,12 +1139,28 @@
   "home_score": 121
  },
  {
+  "id": "401909948",
+  "date": "2026-11-08",
+  "away": "Brooklyn Nets",
+  "home": "Dallas Mavericks",
+  "away_score": 93,
+  "home_score": 130
+ },
+ {
   "id": "401909946",
   "date": "2026-11-08",
   "away": "Los Angeles Lakers",
   "home": "Detroit Pistons",
   "away_score": 121,
   "home_score": 116
+ },
+ {
+  "id": "401909949",
+  "date": "2026-11-08",
+  "away": "Boston Celtics",
+  "home": "Milwaukee Bucks",
+  "away_score": 117,
+  "home_score": 97
  },
  {
   "id": "401909947",
