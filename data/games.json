@@ -1137,5 +1137,21 @@
   "home": "Chicago Bulls",
   "away_score": 127,
   "home_score": 121
+ },
+ {
+  "id": "401909946",
+  "date": "2026-11-08",
+  "away": "Los Angeles Lakers",
+  "home": "Detroit Pistons",
+  "away_score": 121,
+  "home_score": 116
+ },
+ {
+  "id": "401909947",
+  "date": "2026-11-08",
+  "away": "Utah Jazz",
+  "home": "Minnesota Timberwolves",
+  "away_score": 100,
+  "home_score": 115
  }
 ]

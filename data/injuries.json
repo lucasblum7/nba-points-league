@@ -1,5 +1,5 @@
 {
- "as_of": "2026-11-08T15",
+ "as_of": "2026-11-08T18",
  "players": [
   {
    "team": "Atlanta Hawks",
@@ -78,23 +78,6 @@
    "return": "2027-07-01",
    "fantasy": "OFS",
    "stats": null
-  },
-  {
-   "team": "Boston Celtics",
-   "id": "4351852",
-   "name": "Mitchell Robinson",
-   "status": "Day-To-Day",
-   "comment": "Robinson (illness) is questionable for Sunday's game versus Milwaukee, Bobby Krivitsky of Forbes.com reports.",
-   "return": "2026-11-08",
-   "fantasy": "GTD",
-   "stats": {
-    "gp": 8.0,
-    "min": 18.875,
-    "pts": 5.75,
-    "reb": 5.5,
-    "ast": 0.5,
-    "this_season": true
-   }
   },
   {
    "team": "New Orleans Pelicans",
@@ -447,6 +430,40 @@
    }
   },
   {
+   "team": "Golden State Warriors",
+   "id": "4897262",
+   "name": "Will Richard",
+   "status": "Out",
+   "comment": "Richard is out for Monday's game against the Pelicans due to a left thumb UCL tear.",
+   "return": "2026-11-11",
+   "fantasy": "OUT",
+   "stats": {
+    "gp": 10.0,
+    "min": 17.2,
+    "pts": 5.1,
+    "reb": 1.8,
+    "ast": 1.0,
+    "this_season": true
+   }
+  },
+  {
+   "team": "Golden State Warriors",
+   "id": "4997536",
+   "name": "Gui Santos",
+   "status": "Day-To-Day",
+   "comment": "Santos (knee) is listed as probable for Monday's game against New Orleans.",
+   "return": "2026-11-09",
+   "fantasy": "GTD",
+   "stats": {
+    "gp": 7.0,
+    "min": 18.857143,
+    "pts": 6.571429,
+    "reb": 3.5714285,
+    "ast": 1.1428572,
+    "this_season": true
+   }
+  },
+  {
    "team": "Houston Rockets",
    "id": "2991235",
    "name": "Steven Adams",
@@ -651,13 +668,30 @@
    }
   },
   {
+   "team": "Los Angeles Lakers",
+   "id": "4397014",
+   "name": "Quentin Grimes",
+   "status": "Day-To-Day",
+   "comment": "Grimes (finger) did not return to Sunday's game against the Pistons.",
+   "return": "2026-11-09",
+   "fantasy": "GTD",
+   "stats": {
+    "gp": 10.0,
+    "min": 25.5,
+    "pts": 7.6,
+    "reb": 2.7,
+    "ast": 2.4,
+    "this_season": true
+   }
+  },
+  {
    "team": "Milwaukee Bucks",
    "id": "4277843",
    "name": "Gary Trent Jr.",
-   "status": "Day-To-Day",
-   "comment": "Trent (illness) has been downgraded to questionable for Sunday's game against Boston.",
-   "return": "2026-11-08",
-   "fantasy": "GTD",
+   "status": "Out",
+   "comment": "Trent (illness) won't play in Sunday's game versus the Celtics.",
+   "return": "2026-11-10",
+   "fantasy": "OUT",
    "stats": {
     "gp": 2.0,
     "min": 6.5,
@@ -920,7 +954,7 @@
    "id": "4278402",
    "name": "Jordan Goodwin",
    "status": "Out",
-   "comment": "Goodwin (calf) is out for Saturday's game against the Rockets.",
+   "comment": "Goodwin (calf) is questionable for Monday's game against the Spurs.",
    "return": "2026-11-09",
    "fantasy": "GTD",
    "stats": {
@@ -1038,10 +1072,10 @@
    "team": "Sacramento Kings",
    "id": "3155942",
    "name": "Domantas Sabonis",
-   "status": "Day-To-Day",
-   "comment": "Sabonis has been downgraded to questionable for Sunday's game against Miami due to left knee soreness.",
-   "return": "2026-11-08",
-   "fantasy": "GTD",
+   "status": "Out",
+   "comment": "Sabonis (knee) is out for Sunday's game against the Heat.",
+   "return": "2026-11-10",
+   "fantasy": "OUT",
    "stats": {
     "gp": 9.0,
     "min": 35.555557,
@@ -1066,9 +1100,9 @@
    "id": "6440",
    "name": "Tobias Harris",
    "status": "Out",
-   "comment": "Harris (calf) is listed as out for Saturday's game against Minnesota.",
-   "return": "2026-11-09",
-   "fantasy": "GTD",
+   "comment": "Harris (calf) is listed as out for Monday's game against Phoenix.",
+   "return": "2026-11-11",
+   "fantasy": "OUT",
    "stats": {
     "gp": 63.0,
     "min": 27.698412,
@@ -1087,6 +1121,23 @@
    "return": "2026-12-03",
    "fantasy": "OUT",
    "stats": null
+  },
+  {
+   "team": "San Antonio Spurs",
+   "id": "4395630",
+   "name": "Devin Vassell",
+   "status": "Day-To-Day",
+   "comment": "Vassell is questionable for Monday's game against the Suns due to left adductor tightness.",
+   "return": "2026-11-09",
+   "fantasy": "GTD",
+   "stats": {
+    "gp": 10.0,
+    "min": 30.0,
+    "pts": 11.9,
+    "reb": 3.8,
+    "ast": 3.1,
+    "this_season": true
+   }
   },
   {
    "team": "Oklahoma City Thunder",
@@ -1168,6 +1219,23 @@
   },
   {
    "team": "Utah Jazz",
+   "id": "4433627",
+   "name": "Keyonte George",
+   "status": "Day-To-Day",
+   "comment": "George will not return to Sunday's game against the Timberwolves due to a right ankle injury.",
+   "return": "2026-11-10",
+   "fantasy": "GTD",
+   "stats": {
+    "gp": 9.0,
+    "min": 32.333332,
+    "pts": 21.333334,
+    "reb": 4.2222223,
+    "ast": 6.2222223,
+    "this_season": true
+   }
+  },
+  {
+   "team": "Utah Jazz",
    "id": "4277961",
    "name": "Jaren Jackson Jr.",
    "status": "Out",
@@ -1179,6 +1247,23 @@
     "min": 26.0,
     "pts": 16.25,
     "reb": 5.0,
+    "ast": 2.0,
+    "this_season": true
+   }
+  },
+  {
+   "team": "Utah Jazz",
+   "id": "4066336",
+   "name": "Lauri Markkanen",
+   "status": "Out",
+   "comment": "Markkanen (wrist) is out for Sunday's game against the Timberwolves, Shreyas Laddha of The Salt Lake Tribune reports.",
+   "return": "2026-11-10",
+   "fantasy": "OUT",
+   "stats": {
+    "gp": 8.0,
+    "min": 30.875,
+    "pts": 18.0,
+    "reb": 6.75,
     "ast": 2.0,
     "this_season": true
    }
