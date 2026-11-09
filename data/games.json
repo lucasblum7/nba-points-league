@@ -1155,6 +1155,14 @@
   "home_score": 116
  },
  {
+  "id": "401909950",
+  "date": "2026-11-08",
+  "away": "New Orleans Pelicans",
+  "home": "LA Clippers",
+  "away_score": 123,
+  "home_score": 139
+ },
+ {
   "id": "401909949",
   "date": "2026-11-08",
   "away": "Boston Celtics",
@@ -1169,5 +1177,13 @@
   "home": "Minnesota Timberwolves",
   "away_score": 100,
   "home_score": 115
+ },
+ {
+  "id": "401909951",
+  "date": "2026-11-08",
+  "away": "Miami Heat",
+  "home": "Sacramento Kings",
+  "away_score": 114,
+  "home_score": 108
  }
 ]

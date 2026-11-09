@@ -1,5 +1,5 @@
 {
- "as_of": "2026-11-08T18",
+ "as_of": "2026-11-09T03",
  "players": [
   {
    "team": "Atlanta Hawks",
@@ -676,11 +676,11 @@
    "return": "2026-11-09",
    "fantasy": "GTD",
    "stats": {
-    "gp": 10.0,
-    "min": 25.5,
-    "pts": 7.6,
-    "reb": 2.7,
-    "ast": 2.4,
+    "gp": 11.0,
+    "min": 26.09091,
+    "pts": 8.0,
+    "reb": 2.5454545,
+    "ast": 2.5454545,
     "this_season": true
    }
   },
@@ -1226,11 +1226,11 @@
    "return": "2026-11-10",
    "fantasy": "GTD",
    "stats": {
-    "gp": 9.0,
-    "min": 32.333332,
-    "pts": 21.333334,
-    "reb": 4.2222223,
-    "ast": 6.2222223,
+    "gp": 10.0,
+    "min": 32.1,
+    "pts": 21.1,
+    "reb": 4.3,
+    "ast": 6.4,
     "this_season": true
    }
   },
@@ -1464,7 +1464,7 @@
    "name": "Isaiah Stewart",
    "status": "Out",
    "comment": "Stewart (knee) has been ruled out for Monday's game against Toronto.",
-   "return": "2026-11-09",
+   "return": "2026-11-11",
    "fantasy": "OUT",
    "stats": {
     "gp": 7.0,

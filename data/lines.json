@@ -1024,30 +1024,40 @@
   "away": "Los Angeles Lakers",
   "home": "Atlanta Hawks",
   "fav": "Los Angeles Lakers",
-  "spread": 2.5,
-  "away_ml": -139,
-  "home_ml": 117,
-  "book": "DraftKings"
+  "spread": 1.5,
+  "away_ml": -120,
+  "home_ml": 102,
+  "book": "Draft Kings"
  },
  {
   "date": "2026-11-09",
   "away": "Cleveland Cavaliers",
   "home": "Charlotte Hornets",
   "fav": "Cleveland Cavaliers",
-  "spread": 8.5,
-  "away_ml": -337,
-  "home_ml": 271,
-  "book": "DraftKings"
+  "spread": 9.5,
+  "away_ml": -371,
+  "home_ml": 295,
+  "book": "Draft Kings"
+ },
+ {
+  "date": "2026-11-09",
+  "away": "Indiana Pacers",
+  "home": "Dallas Mavericks",
+  "fav": "Dallas Mavericks",
+  "spread": 3.5,
+  "away_ml": 124,
+  "home_ml": -148,
+  "book": "Draft Kings"
  },
  {
   "date": "2026-11-09",
   "away": "Washington Wizards",
   "home": "Detroit Pistons",
   "fav": "Detroit Pistons",
-  "spread": 9.5,
-  "away_ml": 361,
-  "home_ml": -468,
-  "book": "DraftKings"
+  "spread": 10.5,
+  "away_ml": 376,
+  "home_ml": -490,
+  "book": "Draft Kings"
  },
  {
   "date": "2026-11-09",
@@ -1055,9 +1065,9 @@
   "home": "Golden State Warriors",
   "fav": "Golden State Warriors",
   "spread": 9.5,
-  "away_ml": 300,
-  "home_ml": -378,
-  "book": "DraftKings"
+  "away_ml": 312,
+  "home_ml": -395,
+  "book": "Draft Kings"
  },
  {
   "date": "2026-11-09",
@@ -1065,9 +1075,9 @@
   "home": "Houston Rockets",
   "fav": "Houston Rockets",
   "spread": 8.5,
-  "away_ml": 286,
-  "home_ml": -359,
-  "book": "DraftKings"
+  "away_ml": 276,
+  "home_ml": -344,
+  "book": "Draft Kings"
  },
  {
   "date": "2026-11-09",
@@ -1077,7 +1087,7 @@
   "spread": 8.5,
   "away_ml": -352,
   "home_ml": 282,
-  "book": "DraftKings"
+  "book": "Draft Kings"
  },
  {
   "date": "2026-11-09",
@@ -1087,6 +1097,16 @@
   "spread": 3.5,
   "away_ml": 131,
   "home_ml": -156,
-  "book": "DraftKings"
+  "book": "Draft Kings"
+ },
+ {
+  "date": "2026-11-10",
+  "away": "Boston Celtics",
+  "home": "Philadelphia 76ers",
+  "fav": "Boston Celtics",
+  "spread": 1.5,
+  "away_ml": -109,
+  "home_ml": -109,
+  "book": "Draft Kings"
  }
 ]
