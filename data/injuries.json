@@ -1,5 +1,5 @@
 {
- "as_of": "2026-11-09T15",
+ "as_of": "2026-11-09T21",
  "players": [
   {
    "team": "Atlanta Hawks",
@@ -8,7 +8,7 @@
    "status": "Out",
    "comment": "Gilbert (knee) has been ruled out for Monday's game against the Lakers.",
    "return": "2026-11-13",
-   "fantasy": "OUT",
+   "fantasy": "GTD",
    "stats": {
     "gp": 4.0,
     "min": 18.5,
@@ -42,7 +42,7 @@
    "status": "Out",
    "comment": "Newell (toe) has been ruled out for Monday's game against the Lakers.",
    "return": "2026-11-13",
-   "fantasy": "OUT",
+   "fantasy": "GTD",
    "stats": {
     "gp": 5.0,
     "min": 11.0,
@@ -83,10 +83,10 @@
    "team": "New Orleans Pelicans",
    "id": "4397688",
    "name": "Trey Murphy III",
-   "status": "Out",
+   "status": "Day-To-Day",
    "comment": "Murphy (knees) has been ruled out for Monday's game against Golden State.",
    "return": "2026-11-11",
-   "fantasy": "OUT",
+   "fantasy": "GTD",
    "stats": {
     "gp": 9.0,
     "min": 32.77778,
@@ -100,10 +100,10 @@
    "team": "New Orleans Pelicans",
    "id": "4431675",
    "name": "Trendon Watford",
-   "status": "Out",
+   "status": "Day-To-Day",
    "comment": "Watford (ankle) is out for Monday's game versus Utah.",
    "return": "2026-11-11",
-   "fantasy": "OUT",
+   "fantasy": "GTD",
    "stats": {
     "gp": 6.0,
     "min": 17.666666,
@@ -117,10 +117,10 @@
    "team": "New Orleans Pelicans",
    "id": "4395628",
    "name": "Zion Williamson",
-   "status": "Out",
+   "status": "Day-To-Day",
    "comment": "Williamson (rest) is out for Monday's game against the Warriors.",
    "return": "2026-11-11",
-   "fantasy": "OUT",
+   "fantasy": "GTD",
    "stats": {
     "gp": 10.0,
     "min": 33.0,
@@ -168,10 +168,10 @@
    "team": "Cleveland Cavaliers",
    "id": "4066757",
    "name": "Sam Merrill",
-   "status": "Out",
+   "status": "Day-To-Day",
    "comment": "Merrill (elbow) is listed as out for Monday's game against the Hornets.",
    "return": "2026-11-11",
-   "fantasy": "OUT",
+   "fantasy": "GTD",
    "stats": {
     "gp": 9.0,
     "min": 23.11111,
@@ -188,7 +188,7 @@
    "status": "Out",
    "comment": "Tyson (ankle) is out for Monday's game against the Hornets.",
    "return": "2026-11-11",
-   "fantasy": "OUT",
+   "fantasy": "GTD",
    "stats": {
     "gp": 5.0,
     "min": 20.8,
@@ -205,7 +205,7 @@
    "status": "Out",
    "comment": "Biberovic (heel) is listed as out for Monday's game against Sacramento.",
    "return": "2026-11-12",
-   "fantasy": "OUT",
+   "fantasy": "GTD",
    "stats": null
   },
   {
@@ -215,7 +215,7 @@
    "status": "Out",
    "comment": "De Larrea (knee) is out for Friday's game against Utah.",
    "return": "2026-11-12",
-   "fantasy": "OUT",
+   "fantasy": "GTD",
    "stats": {
     "gp": 4.0,
     "min": 11.5,
@@ -229,10 +229,10 @@
    "team": "Dallas Mavericks",
    "id": "4873153",
    "name": "Morez Johnson Jr.",
-   "status": "Out",
+   "status": "Day-To-Day",
    "comment": "Johnson (leg) has been ruled out for Monday's game against the Pacers.",
    "return": "2026-11-12",
-   "fantasy": "OUT",
+   "fantasy": "GTD",
    "stats": {
     "gp": 10.0,
     "min": 17.0,
@@ -249,7 +249,7 @@
    "status": "Out",
    "comment": "Lively (foot) is listed as out for Monday's game against the Kings.",
    "return": "2026-11-12",
-   "fantasy": "OUT",
+   "fantasy": "GTD",
    "stats": {
     "gp": 7.0,
     "min": 16.428572,
@@ -257,108 +257,6 @@
     "reb": 5.285714,
     "ast": 1.8571428,
     "this_season": false
-   }
-  },
-  {
-   "team": "Denver Nuggets",
-   "id": "4431767",
-   "name": "Christian Braun",
-   "status": "Day-To-Day",
-   "comment": "Braun (left calf contusion/illness) is probable for Monday's matchup against the Rockets.",
-   "return": "2026-11-09",
-   "fantasy": "GTD",
-   "stats": {
-    "gp": 8.0,
-    "min": 34.25,
-    "pts": 13.5,
-    "reb": 3.875,
-    "ast": 2.125,
-    "this_season": true
-   }
-  },
-  {
-   "team": "Denver Nuggets",
-   "id": "3978",
-   "name": "DeMar DeRozan",
-   "status": "Day-To-Day",
-   "comment": "DeRozan (back) is probable for Monday against Houston.",
-   "return": "2026-11-09",
-   "fantasy": "GTD",
-   "stats": {
-    "gp": 7.0,
-    "min": 24.571428,
-    "pts": 10.714286,
-    "reb": 1.8571428,
-    "ast": 3.0,
-    "this_season": true
-   }
-  },
-  {
-   "team": "Denver Nuggets",
-   "id": "3064290",
-   "name": "Aaron Gordon",
-   "status": "Day-To-Day",
-   "comment": "Gordon (left calf injury management) is probable for Monday's game against Houston.",
-   "return": "2026-11-09",
-   "fantasy": "GTD",
-   "stats": {
-    "gp": 8.0,
-    "min": 29.25,
-    "pts": 12.25,
-    "reb": 5.25,
-    "ast": 2.125,
-    "this_season": true
-   }
-  },
-  {
-   "team": "Denver Nuggets",
-   "id": "3138196",
-   "name": "Cameron Johnson",
-   "status": "Day-To-Day",
-   "comment": "Johnson (ankle) is probable for Monday against Houston.",
-   "return": "2026-11-09",
-   "fantasy": "GTD",
-   "stats": {
-    "gp": 5.0,
-    "min": 27.4,
-    "pts": 10.8,
-    "reb": 4.2,
-    "ast": 1.8,
-    "this_season": true
-   }
-  },
-  {
-   "team": "Denver Nuggets",
-   "id": "3112335",
-   "name": "Nikola Jokic",
-   "status": "Day-To-Day",
-   "comment": "Jokic (right elbow sprain) is probable for Monday's game against the Rockets.",
-   "return": "2026-11-09",
-   "fantasy": "GTD",
-   "stats": {
-    "gp": 8.0,
-    "min": 36.0,
-    "pts": 22.875,
-    "reb": 10.125,
-    "ast": 9.125,
-    "this_season": true
-   }
-  },
-  {
-   "team": "Denver Nuggets",
-   "id": "3936299",
-   "name": "Jamal Murray",
-   "status": "Day-To-Day",
-   "comment": "Murray (leg) is probable for Monday against Houston.",
-   "return": "2026-11-09",
-   "fantasy": "GTD",
-   "stats": {
-    "gp": 8.0,
-    "min": 36.625,
-    "pts": 24.25,
-    "reb": 5.5,
-    "ast": 6.125,
-    "this_season": true
    }
   },
   {
@@ -451,8 +349,8 @@
    "id": "3134903",
    "name": "Gary Payton II",
    "status": "Day-To-Day",
-   "comment": "Payton (left knee soreness) is listed as questionable for Monday's game against New Orleans.",
-   "return": "2026-11-09",
+   "comment": "Payton (knee) has been ruled out for Monday's game against the Pelicans.",
+   "return": "2026-11-11",
    "fantasy": "GTD",
    "stats": {
     "gp": 10.0,
@@ -485,8 +383,8 @@
    "id": "4897262",
    "name": "Will Richard",
    "status": "Out",
-   "comment": "Richard is out for Monday's game against the Pelicans due to a left thumb UCL tear.",
-   "return": "2026-11-11",
+   "comment": "Richard is deciding between getting surgery or playing with a splint, Luca Evans of the San Francisco Chronicle reports.",
+   "return": "2026-11-16",
    "fantasy": "OUT",
    "stats": {
     "gp": 10.0,
@@ -499,18 +397,18 @@
   },
   {
    "team": "Golden State Warriors",
-   "id": "4997536",
-   "name": "Gui Santos",
+   "id": "4397040",
+   "name": "Brandon Williams",
    "status": "Day-To-Day",
-   "comment": "Santos (knee) is listed as probable for Monday's game against New Orleans.",
-   "return": "2026-11-09",
+   "comment": "Williams has been ruled out for the remainder of Monday's game against the Pelicans due to a left hamstring injury, Danny Emerman of SFStandard.com reports. He'll finish with four points (2-3 FG) in two minutes.",
+   "return": "2026-11-11",
    "fantasy": "GTD",
    "stats": {
-    "gp": 7.0,
-    "min": 18.857143,
-    "pts": 6.571429,
-    "reb": 3.5714285,
-    "ast": 1.1428572,
+    "gp": 9.0,
+    "min": 17.666666,
+    "pts": 11.111111,
+    "reb": 2.3333333,
+    "ast": 2.5555556,
     "this_season": true
    }
   },
@@ -519,8 +417,8 @@
    "id": "2991235",
    "name": "Steven Adams",
    "status": "Out",
-   "comment": "Head coach Ime Udoka said Wednesday that Adams (calf) is still without a timetable to return and will be evaluated on a \"weekly basis,\" Varun Shankar of the Houston Chronicle reports.",
-   "return": "2026-11-11",
+   "comment": "Head coach Ime Udoka said Monday that Adams could return as soon as Sunday's game at Washington, Lachard Binkley of SI.com reports.",
+   "return": "2026-11-15",
    "fantasy": "OUT",
    "stats": {
     "gp": 1.0,
@@ -536,7 +434,7 @@
    "id": "3102529",
    "name": "Clint Capela",
    "status": "Out",
-   "comment": "Capela (ankle) is listed as out for Monday's game against Denver.",
+   "comment": "Head coach Ime Udoka stated Monday that Capela (ankle) could be cleared to return either Nov. 15 in Washington or Nov. 16 in Miami, Lachard Binkley of SI.com reports.",
    "return": "2026-11-15",
    "fantasy": "OUT",
    "stats": {
@@ -552,10 +450,10 @@
    "team": "Houston Rockets",
    "id": "4432827",
    "name": "Oscar Tshiebwe",
-   "status": "Out",
+   "status": "Day-To-Day",
    "comment": "Tshiebwe has been ruled out for Monday's game against the Nuggets due to an illness.",
    "return": "2026-11-11",
-   "fantasy": "OUT",
+   "fantasy": "GTD",
    "stats": {
     "gp": 6.0,
     "min": 7.0,
@@ -635,12 +533,29 @@
   },
   {
    "team": "LA Clippers",
+   "id": "4845363",
+   "name": "Cam Christie",
+   "status": "Day-To-Day",
+   "comment": "Christie is questionable for Tuesday's game against the Suns due to a right ankle sprain, Ohm Youngmisuk of ESPN.com reports.",
+   "return": "2026-11-10",
+   "fantasy": "GTD",
+   "stats": {
+    "gp": 5.0,
+    "min": 6.0,
+    "pts": 1.4,
+    "reb": 0.4,
+    "ast": 0.2,
+    "this_season": true
+   }
+  },
+  {
+   "team": "LA Clippers",
    "id": "3913176",
    "name": "Brandon Ingram",
    "status": "Out",
-   "comment": "Ingram (Achilles) won't play in Sunday's game against New Orleans, Law Murray of The Athletic reports.",
-   "return": "2026-11-10",
-   "fantasy": "GTD",
+   "comment": "Ingram (Achilles) has been ruled out for Tuesday's game at Phoenix, Ohm Youngmisuk of ESPN.com reports.",
+   "return": "2026-11-13",
+   "fantasy": "OUT",
    "stats": {
     "gp": 77.0,
     "min": 33.81818,
@@ -648,23 +563,6 @@
     "reb": 5.5844154,
     "ast": 3.6883116,
     "this_season": false
-   }
-  },
-  {
-   "team": "LA Clippers",
-   "id": "4432170",
-   "name": "Isaiah Jackson",
-   "status": "Day-To-Day",
-   "comment": "Jackson (groin) won't suit up for Sunday's game against the Pelicans, Law Murray of The Athletic reports.",
-   "return": "2026-11-10",
-   "fantasy": "GTD",
-   "stats": {
-    "gp": 8.0,
-    "min": 21.0,
-    "pts": 8.625,
-    "reb": 6.125,
-    "ast": 2.25,
-    "this_season": true
    }
   },
   {
@@ -689,9 +587,9 @@
    "id": "5108024",
    "name": "Yanic Konan Niederhauser",
    "status": "Out",
-   "comment": "The Clippers recalled Niederhauser (foot) from the G League's San Diego Clippers on Sunday.",
-   "return": "2026-11-10",
-   "fantasy": "GTD",
+   "comment": "Niederhauser (foot) is out for Tuesday's game against Phoenix, Ohm Youngmisuk of ESPN.com reports.",
+   "return": "2026-11-17",
+   "fantasy": "OUT",
    "stats": {
     "gp": 41.0,
     "min": 10.341463,
@@ -705,10 +603,10 @@
    "team": "Los Angeles Lakers",
    "id": "4397014",
    "name": "Quentin Grimes",
-   "status": "Out",
+   "status": "Day-To-Day",
    "comment": "Grimes (finger) is out for Monday's game against Atlanta, per Dave McMenamin of ESPN.com.",
    "return": "2026-11-11",
-   "fantasy": "OUT",
+   "fantasy": "GTD",
    "stats": {
     "gp": 11.0,
     "min": 26.09091,
@@ -722,10 +620,10 @@
    "team": "Los Angeles Lakers",
    "id": "4066457",
    "name": "Austin Reaves",
-   "status": "Out",
+   "status": "Day-To-Day",
    "comment": "Reaves (illness) has been ruled out for Monday's game against Atlanta, Benjamin Royer of The Orange County Register reports.",
    "return": "2026-11-11",
-   "fantasy": "OUT",
+   "fantasy": "GTD",
    "stats": {
     "gp": 11.0,
     "min": 36.18182,
@@ -766,23 +664,6 @@
     "pts": 21.4,
     "reb": 4.6,
     "ast": 4.3,
-    "this_season": true
-   }
-  },
-  {
-   "team": "Milwaukee Bucks",
-   "id": "4277843",
-   "name": "Gary Trent Jr.",
-   "status": "Day-To-Day",
-   "comment": "Trent (illness) won't play in Sunday's game versus the Celtics.",
-   "return": "2026-11-10",
-   "fantasy": "GTD",
-   "stats": {
-    "gp": 2.0,
-    "min": 6.5,
-    "pts": 3.0,
-    "reb": 0.5,
-    "ast": 0.5,
     "this_season": true
    }
   },
@@ -1022,8 +903,8 @@
    "id": "4278402",
    "name": "Jordan Goodwin",
    "status": "Out",
-   "comment": "Goodwin (calf) is questionable for Monday's game against the Spurs.",
-   "return": "2026-11-09",
+   "comment": "Goodwin (calf) has been ruled out for Monday's game against the Spurs, Kellan Olson of ArizonaSports.com reports.",
+   "return": "2026-11-10",
    "fantasy": "GTD",
    "stats": {
     "gp": 5.0,
@@ -1103,19 +984,19 @@
    }
   },
   {
-   "team": "Portland Trail Blazers",
-   "id": "4066211",
-   "name": "Robert Williams III",
+   "team": "Sacramento Kings",
+   "id": "4594327",
+   "name": "Keegan Murray",
    "status": "Day-To-Day",
-   "comment": "Williams (rest) won't play in Saturday's game against the Spurs.",
+   "comment": "Murray is questionable for Tuesday's game against the Magic due to right wrist soreness.",
    "return": "2026-11-10",
    "fantasy": "GTD",
    "stats": {
-    "gp": 7.0,
-    "min": 16.571428,
-    "pts": 7.428571,
-    "reb": 6.857143,
-    "ast": 1.1428572,
+    "gp": 3.0,
+    "min": 25.666666,
+    "pts": 8.0,
+    "reb": 2.3333333,
+    "ast": 1.0,
     "this_season": true
    }
   },
@@ -1124,9 +1005,9 @@
    "id": "4898371",
    "name": "Maxime Raynaud",
    "status": "Out",
-   "comment": "Raynaud (knee) is progressing in his rehabilitation and will be re-evaluated in approximately two weeks, Brenden Nunes of KHTK Sactown Sports 1140 reports.",
-   "return": "2026-11-10",
-   "fantasy": "GTD",
+   "comment": "Raynaud (knee) has been ruled out for Tuesday's game against Orlando.",
+   "return": "2026-11-15",
+   "fantasy": "OUT",
    "stats": {
     "gp": 74.0,
     "min": 26.54054,
@@ -1141,7 +1022,7 @@
    "id": "3155942",
    "name": "Domantas Sabonis",
    "status": "Day-To-Day",
-   "comment": "Sabonis (knee) is out for Sunday's game against the Heat.",
+   "comment": "Sabonis (knee) is questionable to play Tuesday's game against the Magic.",
    "return": "2026-11-10",
    "fantasy": "GTD",
    "stats": {
@@ -1170,7 +1051,7 @@
    "status": "Out",
    "comment": "Harris (calf) is listed as out for Monday's game against Phoenix.",
    "return": "2026-11-11",
-   "fantasy": "OUT",
+   "fantasy": "GTD",
    "stats": {
     "gp": 63.0,
     "min": 27.698412,
@@ -1194,10 +1075,10 @@
    "team": "San Antonio Spurs",
    "id": "4395630",
    "name": "Devin Vassell",
-   "status": "Out",
+   "status": "Day-To-Day",
    "comment": "Vassell (groin) is out for Monday's game against the Suns, Tom Orsborn of the San Antonio Express-News reports.",
    "return": "2026-11-11",
-   "fantasy": "OUT",
+   "fantasy": "GTD",
    "stats": {
     "gp": 10.0,
     "min": 30.0,
@@ -1273,9 +1154,9 @@
    "id": "4432823",
    "name": "Jaylin Williams",
    "status": "Out",
-   "comment": "Williams (back) has been ruled out for Saturday's game against the Wizards, Brandon Rahbar of DailyThunder.com reports.",
-   "return": "2026-11-10",
-   "fantasy": "GTD",
+   "comment": "Williams (back) has been ruled out for Tuesday's game against the Trail Blazers.",
+   "return": "2026-11-11",
+   "fantasy": "OUT",
    "stats": {
     "gp": 7.0,
     "min": 18.428572,
@@ -1289,10 +1170,10 @@
    "team": "Utah Jazz",
    "id": "4433627",
    "name": "Keyonte George",
-   "status": "Day-To-Day",
-   "comment": "George will not return to Sunday's game against the Timberwolves due to a right ankle injury.",
-   "return": "2026-11-10",
-   "fantasy": "GTD",
+   "status": "Out",
+   "comment": "George (ankle) has been ruled out for Tuesday's game against the Heat.",
+   "return": "2026-11-11",
+   "fantasy": "OUT",
    "stats": {
     "gp": 10.0,
     "min": 32.1,
@@ -1324,7 +1205,7 @@
    "id": "4066336",
    "name": "Lauri Markkanen",
    "status": "Day-To-Day",
-   "comment": "Markkanen (wrist) is out for Sunday's game against the Timberwolves, Shreyas Laddha of The Salt Lake Tribune reports.",
+   "comment": "Markkanen (wrist) is questionable for Tuesday's game against Miami.",
    "return": "2026-11-10",
    "fantasy": "GTD",
    "stats": {
@@ -1391,10 +1272,10 @@
    "team": "Washington Wizards",
    "id": "5104155",
    "name": "Bilal Coulibaly",
-   "status": "Out",
+   "status": "Day-To-Day",
    "comment": "Coulibaly (hand) is out for Monday's game against the Pistons.",
    "return": "2026-11-11",
-   "fantasy": "OUT",
+   "fantasy": "GTD",
    "stats": {
     "gp": 10.0,
     "min": 25.8,
@@ -1442,10 +1323,10 @@
    "team": "Toronto Raptors",
    "id": "4433134",
    "name": "Scottie Barnes",
-   "status": "Out",
+   "status": "Day-To-Day",
    "comment": "Barnes (groin) is out for Monday's game against the Grizzlies, Esfandiar Baraheni of The Athletic reports.",
    "return": "2026-11-11",
-   "fantasy": "OUT",
+   "fantasy": "GTD",
    "stats": {
     "gp": 8.0,
     "min": 33.25,
@@ -1486,10 +1367,10 @@
    "team": "Toronto Raptors",
    "id": "5093267",
    "name": "Collin Murray-Boyles",
-   "status": "Out",
+   "status": "Day-To-Day",
    "comment": "Murray-Boyles (illness) is out for Monday's game against the Grizzlies, Esfandiar Baraheni of The Athletic reports.",
    "return": "2026-11-11",
-   "fantasy": "OUT",
+   "fantasy": "GTD",
    "stats": {
     "gp": 9.0,
     "min": 22.11111,
@@ -1503,10 +1384,10 @@
    "team": "Toronto Raptors",
    "id": "4395724",
    "name": "Immanuel Quickley",
-   "status": "Out",
+   "status": "Day-To-Day",
    "comment": "Quickley (hamstring) has been ruled out for Monday's game against Memphis, Esfandiar Baraheni of The Athletic reports.",
    "return": "2026-11-11",
-   "fantasy": "OUT",
+   "fantasy": "GTD",
    "stats": {
     "gp": 8.0,
     "min": 31.75,
@@ -1523,13 +1404,30 @@
    "status": "Out",
    "comment": "Pippen (back) won't play in Monday's game versus the Raptors.",
    "return": "2026-11-11",
-   "fantasy": "OUT",
+   "fantasy": "GTD",
    "stats": {
     "gp": 5.0,
     "min": 16.0,
     "pts": 6.4,
     "reb": 2.2,
     "ast": 2.2,
+    "this_season": true
+   }
+  },
+  {
+   "team": "Memphis Grizzlies",
+   "id": "4593016",
+   "name": "Quinten Post",
+   "status": "Day-To-Day",
+   "comment": "Post (head) didn't return to Monday's 118-102 win over the Raptors. He ended the night with one rebound in two minutes.",
+   "return": "2026-11-11",
+   "fantasy": "GTD",
+   "stats": {
+    "gp": 7.0,
+    "min": 14.571428,
+    "pts": 5.714286,
+    "reb": 2.2857144,
+    "ast": 0.42857143,
     "this_season": true
    }
   },
@@ -1547,10 +1445,10 @@
    "team": "Memphis Grizzlies",
    "id": "4432810",
    "name": "Isaiah Stewart",
-   "status": "Out",
+   "status": "Day-To-Day",
    "comment": "Stewart (knee) has been ruled out for Monday's game against Toronto.",
    "return": "2026-11-11",
-   "fantasy": "OUT",
+   "fantasy": "GTD",
    "stats": {
     "gp": 7.0,
     "min": 18.285715,
@@ -1564,10 +1462,10 @@
    "team": "Charlotte Hornets",
    "id": "4433249",
    "name": "Moussa Diabate",
-   "status": "Out",
+   "status": "Day-To-Day",
    "comment": "Diabate (quadriceps) has been downgraded to out for Monday's game against Cleveland.",
    "return": "2026-11-12",
-   "fantasy": "OUT",
+   "fantasy": "GTD",
    "stats": {
     "gp": 9.0,
     "min": 28.777779,
@@ -1598,10 +1496,10 @@
    "team": "Charlotte Hornets",
    "id": "4433287",
    "name": "Brandon Miller",
-   "status": "Out",
+   "status": "Day-To-Day",
    "comment": "Miller (groin) is listed as out for Monday's game against Cleveland.",
    "return": "2026-11-12",
-   "fantasy": "OUT",
+   "fantasy": "GTD",
    "stats": {
     "gp": 10.0,
     "min": 31.0,
@@ -1635,7 +1533,7 @@
    "status": "Out",
    "comment": "Williams (hamstring) is out for Monday's game against the Cavaliers.",
    "return": "2026-11-12",
-   "fantasy": "OUT",
+   "fantasy": "GTD",
    "stats": {
     "gp": 36.0,
     "min": 19.75,
