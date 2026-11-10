@@ -1,5 +1,5 @@
 {
- "as_of": "2026-11-10T03",
+ "as_of": "2026-11-10T12",
  "players": [
   {
    "team": "Atlanta Hawks",
@@ -84,7 +84,7 @@
    "id": "4397688",
    "name": "Trey Murphy III",
    "status": "Day-To-Day",
-   "comment": "Murphy (knees) has been ruled out for Monday's game against Golden State.",
+   "comment": "Murphy (knee) is probable for Wednesday's game against the Nets.",
    "return": "2026-11-11",
    "fantasy": "GTD",
    "stats": {
@@ -100,33 +100,16 @@
    "team": "New Orleans Pelicans",
    "id": "4431675",
    "name": "Trendon Watford",
-   "status": "Day-To-Day",
-   "comment": "Watford (ankle) is out for Monday's game versus Utah.",
-   "return": "2026-11-11",
-   "fantasy": "GTD",
+   "status": "Out",
+   "comment": "Watford (ankle) is out for Wednesday's game against the Nets.",
+   "return": "2026-11-13",
+   "fantasy": "OUT",
    "stats": {
     "gp": 6.0,
     "min": 17.666666,
     "pts": 7.1666665,
     "reb": 3.5,
     "ast": 1.0,
-    "this_season": true
-   }
-  },
-  {
-   "team": "New Orleans Pelicans",
-   "id": "4395628",
-   "name": "Zion Williamson",
-   "status": "Day-To-Day",
-   "comment": "Williamson (rest) is out for Monday's game against the Warriors.",
-   "return": "2026-11-11",
-   "fantasy": "GTD",
-   "stats": {
-    "gp": 10.0,
-    "min": 33.0,
-    "pts": 21.0,
-    "reb": 5.3,
-    "ast": 2.7,
     "this_season": true
    }
   },
@@ -384,8 +367,8 @@
    "name": "Will Richard",
    "status": "Out",
    "comment": "Richard is deciding between getting surgery or playing with a splint, Luca Evans of the San Francisco Chronicle reports.",
-   "return": "2026-11-16",
-   "fantasy": "OUT",
+   "return": "2026-11-11",
+   "fantasy": "GTD",
    "stats": {
     "gp": 10.0,
     "min": 17.2,
@@ -399,10 +382,10 @@
    "team": "Golden State Warriors",
    "id": "4397040",
    "name": "Brandon Williams",
-   "status": "Day-To-Day",
+   "status": "Out",
    "comment": "Williams has been ruled out for the remainder of Monday's game against the Pelicans due to a left hamstring injury, Danny Emerman of SFStandard.com reports. He'll finish with four points (2-3 FG) in two minutes.",
-   "return": "2026-11-11",
-   "fantasy": "GTD",
+   "return": "2026-11-22",
+   "fantasy": "OUT",
    "stats": {
     "gp": 10.0,
     "min": 16.1,
@@ -443,23 +426,6 @@
     "pts": 3.1666667,
     "reb": 5.1666665,
     "ast": 1.6666666,
-    "this_season": true
-   }
-  },
-  {
-   "team": "Houston Rockets",
-   "id": "4432827",
-   "name": "Oscar Tshiebwe",
-   "status": "Day-To-Day",
-   "comment": "Tshiebwe has been ruled out for Monday's game against the Nuggets due to an illness.",
-   "return": "2026-11-11",
-   "fantasy": "GTD",
-   "stats": {
-    "gp": 6.0,
-    "min": 7.0,
-    "pts": 2.8333333,
-    "reb": 2.0,
-    "ast": 0.5,
     "this_season": true
    }
   },
@@ -668,6 +634,23 @@
    }
   },
   {
+   "team": "Milwaukee Bucks",
+   "id": "5105623",
+   "name": "Kel'el Ware",
+   "status": "Day-To-Day",
+   "comment": "Ware is questionable for Tuesday's game against the Knicks due to a left ankle sprain.",
+   "return": "2026-11-10",
+   "fantasy": "GTD",
+   "stats": {
+    "gp": 10.0,
+    "min": 17.3,
+    "pts": 8.6,
+    "reb": 6.9,
+    "ast": 0.7,
+    "this_season": true
+   }
+  },
+  {
    "team": "Minnesota Timberwolves",
    "id": "3934673",
    "name": "Donte DiVincenzo",
@@ -757,7 +740,7 @@
    "id": "3062679",
    "name": "Josh Hart",
    "status": "Day-To-Day",
-   "comment": "Hart is questionable for Tuesday's game against the Bucks due to right ankle soreness.",
+   "comment": "Hart is doubtful for Tuesday's game against the Bucks due to an illness.",
    "return": "2026-11-10",
    "fantasy": "GTD",
    "stats": {
@@ -788,11 +771,28 @@
   },
   {
    "team": "Orlando Magic",
+   "id": "4702382",
+   "name": "Tristan da Silva",
+   "status": "Day-To-Day",
+   "comment": "Da Silva is questionable for Tuesday's game against the Kings due to a left calf strain.",
+   "return": "2026-11-10",
+   "fantasy": "GTD",
+   "stats": {
+    "gp": 9.0,
+    "min": 30.555555,
+    "pts": 15.111111,
+    "reb": 3.6666667,
+    "ast": 1.6666666,
+    "this_season": true
+   }
+  },
+  {
+   "team": "Orlando Magic",
    "id": "4065654",
    "name": "Jonathan Isaac",
    "status": "Out",
    "comment": "Isaac (knee) is out for Tuesday's game against Sacramento.",
-   "return": "2026-11-11",
+   "return": "2026-11-16",
    "fantasy": "OUT",
    "stats": {
     "gp": 52.0,
@@ -900,23 +900,6 @@
   },
   {
    "team": "Phoenix Suns",
-   "id": "4278402",
-   "name": "Jordan Goodwin",
-   "status": "Out",
-   "comment": "Goodwin (calf) has been ruled out for Monday's game against the Spurs, Kellan Olson of ArizonaSports.com reports.",
-   "return": "2026-11-10",
-   "fantasy": "GTD",
-   "stats": {
-    "gp": 5.0,
-    "min": 18.6,
-    "pts": 7.8,
-    "reb": 3.4,
-    "ast": 2.6,
-    "this_season": true
-   }
-  },
-  {
-   "team": "Phoenix Suns",
    "id": "4701232",
    "name": "Mark Williams",
    "status": "Out",
@@ -985,23 +968,6 @@
   },
   {
    "team": "Sacramento Kings",
-   "id": "4594327",
-   "name": "Keegan Murray",
-   "status": "Day-To-Day",
-   "comment": "Murray is questionable for Tuesday's game against the Magic due to right wrist soreness.",
-   "return": "2026-11-10",
-   "fantasy": "GTD",
-   "stats": {
-    "gp": 3.0,
-    "min": 25.666666,
-    "pts": 8.0,
-    "reb": 2.3333333,
-    "ast": 1.0,
-    "this_season": true
-   }
-  },
-  {
-   "team": "Sacramento Kings",
    "id": "4898371",
    "name": "Maxime Raynaud",
    "status": "Out",
@@ -1015,23 +981,6 @@
     "reb": 7.5135136,
     "ast": 1.3513514,
     "this_season": false
-   }
-  },
-  {
-   "team": "Sacramento Kings",
-   "id": "3155942",
-   "name": "Domantas Sabonis",
-   "status": "Day-To-Day",
-   "comment": "Sabonis (knee) is questionable to play Tuesday's game against the Magic.",
-   "return": "2026-11-10",
-   "fantasy": "GTD",
-   "stats": {
-    "gp": 9.0,
-    "min": 35.555557,
-    "pts": 15.333333,
-    "reb": 14.555555,
-    "ast": 6.0,
-    "this_season": true
    }
   },
   {
@@ -1204,10 +1153,10 @@
    "team": "Utah Jazz",
    "id": "4066336",
    "name": "Lauri Markkanen",
-   "status": "Day-To-Day",
-   "comment": "Markkanen (wrist) is questionable for Tuesday's game against Miami.",
-   "return": "2026-11-10",
-   "fantasy": "GTD",
+   "status": "Out",
+   "comment": "Markkanen is out for Tuesday's game versus the Heat with a right wrist sprain.",
+   "return": "2026-11-11",
+   "fantasy": "OUT",
    "stats": {
     "gp": 8.0,
     "min": 30.875,
@@ -1351,7 +1300,7 @@
    "id": "6450",
    "name": "Kawhi Leonard",
    "status": "Out",
-   "comment": "Leonard has completed treatment to reduce swelling in his left knee and he will be re-evaluated in one week, Brett Siegel of ClutchPoints.com reports.",
+   "comment": "Leonard (knee) is continuing the reconditioning process, and another update will be provided in one week, Blake Murphy of Sportsnet.ca reports.",
    "return": "2026-11-23",
    "fantasy": "OUT",
    "stats": {

@@ -4,7 +4,7 @@
  "teams": {
   "Atlanta Hawks": {
    "playoffs": 87.6,
-   "top6": 60.8,
+   "top6": 60.9,
    "playin": 37.8,
    "proj_w": 45.7,
    "proj_l": 36.3,
@@ -62,12 +62,12 @@
   "Charlotte Hornets": {
    "playoffs": 13.6,
    "top6": 1.5,
-   "playin": 41.2,
+   "playin": 41.3,
    "proj_w": 31.6,
    "proj_l": 50.4,
    "seed": 10.9,
    "conf": "East",
-   "rating": -3.6,
+   "rating": -3.7,
    "rating_wins": 31.1,
    "prior_wins": 38.5,
    "last5_margin": -15.0,
@@ -107,8 +107,8 @@
   },
   "Cleveland Cavaliers": {
    "playoffs": 94.0,
-   "top6": 74.2,
-   "playin": 25.3,
+   "top6": 74.1,
+   "playin": 25.4,
    "proj_w": 47.8,
    "proj_l": 34.2,
    "seed": 5.2,
@@ -125,9 +125,9 @@
    "prev": 93.4
   },
   "Dallas Mavericks": {
-   "playoffs": 39.9,
-   "top6": 14.8,
-   "playin": 60.8,
+   "playoffs": 40.1,
+   "top6": 14.9,
+   "playin": 60.9,
    "proj_w": 40.6,
    "proj_l": 41.4,
    "seed": 8.9,
@@ -174,8 +174,8 @@
    "playoffs": 98.8,
    "top6": 93.7,
    "playin": 6.3,
-   "proj_w": 53.5,
-   "proj_l": 28.5,
+   "proj_w": 53.6,
+   "proj_l": 28.4,
    "seed": 3.2,
    "conf": "East",
    "rating": 4.4,
@@ -205,11 +205,11 @@
    "prev": 98.9
   },
   "Golden State Warriors": {
-   "playoffs": 61.6,
-   "top6": 31.2,
-   "playin": 58.7,
-   "proj_w": 44.1,
-   "proj_l": 37.9,
+   "playoffs": 61.4,
+   "top6": 30.8,
+   "playin": 58.9,
+   "proj_w": 44.0,
+   "proj_l": 38.0,
    "seed": 7.6,
    "conf": "West",
    "rating": 1.0,
@@ -238,17 +238,24 @@
      "games": 9,
      "impact": 0.76,
      "comment": "Moody (knee) is progressing toward a potential return between December and January after rupturing his left patellar tendon in March, Anthon"
+    },
+    {
+     "name": "Brandon Williams",
+     "status": "Out",
+     "games": 5,
+     "impact": 0.81,
+     "comment": "Williams has been ruled out for the remainder of Monday's game against the Pelicans due to a left hamstring injury, Danny Emerman of SFStand"
     }
    ],
-   "injury_wins": -1.6,
+   "injury_wins": -1.7,
    "sos_rank": 14,
    "games_left": 71,
    "prev": 63.0
   },
   "Houston Rockets": {
    "playoffs": 98.8,
-   "top6": 95.0,
-   "playin": 4.9,
+   "top6": 95.1,
+   "playin": 4.8,
    "proj_w": 56.2,
    "proj_l": 25.8,
    "seed": 3.2,
@@ -267,12 +274,12 @@
   "Indiana Pacers": {
    "playoffs": 14.1,
    "top6": 1.9,
-   "playin": 40.1,
+   "playin": 40.4,
    "proj_w": 31.5,
    "proj_l": 50.5,
    "seed": 10.9,
    "conf": "East",
-   "rating": -3.5,
+   "rating": -3.4,
    "rating_wins": 31.7,
    "prior_wins": 44.5,
    "last5_margin": -4.6,
@@ -301,7 +308,7 @@
   "LA Clippers": {
    "playoffs": 3.7,
    "top6": 0.5,
-   "playin": 13.5,
+   "playin": 13.4,
    "proj_w": 30.3,
    "proj_l": 51.7,
    "seed": 12.1,
@@ -340,11 +347,11 @@
    "prev": 3.8
   },
   "Los Angeles Lakers": {
-   "playoffs": 93.2,
-   "top6": 80.5,
-   "playin": 19.0,
-   "proj_w": 51.6,
-   "proj_l": 30.4,
+   "playoffs": 93.3,
+   "top6": 80.6,
+   "playin": 18.9,
+   "proj_w": 51.7,
+   "proj_l": 30.3,
    "seed": 4.7,
    "conf": "West",
    "rating": 3.0,
@@ -359,9 +366,9 @@
    "prev": 93.5
   },
   "Memphis Grizzlies": {
-   "playoffs": 39.4,
-   "top6": 15.5,
-   "playin": 58.9,
+   "playoffs": 39.7,
+   "top6": 15.6,
+   "playin": 59.1,
    "proj_w": 40.6,
    "proj_l": 41.4,
    "seed": 8.9,
@@ -378,12 +385,12 @@
    "prev": 39.7
   },
   "Miami Heat": {
-   "playoffs": 78.1,
-   "top6": 43.4,
-   "playin": 52.5,
-   "proj_w": 43.3,
-   "proj_l": 38.7,
-   "seed": 6.8,
+   "playoffs": 78.3,
+   "top6": 43.7,
+   "playin": 52.3,
+   "proj_w": 43.4,
+   "proj_l": 38.6,
+   "seed": 6.7,
    "conf": "East",
    "rating": 1.1,
    "rating_wins": 43.9,
@@ -392,14 +399,14 @@
    "season_margin": -5.3,
    "injuries": [],
    "injury_wins": 0.0,
-   "sos_rank": 22,
+   "sos_rank": 23,
    "games_left": 72,
    "prev": 80.2
   },
   "Milwaukee Bucks": {
-   "playoffs": 0.7,
+   "playoffs": 0.8,
    "top6": 0.0,
-   "playin": 3.7,
+   "playin": 3.8,
    "proj_w": 22.1,
    "proj_l": 59.9,
    "seed": 13.8,
@@ -416,7 +423,7 @@
    "prev": 0.7
   },
   "Minnesota Timberwolves": {
-   "playoffs": 85.0,
+   "playoffs": 84.7,
    "top6": 60.8,
    "playin": 36.4,
    "proj_w": 48.5,
@@ -450,7 +457,7 @@
    "prev": 85.0
   },
   "New Orleans Pelicans": {
-   "playoffs": 2.3,
+   "playoffs": 2.2,
    "top6": 0.2,
    "playin": 8.8,
    "proj_w": 29.3,
@@ -469,6 +476,13 @@
      "games": 3,
      "impact": 1.45,
      "comment": "Missi (knee) is out for Friday's game against Minnesota."
+    },
+    {
+     "name": "Trendon Watford",
+     "status": "Out",
+     "games": 1,
+     "impact": 0.37,
+     "comment": "Watford (ankle) is out for Wednesday's game against the Nets."
     }
    ],
    "injury_wins": -0.1,
@@ -491,14 +505,14 @@
    "season_margin": 5.7,
    "injuries": [],
    "injury_wins": 0.0,
-   "sos_rank": 23,
+   "sos_rank": 22,
    "games_left": 73,
    "prev": 98.9
   },
   "Oklahoma City Thunder": {
    "playoffs": 98.2,
    "top6": 93.0,
-   "playin": 6.8,
+   "playin": 6.9,
    "proj_w": 55.6,
    "proj_l": 26.4,
    "seed": 3.4,
@@ -537,15 +551,15 @@
    "prev": 98.8
   },
   "Orlando Magic": {
-   "playoffs": 27.7,
-   "top6": 5.8,
-   "playin": 56.6,
-   "proj_w": 34.5,
-   "proj_l": 47.5,
+   "playoffs": 27.1,
+   "top6": 5.5,
+   "playin": 55.8,
+   "proj_w": 34.4,
+   "proj_l": 47.6,
    "seed": 9.9,
    "conf": "East",
    "rating": -2.1,
-   "rating_wins": 35.4,
+   "rating_wins": 35.2,
    "prior_wins": 44.5,
    "last5_margin": -6.6,
    "season_margin": -9.2,
@@ -598,9 +612,9 @@
    "prev": 98.6
   },
   "Phoenix Suns": {
-   "playoffs": 19.4,
+   "playoffs": 19.3,
    "top6": 4.4,
-   "playin": 44.0,
+   "playin": 43.7,
    "proj_w": 36.4,
    "proj_l": 45.6,
    "seed": 10.3,
@@ -625,9 +639,9 @@
    "prev": 19.5
   },
   "Portland Trail Blazers": {
-   "playoffs": 71.4,
-   "top6": 38.0,
-   "playin": 54.5,
+   "playoffs": 71.3,
+   "top6": 38.1,
+   "playin": 54.4,
    "proj_w": 45.2,
    "proj_l": 36.8,
    "seed": 7.2,
@@ -662,12 +676,12 @@
    "playoffs": 0.0,
    "top6": 0.0,
    "playin": 0.1,
-   "proj_w": 18.3,
-   "proj_l": 63.7,
+   "proj_w": 18.5,
+   "proj_l": 63.5,
    "seed": 14.6,
    "conf": "West",
    "rating": -9.3,
-   "rating_wins": 15.8,
+   "rating_wins": 16.0,
    "prior_wins": 20.5,
    "last5_margin": -10.0,
    "season_margin": -13.3,
@@ -686,7 +700,7 @@
    "prev": 0.0
   },
   "San Antonio Spurs": {
-   "playoffs": 99.9,
+   "playoffs": 100.0,
    "top6": 99.8,
    "playin": 0.2,
    "proj_w": 63.5,
@@ -705,15 +719,15 @@
    "prev": 100.0
   },
   "Toronto Raptors": {
-   "playoffs": 70.7,
-   "top6": 32.1,
-   "playin": 60.8,
+   "playoffs": 70.8,
+   "top6": 32.0,
+   "playin": 61.0,
    "proj_w": 41.6,
    "proj_l": 40.4,
    "seed": 7.4,
    "conf": "East",
    "rating": 0.5,
-   "rating_wins": 42.4,
+   "rating_wins": 42.3,
    "prior_wins": 46.5,
    "last5_margin": -4.0,
    "season_margin": 3.3,
@@ -723,7 +737,7 @@
      "status": "Out",
      "games": 6,
      "impact": 3.56,
-     "comment": "Leonard has completed treatment to reduce swelling in his left knee and he will be re-evaluated in one week, Brett Siegel of ClutchPoints.co"
+     "comment": "Leonard (knee) is continuing the reconditioning process, and another update will be provided in one week, Blake Murphy of Sportsnet.ca repor"
     }
    ],
    "injury_wins": -0.5,
@@ -735,8 +749,8 @@
    "playoffs": 0.4,
    "top6": 0.0,
    "playin": 2.0,
-   "proj_w": 24.4,
-   "proj_l": 57.6,
+   "proj_w": 24.3,
+   "proj_l": 57.7,
    "seed": 13.6,
    "conf": "West",
    "rating": -5.6,
@@ -765,6 +779,13 @@
      "games": 1,
      "impact": 4.12,
      "comment": "George (ankle) has been ruled out for Tuesday's game against the Heat."
+    },
+    {
+     "name": "Lauri Markkanen",
+     "status": "Out",
+     "games": 1,
+     "impact": 3.23,
+     "comment": "Markkanen is out for Tuesday's game versus the Heat with a right wrist sprain."
     }
    ],
    "injury_wins": -0.9,
@@ -775,7 +796,7 @@
   "Washington Wizards": {
    "playoffs": 13.2,
    "top6": 1.7,
-   "playin": 39.9,
+   "playin": 40.2,
    "proj_w": 31.5,
    "proj_l": 50.5,
    "seed": 10.9,

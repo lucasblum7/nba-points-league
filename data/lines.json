@@ -1125,8 +1125,8 @@
   "home": "Phoenix Suns",
   "fav": "Phoenix Suns",
   "spread": 3.5,
-  "away_ml": 140,
-  "home_ml": -167,
+  "away_ml": 145,
+  "home_ml": -173,
   "book": "DraftKings"
  },
  {
@@ -1135,8 +1135,8 @@
   "home": "Portland Trail Blazers",
   "fav": "Oklahoma City Thunder",
   "spread": 1.5,
-  "away_ml": -130,
-  "home_ml": 110,
+  "away_ml": -125,
+  "home_ml": 106,
   "book": "DraftKings"
  },
  {
@@ -1144,7 +1144,7 @@
   "away": "Orlando Magic",
   "home": "Sacramento Kings",
   "fav": "Orlando Magic",
-  "spread": 6.5,
+  "spread": 5.5,
   "away_ml": -229,
   "home_ml": 190,
   "book": "DraftKings"
@@ -1155,8 +1155,8 @@
   "home": "Utah Jazz",
   "fav": "Miami Heat",
   "spread": 9.5,
-  "away_ml": -395,
-  "home_ml": 312,
+  "away_ml": -438,
+  "home_ml": 341,
   "book": "DraftKings"
  }
 ]
