@@ -1,5 +1,5 @@
 {
- "as_of": "2026-11-10T18",
+ "as_of": "2026-11-11T03",
  "players": [
   {
    "team": "Atlanta Hawks",
@@ -947,6 +947,23 @@
     "reb": 4.34,
     "ast": 2.64,
     "this_season": false
+   }
+  },
+  {
+   "team": "Sacramento Kings",
+   "id": "4431679",
+   "name": "Precious Achiuwa",
+   "status": "Out",
+   "comment": "Achiuwa left Tuesday's 107-100 loss to the Magic with a left lower leg contusion and did not return, Matt George of ABC 10 Sacramento reports.",
+   "return": "2026-11-13",
+   "fantasy": "OUT",
+   "stats": {
+    "gp": 11.0,
+    "min": 26.181818,
+    "pts": 10.363636,
+    "reb": 6.3636365,
+    "ast": 1.0909091,
+    "this_season": true
    }
   },
   {

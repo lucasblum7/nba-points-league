@@ -1174,9 +1174,9 @@
   "away": "Golden State Warriors",
   "home": "Houston Rockets",
   "fav": "Houston Rockets",
-  "spread": 5.5,
-  "away_ml": 170,
-  "home_ml": -204,
+  "spread": 6.5,
+  "away_ml": 196,
+  "home_ml": -237,
   "book": "Draft Kings"
  },
  {
@@ -1184,9 +1184,9 @@
   "away": "Washington Wizards",
   "home": "Indiana Pacers",
   "fav": "Indiana Pacers",
-  "spread": 4.5,
-  "away_ml": 139,
-  "home_ml": -166,
+  "spread": 3.5,
+  "away_ml": 131,
+  "home_ml": -155,
   "book": "Draft Kings"
  },
  {
@@ -1194,9 +1194,19 @@
   "away": "Denver Nuggets",
   "home": "Memphis Grizzlies",
   "fav": "Denver Nuggets",
-  "spread": 4.5,
-  "away_ml": -156,
-  "home_ml": 132,
+  "spread": 3.5,
+  "away_ml": -174,
+  "home_ml": 146,
+  "book": "Draft Kings"
+ },
+ {
+  "date": "2026-11-11",
+  "away": "Los Angeles Lakers",
+  "home": "Milwaukee Bucks",
+  "fav": "Los Angeles Lakers",
+  "spread": 12.5,
+  "away_ml": -620,
+  "home_ml": 458,
   "book": "Draft Kings"
  },
  {
@@ -1205,8 +1215,8 @@
   "home": "New Orleans Pelicans",
   "fav": "New Orleans Pelicans",
   "spread": 4.5,
-  "away_ml": 154,
-  "home_ml": -184,
+  "away_ml": 156,
+  "home_ml": -186,
   "book": "Draft Kings"
  },
  {
@@ -1214,9 +1224,19 @@
   "away": "Cleveland Cavaliers",
   "home": "New York Knicks",
   "fav": "New York Knicks",
-  "spread": 3.5,
-  "away_ml": 140,
-  "home_ml": -166,
+  "spread": 4.5,
+  "away_ml": 151,
+  "home_ml": -180,
+  "book": "Draft Kings"
+ },
+ {
+  "date": "2026-11-11",
+  "away": "Oklahoma City Thunder",
+  "home": "Portland Trail Blazers",
+  "fav": "Oklahoma City Thunder",
+  "spread": 1.5,
+  "away_ml": -121,
+  "home_ml": 102,
   "book": "Draft Kings"
  },
  {
@@ -1224,9 +1244,19 @@
   "away": "Boston Celtics",
   "home": "Toronto Raptors",
   "fav": "Boston Celtics",
-  "spread": 6.5,
-  "away_ml": -220,
-  "home_ml": 182,
+  "spread": 7.5,
+  "away_ml": -288,
+  "home_ml": 235,
+  "book": "Draft Kings"
+ },
+ {
+  "date": "2026-11-11",
+  "away": "Orlando Magic",
+  "home": "Utah Jazz",
+  "fav": "Orlando Magic",
+  "spread": 4.5,
+  "away_ml": -179,
+  "home_ml": 150,
   "book": "Draft Kings"
  }
 ]
