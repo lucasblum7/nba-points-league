@@ -1,5 +1,5 @@
 {
- "as_of": "2026-11-10T15",
+ "as_of": "2026-11-10T18",
  "players": [
   {
    "team": "Atlanta Hawks",
@@ -535,10 +535,10 @@
    "team": "LA Clippers",
    "id": "4845363",
    "name": "Cam Christie",
-   "status": "Day-To-Day",
-   "comment": "Christie is questionable for Tuesday's game against the Suns due to a right ankle sprain, Ohm Youngmisuk of ESPN.com reports.",
-   "return": "2026-11-10",
-   "fantasy": "GTD",
+   "status": "Out",
+   "comment": "Christie (ankle) is listed as out for Tuesday's game against Phoenix.",
+   "return": "2026-11-13",
+   "fantasy": "OUT",
    "stats": {
     "gp": 5.0,
     "min": 6.0,
@@ -756,10 +756,10 @@
    "team": "Orlando Magic",
    "id": "4702382",
    "name": "Tristan da Silva",
-   "status": "Day-To-Day",
-   "comment": "Da Silva is questionable for Tuesday's game against the Kings due to a left calf strain.",
-   "return": "2026-11-10",
-   "fantasy": "GTD",
+   "status": "Out",
+   "comment": "Da Silva (calf) has been ruled out for Tuesday's game against the Kings, Jason Beede of the Orlando Sentinel reports.",
+   "return": "2026-11-11",
+   "fantasy": "OUT",
    "stats": {
     "gp": 9.0,
     "min": 30.555555,
