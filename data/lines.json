@@ -1258,5 +1258,35 @@
   "away_ml": -179,
   "home_ml": 150,
   "book": "DraftKings"
+ },
+ {
+  "date": "2026-11-12",
+  "away": "Dallas Mavericks",
+  "home": "Minnesota Timberwolves",
+  "fav": "Minnesota Timberwolves",
+  "spread": 5.5,
+  "away_ml": 164,
+  "home_ml": -196,
+  "book": "DraftKings"
+ },
+ {
+  "date": "2026-11-12",
+  "away": "Charlotte Hornets",
+  "home": "Phoenix Suns",
+  "fav": "Phoenix Suns",
+  "spread": 7.5,
+  "away_ml": 202,
+  "home_ml": -245,
+  "book": "DraftKings"
+ },
+ {
+  "date": "2026-11-12",
+  "away": "Detroit Pistons",
+  "home": "Washington Wizards",
+  "fav": "Detroit Pistons",
+  "spread": 9.5,
+  "away_ml": -369,
+  "home_ml": 293,
+  "book": "DraftKings"
  }
 ]
