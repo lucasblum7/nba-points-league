@@ -1,5 +1,5 @@
 {
- "as_of": "2026-11-11T21",
+ "as_of": "2026-11-12T03",
  "players": [
   {
    "team": "Atlanta Hawks",
@@ -207,11 +207,11 @@
    "return": "2026-11-13",
    "fantasy": "GTD",
    "stats": {
-    "gp": 9.0,
-    "min": 32.444443,
-    "pts": 19.333334,
-    "reb": 6.3333335,
-    "ast": 2.1111112,
+    "gp": 10.0,
+    "min": 30.8,
+    "pts": 18.9,
+    "reb": 6.2,
+    "ast": 1.9,
     "this_season": true
    }
   },
@@ -376,15 +376,15 @@
    "id": "3975",
    "name": "Stephen Curry",
    "status": "Day-To-Day",
-   "comment": "Curry won't return to Wednesday's game against the Rockets due to right abdominal soreness, Anthony Slater of ESPN.com reports. He'll finish with three points (1-3 FG, 1-2 3Pt) across six minutes.",
+   "comment": "Steve Kerr told reporters Wednesday that Curry said he tweaked something in his abdominal area and \"had never done it before.\" Kerr added that the concern level is high, but they will await the MRI results, Kelly Iko of Yahoo Sports reports.",
    "return": "2026-11-13",
    "fantasy": "GTD",
    "stats": {
-    "gp": 9.0,
-    "min": 28.555555,
-    "pts": 30.555555,
-    "reb": 4.111111,
-    "ast": 4.3333335,
+    "gp": 10.0,
+    "min": 26.3,
+    "pts": 27.8,
+    "reb": 3.7,
+    "ast": 3.9,
     "this_season": true
    }
   },
@@ -533,11 +533,11 @@
    "return": "2026-11-13",
    "fantasy": "GTD",
    "stats": {
-    "gp": 9.0,
-    "min": 25.555555,
-    "pts": 12.777778,
-    "reb": 2.3333333,
-    "ast": 1.7777778,
+    "gp": 10.0,
+    "min": 25.2,
+    "pts": 11.7,
+    "reb": 2.2,
+    "ast": 1.7,
     "this_season": true
    }
   },
@@ -652,11 +652,11 @@
    "return": "2026-11-15",
    "fantasy": "GTD",
    "stats": {
-    "gp": 10.0,
-    "min": 36.3,
-    "pts": 39.3,
-    "reb": 7.8,
-    "ast": 7.9,
+    "gp": 11.0,
+    "min": 35.909092,
+    "pts": 38.636364,
+    "reb": 7.5454545,
+    "ast": 7.6363635,
     "this_season": true
    }
   },
@@ -686,11 +686,11 @@
    "return": "2026-11-15",
    "fantasy": "GTD",
    "stats": {
-    "gp": 11.0,
-    "min": 36.18182,
-    "pts": 25.272728,
-    "reb": 3.3636363,
-    "ast": 4.6363635,
+    "gp": 12.0,
+    "min": 35.25,
+    "pts": 24.666666,
+    "reb": 3.3333333,
+    "ast": 4.6666665,
     "this_season": true
    }
   },
@@ -703,11 +703,11 @@
    "return": "2026-11-15",
    "fantasy": "GTD",
    "stats": {
-    "gp": 11.0,
-    "min": 18.181818,
-    "pts": 10.272727,
-    "reb": 1.9090909,
-    "ast": 2.5454545,
+    "gp": 12.0,
+    "min": 17.75,
+    "pts": 10.25,
+    "reb": 1.8333334,
+    "ast": 2.5833333,
     "this_season": true
    }
   },
@@ -720,11 +720,11 @@
    "return": "2026-11-13",
    "fantasy": "GTD",
    "stats": {
-    "gp": 11.0,
-    "min": 23.363636,
-    "pts": 11.0,
-    "reb": 4.4545455,
-    "ast": 4.090909,
+    "gp": 12.0,
+    "min": 23.333334,
+    "pts": 10.75,
+    "reb": 4.5833335,
+    "ast": 4.0833335,
     "this_season": true
    }
   },
@@ -740,7 +740,7 @@
     "gp": 11.0,
     "min": 27.09091,
     "pts": 6.7272725,
-    "reb": 5.4545455,
+    "reb": 5.5454545,
     "ast": 2.7272727,
     "this_season": true
    }
