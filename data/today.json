@@ -15,34 +15,34 @@
   {
    "id": "401909977",
    "time": "4:00 PM",
-   "state": "in",
-   "detail": "End of 4th",
+   "state": "post",
+   "detail": "Final/2OT",
    "away": "Detroit Pistons",
    "home": "Washington Wizards",
-   "away_score": 121,
-   "home_score": 121,
+   "away_score": 144,
+   "home_score": 140,
    "cup": false
   },
   {
    "id": "401909978",
    "time": "5:00 PM",
-   "state": "in",
-   "detail": "4:00 - 3rd",
+   "state": "post",
+   "detail": "Final",
    "away": "Dallas Mavericks",
    "home": "Minnesota Timberwolves",
-   "away_score": 61,
-   "home_score": 93,
+   "away_score": 94,
+   "home_score": 133,
    "cup": false
   },
   {
    "id": "401909979",
    "time": "6:00 PM",
-   "state": "in",
-   "detail": "End of 1st",
+   "state": "post",
+   "detail": "Final",
    "away": "Charlotte Hornets",
    "home": "Phoenix Suns",
-   "away_score": 22,
-   "home_score": 28,
+   "away_score": 96,
+   "home_score": 101,
    "cup": false
   }
  ]

@@ -1379,11 +1379,35 @@
   "home_score": 108
  },
  {
+  "id": "401909978",
+  "date": "2026-11-12",
+  "away": "Dallas Mavericks",
+  "home": "Minnesota Timberwolves",
+  "away_score": 94,
+  "home_score": 133
+ },
+ {
   "id": "401909976",
   "date": "2026-11-12",
   "away": "Toronto Raptors",
   "home": "Philadelphia 76ers",
   "away_score": 112,
   "home_score": 123
+ },
+ {
+  "id": "401909979",
+  "date": "2026-11-12",
+  "away": "Charlotte Hornets",
+  "home": "Phoenix Suns",
+  "away_score": 96,
+  "home_score": 101
+ },
+ {
+  "id": "401909977",
+  "date": "2026-11-12",
+  "away": "Detroit Pistons",
+  "home": "Washington Wizards",
+  "away_score": 144,
+  "home_score": 140
  }
 ]
