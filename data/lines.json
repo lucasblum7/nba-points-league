@@ -1304,9 +1304,9 @@
   "away": "Atlanta Hawks",
   "home": "Chicago Bulls",
   "fav": "Atlanta Hawks",
-  "spread": 6.5,
-  "away_ml": -263,
-  "home_ml": 216,
+  "spread": 7.5,
+  "away_ml": -277,
+  "home_ml": 227,
   "book": "DraftKings"
  },
  {
@@ -1325,8 +1325,8 @@
   "home": "Indiana Pacers",
   "fav": "New York Knicks",
   "spread": 6.5,
-  "away_ml": -241,
-  "home_ml": 199,
+  "away_ml": -269,
+  "home_ml": 220,
   "book": "DraftKings"
  },
  {
@@ -1334,9 +1334,9 @@
   "away": "Oklahoma City Thunder",
   "home": "LA Clippers",
   "fav": "Oklahoma City Thunder",
-  "spread": 7.5,
-  "away_ml": -276,
-  "home_ml": 226,
+  "spread": 6.5,
+  "away_ml": -283,
+  "home_ml": 231,
   "book": "DraftKings"
  },
  {
@@ -1345,8 +1345,8 @@
   "home": "Miami Heat",
   "fav": "Miami Heat",
   "spread": 2.5,
-  "away_ml": 105,
-  "home_ml": -124,
+  "away_ml": 114,
+  "home_ml": -135,
   "book": "DraftKings"
  },
  {
@@ -1355,8 +1355,8 @@
   "home": "New Orleans Pelicans",
   "fav": "Memphis Grizzlies",
   "spread": 3.5,
-  "away_ml": -158,
-  "home_ml": 133,
+  "away_ml": -166,
+  "home_ml": 140,
   "book": "DraftKings"
  },
  {
@@ -1365,8 +1365,8 @@
   "home": "Orlando Magic",
   "fav": "Orlando Magic",
   "spread": 9.5,
-  "away_ml": 293,
-  "home_ml": -368,
+  "away_ml": 300,
+  "home_ml": -378,
   "book": "DraftKings"
  },
  {
@@ -1375,8 +1375,8 @@
   "home": "Sacramento Kings",
   "fav": "Portland Trail Blazers",
   "spread": 10.5,
-  "away_ml": -569,
-  "home_ml": 426,
+  "away_ml": -515,
+  "home_ml": 392,
   "book": "DraftKings"
  },
  {
@@ -1384,9 +1384,9 @@
   "away": "Golden State Warriors",
   "home": "San Antonio Spurs",
   "fav": "San Antonio Spurs",
-  "spread": 13.5,
-  "away_ml": 528,
-  "home_ml": -750,
+  "spread": 12.5,
+  "away_ml": 501,
+  "home_ml": -700,
   "book": "DraftKings"
  }
 ]

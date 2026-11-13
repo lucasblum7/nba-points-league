@@ -1,5 +1,5 @@
 {
- "as_of": "2026-11-12T18",
+ "as_of": "2026-11-13T03",
  "players": [
   {
    "team": "Atlanta Hawks",
@@ -1048,10 +1048,10 @@
    "team": "Philadelphia 76ers",
    "id": "1966",
    "name": "LeBron James",
-   "status": "Out",
+   "status": "Day-To-Day",
    "comment": "James (back) is out for Thursday's game against Toronto.",
    "return": "2026-11-15",
-   "fantasy": "OUT",
+   "fantasy": "GTD",
    "stats": {
     "gp": 10.0,
     "min": 32.6,
@@ -1433,6 +1433,23 @@
   },
   {
    "team": "Washington Wizards",
+   "id": "4845374",
+   "name": "Bub Carrington",
+   "status": "Day-To-Day",
+   "comment": "Carrington (chest) has been ruled out for the remainder of Thursday's game against the Pistons.",
+   "return": "2026-11-15",
+   "fantasy": "GTD",
+   "stats": {
+    "gp": 13.0,
+    "min": 18.307692,
+    "pts": 4.8461537,
+    "reb": 1.6153846,
+    "ast": 2.0,
+    "this_season": true
+   }
+  },
+  {
+   "team": "Washington Wizards",
    "id": "4432907",
    "name": "Justin Champagnie",
    "status": "Out",
@@ -1489,7 +1506,7 @@
    "status": "Out",
    "comment": "Barnes (groin) is out for Thursday's game against Philadelphia.",
    "return": "2026-11-15",
-   "fantasy": "OUT",
+   "fantasy": "GTD",
    "stats": {
     "gp": 8.0,
     "min": 33.25,
@@ -1506,17 +1523,17 @@
    "status": "Out",
    "comment": "Bittle (foot) is listed as out for Monday's game against Memphis.",
    "return": "2026-11-15",
-   "fantasy": "OUT",
+   "fantasy": "GTD",
    "stats": null
   },
   {
    "team": "Toronto Raptors",
    "id": "4431684",
    "name": "Trayce Jackson-Davis",
-   "status": "Out",
+   "status": "Day-To-Day",
    "comment": "Jackson-Davis is out for Thursday's game against the 76ers due to an illness.",
    "return": "2026-11-15",
-   "fantasy": "OUT",
+   "fantasy": "GTD",
    "stats": {
     "gp": 9.0,
     "min": 7.4444447,
@@ -1625,10 +1642,10 @@
    "team": "Charlotte Hornets",
    "id": "4433287",
    "name": "Brandon Miller",
-   "status": "Out",
+   "status": "Day-To-Day",
    "comment": "Miller (groin) is listed as out for Thursday's game against Phoenix.",
    "return": "2026-11-15",
-   "fantasy": "OUT",
+   "fantasy": "GTD",
    "stats": {
     "gp": 10.0,
     "min": 31.0,
