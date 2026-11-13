@@ -1,5 +1,5 @@
 {
- "as_of": "2026-11-13T03",
+ "as_of": "2026-11-13T12",
  "players": [
   {
    "team": "Atlanta Hawks",
@@ -101,7 +101,7 @@
    "id": "4683634",
    "name": "Bennedict Mathurin",
    "status": "Day-To-Day",
-   "comment": "Mathurin (thumb) is listed as doubtful for Friday's game against Memphis.",
+   "comment": "Mathurin (thumb) is listed as questionable for Friday's game against Memphis.",
    "return": "2026-11-13",
    "fantasy": "GTD",
    "stats": {
@@ -117,10 +117,10 @@
    "team": "New Orleans Pelicans",
    "id": "4576086",
    "name": "Bryce McGowens",
-   "status": "Day-To-Day",
-   "comment": "McGowens (elbow) is listed as doubtful for Friday's game against the Grizzlies.",
-   "return": "2026-11-13",
-   "fantasy": "GTD",
+   "status": "Out",
+   "comment": "McGowens (elbow) is listed as out for Friday's game against the Grizzlies.",
+   "return": "2026-11-14",
+   "fantasy": "OUT",
    "stats": {
     "gp": 7.0,
     "min": 10.571428,
@@ -135,9 +135,9 @@
    "id": "5061589",
    "name": "Yves Missi",
    "status": "Out",
-   "comment": "Missi (knee) is listed as doubtful for Friday's game against the Grizzlies.",
-   "return": "2026-11-13",
-   "fantasy": "GTD",
+   "comment": "Missi (knee) is out for Friday's game against the Grizzlies.",
+   "return": "2026-11-14",
+   "fantasy": "OUT",
    "stats": {
     "gp": 2.0,
     "min": 19.5,
@@ -151,16 +151,33 @@
    "team": "New Orleans Pelicans",
    "id": "4397688",
    "name": "Trey Murphy III",
-   "status": "Day-To-Day",
-   "comment": "Murphy (knee) is listed as doubtful for Friday's game against the Grizzlies.",
-   "return": "2026-11-13",
-   "fantasy": "GTD",
+   "status": "Out",
+   "comment": "Murphy (knee) is out for Friday's game against Memphis.",
+   "return": "2026-11-14",
+   "fantasy": "OUT",
    "stats": {
     "gp": 9.0,
     "min": 32.77778,
     "pts": 15.555555,
     "reb": 4.7777777,
     "ast": 3.5555556,
+    "this_season": true
+   }
+  },
+  {
+   "team": "New Orleans Pelicans",
+   "id": "3907497",
+   "name": "Dejounte Murray",
+   "status": "Out",
+   "comment": "Murray (ankle) is out for Friday's game against Memphis.",
+   "return": "2026-11-20",
+   "fantasy": "OUT",
+   "stats": {
+    "gp": 9.0,
+    "min": 31.333334,
+    "pts": 13.444445,
+    "reb": 4.5555553,
+    "ast": 4.4444447,
     "this_season": true
    }
   },
@@ -699,7 +716,7 @@
    "id": "3945274",
    "name": "Luka Doncic",
    "status": "Day-To-Day",
-   "comment": "Doncic finished Wednesday's 123-112 win over the Bucks with 32 points (10-25 FG, 5-12 3Pt, 7-10 FT), five rebounds, five assists and three steals across 32 minutes. He exited to the locker room late in the fourth quarter due to an apparent right ankle injury and did not return, Thuc Nhi Nguyen of the Los Angeles Times reports.",
+   "comment": "Head coach JJ Redick said Friday that Doncic (ankle) is \"fine,\" per Law Murray of The Athletic.",
    "return": "2026-11-15",
    "fantasy": "GTD",
    "stats": {
@@ -716,7 +733,7 @@
    "id": "4397014",
    "name": "Quentin Grimes",
    "status": "Day-To-Day",
-   "comment": "Grimes (finger) has been ruled out for Wednesday's game against the Bucks.",
+   "comment": "Grimes (finger) said he expects to return to action Sunday against the Suns, according to Ricardo Sandoval of Lakers on SI.",
    "return": "2026-11-15",
    "fantasy": "GTD",
    "stats": {
@@ -733,7 +750,7 @@
    "id": "4066457",
    "name": "Austin Reaves",
    "status": "Day-To-Day",
-   "comment": "Head coach JJ Redick said that X-rays on Reaves' left heel came back negative, but they won't have another update until he undergoes further imaging back in Los Angeles on Thursday, Dave McMenamin of ESPN.com reports.",
+   "comment": "Reaves (heel) won't undergo imaging and is considered day-to-day ahead of Sunday's game against the Suns, Jovan Buha of The Athletic reports.",
    "return": "2026-11-15",
    "fantasy": "GTD",
    "stats": {
@@ -764,27 +781,10 @@
   },
   {
    "team": "Miami Heat",
-   "id": "3032977",
-   "name": "Giannis Antetokounmpo",
-   "status": "Day-To-Day",
-   "comment": "Antetokounmpo (wrist) is probable for Friday's game against Cleveland.",
-   "return": "2026-11-13",
-   "fantasy": "GTD",
-   "stats": {
-    "gp": 11.0,
-    "min": 32.636364,
-    "pts": 27.727272,
-    "reb": 12.636364,
-    "ast": 5.181818,
-    "this_season": true
-   }
-  },
-  {
-   "team": "Miami Heat",
    "id": "4601025",
    "name": "Pelle Larsson",
    "status": "Day-To-Day",
-   "comment": "Larsson (illness) is listed as questionable for Friday's game against Cleveland.",
+   "comment": "Larsson (illness) is listed as doubtful for Friday's game against Cleveland.",
    "return": "2026-11-13",
    "fantasy": "GTD",
    "stats": {
@@ -801,7 +801,7 @@
    "id": "6475",
    "name": "Klay Thompson",
    "status": "Day-To-Day",
-   "comment": "Thompson (ankle) is listed as questionable for Friday's game against the Cavaliers.",
+   "comment": "Thompson (ankle) is listed as probable for Friday's game against the Cavaliers.",
    "return": "2026-11-13",
    "fantasy": "GTD",
    "stats": {
@@ -903,7 +903,7 @@
    "id": "4278572",
    "name": "Jamal Cain",
    "status": "Day-To-Day",
-   "comment": "Cain (shoulder) is questionable for Friday's game against the Bucks.",
+   "comment": "Cain (shoulder) participated in Friday morning's shootaround and remains questionable for Friday's game against the Bucks, Jason Beede of the Orlando Sentinel reports.",
    "return": "2026-11-13",
    "fantasy": "GTD",
    "stats": {
@@ -920,7 +920,7 @@
    "id": "4702382",
    "name": "Tristan da Silva",
    "status": "Day-To-Day",
-   "comment": "Da Silva (calf) is questionable for Friday's game against Milwaukee.",
+   "comment": "Da Silva (calf) participated in Friday's morning shootaround and remains questionable for Friday's game against Milwaukee, Jason Beede of the Orlando Sentinel reports.",
    "return": "2026-11-13",
    "fantasy": "GTD",
    "stats": {
@@ -981,7 +981,7 @@
    "id": "4432165",
    "name": "Jalen Suggs",
    "status": "Out",
-   "comment": "Suggs (knee) is questionable for Friday's game against Milwaukee.",
+   "comment": "Suggs (knee) participated in Friday's morning shootaround and remains questionable for Friday's game against the Bucks, Jason Beede of the Orlando Sentinel reports.",
    "return": "2026-11-13",
    "fantasy": "GTD",
    "stats": {
@@ -1059,6 +1059,23 @@
     "reb": 7.2,
     "ast": 6.5,
     "this_season": true
+   }
+  },
+  {
+   "team": "Phoenix Suns",
+   "id": "4431695",
+   "name": "Drew Timme",
+   "status": "Day-To-Day",
+   "comment": "The Suns claimed Timme off waivers Monday, per Michael Scotto of HoopsHype.com.",
+   "return": "2026-11-15",
+   "fantasy": "GTD",
+   "stats": {
+    "gp": 27.0,
+    "min": 8.703704,
+    "pts": 3.4074075,
+    "reb": 1.2222222,
+    "ast": 0.8518519,
+    "this_season": false
    }
   },
   {
@@ -1150,10 +1167,10 @@
    "team": "Sacramento Kings",
    "id": "4431679",
    "name": "Precious Achiuwa",
-   "status": "Day-To-Day",
-   "comment": "Achiuwa (ankle) is questionable to play Friday's game against the Trail Blazers.",
-   "return": "2026-11-13",
-   "fantasy": "GTD",
+   "status": "Out",
+   "comment": "Achiuwa (ankle) is out for Friday's game against the Trail Blazers.",
+   "return": "2026-11-15",
+   "fantasy": "OUT",
    "stats": {
     "gp": 11.0,
     "min": 26.181818,
@@ -1558,6 +1575,23 @@
     "reb": 7.5,
     "ast": 1.5,
     "this_season": true
+   }
+  },
+  {
+   "team": "Toronto Raptors",
+   "id": "4411057",
+   "name": "Kevin McCullar Jr.",
+   "status": "Day-To-Day",
+   "comment": "McCullar signed a two-way contract with the Raptors on Thursday, Michael Scotto of HoopsHype.com reports.",
+   "return": "2026-11-14",
+   "fantasy": "GTD",
+   "stats": {
+    "gp": 21.0,
+    "min": 7.3809524,
+    "pts": 2.3809524,
+    "reb": 1.3333334,
+    "ast": 0.95238096,
+    "this_season": false
    }
   },
   {
