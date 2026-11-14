@@ -1,23 +1,6 @@
 {
- "as_of": "2026-11-13T12",
+ "as_of": "2026-11-13T15",
  "players": [
-  {
-   "team": "Atlanta Hawks",
-   "id": "5149077",
-   "name": "Kingston Flemings",
-   "status": "Day-To-Day",
-   "comment": "Flemings (back) is questionable for Friday's game against the Bulls.",
-   "return": "2026-11-13",
-   "fantasy": "GTD",
-   "stats": {
-    "gp": 11.0,
-    "min": 21.818182,
-    "pts": 8.454545,
-    "reb": 2.6363637,
-    "ast": 4.3636365,
-    "this_season": true
-   }
-  },
   {
    "team": "Atlanta Hawks",
    "id": "4585618",
@@ -93,23 +76,6 @@
     "pts": 22.0,
     "reb": 5.2,
     "ast": 3.8,
-    "this_season": true
-   }
-  },
-  {
-   "team": "New Orleans Pelicans",
-   "id": "4683634",
-   "name": "Bennedict Mathurin",
-   "status": "Day-To-Day",
-   "comment": "Mathurin (thumb) is listed as questionable for Friday's game against Memphis.",
-   "return": "2026-11-13",
-   "fantasy": "GTD",
-   "stats": {
-    "gp": 11.0,
-    "min": 15.818182,
-    "pts": 6.0,
-    "reb": 1.9090909,
-    "ast": 1.2727273,
     "this_season": true
    }
   },
@@ -217,29 +183,12 @@
   },
   {
    "team": "Chicago Bulls",
-   "id": "2595516",
-   "name": "Norman Powell",
-   "status": "Day-To-Day",
-   "comment": "Powell (shoulder) is questionable for Friday's game against the Hawks.",
-   "return": "2026-11-13",
-   "fantasy": "GTD",
-   "stats": {
-    "gp": 8.0,
-    "min": 28.75,
-    "pts": 19.25,
-    "reb": 2.5,
-    "ast": 1.625,
-    "this_season": true
-   }
-  },
-  {
-   "team": "Chicago Bulls",
    "id": "4848625",
    "name": "Dailyn Swain",
-   "status": "Day-To-Day",
-   "comment": "Swain (back) is listed as questionable for Friday's game against Atlanta.",
-   "return": "2026-11-13",
-   "fantasy": "GTD",
+   "status": "Out",
+   "comment": "Swain (back) is out for Friday's game against the Hawks.",
+   "return": "2026-11-14",
+   "fantasy": "OUT",
    "stats": {
     "gp": 2.0,
     "min": 9.5,
@@ -301,6 +250,23 @@
    }
   },
   {
+   "team": "Cleveland Cavaliers",
+   "id": "5106268",
+   "name": "Nae'Qwan Tomlin",
+   "status": "Out",
+   "comment": "Tomlin is set to miss several weeks with a lower back stress reaction, Chris Fedor of The Cleveland Plain Dealer reports.",
+   "return": "2026-11-16",
+   "fantasy": "OUT",
+   "stats": {
+    "gp": 64.0,
+    "min": 15.6875,
+    "pts": 5.84375,
+    "reb": 2.90625,
+    "ast": 0.828125,
+    "this_season": false
+   }
+  },
+  {
    "team": "Dallas Mavericks",
    "id": "5148538",
    "name": "Tarik Biberovic",
@@ -309,6 +275,23 @@
    "return": "2026-11-18",
    "fantasy": "OUT",
    "stats": null
+  },
+  {
+   "team": "Dallas Mavericks",
+   "id": "4432582",
+   "name": "Max Christie",
+   "status": "Day-To-Day",
+   "comment": "Christie is questionable for Saturday's game against the Cavaliers due to a sprained left ankle.",
+   "return": "2026-11-14",
+   "fantasy": "GTD",
+   "stats": {
+    "gp": 11.0,
+    "min": 18.454546,
+    "pts": 5.2727275,
+    "reb": 2.909091,
+    "ast": 1.1818181,
+    "this_season": true
+   }
   },
   {
    "team": "Dallas Mavericks",
@@ -324,6 +307,23 @@
     "pts": 5.25,
     "reb": 2.0,
     "ast": 1.25,
+    "this_season": true
+   }
+  },
+  {
+   "team": "Dallas Mavericks",
+   "id": "4873153",
+   "name": "Morez Johnson Jr.",
+   "status": "Day-To-Day",
+   "comment": "Johnson (left shin contusion) is listed as probable for Saturday against Cleveland.",
+   "return": "2026-11-14",
+   "fantasy": "GTD",
+   "stats": {
+    "gp": 11.0,
+    "min": 16.727272,
+    "pts": 6.909091,
+    "reb": 4.818182,
+    "ast": 1.1818181,
     "this_season": true
    }
   },
@@ -401,7 +401,7 @@
    "name": "Ugonna Onyenso",
    "status": "Day-To-Day",
    "comment": "Onyenso agreed to a two-way contract with the Pistons on Thursday.",
-   "return": "2026-11-13",
+   "return": "2026-11-14",
    "fantasy": "GTD",
    "stats": null
   },
@@ -411,8 +411,8 @@
    "name": "Charles Bassey",
    "status": "Day-To-Day",
    "comment": "Bassey is probable for Friday's game against the Spurs due to left toe soreness.",
-   "return": "2026-11-13",
-   "fantasy": "GTD",
+   "return": "",
+   "fantasy": "",
    "stats": {
     "gp": 10.0,
     "min": 12.5,
@@ -594,40 +594,6 @@
   },
   {
    "team": "Indiana Pacers",
-   "id": "2530530",
-   "name": "T.J. McConnell",
-   "status": "Day-To-Day",
-   "comment": "McConnell is probable for Friday's game against the Knicks due to a right hamstring strain.",
-   "return": "2026-11-13",
-   "fantasy": "GTD",
-   "stats": {
-    "gp": 3.0,
-    "min": 10.333333,
-    "pts": 5.0,
-    "reb": 1.6666666,
-    "ast": 3.6666667,
-    "this_season": true
-   }
-  },
-  {
-   "team": "Indiana Pacers",
-   "id": "4396909",
-   "name": "Aaron Nesmith",
-   "status": "Day-To-Day",
-   "comment": "Nesmith (knee) is questionable for Friday's game against the Knicks.",
-   "return": "2026-11-13",
-   "fantasy": "GTD",
-   "stats": {
-    "gp": 10.0,
-    "min": 25.2,
-    "pts": 11.7,
-    "reb": 2.2,
-    "ast": 1.7,
-    "this_season": true
-   }
-  },
-  {
-   "team": "Indiana Pacers",
    "id": "4433076",
    "name": "Ben Sheppard",
    "status": "Out",
@@ -783,10 +749,10 @@
    "team": "Miami Heat",
    "id": "4601025",
    "name": "Pelle Larsson",
-   "status": "Day-To-Day",
-   "comment": "Larsson (illness) is listed as doubtful for Friday's game against Cleveland.",
-   "return": "2026-11-13",
-   "fantasy": "GTD",
+   "status": "Out",
+   "comment": "Larsson (illness) is out for Friday's game against Cleveland.",
+   "return": "2026-11-14",
+   "fantasy": "OUT",
    "stats": {
     "gp": 11.0,
     "min": 29.545454,
@@ -800,10 +766,10 @@
    "team": "Miami Heat",
    "id": "6475",
    "name": "Klay Thompson",
-   "status": "Day-To-Day",
-   "comment": "Thompson (ankle) is listed as probable for Friday's game against the Cavaliers.",
-   "return": "2026-11-13",
-   "fantasy": "GTD",
+   "status": "Out",
+   "comment": "Thompson (ankle) is out for Friday's game against the Cavaliers.",
+   "return": "2026-11-14",
+   "fantasy": "OUT",
    "stats": {
     "gp": 11.0,
     "min": 24.818182,
@@ -852,7 +818,7 @@
    "id": "5101761",
    "name": "Mikel Brown Jr.",
    "status": "Day-To-Day",
-   "comment": "Brown has been ruled out for Wednesday's game against the Pelicans due to an illness, Sharif Phillips-Keaton of USA Today reports.",
+   "comment": "Brown (illness) is listed as questionable for Saturday's game against Memphis.",
    "return": "2026-11-14",
    "fantasy": "GTD",
    "stats": {
@@ -869,7 +835,7 @@
    "id": "5279130",
    "name": "Nolan Traore",
    "status": "Day-To-Day",
-   "comment": "Traore (calf) has been ruled out for Wednesday's game against the Pelicans, Ian Begley of SportsNet New York reports.",
+   "comment": "Traore (calf) is listed as probable for Saturday's game against Memphis.",
    "return": "2026-11-14",
    "fantasy": "GTD",
    "stats": {
@@ -895,40 +861,6 @@
     "pts": 24.5,
     "reb": 6.5,
     "ast": 7.5,
-    "this_season": true
-   }
-  },
-  {
-   "team": "Orlando Magic",
-   "id": "4278572",
-   "name": "Jamal Cain",
-   "status": "Day-To-Day",
-   "comment": "Cain (shoulder) participated in Friday morning's shootaround and remains questionable for Friday's game against the Bucks, Jason Beede of the Orlando Sentinel reports.",
-   "return": "2026-11-13",
-   "fantasy": "GTD",
-   "stats": {
-    "gp": 10.0,
-    "min": 19.6,
-    "pts": 7.0,
-    "reb": 3.1,
-    "ast": 0.4,
-    "this_season": true
-   }
-  },
-  {
-   "team": "Orlando Magic",
-   "id": "4702382",
-   "name": "Tristan da Silva",
-   "status": "Day-To-Day",
-   "comment": "Da Silva (calf) participated in Friday's morning shootaround and remains questionable for Friday's game against Milwaukee, Jason Beede of the Orlando Sentinel reports.",
-   "return": "2026-11-13",
-   "fantasy": "GTD",
-   "stats": {
-    "gp": 9.0,
-    "min": 30.555555,
-    "pts": 15.111111,
-    "reb": 3.6666667,
-    "ast": 1.6666666,
     "this_season": true
    }
   },
@@ -974,23 +906,6 @@
     "reb": 3.1694915,
     "ast": 1.1864407,
     "this_season": false
-   }
-  },
-  {
-   "team": "Orlando Magic",
-   "id": "4432165",
-   "name": "Jalen Suggs",
-   "status": "Out",
-   "comment": "Suggs (knee) participated in Friday's morning shootaround and remains questionable for Friday's game against the Bucks, Jason Beede of the Orlando Sentinel reports.",
-   "return": "2026-11-13",
-   "fantasy": "GTD",
-   "stats": {
-    "gp": 3.0,
-    "min": 33.333332,
-    "pts": 8.0,
-    "reb": 5.0,
-    "ast": 5.6666665,
-    "this_season": true
    }
   },
   {
@@ -1213,8 +1128,8 @@
    "name": "De'Aaron Fox",
    "status": "Day-To-Day",
    "comment": "Fox is questionable for Friday's game against the Warriors due to left hip soreness.",
-   "return": "2026-11-13",
-   "fantasy": "GTD",
+   "return": "",
+   "fantasy": "",
    "stats": {
     "gp": 12.0,
     "min": 29.5,

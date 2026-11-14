@@ -5,7 +5,7 @@
   "Atlanta Hawks": {
    "playoffs": 88.5,
    "top6": 61.8,
-   "playin": 37.2,
+   "playin": 37.1,
    "proj_w": 46.1,
    "proj_l": 35.9,
    "seed": 5.9,
@@ -114,11 +114,11 @@
    "prev": 1.2
   },
   "Cleveland Cavaliers": {
-   "playoffs": 94.7,
-   "top6": 78.0,
-   "playin": 21.6,
-   "proj_w": 48.5,
-   "proj_l": 33.5,
+   "playoffs": 94.8,
+   "top6": 78.4,
+   "playin": 21.2,
+   "proj_w": 48.6,
+   "proj_l": 33.4,
    "seed": 5.0,
    "conf": "East",
    "rating": 2.9,
@@ -140,6 +140,13 @@
      "games": 2,
      "impact": 0.66,
      "comment": "Merrill (elbow) is listed as out for Wednesday's game against the Knicks."
+    },
+    {
+     "name": "Nae'Qwan Tomlin",
+     "status": "Out",
+     "games": 2,
+     "impact": 0.03,
+     "comment": "Tomlin is set to miss several weeks with a lower back stress reaction, Chris Fedor of The Cleveland Plain Dealer reports."
     }
    ],
    "injury_wins": -0.1,
@@ -203,8 +210,8 @@
   },
   "Detroit Pistons": {
    "playoffs": 99.1,
-   "top6": 95.5,
-   "playin": 4.5,
+   "top6": 95.4,
+   "playin": 4.6,
    "proj_w": 54.4,
    "proj_l": 27.6,
    "seed": 3.1,
@@ -236,9 +243,9 @@
    "prev": 99.3
   },
   "Golden State Warriors": {
-   "playoffs": 56.1,
-   "top6": 22.4,
-   "playin": 66.6,
+   "playoffs": 56.2,
+   "top6": 22.6,
+   "playin": 66.5,
    "proj_w": 43.3,
    "proj_l": 38.7,
    "seed": 8.0,
@@ -387,8 +394,8 @@
   },
   "Los Angeles Lakers": {
    "playoffs": 95.3,
-   "top6": 83.5,
-   "playin": 16.2,
+   "top6": 83.4,
+   "playin": 16.3,
    "proj_w": 52.8,
    "proj_l": 29.2,
    "seed": 4.4,
@@ -440,19 +447,34 @@
   },
   "Miami Heat": {
    "playoffs": 80.3,
-   "top6": 46.1,
-   "playin": 50.9,
-   "proj_w": 44.0,
-   "proj_l": 38.0,
-   "seed": 6.6,
+   "top6": 45.6,
+   "playin": 51.4,
+   "proj_w": 43.9,
+   "proj_l": 38.1,
+   "seed": 6.7,
    "conf": "East",
    "rating": 1.1,
    "rating_wins": 44.1,
    "prior_wins": 46.5,
    "last5_margin": -5.6,
    "season_margin": -4.3,
-   "injuries": [],
-   "injury_wins": 0.0,
+   "injuries": [
+    {
+     "name": "Klay Thompson",
+     "status": "Out",
+     "games": 1,
+     "impact": 1.76,
+     "comment": "Thompson (ankle) is out for Friday's game against the Cavaliers."
+    },
+    {
+     "name": "Pelle Larsson",
+     "status": "Out",
+     "games": 1,
+     "impact": 1.65,
+     "comment": "Larsson (illness) is out for Friday's game against Cleveland."
+    }
+   ],
+   "injury_wins": -0.1,
    "sos_rank": 20,
    "games_left": 71,
    "prev": 81.2
@@ -620,7 +642,7 @@
   },
   "Orlando Magic": {
    "playoffs": 39.9,
-   "top6": 9.6,
+   "top6": 9.5,
    "playin": 66.7,
    "proj_w": 36.9,
    "proj_l": 45.1,
@@ -647,7 +669,7 @@
   },
   "Philadelphia 76ers": {
    "playoffs": 98.0,
-   "top6": 90.8,
+   "top6": 90.9,
    "playin": 9.1,
    "proj_w": 52.0,
    "proj_l": 30.0,
@@ -701,8 +723,8 @@
   },
   "Portland Trail Blazers": {
    "playoffs": 84.7,
-   "top6": 58.4,
-   "playin": 39.4,
+   "top6": 58.3,
+   "playin": 39.5,
    "proj_w": 48.5,
    "proj_l": 33.5,
    "seed": 6.1,
@@ -787,6 +809,13 @@
      "games": 3,
      "impact": 1.06,
      "comment": "Harris (calf) is out for Wednesday's game against Chicago, Jared Weiss of The Athletic reports."
+    },
+    {
+     "name": "De'Aaron Fox",
+     "status": "Day-To-Day",
+     "games": 1,
+     "impact": 2.7,
+     "comment": "Fox is questionable for Friday's game against the Warriors due to left hip soreness."
     }
    ],
    "injury_wins": -0.1,
