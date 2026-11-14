@@ -1388,5 +1388,15 @@
   "away_ml": 473,
   "home_ml": -650,
   "book": "DraftKings"
+ },
+ {
+  "date": "2026-11-14",
+  "away": "Detroit Pistons",
+  "home": "Miami Heat",
+  "fav": "Detroit Pistons",
+  "spread": 5.5,
+  "away_ml": -181,
+  "home_ml": 152,
+  "book": "Draft Kings"
  }
 ]

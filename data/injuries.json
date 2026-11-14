@@ -1,6 +1,23 @@
 {
- "as_of": "2026-11-13T15",
+ "as_of": "2026-11-13T18",
  "players": [
+  {
+   "team": "Atlanta Hawks",
+   "id": "5149077",
+   "name": "Kingston Flemings",
+   "status": "Day-To-Day",
+   "comment": "Flemings (back tightness) will not return to Friday's game against the Bulls.",
+   "return": "2026-11-15",
+   "fantasy": "GTD",
+   "stats": {
+    "gp": 11.0,
+    "min": 21.818182,
+    "pts": 8.454545,
+    "reb": 2.6363637,
+    "ast": 4.3636365,
+    "this_season": true
+   }
+  },
   {
    "team": "Atlanta Hawks",
    "id": "4585618",
@@ -178,6 +195,23 @@
     "pts": 2.0,
     "reb": 5.25,
     "ast": 0.75,
+    "this_season": true
+   }
+  },
+  {
+   "team": "Chicago Bulls",
+   "id": "4397189",
+   "name": "Jalen Smith",
+   "status": "Day-To-Day",
+   "comment": "Smith (hand) exited Friday's 125-117 win over the Hawks in overtime and did not return, finishing with 15 points (6-15 FG, 1-6 3Pt, 2-2 FT), 12 rebounds, three assists and three steals across 32 minutes.",
+   "return": "2026-11-14",
+   "fantasy": "GTD",
+   "stats": {
+    "gp": 10.0,
+    "min": 24.0,
+    "pts": 12.8,
+    "reb": 7.4,
+    "ast": 1.9,
     "this_season": true
    }
   },
@@ -407,23 +441,6 @@
   },
   {
    "team": "Golden State Warriors",
-   "id": "4397886",
-   "name": "Charles Bassey",
-   "status": "Day-To-Day",
-   "comment": "Bassey is probable for Friday's game against the Spurs due to left toe soreness.",
-   "return": "",
-   "fantasy": "",
-   "stats": {
-    "gp": 10.0,
-    "min": 12.5,
-    "pts": 7.6,
-    "reb": 5.7,
-    "ast": 0.5,
-    "this_season": true
-   }
-  },
-  {
-   "team": "Golden State Warriors",
    "id": "6430",
    "name": "Jimmy Butler III",
    "status": "Out",
@@ -589,6 +606,23 @@
     "pts": 21.75,
     "reb": 4.5,
     "ast": 9.5,
+    "this_season": true
+   }
+  },
+  {
+   "team": "Indiana Pacers",
+   "id": "4396909",
+   "name": "Aaron Nesmith",
+   "status": "Day-To-Day",
+   "comment": "Nesmith exited to the locker room in the final seconds of Friday's 106-104 win over the Knicks due to an apparent hand/wrist injury, Tony East of Forbes.com reports. He posted 18 points (7-10 FG, 2-3 3Pt, 2-2 FT), seven rebounds and one assist in 33 minutes.",
+   "return": "2026-11-15",
+   "fantasy": "GTD",
+   "stats": {
+    "gp": 10.0,
+    "min": 25.2,
+    "pts": 11.7,
+    "reb": 2.2,
+    "ast": 1.7,
     "this_season": true
    }
   },
@@ -871,7 +905,7 @@
    "status": "Out",
    "comment": "Isaac (knee) is out for Tuesday's game against Sacramento.",
    "return": "2026-11-16",
-   "fantasy": "OUT",
+   "fantasy": "GTD",
    "stats": {
     "gp": 52.0,
     "min": 10.019231,
@@ -1124,23 +1158,6 @@
   },
   {
    "team": "San Antonio Spurs",
-   "id": "4066259",
-   "name": "De'Aaron Fox",
-   "status": "Day-To-Day",
-   "comment": "Fox is questionable for Friday's game against the Warriors due to left hip soreness.",
-   "return": "",
-   "fantasy": "",
-   "stats": {
-    "gp": 12.0,
-    "min": 29.5,
-    "pts": 14.166667,
-    "reb": 4.3333335,
-    "ast": 6.1666665,
-    "this_season": true
-   }
-  },
-  {
-   "team": "San Antonio Spurs",
    "id": "6440",
    "name": "Tobias Harris",
    "status": "Out",
@@ -1167,23 +1184,6 @@
    "stats": null
   },
   {
-   "team": "San Antonio Spurs",
-   "id": "4395630",
-   "name": "Devin Vassell",
-   "status": "Day-To-Day",
-   "comment": "Vassell is questionable for Friday's game against the Warriors due to left adductor tightness.",
-   "return": "2026-11-13",
-   "fantasy": "GTD",
-   "stats": {
-    "gp": 10.0,
-    "min": 30.0,
-    "pts": 11.9,
-    "reb": 3.8,
-    "ast": 3.1,
-    "this_season": true
-   }
-  },
-  {
    "team": "Oklahoma City Thunder",
    "id": "4433255",
    "name": "Chet Holmgren",
@@ -1204,10 +1204,10 @@
    "team": "Oklahoma City Thunder",
    "id": "4900671",
    "name": "Ajay Mitchell",
-   "status": "Day-To-Day",
-   "comment": "Mitchell (ankle) is questionable for Friday's game against the Clippers.",
-   "return": "2026-11-13",
-   "fantasy": "GTD",
+   "status": "Out",
+   "comment": "Mitchell (ankle) has been ruled out for Friday's game against the Clippers.",
+   "return": "2026-11-15",
+   "fantasy": "OUT",
    "stats": {
     "gp": 11.0,
     "min": 27.272728,
@@ -1293,6 +1293,23 @@
     "reb": 1.2222222,
     "ast": 1.0,
     "this_season": false
+   }
+  },
+  {
+   "team": "Utah Jazz",
+   "id": "4397077",
+   "name": "Jaxson Hayes",
+   "status": "Day-To-Day",
+   "comment": "Hayes won't return to Friday's game against the Rockets due to a left knee issue.",
+   "return": "2026-11-15",
+   "fantasy": "GTD",
+   "stats": {
+    "gp": 11.0,
+    "min": 25.181818,
+    "pts": 8.545455,
+    "reb": 6.090909,
+    "ast": 1.6363636,
+    "this_season": true
    }
   },
   {
