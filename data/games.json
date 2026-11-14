@@ -1438,6 +1438,15 @@
   "cup": true
  },
  {
+  "id": "401909304",
+  "date": "2026-11-13",
+  "away": "Oklahoma City Thunder",
+  "home": "LA Clippers",
+  "away_score": 112,
+  "home_score": 113,
+  "cup": true
+ },
+ {
   "id": "401909298",
   "date": "2026-11-13",
   "away": "Cleveland Cavaliers",
@@ -1462,6 +1471,24 @@
   "home": "Orlando Magic",
   "away_score": 99,
   "home_score": 107,
+  "cup": true
+ },
+ {
+  "id": "401909303",
+  "date": "2026-11-13",
+  "away": "Portland Trail Blazers",
+  "home": "Sacramento Kings",
+  "away_score": 120,
+  "home_score": 107,
+  "cup": true
+ },
+ {
+  "id": "401909302",
+  "date": "2026-11-13",
+  "away": "Golden State Warriors",
+  "home": "San Antonio Spurs",
+  "away_score": 85,
+  "home_score": 123,
   "cup": true
  }
 ]
