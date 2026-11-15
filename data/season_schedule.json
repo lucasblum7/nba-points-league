@@ -1,36 +1,6 @@
 {
- "as_of": "2026-11-14",
+ "as_of": "2026-11-15",
  "games": [
-  {
-   "date": "2026-11-14",
-   "time": "4:30 PM",
-   "away": "Dallas Mavericks",
-   "home": "Cleveland Cavaliers"
-  },
-  {
-   "date": "2026-11-14",
-   "time": "5:00 PM",
-   "away": "Brooklyn Nets",
-   "home": "Memphis Grizzlies"
-  },
-  {
-   "date": "2026-11-14",
-   "time": "5:00 PM",
-   "away": "Detroit Pistons",
-   "home": "Miami Heat"
-  },
-  {
-   "date": "2026-11-14",
-   "time": "5:00 PM",
-   "away": "Chicago Bulls",
-   "home": "Minnesota Timberwolves"
-  },
-  {
-   "date": "2026-11-14",
-   "time": "4:00 PM",
-   "away": "Denver Nuggets",
-   "home": "New Orleans Pelicans"
-  },
   {
    "date": "2026-11-15",
    "time": "3:00 PM",
@@ -177,13 +147,13 @@
   },
   {
    "date": "2026-11-18",
-   "time": "6:30 PM",
+   "time": "5:00 PM",
    "away": "Golden State Warriors",
    "home": "Dallas Mavericks"
   },
   {
    "date": "2026-11-18",
-   "time": "6:00 PM",
+   "time": "6:30 PM",
    "away": "Boston Celtics",
    "home": "Denver Nuggets"
   },
