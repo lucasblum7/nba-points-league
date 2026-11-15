@@ -1,5 +1,5 @@
 {
- "as_of": "2026-11-14T15",
+ "as_of": "2026-11-14T18",
  "players": [
   {
    "team": "Atlanta Hawks",
@@ -397,6 +397,23 @@
   },
   {
    "team": "Dallas Mavericks",
+   "id": "4278049",
+   "name": "Daniel Gafford",
+   "status": "Out",
+   "comment": "Gafford (face) won't return to Saturday's game against the Cavaliers, Grant Afseth of DallasHoopsJournal.com reports.",
+   "return": "2026-11-15",
+   "fantasy": "OUT",
+   "stats": {
+    "gp": 12.0,
+    "min": 21.5,
+    "pts": 9.083333,
+    "reb": 5.3333335,
+    "ast": 1.9166666,
+    "this_season": true
+   }
+  },
+  {
+   "team": "Dallas Mavericks",
    "id": "4683688",
    "name": "Dereck Lively II",
    "status": "Out",
@@ -472,6 +489,23 @@
    "return": "2026-11-14",
    "fantasy": "GTD",
    "stats": null
+  },
+  {
+   "team": "Detroit Pistons",
+   "id": "3157465",
+   "name": "Duncan Robinson",
+   "status": "Day-To-Day",
+   "comment": "Robinson (thigh) is questionable to return to Saturday's game against Miami.",
+   "return": "2026-11-14",
+   "fantasy": "GTD",
+   "stats": {
+    "gp": 11.0,
+    "min": 31.727272,
+    "pts": 18.09091,
+    "reb": 1.9090909,
+    "ast": 2.1818182,
+    "this_season": true
+   }
   },
   {
    "team": "Golden State Warriors",
@@ -679,6 +713,23 @@
   },
   {
    "team": "Indiana Pacers",
+   "id": "4395712",
+   "name": "Andrew Nembhard",
+   "status": "Day-To-Day",
+   "comment": "Nembhard is questionable for Sunday's game against the 76ers due to left hip soreness.",
+   "return": "2026-11-15",
+   "fantasy": "GTD",
+   "stats": {
+    "gp": 11.0,
+    "min": 33.363636,
+    "pts": 16.636364,
+    "reb": 2.2727273,
+    "ast": 7.6363635,
+    "this_season": true
+   }
+  },
+  {
+   "team": "Indiana Pacers",
    "id": "4396909",
    "name": "Aaron Nesmith",
    "status": "Day-To-Day",
@@ -781,29 +832,12 @@
   },
   {
    "team": "Los Angeles Lakers",
-   "id": "4397014",
-   "name": "Quentin Grimes",
-   "status": "Day-To-Day",
-   "comment": "Grimes (finger) said he expects to return to action Sunday against the Suns, according to Ricardo Sandoval of Lakers on SI.",
-   "return": "2026-11-15",
-   "fantasy": "GTD",
-   "stats": {
-    "gp": 11.0,
-    "min": 26.09091,
-    "pts": 8.0,
-    "reb": 2.5454545,
-    "ast": 2.5454545,
-    "this_season": true
-   }
-  },
-  {
-   "team": "Los Angeles Lakers",
    "id": "4066457",
    "name": "Austin Reaves",
-   "status": "Day-To-Day",
-   "comment": "Reaves (heel) didn't participate in Saturday's practice, Dave McMenamin of ESPN.com reports.",
-   "return": "2026-11-15",
-   "fantasy": "GTD",
+   "status": "Out",
+   "comment": "Reaves (heel) has been ruled out for Sunday's game against the Suns, Daniel Starkand of LakersNation.com reports.",
+   "return": "2026-11-17",
+   "fantasy": "OUT",
    "stats": {
     "gp": 12.0,
     "min": 35.25,
@@ -818,7 +852,7 @@
    "id": "4277811",
    "name": "Collin Sexton",
    "status": "Day-To-Day",
-   "comment": "Sexton (head) was a full participant in Saturday's practice, Dave McMenamin of ESPN.com reports.",
+   "comment": "Sexton (head) is questionable for Sunday's game against the Suns, Daniel Starkand of LakersNation.com reports.",
    "return": "2026-11-15",
    "fantasy": "GTD",
    "stats": {
@@ -827,6 +861,23 @@
     "pts": 10.25,
     "reb": 1.8333334,
     "ast": 2.5833333,
+    "this_season": true
+   }
+  },
+  {
+   "team": "Los Angeles Lakers",
+   "id": "5060631",
+   "name": "Adou Thiero",
+   "status": "Day-To-Day",
+   "comment": "Thiero (ankle) is questionable for Sunday's game against the Suns.",
+   "return": "2026-11-15",
+   "fantasy": "GTD",
+   "stats": {
+    "gp": 4.0,
+    "min": 9.25,
+    "pts": 2.5,
+    "reb": 2.5,
+    "ast": 1.0,
     "this_season": true
    }
   },
@@ -861,6 +912,23 @@
     "pts": 3.9,
     "reb": 1.2,
     "ast": 1.0,
+    "this_season": true
+   }
+  },
+  {
+   "team": "Minnesota Timberwolves",
+   "id": "4432247",
+   "name": "Jaylen Clark",
+   "status": "Out",
+   "comment": "Clark (hamstring) has been ruled out for the remainder of Saturday's game against the Bulls, Sarah Todd of The Deseret News reports.",
+   "return": "2026-11-16",
+   "fantasy": "OUT",
+   "stats": {
+    "gp": 11.0,
+    "min": 14.545455,
+    "pts": 4.909091,
+    "reb": 2.2727273,
+    "ast": 0.8181818,
     "this_season": true
    }
   },
@@ -902,10 +970,10 @@
    "team": "Brooklyn Nets",
    "id": "4278104",
    "name": "Michael Porter Jr.",
-   "status": "Day-To-Day",
-   "comment": "Porter (personal) is listed as questionable for Saturday's game against Memphis, Erik Slater of ClutchPoints.com reports.",
-   "return": "2026-11-14",
-   "fantasy": "GTD",
+   "status": "Out",
+   "comment": "Porter (personal) is out for Saturday's game against the Grizzlies, Brian Lewis of the New York Post reports.",
+   "return": "2026-11-16",
+   "fantasy": "OUT",
    "stats": {
     "gp": 11.0,
     "min": 32.636364,
@@ -1151,7 +1219,7 @@
    "id": "4431679",
    "name": "Precious Achiuwa",
    "status": "Day-To-Day",
-   "comment": "Achiuwa (ankle) is out for Friday's game against the Trail Blazers.",
+   "comment": "Achiuwa (ankle) is questionable for Sunday's game against the Thunder.",
    "return": "2026-11-15",
    "fantasy": "GTD",
    "stats": {
@@ -1168,7 +1236,7 @@
    "id": "4594327",
    "name": "Keegan Murray",
    "status": "Day-To-Day",
-   "comment": "Murray (illness) didn't participate in Saturday's practice, Brenden Nunes of KHTK Sactown Sports 1140 reports.",
+   "comment": "Murray (illness) is questionable for Sunday's game against the Thunder.",
    "return": "2026-11-15",
    "fantasy": "GTD",
    "stats": {
@@ -1185,9 +1253,9 @@
    "id": "4898371",
    "name": "Maxime Raynaud",
    "status": "Out",
-   "comment": "Raynaud (knee) has been ruled out for Tuesday's game against Orlando.",
-   "return": "2026-11-15",
-   "fantasy": "GTD",
+   "comment": "Raynaud (knee) has been ruled out for Sunday's game against the Thunder.",
+   "return": "2026-11-18",
+   "fantasy": "OUT",
    "stats": {
     "gp": 74.0,
     "min": 26.54054,
@@ -1256,7 +1324,7 @@
    "id": "4900671",
    "name": "Ajay Mitchell",
    "status": "Day-To-Day",
-   "comment": "Mitchell (ankle) has been ruled out for Friday's game against the Clippers.",
+   "comment": "Mitchell (ankle) is questionable to suit up for Sunday's game against the Kings.",
    "return": "2026-11-15",
    "fantasy": "GTD",
    "stats": {
@@ -1317,9 +1385,9 @@
    "id": "4432823",
    "name": "Jaylin Williams",
    "status": "Out",
-   "comment": "Williams (back) has been ruled out for Wednesday's game against Portland and remains out indefinitely.",
-   "return": "2026-11-15",
-   "fantasy": "GTD",
+   "comment": "Williams (back) has been ruled out for Sunday's game against the Kings.",
+   "return": "2026-11-18",
+   "fantasy": "OUT",
    "stats": {
     "gp": 7.0,
     "min": 18.428572,
@@ -1350,10 +1418,10 @@
    "team": "Utah Jazz",
    "id": "4397077",
    "name": "Jaxson Hayes",
-   "status": "Day-To-Day",
-   "comment": "Hayes won't return to Friday's game against the Rockets due to a left knee issue.",
-   "return": "2026-11-15",
-   "fantasy": "GTD",
+   "status": "Out",
+   "comment": "Hayes (knee) has been ruled out for Sunday's game against the Spurs.",
+   "return": "2026-11-17",
+   "fantasy": "OUT",
    "stats": {
     "gp": 12.0,
     "min": 24.166666,
@@ -1598,10 +1666,10 @@
    "team": "Memphis Grizzlies",
    "id": "4600663",
    "name": "Zach Edey",
-   "status": "Day-To-Day",
-   "comment": "Edey (ankle) is listed as questionable for Saturday's game against Brooklyn.",
-   "return": "2026-11-14",
-   "fantasy": "GTD",
+   "status": "Out",
+   "comment": "Edey (ankle) is listed as out for Saturday's game against the Nets.",
+   "return": "2026-11-16",
+   "fantasy": "OUT",
    "stats": {
     "gp": 10.0,
     "min": 20.7,
@@ -1615,16 +1683,33 @@
    "team": "Memphis Grizzlies",
    "id": "2991070",
    "name": "Jerami Grant",
-   "status": "Day-To-Day",
-   "comment": "Grant (head) is questionable for Saturday's game against the Nets.",
-   "return": "2026-11-14",
-   "fantasy": "GTD",
+   "status": "Out",
+   "comment": "Grant (head) is out for Saturday's game against the Nets.",
+   "return": "2026-11-16",
+   "fantasy": "OUT",
    "stats": {
     "gp": 12.0,
     "min": 23.75,
     "pts": 11.666667,
     "reb": 2.0833333,
     "ast": 2.0,
+    "this_season": true
+   }
+  },
+  {
+   "team": "Memphis Grizzlies",
+   "id": "5105550",
+   "name": "GG Jackson",
+   "status": "Out",
+   "comment": "According to Grizzlies head coach Tuomas Iisalo, Jackson suffered a \"relatively serious\" foot injury in Saturday's 129-110 win over Brooklyn, Michael Wallace of the Grizzlies' official site reports.",
+   "return": "2026-11-16",
+   "fantasy": "OUT",
+   "stats": {
+    "gp": 11.0,
+    "min": 16.09091,
+    "pts": 7.0,
+    "reb": 3.2727273,
+    "ast": 1.0909091,
     "this_season": true
    }
   },
@@ -1703,23 +1788,6 @@
     "pts": 3.0,
     "reb": 0,
     "ast": 0,
-    "this_season": true
-   }
-  },
-  {
-   "team": "Charlotte Hornets",
-   "id": "4433287",
-   "name": "Brandon Miller",
-   "status": "Day-To-Day",
-   "comment": "Miller (groin) is listed as out for Thursday's game against Phoenix.",
-   "return": "2026-11-15",
-   "fantasy": "GTD",
-   "stats": {
-    "gp": 10.0,
-    "min": 31.0,
-    "pts": 20.6,
-    "reb": 5.0,
-    "ast": 2.2,
     "this_season": true
    }
   },
