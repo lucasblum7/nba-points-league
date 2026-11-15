@@ -71,3 +71,7 @@ html.ld-on, html.ld-on body { overflow: hidden; }
 .ld-skip { font: inherit; display: block; margin: 16px auto 0; background: none; border: none; color: #ff9a5c; font-weight: 700; font-size: 15px; cursor: pointer; padding: 8px 12px; }
 .ld-foot { text-align: center; font-size: 12px; color: #64748b; margin: 22px 0 0; }
 @media (prefers-reduced-motion: reduce) { .landing, .landing.out, .ld-ball { animation: none; } }
+/* The Win Column: points stand out — bigger, orange, in a soft pill */
+#leaderboard th:nth-child(3) { color: var(--accent); }
+#leaderboard td:nth-child(3) { font-size: 28px !important; font-weight: 800 !important; color: var(--accent); letter-spacing: -.01em; }
+#leaderboard td:nth-child(4), #leaderboard td:nth-child(5), #leaderboard td:nth-child(6) { color: var(--muted); font-weight: 600 !important; font-size: 17px; }
