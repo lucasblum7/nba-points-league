@@ -626,6 +626,10 @@
       const pts = mk('div', 'owner-pts', fmt(row.points)); pts.append(mk('small', null, 'pts'));
       const side = mk('div', 'owner-side'); side.append(todayPill(o, C, slate), pts);
       head.append(nameBox, side);
+      head.classList.add('owner-tap'); head.tabIndex = 0; head.setAttribute('role', 'button'); head.setAttribute('aria-label', `Open ${o}'s full roster card`);
+      head.addEventListener('click', (e) => { if (e.target.closest('.today-pill')) return; showOwner(o, C, slate); });
+      head.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); showOwner(o, C, slate); } });
+      nameBox.querySelector('h2').append(mk('span', 'oc-go', '›'));
       const tied = board.filter((x) => x.points === row.points).length > 1;
       const rk = mk('span', 'rank-bit', 'Rank '); rk.append(mk('b', null, `${tied ? 'T-' : ''}${row.place} of ${board.length}`)); pl.append(' · ', rk);
       card.append(head, plLine);
@@ -876,7 +880,7 @@
       const cell = (cls, content) => { const c = mk('span', cls); c.setAttribute('role', 'cell'); if (content != null) c.append(content); row.append(c); return c; };
       cell('h2h-rank', String(i + 1));
       const nm = cell('h2h-name'); const md = (r.w + r.t) > 0 ? ['🥇', '🥈', '🥉'][i] : null;
-      nm.append(mk('span', 'h2h-medal', md || ''), odot(r.owner), mk('span', 'h2h-owner', r.owner)); if (r.owner === me) nm.append(mk('span', 'you-tag', 'You'));
+      nm.append(mk('span', 'h2h-medal', md || ''), odot(r.owner), mk('span', 'h2h-owner', r.owner)); nm.classList.add('h2h-tap'); nm.setAttribute('role', 'button'); nm.tabIndex = 0; nm.addEventListener('click', () => showOwner(r.owner, C, slate)); nm.addEventListener('keydown', (e) => { if (e.key === 'Enter') showOwner(r.owner, C, slate); }); if (r.owner === me) nm.append(mk('span', 'you-tag', 'You'));
       cell('h2h-rec', r.t ? `${r.w}–${r.l}–${r.t}` : `${r.w}–${r.l}`);
       cell('h2h-netc', mk('span', 'h2h-net ' + (r.net > 0 ? 'up' : r.net < 0 ? 'down' : 'even'), signedN(r.net)));
       cell('h2h-wins', String(r.wins));
@@ -1178,6 +1182,73 @@
     host.append(mk('p', 'players-foot', 'Stats from ESPN' + (comp.status && comp.status.type && comp.status.type.state === 'in' ? ' · updates every 30 seconds' : '')));
   }
   const NAME_FIX_JS = { 'Los Angeles Clippers': 'LA Clippers' };
+
+  // ---------- owner roster card: one pop-up with everything about an owner's squad ----------
+  function showOwner(o, C, slate) {
+    closeBonus();
+    const me = getMe(), row = C.board.find((b) => b.owner === o); if (!row) return;
+    const mine = C.teams.filter((t) => t.owner === o).sort((a, b) => b.points - a.points || a.team.localeCompare(b.team));
+    const tied = C.board.filter((x) => x.points === row.points).length > 1;
+    const ord = (n) => n + (['th', 'st', 'nd', 'rd'][(n % 100 - 20) % 10] || ['th', 'st', 'nd', 'rd'][n % 100] || 'th');
+    const ov = mk('div', 'bp-overlay'); ov.id = 'bonus-pop';
+    const box = mk('div', 'bp-box oc-box'); box.setAttribute('role', 'dialog'); box.setAttribute('aria-modal', 'true'); box.setAttribute('aria-label', o + ' roster card');
+    box.style.setProperty('--oc', ownerVar(o));
+    // header
+    const head = mk('div', 'oc-head');
+    const av = mk('span', 'oc-av', o.slice(0, 1).toUpperCase());
+    const ttl = mk('div', 'oc-title'); const nm = mk('b', null, o); if (o === me) nm.append(mk('span', 'you-tag', 'You'));
+    ttl.append(nm, mk('span', null, `${tied ? 'T-' : ''}${ord(row.place)} of ${C.board.length}` + (row.place === 1 && !tied ? ' · leading the league' : row.behind ? ` · ${row.behind} behind 1st` : '')));
+    const pts = mk('div', 'oc-pts', fmt(row.points)); pts.append(mk('small', null, 'pts'));
+    const x = mk('button', 'bp-close', '✕'); x.type = 'button'; x.setAttribute('aria-label', 'Close'); x.addEventListener('click', closeBonus);
+    head.append(av, ttl, pts, x); box.append(head);
+    // quick stats
+    const w = mine.reduce((a, t) => a + t.wins, 0), l = mine.reduce((a, t) => a + t.losses, 0);
+    const h2 = C.h2hTable.find((r) => r.owner === o);
+    const tiles = mk('div', 'oc-tiles');
+    const tile = (k, v, sub, cls) => { const d = mk('div', 'oc-tile'); d.append(mk('span', 'oc-tk', k), mk('b', cls || null, v)); if (sub) d.append(mk('span', 'oc-ts', sub)); tiles.append(d); };
+    tile('Record', `${w}–${l}`, 'all 5 teams');
+    tile('Bonus', '+' + fmt(row.bonus), 'Cup/playoffs', row.bonus ? 'up' : null);
+    tile('Week', String(row.this_week), row.this_week === 1 ? 'win so far' : 'wins so far');
+    if (h2) tile('Matchups', h2.t ? `${h2.w}–${h2.l}–${h2.t}` : `${h2.w}–${h2.l}`, 'net ' + signedN(h2.net), h2.net > 0 ? 'up' : h2.net < 0 ? 'down' : null);
+    box.append(tiles);
+    // this week's matchup
+    const fw = C.matchups.some((m) => m.week === C.curWeek) ? C.curWeek : (C.matchups[0] || {}).week;
+    const mm = C.matchups.find((m) => m.week === fw && (m.A.owner === o || m.B.owner === o));
+    if (mm) {
+      const y = mm.A.owner === o ? mm.A : mm.B, op = y === mm.A ? mm.B : mm.A, upc = mm.status === 'upcoming';
+      const mb = mk('button', 'oc-mu ' + (mm.winner === o ? 'up' : mm.winner ? 'down' : 'even')); mb.type = 'button';
+      mb.append(mk('span', 'oc-muk', `Week ${mm.week} matchup`));
+      const sc = mk('span', 'oc-mus'); sc.append(odot(o), mk('b', 'oc-n1', upc ? '–' : signedN(y.net)), mk('span', 'oc-vs', 'vs'), mk('b', 'oc-n2', upc ? '–' : signedN(op.net)), mk('span', 'oc-opp', op.owner), odot(op.owner));
+      const gap = Math.abs(y.net - op.net);
+      mb.append(sc, mk('span', 'oc-mut', upc ? 'Starts ' + dayName(mm.start, { weekday: 'short' }) : mm.winner === o ? (mm.status === 'final' ? 'Won' : gap ? `Leads by ${gap}` : 'Leads') : mm.winner ? (mm.status === 'final' ? 'Lost' : gap ? `Trails by ${gap}` : 'Trails') : 'All square'), mk('span', 'oc-chev', '›'));
+      mb.addEventListener('click', () => showWeek(mm, o, C, slate)); box.append(mb);
+    }
+    // the five teams
+    const list = mk('div', 'oc-teams'); list.append(mk('h4', 'tc-h', 'The squad'));
+    const today = pacificToday();
+    mine.forEach((t) => {
+      const r = mk('button', 'oc-team'); r.type = 'button'; r.setAttribute('aria-label', `Open the ${t.team} team card`);
+      const top = mk('div', 'oc-tt');
+      const nmw = mk('span', 'oc-tn'); nmw.append(badge(t.team, 'sb-badge oc-tb'), mk('b', null, short(t.team)));
+      const rec = mk('span', 'oc-tr', `${t.wins}–${t.losses}`);
+      const tp = mk('span', 'oc-tp', fmt(t.points)); tp.append(mk('small', null, 'pts'));
+      top.append(nmw, rec, tp);
+      const meta = mk('div', 'oc-tm');
+      meta.append(mk('span', null, 'Pace '), mk('b', paceClass(t.pace, t.proj), t.pace == null ? '–' : t.pace.toFixed(1)), mk('span', 'oc-dim', t.proj != null ? ` / line ${t.proj}` : ''));
+      const od = D.odds && D.odds.teams && D.odds.teams[t.team];
+      if (od) { const pc = od.playoffs; meta.append(mk('span', 'oc-sep', '·'), mk('span', null, 'Playoffs '), mk('b', pc >= 75 ? 'up' : pc < 35 ? 'down' : 'mid', pctText(pc))); }
+      const live = ((slate && slate.games) || []).find((g) => (g.away === t.team || g.home === t.team) && g.state === 'in');
+      const nx = live ? null : nextGames(t.team, 1)[0];
+      if (live) { const home = live.home === t.team; meta.append(mk('span', 'oc-sep', '·'), mk('b', 'oc-live', `● ${home ? live.home_score : live.away_score}–${home ? live.away_score : live.home_score} ${home ? 'vs' : '@'} ${abbr(home ? live.away : live.home)}`)); }
+      else if (nx) { const home = nx.home === t.team; meta.append(mk('span', 'oc-sep', '·'), mk('span', 'oc-next', `${nx.date === today ? 'Tonight' : dayName(nx.date, { weekday: 'short' })} ${home ? 'vs' : '@'} ${abbr(home ? nx.away : nx.home)}`)); }
+      if (t.last5g && t.last5g.length) { const f = mk('span', 'oc-form'); t.last5g.forEach((g) => f.append(mk('i', g.w ? 'w' : 'l'))); meta.append(f); }
+      r.append(top, meta); r.addEventListener('click', () => showTeam(t, C, slate)); list.append(r);
+    });
+    box.append(list);
+    box.append(mk('p', 'players-foot', 'Tap a team for its full team card'));
+    ov.append(box); ov.addEventListener('click', (e) => { if (e.target === ov) closeBonus(); });
+    document.body.append(ov); document.addEventListener('keydown', bonusKey); x.focus();
+  }
 
   function showGame(g, C, slate, date, dir) {
     closeBonus();
