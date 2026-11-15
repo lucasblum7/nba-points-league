@@ -4,12 +4,12 @@
   {
    "id": "401909985",
    "time": "10:00 AM",
-   "state": "pre",
-   "detail": "11/15 - 1:00 PM EST",
+   "state": "post",
+   "detail": "Final",
    "away": "Indiana Pacers",
    "home": "Philadelphia 76ers",
-   "away_score": null,
-   "home_score": null,
+   "away_score": 124,
+   "home_score": 131,
    "cup": false
   },
   {
