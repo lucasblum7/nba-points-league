@@ -1,0 +1,67 @@
+/* ===== Preview: readability pass + layout ideas (only loaded on /style-preview/next/) ===== */
+:root { --ink: #b4400f; --muted: #556274; }
+@media (prefers-color-scheme: dark) { :root { --ink: #ff8a3d; } }
+
+/* 1. small orange text uses a darker orange that passes contrast (≥4.5:1); big numbers keep the bright orange */
+.muh-kicker, .me-hi, .me-switch, .sb-back, .sb-yday, .dp-today, .mw-today, .tabbar button.on, .tabbar button.on .tb-l,
+#leaderboard th:nth-child(3), .me-mu-side.you .me-mu-name, .sb-row.my-row .sb-owner, .lb-name:hover, .mw-status.live, .muh-week .muh-chev,
+.po-why-h, .gc-tab.on, .bx-swb.on, .tc-back, .mu-today { color: var(--ink) !important; }
+.you-tag, .pm-rank, .pm-pts .pm-rank, .dp-day.on { background: #c2410c !important; color: #fff !important; }
+.sb-back, .sb-yday { box-shadow: inset 0 0 0 1.5px color-mix(in srgb, var(--ink) 55%, transparent) !important; }
+
+/* 2. nothing smaller than 12px for text people need to read */
+.sb-owner, .sb-status, .sb-line, .sb-foot, .mw-left, .mw-sub2, .muh-rec, .muh-nm span, .muh-dayh, .wk-dl > span, .wk-dn, .tc-ts, .tc-tl, .me-tl, .me-ts,
+.me-small .me-tl, .me-small .me-ts, .po-cell span, .po-n, .bx-lh, .bx-ptab th, .bx-tl, .bx-dnp, .h2h-head, .dp-dow, .dp-c, .tile-detail, .tile-label,
+.gc-owner, .gc-rec, .tc-date, .tc-meta, .tc-b2b, .tc-ml, .pm-nm, .pm-vs, .mw-dim, .race-axis, .tb-l, .sb-cuptag, .muh-cup, .wk-cup, .note, .players-foot, .projline { font-size: 12px !important; }
+.sb-owner, .sb-line, .sb-status, .sb-foot, .h2h-head, .me-tl, .me-ts, .tc-tl, .tc-ts, .po-cell span, .dp-dow { font-size: 12px !important; }
+.sb-card { flex-basis: 8.4rem !important; }
+
+/* 3. bigger touch areas (44px) without making the buttons look bigger */
+.sb-back, .sb-yday, .mw-arrow, .dp-arrow, .me-switch, .bp-close, .gc-tab, .bx-swb, .pm-seg, .muh-week, .po-why-h, .tc-back, .dp-today { position: relative; }
+.sb-back::after, .sb-yday::after, .me-switch::after, .bp-close::after, .pm-seg::after, .tc-back::after, .dp-today::after { content: ""; position: absolute; inset: -8px; }
+.dp-day { min-height: 44px; } .mw-arrow, .dp-arrow { min-width: 44px; min-height: 44px; }
+
+/* 4. form dots and squares carry a W / L letter, not just color */
+.h2h-row .h2h-dots i, .tc-sq i, .gc-form i { width: 13px !important; height: 13px !important; border-radius: 3px !important; font: 800 8.5px/13px var(--sans, system-ui) !important;
+  color: #fff; text-align: center; font-style: normal; display: inline-block; }
+.h2h-row .h2h-dots i.t { color: #fff; }
+.h2h-row .h2h-dots i.none, .tc-sq i.none, .gc-form i.none { color: transparent; }
+.h2h-row { grid-template-columns: 1.1rem minmax(0, 1fr) 2.3rem 2.5rem 2rem 3.7rem !important; column-gap: 2px !important; }
+.h2h-row .h2h-dots { gap: 1.5px !important; }
+
+/* 5. a clear focus ring for keyboard users */
+:focus-visible { outline: 2.5px solid var(--ink) !important; outline-offset: 2px !important; border-radius: 8px; }
+
+/* 6. jumbotron header: slim bar with your rank, your matchup and today's games */
+body.jumbo .pl-head { padding: 12px 14px !important; }
+body.jumbo .pl-head .pl-ball, body.jumbo .pl-chips, body.jumbo .pl-take, body.jumbo #takeaway { display: none !important; }
+body.jumbo .pl-title { font-size: 26px !important; flex-direction: row; justify-content: flex-start; gap: 10px; margin: 0; }
+body.jumbo .pl-name { flex-direction: row; align-items: baseline; gap: 10px; }
+body.jumbo .pl-main { flex-direction: row !important; gap: .25em; font-size: 1em !important; }
+body.jumbo .pl-sub { font-size: 10px !important; margin: 0 !important; letter-spacing: .2em !important; opacity: .7; }
+.pl-jumbo { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px; margin-top: 10px; }
+.jb-cell { font: inherit; color: #fff; text-align: left; border: none; cursor: pointer; background: rgba(255,255,255,.07); border-radius: 10px; padding: 7px 10px; box-shadow: inset 0 0 0 1px rgba(255,255,255,.12); display: flex; flex-direction: column; min-width: 0; }
+.jb-k { font-size: 12px; font-weight: 600; color: rgba(255,255,255,.7); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.jb-v { font-family: var(--disp); font-size: 24px; font-weight: 800; line-height: 1.1; letter-spacing: .01em; }
+.jb-s { font-size: 12px; color: rgba(255,255,255,.7); }
+.jb-cell.up .jb-v { color: #4ade80; } .jb-cell.down .jb-v { color: #ff8a80; } .jb-cell.live .jb-v { color: #ff8a80; }
+body:not([data-tab="home"]).jumbo .pl-jumbo { display: none; }
+
+/* 7. off days: the scoreboard shows the next game day */
+.sb-date.next-up { background: color-mix(in srgb, var(--ink) 12%, var(--panel)) !important; }
+.sb-date.next-up .sb-dow { font-size: 10px; color: var(--ink); }
+.sb-nextlab { display: none !important; flex: none; align-self: center; font-size: 12px; font-weight: 700; color: var(--muted); writing-mode: vertical-rl; transform: rotate(180deg); padding: 0 2px; }
+
+/* 8. "This week so far" as one swipeable row */
+#recap { display: flex !important; gap: 8px; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 4px; -webkit-overflow-scrolling: touch; }
+#recap .bubble { flex: 0 0 60%; scroll-snap-align: start; padding: 10px 12px !important; align-items: flex-start !important; text-align: left; flex-direction: row !important; flex-wrap: wrap; gap: 0 10px !important; }
+#recap .bubble-icon { height: 36px; margin: 0; }
+#recap .bubble-badge { width: 34px !important; height: 34px !important; font-size: 9px !important; }
+#recap .bubble-emoji { font-size: 26px; }
+#recap .tile-label { flex: 1; align-self: center; font-size: 11.5px !important; }
+#recap .tile-name { flex-basis: 100%; font-size: 20px !important; margin: 4px 0 0; }
+#recap .tile-detail { flex-basis: 100%; }
+@media (min-width: 700px) { #recap .bubble { flex-basis: calc(25% - 6px); } }
+
+.me-small .me-tile b { font-size: 17px !important; }
+.jb-k { font-size: 12px; }

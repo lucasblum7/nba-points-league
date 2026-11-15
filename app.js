@@ -3,6 +3,7 @@
    the page also asks ESPN for live scores directly every minute. */
 (() => {
   'use strict';
+  const PREVIEW = !!window.PL_PREVIEW;   // the /style-preview/next/ page turns on the proposed changes
 
   const TEAM_BADGE = {
     'Atlanta Hawks': ['ATL', '#E03A3E', '#FFFFFF'], 'Boston Celtics': ['BOS', '#007A33', '#FFFFFF'],
@@ -513,6 +514,23 @@
           mp.append(seg2);
         }
       }
+      if (PREVIEW) {   // jumbotron readout: your rank and matchup, plus tonight's games
+        const head = document.querySelector('.pl-head'); let jb = document.getElementById('pl-jumbo');
+        if (!jb) { jb = mk('div', 'pl-jumbo'); jb.id = 'pl-jumbo'; head.append(jb); }
+        jb.replaceChildren(); document.body.classList.add('jumbo');
+        const row = me && C.board.find((b) => b.owner === me);
+        const fw = C.matchups.some((x) => x.week === C.curWeek) ? C.curWeek : (C.matchups[0] || {}).week;
+        const mm = me && C.matchups.find((x) => x.week === fw && (x.A.owner === me || x.B.owner === me));
+        const cell = (k, v, sub, fn) => { const c = mk(fn ? 'button' : 'div', 'jb-cell'); if (fn) { c.type = 'button'; c.addEventListener('click', fn); } c.append(mk('span', 'jb-k', k), mk('b', 'jb-v', v)); if (sub) c.append(mk('span', 'jb-s', sub)); jb.append(c); return c; };
+        if (row) {
+          const tied = C.board.filter((x) => x.points === row.points).length > 1, ord = (n) => n + (['th', 'st', 'nd', 'rd'][(n % 100 - 20) % 10] || ['th', 'st', 'nd', 'rd'][n % 100] || 'th');
+          cell(me, (tied ? 'T-' : '') + ord(row.place), fmt(row.points) + ' pts', () => { const lb = $('leaderboard-card'); if (lb) lb.scrollIntoView({ behavior: 'smooth', block: 'start' }); });
+          if (mm) { const y = mm.A.owner === me ? mm.A : mm.B, o = mm.A.owner === me ? mm.B : mm.A, upc = mm.status === 'upcoming';
+            const c = cell('vs ' + o.owner, upc ? '–' : signedN(y.net) + ' · ' + signedN(o.net), (upc ? 'starts ' + dayName(mm.start, { weekday: 'short' }) : mm.winner === me ? 'you lead' : mm.winner ? 'you trail' : 'all square'), () => { location.hash = '#matchups'; });
+            c.classList.add(mm.winner === me ? 'up' : mm.winner ? 'down' : 'even'); }
+        } else cell('League', 'Week ' + (C.curWeek || 1), C.owners.length + ' owners', () => pickMe(C));
+        cell('Today', liveN ? liveN + ' live' : gs.length ? String(gs.length) : '0', liveN ? 'games on now' : gs.length ? (gs.length === 1 ? 'game' : 'games') : 'no games', openAll).classList.add(liveN ? 'live' : 'x');
+      }
       const start = (D.config && D.config.season_start) || '2026-10-20';
       const day = Math.floor((new Date(pacificToday()) - new Date(start)) / 864e5) + 1;
       if (day > 0) chip('⏱', 'Day ' + day + ' of the season');
@@ -862,7 +880,7 @@
       cell('h2h-rec', r.t ? `${r.w}–${r.l}–${r.t}` : `${r.w}–${r.l}`);
       cell('h2h-netc', mk('span', 'h2h-net ' + (r.net > 0 ? 'up' : r.net < 0 ? 'down' : 'even'), signedN(r.net)));
       cell('h2h-wins', String(r.wins));
-      const dots = mk('span', 'h2h-dots'); const f = form.get(r.owner).slice(-4); f.forEach((x) => dots.append(mk('i', x))); for (let k = f.length; k < 4; k++) dots.append(mk('i', 'none'));
+      const dots = mk('span', 'h2h-dots'); const f = form.get(r.owner).slice(-4); f.forEach((x) => dots.append(mk('i', x, PREVIEW ? x.toUpperCase() : null))); for (let k = f.length; k < 4; k++) dots.append(mk('i', 'none'));
       cell('h2h-form', dots);
       hb.append(row);
     });
@@ -1229,7 +1247,7 @@
       row('Record', `${T.away.wins}–${T.away.losses}`, `${T.home.wins}–${T.home.losses}`, cmpN(T.away.wins - T.away.losses, T.home.wins - T.home.losses));
       row('Win pace', T.away.pace == null ? '–' : T.away.pace.toFixed(1), T.home.pace == null ? '–' : T.home.pace.toFixed(1), cmpN(T.away.pace, T.home.pace));
       row('Preseason line', T.away.proj ?? '–', T.home.proj ?? '–', cmpN(T.away.proj, T.home.proj));
-      const form = (t) => { const f = mk('span', 'gc-form'); t.last5g.forEach((x) => f.append(mk('i', x.w ? 'w' : 'l'))); for (let k = t.last5g.length; k < 5; k++) f.append(mk('i', 'none')); return f; };
+      const form = (t) => { const f = mk('span', 'gc-form'); t.last5g.forEach((x) => f.append(mk('i', x.w ? 'w' : 'l', PREVIEW ? (x.w ? 'W' : 'L') : null))); for (let k = t.last5g.length; k < 5; k++) f.append(mk('i', 'none')); return f; };
       const fr = mk('div', 'gc-crow'); const fa = mk('span', 'gc-cv'); fa.append(form(T.away)); const fb = mk('span', 'gc-cv'); fb.append(form(T.home)); fr.append(fa, mk('span', 'gc-cl', 'Last 5'), fb); cmp.append(fr);
       ovw.append(cmp);
       // earlier meetings this season
@@ -1401,7 +1419,7 @@
     if (lg.length) {
       // streak strip, oldest -> newest, plus current streak and record
       const strip = mk('div', 'tc-streak');
-      const sq = mk('span', 'tc-sq'); lg.forEach((g) => { const b = mk('i', g.w ? 'w' : 'l'); b.title = `${fmtShort(g.date)}: ${g.w ? 'W' : 'L'} ${g.score.replace('-', '–')}`; sq.append(b); });
+      const sq = mk('span', 'tc-sq'); lg.forEach((g) => { const b = mk('i', g.w ? 'w' : 'l', PREVIEW ? (g.w ? 'W' : 'L') : null); b.title = `${fmtShort(g.date)}: ${g.w ? 'W' : 'L'} ${g.score.replace('-', '–')}`; sq.append(b); });
       for (let k = lg.length; k < 5; k++) sq.append(mk('i', 'none'));
       let n = 0; const lw = lg[lg.length - 1].w; for (let k = lg.length - 1; k >= 0 && lg[k].w === lw; k--) n++;
       const wins = lg.filter((g) => g.w).length;
@@ -1627,16 +1645,22 @@
   function renderStrip(liveSlate, C) {
     sbC = C; sbSlate = liveSlate;
     const today = pacificToday(), other = sbDate && sbDate !== today;
-    const slate = other ? slateFor(sbDate) : liveSlate;
+    let slate = other ? slateFor(sbDate) : liveSlate, nextUp = false;
+    if (PREVIEW && !other && !liveSlate.games.length) {   // off day: show the next day with games instead of a blank strip
+      const nd = [...gameDays().keys()].sort().find((d) => d > today);
+      if (nd) { slate = slateFor(nd); nextUp = true; }
+    }
     const strip = $('sb-strip'); strip.replaceChildren();
     const date = slate.date || today;
     if (strip.dataset.day !== date) { strip.dataset.day = date; strip.scrollLeft = 0; }
     const dt = $('sb-date'); dt.classList.toggle('other', !!other);
-    dt.querySelector('.sb-dow').textContent = (date === today ? 'TODAY' : dayName(date, { weekday: 'short' }).toUpperCase());
+    dt.querySelector('.sb-dow').textContent = (date === today ? 'TODAY' : nextUp ? 'UP NEXT' : dayName(date, { weekday: 'short' }).toUpperCase());
+    dt.classList.toggle('next-up', nextUp);
     dt.querySelector('.sb-md').textContent = dayName(date, { month: 'short', day: 'numeric' }).toUpperCase();
     $('sb-back').hidden = !other;
     // before today's first tip-off, offer a one-tap jump to last night's finals
     $('sb-yday').hidden = !!other || liveSlate.games.some((g) => g.state !== 'pre');
+    if (nextUp) strip.append(mk('div', 'sb-nextlab', 'No games today · next up ' + dayName(date, { weekday: 'long' })));
     if (!slate.games.length) { strip.append(mk('div', 'sb-none', date === today ? 'No games today' : 'No games this day')); return; }
     const me = getMe(), mineG = (g) => C.owner.get(g.away) === me || C.owner.get(g.home) === me;
     const order = slate.games.slice().sort((a, b) => (me ? mineG(b) - mineG(a) : 0));
