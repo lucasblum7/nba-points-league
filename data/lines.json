@@ -1465,9 +1465,9 @@
   "home": "Milwaukee Bucks",
   "fav": "Atlanta Hawks",
   "spread": 8.5,
-  "away_ml": -324,
-  "home_ml": 261,
-  "book": "Draft Kings"
+  "away_ml": -336,
+  "home_ml": 270,
+  "book": "DraftKings"
  },
  {
   "date": "2026-11-15",
@@ -1494,10 +1494,10 @@
   "away": "Oklahoma City Thunder",
   "home": "Sacramento Kings",
   "fav": "Oklahoma City Thunder",
-  "spread": 10.5,
+  "spread": 11.5,
   "away_ml": -468,
   "home_ml": 361,
-  "book": "Draft Kings"
+  "book": "DraftKings"
  },
  {
   "date": "2026-11-15",
