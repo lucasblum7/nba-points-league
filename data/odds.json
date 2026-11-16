@@ -3,12 +3,12 @@
  "sims": 5000,
  "teams": {
   "Atlanta Hawks": {
-   "playoffs": 86.0,
-   "top6": 56.3,
-   "playin": 42.1,
+   "playoffs": 86.3,
+   "top6": 56.7,
+   "playin": 41.7,
    "proj_w": 45.0,
    "proj_l": 37.0,
-   "seed": 6.2,
+   "seed": 6.1,
    "conf": "East",
    "rating": 1.3,
    "rating_wins": 44.4,
@@ -23,29 +23,37 @@
   },
   "Boston Celtics": {
    "playoffs": 100.0,
-   "top6": 99.7,
-   "playin": 0.3,
+   "top6": 99.8,
+   "playin": 0.2,
    "proj_w": 59.7,
    "proj_l": 22.3,
-   "seed": 1.7,
+   "seed": 1.6,
    "conf": "East",
    "rating": 6.5,
-   "rating_wins": 58.4,
+   "rating_wins": 58.5,
    "prior_wins": 51.5,
    "last5_margin": 24.6,
    "season_margin": 13.2,
-   "injuries": [],
-   "injury_wins": 0.0,
+   "injuries": [
+    {
+     "name": "Neemias Queta",
+     "status": "Out",
+     "games": 1,
+     "impact": 1.31,
+     "comment": "Queta (rest) won't play in Monday's game against the Magic, Taylor Snow of the Celtics' official site reports."
+    }
+   ],
+   "injury_wins": -0.0,
    "sos_rank": 23,
    "games_left": 69,
    "prev": 99.9
   },
   "Brooklyn Nets": {
-   "playoffs": 3.0,
+   "playoffs": 2.9,
    "top6": 0.2,
-   "playin": 13.6,
-   "proj_w": 27.1,
-   "proj_l": 54.9,
+   "playin": 13.5,
+   "proj_w": 27.2,
+   "proj_l": 54.8,
    "seed": 12.5,
    "conf": "East",
    "rating": -5.6,
@@ -62,7 +70,7 @@
   "Charlotte Hornets": {
    "playoffs": 9.3,
    "top6": 1.1,
-   "playin": 32.2,
+   "playin": 32.1,
    "proj_w": 30.6,
    "proj_l": 51.4,
    "seed": 11.3,
@@ -87,15 +95,15 @@
    "prev": 10.0
   },
   "Chicago Bulls": {
-   "playoffs": 2.8,
-   "top6": 0.2,
-   "playin": 13.5,
-   "proj_w": 26.9,
-   "proj_l": 55.1,
+   "playoffs": 3.2,
+   "top6": 0.3,
+   "playin": 14.0,
+   "proj_w": 27.1,
+   "proj_l": 54.9,
    "seed": 12.5,
    "conf": "East",
    "rating": -5.7,
-   "rating_wins": 25.5,
+   "rating_wins": 25.7,
    "prior_wins": 29.5,
    "last5_margin": -4.4,
    "season_margin": -11.3,
@@ -114,15 +122,15 @@
    "prev": 2.7
   },
   "Cleveland Cavaliers": {
-   "playoffs": 90.1,
-   "top6": 66.1,
-   "playin": 33.0,
-   "proj_w": 46.3,
-   "proj_l": 35.7,
-   "seed": 5.7,
+   "playoffs": 89.2,
+   "top6": 63.9,
+   "playin": 35.1,
+   "proj_w": 45.9,
+   "proj_l": 36.1,
+   "seed": 5.8,
    "conf": "East",
-   "rating": 1.9,
-   "rating_wins": 46.1,
+   "rating": 1.8,
+   "rating_wins": 45.9,
    "prior_wins": 48.5,
    "last5_margin": -3.6,
    "season_margin": 1.6,
@@ -130,9 +138,16 @@
     {
      "name": "Evan Mobley",
      "status": "Out",
-     "games": 1,
+     "games": 5,
      "impact": 3.31,
-     "comment": "Mobley (toe) has been ruled out for Monday's game against Chicago."
+     "comment": "Mobley will receive treatment and participate in rehab after the team confirmed a diagnosis of a right great toe sprain, and he'll be re-eva"
+    },
+    {
+     "name": "Jaylon Tyson",
+     "status": "Out",
+     "games": 1,
+     "impact": 1.08,
+     "comment": "Tyson (ankle) has been ruled out for Monday's game against Chicago."
     },
     {
      "name": "Sam Merrill",
@@ -149,15 +164,15 @@
      "comment": "Tomlin is set to miss several weeks with a lower back stress reaction, Chris Fedor of The Cleveland Plain Dealer reports."
     }
    ],
-   "injury_wins": -0.1,
+   "injury_wins": -0.4,
    "sos_rank": 30,
    "games_left": 68,
    "prev": 91.0
   },
   "Dallas Mavericks": {
    "playoffs": 29.4,
-   "top6": 7.2,
-   "playin": 63.5,
+   "top6": 7.1,
+   "playin": 63.2,
    "proj_w": 39.6,
    "proj_l": 42.4,
    "seed": 9.4,
@@ -174,15 +189,15 @@
    "prev": 31.2
   },
   "Denver Nuggets": {
-   "playoffs": 93.9,
-   "top6": 78.7,
-   "playin": 20.8,
-   "proj_w": 51.7,
-   "proj_l": 30.3,
+   "playoffs": 93.7,
+   "top6": 78.1,
+   "playin": 21.3,
+   "proj_w": 51.5,
+   "proj_l": 30.5,
    "seed": 4.9,
    "conf": "West",
-   "rating": 4.1,
-   "rating_wins": 52.0,
+   "rating": 4.0,
+   "rating_wins": 51.8,
    "prior_wins": 49.5,
    "last5_margin": 6.8,
    "season_margin": 1.8,
@@ -201,11 +216,11 @@
    "prev": 94.2
   },
   "Detroit Pistons": {
-   "playoffs": 99.1,
-   "top6": 94.5,
-   "playin": 5.4,
-   "proj_w": 53.4,
-   "proj_l": 28.6,
+   "playoffs": 99.0,
+   "top6": 94.4,
+   "playin": 5.5,
+   "proj_w": 53.3,
+   "proj_l": 28.7,
    "seed": 3.3,
    "conf": "East",
    "rating": 4.4,
@@ -220,6 +235,20 @@
      "games": 4,
      "impact": 1.94,
      "comment": "Duren (hamstring) has begun on-court activity and will be re-evaluated in two weeks, Hunter Patterson of The Athletic reports."
+    },
+    {
+     "name": "Duncan Robinson",
+     "status": "Out",
+     "games": 1,
+     "impact": 2.43,
+     "comment": "Robinson (quadriceps) has been ruled out for Tuesday's game against the Spurs."
+    },
+    {
+     "name": "Ronald Holland II",
+     "status": "Out",
+     "games": 1,
+     "impact": 0.13,
+     "comment": "Holland is out for Tuesday's game against San Antonio due to a left knee contusion."
     }
    ],
    "injury_wins": -0.2,
@@ -229,11 +258,11 @@
   },
   "Golden State Warriors": {
    "playoffs": 51.3,
-   "top6": 17.9,
+   "top6": 18.0,
    "playin": 67.7,
    "proj_w": 42.5,
    "proj_l": 39.5,
-   "seed": 8.4,
+   "seed": 8.3,
    "conf": "West",
    "rating": 0.7,
    "rating_wins": 42.9,
@@ -276,9 +305,9 @@
    "prev": 50.3
   },
   "Houston Rockets": {
-   "playoffs": 98.9,
-   "top6": 96.1,
-   "playin": 3.8,
+   "playoffs": 99.0,
+   "top6": 96.2,
+   "playin": 3.7,
    "proj_w": 57.1,
    "proj_l": 24.9,
    "seed": 3.0,
@@ -290,24 +319,38 @@
    "season_margin": 10.1,
    "injuries": [
     {
+     "name": "Amen Thompson",
+     "status": "Out",
+     "games": 1,
+     "impact": 3.01,
+     "comment": "Thompson (knee) is out for Monday's game against the Heat."
+    },
+    {
      "name": "Marcus Smart",
      "status": "Suspension",
      "games": 1,
      "impact": 0.64,
      "comment": "Smart has been suspended three games for throwing a punch during Wednesday's matchup against Golden State, Shams Charania of ESPN reports."
+    },
+    {
+     "name": "Steven Adams",
+     "status": "Out",
+     "games": 1,
+     "impact": 0.09,
+     "comment": "Adams (calf) is out for Monday's game against the Heat."
     }
    ],
-   "injury_wins": -0.0,
+   "injury_wins": -0.1,
    "sos_rank": 22,
    "games_left": 68,
    "prev": 99.4
   },
   "Indiana Pacers": {
-   "playoffs": 19.7,
-   "top6": 3.1,
-   "playin": 53.3,
-   "proj_w": 33.6,
-   "proj_l": 48.4,
+   "playoffs": 19.8,
+   "top6": 3.2,
+   "playin": 53.1,
+   "proj_w": 33.7,
+   "proj_l": 48.3,
    "seed": 10.3,
    "conf": "East",
    "rating": -2.8,
@@ -337,11 +380,11 @@
    "prev": 20.4
   },
   "LA Clippers": {
-   "playoffs": 3.1,
+   "playoffs": 3.2,
    "top6": 0.3,
-   "playin": 11.2,
-   "proj_w": 30.4,
-   "proj_l": 51.6,
+   "playin": 11.5,
+   "proj_w": 30.5,
+   "proj_l": 51.5,
    "seed": 11.9,
    "conf": "West",
    "rating": -4.0,
@@ -379,8 +422,8 @@
   },
   "Los Angeles Lakers": {
    "playoffs": 96.4,
-   "top6": 87.0,
-   "playin": 12.7,
+   "top6": 87.1,
+   "playin": 12.6,
    "proj_w": 53.5,
    "proj_l": 28.5,
    "seed": 4.2,
@@ -397,11 +440,11 @@
    "prev": 96.9
   },
   "Memphis Grizzlies": {
-   "playoffs": 42.2,
-   "top6": 13.9,
-   "playin": 67.4,
-   "proj_w": 41.5,
-   "proj_l": 40.5,
+   "playoffs": 41.9,
+   "top6": 13.7,
+   "playin": 66.7,
+   "proj_w": 41.4,
+   "proj_l": 40.6,
    "seed": 8.7,
    "conf": "West",
    "rating": -0.5,
@@ -410,6 +453,13 @@
    "last5_margin": 6.0,
    "season_margin": 8.9,
    "injuries": [
+    {
+     "name": "GG Jackson",
+     "status": "Out",
+     "games": 28,
+     "impact": 0.21,
+     "comment": "Jackson will undergo surgery to repair the broken fifth metatarsal in his left foot and is set to miss significant time."
+    },
     {
      "name": "Ty Jerome",
      "status": "Out",
@@ -420,27 +470,27 @@
     {
      "name": "Scotty Pippen Jr.",
      "status": "Out",
-     "games": 3,
+     "games": 5,
      "impact": 0.22,
-     "comment": "Pippen (back) remains out for Wednesday's game against Denver, Michael Wallace of the Grizzlies' official site reports."
+     "comment": "Pippen (back) is progressing in his recovery but is still considered week-to-week."
     },
     {
-     "name": "GG Jackson",
+     "name": "Isaiah Stewart",
      "status": "Out",
      "games": 1,
-     "impact": 0.21,
-     "comment": "Jackson (foot) is out for Monday's game against Washington."
+     "impact": 0.94,
+     "comment": "Stewart is out for Monday's game against the Wizards due to an illness."
     }
    ],
-   "injury_wins": -0.1,
+   "injury_wins": -0.3,
    "sos_rank": 1,
    "games_left": 69,
    "prev": 41.4
   },
   "Miami Heat": {
-   "playoffs": 88.3,
-   "top6": 60.3,
-   "playin": 38.5,
+   "playoffs": 88.5,
+   "top6": 60.9,
+   "playin": 37.8,
    "proj_w": 45.6,
    "proj_l": 36.4,
    "seed": 5.9,
@@ -450,8 +500,16 @@
    "prior_wins": 46.5,
    "last5_margin": 4.8,
    "season_margin": -1.2,
-   "injuries": [],
-   "injury_wins": 0.0,
+   "injuries": [
+    {
+     "name": "Pelle Larsson",
+     "status": "Out",
+     "games": 1,
+     "impact": 1.65,
+     "comment": "Larsson won't play in Monday's game against the Rockets due to an illness, Ira Winderman of the South Florida Sun Sentinel reports."
+    }
+   ],
+   "injury_wins": -0.0,
    "sos_rank": 25,
    "games_left": 69,
    "prev": 87.5
@@ -476,15 +534,15 @@
    "prev": 0.1
   },
   "Minnesota Timberwolves": {
-   "playoffs": 81.3,
-   "top6": 49.6,
-   "playin": 47.1,
-   "proj_w": 47.4,
-   "proj_l": 34.6,
-   "seed": 6.5,
+   "playoffs": 82.0,
+   "top6": 51.1,
+   "playin": 45.8,
+   "proj_w": 47.5,
+   "proj_l": 34.5,
+   "seed": 6.4,
    "conf": "West",
-   "rating": 3.6,
-   "rating_wins": 50.8,
+   "rating": 3.7,
+   "rating_wins": 50.9,
    "prior_wins": 48.5,
    "last5_margin": 11.8,
    "season_margin": 11.5,
@@ -552,10 +610,10 @@
   },
   "New York Knicks": {
    "playoffs": 99.2,
-   "top6": 95.2,
-   "playin": 4.7,
-   "proj_w": 53.1,
-   "proj_l": 28.9,
+   "top6": 95.4,
+   "playin": 4.6,
+   "proj_w": 53.2,
+   "proj_l": 28.8,
    "seed": 3.3,
    "conf": "East",
    "rating": 5.2,
@@ -570,12 +628,12 @@
    "prev": 99.1
   },
   "Oklahoma City Thunder": {
-   "playoffs": 95.7,
-   "top6": 81.7,
-   "playin": 17.9,
+   "playoffs": 95.5,
+   "top6": 81.3,
+   "playin": 18.3,
    "proj_w": 52.2,
    "proj_l": 29.8,
-   "seed": 4.6,
+   "seed": 4.7,
    "conf": "West",
    "rating": 5.5,
    "rating_wins": 55.8,
@@ -611,9 +669,9 @@
    "prev": 95.1
   },
   "Orlando Magic": {
-   "playoffs": 42.0,
-   "top6": 11.3,
-   "playin": 67.0,
+   "playoffs": 42.4,
+   "top6": 11.8,
+   "playin": 66.7,
    "proj_w": 37.3,
    "proj_l": 44.7,
    "seed": 8.9,
@@ -641,8 +699,8 @@
    "playoffs": 98.2,
    "top6": 91.8,
    "playin": 8.1,
-   "proj_w": 51.8,
-   "proj_l": 30.2,
+   "proj_w": 51.7,
+   "proj_l": 30.3,
    "seed": 3.8,
    "conf": "East",
    "rating": 2.9,
@@ -652,6 +710,13 @@
    "season_margin": 2.1,
    "injuries": [
     {
+     "name": "LeBron James",
+     "status": "Out",
+     "games": 1,
+     "impact": 3.39,
+     "comment": "James (back) has been ruled out for Monday's game against the Nets."
+    },
+    {
      "name": "Dominick Barlow",
      "status": "Out",
      "games": 1,
@@ -659,21 +724,21 @@
      "comment": "Barlow (back) participated in Thursday's shootaround but doesn't have a timeline to return to game action, Ky Carlin of USA Today reports."
     }
    ],
-   "injury_wins": -0.0,
+   "injury_wins": -0.1,
    "sos_rank": 27,
    "games_left": 68,
    "prev": 98.3
   },
   "Phoenix Suns": {
-   "playoffs": 20.4,
-   "top6": 3.9,
-   "playin": 50.8,
-   "proj_w": 37.4,
-   "proj_l": 44.6,
+   "playoffs": 20.8,
+   "top6": 4.0,
+   "playin": 51.7,
+   "proj_w": 37.5,
+   "proj_l": 44.5,
    "seed": 10.0,
    "conf": "West",
-   "rating": -1.3,
-   "rating_wins": 37.6,
+   "rating": -1.2,
+   "rating_wins": 37.7,
    "prior_wins": 40.5,
    "last5_margin": -0.6,
    "season_margin": -4.7,
@@ -692,15 +757,15 @@
    "prev": 20.7
   },
   "Portland Trail Blazers": {
-   "playoffs": 87.2,
-   "top6": 63.7,
-   "playin": 34.8,
-   "proj_w": 49.2,
-   "proj_l": 32.8,
+   "playoffs": 86.6,
+   "top6": 63.1,
+   "playin": 35.4,
+   "proj_w": 49.1,
+   "proj_l": 32.9,
    "seed": 5.8,
    "conf": "West",
    "rating": 3.2,
-   "rating_wins": 49.8,
+   "rating_wins": 49.6,
    "prior_wins": 41.5,
    "last5_margin": 3.0,
    "season_margin": 7.8,
@@ -748,8 +813,8 @@
    "playoffs": 100.0,
    "top6": 99.9,
    "playin": 0.1,
-   "proj_w": 64.4,
-   "proj_l": 17.6,
+   "proj_w": 64.3,
+   "proj_l": 17.7,
    "seed": 1.3,
    "conf": "West",
    "rating": 9.6,
@@ -761,20 +826,20 @@
     {
      "name": "Tobias Harris",
      "status": "Out",
-     "games": 1,
+     "games": 8,
      "impact": 1.06,
-     "comment": "Harris (calf) is out for Wednesday's game against Chicago, Jared Weiss of The Athletic reports."
+     "comment": "Harris (calf) is likely to be sidelined until early December, per Jeff Garcia of KENS 5 San Antonio."
     }
    ],
-   "injury_wins": -0.0,
+   "injury_wins": -0.1,
    "sos_rank": 15,
    "games_left": 68,
    "prev": 100.0
   },
   "Toronto Raptors": {
-   "playoffs": 57.4,
-   "top6": 19.9,
-   "playin": 68.9,
+   "playoffs": 57.3,
+   "top6": 20.3,
+   "playin": 68.6,
    "proj_w": 39.6,
    "proj_l": 42.4,
    "seed": 8.1,
@@ -840,9 +905,9 @@
    "prev": 0.0
   },
   "Washington Wizards": {
-   "playoffs": 4.8,
+   "playoffs": 4.7,
    "top6": 0.2,
-   "playin": 18.7,
+   "playin": 18.4,
    "proj_w": 28.3,
    "proj_l": 53.7,
    "seed": 12.1,
@@ -866,6 +931,13 @@
      "games": 60,
      "impact": 0.27,
      "comment": "The Wizards announced Thursday that Watkins has undergone surgery for a torn ACL."
+    },
+    {
+     "name": "Tristan Vukcevic",
+     "status": "Out",
+     "games": 4,
+     "impact": 0.26,
+     "comment": "Vukcevic (hip) has been ruled out for Monday's game against Memphis."
     }
    ],
    "injury_wins": -1.1,
