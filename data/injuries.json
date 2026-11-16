@@ -1,5 +1,5 @@
 {
- "as_of": "2026-11-15T15",
+ "as_of": "2026-11-15T18",
  "players": [
   {
    "team": "Atlanta Hawks",
@@ -16,23 +16,6 @@
     "reb": 2.5,
     "ast": 4.0833335,
     "this_season": true
-   }
-  },
-  {
-   "team": "Atlanta Hawks",
-   "id": "4585618",
-   "name": "Keshon Gilbert",
-   "status": "Out",
-   "comment": "Gilbert (knee) has been ruled out for Friday's game against the Bulls.",
-   "return": "2026-11-20",
-   "fantasy": "OUT",
-   "stats": {
-    "gp": 4.0,
-    "min": 18.5,
-    "pts": 4.25,
-    "reb": 1.25,
-    "ast": 3.0,
-    "this_season": false
    }
   },
   {
@@ -1150,16 +1133,33 @@
    "team": "Sacramento Kings",
    "id": "4065732",
    "name": "De'Andre Hunter",
-   "status": "Day-To-Day",
-   "comment": "Hunter is questionable for Sunday's game against the Thunder due to left hip soreness.",
-   "return": "2026-11-15",
-   "fantasy": "GTD",
+   "status": "Out",
+   "comment": "Hunter (hip) is out for Sunday's game against the Thunder.",
+   "return": "2026-11-18",
+   "fantasy": "OUT",
    "stats": {
     "gp": 11.0,
     "min": 32.363636,
     "pts": 14.272727,
     "reb": 4.5454545,
     "ast": 1.3636364,
+    "this_season": true
+   }
+  },
+  {
+   "team": "Sacramento Kings",
+   "id": "3064440",
+   "name": "Zach LaVine",
+   "status": "Out",
+   "comment": "LaVine is out for Sunday's game against Oklahoma City due to illness, Brandon Rahbar of DailyThunder.com reports.",
+   "return": "2026-11-18",
+   "fantasy": "OUT",
+   "stats": {
+    "gp": 12.0,
+    "min": 33.0,
+    "pts": 21.416666,
+    "reb": 3.25,
+    "ast": 2.8333333,
     "this_season": true
    }
   },
@@ -1248,23 +1248,6 @@
     "pts": 12.0,
     "reb": 9.333333,
     "ast": 1.3333334,
-    "this_season": true
-   }
-  },
-  {
-   "team": "Oklahoma City Thunder",
-   "id": "4900671",
-   "name": "Ajay Mitchell",
-   "status": "Day-To-Day",
-   "comment": "Mitchell (ankle) is questionable to suit up for Sunday's game against the Kings.",
-   "return": "2026-11-15",
-   "fantasy": "GTD",
-   "stats": {
-    "gp": 11.0,
-    "min": 27.272728,
-    "pts": 18.454546,
-    "reb": 3.6363637,
-    "ast": 3.2727273,
     "this_season": true
    }
   },
