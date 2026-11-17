@@ -1624,9 +1624,9 @@
   "away": "Charlotte Hornets",
   "home": "Los Angeles Lakers",
   "fav": "Los Angeles Lakers",
-  "spread": 7.5,
-  "away_ml": 248,
-  "home_ml": -306,
+  "spread": 6.5,
+  "away_ml": 243,
+  "home_ml": -299,
   "book": "DraftKings"
  },
  {
@@ -1634,9 +1634,9 @@
   "away": "Portland Trail Blazers",
   "home": "Minnesota Timberwolves",
   "fav": "Minnesota Timberwolves",
-  "spread": 1.5,
-  "away_ml": 110,
-  "home_ml": -130,
+  "spread": 2.5,
+  "away_ml": 123,
+  "home_ml": -146,
   "book": "DraftKings"
  },
  {
@@ -1645,8 +1645,8 @@
   "home": "San Antonio Spurs",
   "fav": "San Antonio Spurs",
   "spread": 9.5,
-  "away_ml": 330,
-  "home_ml": -421,
+  "away_ml": 340,
+  "home_ml": -437,
   "book": "DraftKings"
  },
  {
@@ -1655,8 +1655,8 @@
   "home": "Toronto Raptors",
   "fav": "New York Knicks",
   "spread": 2.5,
-  "away_ml": -148,
-  "home_ml": 125,
+  "away_ml": -141,
+  "home_ml": 119,
   "book": "DraftKings"
  }
 ]
