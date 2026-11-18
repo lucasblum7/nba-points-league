@@ -1,5 +1,5 @@
 {
- "as_of": "2026-11-18T06",
+ "as_of": "2026-11-18T12",
  "players": [
   {
    "team": "Atlanta Hawks",
@@ -287,10 +287,10 @@
    "team": "Cleveland Cavaliers",
    "id": "4683747",
    "name": "Jaylon Tyson",
-   "status": "Day-To-Day",
-   "comment": "Tyson (ankle) is listed as doubtful for Wednesday's game against the Grizzlies.",
-   "return": "2026-11-18",
-   "fantasy": "GTD",
+   "status": "Out",
+   "comment": "Tyson (ankle) has been ruled out for Wednesday's game against Memphis.",
+   "return": "2026-11-20",
+   "fantasy": "OUT",
    "stats": {
     "gp": 8.0,
     "min": 23.75,
@@ -305,7 +305,7 @@
    "id": "4576087",
    "name": "Peyton Watson",
    "status": "Day-To-Day",
-   "comment": "Watson (back) is listed as questionable for Wednesday's game against Memphis.",
+   "comment": "Watson (back) is doubtful for Wednesday's game versus Memphis.",
    "return": "2026-11-18",
    "fantasy": "GTD",
    "stats": {
@@ -448,6 +448,23 @@
   },
   {
    "team": "Detroit Pistons",
+   "id": "4432166",
+   "name": "Cade Cunningham",
+   "status": "Day-To-Day",
+   "comment": "Cunningham is questionable for Wednesday's game against the Pelicans due to right knee soreness",
+   "return": "2026-11-18",
+   "fantasy": "GTD",
+   "stats": {
+    "gp": 13.0,
+    "min": 34.846153,
+    "pts": 25.76923,
+    "reb": 5.1538463,
+    "ast": 7.769231,
+    "this_season": true
+   }
+  },
+  {
+   "team": "Detroit Pistons",
    "id": "4433621",
    "name": "Jalen Duren",
    "status": "Out",
@@ -468,8 +485,8 @@
    "id": "4683771",
    "name": "Ronald Holland II",
    "status": "Out",
-   "comment": "Holland is out for Tuesday's game against San Antonio due to a left knee contusion.",
-   "return": "2026-11-18",
+   "comment": "Holland (knee) is out for Wednesday's game against the Pelicans.",
+   "return": "2026-11-20",
    "fantasy": "OUT",
    "stats": {
     "gp": 12.0,
@@ -485,9 +502,9 @@
    "id": "4395702",
    "name": "Isaiah Joe",
    "status": "Out",
-   "comment": "Joe (hip) is out for Tuesday's game against the Spurs.",
+   "comment": "Joe (hip) is listed as questionable for Wednesday's game against the Pelicans.",
    "return": "2026-11-18",
-   "fantasy": "OUT",
+   "fantasy": "GTD",
    "stats": {
     "gp": 3.0,
     "min": 14.0,
@@ -502,8 +519,8 @@
    "id": "2990962",
    "name": "Taurean Prince",
    "status": "Out",
-   "comment": "Prince (knee) has been ruled out for Tuesday's game against the Spurs.",
-   "return": "2026-11-18",
+   "comment": "Prince (knee) is out for Wednesday's game against the Pelicans.",
+   "return": "2026-11-20",
    "fantasy": "OUT",
    "stats": {
     "gp": 3.0,
@@ -638,7 +655,7 @@
    "id": "4397040",
    "name": "Brandon Williams",
    "status": "Out",
-   "comment": "Williams (hamstring) will miss at least one week, per Anthony Slater of ESPN.com.",
+   "comment": "Williams (hamstring) has progressed to on-court activities and will be re-evaluated Saturday.",
    "return": "2026-11-22",
    "fantasy": "OUT",
    "stats": {
@@ -665,23 +682,6 @@
     "reb": 5.1666665,
     "ast": 1.6666666,
     "this_season": true
-   }
-  },
-  {
-   "team": "Houston Rockets",
-   "id": "5105553",
-   "name": "Julian Phillips",
-   "status": "Day-To-Day",
-   "comment": "Phillips (illness) is available for Wednesday's game against Dallas.",
-   "return": "2026-11-17",
-   "fantasy": "GTD",
-   "stats": {
-    "gp": 48.0,
-    "min": 8.895833,
-    "pts": 2.9166667,
-    "reb": 1.0208334,
-    "ast": 0.20833333,
-    "this_season": false
    }
   },
   {
@@ -756,10 +756,10 @@
    "team": "Indiana Pacers",
    "id": "4395712",
    "name": "Andrew Nembhard",
-   "status": "Day-To-Day",
-   "comment": "Nembhard (hip) is questionable for Wednesday's game against Houston.",
-   "return": "2026-11-18",
-   "fantasy": "GTD",
+   "status": "Out",
+   "comment": "Nembhard (hip) won't play in Wednesday's game against the Rockets, Tony East of Forbes.com reports.",
+   "return": "2026-11-20",
+   "fantasy": "OUT",
    "stats": {
     "gp": 11.0,
     "min": 33.363636,
@@ -810,7 +810,7 @@
    "status": "Out",
    "comment": "Ingram (Achilles) won't play in Friday's game against the Thunder, per Law Murray of The Athletic.",
    "return": "2026-11-19",
-   "fantasy": "OUT",
+   "fantasy": "GTD",
    "stats": {
     "gp": 77.0,
     "min": 33.81818,
@@ -856,28 +856,11 @@
   },
   {
    "team": "Los Angeles Lakers",
-   "id": "4433136",
-   "name": "Walker Kessler",
-   "status": "Out",
-   "comment": "Head coach JJ Redick said he expects Walker (leg) to be available for Wednesday's game against the Jazz, Thuc Nhi Nguyen of the Los Angeles Times reports.",
-   "return": "2026-11-18",
-   "fantasy": "OUT",
-   "stats": {
-    "gp": 14.0,
-    "min": 30.928572,
-    "pts": 14.5,
-    "reb": 10.928572,
-    "ast": 1.8571428,
-    "this_season": true
-   }
-  },
-  {
-   "team": "Los Angeles Lakers",
    "id": "4066457",
    "name": "Austin Reaves",
    "status": "Out",
-   "comment": "Reaves (heel) is out for Tuesday's game against the Hornets, Dave McMenamin of ESPN.com reports.",
-   "return": "2026-11-18",
+   "comment": "Reaves (heel) is out for Wednesday's game against the Jazz.",
+   "return": "2026-11-20",
    "fantasy": "OUT",
    "stats": {
     "gp": 12.0,
@@ -890,52 +873,18 @@
   },
   {
    "team": "Miami Heat",
-   "id": "4066261",
-   "name": "Bam Adebayo",
-   "status": "Day-To-Day",
-   "comment": "Adebayo (hip) is probable for Wednesday's game against the Bucks, per Ira Winderman of the South Florida Sun Sentinel.",
-   "return": "2026-11-18",
-   "fantasy": "GTD",
-   "stats": {
-    "gp": 14.0,
-    "min": 32.42857,
-    "pts": 18.357143,
-    "reb": 8.0,
-    "ast": 3.2142856,
-    "this_season": true
-   }
-  },
-  {
-   "team": "Miami Heat",
    "id": "4431772",
    "name": "Myron Gardner",
-   "status": "Day-To-Day",
-   "comment": "Gardner (hamstring) is questionable for Wednesday's game against the Bucks, per Ira Winderman of the South Florida Sun Sentinel.",
-   "return": "2026-11-18",
-   "fantasy": "GTD",
+   "status": "Out",
+   "comment": "Gardner (hamstring) is out for Wednesday's game against the Bucks.",
+   "return": "2026-11-22",
+   "fantasy": "OUT",
    "stats": {
     "gp": 9.0,
     "min": 10.0,
     "pts": 3.0,
     "reb": 2.3333333,
     "ast": 1.1111112,
-    "this_season": true
-   }
-  },
-  {
-   "team": "Miami Heat",
-   "id": "4997528",
-   "name": "Nikola Jovic",
-   "status": "Day-To-Day",
-   "comment": "Jovic (illness) is listed as probable for Wednesday's game against Milwaukee, Ira Winderman of the South Florida Sun Sentinel reports.",
-   "return": "2026-11-18",
-   "fantasy": "GTD",
-   "stats": {
-    "gp": 8.0,
-    "min": 12.125,
-    "pts": 2.375,
-    "reb": 2.375,
-    "ast": 1.125,
     "this_season": true
    }
   },
@@ -953,6 +902,23 @@
     "pts": 3.9,
     "reb": 1.2,
     "ast": 1.0,
+    "this_season": true
+   }
+  },
+  {
+   "team": "Milwaukee Bucks",
+   "id": "4591725",
+   "name": "Ryan Rollins",
+   "status": "Out",
+   "comment": "Rollins (illness) has been ruled out for Wednesday's game at Miami.",
+   "return": "2026-11-19",
+   "fantasy": "OUT",
+   "stats": {
+    "gp": 13.0,
+    "min": 23.76923,
+    "pts": 10.538462,
+    "reb": 5.0,
+    "ast": 3.9230769,
     "this_season": true
    }
   },
@@ -1011,10 +977,10 @@
    "team": "Minnesota Timberwolves",
    "id": "4433247",
    "name": "Jonathan Kuminga",
-   "status": "Out",
+   "status": "Day-To-Day",
    "comment": "Kuminga (shoulder) is out for Tuesday's game against Portland.",
    "return": "2026-11-19",
-   "fantasy": "OUT",
+   "fantasy": "GTD",
    "stats": {
     "gp": 14.0,
     "min": 30.5,
@@ -1028,10 +994,10 @@
    "team": "Minnesota Timberwolves",
    "id": "4592979",
    "name": "Zyon Pullin",
-   "status": "Out",
+   "status": "Day-To-Day",
    "comment": "Pullin (quadriceps) has been ruled out for Tuesday's game against Portland.",
    "return": "2026-11-19",
-   "fantasy": "OUT",
+   "fantasy": "GTD",
    "stats": {
     "gp": 3.0,
     "min": 3.3333333,
@@ -1080,7 +1046,7 @@
    "id": "5107251",
    "name": "Izaiyah Nelson",
    "status": "Out",
-   "comment": "Nelson (ankle) has been ruled out for Wednesday's game against the 76ers.",
+   "comment": "Head coach Sean Sweeney said Wednesday that Nelson (ankle) has been doing \"some on-court stuff,\" though Sweeney added that the work has been \"minimal,\" Jason Beede of the Orlando Sentinel reports.",
    "return": "2026-11-28",
    "fantasy": "OUT",
    "stats": null
@@ -1141,7 +1107,7 @@
    "id": "3917376",
    "name": "Jaylen Brown",
    "status": "Out",
-   "comment": "Brown is out for Wednesday's game against the Magic with a left hamstring strain.",
+   "comment": "Brown (hamstring) will be re-evaluated at some point this weekend, per Kris Rihm of ESPN.com.",
    "return": "2026-11-21",
    "fantasy": "OUT",
    "stats": {
@@ -1171,6 +1137,23 @@
    }
   },
   {
+   "team": "Philadelphia 76ers",
+   "id": "3912848",
+   "name": "Dean Wade",
+   "status": "Day-To-Day",
+   "comment": "Wade (hamstring) has been downgraded to questionable for Wednesday's game against the Magic.",
+   "return": "2026-11-18",
+   "fantasy": "GTD",
+   "stats": {
+    "gp": 13.0,
+    "min": 26.538462,
+    "pts": 4.8461537,
+    "reb": 4.6153846,
+    "ast": 1.7692307,
+    "this_season": true
+   }
+  },
+  {
    "team": "Phoenix Suns",
    "id": "4701232",
    "name": "Mark Williams",
@@ -1191,10 +1174,10 @@
    "team": "Portland Trail Blazers",
    "id": "4683021",
    "name": "Deni Avdija",
-   "status": "Out",
+   "status": "Day-To-Day",
    "comment": "Avdija (foot) won't play Tuesday versus Minnesota.",
    "return": "2026-11-19",
-   "fantasy": "OUT",
+   "fantasy": "GTD",
    "stats": {
     "gp": 13.0,
     "min": 32.46154,
@@ -1262,47 +1245,13 @@
    "status": "Out",
    "comment": "Youngblood (heel) has been ruled out for Tuesday's game at Minnesota.",
    "return": "2026-11-19",
-   "fantasy": "OUT",
+   "fantasy": "GTD",
    "stats": {
     "gp": 6.0,
     "min": 13.333333,
     "pts": 6.0,
     "reb": 1.3333334,
     "ast": 1.0,
-    "this_season": true
-   }
-  },
-  {
-   "team": "Sacramento Kings",
-   "id": "4431679",
-   "name": "Precious Achiuwa",
-   "status": "Day-To-Day",
-   "comment": "Achiuwa (ankle) is questionable for Wednesday's game against the Suns, James Ham of ESPN 1320 Sacramento reports.",
-   "return": "2026-11-18",
-   "fantasy": "GTD",
-   "stats": {
-    "gp": 11.0,
-    "min": 26.181818,
-    "pts": 10.363636,
-    "reb": 6.3636365,
-    "ast": 1.0909091,
-    "this_season": true
-   }
-  },
-  {
-   "team": "Sacramento Kings",
-   "id": "4065732",
-   "name": "De'Andre Hunter",
-   "status": "Day-To-Day",
-   "comment": "Hunter (hip) is questionable for Wednesday's game against the Suns, James Ham of ESPN 1320 Sacramento reports.",
-   "return": "2026-11-18",
-   "fantasy": "GTD",
-   "stats": {
-    "gp": 11.0,
-    "min": 32.363636,
-    "pts": 14.272727,
-    "reb": 4.5454545,
-    "ast": 1.3636364,
     "this_season": true
    }
   },
@@ -1459,10 +1408,10 @@
    "team": "Utah Jazz",
    "id": "4397077",
    "name": "Jaxson Hayes",
-   "status": "Out",
-   "comment": "Hayes (knee) has been ruled out for Tuesday's game against the Clippers.",
+   "status": "Day-To-Day",
+   "comment": "Hayes (knee) is questionable for Wednesday's game against the Lakers.",
    "return": "2026-11-18",
-   "fantasy": "OUT",
+   "fantasy": "GTD",
    "stats": {
     "gp": 12.0,
     "min": 24.166666,
@@ -1610,6 +1559,40 @@
   },
   {
    "team": "Toronto Raptors",
+   "id": "4433134",
+   "name": "Scottie Barnes",
+   "status": "Out",
+   "comment": "Barnes (injury management) has been ruled out for Wednesday's game against Washington, Esfandiar Baraheni of The Athletic reports.",
+   "return": "2026-11-20",
+   "fantasy": "OUT",
+   "stats": {
+    "gp": 10.0,
+    "min": 33.7,
+    "pts": 23.8,
+    "reb": 7.4,
+    "ast": 4.7,
+    "this_season": true
+   }
+  },
+  {
+   "team": "Toronto Raptors",
+   "id": "4395625",
+   "name": "RJ Barrett",
+   "status": "Day-To-Day",
+   "comment": "Barrett is questionable for Wednesday's game against the Wizards due to hamstring tightness, Esfandiar Baraheni of The Athletic reports.",
+   "return": "2026-11-18",
+   "fantasy": "GTD",
+   "stats": {
+    "gp": 14.0,
+    "min": 34.07143,
+    "pts": 20.857143,
+    "reb": 6.428571,
+    "ast": 4.285714,
+    "this_season": true
+   }
+  },
+  {
+   "team": "Toronto Raptors",
    "id": "4432586",
    "name": "Nate Bittle",
    "status": "Out",
@@ -1633,23 +1616,6 @@
     "reb": 7.5,
     "ast": 1.5,
     "this_season": true
-   }
-  },
-  {
-   "team": "Toronto Raptors",
-   "id": "4411057",
-   "name": "Kevin McCullar Jr.",
-   "status": "Day-To-Day",
-   "comment": "McCullar signed a two-way contract with the Raptors on Thursday, Michael Scotto of HoopsHype.com reports.",
-   "return": "2026-11-20",
-   "fantasy": "GTD",
-   "stats": {
-    "gp": 21.0,
-    "min": 7.3809524,
-    "pts": 2.3809524,
-    "reb": 1.3333334,
-    "ast": 0.95238096,
-    "this_season": false
    }
   },
   {
@@ -1734,10 +1700,10 @@
    "team": "Charlotte Hornets",
    "id": "3135045",
    "name": "Grayson Allen",
-   "status": "Out",
+   "status": "Day-To-Day",
    "comment": "Allen (concussion-like symptoms) has been ruled out for Tuesday's game against the Lakers.",
    "return": "2026-11-20",
-   "fantasy": "OUT",
+   "fantasy": "GTD",
    "stats": {
     "gp": 13.0,
     "min": 27.076923,
