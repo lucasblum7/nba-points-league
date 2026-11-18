@@ -38,22 +38,22 @@
    "id": "401910006",
    "time": "7:30 PM",
    "state": "in",
-   "detail": "Halftime",
+   "detail": "6:08 - 4th",
    "away": "Utah Jazz",
    "home": "LA Clippers",
-   "away_score": 58,
-   "home_score": 62,
+   "away_score": 111,
+   "home_score": 93,
    "cup": false
   },
   {
    "id": "401910005",
    "time": "8:00 PM",
    "state": "in",
-   "detail": "1:26 - 1st",
+   "detail": "10:31 - 3rd",
    "away": "Charlotte Hornets",
    "home": "Los Angeles Lakers",
-   "away_score": 34,
-   "home_score": 28,
+   "away_score": 67,
+   "home_score": 59,
    "cup": false
   }
  ]

@@ -1,5 +1,5 @@
 {
- "as_of": "2026-11-17T18",
+ "as_of": "2026-11-17T21",
  "players": [
   {
    "team": "Atlanta Hawks",
@@ -1320,10 +1320,10 @@
    "team": "San Antonio Spurs",
    "id": "5037871",
    "name": "Dylan Harper",
-   "status": "Out",
+   "status": "Day-To-Day",
    "comment": "Harper left Tuesday's game against the Spurs due to an undisclosed injury after an awkward fall, Chris Mannix reports.",
    "return": "2026-11-19",
-   "fantasy": "OUT",
+   "fantasy": "GTD",
    "stats": {
     "gp": 14.0,
     "min": 31.5,

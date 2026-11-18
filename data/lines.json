@@ -1721,6 +1721,16 @@
  },
  {
   "date": "2026-11-18",
+  "away": "Detroit Pistons",
+  "home": "New Orleans Pelicans",
+  "fav": "Detroit Pistons",
+  "spread": 7.5,
+  "away_ml": -277,
+  "home_ml": 227,
+  "book": "DraftKings"
+ },
+ {
+  "date": "2026-11-18",
   "away": "Atlanta Hawks",
   "home": "Oklahoma City Thunder",
   "fav": "Oklahoma City Thunder",
