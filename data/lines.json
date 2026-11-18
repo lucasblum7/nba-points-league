@@ -1658,5 +1658,105 @@
   "away_ml": -141,
   "home_ml": 119,
   "book": "DraftKings"
+ },
+ {
+  "date": "2026-11-18",
+  "away": "Chicago Bulls",
+  "home": "Brooklyn Nets",
+  "fav": "Brooklyn Nets",
+  "spread": 2.5,
+  "away_ml": 128,
+  "home_ml": -152,
+  "book": "DraftKings"
+ },
+ {
+  "date": "2026-11-18",
+  "away": "Memphis Grizzlies",
+  "home": "Cleveland Cavaliers",
+  "fav": "Cleveland Cavaliers",
+  "spread": 5.5,
+  "away_ml": 171,
+  "home_ml": -205,
+  "book": "DraftKings"
+ },
+ {
+  "date": "2026-11-18",
+  "away": "Golden State Warriors",
+  "home": "Dallas Mavericks",
+  "fav": "Dallas Mavericks",
+  "spread": 5.5,
+  "away_ml": 191,
+  "home_ml": -230,
+  "book": "DraftKings"
+ },
+ {
+  "date": "2026-11-18",
+  "away": "Boston Celtics",
+  "home": "Denver Nuggets",
+  "fav": "Boston Celtics",
+  "spread": 2.5,
+  "away_ml": -135,
+  "home_ml": 114,
+  "book": "DraftKings"
+ },
+ {
+  "date": "2026-11-18",
+  "away": "Houston Rockets",
+  "home": "Indiana Pacers",
+  "fav": "Houston Rockets",
+  "spread": 6.5,
+  "away_ml": -264,
+  "home_ml": 217,
+  "book": "DraftKings"
+ },
+ {
+  "date": "2026-11-18",
+  "away": "Milwaukee Bucks",
+  "home": "Miami Heat",
+  "fav": "Miami Heat",
+  "spread": 12.5,
+  "away_ml": 558,
+  "home_ml": -800,
+  "book": "DraftKings"
+ },
+ {
+  "date": "2026-11-18",
+  "away": "Atlanta Hawks",
+  "home": "Oklahoma City Thunder",
+  "fav": "Oklahoma City Thunder",
+  "spread": 6.5,
+  "away_ml": 231,
+  "home_ml": -283,
+  "book": "DraftKings"
+ },
+ {
+  "date": "2026-11-18",
+  "away": "Philadelphia 76ers",
+  "home": "Orlando Magic",
+  "fav": "Philadelphia 76ers",
+  "spread": 1.5,
+  "away_ml": -122,
+  "home_ml": 103,
+  "book": "DraftKings"
+ },
+ {
+  "date": "2026-11-18",
+  "away": "Phoenix Suns",
+  "home": "Sacramento Kings",
+  "fav": "Phoenix Suns",
+  "spread": 6.5,
+  "away_ml": -269,
+  "home_ml": 220,
+  "book": "DraftKings"
+ },
+ {
+  "date": "2026-11-18",
+  "away": "Washington Wizards",
+  "home": "Toronto Raptors",
+  "fav": "Toronto Raptors",
+  "spread": 7.5,
+  "away_ml": 226,
+  "home_ml": -276,
+  "book": "DraftKings"
  }
 ]
