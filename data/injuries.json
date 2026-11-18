@@ -1,5 +1,5 @@
 {
- "as_of": "2026-11-17T21",
+ "as_of": "2026-11-18T06",
  "players": [
   {
    "team": "Atlanta Hawks",
@@ -562,6 +562,23 @@
     "pts": 27.8,
     "reb": 3.7,
     "ast": 3.9,
+    "this_season": true
+   }
+  },
+  {
+   "team": "Golden State Warriors",
+   "id": "6589",
+   "name": "Draymond Green",
+   "status": "Day-To-Day",
+   "comment": "Green is questionable for Wednesday's game in Dallas due to inflammation in his right elbow.",
+   "return": "2026-11-18",
+   "fantasy": "GTD",
+   "stats": {
+    "gp": 12.0,
+    "min": 25.75,
+    "pts": 3.1666667,
+    "reb": 5.0,
+    "ast": 6.9166665,
     "this_season": true
    }
   },
@@ -1294,9 +1311,9 @@
    "id": "4898371",
    "name": "Maxime Raynaud",
    "status": "Out",
-   "comment": "Raynaud (knee) has been ruled out for Sunday's game against the Thunder.",
-   "return": "2026-11-18",
-   "fantasy": "GTD",
+   "comment": "Raynaud (knee) will remain on the inactive list for Wednesday's game against the Suns.",
+   "return": "2026-11-25",
+   "fantasy": "OUT",
    "stats": {
     "gp": 74.0,
     "min": 26.54054,
@@ -1325,11 +1342,11 @@
    "return": "2026-11-19",
    "fantasy": "GTD",
    "stats": {
-    "gp": 14.0,
-    "min": 31.5,
-    "pts": 18.285715,
-    "reb": 5.5,
-    "ast": 4.714286,
+    "gp": 15.0,
+    "min": 31.666666,
+    "pts": 18.4,
+    "reb": 5.4,
+    "ast": 4.5333333,
     "this_season": true
    }
   },
