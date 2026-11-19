@@ -1778,5 +1778,15 @@
   "away_ml": 169,
   "home_ml": -203,
   "book": "DraftKings"
+ },
+ {
+  "date": "2026-11-19",
+  "away": "LA Clippers",
+  "home": "San Antonio Spurs",
+  "fav": "San Antonio Spurs",
+  "spread": 16.5,
+  "away_ml": 720,
+  "home_ml": -1140,
+  "book": "Draft Kings"
  }
 ]

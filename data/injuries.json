@@ -1,5 +1,5 @@
 {
- "as_of": "2026-11-18T12",
+ "as_of": "2026-11-18T18",
  "players": [
   {
    "team": "Atlanta Hawks",
@@ -200,23 +200,6 @@
   },
   {
    "team": "Chicago Bulls",
-   "id": "4431687",
-   "name": "Patrick Williams",
-   "status": "Day-To-Day",
-   "comment": "Williams (finger) is listed as probable for Wednesday's game against Brooklyn.",
-   "return": "2026-11-18",
-   "fantasy": "GTD",
-   "stats": {
-    "gp": 6.0,
-    "min": 22.666666,
-    "pts": 7.8333335,
-    "reb": 3.1666667,
-    "ast": 2.0,
-    "this_season": true
-   }
-  },
-  {
-   "team": "Chicago Bulls",
    "id": "5095151",
    "name": "Caleb Wilson",
    "status": "Out",
@@ -229,23 +212,6 @@
     "pts": 18.9,
     "reb": 6.2,
     "ast": 1.9,
-    "this_season": true
-   }
-  },
-  {
-   "team": "Cleveland Cavaliers",
-   "id": "4066757",
-   "name": "Sam Merrill",
-   "status": "Out",
-   "comment": "Merrill (elbow) is questionable to face the Grizzlies on Wednesday.",
-   "return": "2026-11-18",
-   "fantasy": "GTD",
-   "stats": {
-    "gp": 9.0,
-    "min": 23.11111,
-    "pts": 7.6666665,
-    "reb": 3.4444444,
-    "ast": 1.8888888,
     "this_season": true
    }
   },
@@ -304,33 +270,16 @@
    "team": "Cleveland Cavaliers",
    "id": "4576087",
    "name": "Peyton Watson",
-   "status": "Day-To-Day",
-   "comment": "Watson (back) is doubtful for Wednesday's game versus Memphis.",
-   "return": "2026-11-18",
-   "fantasy": "GTD",
+   "status": "Out",
+   "comment": "Watson (back) is out for Wednesday's game versus Memphis.",
+   "return": "2026-11-20",
+   "fantasy": "OUT",
    "stats": {
     "gp": 12.0,
     "min": 27.666666,
     "pts": 10.666667,
     "reb": 4.5,
     "ast": 2.5,
-    "this_season": true
-   }
-  },
-  {
-   "team": "Dallas Mavericks",
-   "id": "4593125",
-   "name": "Santi Aldama",
-   "status": "Day-To-Day",
-   "comment": "Aldama (ankle) is probable for Wednesday's game against the Warriors.",
-   "return": "2026-11-18",
-   "fantasy": "GTD",
-   "stats": {
-    "gp": 5.0,
-    "min": 14.6,
-    "pts": 8.0,
-    "reb": 3.6,
-    "ast": 0.8,
     "this_season": true
    }
   },
@@ -343,40 +292,6 @@
    "return": "2026-11-27",
    "fantasy": "OUT",
    "stats": null
-  },
-  {
-   "team": "Dallas Mavericks",
-   "id": "4432582",
-   "name": "Max Christie",
-   "status": "Day-To-Day",
-   "comment": "Christie (ankle) is questionable for Wednesday's game against the Warriors.",
-   "return": "2026-11-18",
-   "fantasy": "GTD",
-   "stats": {
-    "gp": 11.0,
-    "min": 18.454546,
-    "pts": 5.2727275,
-    "reb": 2.909091,
-    "ast": 1.1818181,
-    "this_season": true
-   }
-  },
-  {
-   "team": "Dallas Mavericks",
-   "id": "4896372",
-   "name": "Walter Clayton Jr.",
-   "status": "Day-To-Day",
-   "comment": "Clayton (ankle) is listed as probable for Wednesday's game against the Warriors.",
-   "return": "2026-11-18",
-   "fantasy": "GTD",
-   "stats": {
-    "gp": 13.0,
-    "min": 17.076923,
-    "pts": 7.076923,
-    "reb": 3.0,
-    "ast": 3.3076923,
-    "this_season": true
-   }
   },
   {
    "team": "Dallas Mavericks",
@@ -399,10 +314,10 @@
    "team": "Dallas Mavericks",
    "id": "5106040",
    "name": "Tobi Lawal",
-   "status": "Day-To-Day",
-   "comment": "Lawal is doubtful for Wednesday's game against the Warriors due to tightness in his right groin.",
-   "return": "2026-11-18",
-   "fantasy": "GTD",
+   "status": "Out",
+   "comment": "Lawal is out for Wednesday's game against the Warriors due to tightness in his right groin.",
+   "return": "2026-11-21",
+   "fantasy": "OUT",
    "stats": {
     "gp": 8.0,
     "min": 4.5,
@@ -450,10 +365,10 @@
    "team": "Detroit Pistons",
    "id": "4432166",
    "name": "Cade Cunningham",
-   "status": "Day-To-Day",
-   "comment": "Cunningham is questionable for Wednesday's game against the Pelicans due to right knee soreness",
-   "return": "2026-11-18",
-   "fantasy": "GTD",
+   "status": "Out",
+   "comment": "Cunningham (knee) won't play in Wednesday's game against New Orleans.",
+   "return": "2026-11-20",
+   "fantasy": "OUT",
    "stats": {
     "gp": 13.0,
     "min": 34.846153,
@@ -494,23 +409,6 @@
     "pts": 4.9166665,
     "reb": 3.8333333,
     "ast": 1.8333334,
-    "this_season": true
-   }
-  },
-  {
-   "team": "Detroit Pistons",
-   "id": "4395702",
-   "name": "Isaiah Joe",
-   "status": "Out",
-   "comment": "Joe (hip) is listed as questionable for Wednesday's game against the Pelicans.",
-   "return": "2026-11-18",
-   "fantasy": "GTD",
-   "stats": {
-    "gp": 3.0,
-    "min": 14.0,
-    "pts": 7.3333335,
-    "reb": 1.6666666,
-    "ast": 1.0,
     "this_season": true
    }
   },
@@ -584,29 +482,12 @@
   },
   {
    "team": "Golden State Warriors",
-   "id": "6589",
-   "name": "Draymond Green",
-   "status": "Day-To-Day",
-   "comment": "Green is questionable for Wednesday's game in Dallas due to inflammation in his right elbow.",
-   "return": "2026-11-18",
-   "fantasy": "GTD",
-   "stats": {
-    "gp": 12.0,
-    "min": 25.75,
-    "pts": 3.1666667,
-    "reb": 5.0,
-    "ast": 6.9166665,
-    "this_season": true
-   }
-  },
-  {
-   "team": "Golden State Warriors",
    "id": "3213",
    "name": "Al Horford",
-   "status": "Day-To-Day",
-   "comment": "Horford (back) is questionable for Wednesday's game against Dallas.",
-   "return": "2026-11-18",
-   "fantasy": "GTD",
+   "status": "Out",
+   "comment": "Horford (back) is out for Wednesday's game against the Mavericks, but will play Thursday against the Grizzlies, Nick Friedell of The Athletic reports.",
+   "return": "2026-11-19",
+   "fantasy": "OUT",
    "stats": {
     "gp": 12.0,
     "min": 17.0,
@@ -686,18 +567,18 @@
   },
   {
    "team": "Houston Rockets",
-   "id": "4684740",
-   "name": "Amen Thompson",
+   "id": "4871144",
+   "name": "Alperen Sengun",
    "status": "Day-To-Day",
-   "comment": "Thompson (knee) is questionable for Wednesday's game against the Pacers.",
-   "return": "2026-11-18",
+   "comment": "Sengun (eye) will not return to Wednesday's game against the Pacers, Will Guillory of The Athletic reports.",
+   "return": "2026-11-20",
    "fantasy": "GTD",
    "stats": {
-    "gp": 14.0,
-    "min": 33.357143,
-    "pts": 15.785714,
-    "reb": 7.0,
-    "ast": 3.357143,
+    "gp": 13.0,
+    "min": 34.23077,
+    "pts": 22.76923,
+    "reb": 9.307693,
+    "ast": 7.230769,
     "this_season": true
    }
   },
@@ -737,23 +618,6 @@
   },
   {
    "team": "Indiana Pacers",
-   "id": "2530530",
-   "name": "T.J. McConnell",
-   "status": "Day-To-Day",
-   "comment": "McConnell (hamstring) is probable to play Wednesday against the Rockets.",
-   "return": "2026-11-18",
-   "fantasy": "GTD",
-   "stats": {
-    "gp": 5.0,
-    "min": 13.4,
-    "pts": 6.6,
-    "reb": 2.6,
-    "ast": 4.6,
-    "this_season": true
-   }
-  },
-  {
-   "team": "Indiana Pacers",
    "id": "4395712",
    "name": "Andrew Nembhard",
    "status": "Out",
@@ -787,6 +651,23 @@
    }
   },
   {
+   "team": "Indiana Pacers",
+   "id": "5105854",
+   "name": "Braden Smith",
+   "status": "Day-To-Day",
+   "comment": "Smith suffered a right ankle sprain during Wednesday's game against the Wizards, Tony East of Forbes.com reports.",
+   "return": "2026-11-20",
+   "fantasy": "GTD",
+   "stats": {
+    "gp": 8.0,
+    "min": 13.25,
+    "pts": 3.75,
+    "reb": 0.625,
+    "ast": 2.375,
+    "this_season": true
+   }
+  },
+  {
    "team": "LA Clippers",
    "id": "6580",
    "name": "Bradley Beal",
@@ -808,9 +689,9 @@
    "id": "3913176",
    "name": "Brandon Ingram",
    "status": "Out",
-   "comment": "Ingram (Achilles) won't play in Friday's game against the Thunder, per Law Murray of The Athletic.",
+   "comment": "Ingram (heel/Achilles) will remain on the inactive list for Thursday's game in San Antonio.",
    "return": "2026-11-19",
-   "fantasy": "GTD",
+   "fantasy": "OUT",
    "stats": {
     "gp": 77.0,
     "min": 33.81818,
@@ -838,28 +719,11 @@
    }
   },
   {
-   "team": "LA Clippers",
-   "id": "5108024",
-   "name": "Yanic Konan Niederhauser",
-   "status": "Out",
-   "comment": "Niederhauser (foot) has been ruled out for Tuesday's game against the Jazz.",
-   "return": "2026-11-23",
-   "fantasy": "OUT",
-   "stats": {
-    "gp": 41.0,
-    "min": 10.341463,
-    "pts": 4.292683,
-    "reb": 2.8536584,
-    "ast": 0.29268292,
-    "this_season": false
-   }
-  },
-  {
    "team": "Los Angeles Lakers",
    "id": "4066457",
    "name": "Austin Reaves",
    "status": "Out",
-   "comment": "Reaves (heel) is out for Wednesday's game against the Jazz.",
+   "comment": "Head coach JJ Redick said Reaves' (heel) pregame workout went \"well,\" but he remains without an official timetable to return, Daniel Starkand of LakersNation.com reports.",
    "return": "2026-11-20",
    "fantasy": "OUT",
    "stats": {
@@ -978,7 +842,7 @@
    "id": "4433247",
    "name": "Jonathan Kuminga",
    "status": "Day-To-Day",
-   "comment": "Kuminga (shoulder) is out for Tuesday's game against Portland.",
+   "comment": "Kuminga (shoulder) is questionable for Thursday's game against the Knicks, Charlie Walton of ZoneCoverage.com reports.",
    "return": "2026-11-19",
    "fantasy": "GTD",
    "stats": {
@@ -995,7 +859,7 @@
    "id": "4592979",
    "name": "Zyon Pullin",
    "status": "Day-To-Day",
-   "comment": "Pullin (quadriceps) has been ruled out for Tuesday's game against Portland.",
+   "comment": "Pullin (quadriceps) is listed as questionable for Thursday's game against the Knicks.",
    "return": "2026-11-19",
    "fantasy": "GTD",
    "stats": {
@@ -1138,12 +1002,29 @@
   },
   {
    "team": "Philadelphia 76ers",
+   "id": "4431678",
+   "name": "Tyrese Maxey",
+   "status": "Out",
+   "comment": "Maxey (foot) is out for Wednesday's game in Orlando, Ky Carlin of USA Today reports.",
+   "return": "2026-11-21",
+   "fantasy": "OUT",
+   "stats": {
+    "gp": 15.0,
+    "min": 36.066666,
+    "pts": 26.533333,
+    "reb": 3.2666667,
+    "ast": 5.8,
+    "this_season": true
+   }
+  },
+  {
+   "team": "Philadelphia 76ers",
    "id": "3912848",
    "name": "Dean Wade",
-   "status": "Day-To-Day",
-   "comment": "Wade (hamstring) has been downgraded to questionable for Wednesday's game against the Magic.",
-   "return": "2026-11-18",
-   "fantasy": "GTD",
+   "status": "Out",
+   "comment": "Wade (hamstring) is out for Wednesday's game in Orlando.",
+   "return": "2026-11-21",
+   "fantasy": "OUT",
    "stats": {
     "gp": 13.0,
     "min": 26.538462,
@@ -1175,7 +1056,7 @@
    "id": "4683021",
    "name": "Deni Avdija",
    "status": "Day-To-Day",
-   "comment": "Avdija (foot) won't play Tuesday versus Minnesota.",
+   "comment": "Avdija (foot) is listed as questionable ahead of Thursday's game against Milwaukee.",
    "return": "2026-11-19",
    "fantasy": "GTD",
    "stats": {
@@ -1184,6 +1065,23 @@
     "pts": 24.153847,
     "reb": 6.230769,
     "ast": 6.076923,
+    "this_season": true
+   }
+  },
+  {
+   "team": "Portland Trail Blazers",
+   "id": "4431736",
+   "name": "Toumani Camara",
+   "status": "Day-To-Day",
+   "comment": "Camara is questionable to play Thursday against the Bucks due to general soreness.",
+   "return": "2026-11-19",
+   "fantasy": "GTD",
+   "stats": {
+    "gp": 14.0,
+    "min": 29.071428,
+    "pts": 12.214286,
+    "reb": 3.4285715,
+    "ast": 1.2857143,
     "this_season": true
    }
   },
@@ -1240,6 +1138,23 @@
   },
   {
    "team": "Portland Trail Blazers",
+   "id": "4066211",
+   "name": "Robert Williams III",
+   "status": "Out",
+   "comment": "Williams (rest) is listed as out for Thursday's game versus the Bucks.",
+   "return": "2026-11-21",
+   "fantasy": "OUT",
+   "stats": {
+    "gp": 12.0,
+    "min": 16.333334,
+    "pts": 6.5,
+    "reb": 6.5833335,
+    "ast": 1.25,
+    "this_season": true
+   }
+  },
+  {
+   "team": "Portland Trail Blazers",
    "id": "4706557",
    "name": "Chris Youngblood",
    "status": "Out",
@@ -1286,10 +1201,10 @@
    "team": "San Antonio Spurs",
    "id": "5037871",
    "name": "Dylan Harper",
-   "status": "Day-To-Day",
-   "comment": "Harper left Tuesday's game against the Spurs due to an undisclosed injury after an awkward fall, Chris Mannix reports.",
-   "return": "2026-11-19",
-   "fantasy": "GTD",
+   "status": "Out",
+   "comment": "Harper (hip) won't play in Thursday's game against the Clippers, Jeff McDonald of the San Antonio Express-News reports.",
+   "return": "2026-11-21",
+   "fantasy": "OUT",
    "stats": {
     "gp": 15.0,
     "min": 31.666666,
@@ -1325,6 +1240,23 @@
    "return": "2026-12-03",
    "fantasy": "OUT",
    "stats": null
+  },
+  {
+   "team": "Oklahoma City Thunder",
+   "id": "2991350",
+   "name": "Alex Caruso",
+   "status": "Out",
+   "comment": "Caruso won't return to Wednesday's game against the Hawks due to right hip soreness, Clemente Almanza of USA Today reports.",
+   "return": "2026-11-20",
+   "fantasy": "OUT",
+   "stats": {
+    "gp": 11.0,
+    "min": 20.181818,
+    "pts": 7.6363635,
+    "reb": 4.0,
+    "ast": 3.0,
+    "this_season": true
+   }
   },
   {
    "team": "Oklahoma City Thunder",
@@ -1384,40 +1316,6 @@
     "pts": 13.666667,
     "reb": 4.6666665,
     "ast": 3.3333333,
-    "this_season": true
-   }
-  },
-  {
-   "team": "Oklahoma City Thunder",
-   "id": "4432823",
-   "name": "Jaylin Williams",
-   "status": "Out",
-   "comment": "Williams (back) is listed as questionable for Wednesday's game against the Hawks, Clemente Almanza of USA Today reports.",
-   "return": "2026-11-18",
-   "fantasy": "GTD",
-   "stats": {
-    "gp": 7.0,
-    "min": 18.428572,
-    "pts": 2.857143,
-    "reb": 4.0,
-    "ast": 1.5714285,
-    "this_season": true
-   }
-  },
-  {
-   "team": "Utah Jazz",
-   "id": "4397077",
-   "name": "Jaxson Hayes",
-   "status": "Day-To-Day",
-   "comment": "Hayes (knee) is questionable for Wednesday's game against the Lakers.",
-   "return": "2026-11-18",
-   "fantasy": "GTD",
-   "stats": {
-    "gp": 12.0,
-    "min": 24.166666,
-    "pts": 8.833333,
-    "reb": 6.0,
-    "ast": 1.5833334,
     "this_season": true
    }
   },
@@ -1578,10 +1476,10 @@
    "team": "Toronto Raptors",
    "id": "4395625",
    "name": "RJ Barrett",
-   "status": "Day-To-Day",
-   "comment": "Barrett is questionable for Wednesday's game against the Wizards due to hamstring tightness, Esfandiar Baraheni of The Athletic reports.",
-   "return": "2026-11-18",
-   "fantasy": "GTD",
+   "status": "Out",
+   "comment": "Barrett (hamstring) is out for Wednesday's game against the Wizards, Michael Grange of Sportsnet.ca reports.",
+   "return": "2026-11-20",
+   "fantasy": "OUT",
    "stats": {
     "gp": 14.0,
     "min": 34.07143,
@@ -1615,6 +1513,23 @@
     "pts": 19.5,
     "reb": 7.5,
     "ast": 1.5,
+    "this_season": true
+   }
+  },
+  {
+   "team": "Toronto Raptors",
+   "id": "5093267",
+   "name": "Collin Murray-Boyles",
+   "status": "Day-To-Day",
+   "comment": "Murray-Boyles will not return to Wednesday's game against the Wizards due to an illness, Blake Murphy of Sportsnet.ca reports.",
+   "return": "2026-11-20",
+   "fantasy": "GTD",
+   "stats": {
+    "gp": 13.0,
+    "min": 24.923077,
+    "pts": 9.923077,
+    "reb": 4.8461537,
+    "ast": 1.8461539,
     "this_season": true
    }
   },
