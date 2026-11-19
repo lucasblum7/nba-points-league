@@ -103,34 +103,34 @@
   {
    "id": "401910015",
    "time": "6:30 PM",
-   "state": "in",
-   "detail": "Halftime",
+   "state": "post",
+   "detail": "Final",
    "away": "Boston Celtics",
    "home": "Denver Nuggets",
-   "away_score": 61,
-   "home_score": 49,
+   "away_score": 101,
+   "home_score": 105,
    "cup": false
   },
   {
    "id": "401910017",
    "time": "7:00 PM",
-   "state": "in",
-   "detail": "6:15 - 2nd",
+   "state": "post",
+   "detail": "Final",
    "away": "Utah Jazz",
    "home": "Los Angeles Lakers",
-   "away_score": 43,
-   "home_score": 43,
+   "away_score": 109,
+   "home_score": 97,
    "cup": false
   },
   {
    "id": "401910018",
    "time": "7:00 PM",
-   "state": "in",
-   "detail": "1:44 - 2nd",
+   "state": "post",
+   "detail": "Final",
    "away": "Phoenix Suns",
    "home": "Sacramento Kings",
-   "away_score": 62,
-   "home_score": 52,
+   "away_score": 128,
+   "home_score": 107,
    "cup": false
   }
  ]
