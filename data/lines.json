@@ -1784,9 +1784,9 @@
   "away": "Golden State Warriors",
   "home": "Memphis Grizzlies",
   "fav": "Memphis Grizzlies",
-  "spread": 6.5,
-  "away_ml": 200,
-  "home_ml": -243,
+  "spread": 5.5,
+  "away_ml": 179,
+  "home_ml": -216,
   "book": "DraftKings"
  },
  {
@@ -1794,9 +1794,9 @@
   "away": "Portland Trail Blazers",
   "home": "Milwaukee Bucks",
   "fav": "Portland Trail Blazers",
-  "spread": 10.5,
-  "away_ml": -440,
-  "home_ml": 343,
+  "spread": 11.5,
+  "away_ml": -518,
+  "home_ml": 394,
   "book": "DraftKings"
  },
  {
@@ -1815,8 +1815,8 @@
   "home": "San Antonio Spurs",
   "fav": "San Antonio Spurs",
   "spread": 15.5,
-  "away_ml": 670,
-  "home_ml": -1040,
+  "away_ml": 660,
+  "home_ml": -1020,
   "book": "DraftKings"
  }
 ]
