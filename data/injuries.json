@@ -1,5 +1,5 @@
 {
- "as_of": "2026-11-19T12",
+ "as_of": "2026-11-19T18",
  "players": [
   {
    "team": "Atlanta Hawks",
@@ -509,23 +509,6 @@
   },
   {
    "team": "Golden State Warriors",
-   "id": "4433149",
-   "name": "LJ Cryer",
-   "status": "Day-To-Day",
-   "comment": "Cryer (back) is questionable for Thursday's game against Memphis.",
-   "return": "2026-11-19",
-   "fantasy": "GTD",
-   "stats": {
-    "gp": 12.0,
-    "min": 11.25,
-    "pts": 6.4166665,
-    "reb": 0.5,
-    "ast": 1.8333334,
-    "this_season": true
-   }
-  },
-  {
-   "team": "Golden State Warriors",
    "id": "3975",
    "name": "Stephen Curry",
    "status": "Out",
@@ -611,12 +594,29 @@
   },
   {
    "team": "Houston Rockets",
+   "id": "2991235",
+   "name": "Steven Adams",
+   "status": "Day-To-Day",
+   "comment": "Adams (quadriceps) is listed as questionable for Friday's game against Denver.",
+   "return": "2026-11-20",
+   "fantasy": "GTD",
+   "stats": {
+    "gp": 3.0,
+    "min": 12.333333,
+    "pts": 4.6666665,
+    "reb": 4.6666665,
+    "ast": 1.3333334,
+    "this_season": true
+   }
+  },
+  {
+   "team": "Houston Rockets",
    "id": "3102529",
    "name": "Clint Capela",
    "status": "Out",
-   "comment": "Capela (ankle) has been ruled out for Wednesday's game against Indiana.",
-   "return": "2026-11-20",
-   "fantasy": "GTD",
+   "comment": "Capela (ankle) is out for Friday's game against Denver.",
+   "return": "2026-11-23",
+   "fantasy": "OUT",
    "stats": {
     "gp": 6.0,
     "min": 14.166667,
@@ -631,7 +631,7 @@
    "id": "4871144",
    "name": "Alperen Sengun",
    "status": "Day-To-Day",
-   "comment": "Sengun (eye) will not return to Wednesday's game against the Pacers, Will Guillory of The Athletic reports.",
+   "comment": "Sengun (eye) is questionable for Friday's game against the Nuggets.",
    "return": "2026-11-20",
    "fantasy": "GTD",
    "stats": {
@@ -801,9 +801,9 @@
    "id": "4066457",
    "name": "Austin Reaves",
    "status": "Out",
-   "comment": "Head coach JJ Redick said Reaves' (heel) pregame workout went \"well,\" but he remains without an official timetable to return, Daniel Starkand of LakersNation.com reports.",
-   "return": "2026-11-20",
-   "fantasy": "GTD",
+   "comment": "Reaves (heel) is listed as out for Friday's game against the Kings.",
+   "return": "2026-11-23",
+   "fantasy": "OUT",
    "stats": {
     "gp": 12.0,
     "min": 35.25,
@@ -929,23 +929,6 @@
     "pts": 33.25,
     "reb": 4.75,
     "ast": 3.5,
-    "this_season": true
-   }
-  },
-  {
-   "team": "Minnesota Timberwolves",
-   "id": "4433247",
-   "name": "Jonathan Kuminga",
-   "status": "Day-To-Day",
-   "comment": "Kuminga (shoulder) is questionable for Thursday's game against the Knicks, Charlie Walton of ZoneCoverage.com reports.",
-   "return": "2026-11-19",
-   "fantasy": "GTD",
-   "stats": {
-    "gp": 14.0,
-    "min": 30.5,
-    "pts": 12.357142,
-    "reb": 5.714286,
-    "ast": 2.7857144,
     "this_season": true
    }
   },
@@ -1150,33 +1133,16 @@
    "team": "Portland Trail Blazers",
    "id": "4683021",
    "name": "Deni Avdija",
-   "status": "Day-To-Day",
-   "comment": "Avdija (foot) is listed as questionable ahead of Thursday's game against Milwaukee.",
-   "return": "2026-11-19",
-   "fantasy": "GTD",
+   "status": "Out",
+   "comment": "Avdija (foot) is listed as out for Thursday's game against the Bucks.",
+   "return": "2026-11-21",
+   "fantasy": "OUT",
    "stats": {
     "gp": 13.0,
     "min": 32.46154,
     "pts": 24.153847,
     "reb": 6.230769,
     "ast": 6.076923,
-    "this_season": true
-   }
-  },
-  {
-   "team": "Portland Trail Blazers",
-   "id": "4431736",
-   "name": "Toumani Camara",
-   "status": "Day-To-Day",
-   "comment": "Camara is questionable to play Thursday against the Bucks due to general soreness.",
-   "return": "2026-11-19",
-   "fantasy": "GTD",
-   "stats": {
-    "gp": 14.0,
-    "min": 29.071428,
-    "pts": 12.214286,
-    "reb": 3.4285715,
-    "ast": 1.2857143,
     "this_season": true
    }
   },
@@ -1267,6 +1233,40 @@
   },
   {
    "team": "Sacramento Kings",
+   "id": "4431679",
+   "name": "Precious Achiuwa",
+   "status": "Day-To-Day",
+   "comment": "Achiuwa is doubtful for Friday's game against the Lakers due to a left lower leg bruise.",
+   "return": "2026-11-20",
+   "fantasy": "GTD",
+   "stats": {
+    "gp": 12.0,
+    "min": 24.666666,
+    "pts": 9.5,
+    "reb": 5.8333335,
+    "ast": 1.0,
+    "this_season": true
+   }
+  },
+  {
+   "team": "Sacramento Kings",
+   "id": "4065732",
+   "name": "De'Andre Hunter",
+   "status": "Day-To-Day",
+   "comment": "Hunter (hip) is listed as questionable for Friday's game against the Lakers.",
+   "return": "2026-11-20",
+   "fantasy": "GTD",
+   "stats": {
+    "gp": 12.0,
+    "min": 32.666668,
+    "pts": 13.666667,
+    "reb": 4.25,
+    "ast": 1.5833334,
+    "this_season": true
+   }
+  },
+  {
+   "team": "Sacramento Kings",
    "id": "4898371",
    "name": "Maxime Raynaud",
    "status": "Out",
@@ -1341,7 +1341,7 @@
    "id": "2991350",
    "name": "Alex Caruso",
    "status": "Day-To-Day",
-   "comment": "Caruso won't return to Wednesday's game against the Hawks due to right hip soreness, Clemente Almanza of USA Today reports.",
+   "comment": "Caruso is questionable for Friday's game against the Pelicans due to right hip soreness, Justin Martinez of The Oklahoman reports.",
    "return": "2026-11-20",
    "fantasy": "GTD",
    "stats": {
@@ -1453,9 +1453,9 @@
    "id": "3102530",
    "name": "Jusuf Nurkic",
    "status": "Out",
-   "comment": "Nurkic (toe) has begun participating in on-court activities as he continues recovering from a right foot injury sustained during an Oct. 4 preseason game against Denver. He will be re-evaluated in two weeks, the Jazz announced Friday.",
-   "return": "2026-11-20",
-   "fantasy": "GTD",
+   "comment": "Nurkic (toe) is listed as out for Friday's game against Phoenix.",
+   "return": "2026-11-27",
+   "fantasy": "OUT",
    "stats": {
     "gp": 41.0,
     "min": 26.414635,
@@ -1630,6 +1630,23 @@
   },
   {
    "team": "Memphis Grizzlies",
+   "id": "2991070",
+   "name": "Jerami Grant",
+   "status": "Day-To-Day",
+   "comment": "Grant won't return to Thursday's game against the Warriors due to a left calf injury. He'll finish with three points (1-2 FG, 1-1 3Pt) across five minutes.",
+   "return": "2026-11-21",
+   "fantasy": "GTD",
+   "stats": {
+    "gp": 14.0,
+    "min": 23.5,
+    "pts": 11.142858,
+    "reb": 1.8571428,
+    "ast": 1.9285715,
+    "this_season": true
+   }
+  },
+  {
+   "team": "Memphis Grizzlies",
    "id": "5105550",
    "name": "GG Jackson",
    "status": "Out",
@@ -1688,23 +1705,6 @@
    "return": "2026-12-01",
    "fantasy": "OUT",
    "stats": null
-  },
-  {
-   "team": "Memphis Grizzlies",
-   "id": "4432810",
-   "name": "Isaiah Stewart",
-   "status": "Day-To-Day",
-   "comment": "Stewart is questionable for Thursday's game against the Warriors due to an illness.",
-   "return": "2026-11-19",
-   "fantasy": "GTD",
-   "stats": {
-    "gp": 10.0,
-    "min": 18.2,
-    "pts": 10.9,
-    "reb": 3.3,
-    "ast": 0.9,
-    "this_season": true
-   }
   },
   {
    "team": "Charlotte Hornets",
