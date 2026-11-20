@@ -3,15 +3,15 @@
  "sims": 5000,
  "teams": {
   "Atlanta Hawks": {
-   "playoffs": 88.6,
-   "top6": 59.2,
-   "playin": 40.0,
-   "proj_w": 45.5,
-   "proj_l": 36.5,
+   "playoffs": 89.2,
+   "top6": 60.9,
+   "playin": 38.4,
+   "proj_w": 45.7,
+   "proj_l": 36.3,
    "seed": 6.0,
    "conf": "East",
    "rating": 1.4,
-   "rating_wins": 44.8,
+   "rating_wins": 44.9,
    "prior_wins": 44.5,
    "last5_margin": -0.6,
    "season_margin": 1.9,
@@ -24,6 +24,13 @@
      "comment": "McCollum (calf) will miss at least four weeks, per Brad Rowland of the Locked On Podcast Network."
     },
     {
+     "name": "Kingston Flemings",
+     "status": "Out",
+     "games": 1,
+     "impact": 0.8,
+     "comment": "Flemings (back) is out for Friday's game against the Hornets, Brad Rowland of the Locked On Podcast Network reports."
+    },
+    {
      "name": "Jock Landale",
      "status": "Out",
      "games": 1,
@@ -31,15 +38,15 @@
      "comment": "Landale (hip) won't play in Friday's game against the Hornets, Brad Rowland of the Locked On Podcast Network reports."
     }
    ],
-   "injury_wins": -0.4,
+   "injury_wins": -0.5,
    "sos_rank": 13,
    "games_left": 67,
    "prev": 88.0
   },
   "Boston Celtics": {
    "playoffs": 99.9,
-   "top6": 99.5,
-   "playin": 0.5,
+   "top6": 99.4,
+   "playin": 0.6,
    "proj_w": 57.9,
    "proj_l": 24.1,
    "seed": 2.1,
@@ -56,15 +63,15 @@
    "prev": 99.9
   },
   "Brooklyn Nets": {
-   "playoffs": 1.2,
+   "playoffs": 1.1,
    "top6": 0.1,
-   "playin": 6.3,
-   "proj_w": 24.9,
-   "proj_l": 57.1,
+   "playin": 6.5,
+   "proj_w": 24.8,
+   "proj_l": 57.2,
    "seed": 13.2,
    "conf": "East",
    "rating": -6.3,
-   "rating_wins": 24.1,
+   "rating_wins": 23.9,
    "prior_wins": 24.5,
    "last5_margin": -12.8,
    "season_margin": -8.4,
@@ -75,15 +82,15 @@
    "prev": 1.1
   },
   "Charlotte Hornets": {
-   "playoffs": 10.4,
-   "top6": 0.8,
-   "playin": 36.2,
-   "proj_w": 31.0,
-   "proj_l": 51.0,
+   "playoffs": 10.2,
+   "top6": 0.7,
+   "playin": 35.3,
+   "proj_w": 30.9,
+   "proj_l": 51.1,
    "seed": 11.2,
    "conf": "East",
    "rating": -3.5,
-   "rating_wins": 31.6,
+   "rating_wins": 31.5,
    "prior_wins": 38.5,
    "last5_margin": -8.8,
    "season_margin": -10.3,
@@ -116,12 +123,12 @@
    "prev": 11.7
   },
   "Chicago Bulls": {
-   "playoffs": 5.5,
+   "playoffs": 5.6,
    "top6": 0.2,
-   "playin": 20.9,
-   "proj_w": 28.7,
-   "proj_l": 53.3,
-   "seed": 12.0,
+   "playin": 21.6,
+   "proj_w": 28.8,
+   "proj_l": 53.2,
+   "seed": 11.9,
    "conf": "East",
    "rating": -5.0,
    "rating_wins": 27.4,
@@ -138,20 +145,20 @@
     }
    ],
    "injury_wins": -0.5,
-   "sos_rank": 25,
+   "sos_rank": 26,
    "games_left": 68,
    "prev": 5.2
   },
   "Cleveland Cavaliers": {
    "playoffs": 88.3,
-   "top6": 58.8,
-   "playin": 40.1,
+   "top6": 58.4,
+   "playin": 40.6,
    "proj_w": 45.4,
    "proj_l": 36.6,
    "seed": 6.1,
    "conf": "East",
    "rating": 1.8,
-   "rating_wins": 45.9,
+   "rating_wins": 45.7,
    "prior_wins": 48.5,
    "last5_margin": 2.8,
    "season_margin": 1.9,
@@ -184,9 +191,9 @@
    "prev": 89.6
   },
   "Dallas Mavericks": {
-   "playoffs": 35.4,
-   "top6": 11.4,
-   "playin": 64.2,
+   "playoffs": 35.7,
+   "top6": 11.3,
+   "playin": 64.4,
    "proj_w": 40.7,
    "proj_l": 41.3,
    "seed": 9.0,
@@ -202,7 +209,7 @@
      "status": "Out",
      "games": 3,
      "impact": 0.1,
-     "comment": "Lively (foot) is out for Wednesday's game against the Warriors."
+     "comment": "Head coach Dusty May said Friday that Lively (foot) is moving well and progressing in his recovery, and the big man told May he's \"close\" to"
     }
    ],
    "injury_wins": -0.0,
@@ -211,11 +218,11 @@
    "prev": 36.1
   },
   "Denver Nuggets": {
-   "playoffs": 92.4,
-   "top6": 75.6,
-   "playin": 23.8,
-   "proj_w": 51.0,
-   "proj_l": 31.0,
+   "playoffs": 92.5,
+   "top6": 76.1,
+   "playin": 23.2,
+   "proj_w": 51.1,
+   "proj_l": 30.9,
    "seed": 4.9,
    "conf": "West",
    "rating": 3.7,
@@ -239,14 +246,14 @@
   },
   "Detroit Pistons": {
    "playoffs": 99.5,
-   "top6": 97.3,
-   "playin": 2.6,
-   "proj_w": 54.8,
-   "proj_l": 27.2,
+   "top6": 97.2,
+   "playin": 2.8,
+   "proj_w": 54.7,
+   "proj_l": 27.3,
    "seed": 2.9,
    "conf": "East",
-   "rating": 4.6,
-   "rating_wins": 53.4,
+   "rating": 4.5,
+   "rating_wins": 53.2,
    "prior_wins": 49.5,
    "last5_margin": 4.0,
    "season_margin": 6.4,
@@ -264,13 +271,6 @@
      "games": 2,
      "impact": 1.94,
      "comment": "Duren (hamstring) has begun on-court activity and will be re-evaluated in two weeks, Hunter Patterson of The Athletic reports."
-    },
-    {
-     "name": "Ronald Holland II",
-     "status": "Out",
-     "games": 1,
-     "impact": 0.13,
-     "comment": "Holland (knee) won't play in Friday's game against the Raptors, Blake Murphy of Sportsnet.ca reports."
     }
    ],
    "injury_wins": -0.2,
@@ -282,8 +282,8 @@
    "playoffs": 23.1,
    "top6": 5.0,
    "playin": 53.3,
-   "proj_w": 38.3,
-   "proj_l": 43.7,
+   "proj_w": 38.4,
+   "proj_l": 43.6,
    "seed": 9.9,
    "conf": "West",
    "rating": -0.8,
@@ -334,7 +334,7 @@
    "proj_l": 25.3,
    "seed": 2.8,
    "conf": "West",
-   "rating": 5.7,
+   "rating": 5.8,
    "rating_wins": 56.5,
    "prior_wins": 48.5,
    "last5_margin": 7.8,
@@ -346,15 +346,15 @@
    "prev": 99.4
   },
   "Indiana Pacers": {
-   "playoffs": 17.0,
-   "top6": 1.9,
-   "playin": 48.1,
-   "proj_w": 32.9,
-   "proj_l": 49.1,
-   "seed": 10.5,
+   "playoffs": 16.0,
+   "top6": 1.8,
+   "playin": 47.0,
+   "proj_w": 32.7,
+   "proj_l": 49.3,
+   "seed": 10.6,
    "conf": "East",
-   "rating": -3.0,
-   "rating_wins": 32.9,
+   "rating": -2.9,
+   "rating_wins": 33.0,
    "prior_wins": 44.5,
    "last5_margin": -2.0,
    "season_margin": -3.3,
@@ -362,9 +362,9 @@
     {
      "name": "Tyrese Haliburton",
      "status": "Out",
-     "games": 4,
+     "games": 7,
      "impact": 4.71,
-     "comment": "Head coach Rick Carlisle said Tuesday that Haliburton (hamstring) is \"getting there,\" but there's still no definitive timetable for his retu"
+     "comment": "Haliburton (hamstring) is expected to miss at least two more weeks, Shams Charania of ESPN reports."
     },
     {
      "name": "Johnny Furphy",
@@ -374,15 +374,15 @@
      "comment": "Furphy (knee) is practicing with the G League's Noblesville Boom, per Alex Golden of SI.com."
     }
    ],
-   "injury_wins": -0.4,
+   "injury_wins": -0.6,
    "sos_rank": 12,
    "games_left": 67,
    "prev": 15.2
   },
   "LA Clippers": {
-   "playoffs": 1.3,
+   "playoffs": 1.2,
    "top6": 0.1,
-   "playin": 6.1,
+   "playin": 6.0,
    "proj_w": 28.8,
    "proj_l": 53.2,
    "seed": 12.4,
@@ -401,6 +401,13 @@
      "comment": "Miller underwent surgery Wednesday to repair a torn left rotator cuff and will be re-evaluated in six months, per Law Murray of The Athletic"
     },
     {
+     "name": "Brandon Ingram",
+     "status": "Out",
+     "games": 1,
+     "impact": 2.0,
+     "comment": "Ingram (Achilles) is expected to make his season and team debut Monday against the Rockets, per Shams Charania of ESPN."
+    },
+    {
      "name": "Bradley Beal",
      "status": "Out",
      "games": 4,
@@ -414,7 +421,7 @@
    "prev": 1.2
   },
   "Los Angeles Lakers": {
-   "playoffs": 93.2,
+   "playoffs": 93.1,
    "top6": 79.3,
    "playin": 20.2,
    "proj_w": 51.5,
@@ -441,9 +448,9 @@
    "prev": 92.8
   },
   "Memphis Grizzlies": {
-   "playoffs": 59.9,
-   "top6": 28.9,
-   "playin": 62.3,
+   "playoffs": 59.8,
+   "top6": 28.7,
+   "playin": 62.4,
    "proj_w": 44.4,
    "proj_l": 37.6,
    "seed": 7.7,
@@ -475,9 +482,9 @@
    "prev": 60.0
   },
   "Miami Heat": {
-   "playoffs": 90.8,
-   "top6": 67.1,
-   "playin": 32.0,
+   "playoffs": 91.0,
+   "top6": 66.8,
+   "playin": 32.3,
    "proj_w": 46.7,
    "proj_l": 35.3,
    "seed": 5.7,
@@ -496,9 +503,9 @@
   "Milwaukee Bucks": {
    "playoffs": 0.1,
    "top6": 0.0,
-   "playin": 0.5,
-   "proj_w": 19.4,
-   "proj_l": 62.6,
+   "playin": 0.6,
+   "proj_w": 19.5,
+   "proj_l": 62.5,
    "seed": 14.5,
    "conf": "East",
    "rating": -8.2,
@@ -513,9 +520,9 @@
    "prev": 0.0
   },
   "Minnesota Timberwolves": {
-   "playoffs": 83.5,
-   "top6": 55.6,
-   "playin": 41.9,
+   "playoffs": 83.6,
+   "top6": 55.5,
+   "playin": 42.0,
    "proj_w": 48.0,
    "proj_l": 34.0,
    "seed": 6.1,
@@ -552,7 +559,7 @@
    "playin": 1.7,
    "proj_w": 26.2,
    "proj_l": 55.8,
-   "seed": 13.0,
+   "seed": 13.1,
    "conf": "West",
    "rating": -5.4,
    "rating_wins": 26.3,
@@ -582,8 +589,8 @@
   },
   "New York Knicks": {
    "playoffs": 99.7,
-   "top6": 97.0,
-   "playin": 3.0,
+   "top6": 96.9,
+   "playin": 3.1,
    "proj_w": 54.5,
    "proj_l": 27.5,
    "seed": 3.0,
@@ -600,9 +607,9 @@
    "prev": 99.6
   },
   "Oklahoma City Thunder": {
-   "playoffs": 94.1,
+   "playoffs": 94.0,
    "top6": 78.0,
-   "playin": 21.3,
+   "playin": 21.4,
    "proj_w": 51.2,
    "proj_l": 30.8,
    "seed": 4.8,
@@ -641,15 +648,15 @@
    "prev": 93.7
   },
   "Orlando Magic": {
-   "playoffs": 50.1,
-   "top6": 13.4,
-   "playin": 71.4,
-   "proj_w": 38.5,
-   "proj_l": 43.5,
+   "playoffs": 50.7,
+   "top6": 13.6,
+   "playin": 71.8,
+   "proj_w": 38.6,
+   "proj_l": 43.4,
    "seed": 8.5,
    "conf": "East",
-   "rating": -0.9,
-   "rating_wins": 38.5,
+   "rating": -0.8,
+   "rating_wins": 38.7,
    "prior_wins": 44.5,
    "last5_margin": 7.0,
    "season_margin": -3.4,
@@ -668,9 +675,9 @@
    "prev": 50.2
   },
   "Philadelphia 76ers": {
-   "playoffs": 98.8,
-   "top6": 94.3,
-   "playin": 5.7,
+   "playoffs": 98.9,
+   "top6": 94.1,
+   "playin": 5.8,
    "proj_w": 52.7,
    "proj_l": 29.3,
    "seed": 3.6,
@@ -686,7 +693,14 @@
      "status": "Out",
      "games": 1,
      "impact": 4.34,
-     "comment": "Brown (hamstring) will be re-evaluated at some point this weekend, per Kris Rihm of ESPN.com."
+     "comment": "Brown (hamstring) went through individual work during Friday's practice, Tony Jones of The Athletic reports."
+    },
+    {
+     "name": "Dean Wade",
+     "status": "Out",
+     "games": 1,
+     "impact": 0.26,
+     "comment": "Wade (hamstring) won't play Saturday against the Bucks."
     }
    ],
    "injury_wins": -0.1,
@@ -695,7 +709,7 @@
    "prev": 98.7
   },
   "Phoenix Suns": {
-   "playoffs": 31.1,
+   "playoffs": 30.9,
    "top6": 8.8,
    "playin": 63.0,
    "proj_w": 40.0,
@@ -717,17 +731,17 @@
     }
    ],
    "injury_wins": -0.7,
-   "sos_rank": 26,
+   "sos_rank": 25,
    "games_left": 68,
    "prev": 31.6
   },
   "Portland Trail Blazers": {
-   "playoffs": 86.4,
-   "top6": 60.8,
-   "playin": 37.5,
+   "playoffs": 86.2,
+   "top6": 60.5,
+   "playin": 37.7,
    "proj_w": 48.7,
    "proj_l": 33.3,
-   "seed": 5.8,
+   "seed": 5.9,
    "conf": "West",
    "rating": 3.2,
    "rating_wins": 49.6,
@@ -775,6 +789,13 @@
      "games": 3,
      "impact": 1.07,
      "comment": "Raynaud (knee) will remain on the inactive list for Wednesday's game against the Suns."
+    },
+    {
+     "name": "Precious Achiuwa",
+     "status": "Out",
+     "games": 1,
+     "impact": 1.26,
+     "comment": "Achiuwa (lower leg) has been ruled out for Friday's game against the Lakers."
     }
    ],
    "injury_wins": -0.0,
@@ -817,15 +838,15 @@
    "prev": 100.0
   },
   "Toronto Raptors": {
-   "playoffs": 45.7,
-   "top6": 10.1,
-   "playin": 71.8,
-   "proj_w": 37.5,
-   "proj_l": 44.5,
+   "playoffs": 45.1,
+   "top6": 9.5,
+   "playin": 72.2,
+   "proj_w": 37.4,
+   "proj_l": 44.6,
    "seed": 8.9,
    "conf": "East",
    "rating": -0.3,
-   "rating_wins": 40.1,
+   "rating_wins": 40.2,
    "prior_wins": 46.5,
    "last5_margin": -6.6,
    "season_margin": 0.0,
@@ -840,9 +861,9 @@
     {
      "name": "Kawhi Leonard",
      "status": "Out",
-     "games": 2,
+     "games": 5,
      "impact": 3.56,
-     "comment": "Leonard (knee) has progressed in his strength and conditioning program but will miss at least one more week, Michael Scotto of HoopsHype.com"
+     "comment": "Leonard (knee) could return in the next few weeks, per Shams Charania of ESPN."
     },
     {
      "name": "Collin Murray-Boyles",
@@ -852,7 +873,7 @@
      "comment": "Murray-Boyles (concussion) has been ruled out for Friday's game against the Pistons."
     }
    ],
-   "injury_wins": -0.6,
+   "injury_wins": -0.8,
    "sos_rank": 11,
    "games_left": 67,
    "prev": 44.0
@@ -899,9 +920,9 @@
    "prev": 0.2
   },
   "Washington Wizards": {
-   "playoffs": 4.5,
-   "top6": 0.3,
-   "playin": 20.8,
+   "playoffs": 4.6,
+   "top6": 0.2,
+   "playin": 21.5,
    "proj_w": 28.9,
    "proj_l": 53.1,
    "seed": 11.9,

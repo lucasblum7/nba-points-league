@@ -1,14 +1,14 @@
 {
- "as_of": "2026-11-20T06",
+ "as_of": "2026-11-20T12",
  "players": [
   {
    "team": "Atlanta Hawks",
    "id": "5149077",
    "name": "Kingston Flemings",
-   "status": "Day-To-Day",
-   "comment": "Flemings (back) is questionable for Friday's game against the Hornets, Brad Rowland of the Locked On Podcast Network reports.",
-   "return": "2026-11-20",
-   "fantasy": "GTD",
+   "status": "Out",
+   "comment": "Flemings (back) is out for Friday's game against the Hornets, Brad Rowland of the Locked On Podcast Network reports.",
+   "return": "2026-11-22",
+   "fantasy": "OUT",
    "stats": {
     "gp": 12.0,
     "min": 21.5,
@@ -217,6 +217,23 @@
   },
   {
    "team": "Chicago Bulls",
+   "id": "4397189",
+   "name": "Jalen Smith",
+   "status": "Day-To-Day",
+   "comment": "Smith (illness) has been downgraded to questionable for Friday's game against the Wizards.",
+   "return": "2026-11-20",
+   "fantasy": "GTD",
+   "stats": {
+    "gp": 13.0,
+    "min": 24.615385,
+    "pts": 13.384615,
+    "reb": 7.923077,
+    "ast": 2.1538463,
+    "this_season": true
+   }
+  },
+  {
+   "team": "Chicago Bulls",
    "id": "5095151",
    "name": "Caleb Wilson",
    "status": "Out",
@@ -349,7 +366,7 @@
    "id": "4683688",
    "name": "Dereck Lively II",
    "status": "Out",
-   "comment": "Lively (foot) is out for Wednesday's game against the Warriors.",
+   "comment": "Head coach Dusty May said Friday that Lively (foot) is moving well and progressing in his recovery, and the big man told May he's \"close\" to returning, Mike Curtis of The Dallas Morning News reports.",
    "return": "2026-11-27",
    "fantasy": "OUT",
    "stats": {
@@ -416,10 +433,10 @@
    "team": "Detroit Pistons",
    "id": "4683771",
    "name": "Ronald Holland II",
-   "status": "Out",
-   "comment": "Holland (knee) won't play in Friday's game against the Raptors, Blake Murphy of Sportsnet.ca reports.",
-   "return": "2026-11-22",
-   "fantasy": "OUT",
+   "status": "Day-To-Day",
+   "comment": "Holland (knee) has been upgraded to doubtful for Friday's game against Toronto, Hunter Patterson of The Athletic reports.",
+   "return": "2026-11-20",
+   "fantasy": "GTD",
    "stats": {
     "gp": 12.0,
     "min": 15.916667,
@@ -665,8 +682,8 @@
    "id": "4396993",
    "name": "Tyrese Haliburton",
    "status": "Out",
-   "comment": "Head coach Rick Carlisle said Tuesday that Haliburton (hamstring) is \"getting there,\" but there's still no definitive timetable for his return to game action, Dustin Dopirak of The Indianapolis Star reports.",
-   "return": "2026-11-28",
+   "comment": "Haliburton (hamstring) is expected to miss at least two more weeks, Shams Charania of ESPN reports.",
+   "return": "2026-12-13",
    "fantasy": "OUT",
    "stats": {
     "gp": 4.0,
@@ -767,9 +784,9 @@
    "id": "3913176",
    "name": "Brandon Ingram",
    "status": "Out",
-   "comment": "Ingram (heel/Achilles) will remain on the inactive list for Thursday's game in San Antonio.",
-   "return": "2026-11-21",
-   "fantasy": "GTD",
+   "comment": "Ingram (Achilles) is expected to make his season and team debut Monday against the Rockets, per Shams Charania of ESPN.",
+   "return": "2026-11-23",
+   "fantasy": "OUT",
    "stats": {
     "gp": 77.0,
     "min": 33.81818,
@@ -848,40 +865,6 @@
    }
   },
   {
-   "team": "Milwaukee Bucks",
-   "id": "3134907",
-   "name": "Kyle Kuzma",
-   "status": "Day-To-Day",
-   "comment": "Kuzma (shoulder) has been ruled out for Thursday's game against Portland due to a right shoulder contusion.",
-   "return": "2026-11-21",
-   "fantasy": "GTD",
-   "stats": {
-    "gp": 15.0,
-    "min": 27.133333,
-    "pts": 12.266666,
-    "reb": 5.266667,
-    "ast": 2.4,
-    "this_season": true
-   }
-  },
-  {
-   "team": "Milwaukee Bucks",
-   "id": "3133628",
-   "name": "Myles Turner",
-   "status": "Day-To-Day",
-   "comment": "Turner (shoulder) has been ruled out for Thursday's game against Portland due to a left shoulder contusion,",
-   "return": "2026-11-21",
-   "fantasy": "GTD",
-   "stats": {
-    "gp": 14.0,
-    "min": 26.642857,
-    "pts": 7.142857,
-    "reb": 6.0,
-    "ast": 2.7142856,
-    "this_season": true
-   }
-  },
-  {
    "team": "Minnesota Timberwolves",
    "id": "4432247",
    "name": "Jaylen Clark",
@@ -950,6 +933,40 @@
    }
   },
   {
+   "team": "New York Knicks",
+   "id": "3934719",
+   "name": "OG Anunoby",
+   "status": "Day-To-Day",
+   "comment": "Anunoby (calf) is questionable for Saturday's game against Portland.",
+   "return": "2026-11-21",
+   "fantasy": "GTD",
+   "stats": {
+    "gp": 15.0,
+    "min": 33.933334,
+    "pts": 16.266666,
+    "reb": 5.4,
+    "ast": 2.0,
+    "this_season": true
+   }
+  },
+  {
+   "team": "New York Knicks",
+   "id": "2528426",
+   "name": "Jordan Clarkson",
+   "status": "Out",
+   "comment": "Clarkson supplied three points (1-3 FG, 0-1 3Pt, 1-1 FT) across eight minutes during Tuesday's 111-102 victory over Toronto.",
+   "return": "2026-11-22",
+   "fantasy": "OUT",
+   "stats": {
+    "gp": 12.0,
+    "min": 9.833333,
+    "pts": 4.9166665,
+    "reb": 1.5833334,
+    "ast": 0.41666666,
+    "this_season": true
+   }
+  },
+  {
    "team": "Orlando Magic",
    "id": "4432573",
    "name": "Paolo Banchero",
@@ -1015,7 +1032,7 @@
    "id": "4870562",
    "name": "Dominick Barlow",
    "status": "Out",
-   "comment": "Barlow (back) is out for Wednesday's game against Orlando.",
+   "comment": "Barlow (back) is probable for Saturday's game versus the Bucks.",
    "return": "2026-11-21",
    "fantasy": "GTD",
    "stats": {
@@ -1032,9 +1049,9 @@
    "id": "5105637",
    "name": "Adem Bona",
    "status": "Out",
-   "comment": "Bona (back) will be re-evaluated in approximately one week after seeing a specialist, Ky Carlin of USA Today reports.",
-   "return": "2026-11-21",
-   "fantasy": "GTD",
+   "comment": "Bona (back) participated in Friday's practice, though he still needs to go through a full practice with contact before being cleared to return to game action, Adam Aaronson of PhillyVoice.com reports.",
+   "return": "2026-11-23",
+   "fantasy": "OUT",
    "stats": {
     "gp": 9.0,
     "min": 14.222222,
@@ -1049,7 +1066,7 @@
    "id": "3917376",
    "name": "Jaylen Brown",
    "status": "Out",
-   "comment": "Brown (hamstring) will be re-evaluated at some point this weekend, per Kris Rihm of ESPN.com.",
+   "comment": "Brown (hamstring) went through individual work during Friday's practice, Tony Jones of The Athletic reports.",
    "return": "2026-11-23",
    "fantasy": "OUT",
    "stats": {
@@ -1083,7 +1100,7 @@
    "id": "4431678",
    "name": "Tyrese Maxey",
    "status": "Day-To-Day",
-   "comment": "Maxey (foot) is out for Wednesday's game in Orlando, Ky Carlin of USA Today reports.",
+   "comment": "Maxey (foot) is questionable for Saturday's game against the Bucks.",
    "return": "2026-11-21",
    "fantasy": "GTD",
    "stats": {
@@ -1099,10 +1116,10 @@
    "team": "Philadelphia 76ers",
    "id": "3912848",
    "name": "Dean Wade",
-   "status": "Day-To-Day",
-   "comment": "Wade (hamstring) is out for Wednesday's game in Orlando.",
-   "return": "2026-11-21",
-   "fantasy": "GTD",
+   "status": "Out",
+   "comment": "Wade (hamstring) won't play Saturday against the Bucks.",
+   "return": "2026-11-23",
+   "fantasy": "OUT",
    "stats": {
     "gp": 13.0,
     "min": 26.538462,
@@ -1134,7 +1151,7 @@
    "id": "4683021",
    "name": "Deni Avdija",
    "status": "Day-To-Day",
-   "comment": "Avdija (foot) is listed as out for Thursday's game against the Bucks.",
+   "comment": "Avdija (foot) is listed as questionable for Saturday's game against the Knicks.",
    "return": "2026-11-21",
    "fantasy": "GTD",
    "stats": {
@@ -1199,29 +1216,12 @@
   },
   {
    "team": "Portland Trail Blazers",
-   "id": "4066211",
-   "name": "Robert Williams III",
-   "status": "Day-To-Day",
-   "comment": "Williams (rest) is listed as out for Thursday's game versus the Bucks.",
-   "return": "2026-11-21",
-   "fantasy": "GTD",
-   "stats": {
-    "gp": 12.0,
-    "min": 16.333334,
-    "pts": 6.5,
-    "reb": 6.5833335,
-    "ast": 1.25,
-    "this_season": true
-   }
-  },
-  {
-   "team": "Portland Trail Blazers",
    "id": "4706557",
    "name": "Chris Youngblood",
    "status": "Out",
    "comment": "Youngblood (heel) has been ruled out for Thursday's game against the Bucks.",
-   "return": "2026-11-21",
-   "fantasy": "GTD",
+   "return": "2026-11-27",
+   "fantasy": "OUT",
    "stats": {
     "gp": 6.0,
     "min": 13.333333,
@@ -1235,10 +1235,10 @@
    "team": "Sacramento Kings",
    "id": "4431679",
    "name": "Precious Achiuwa",
-   "status": "Day-To-Day",
-   "comment": "Achiuwa is doubtful for Friday's game against the Lakers due to a left lower leg bruise.",
-   "return": "2026-11-20",
-   "fantasy": "GTD",
+   "status": "Out",
+   "comment": "Achiuwa (lower leg) has been ruled out for Friday's game against the Lakers.",
+   "return": "2026-11-21",
+   "fantasy": "OUT",
    "stats": {
     "gp": 12.0,
     "min": 24.666666,
@@ -1379,6 +1379,23 @@
    "return": "2027-01-31",
    "fantasy": "OUT",
    "stats": null
+  },
+  {
+   "team": "Oklahoma City Thunder",
+   "id": "5159925",
+   "name": "Nikola Topic",
+   "status": "Out",
+   "comment": "Topic (hip) is out for Friday's game against New Orleans.",
+   "return": "2026-11-22",
+   "fantasy": "OUT",
+   "stats": {
+    "gp": 3.0,
+    "min": 11.333333,
+    "pts": 2.6666667,
+    "reb": 1.3333334,
+    "ast": 1.3333334,
+    "this_season": true
+   }
   },
   {
    "team": "Oklahoma City Thunder",
@@ -1582,8 +1599,8 @@
    "id": "6450",
    "name": "Kawhi Leonard",
    "status": "Out",
-   "comment": "Leonard (knee) has progressed in his strength and conditioning program but will miss at least one more week, Michael Scotto of HoopsHype.com reports.",
-   "return": "2026-11-27",
+   "comment": "Leonard (knee) could return in the next few weeks, per Shams Charania of ESPN.",
+   "return": "2026-12-03",
    "fantasy": "OUT",
    "stats": {
     "gp": 2.0,
