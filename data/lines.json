@@ -1825,9 +1825,9 @@
   "home": "Atlanta Hawks",
   "fav": "Atlanta Hawks",
   "spread": 6.5,
-  "away_ml": 194,
-  "home_ml": -235,
-  "book": "Draft Kings"
+  "away_ml": 191,
+  "home_ml": -230,
+  "book": "DraftKings"
  },
  {
   "date": "2026-11-20",
@@ -1835,29 +1835,29 @@
   "home": "Brooklyn Nets",
   "fav": "Orlando Magic",
   "spread": 5.5,
-  "away_ml": -217,
-  "home_ml": 180,
-  "book": "Draft Kings"
+  "away_ml": -230,
+  "home_ml": 191,
+  "book": "DraftKings"
  },
  {
   "date": "2026-11-20",
   "away": "Washington Wizards",
   "home": "Chicago Bulls",
   "fav": "Chicago Bulls",
-  "spread": 3.5,
+  "spread": 2.5,
   "away_ml": 120,
   "home_ml": -142,
-  "book": "Draft Kings"
+  "book": "DraftKings"
  },
  {
   "date": "2026-11-20",
   "away": "Indiana Pacers",
   "home": "Cleveland Cavaliers",
   "fav": "Cleveland Cavaliers",
-  "spread": 7.5,
-  "away_ml": 220,
-  "home_ml": -268,
-  "book": "Draft Kings"
+  "spread": 6.5,
+  "away_ml": 211,
+  "home_ml": -257,
+  "book": "DraftKings"
  },
  {
   "date": "2026-11-20",
@@ -1865,19 +1865,19 @@
   "home": "Denver Nuggets",
   "fav": "Denver Nuggets",
   "spread": 1.5,
-  "away_ml": -101,
-  "home_ml": -117,
-  "book": "Draft Kings"
+  "away_ml": 101,
+  "home_ml": -119,
+  "book": "DraftKings"
  },
  {
   "date": "2026-11-20",
   "away": "Toronto Raptors",
   "home": "Detroit Pistons",
   "fav": "Detroit Pistons",
-  "spread": 8.5,
+  "spread": 7.5,
   "away_ml": 237,
   "home_ml": -291,
-  "book": "Draft Kings"
+  "book": "DraftKings"
  },
  {
   "date": "2026-11-20",
@@ -1885,9 +1885,9 @@
   "home": "Los Angeles Lakers",
   "fav": "Los Angeles Lakers",
   "spread": 14.5,
-  "away_ml": 620,
-  "home_ml": -930,
-  "book": "Draft Kings"
+  "away_ml": 630,
+  "home_ml": -940,
+  "book": "DraftKings"
  },
  {
   "date": "2026-11-20",
@@ -1895,9 +1895,9 @@
   "home": "Oklahoma City Thunder",
   "fav": "Oklahoma City Thunder",
   "spread": 11.5,
-  "away_ml": 395,
-  "home_ml": -521,
-  "book": "Draft Kings"
+  "away_ml": 443,
+  "home_ml": -598,
+  "book": "DraftKings"
  },
  {
   "date": "2026-11-20",
@@ -1907,6 +1907,6 @@
   "spread": 4.5,
   "away_ml": -180,
   "home_ml": 151,
-  "book": "Draft Kings"
+  "book": "DraftKings"
  }
 ]
