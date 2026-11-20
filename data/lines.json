@@ -1824,9 +1824,9 @@
   "away": "Charlotte Hornets",
   "home": "Atlanta Hawks",
   "fav": "Atlanta Hawks",
-  "spread": 5.5,
-  "away_ml": 181,
-  "home_ml": -218,
+  "spread": 6.5,
+  "away_ml": 194,
+  "home_ml": -235,
   "book": "Draft Kings"
  },
  {
@@ -1835,8 +1835,8 @@
   "home": "Brooklyn Nets",
   "fav": "Orlando Magic",
   "spread": 5.5,
-  "away_ml": -201,
-  "home_ml": 168,
+  "away_ml": -217,
+  "home_ml": 180,
   "book": "Draft Kings"
  },
  {
@@ -1846,7 +1846,7 @@
   "fav": "Chicago Bulls",
   "spread": 3.5,
   "away_ml": 120,
-  "home_ml": -143,
+  "home_ml": -142,
   "book": "Draft Kings"
  },
  {
@@ -1855,8 +1855,8 @@
   "home": "Cleveland Cavaliers",
   "fav": "Cleveland Cavaliers",
   "spread": 7.5,
-  "away_ml": 203,
-  "home_ml": -246,
+  "away_ml": 220,
+  "home_ml": -268,
   "book": "Draft Kings"
  },
  {
@@ -1865,8 +1865,8 @@
   "home": "Denver Nuggets",
   "fav": "Denver Nuggets",
   "spread": 1.5,
-  "away_ml": 100,
-  "home_ml": -119,
+  "away_ml": -101,
+  "home_ml": -117,
   "book": "Draft Kings"
  },
  {
@@ -1885,8 +1885,8 @@
   "home": "Los Angeles Lakers",
   "fav": "Los Angeles Lakers",
   "spread": 14.5,
-  "away_ml": 670,
-  "home_ml": -1040,
+  "away_ml": 620,
+  "home_ml": -930,
   "book": "Draft Kings"
  },
  {
@@ -1895,8 +1895,8 @@
   "home": "Oklahoma City Thunder",
   "fav": "Oklahoma City Thunder",
   "spread": 11.5,
-  "away_ml": 382,
-  "home_ml": -499,
+  "away_ml": 395,
+  "home_ml": -521,
   "book": "Draft Kings"
  },
  {

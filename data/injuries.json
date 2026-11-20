@@ -1,5 +1,5 @@
 {
- "as_of": "2026-11-19T18",
+ "as_of": "2026-11-19T21",
  "players": [
   {
    "team": "Atlanta Hawks",
@@ -528,10 +528,10 @@
    "team": "Golden State Warriors",
    "id": "6589",
    "name": "Draymond Green",
-   "status": "Out",
+   "status": "Day-To-Day",
    "comment": "Green (elbow) is out for Thursday's game against the Grizzlies.",
    "return": "2026-11-22",
-   "fantasy": "OUT",
+   "fantasy": "GTD",
    "stats": {
     "gp": 13.0,
     "min": 25.538462,
@@ -582,7 +582,7 @@
    "status": "Out",
    "comment": "Williams (hamstring) has progressed to on-court activities and will be re-evaluated Saturday.",
    "return": "2026-11-22",
-   "fantasy": "OUT",
+   "fantasy": "GTD",
    "stats": {
     "gp": 10.0,
     "min": 16.1,
@@ -769,7 +769,7 @@
    "status": "Out",
    "comment": "Ingram (heel/Achilles) will remain on the inactive list for Thursday's game in San Antonio.",
    "return": "2026-11-21",
-   "fantasy": "OUT",
+   "fantasy": "GTD",
    "stats": {
     "gp": 77.0,
     "min": 33.81818,
@@ -851,10 +851,10 @@
    "team": "Milwaukee Bucks",
    "id": "3134907",
    "name": "Kyle Kuzma",
-   "status": "Out",
+   "status": "Day-To-Day",
    "comment": "Kuzma (shoulder) has been ruled out for Thursday's game against Portland due to a right shoulder contusion.",
    "return": "2026-11-21",
-   "fantasy": "OUT",
+   "fantasy": "GTD",
    "stats": {
     "gp": 15.0,
     "min": 27.133333,
@@ -868,10 +868,10 @@
    "team": "Milwaukee Bucks",
    "id": "3133628",
    "name": "Myles Turner",
-   "status": "Out",
+   "status": "Day-To-Day",
    "comment": "Turner (shoulder) has been ruled out for Thursday's game against Portland due to a left shoulder contusion,",
    "return": "2026-11-21",
-   "fantasy": "OUT",
+   "fantasy": "GTD",
    "stats": {
     "gp": 14.0,
     "min": 26.642857,
@@ -1133,10 +1133,10 @@
    "team": "Portland Trail Blazers",
    "id": "4683021",
    "name": "Deni Avdija",
-   "status": "Out",
+   "status": "Day-To-Day",
    "comment": "Avdija (foot) is listed as out for Thursday's game against the Bucks.",
    "return": "2026-11-21",
-   "fantasy": "OUT",
+   "fantasy": "GTD",
    "stats": {
     "gp": 13.0,
     "min": 32.46154,
@@ -1201,10 +1201,10 @@
    "team": "Portland Trail Blazers",
    "id": "4066211",
    "name": "Robert Williams III",
-   "status": "Out",
+   "status": "Day-To-Day",
    "comment": "Williams (rest) is listed as out for Thursday's game versus the Bucks.",
    "return": "2026-11-21",
-   "fantasy": "OUT",
+   "fantasy": "GTD",
    "stats": {
     "gp": 12.0,
     "min": 16.333334,
@@ -1221,7 +1221,7 @@
    "status": "Out",
    "comment": "Youngblood (heel) has been ruled out for Thursday's game against the Bucks.",
    "return": "2026-11-21",
-   "fantasy": "OUT",
+   "fantasy": "GTD",
    "stats": {
     "gp": 6.0,
     "min": 13.333333,
@@ -1615,10 +1615,10 @@
    "team": "Memphis Grizzlies",
    "id": "4600663",
    "name": "Zach Edey",
-   "status": "Out",
+   "status": "Day-To-Day",
    "comment": "Edey (hip) has been ruled out for Thursday's game against the Warriors.",
    "return": "2026-11-21",
-   "fantasy": "OUT",
+   "fantasy": "GTD",
    "stats": {
     "gp": 12.0,
     "min": 20.75,
@@ -1669,7 +1669,7 @@
    "status": "Out",
    "comment": "Jerome (hip) has been ruled out for Thursday's game against the Warriors.",
    "return": "2026-11-21",
-   "fantasy": "OUT",
+   "fantasy": "GTD",
    "stats": {
     "gp": 11.0,
     "min": 30.454546,
