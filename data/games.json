@@ -1915,5 +1915,13 @@
   "away_score": 111,
   "home_score": 101,
   "cup": true
+ },
+ {
+  "id": "401910023",
+  "date": "2026-11-21",
+  "away": "Milwaukee Bucks",
+  "home": "Philadelphia 76ers",
+  "away_score": 129,
+  "home_score": 132
  }
 ]

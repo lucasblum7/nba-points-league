@@ -1914,9 +1914,9 @@
   "away": "LA Clippers",
   "home": "Dallas Mavericks",
   "fav": "Dallas Mavericks",
-  "spread": 5.5,
-  "away_ml": 179,
-  "home_ml": -216,
+  "spread": 4.5,
+  "away_ml": 164,
+  "home_ml": -196,
   "book": "DraftKings"
  },
  {
@@ -1934,9 +1934,9 @@
   "away": "Portland Trail Blazers",
   "home": "New York Knicks",
   "fav": "New York Knicks",
-  "spread": 5.5,
-  "away_ml": 168,
-  "home_ml": -201,
+  "spread": 2.5,
+  "away_ml": 131,
+  "home_ml": -156,
   "book": "DraftKings"
  },
  {
@@ -1954,9 +1954,9 @@
   "away": "Boston Celtics",
   "home": "Sacramento Kings",
   "fav": "Boston Celtics",
-  "spread": 13.5,
-  "away_ml": -790,
-  "home_ml": 554,
+  "spread": 12.5,
+  "away_ml": -597,
+  "home_ml": 443,
   "book": "DraftKings"
  },
  {
@@ -1964,9 +1964,9 @@
   "away": "New Orleans Pelicans",
   "home": "San Antonio Spurs",
   "fav": "San Antonio Spurs",
-  "spread": 17.5,
-  "away_ml": 850,
-  "home_ml": -1460,
+  "spread": 18.5,
+  "away_ml": 950,
+  "home_ml": -1740,
   "book": "DraftKings"
  }
 ]
