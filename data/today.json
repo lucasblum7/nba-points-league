@@ -48,8 +48,8 @@
   {
    "id": "401909309",
    "time": "5:00 PM",
-   "state": "in",
-   "detail": "3.5 - 4th",
+   "state": "post",
+   "detail": "Final",
    "away": "Washington Wizards",
    "home": "Chicago Bulls",
    "away_score": 98,
@@ -59,8 +59,8 @@
   {
    "id": "401909310",
    "time": "5:00 PM",
-   "state": "in",
-   "detail": "15.3 - 4th",
+   "state": "post",
+   "detail": "Final",
    "away": "New Orleans Pelicans",
    "home": "Oklahoma City Thunder",
    "away_score": 120,
@@ -70,34 +70,34 @@
   {
    "id": "401909311",
    "time": "6:30 PM",
-   "state": "in",
-   "detail": "7:02 - 2nd",
+   "state": "post",
+   "detail": "Final",
    "away": "Phoenix Suns",
    "home": "Utah Jazz",
-   "away_score": 43,
-   "home_score": 32,
+   "away_score": 111,
+   "home_score": 101,
    "cup": true
   },
   {
    "id": "401909312",
    "time": "7:00 PM",
    "state": "in",
-   "detail": "6:49 - 1st",
+   "detail": "7:01 - 4th",
    "away": "Houston Rockets",
    "home": "Denver Nuggets",
-   "away_score": 19,
-   "home_score": 17,
+   "away_score": 109,
+   "home_score": 108,
    "cup": true
   },
   {
    "id": "401909313",
    "time": "7:00 PM",
    "state": "in",
-   "detail": "5:27 - 1st",
+   "detail": "2:19 - 4th",
    "away": "Sacramento Kings",
    "home": "Los Angeles Lakers",
-   "away_score": 16,
-   "home_score": 14,
+   "away_score": 101,
+   "home_score": 101,
    "cup": true
   }
  ]

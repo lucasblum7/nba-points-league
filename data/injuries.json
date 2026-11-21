@@ -1,5 +1,5 @@
 {
- "as_of": "2026-11-20T18",
+ "as_of": "2026-11-20T21",
  "players": [
   {
    "team": "Atlanta Hawks",
@@ -662,6 +662,23 @@
   },
   {
    "team": "Indiana Pacers",
+   "id": "2530530",
+   "name": "T.J. McConnell",
+   "status": "Out",
+   "comment": "Rick Carlisle revealed during his postgame interview that McConnell exited Friday's 128-119 loss with a left hamstring issue, Tony East of Forbes.com reports.",
+   "return": "2026-11-22",
+   "fantasy": "OUT",
+   "stats": {
+    "gp": 6.0,
+    "min": 14.333333,
+    "pts": 7.8333335,
+    "reb": 2.5,
+    "ast": 4.6666665,
+    "this_season": true
+   }
+  },
+  {
+   "team": "Indiana Pacers",
    "id": "4433076",
    "name": "Ben Sheppard",
    "status": "Out",
@@ -1058,6 +1075,23 @@
     "pts": 4.8461537,
     "reb": 4.6153846,
     "ast": 1.7692307,
+    "this_season": true
+   }
+  },
+  {
+   "team": "Phoenix Suns",
+   "id": "4888725",
+   "name": "Ryan Dunn",
+   "status": "Out",
+   "comment": "Dunn won't return to Friday's game against the Jazz due to a right quad injury, Amanda Pflugrad of 3TV Phoenix reports.",
+   "return": "2026-11-23",
+   "fantasy": "OUT",
+   "stats": {
+    "gp": 14.0,
+    "min": 16.785715,
+    "pts": 5.142857,
+    "reb": 4.0,
+    "ast": 1.1428572,
     "this_season": true
    }
   },
