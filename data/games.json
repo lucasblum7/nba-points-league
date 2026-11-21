@@ -1834,5 +1834,41 @@
   "home": "San Antonio Spurs",
   "away_score": 112,
   "home_score": 124
+ },
+ {
+  "id": "401909305",
+  "date": "2026-11-20",
+  "away": "Charlotte Hornets",
+  "home": "Atlanta Hawks",
+  "away_score": 97,
+  "home_score": 111,
+  "cup": true
+ },
+ {
+  "id": "401909306",
+  "date": "2026-11-20",
+  "away": "Orlando Magic",
+  "home": "Brooklyn Nets",
+  "away_score": 113,
+  "home_score": 111,
+  "cup": true
+ },
+ {
+  "id": "401909307",
+  "date": "2026-11-20",
+  "away": "Indiana Pacers",
+  "home": "Cleveland Cavaliers",
+  "away_score": 119,
+  "home_score": 128,
+  "cup": true
+ },
+ {
+  "id": "401909308",
+  "date": "2026-11-20",
+  "away": "Toronto Raptors",
+  "home": "Detroit Pistons",
+  "away_score": 105,
+  "home_score": 102,
+  "cup": true
  }
 ]
