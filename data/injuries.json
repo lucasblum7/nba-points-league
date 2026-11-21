@@ -1,5 +1,5 @@
 {
- "as_of": "2026-11-20T21",
+ "as_of": "2026-11-21T03",
  "players": [
   {
    "team": "Atlanta Hawks",
@@ -669,11 +669,11 @@
    "return": "2026-11-22",
    "fantasy": "OUT",
    "stats": {
-    "gp": 6.0,
-    "min": 14.333333,
-    "pts": 7.8333335,
-    "reb": 2.5,
-    "ast": 4.6666665,
+    "gp": 7.0,
+    "min": 13.857142,
+    "pts": 7.0,
+    "reb": 2.2857144,
+    "ast": 4.285714,
     "this_season": true
    }
   },
@@ -870,14 +870,14 @@
    "name": "Nolan Traore",
    "status": "Out",
    "comment": "Traore (hamstring) won't return to Friday's game against Orlando, Meghan Triplett of YES Network reports. He finished with four points (2-6 FG, 0-2 3Pt) and two assists over 18 minutes.",
-   "return": "2026-11-20",
+   "return": "2026-11-23",
    "fantasy": "OUT",
    "stats": {
-    "gp": 13.0,
-    "min": 22.615385,
-    "pts": 13.538462,
-    "reb": 1.7692307,
-    "ast": 2.7692308,
+    "gp": 14.0,
+    "min": 22.285715,
+    "pts": 12.857142,
+    "reb": 1.6428572,
+    "ast": 2.7142856,
     "this_season": true
    }
   },
@@ -1087,11 +1087,11 @@
    "return": "2026-11-23",
    "fantasy": "OUT",
    "stats": {
-    "gp": 14.0,
-    "min": 16.785715,
-    "pts": 5.142857,
-    "reb": 4.0,
-    "ast": 1.1428572,
+    "gp": 15.0,
+    "min": 16.266666,
+    "pts": 4.8,
+    "reb": 4.0666666,
+    "ast": 1.0666667,
     "this_season": true
    }
   },
@@ -1598,10 +1598,10 @@
    "team": "Memphis Grizzlies",
    "id": "2991070",
    "name": "Jerami Grant",
-   "status": "Day-To-Day",
-   "comment": "Grant won't return to Thursday's game against the Warriors due to a left calf injury. He'll finish with three points (1-2 FG, 1-1 3Pt) across five minutes.",
-   "return": "2026-11-21",
-   "fantasy": "GTD",
+   "status": "Out",
+   "comment": "Grant (calf) is out for Saturday's game against the Timberwolves.",
+   "return": "2026-11-23",
+   "fantasy": "OUT",
    "stats": {
     "gp": 15.0,
     "min": 22.266666,

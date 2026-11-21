@@ -1,69 +1,6 @@
 {
- "as_of": "2026-11-20",
+ "as_of": "2026-11-21",
  "games": [
-  {
-   "date": "2026-11-20",
-   "time": "4:00 PM",
-   "away": "Charlotte Hornets",
-   "home": "Atlanta Hawks",
-   "cup": true
-  },
-  {
-   "date": "2026-11-20",
-   "time": "4:30 PM",
-   "away": "Orlando Magic",
-   "home": "Brooklyn Nets",
-   "cup": true
-  },
-  {
-   "date": "2026-11-20",
-   "time": "5:00 PM",
-   "away": "Washington Wizards",
-   "home": "Chicago Bulls",
-   "cup": true
-  },
-  {
-   "date": "2026-11-20",
-   "time": "4:30 PM",
-   "away": "Indiana Pacers",
-   "home": "Cleveland Cavaliers",
-   "cup": true
-  },
-  {
-   "date": "2026-11-20",
-   "time": "7:00 PM",
-   "away": "Houston Rockets",
-   "home": "Denver Nuggets",
-   "cup": true
-  },
-  {
-   "date": "2026-11-20",
-   "time": "4:30 PM",
-   "away": "Toronto Raptors",
-   "home": "Detroit Pistons",
-   "cup": true
-  },
-  {
-   "date": "2026-11-20",
-   "time": "7:00 PM",
-   "away": "Sacramento Kings",
-   "home": "Los Angeles Lakers",
-   "cup": true
-  },
-  {
-   "date": "2026-11-20",
-   "time": "5:00 PM",
-   "away": "New Orleans Pelicans",
-   "home": "Oklahoma City Thunder",
-   "cup": true
-  },
-  {
-   "date": "2026-11-20",
-   "time": "6:30 PM",
-   "away": "Phoenix Suns",
-   "home": "Utah Jazz",
-   "cup": true
-  },
   {
    "date": "2026-11-21",
    "time": "5:00 PM",
@@ -509,7 +446,7 @@
   },
   {
    "date": "2026-12-01",
-   "time": "8:00 PM",
+   "time": "7:00 PM",
    "away": "Utah Jazz",
    "home": "Golden State Warriors"
   },
@@ -539,7 +476,7 @@
   },
   {
    "date": "2026-12-01",
-   "time": "7:00 PM",
+   "time": "8:00 PM",
    "away": "Minnesota Timberwolves",
    "home": "Portland Trail Blazers"
   },

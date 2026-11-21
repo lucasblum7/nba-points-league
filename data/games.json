@@ -1872,12 +1872,30 @@
   "cup": true
  },
  {
+  "id": "401909312",
+  "date": "2026-11-20",
+  "away": "Houston Rockets",
+  "home": "Denver Nuggets",
+  "away_score": 124,
+  "home_score": 133,
+  "cup": true
+ },
+ {
   "id": "401909308",
   "date": "2026-11-20",
   "away": "Toronto Raptors",
   "home": "Detroit Pistons",
   "away_score": 105,
   "home_score": 102,
+  "cup": true
+ },
+ {
+  "id": "401909313",
+  "date": "2026-11-20",
+  "away": "Sacramento Kings",
+  "home": "Los Angeles Lakers",
+  "away_score": 104,
+  "home_score": 106,
   "cup": true
  },
  {
