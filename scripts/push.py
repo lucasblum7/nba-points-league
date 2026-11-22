@@ -78,14 +78,14 @@ def run(cfg, rosters, games, bonuses, events, today, now_utc, pt, load, save, lo
     test_to = os.environ.get("PUSH_TEST", "").strip()
     if test_to:   # manual test from the Actions tab
         kind = os.environ.get("PUSH_TEST_KIND", "").strip()
-        if kind in ("recap", "samples"):
+        if kind in ("recap", "samples", "more"):
             pass   # handled below: builds the real recap for the latest game day, sent to this owner only
         elif kind == "upset":
             title, body = "🚨 Upset! Kings won (test)", "Kings beat the Celtics 97–96 as a +446 underdog. +1 for you. (This is a test alert.)"
         else:
             title, body = "Hoop Squads alerts are on 🏀", "This is a test. You'll get finals, tip-off reminders and a nightly recap for your teams."
         ok = True
-        if kind not in ("recap", "samples"):
+        if kind not in ("recap", "samples", "more"):
             ok = send(app_id, key, test_to, title, body, log, count)
         log.append(f"push test to {test_to}: {'sent' if ok and key else 'not sent (missing key)' if not key else 'failed'}")
     sent_ids = plog.get("sent", {})
@@ -350,6 +350,210 @@ def run(cfg, rosters, games, bonuses, events, today, now_utc, pt, load, save, lo
             plog.setdefault("recaps", []).append(f"recap|{today.isoformat()}")
     today = real_today
 
+    # ---------- more alerts: matchups, standings, playoffs, close games, injuries, game-day lineup, weekly awards ----------
+    local = now_utc.astimezone(pt)
+    test_more = test_to if os.environ.get("PUSH_TEST_KIND", "").strip() == "more" else ""
+    st = plog.setdefault("state", {})
+    first_time = not st.get("init")
+    M = cfg.get("matchups") or {}
+    week1 = date.fromisoformat(cfg["week1_monday"])
+    def wk_of(d):
+        return (d - week1).days // 7 + 1
+    def pairs(wk):
+        if not M.get("rounds") or wk < M.get("start_week", 1):
+            return []
+        return M["rounds"][(wk - M.get("start_week", 1)) % len(M["rounds"])]
+    def week_nets(wk, through):
+        start = week1 + timedelta(days=(wk - 1) * 7); end = min(start + timedelta(days=6), through)
+        net = {o: 0 for o in owners}; wins = {o: 0 for o in owners}; losses = {o: 0 for o in owners}
+        for g in games:
+            d = date.fromisoformat(g["date"])
+            if not (start <= d <= end):
+                continue
+            hw = g["home_score"] > g["away_score"]
+            w, l = (g["home"], g["away"]) if hw else (g["away"], g["home"])
+            wt = 2 if g.get("cup") else 1
+            if owner.get(w): net[owner[w]] += wt; wins[owner[w]] += 1
+            if owner.get(l): net[owner[l]] -= wt; losses[owner[l]] += 1
+        return net, wins, losses
+    def leader(a, b, net, wins):
+        if net[a] != net[b]: return a if net[a] > net[b] else b
+        if wins[a] != wins[b]: return a if wins[a] > wins[b] else b
+        return None
+    def deliver(eid, o, title, body):
+        if test_more:
+            if o == test_more and eid.split("|")[0] not in sent_kinds:
+                sent_kinds.add(eid.split("|")[0]); send(app_id, key, o, title + " (test)", body, log, count)
+            return
+        if not first_time:
+            once(eid, o, title, body)
+        else:
+            sent_ids[eid] = today.isoformat()
+    sent_kinds = set()
+    wk_now = wk_of(today)
+
+    # 1. matchup lead changes (this week)
+    net, wins, _ = week_nets(wk_now, today)
+    leads = st.setdefault("leads", {})
+    for a, b in pairs(wk_now):
+        k = f"{wk_now}|{a}|{b}"; ld = leader(a, b, net, wins); was = leads.get(k, "?")
+        if test_more and test_more in (a, b):
+            was = b if ld == a else a   # pretend it just flipped
+        if was != "?" and ld and ld != was:
+            for o in (a, b):
+                other = b if o == a else a
+                if ld == o:
+                    deliver(f"lead|{k}|{ld}|{today}", o, f"🔄 You took the lead on {other}!", f"⚔️ Week {wk_now}: up {abs(net[o]-net[other]) or 'on total wins'} ({sign(net[o])} to {sign(net[other])})\n" + pts_line(o))
+                else:
+                    deliver(f"lead|{k}|{ld}|{today}", o, f"⚠️ {other} took the lead", f"⚔️ Week {wk_now}: down {abs(net[o]-net[other]) or 'on total wins'} ({sign(net[o])} to {sign(net[other])})\n" + pts_line(o))
+        leads[k] = ld
+
+    # 2 + 3 + 9. Monday morning: last week's results, weekly awards, this week's preview
+    if (local.weekday() == 0 and local.hour >= 9) or test_more:
+        last = wk_now - 1
+        if last >= M.get("start_week", 1):
+            n2, w2, l2 = week_nets(last, week1 + timedelta(days=(last - 1) * 7 + 6))
+            rec = {o: [0, 0, 0] for o in owners}
+            for wk in range(M.get("start_week", 1), last + 1):
+                nn, ww, _ = week_nets(wk, week1 + timedelta(days=(wk - 1) * 7 + 6))
+                for a, b in pairs(wk):
+                    L_ = leader(a, b, nn, ww)
+                    for o in (a, b):
+                        rec[o][0 if L_ == o else 2 if L_ is None else 1] += 1
+            for a, b in pairs(last):
+                L_ = leader(a, b, n2, w2)
+                for o in (a, b):
+                    other = b if o == a else a
+                    r = rec[o]; rs = f"{r[0]}–{r[1]}" + (f"–{r[2]}" if r[2] else "")
+                    t_ = f"🏁 You beat {other} in Week {last}!" if L_ == o else f"🏁 {other} won Week {last}" if L_ else f"🏁 Week {last} vs {other}: a tie"
+                    deliver(f"wkres|{last}|{o}", o, t_, f"⚔️ Final: {sign(n2[o])} to {sign(n2[other])} ({w2[o]}–{l2[o]} vs {w2[other]}–{l2[other]})\n📋 Matchup record: {rs}")
+            best = max(w2.values()); worst = min(n2.values())
+            kings = [o for o in owners if w2[o] == best]; colds = [o for o in owners if n2[o] == worst]
+            body = f"👑 Most wins: {' & '.join(kings)} ({best})\n🧊 Coldest week: {' & '.join(colds)} ({sign(worst)} net)"
+            for o in owners:
+                deliver(f"awards|{last}|{o}", o, f"🏅 Week {last} awards", body)
+        sched = (load("season_schedule.json", {}) or {}).get("games", []) + (load("schedule.json", {}) or {}).get("games", [])
+        start = week1 + timedelta(days=(wk_now - 1) * 7); end = start + timedelta(days=6)
+        seen = set(); cnt = {o: 0 for o in owners}; cupc = {o: 0 for o in owners}
+        for g in games + sched:
+            d = date.fromisoformat(g["date"]); k = (g["date"], g["away"], g["home"])
+            if not (start <= d <= end) or k in seen:
+                continue
+            seen.add(k)
+            for t in (g["away"], g["home"]):
+                if owner.get(t): cnt[owner[t]] += 1; cupc[owner[t]] += 1 if g.get("cup") else 0
+        for a, b in pairs(wk_now):
+            for o in (a, b):
+                other = b if o == a else a
+                lines = [f"📅 You have {cnt[o]} games, {other} has {cnt[other]}"]
+                if cupc[o] or cupc[other]:
+                    lines.append(f"🏆 Cup games (±2): you {cupc[o]}, {other} {cupc[other]}")
+                lines.append(pts_line(o))
+                deliver(f"preview|{wk_now}|{o}", o, f"⚔️ Week {wk_now}: you vs {other}", "\n".join(lines))
+
+    # 4. standings moves
+    places = st.setdefault("places", {})
+    for o in owners:
+        pl = 1 + sum(1 for x in owners if PTS[x] > PTS[o]); was = places.get(o)
+        if test_more == o and was is None:
+            was = pl + 1
+        if was and pl != was:
+            top = max(PTS.values()); gap = top - PTS[o]
+            nxt = sorted((PTS[x] for x in owners if PTS[x] > PTS[o]))
+            tail = (f"🎯 {gap} back of 1st" if gap else "🎯 You're in 1st")
+            if pl < was:
+                deliver(f"move|{o}|{pl}|{today}", o, f"📈 You moved up to {ordn(pl)}!", f"{pts_line(o)}\n{tail}")
+            else:
+                chaser = [x for x in owners if x != o and PTS[x] > PTS[o]]
+                who = min(chaser, key=lambda x: PTS[x]) if chaser else None
+                deliver(f"move|{o}|{pl}|{today}", o, f"📉 You slipped to {ordn(pl)}", f"{pts_line(o)}\n" + (f"🎯 {PTS[who] - PTS[o]} behind {who}" if who else tail))
+        places[o] = pl
+
+    # 5. playoff odds milestones (crossing 99% or dropping under 5%)
+    od = (load("odds.json", {}) or {}).get("teams", {})
+    marks = st.setdefault("odds", {})
+    for t, v in od.items():
+        o = owner.get(t); pc = v.get("playoffs")
+        if not o or pc is None:
+            continue
+        band = "lock" if pc >= 99 else "out" if pc < 5 else "mid"; was = marks.get(t)
+        if test_more == o and band != "mid" and was is None:
+            was = "mid"
+        if was and band != was and band != "mid":
+            if band == "lock":
+                deliver(f"odds|{t}|lock", o, f"🎟️ {short(t)} are a playoff lock", f"📈 Playoff odds: {pc:.0f}%+\n💰 Making the playoffs is worth +{S.get('made_playoffs', 5)}\n" + pts_line(o))
+            else:
+                deliver(f"odds|{t}|out", o, f"📉 {short(t)} playoff hopes fading", f"📉 Playoff odds: under 5%\n" + pts_line(o))
+        marks[t] = band
+    for bb in bonuses:   # actual clinch, once the playoffs are set
+        o = owner.get(bb["team"])
+        if o and bb.get("made_playoffs"):
+            deliver(f"clinch|{bb['team']}", o, f"🎟️ {short(bb['team'])} made the playoffs! +{S.get('made_playoffs', 5)}", pts_line(o))
+
+    # 6. close game late (4th quarter or OT, within 5)
+    for e in events:
+        if e.get("state") != "in":
+            continue
+        det = (e.get("detail") or "")
+        if not ("4th" in det or "OT" in det):
+            continue
+        a, h = e["away"], e["home"]
+        if a.get("score") is None or h.get("score") is None or abs(a["score"] - h["score"]) > 5:
+            continue
+        for t in (a["name"], h["name"]):
+            o = owner.get(t)
+            if o:
+                deliver(f"close|{e['id']}|{o}", o, f"🔥 Close one: {short(t)} game is tight", f"🏀 {ab(a['name'])} {a['score']}, {ab(h['name'])} {h['score']} · {det}\n" + (week_line(o, today) or pts_line(o)))
+    if test_more:   # a sample close game for the test
+        gg = next((g for g in reversed(games) if test_more in (owner.get(g["home"]), owner.get(g["away"]))), None)
+        if gg:
+            t = gg["home"] if owner.get(gg["home"]) == test_more else gg["away"]
+            deliver(f"close|test|{test_more}", test_more, f"🔥 Close one: {short(t)} game is tight", f"🏀 {ab(gg['away'])} 101, {ab(gg['home'])} 99 · 2:14 - 4th\n" + (week_line(test_more, today) or pts_line(test_more)))
+
+    # 7. injury news on key players (Out / Doubtful), once per player per status
+    try:
+        import odds as _odds
+        imp = _odds.player_impact
+    except Exception:
+        imp = lambda p_: 0
+    inj = (load("injuries.json", {}) or {}).get("players", [])
+    seen_inj = st.setdefault("inj", {})
+    for p_ in sorted(inj, key=lambda x: -imp(x)):
+        o = owner.get(p_.get("team")); stt = (p_.get("status") or "")
+        if not o or imp(p_) < 2 or not (stt.lower().startswith("out") or "doubtful" in stt.lower()):
+            continue
+        kk = f"{p_.get('id')}|{stt}"
+        if seen_inj.get(p_.get("id")) == stt and not test_more:
+            continue
+        seen_inj[p_.get("id")] = stt
+        sts = p_.get("stats") or {}
+        ret = f"\n🗓️ Expected back: {date.fromisoformat(p_['return'][:10]).strftime('%b %-d')}" if p_.get("return") else ""
+        deliver(f"inj|{kk}", o, f"🩹 {p_['name']} ({ab(p_['team'])}): {stt}", "📋 " + (lambda c: c if len(c) <= 110 else c[:107].rsplit(" ", 1)[0] + "…")((p_.get('comment') or '').strip()) + (f"\n📊 {sts.get('pts', 0):.1f} pts · {sts.get('reb', 0):.1f} reb · {sts.get('ast', 0):.1f} ast" if sts else "") + ret)
+
+    # 8. morning game-day lineup (first run after 9 AM PT)
+    started = any(e.get("state") != "pre" for e in events if e.get("date") == today.isoformat())
+    if (local.hour >= 9 and not started) or test_more:
+        sched_t = [g for g in ((load("schedule.json", {}) or {}).get("games", [])) if g["date"] == today.isoformat()]
+        if test_more and not any(test_more in (owner.get(g["home"]), owner.get(g["away"])) for g in sched_t):
+            nxt = [g for g in ((load("schedule.json", {}) or {}).get("games", [])) if g["date"] > today.isoformat()]
+            if nxt:
+                sched_t = [g for g in nxt if g["date"] == nxt[0]["date"]]
+        for o in owners:
+            mine = []
+            for g in sched_t:
+                ts = [t for t in (g["away"], g["home"]) if owner.get(t) == o]
+                if not ts:
+                    continue
+                if len(ts) == 2:
+                    mine.append(f"🏀 {ab(g['away'])} @ {ab(g['home'])} · {g.get('time', '')} · both yours" + (" 🏆" if g.get("cup") else ""))
+                    continue
+                t = ts[0]; where = "vs" if t == g["home"] else "@"; oth = g["away"] if t == g["home"] else g["home"]
+                mine.append(f"🏀 {ab(t)} {where} {ab(oth)} · {g.get('time', '')}" + (" 🏆" if g.get("cup") else ""))
+            if mine:
+                deliver(f"lineup|{today}|{o}", o, f"📅 Game day: {len(mine)} game{'s' if len(mine) != 1 else ''} today", "\n".join(mine[:5]))
+
+    if not test_more:
+        st["init"] = True
     # forget old ids so the log stays small
     keep = (today - timedelta(days=KEEP_DAYS)).isoformat()
     plog["sent"] = {k: v for k, v in sent_ids.items() if v >= keep}

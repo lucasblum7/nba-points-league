@@ -16,7 +16,7 @@ on:
         type: string
         default: ""
       push_test_kind:
-        description: "Test alert type: blank for a basic test, upset, recap, or samples"
+        description: "Test alert type: blank for a basic test, upset, recap, samples, or more"
         type: string
         default: ""
 
