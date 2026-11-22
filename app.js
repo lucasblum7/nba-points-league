@@ -1193,7 +1193,7 @@
       box.append(card);
     });
     ov.append(box);
-    ov.addEventListener('click', (e) => { if (e.target === ov) closeBonus(); });
+    ov.addEventListener('click', (e) => { if (e.target === ov) dismiss(); });
     document.body.append(ov); document.addEventListener('keydown', bonusKey); x.focus();
   }
 
@@ -1479,7 +1479,7 @@
       const ld = mk('div', 'oc-lead');
       [['PTS', 'pointsPerGame'], ['AST', 'assistsPerGame'], ['REB', 'reboundsPerGame']].forEach(([lab, k]) => { const c = mk('span', 'oc-lc'); c.dataset.k = k; c.append(mk('span', 'oc-lk', lab), mk('b', 'oc-lv', '–'), mk('span', 'oc-ln', '')); ld.append(c); });
       teamLeaders(t.team).then((L) => { if (!L) { ld.hidden = true; return; } ld.querySelectorAll('.oc-lc').forEach((c) => { const x = L[c.dataset.k]; if (!x) return; c.querySelector('.oc-lv').textContent = x.v; c.querySelector('.oc-ln').textContent = x.name; c.title = `${x.name}: ${x.v} ${c.firstChild.textContent.toLowerCase()} per game`; }); });
-      r.append(top, meta, ld); r.addEventListener('click', () => showTeam(t, C, slate)); list.append(r);
+      r.append(top, meta, ld); r.addEventListener('click', () => showTeam(t, C, slate, null, { label: o + "'s roster", open: () => showOwner(o, C, slate) })); list.append(r);
     });
     box.append(list);
     box.append(mk('p', 'players-foot', 'Tap a team for its full team card'));
@@ -1672,8 +1672,9 @@
     return sec;
   }
 
-  function showTeam(t, C, slate, from) {
+  function showTeam(t, C, slate, from, back) {
     closeBonus();
+    if (back) backTo = back.open;   // opened from an owner's roster card: closing it goes back there
     const ov = mk('div', 'bp-overlay'); ov.id = 'bonus-pop';
     const box = mk('div', 'bp-box tc-box'); box.setAttribute('role', 'dialog');
     { // team colors: a band across the top and a soft wash behind the header
@@ -1688,8 +1689,12 @@
     head.append(badge(t.team, 'badge tc-badge'));
     const ttl = mk('div', 'bp-title tc-title'); ttl.append(mk('b', null, t.team), mk('span', null, t.owner + "'s team"));
     const pts = mk('div', 'tc-pts', fmt(t.points)); pts.append(mk('small', null, t.points === 1 ? 'pt' : 'pts'));
-    const x = mk('button', 'bp-close', '✕'); x.type = 'button'; x.setAttribute('aria-label', 'Close'); x.addEventListener('click', closeBonus);
+    const x = mk('button', 'bp-close', '✕'); x.type = 'button'; x.setAttribute('aria-label', 'Close'); x.addEventListener('click', dismiss);
     head.append(ttl, pts, x);
+    if (back && !from) {   // a way back to the roster card it came from
+      const bk = mk('button', 'tc-back', '‹ ' + back.label); bk.type = 'button'; bk.setAttribute('aria-label', 'Back to ' + back.label);
+      bk.addEventListener('click', dismiss); box.append(bk);
+    }
     if (from) {   // opened from another team's card: offer a way back
       const back = mk('button', 'tc-back', '‹ ' + short(from.team)); back.type = 'button'; back.setAttribute('aria-label', 'Back to ' + from.team);
       back.addEventListener('click', () => showTeam(from, C, slate)); box.append(back);
@@ -1840,7 +1845,7 @@
     document.body.append(ov); document.addEventListener('keydown', bonusKey); x.focus();
   }
   // ---------- phones: swipe a sheet down to close it, like iOS ----------
-  function enableSwipe(ov, close = closeBonus) {
+  function enableSwipe(ov, close = dismiss) {
     const box = ov.querySelector('.bp-box'); if (!box || !matchMedia('(max-width: 600px)').matches) return;
     let y0 = null, x0 = 0, dy = 0, t0 = 0, dragging = false;
     const start = (e) => {
@@ -1869,8 +1874,11 @@
   }
   new MutationObserver((ms) => ms.forEach((m) => m.addedNodes.forEach((n) => { if (n.id === 'bonus-pop') enableSwipe(n); else if (n.id === 'why-pop') enableSwipe(n, closeWhy); }))).observe(document.body, { childList: true });
 
-  function closeBonus() { closeWhy(); gcNav = null; clearInterval(boxTimer); const o = document.getElementById('bonus-pop'); if (o) o.remove(); document.removeEventListener('keydown', bonusKey); }
-  function bonusKey(e) { if (e.key === 'Escape') closeBonus(); else if (gcNav && (e.key === 'ArrowRight' || e.key === 'ArrowLeft')) { e.preventDefault(); gcNav(e.key === 'ArrowRight' ? 1 : -1); } }
+  // backTo: where closing the current card should land (set when a team card is opened from a roster card)
+  let backTo = null;
+  function dismiss() { const f = backTo; closeBonus(); if (f) f(); }
+  function closeBonus() { backTo = null; closeWhy(); gcNav = null; clearInterval(boxTimer); const o = document.getElementById('bonus-pop'); if (o) o.remove(); document.removeEventListener('keydown', bonusKey); }
+  function bonusKey(e) { if (e.key === 'Escape') dismiss(); else if (gcNav && (e.key === 'ArrowRight' || e.key === 'ArrowLeft')) { e.preventDefault(); gcNav(e.key === 'ArrowRight' ? 1 : -1); } }
 
   function medal(rank) { return rank === 1 ? 'p1' : rank === 2 ? 'p2' : rank === 3 ? 'p3' : null; }
 
