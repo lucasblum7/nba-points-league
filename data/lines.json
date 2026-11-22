@@ -1985,8 +1985,8 @@
   "home": "Chicago Bulls",
   "fav": "Denver Nuggets",
   "spread": 8.5,
-  "away_ml": -375,
-  "home_ml": 298,
+  "away_ml": -374,
+  "home_ml": 297,
   "book": "DraftKings"
  },
  {
@@ -1994,9 +1994,9 @@
   "away": "Boston Celtics",
   "home": "Golden State Warriors",
   "fav": "Boston Celtics",
-  "spread": 9.5,
-  "away_ml": -410,
-  "home_ml": 322,
+  "spread": 8.5,
+  "away_ml": -359,
+  "home_ml": 286,
   "book": "DraftKings"
  },
  {
@@ -2005,8 +2005,8 @@
   "home": "Miami Heat",
   "fav": "Miami Heat",
   "spread": 2.5,
-  "away_ml": 117,
-  "home_ml": -139,
+  "away_ml": 124,
+  "home_ml": -148,
   "book": "DraftKings"
  },
  {
@@ -2015,8 +2015,8 @@
   "home": "New York Knicks",
   "fav": "New York Knicks",
   "spread": 9.5,
-  "away_ml": 312,
-  "home_ml": -396,
+  "away_ml": 301,
+  "home_ml": -380,
   "book": "DraftKings"
  },
  {
@@ -2025,8 +2025,8 @@
   "home": "Utah Jazz",
   "fav": "Dallas Mavericks",
   "spread": 1.5,
-  "away_ml": -125,
-  "home_ml": 105,
+  "away_ml": -115,
+  "home_ml": -103,
   "book": "DraftKings"
  },
  {
@@ -2035,8 +2035,8 @@
   "home": "Washington Wizards",
   "fav": "Orlando Magic",
   "spread": 5.5,
-  "away_ml": -206,
-  "home_ml": 172,
+  "away_ml": -222,
+  "home_ml": 185,
   "book": "DraftKings"
  }
 ]

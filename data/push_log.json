@@ -63,7 +63,7 @@
    "Denver Nuggets": "mid",
    "Detroit Pistons": "lock",
    "Golden State Warriors": "mid",
-   "Houston Rockets": "lock",
+   "Houston Rockets": "mid",
    "Indiana Pacers": "mid",
    "LA Clippers": "out",
    "Los Angeles Lakers": "mid",
@@ -111,6 +111,7 @@
    "4593803": "Out",
    "3078576": "Out",
    "3913176": "Out"
-  }
+  },
+  "init": true
  }
 }
