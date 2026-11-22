@@ -413,7 +413,7 @@
       window.OneSignalDeferred = window.OneSignalDeferred || [];
       window.OneSignalDeferred.push(async (OS) => {
         try {
-          await OS.init({ appId, serviceWorkerPath: base.slice(1) + 'push/onesignal/OneSignalSDKWorker.js', serviceWorkerParam: { scope: base + 'push/onesignal/' }, allowLocalhostAsSecureOrigin: true });
+          await OS.init({ appId, safari_web_id: D.config.onesignal_safari_web_id, serviceWorkerPath: base.slice(1) + 'push/onesignal/OneSignalSDKWorker.js', serviceWorkerParam: { scope: base + 'push/onesignal/' }, allowLocalhostAsSecureOrigin: true });
           OS.User.PushSubscription.addEventListener('change', () => renderPush());
           resolve(OS);
         } catch (e) { reject(e); }
