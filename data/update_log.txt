@@ -1,7 +1,6 @@
-2026-11-22T06:23:15+00:00 ok
+2026-11-22T06:33:39+00:00 ok
 checked 2026-11-18 through 2026-11-22
 fetched 38 events
-odds: 110 injured players, 110 in ESPN's report
 push test to Lucas: sent
-push: sent 7 notification(s)
-changed: games (1 new), lines, today, injuries, odds
+push: sent 1 notification(s)
+changed: lines
