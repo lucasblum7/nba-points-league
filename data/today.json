@@ -59,12 +59,12 @@
   {
    "id": "401910028",
    "time": "7:00 PM",
-   "state": "in",
-   "detail": "5:50 - 3rd",
+   "state": "post",
+   "detail": "Final",
    "away": "Boston Celtics",
    "home": "Sacramento Kings",
-   "away_score": 60,
-   "home_score": 55,
+   "away_score": 96,
+   "home_score": 97,
    "cup": false
   }
  ]

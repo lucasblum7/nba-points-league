@@ -1,5 +1,5 @@
 {
- "as_of": "2026-11-21T18",
+ "as_of": "2026-11-21T21",
  "players": [
   {
    "team": "Atlanta Hawks",
@@ -297,6 +297,23 @@
     "pts": 13.384615,
     "reb": 7.923077,
     "ast": 2.1538463,
+    "this_season": true
+   }
+  },
+  {
+   "team": "Chicago Bulls",
+   "id": "4431687",
+   "name": "Patrick Williams",
+   "status": "Day-To-Day",
+   "comment": "Williams is probable for Sunday's game against the Nuggets due to a left thumb sprain.",
+   "return": "2026-11-22",
+   "fantasy": "GTD",
+   "stats": {
+    "gp": 8.0,
+    "min": 21.5,
+    "pts": 6.875,
+    "reb": 2.875,
+    "ast": 1.875,
     "this_season": true
    }
   },
@@ -611,23 +628,6 @@
   },
   {
    "team": "Golden State Warriors",
-   "id": "6589",
-   "name": "Draymond Green",
-   "status": "Day-To-Day",
-   "comment": "Green (elbow) is out for Thursday's game against the Grizzlies.",
-   "return": "2026-11-22",
-   "fantasy": "GTD",
-   "stats": {
-    "gp": 13.0,
-    "min": 25.538462,
-    "pts": 3.1538463,
-    "reb": 4.6923075,
-    "ast": 6.5384617,
-    "this_season": true
-   }
-  },
-  {
-   "team": "Golden State Warriors",
    "id": "4432171",
    "name": "Moses Moody",
    "status": "Out",
@@ -665,9 +665,9 @@
    "id": "4397040",
    "name": "Brandon Williams",
    "status": "Out",
-   "comment": "Williams (hamstring) has progressed to on-court activities and will be re-evaluated Saturday.",
-   "return": "2026-11-22",
-   "fantasy": "GTD",
+   "comment": "Williams (hamstring) is out for Sunday's game against the Celtics.",
+   "return": "2026-11-25",
+   "fantasy": "OUT",
    "stats": {
     "gp": 10.0,
     "min": 16.1,
@@ -1057,8 +1057,8 @@
    "name": "Jonathan Isaac",
    "status": "Out",
    "comment": "Isaac (knee) is out for Sunday's game against the Wizards.",
-   "return": "2026-11-29",
-   "fantasy": "GTD",
+   "return": "2026-11-28",
+   "fantasy": "OUT",
    "stats": {
     "gp": 52.0,
     "min": 10.019231,
