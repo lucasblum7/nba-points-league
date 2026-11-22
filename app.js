@@ -1495,15 +1495,16 @@
     document.body.append(ov); document.addEventListener('keydown', bonusKey); x.focus();
   }
 
-  function showGame(g, C, slate, date, dir) {
-    closeBonus();
+  function showGame(g, C, slate, date, dir, stack) {
+    const under = stack ? stackCurrent() : false;
+    if (!under) closeBonus();
     const list = sbOrder.some((x) => x.g === g) ? sbOrder : [{ g, slate, date }];
     const idx = list.findIndex((x) => x.g === g);
     const final = g.state === 'post', live = g.state === 'in';
     const T = { away: C.teams.find((x) => x.team === g.away), home: C.teams.find((x) => x.team === g.home) };
     const ln = C.lineOf.get(date + '|' + g.away + '|' + g.home) || {};
     const winner = final ? (g.home_score > g.away_score ? g.home : g.away) : null;
-    const ov = mk('div', 'bp-overlay' + (dir ? ' gc-nav' : '')); ov.id = 'bonus-pop';
+    const ov = mk('div', 'bp-overlay' + (dir ? ' gc-nav' : '') + (under ? ' stacked' : '')); ov.id = 'bonus-pop';
     const box = mk('div', 'bp-box gc-box' + (dir ? (dir > 0 ? ' gc-in-next' : ' gc-in-prev') : '')); box.setAttribute('role', 'dialog'); box.setAttribute('aria-modal', 'true'); box.setAttribute('aria-label', `${g.away} at ${g.home}` + (list.length > 1 ? `, game ${idx + 1} of ${list.length}` : ''));
     // story-style progress: one segment per game on this day
     if (list.length > 1) {
@@ -1514,7 +1515,7 @@
     const soon = !final && !live ? soonLabel(date, g.time) : null;
     top.append(mk('span', 'gc-status ' + (live ? 'live' : final ? 'final' : soon ? 'soon' : ''), final ? 'Final' : live ? '● ' + (g.detail || 'Live') : soon ? `⏱ ${soon}` : `${dayName(date, { weekday: 'short', month: 'short', day: 'numeric' })} · ${g.time || ''}`));
     if (g.cup) top.append(mk('span', 'gc-cup', '🏆 NBA Cup · +2 pts · ±2 in matchups'));
-    const x = mk('button', 'bp-close', '✕'); x.type = 'button'; x.setAttribute('aria-label', 'Close'); x.addEventListener('click', closeBonus); top.append(x);
+    const x = mk('button', 'bp-close', '✕'); x.type = 'button'; x.setAttribute('aria-label', 'Close'); x.addEventListener('click', dismiss); top.append(x);
     box.append(top);
     // the two teams
     const face = mk('div', 'gc-face');
@@ -1576,7 +1577,7 @@
     }
     box.append(bxw, ovw);
     box.append(mk('p', 'players-foot', list.length > 1 ? 'Swipe for the next game · tap a team for its team card' : 'Tap a team for its full team card'));
-    ov.append(box); ov.addEventListener('click', (e) => { if (e.target === ov) closeBonus(); });
+    ov.append(box); ov.addEventListener('click', (e) => { if (e.target === ov) dismiss(); });
     // next / previous game: swipe sideways, arrow keys, or the side buttons
     const go = (k) => {
       const n = list[idx + k];
@@ -1681,11 +1682,9 @@
   }
 
   function showTeam(t, C, slate, from, back) {
-    // opened from an owner's roster card: keep that card alive underneath, so closing this one just slides away to reveal it
-    const under = back && !from ? document.getElementById('bonus-pop') : null;
-    if (under) { under.id = 'bonus-pop-under'; underKeep = true; }
-    closeBonus(); underKeep = false;
-    if (back) backTo = back.open;
+    // opened from a roster card: keep that card alive underneath, so closing this one just slides away to reveal it
+    const under = back && !from ? stackCurrent() : false;
+    if (!under) closeBonus();
     const ov = mk('div', 'bp-overlay' + (under ? ' stacked' : '')); ov.id = 'bonus-pop';
     const box = mk('div', 'bp-box tc-box'); box.setAttribute('role', 'dialog');
     { // team colors: a band across the top and a soft wash behind the header
@@ -1760,10 +1759,15 @@
       const [a, b] = g.score.split('-').map(Number), m = a - b;
       const r = mk('div', 'tc-g tc-res-row ' + (g.w ? 'win' : 'loss'));
       const res = mk('span', 'tc-res ' + (g.w ? 'win' : 'loss')); res.append(mk('b', null, g.w ? 'W' : 'L'), ' ' + g.score.replace('-', '–'));
-      const meta = mk('span', 'tc-meta'); meta.append(mk('span', 'tc-margin ' + (m > 0 ? 'up' : 'down'), (m > 0 ? '+' : '−') + Math.abs(m)));
+      const meta = mk('span', 'tc-meta');
       const older = arr[k - 1]; if (older && older.date === prevDay(g.date)) meta.append(mk('span', 'tc-b2b', 'B2B'));
       if (g.cup) meta.append(mk('span', 'tc-cup', '🏆'));
       r.append(mk('span', 'tc-date', fmtShort(g.date)), oppEl(g.home, g.opp), res, meta); last.append(r);
+      // tap a result to open that game's matchup card (on top of this team card)
+      const sl = slateFor(g.date), gg = sl.games.find((x) => (x.home === t.team && x.away === g.opp) || (x.away === t.team && x.home === g.opp));
+      if (gg) { r.classList.add('tc-tap'); r.tabIndex = 0; r.setAttribute('role', 'button'); r.setAttribute('aria-label', `${g.w ? 'Win' : 'Loss'} ${g.home ? 'vs' : 'at'} ${g.opp}, ${g.score}: open the game`);
+        const open = (e) => { if (e.target.closest('.tc-opp-tap, [data-team]') && e.target.closest('.tc-opp-tap, [data-team]') !== r) return; showGame(gg, C, sl, g.date, null, true); };
+        r.addEventListener('click', open); r.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); showGame(gg, C, sl, g.date, null, true); } }); }
     });
     // Next 5 (tonight's game, live or not, goes first and stands out)
     const next = col('Next 5');
@@ -1886,20 +1890,26 @@
   }
   new MutationObserver((ms) => ms.forEach((m) => m.addedNodes.forEach((n) => { if (n.id === 'bonus-pop') enableSwipe(n); else if (n.id === 'why-pop') enableSwipe(n, closeWhy); }))).observe(document.body, { childList: true });
 
-  // backTo: where closing the current card should land (set when a team card is opened from a roster card)
-  let backTo = null, underKeep = false;
+  // card stack: a card opened from another card sits on top of it; closing the top one slides it away to reveal the one below
+  const underStack = [];
+  function stackCurrent() {
+    const cur = document.getElementById('bonus-pop'); if (!cur) return false;
+    closeWhy(); gcNav = null; clearInterval(boxTimer);
+    cur.id = ''; cur.classList.add('under'); underStack.push(cur);
+    return true;
+  }
   function dismiss() {
-    const f = backTo, top = document.getElementById('bonus-pop'), under = document.getElementById('bonus-pop-under');
-    if (!f || !top || !under) { closeBonus(); if (f) f(); return; }
-    // slide the team card away; the roster card is already sitting underneath
-    backTo = null; closeWhy(); gcNav = null; clearInterval(boxTimer);
-    const box = top.querySelector('.bp-box'); top.id = 'bonus-pop-leaving'; top.style.pointerEvents = 'none'; under.id = 'bonus-pop';
+    const top = document.getElementById('bonus-pop'), under = underStack.pop();
+    if (!top || !under) { if (under) underStack.push(under); closeBonus(); return; }
+    closeWhy(); gcNav = null; clearInterval(boxTimer);
+    const box = top.querySelector('.bp-box'); top.id = ''; top.style.pointerEvents = 'none';
+    under.classList.remove('under'); under.id = 'bonus-pop';
     const phone = matchMedia('(max-width: 600px)').matches;
     box.style.animation = 'none'; box.style.transition = 'transform .3s cubic-bezier(.32,.72,0,1), opacity .3s ease';
     requestAnimationFrame(() => { box.style.transform = phone ? 'translateY(105%)' : 'translateY(40px)'; if (!phone) box.style.opacity = '0'; });
     setTimeout(() => top.remove(), 320);
   }
-  function closeBonus() { backTo = null; if (!underKeep) { const u = document.getElementById('bonus-pop-under'); if (u) u.remove(); } closeWhy(); gcNav = null; clearInterval(boxTimer); const o = document.getElementById('bonus-pop'); if (o) o.remove(); document.removeEventListener('keydown', bonusKey); }
+  function closeBonus() { while (underStack.length) underStack.pop().remove(); closeWhy(); gcNav = null; clearInterval(boxTimer); const o = document.getElementById('bonus-pop'); if (o) o.remove(); document.removeEventListener('keydown', bonusKey); }
   function bonusKey(e) { if (e.key === 'Escape') dismiss(); else if (gcNav && (e.key === 'ArrowRight' || e.key === 'ArrowLeft')) { e.preventDefault(); gcNav(e.key === 'ArrowRight' ? 1 : -1); } }
 
   function medal(rank) { return rank === 1 ? 'p1' : rank === 2 ? 'p2' : rank === 3 ? 'p3' : null; }
