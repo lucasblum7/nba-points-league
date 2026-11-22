@@ -142,7 +142,7 @@ def run(cfg, rosters, games, bonuses, events, today, now_utc, pt, load, save, lo
             opp = h if t == a else a
             where = "vs" if t == h else "@"
             cup = " 🏆 NBA Cup, wins count 2" if "nba cup" in (e.get("notes") or "").lower() else ""
-            once(f"soon|{e['id']}|{o}", o, f"{short(t)} tip off soon", f"{short(t)} {where} {short(opp)} at {e['time']} PT.{cup}")
+            once(f"soon|{e['id']}|{o}", o, (f"{short(t)} tip off soon" if short(t).endswith("s") else f"{short(t)} tips off soon"), f"{short(t)} {where} {short(opp)} at {e['time']} PT.{cup}")
 
     # 3. nightly recap, once every game on today's slate is final
     todays = [e for e in events if e["date"] == today.isoformat() and e.get("season_type") in (2, 3)]
@@ -198,7 +198,7 @@ def run(cfg, rosters, games, bonuses, events, today, now_utc, pt, load, save, lo
                 continue   # no games tonight for this owner
             place = 1 + sum(1 for x in owners if pts[x] > pts[o])
             tied = sum(1 for x in owners if pts[x] == pts[o]) > 1
-            line = f"+{w_pts} tonight · {pts[o]} pts, {'T-' if tied else ''}{ordn(place)} of {len(owners)}."
+            line = (f"+{w_pts} tonight" if w_pts else "No wins tonight") + f" · {pts[o]} pts, {'T-' if tied else ''}{ordn(place)} of {len(owners)}."
             if o in opp:
                 p = opp[o]
                 lead = "lead" if net[o] > net[p] else "trail" if net[o] < net[p] else "are tied with"
