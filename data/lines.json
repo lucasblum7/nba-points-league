@@ -1984,10 +1984,10 @@
   "away": "Denver Nuggets",
   "home": "Chicago Bulls",
   "fav": "Denver Nuggets",
-  "spread": 9.5,
-  "away_ml": -437,
-  "home_ml": 340,
-  "book": "DraftKings"
+  "spread": 10.5,
+  "away_ml": -419,
+  "home_ml": 328,
+  "book": "Draft Kings"
  },
  {
   "date": "2026-11-22",
@@ -1997,7 +1997,7 @@
   "spread": 7.5,
   "away_ml": -324,
   "home_ml": 261,
-  "book": "DraftKings"
+  "book": "Draft Kings"
  },
  {
   "date": "2026-11-22",
@@ -2007,7 +2007,7 @@
   "spread": 4.5,
   "away_ml": 162,
   "home_ml": -194,
-  "book": "DraftKings"
+  "book": "Draft Kings"
  },
  {
   "date": "2026-11-22",
@@ -2017,7 +2017,7 @@
   "spread": 7.5,
   "away_ml": 240,
   "home_ml": -296,
-  "book": "DraftKings"
+  "book": "Draft Kings"
  },
  {
   "date": "2026-11-22",
@@ -2027,7 +2027,7 @@
   "spread": 2.5,
   "away_ml": -135,
   "home_ml": 114,
-  "book": "DraftKings"
+  "book": "Draft Kings"
  },
  {
   "date": "2026-11-22",
@@ -2035,8 +2035,8 @@
   "home": "Washington Wizards",
   "fav": "Orlando Magic",
   "spread": 4.5,
-  "away_ml": -197,
-  "home_ml": 165,
-  "book": "DraftKings"
+  "away_ml": -196,
+  "home_ml": 164,
+  "book": "Draft Kings"
  }
 ]
