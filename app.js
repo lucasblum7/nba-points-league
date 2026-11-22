@@ -4,6 +4,7 @@
 (() => {
   'use strict';
   const PREVIEW = !!window.PL_PREVIEW;   // the /style-preview/next/ page turns on the proposed changes
+  const UX = !!window.PL_UX;             // the /style-preview/ux/ page turns on the easier-to-use ideas
 
   const TEAM_BADGE = {
     'Atlanta Hawks': ['ATL', '#E03A3E', '#FFFFFF'], 'Boston Celtics': ['BOS', '#007A33', '#FFFFFF'],
@@ -469,6 +470,147 @@
     setTimeout(() => { const c = document.getElementById('owner-' + owner.toLowerCase()); if (!c) return;
       c.scrollIntoView({ behavior: 'smooth', block: 'start' }); c.classList.remove('me-flash'); void c.offsetWidth; c.classList.add('me-flash'); }, 60);
   }
+
+  // ================= /style-preview/ux/: ideas to make the site easier to use (off on the real site) =================
+  const uxTag = (n) => mk('span', 'ux-n', String(n));
+  const uxOrd = (n) => n + (['th', 'st', 'nd', 'rd'][(n % 100 - 20) % 10] || ['th', 'st', 'nd', 'rd'][n % 100] || 'th');
+  const uxDaysAgo = (k) => { const d = new Date(pacificToday() + 'T12:00:00Z'); d.setUTCDate(d.getUTCDate() - k); return d.toISOString().slice(0, 10); };
+  // points each owner picked up from games on/after a date
+  function uxGains(C, from) {
+    const S = D.config.scoring, extra = (S.cup_game_win ?? S.win) - S.win, gain = Object.fromEntries(C.owners.map((o) => [o, 0]));
+    for (const g of C.sorted) { if (g.date < from) continue; const wn = g.home_score > g.away_score ? g.home : g.away, o = C.owner.get(wn); if (o) gain[o] += S.win + (g.cup ? extra : 0); }
+    return gain;
+  }
+  const uxPlaceAt = (C, gain) => { const then = C.board.map((b) => ({ o: b.owner, p: b.points - gain[b.owner] })); return Object.fromEntries(then.map((x) => [x.o, 1 + then.filter((y) => y.p > x.p).length])); };
+  function uxOpp(C, me) {
+    const fw = C.matchups.some((x) => x.week === C.curWeek) ? C.curWeek : (C.matchups[0] || {}).week;
+    const m = C.matchups.find((x) => x.week === fw && (x.A.owner === me || x.B.owner === me)); if (!m) return null;
+    return { m, you: m.A.owner === me ? m.A : m.B, opp: m.A.owner === me ? m.B : m.A };
+  }
+  // 1. "Since you last checked" strip at the top of Your team
+  function uxSince(C) {
+    const me = getMe(), host = $('me-body'); if (!me || !host || !C.owners.includes(me)) return;
+    let seen = null; try { seen = localStorage.getItem('pl-ux-seen'); } catch (e) { /* ignore */ }
+    const from = seen && seen < pacificToday() ? seen : uxDaysAgo(3);
+    const gain = uxGains(C, from), was = uxPlaceAt(C, gain), row = C.board.find((b) => b.owner === me);
+    const mineG = C.sorted.filter((g) => g.date >= from && (C.owner.get(g.home) === me || C.owner.get(g.away) === me));
+    let w = 0, l = 0; const perTeam = new Map();
+    mineG.forEach((g) => { const wn = g.home_score > g.away_score ? g.home : g.away; [g.home, g.away].forEach((t) => { if (C.owner.get(t) !== me) return; const r = perTeam.get(t) || [0, 0]; if (t === wn) { w++; r[0]++; } else { l++; r[1]++; } perTeam.set(t, r); }); });
+    const best = [...perTeam.entries()].sort((a, b) => b[1][0] - a[1][0] || a[1][1] - b[1][1])[0];
+    const box = mk('div', 'ux-since'); const hd = mk('div', 'ux-since-h'); hd.append(uxTag(1), mk('b', null, 'Since you last checked'), mk('span', null, dayName(from, { weekday: 'long' })));
+    const pills = mk('div', 'ux-pills'); const pill = (big, small, cls) => { const p = mk('div', 'ux-pill ' + (cls || '')); p.append(mk('b', null, big), mk('span', null, small)); pills.append(p); };
+    pill('+' + gain[me], 'points', gain[me] ? 'up' : '');
+    const d = was[me] - row.place; pill(d > 0 ? '▲ ' + uxOrd(row.place) : d < 0 ? '▼ ' + uxOrd(row.place) : uxOrd(row.place), d > 0 ? 'up from ' + uxOrd(was[me]) : d < 0 ? 'down from ' + uxOrd(was[me]) : 'same spot', d > 0 ? 'up' : d < 0 ? 'down' : '');
+    pill(`${w}–${l}`, 'your teams', w > l ? 'up' : w < l ? 'down' : '');
+    if (best && best[1][0]) pill(abbr(best[0]) + ' ' + best[1][0] + '–' + best[1][1], 'best team');
+    const rivals = C.owners.filter((o) => o !== me).sort((a, b) => gain[b] - gain[a]); const top = rivals[0];
+    const line = mk('p', 'ux-since-f'); line.append(top && gain[top] > gain[me] ? `${top} had the best run: +${gain[top]}.` : `Nobody gained more than you (+${gain[me]}).`);
+    box.append(hd, pills, line); host.prepend(box);
+    const mark = () => { try { localStorage.setItem('pl-ux-seen', pacificToday()); } catch (e) { /* ignore */ } };
+    if (!uxSince.wired) { uxSince.wired = 1; document.addEventListener('visibilitychange', () => { if (document.hidden) mark(); }); }
+  }
+  // 2. who to root for in each game
+  function uxRoot(g, C) {
+    const me = getMe(); if (!me || !C.owners.includes(me)) return null;
+    const ao = C.owner.get(g.away), ho = C.owner.get(g.home);
+    if (ao === me && ho === me) return { team: null, why: 'Both yours: +1 either way' };
+    if (ao === me || ho === me) return { team: ao === me ? g.away : g.home, why: 'your team' };
+    const mu = uxOpp(C, me);
+    if (mu && (ao === mu.opp.owner || ho === mu.opp.owner) && ao !== ho) return { team: ao === mu.opp.owner ? g.home : g.away, why: 'hurts ' + mu.opp.owner + ' (your matchup)' };
+    const row = C.board.find((b) => b.owner === me), above = C.board.filter((b) => b.points > row.points).sort((a, b) => a.points - b.points)[0];
+    if (above && (ao === above.owner || ho === above.owner) && ao !== ho) return { team: ao === above.owner ? g.home : g.away, why: `hurts ${above.owner} (${above.points - row.points} ahead of you)` };
+    return { team: null, why: 'No stake for you', none: true };
+  }
+  // 3. tap ⓘ on a label to see what it means
+  const UX_GLOSS = [
+    [/^rank$/, 'Rank', 'Where you sit in the standings by total points. “T-” means tied.'],
+    [/^points$/, 'Points', '1 point for every regular-season win (2 for an NBA Cup game win), plus bonuses: +5 for making the playoffs, +2 per playoff win, +5 for winning the Cup.'],
+    [/^today$/, 'Today', 'How many of your teams play today. Tap the tile to see the games.'],
+    [/^week \d+ matchup$/, 'Weekly matchup', 'Your head-to-head this week (Mon–Sun). Your score is wins minus losses, with NBA Cup games counting ±2. Higher score Sunday night wins the week.'],
+    [/^my hoop squad$/, 'My Hoop Squad', 'All of your teams added together. Tap to see the full roster.'],
+    [/^record$/, 'Record', 'Wins and losses so far this season.'],
+    [/^win pace$/, 'Win pace', 'How many wins this team is on track for over all 82 games, based on its record so far. Early on it leans on the preseason line, so one hot week doesn’t swing it too far.'],
+    [/^line$/, 'Line', 'The preseason over/under: how many wins Vegas expected before the season. Beat it and the team is overachieving.'],
+    [/^bonus$/, 'Bonus', 'Points beyond regular wins: the extra point for NBA Cup game wins, +5 for making the playoffs, +2 per playoff win, +5 for the Cup title.'],
+    [/^wins$/, 'Wins', 'Regular-season wins by all of the owner’s teams.'],
+    [/^this week$/, 'This week', 'Wins picked up since Monday.'],
+    [/^week$/, 'Week', 'Wins picked up since Monday.'],
+    [/^weeks won$/, 'Weeks won', 'Weeks where this owner had the most wins of anyone.'],
+    [/^matchups$/, 'Matchups', 'Head-to-head record in weekly matchups (wins–losses–ties), and the total net score.'],
+    [/^playoff odds$/, 'Playoff odds', 'The chance this team makes the playoffs (play-in included), from simulating the rest of the season 5,000 times. Making it is worth +5.'],
+  ];
+  function uxExplain(root) {
+    root.querySelectorAll('.me-tl, .tc-tl, .oc-tk, #leaderboard th, h4.tc-h').forEach((el) => {
+      if (el.dataset.ux) return; el.dataset.ux = '1';
+      const key = el.textContent.trim().toLowerCase(), hit = UX_GLOSS.find(([re]) => re.test(key)); if (!hit) return;
+      if (el.tagName === 'TH') { el.classList.add('ux-th'); el.tabIndex = 0; el.addEventListener('click', () => uxTip(el, hit[1], hit[2])); return; }   // table headers: tap the word itself
+      const b = mk('button', 'ux-i', 'i'); b.type = 'button'; b.setAttribute('aria-label', 'What is ' + hit[1] + '?');
+      b.addEventListener('click', (e) => { e.stopPropagation(); e.preventDefault(); uxTip(b, hit[1], hit[2]); });
+      el.append(b);
+    });
+  }
+  function uxTip(anchor, title, text) {
+    document.querySelectorAll('.ux-tip').forEach((t) => t.remove());
+    const t = mk('div', 'ux-tip'); t.setAttribute('role', 'tooltip'); t.append(mk('b', null, title), mk('p', null, text));
+    document.body.append(t);
+    const r = anchor.getBoundingClientRect(), w = Math.min(300, innerWidth - 24);
+    t.style.width = w + 'px'; t.style.left = Math.max(12, Math.min(innerWidth - w - 12, r.left + r.width / 2 - w / 2)) + 'px';
+    const below = r.bottom + 8 + t.offsetHeight < innerHeight; t.style.top = (below ? r.bottom + 8 : r.top - 8 - t.offsetHeight) + 'px';
+    setTimeout(() => document.addEventListener('click', function off() { t.remove(); document.removeEventListener('click', off, true); }, true), 0);
+  }
+  // 4. owner names and teams open their cards everywhere
+  function uxTaps(C, slate) {
+    document.querySelectorAll('#leaderboard .lb-name').forEach((b) => { const o = b.textContent; const nb = b.cloneNode(true); nb.addEventListener('click', () => showOwner(o, C, slate)); b.replaceWith(nb); });
+    document.querySelectorAll('#sb-strip .sb-owner').forEach((s) => { const o = s.textContent; if (!o) return; s.classList.add('ux-link'); s.addEventListener('click', (e) => { e.stopPropagation(); showOwner(o, C, slate); }); });
+    const tableTaps = (sel, teamCol, ownerCol) => document.querySelectorAll(sel).forEach((tr) => {
+      const tds = tr.children; const tn = tds[teamCol] && tds[teamCol].textContent, t = C.teams.find((x) => short(x.team) === tn);
+      if (t && !tds[teamCol].dataset.ux) { tds[teamCol].dataset.ux = 1; tds[teamCol].classList.add('ux-link'); tds[teamCol].addEventListener('click', () => showTeam(t, C, slate)); }
+      const on = ownerCol != null && tds[ownerCol] && tds[ownerCol].textContent; if (on && C.owners.includes(on) && !tds[ownerCol].dataset.ux) { tds[ownerCol].dataset.ux = 1; tds[ownerCol].classList.add('ux-link'); tds[ownerCol].addEventListener('click', () => showOwner(on, C, slate)); }
+    });
+    tableTaps('#bonus-table tbody tr', 0, 1); tableTaps('#upset-list tbody tr', 1, 2);
+    document.querySelectorAll('#upset-tally tbody tr').forEach((tr) => { const td = tr.children[0], o = td.textContent; if (C.owners.includes(o) && !td.dataset.ux) { td.dataset.ux = 1; td.classList.add('ux-link'); td.addEventListener('click', () => showOwner(o, C, slate)); } });
+  }
+  // 5. ▲/▼ places moved in the last 7 days
+  function uxMoves(C) {
+    const was = uxPlaceAt(C, uxGains(C, uxDaysAgo(6)));
+    const th = document.querySelector('#leaderboard thead th:nth-child(2)'); if (th && !th.querySelector('.ux-n')) th.append(' ', uxTag(5));
+    document.querySelectorAll('#leaderboard tbody tr').forEach((tr) => {
+      const o = tr.dataset.owner, now = C.board.find((b) => b.owner === o).place, d = was[o] - now;
+      if (!d) return;
+      const s = mk('span', 'ux-mv ' + (d > 0 ? 'up' : 'down'), d > 0 ? '▲' + d : '▼' + -d);
+      s.title = d ? `${d > 0 ? 'Up' : 'Down'} ${Math.abs(d)} since last week` : 'Same spot as last week';
+      tr.querySelector('.lb-owner').append(s);
+    });
+    const cap = $('ux-mv-cap') || mk('p', 'ux-cap'); cap.id = 'ux-mv-cap'; cap.textContent = '▲▼ = places moved in the last 7 days'; $('leaderboard').after(cap);
+  }
+  // 6. your stuff first on Home: Your team above the scoreboard, and a Mine/All switch on the scoreboard
+  let uxMine = true;
+  function uxHome() {
+    const me = $('me-card'), sb = $('ux-sw') || $('scoreboard'); if (me && sb && sb.previousElementSibling !== me && sb.parentElement === me.parentElement) sb.before(me);
+    const h = me && me.querySelector('h2'); if (h && !h.querySelector('.ux-n')) h.append(' ', uxTag(6));
+  }
+  // 7. one plain-English "How it works" card at the top of More
+  function uxHow(D) {
+    if ($('ux-how')) return; const S = D.config.scoring;
+    const c = mk('section', 'card ux-how'); c.id = 'ux-how'; c.dataset.tab = 'more';
+    const h = mk('h2', null, 'How it works '); h.append(uxTag(7)); c.append(h);
+    const items = [
+      ['🏀', 'Points', `Every regular-season win by one of your teams is ${S.win} point. NBA Cup game wins are ${S.cup_game_win}.`],
+      ['🎁', 'Bonuses', `+${S.made_playoffs} if a team makes the playoffs, +${S.playoff_win} for each playoff win, +${S.won_cup} for winning the Cup.`],
+      ['⚔️', 'Weekly matchups', 'Each week you face one owner. Score = your wins minus losses (Cup games ±2). Highest score Sunday night wins.'],
+      ['🚨', 'Upsets', 'Big underdog wins are tracked in Upset Watch. Right now they’re for bragging rights.'],
+      ['🔔', 'Alerts', 'Turn on notifications in Your team to get finals, tip-offs and a nightly recap.'],
+    ];
+    const ul = mk('div', 'ux-how-list');
+    items.forEach(([i, t, d]) => { const r = mk('div', 'ux-how-row'); r.append(mk('span', 'ux-how-i', i)); const tx = mk('div'); tx.append(mk('b', null, t), mk('p', null, d)); r.append(tx); ul.append(r); });
+    c.append(ul, mk('p', 'ux-cap', 'The full rules, bonus table and ideas sit below, folded up.'));
+    const first = document.querySelector('[data-tab="more"]'); if (first) first.before(c);
+    try { localStorage.setItem('pl-collapsed', JSON.stringify(['bonus-card', 'rules-card', 'upset-card', 'ideas-card'])); } catch (e) { /* ignore */ }
+  }
+  function uxAfterRender(D, C, slate) {
+    uxHome(); uxSince(C); uxMoves(C); uxTaps(C, slate); uxHow(D); uxExplain(document);
+    if (!uxAfterRender.mo) { uxAfterRender.mo = new MutationObserver(() => { const b = document.getElementById('bonus-pop'); if (b) uxExplain(b); }); uxAfterRender.mo.observe(document.body, { childList: true }); }
+  }
   function renderMe(C, slate) {
     const host = $('me-body'); if (!host) return;
     const me = getMe(); host.replaceChildren();
@@ -758,6 +900,7 @@
       const t = new Date(D.meta.updated).toLocaleString('en-US', { timeZone: 'America/Los_Angeles', month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit' });
       $('foot').textContent = `Last data update: ${t} Pacific. Scores from ESPN’s public scoreboard, refreshed every 15 minutes from 9 AM to 1 AM Pacific. Preseason lines from Hoops Rumors.`;
     }
+    if (UX) uxAfterRender(D, C, slate);
   }
 
   // ---------- Matchups: week switcher, scoreboard cards, games left, detail sheet ----------
@@ -1805,7 +1948,15 @@
     if (nextUp) strip.append(mk('div', 'sb-nextlab', 'No games today · next up ' + dayName(date, { weekday: 'long' })));
     if (!slate.games.length) { strip.append(mk('div', 'sb-none', date === today ? 'No games today' : 'No games this day')); return; }
     const me = getMe(), mineG = (g) => C.owner.get(g.away) === me || C.owner.get(g.home) === me;
-    const order = slate.games.slice().sort((a, b) => (me ? mineG(b) - mineG(a) : 0));
+    let order = slate.games.slice().sort((a, b) => (me ? mineG(b) - mineG(a) : 0));
+    if (UX && me) {   // 6. Mine / All switch
+      const anyMine = order.some(mineG); let sw = $('ux-sw');
+      if (!sw) { sw = mk('div', 'ux-sw'); sw.id = 'ux-sw'; sw.dataset.tab = 'home'; $('scoreboard').before(sw); }
+      sw.replaceChildren(); sw.hidden = !anyMine;
+      [['Your games', true], ['All games', false]].forEach(([t, v]) => { const b = mk('button', uxMine === v ? 'on' : '', t); b.type = 'button'; b.addEventListener('click', () => { uxMine = v; renderStrip(sbSlate, sbC); }); sw.append(b); });
+      sw.append(uxTag(6), mk('span', 'ux-sw-n', `${order.filter(mineG).length} of ${order.length}`));
+      if (anyMine && uxMine) order = order.filter(mineG);
+    }
     sbOrder = order.map((g) => ({ g, slate, date }));
     order.forEach((g) => {
       const final = g.state === 'post', live = g.state === 'in';
@@ -1832,6 +1983,11 @@
       const ft = mk('div', 'sb-foot');
       if (g.cup) { ft.append(mk('span', 'sb-cup', '🏆 ')); card.title = 'NBA Cup game: a win is worth 2 points, and counts +2 (win) or −2 (loss) in matchups'; }
       ft.append(foot); card.append(ft);
+      if (UX) { const r = uxRoot(g, C); if (r) { const rt = mk('div', 'ux-root' + (r.none ? ' none' : ''));
+        if (!document.querySelector('#sb-strip .ux-root .ux-n') && !strip.querySelector('.ux-root .ux-n')) rt.append(uxTag(2));
+        if (r.team && final) { const ok = winner === r.team; rt.classList.add(ok ? 'good' : 'bad'); rt.append(mk('span', null, ok ? '✅ Went your way' : '❌ Went against you'), mk('span', 'ux-why', ' · ' + r.why)); }
+        else if (r.team) { rt.append(mk('span', null, '🎯 Root for '), mk('b', null, abbr(r.team)), mk('span', 'ux-why', ' · ' + r.why)); card.querySelectorAll('.sb-row').forEach((row, i) => { if ((i ? g.home : g.away) === r.team) row.classList.add('ux-pick'); }); }
+        else rt.append(mk('span', 'ux-why', r.why)); card.append(rt); } }
       card.classList.add('sb-tap'); card.tabIndex = 0; card.setAttribute('role', 'button'); card.setAttribute('aria-label', `${short(g.away)} at ${short(g.home)}: open game card`);
       card.addEventListener('click', () => showGame(g, C, slate, date));
       card.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); showGame(g, C, slate, date); } });
