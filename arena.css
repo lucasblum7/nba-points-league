@@ -146,3 +146,6 @@ html.ld-on, html.ld-on body { overflow: hidden; }
 .push-row.cta .push-btn { background: var(--accent); color: #fff; font-size: 14px; padding: 10px 16px; box-shadow: 0 4px 12px rgba(242,107,29,.35); }
 @keyframes bellRing { 0%, 100% { transform: rotate(0); } 10% { transform: rotate(14deg); } 20% { transform: rotate(-12deg); } 30% { transform: rotate(8deg); } 40% { transform: rotate(-6deg); } 50% { transform: rotate(0); } }
 @media (prefers-reduced-motion: reduce) { .push-row.cta .push-ic { animation: none; } }
+.push-row.cta .push-tx { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.push-t1 { font-family: var(--disp); font-weight: 800; font-size: 19px; letter-spacing: .02em; text-transform: uppercase; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; color: #fff; line-height: 1.1; }
+.push-t2 { font-size: 13px; font-weight: 600; color: #cbd5e1; }

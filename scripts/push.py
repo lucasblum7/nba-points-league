@@ -76,6 +76,22 @@ def run(cfg, rosters, games, bonuses, events, today, now_utc, pt, load, save, lo
             sent_ids[eid] = today.isoformat()
 
     cutoff = (today - timedelta(days=1)).isoformat()
+    # pregame moneylines, for upset alerts (an underdog at +350 or longer, the league's upset watch line)
+    ml = {}
+    for ln in load("lines.json", []) or []:
+        ml[(ln["date"], ln["away"], ln["home"])] = (ln.get("away_ml"), ln.get("home_ml"))
+    tiers = sorted(cfg.get("upset_tiers") or [], key=lambda t: -t.get("min", 0))
+    def upset_label(g, winner):
+        a, h = ml.get((g["date"], g["away"], g["home"]), (None, None))
+        v = h if winner == g["home"] else a
+        try:
+            v = float(v)
+        except (TypeError, ValueError):
+            return None
+        for t in tiers:
+            if v >= t.get("min", 10**9):
+                return t.get("label", "Upset"), int(v)
+        return None
     # first run after push is switched on: mark recent finals as already sent, so phones don't get a burst of old scores
     if not plog.get("started"):
         for g in games:
@@ -97,10 +113,14 @@ def run(cfg, rosters, games, bonuses, events, today, now_utc, pt, load, save, lo
         if ow and ow == ol:
             once(f"final|{g['id']}|{ow}", ow, f"{short(w)} beat {short(l)}{cup}", f"{short(w)} won {ws}–{ls}. Both yours, so +{pts} either way.")
             continue
+        up = upset_label(g, w)
         if ow:
-            once(f"final|{g['id']}|{ow}", ow, f"{short(w)} won{cup}", f"{short(w)} beat the {short(l)} {ws}–{ls}. +{pts} for you.")
+            if up:
+                once(f"final|{g['id']}|{ow}", ow, f"🚨 {up[0]}! {short(w)} won{cup}", f"{short(w)} beat the {short(l)} {ws}–{ls} as a +{up[1]} underdog. +{pts} for you.")
+            else:
+                once(f"final|{g['id']}|{ow}", ow, f"{short(w)} won{cup}", f"{short(w)} beat the {short(l)} {ws}–{ls}. +{pts} for you.")
         if ol:
-            once(f"final|{g['id']}|{ol}", ol, f"{short(l)} lost{cup}", f"{short(l)} fell to the {short(w)} {ls}–{ws}.")
+            once(f"final|{g['id']}|{ol}", ol, f"{short(l)} lost{cup}" + (" in an upset" if up else ""), f"{short(l)} fell to the {short(w)} {ls}–{ws}.")
 
     # 2. starting soon
     for e in events:

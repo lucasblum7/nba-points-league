@@ -444,7 +444,8 @@
   async function renderPush() {
     const host = $('push-row'); if (!host) return;
     const p = oneSignal(); host.hidden = !p || !getMe(); if (host.hidden) return;
-    const row = (icon, text, btnText, fn, cls) => { host.replaceChildren(); host.className = 'push-row ' + (cls || ''); host.append(mk('span', 'push-ic', icon), mk('span', 'push-tx', text));
+    const row = (icon, text, btnText, fn, cls) => { host.replaceChildren(); host.className = 'push-row ' + (cls || ''); host.append(mk('span', 'push-ic', icon));
+      if (cls === 'cta') { const t = mk('span', 'push-tx'); t.append(mk('b', 'push-t1', 'Hoop Squad Notifications'), mk('span', 'push-t2', 'Final Scores, Tip-offs, Upsets and more')); host.append(t); } else host.append(mk('span', 'push-tx', text));
       if (btnText) { const b = mk('button', 'push-btn', btnText); b.type = 'button'; b.addEventListener('click', fn); host.append(b); } };
     if (!('Notification' in window) || (isIOS() && !isStandalone())) {
       row('🔔', isIOS() ? 'Get updated with Hoop Squads: final scores, tip-offs, nightly recaps and more!' : 'This browser can’t show alerts', isIOS() ? 'Turn on' : null, showInstallHelp, isIOS() ? 'cta' : 'off'); return;
