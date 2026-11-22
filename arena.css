@@ -149,3 +149,9 @@ html.ld-on, html.ld-on body { overflow: hidden; }
 .push-row.cta .push-tx { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
 .push-t1 { font-family: var(--disp); font-weight: 800; font-size: 19px; letter-spacing: .02em; text-transform: uppercase; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; color: #fff; line-height: 1.1; }
 .push-t2 { font-size: 13px; font-weight: 600; color: #cbd5e1; }
+.push-row.cta { gap: 8px; padding: 12px 10px 14px 12px; }
+.push-row.cta .push-ic { font-size: 20px; }
+.push-t1 { font-size: 17px; letter-spacing: .01em; text-overflow: clip; }
+.push-row.cta .push-btn { padding: 9px 13px; font-size: 13px; }
+@media (max-width: 370px) { .push-t1 { font-size: 15px; } }
+@media (max-width: 370px) { .push-row.cta { flex-wrap: wrap; } .push-row.cta .push-tx { flex: 1 1 calc(100% - 40px); } .push-row.cta .push-btn { flex: 1 1 100%; } .push-t1 { font-size: 16px; } }
