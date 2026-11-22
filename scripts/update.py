@@ -343,6 +343,13 @@ def main():
     except Exception as ex:
         log.append(f"odds failed: {ex!r}")
 
+    # 7. Push notifications (finals, starting soon, nightly recap) through OneSignal.
+    try:
+        import push
+        push.run(cfg, load("rosters.json"), games_list, list(bonuses.values()), events, today, now, PT, load, save, log)
+    except Exception as ex:
+        log.append(f"push failed: {ex!r}")
+
     if changed:
         save("meta.json", {"updated": now.isoformat(timespec="seconds"), "changed": changed})
     log.append("changed: " + (", ".join(changed) if changed else "nothing"))

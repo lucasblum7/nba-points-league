@@ -35,6 +35,7 @@ jobs:
         continue-on-error: true
         env:
           FULL_REFRESH: ${{ inputs.full_refresh && '1' || '0' }}
+          ONESIGNAL_API_KEY: ${{ secrets.ONESIGNAL_API_KEY }}
         run: python scripts/update.py
 
       - name: Save changes

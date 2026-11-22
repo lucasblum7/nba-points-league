@@ -375,7 +375,7 @@
 
   // ---------- My team: each viewer picks who they are (saved in their own browser) ----------
   const getMe = () => { try { return localStorage.getItem('pl-me') || null; } catch (e) { return null; } };
-  const setMe = (o) => { try { o ? localStorage.setItem('pl-me', o) : localStorage.removeItem('pl-me'); } catch (e) { /* ignore */ } };
+  const setMe = (o) => { try { o ? localStorage.setItem('pl-me', o) : localStorage.removeItem('pl-me'); } catch (e) { /* ignore */ } if (typeof syncPushOwner === 'function') syncPushOwner(); };
   function pickMe(C) {
     closeBonus();
     const ov = mk('div', 'bp-overlay'); ov.id = 'bonus-pop';
@@ -398,6 +398,70 @@
   let OWNER_ORDER = [];
   const ownerVar = (o) => `var(--oc${(Math.max(0, OWNER_ORDER.indexOf(o)) % 6) + 1})`;
   const odot = (o) => { const s = mk('span', 'odot'); s.style.background = ownerVar(o); s.setAttribute('aria-hidden', 'true'); return s; };
+
+  // ---------- push notifications (OneSignal) ----------
+  // Turned on by putting the OneSignal App ID in data/config.json ("onesignal_app_id").
+  // iPhones only allow web notifications from a site added to the Home Screen (iOS 16.4+).
+  let osReady = null;
+  const isIOS = () => /iPhone|iPad|iPod/.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+  const isStandalone = () => window.navigator.standalone === true || matchMedia('(display-mode: standalone)').matches;
+  function oneSignal() {
+    const appId = D && D.config && D.config.onesignal_app_id; if (!appId) return null;
+    if (osReady) return osReady;
+    osReady = new Promise((resolve, reject) => {
+      const base = new URL('.', document.baseURI).pathname;   // /nba-points-league/
+      window.OneSignalDeferred = window.OneSignalDeferred || [];
+      window.OneSignalDeferred.push(async (OS) => {
+        try {
+          await OS.init({ appId, serviceWorkerPath: base.slice(1) + 'push/onesignal/OneSignalSDKWorker.js', serviceWorkerParam: { scope: base + 'push/onesignal/' }, allowLocalhostAsSecureOrigin: true });
+          OS.User.PushSubscription.addEventListener('change', () => renderPush());
+          resolve(OS);
+        } catch (e) { reject(e); }
+      });
+      const sc = document.createElement('script'); sc.src = 'https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js'; sc.defer = true; sc.onerror = () => reject(new Error('sdk')); document.head.append(sc);
+    });
+    osReady.catch(() => {});   // a blocked or offline SDK just means no alerts row
+    return osReady;
+  }
+  async function syncPushOwner() {   // the owner tag decides which alerts this phone gets
+    const p = oneSignal(); if (!p) return; const me = getMe();
+    try { const OS = await p; if (!OS.User.PushSubscription.optedIn) return; if (me) await OS.User.addTag('owner', me); else await OS.User.removeTag('owner'); } catch (e) { /* ignore */ }
+  }
+  function showInstallHelp() {
+    closeBonus();
+    const ov = mk('div', 'bp-overlay'); ov.id = 'bonus-pop';
+    const box = mk('div', 'bp-box ph-box'); box.setAttribute('role', 'dialog'); box.setAttribute('aria-modal', 'true'); box.setAttribute('aria-label', 'Add Hoop Squads to your Home Screen');
+    const x = mk('button', 'bp-close', '✕'); x.type = 'button'; x.setAttribute('aria-label', 'Close'); x.addEventListener('click', closeBonus);
+    const head = mk('div', 'ph-head'); head.append(mk('b', null, 'Get alerts on your iPhone'), x); box.append(head);
+    box.append(mk('p', 'ph-sub', 'Apple only sends website notifications to sites saved to your Home Screen. It takes 20 seconds:'));
+    const ol = mk('ol', 'ph-steps');
+    [['Tap the Share button', ' at the bottom of Safari (the square with an arrow ↑).'], ['Scroll down and tap ', 'Add to Home Screen', ', then Add.'], ['Open Hoop Squads ', 'from your Home Screen', ' and tap “Turn on alerts”.']]
+      .forEach((parts) => { const li = mk('li'); parts.forEach((t, i) => li.append(i % 2 ? mk('b', null, t) : t)); ol.append(li); });
+    box.append(ol, mk('p', 'players-foot', 'Needs iOS 16.4 or newer, and Safari. On Android or a computer, alerts work right in the browser.'));
+    ov.append(box); ov.addEventListener('click', (e) => { if (e.target === ov) closeBonus(); });
+    document.body.append(ov); document.addEventListener('keydown', bonusKey); x.focus();
+  }
+  async function renderPush() {
+    const host = $('push-row'); if (!host) return;
+    const p = oneSignal(); host.hidden = !p || !getMe(); if (host.hidden) return;
+    const row = (icon, text, btnText, fn, cls) => { host.replaceChildren(); host.className = 'push-row ' + (cls || ''); host.append(mk('span', 'push-ic', icon), mk('span', 'push-tx', text));
+      if (btnText) { const b = mk('button', 'push-btn', btnText); b.type = 'button'; b.addEventListener('click', fn); host.append(b); } };
+    if (!('Notification' in window) || (isIOS() && !isStandalone())) {
+      row('🔔', isIOS() ? 'Get alerts for your teams' : 'This browser can’t show alerts', isIOS() ? 'How' : null, showInstallHelp); return;
+    }
+    let OS; try { OS = await p; } catch (e) { row('🔕', 'Alerts aren’t available right now', null, null, 'off'); return; }
+    if (OS.User.PushSubscription.optedIn) {
+      row('🔔', 'Alerts on: finals, tip-offs and your nightly recap', 'Turn off', async () => { await OS.User.PushSubscription.optOut(); renderPush(); }, 'on');
+      syncPushOwner();
+    } else if (Notification.permission === 'denied') {
+      row('🔕', 'Alerts are blocked. Allow them in Settings → Notifications → Hoop Squads', null, null, 'off');
+    } else {
+      row('🔔', 'Get alerts when your teams finish, tip off soon, and a nightly recap', 'Turn on', async () => {
+        try { await OS.Notifications.requestPermission(); if (Notification.permission === 'granted') { await OS.User.PushSubscription.optIn(); await syncPushOwner(); } } catch (e) { /* ignore */ }
+        renderPush();
+      });
+    }
+  }
   // jump to an owner's roster on the Rosters tab and pulse it
   function goToRoster(owner) {
     location.hash = '#rosters';
@@ -452,6 +516,7 @@
     const strip = mk('span', 'me-badges'); mine.forEach((x) => strip.append(badge(x.team, 'sb-badge me-badge'))); t3.append(strip);
     tap(t3, () => goToRoster(me), `My Hoop Squad, ${w}–${l}: open my roster`);
     host.append(small, big);
+    const pr = mk('div', 'push-row'); pr.id = 'push-row'; pr.hidden = true; host.append(pr); renderPush();
   }
 
   function render(D, C, slate) {
