@@ -1475,12 +1475,14 @@
       const nx = live ? null : nextGames(t.team, 1)[0];
       if (live) { const home = live.home === t.team; meta.append(mk('span', 'oc-sep', '·'), mk('b', 'oc-live', `● ${home ? live.home_score : live.away_score}–${home ? live.away_score : live.home_score} ${home ? 'vs' : '@'} ${abbr(home ? live.away : live.home)}`)); }
       else if (nx) { const home = nx.home === t.team; meta.append(mk('span', 'oc-sep', '·'), mk('span', 'oc-next', `${nx.date === today ? 'Tonight' : dayName(nx.date, { weekday: 'short' })} ${home ? 'vs' : '@'} ${abbr(home ? nx.away : nx.home)}`)); }
-      // team leaders: points, rebounds and assists per game (filled in from ESPN once loaded)
-      const ld = mk('div', 'oc-lead');
-      [['PTS', 'pointsPerGame'], ['REB', 'reboundsPerGame'], ['AST', 'assistsPerGame']].forEach(([lab, k]) => {
-        const c = mk('span', 'oc-lc'); c.dataset.k = k; c.append(mk('span', 'oc-lk', lab), mk('b', 'oc-lv', '–'), mk('span', 'oc-ln', '')); ld.append(c);
+      // team leaders on one slim line: "Doncic 37.2 pts, 7.7 ast · Kessler 10.7 reb" (filled in from ESPN once loaded)
+      const ld = mk('div', 'oc-lead'); ld.textContent = ' ';
+      teamLeaders(t.team).then((L) => {
+        if (!L) { ld.hidden = true; return; }
+        const by = new Map();
+        [['pointsPerGame', 'pts'], ['reboundsPerGame', 'reb'], ['assistsPerGame', 'ast']].forEach(([k, u]) => { const x = L[k]; if (!x) return; if (!by.has(x.name)) by.set(x.name, []); by.get(x.name).push([x.v, u]); });
+        ld.replaceChildren(); [...by.entries()].forEach(([n, st], i) => { if (i) ld.append(mk('span', 'oc-sep', '·')); ld.append(mk('span', 'oc-ln', n + ' ')); st.forEach(([v, u], j) => { if (j) ld.append(', '); ld.append(mk('b', null, v), ' ' + u); }); });
       });
-      teamLeaders(t.team).then((L) => { if (!L) { ld.hidden = true; return; } ld.querySelectorAll('.oc-lc').forEach((c) => { const x = L[c.dataset.k]; if (!x) return; c.querySelector('.oc-lv').textContent = x.v; c.querySelector('.oc-ln').textContent = x.name; }); });
       r.append(top, meta, ld); r.addEventListener('click', () => showTeam(t, C, slate)); list.append(r);
     });
     box.append(list);
