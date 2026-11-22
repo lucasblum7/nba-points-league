@@ -78,11 +78,15 @@ def run(cfg, rosters, games, bonuses, events, today, now_utc, pt, load, save, lo
     test_to = os.environ.get("PUSH_TEST", "").strip()
     if test_to:   # manual test from the Actions tab
         kind = os.environ.get("PUSH_TEST_KIND", "").strip()
-        if kind == "upset":
+        if kind == "recap":
+            pass   # handled below: builds the real recap for the latest game day, sent to this owner only
+        elif kind == "upset":
             title, body = "🚨 Upset! Kings won (test)", "Kings beat the Celtics 97–96 as a +446 underdog. +1 for you. (This is a test alert.)"
         else:
             title, body = "Hoop Squads alerts are on 🏀", "This is a test. You'll get finals, tip-off reminders and a nightly recap for your teams."
-        ok = send(app_id, key, test_to, title, body, log, count)
+        ok = True
+        if kind != "recap":
+            ok = send(app_id, key, test_to, title, body, log, count)
         log.append(f"push test to {test_to}: {'sent' if ok and key else 'not sent (missing key)' if not key else 'failed'}")
     sent_ids = plog.get("sent", {})
 
@@ -157,8 +161,12 @@ def run(cfg, rosters, games, bonuses, events, today, now_utc, pt, load, save, lo
             once(f"soon|{e['id']}|{o}", o, (f"{short(t)} tip off soon" if short(t).endswith("s") else f"{short(t)} tips off soon"), f"{short(t)} {where} {short(opp)} at {e['time']} PT.{cup}")
 
     # 3. nightly recap, once every game on today's slate is final
+    recap_test = test_to if os.environ.get("PUSH_TEST_KIND", "").strip() == "recap" else ""
+    real_today = today
+    if recap_test:   # test: rebuild the most recent game day's recap
+        today = date.fromisoformat(max(g["date"] for g in games))
     todays = [e for e in events if e["date"] == today.isoformat() and e.get("season_type") in (2, 3)]
-    if todays and all(e.get("completed") for e in todays) and f"recap|{today.isoformat()}" not in plog.get("recaps", []):
+    if recap_test or (todays and all(e.get("completed") for e in todays) and f"recap|{today.isoformat()}" not in plog.get("recaps", [])):
         # points and rank
         pts = {o: 0 for o in owners}
         for g in games:
@@ -234,8 +242,14 @@ def run(cfg, rosters, games, bonuses, events, today, now_utc, pt, load, save, lo
                 d = net[o] - net[p]
                 state = f"up {d}" if d > 0 else f"down {abs(d)}" if d < 0 else "all square"
                 lines.append(f"⚔️ Week {wk} vs {p}: {state} ({sign(net[o])} to {sign(net[p])})")
+            if recap_test:
+                if o == recap_test:
+                    send(app_id, key, o, title + " (test)", "\n".join(lines), log, count)
+                continue
             once(f"recap|{today.isoformat()}|{o}", o, title, "\n".join(lines))
-        plog.setdefault("recaps", []).append(f"recap|{today.isoformat()}")
+        if not recap_test:
+            plog.setdefault("recaps", []).append(f"recap|{today.isoformat()}")
+    today = real_today
 
     # forget old ids so the log stays small
     keep = (today - timedelta(days=KEEP_DAYS)).isoformat()
