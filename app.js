@@ -4,7 +4,8 @@
 (() => {
   'use strict';
   const PREVIEW = !!window.PL_PREVIEW;   // the /style-preview/next/ page turns on the proposed changes
-  const UX = !!window.PL_UX;             // the /style-preview/ux/ page turns on the easier-to-use ideas
+  const UX = true;                       // easier-to-use features (since-you-checked, ⓘ tips, tappable names, moves, your-games switch, how it works)
+  const ROOT = !!window.PL_UX;           // "who to root for" lines: only on the /style-preview/ux/ page
 
   const TEAM_BADGE = {
     'Atlanta Hawks': ['ATL', '#E03A3E', '#FFFFFF'], 'Boston Celtics': ['BOS', '#007A33', '#FFFFFF'],
@@ -472,7 +473,7 @@
   }
 
   // ================= /style-preview/ux/: ideas to make the site easier to use (off on the real site) =================
-  const uxTag = (n) => mk('span', 'ux-n', String(n));
+  const uxTag = (n) => (ROOT ? mk('span', 'ux-n', String(n)) : document.createTextNode(''));
   const uxOrd = (n) => n + (['th', 'st', 'nd', 'rd'][(n % 100 - 20) % 10] || ['th', 'st', 'nd', 'rd'][n % 100] || 'th');
   const uxDaysAgo = (k) => { const d = new Date(pacificToday() + 'T12:00:00Z'); d.setUTCDate(d.getUTCDate() - k); return d.toISOString().slice(0, 10); };
   // points each owner picked up from games on/after a date
@@ -490,14 +491,17 @@
   // 1. "Since you last checked" strip at the top of Your team
   function uxSince(C) {
     const me = getMe(), host = $('me-body'); if (!me || !host || !C.owners.includes(me)) return;
-    let seen = null; try { seen = localStorage.getItem('pl-ux-seen'); } catch (e) { /* ignore */ }
-    const from = seen && seen < pacificToday() ? seen : uxDaysAgo(3);
+    // "from" = the last day you opened the site before today (kept for the whole day); first visit looks back 3 days
+    const today = pacificToday(); let st = {}; try { st = JSON.parse(localStorage.getItem('pl-seen') || '{}'); } catch (e) { /* ignore */ }
+    if (st.day !== today) { st = { day: today, from: st.day || uxDaysAgo(3) }; try { localStorage.setItem('pl-seen', JSON.stringify(st)); } catch (e) { /* ignore */ } }
+    const from = st.from;
     const gain = uxGains(C, from), was = uxPlaceAt(C, gain), row = C.board.find((b) => b.owner === me);
     const mineG = C.sorted.filter((g) => g.date >= from && (C.owner.get(g.home) === me || C.owner.get(g.away) === me));
     let w = 0, l = 0; const perTeam = new Map();
     mineG.forEach((g) => { const wn = g.home_score > g.away_score ? g.home : g.away; [g.home, g.away].forEach((t) => { if (C.owner.get(t) !== me) return; const r = perTeam.get(t) || [0, 0]; if (t === wn) { w++; r[0]++; } else { l++; r[1]++; } perTeam.set(t, r); }); });
     const best = [...perTeam.entries()].sort((a, b) => b[1][0] - a[1][0] || a[1][1] - b[1][1])[0];
-    const box = mk('div', 'ux-since'); const hd = mk('div', 'ux-since-h'); hd.append(uxTag(1), mk('b', null, 'Since you last checked'), mk('span', null, dayName(from, { weekday: 'long' })));
+    const box = mk('div', 'ux-since'); const hd = mk('div', 'ux-since-h'); const ago = Math.round((utc(today) - utc(from)) / DAY);
+    hd.append(uxTag(1), mk('b', null, 'Since you last checked'), mk('span', null, ago <= 1 ? 'yesterday' : ago <= 6 ? dayName(from, { weekday: 'long' }) : fmtDay(from)));
     const pills = mk('div', 'ux-pills'); const pill = (big, small, cls) => { const p = mk('div', 'ux-pill ' + (cls || '')); p.append(mk('b', null, big), mk('span', null, small)); pills.append(p); };
     pill('+' + gain[me], 'points', gain[me] ? 'up' : '');
     const d = was[me] - row.place; pill(d > 0 ? '▲ ' + uxOrd(row.place) : d < 0 ? '▼ ' + uxOrd(row.place) : uxOrd(row.place), d > 0 ? 'up from ' + uxOrd(was[me]) : d < 0 ? 'down from ' + uxOrd(was[me]) : 'same spot', d > 0 ? 'up' : d < 0 ? 'down' : '');
@@ -506,8 +510,6 @@
     const rivals = C.owners.filter((o) => o !== me).sort((a, b) => gain[b] - gain[a]); const top = rivals[0];
     const line = mk('p', 'ux-since-f'); line.append(top && gain[top] > gain[me] ? `${top} had the best run: +${gain[top]}.` : `Nobody gained more than you (+${gain[me]}).`);
     box.append(hd, pills, line); host.prepend(box);
-    const mark = () => { try { localStorage.setItem('pl-ux-seen', pacificToday()); } catch (e) { /* ignore */ } };
-    if (!uxSince.wired) { uxSince.wired = 1; document.addEventListener('visibilitychange', () => { if (document.hidden) mark(); }); }
   }
   // 2. who to root for in each game
   function uxRoot(g, C) {
@@ -584,7 +586,7 @@
     const cap = $('ux-mv-cap') || mk('p', 'ux-cap'); cap.id = 'ux-mv-cap'; cap.textContent = '▲▼ = places moved in the last 7 days'; $('leaderboard').after(cap);
   }
   // 6. your stuff first on Home: Your team above the scoreboard, and a Mine/All switch on the scoreboard
-  let uxMine = true;
+  let uxMine = true; try { uxMine = localStorage.getItem('pl-sb-all') !== '1'; } catch (e) { /* ignore */ }
   function uxHome() {
     const me = $('me-card'), sb = $('ux-sw') || $('scoreboard'); if (me && sb && sb.previousElementSibling !== me && sb.parentElement === me.parentElement) sb.before(me);
     const h = me && me.querySelector('h2'); if (h && !h.querySelector('.ux-n')) h.append(' ', uxTag(6));
@@ -603,9 +605,8 @@
     ];
     const ul = mk('div', 'ux-how-list');
     items.forEach(([i, t, d]) => { const r = mk('div', 'ux-how-row'); r.append(mk('span', 'ux-how-i', i)); const tx = mk('div'); tx.append(mk('b', null, t), mk('p', null, d)); r.append(tx); ul.append(r); });
-    c.append(ul, mk('p', 'ux-cap', 'The full rules, bonus table and ideas sit below, folded up.'));
+    c.append(ul, mk('p', 'ux-cap', 'Full rules, bonuses, upsets and ideas are below. Tap a title to open it.'));
     const first = document.querySelector('[data-tab="more"]'); if (first) first.before(c);
-    try { localStorage.setItem('pl-collapsed', JSON.stringify(['bonus-card', 'rules-card', 'upset-card', 'ideas-card'])); } catch (e) { /* ignore */ }
   }
   function uxAfterRender(D, C, slate) {
     uxHome(); uxSince(C); uxMoves(C); uxTaps(C, slate); uxHow(D); uxExplain(document);
@@ -1953,7 +1954,7 @@
       const anyMine = order.some(mineG); let sw = $('ux-sw');
       if (!sw) { sw = mk('div', 'ux-sw'); sw.id = 'ux-sw'; sw.dataset.tab = 'home'; $('scoreboard').before(sw); }
       sw.replaceChildren(); sw.hidden = !anyMine;
-      [['Your games', true], ['All games', false]].forEach(([t, v]) => { const b = mk('button', uxMine === v ? 'on' : '', t); b.type = 'button'; b.addEventListener('click', () => { uxMine = v; renderStrip(sbSlate, sbC); }); sw.append(b); });
+      [['Your games', true], ['All games', false]].forEach(([t, v]) => { const b = mk('button', uxMine === v ? 'on' : '', t); b.type = 'button'; b.addEventListener('click', () => { uxMine = v; try { localStorage.setItem('pl-sb-all', v ? '0' : '1'); } catch (e) { /* ignore */ } renderStrip(sbSlate, sbC); }); sw.append(b); });
       sw.append(uxTag(6), mk('span', 'ux-sw-n', `${order.filter(mineG).length} of ${order.length}`));
       if (anyMine && uxMine) order = order.filter(mineG);
     }
@@ -1983,7 +1984,7 @@
       const ft = mk('div', 'sb-foot');
       if (g.cup) { ft.append(mk('span', 'sb-cup', '🏆 ')); card.title = 'NBA Cup game: a win is worth 2 points, and counts +2 (win) or −2 (loss) in matchups'; }
       ft.append(foot); card.append(ft);
-      if (UX) { const r = uxRoot(g, C); if (r) { const rt = mk('div', 'ux-root' + (r.none ? ' none' : ''));
+      if (ROOT) { const r = uxRoot(g, C); if (r) { const rt = mk('div', 'ux-root' + (r.none ? ' none' : ''));
         if (!document.querySelector('#sb-strip .ux-root .ux-n') && !strip.querySelector('.ux-root .ux-n')) rt.append(uxTag(2));
         if (r.team && final) { const ok = winner === r.team; rt.classList.add(ok ? 'good' : 'bad'); rt.append(mk('span', null, ok ? '✅ Went your way' : '❌ Went against you'), mk('span', 'ux-why', ' · ' + r.why)); }
         else if (r.team) { rt.append(mk('span', null, '🎯 Root for '), mk('b', null, abbr(r.team)), mk('span', 'ux-why', ' · ' + r.why)); card.querySelectorAll('.sb-row').forEach((row, i) => { if ((i ? g.home : g.away) === r.team) row.classList.add('ux-pick'); }); }
@@ -2043,6 +2044,8 @@
       apply();
     });
   }
+  // first visit after "How it works" arrived: fold the long More sections once (people can still open them)
+  try { if (UX && !localStorage.getItem('pl-how-v1')) { localStorage.setItem('pl-how-v1', '1'); localStorage.setItem('pl-collapsed', JSON.stringify(['bonus-card', 'rules-card', 'upset-card', 'ideas-card'])); } } catch (e) { /* ignore */ }
   setupCollapsibles();
 
   // ---------- bottom tab bar: each tab shows its own group of sections ----------
