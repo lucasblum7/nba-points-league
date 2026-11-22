@@ -61,9 +61,13 @@ def run(cfg, rosters, games, bonuses, events, today, now_utc, pt, load, save, lo
     owners = sorted(set(owner.values()))
     S = cfg.get("scoring", {})
     win, cup_win = S.get("win", 1), S.get("cup_game_win", 2)
-    plog = load("push_log.json", {}) or {}
-    sent_ids = plog.get("sent", {})
     count = [0]
+    plog = load("push_log.json", {}) or {}
+    test_to = os.environ.get("PUSH_TEST", "").strip()
+    if test_to:   # manual test from the Actions tab
+        ok = send(app_id, key, test_to, "Hoop Squads alerts are on 🏀", "This is a test. You'll get finals, tip-off reminders and a nightly recap for your teams.", log, count)
+        log.append(f"push test to {test_to}: {'sent' if ok and key else 'not sent (missing key)' if not key else 'failed'}")
+    sent_ids = plog.get("sent", {})
 
     def once(eid, who, title, body):
         if eid in sent_ids:

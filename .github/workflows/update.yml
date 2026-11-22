@@ -11,6 +11,10 @@ on:
         description: "Re-check the whole season (slower)"
         type: boolean
         default: false
+      push_test:
+        description: "Send a test alert to this owner (e.g. Lucas)"
+        type: string
+        default: ""
 
 permissions:
   contents: write
@@ -36,6 +40,7 @@ jobs:
         env:
           FULL_REFRESH: ${{ inputs.full_refresh && '1' || '0' }}
           ONESIGNAL_API_KEY: ${{ secrets.ONESIGNAL_API_KEY }}
+          PUSH_TEST: ${{ inputs.push_test || '' }}
         run: python scripts/update.py
 
       - name: Save changes
