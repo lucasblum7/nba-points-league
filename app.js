@@ -435,7 +435,7 @@
     const head = mk('div', 'ph-head'); head.append(mk('b', null, 'Get alerts on your iPhone'), x); box.append(head);
     box.append(mk('p', 'ph-sub', 'Apple only sends website notifications to sites saved to your Home Screen. It takes 20 seconds:'));
     const ol = mk('ol', 'ph-steps');
-    [['Tap the Share button', ' at the bottom of Safari (the square with an arrow ↑).'], ['Scroll down and tap ', 'Add to Home Screen', ', then Add.'], ['Open Hoop Squads ', 'from your Home Screen', ' and tap “Turn on alerts”.']]
+    [['Tap the ', 'Share', ' button at the bottom of Safari (the square with an arrow ↑).'], ['Scroll down and tap ', 'Add to Home Screen', ', then Add.'], ['Open Hoop Squads ', 'from your Home Screen', ' and tap ', 'Turn on', ' on your team card.']]
       .forEach((parts) => { const li = mk('li'); parts.forEach((t, i) => li.append(i % 2 ? mk('b', null, t) : t)); ol.append(li); });
     box.append(ol, mk('p', 'players-foot', 'Needs iOS 16.4 or newer, and Safari. On Android or a computer, alerts work right in the browser.'));
     ov.append(box); ov.addEventListener('click', (e) => { if (e.target === ov) closeBonus(); });
