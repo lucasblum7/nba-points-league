@@ -1523,7 +1523,9 @@
       const back = mk('button', 'tc-back', '‹ ' + short(from.team)); back.type = 'button'; back.setAttribute('aria-label', 'Back to ' + from.team);
       back.addEventListener('click', () => showTeam(from, C, slate)); box.append(back);
     }
-    box.append(head);
+    // the team name and its stat tiles stay pinned at the top while the card scrolls
+    const pin = mk('div', 'tc-pin'); pin.append(head); box.append(pin);
+    box.addEventListener('scroll', () => pin.classList.toggle('stuck', box.scrollTop > 40), { passive: true });
     // record / pace / projection
     const tiles = mk('div', 'tc-tiles');
     const tile = (label, value, cls, sub) => { const d = mk('div', 'tc-tile'); d.append(mk('span', 'tc-tl', label), mk('b', cls || null, value)); if (sub) d.append(mk('span', 'tc-ts ' + (cls || ''), sub)); tiles.append(d); };
@@ -1532,7 +1534,7 @@
     tile('Win pace', t.pace == null ? '–' : t.pace.toFixed(1), paceClass(t.pace, t.proj), diff == null ? '' : (diff > 0 ? '+' : diff < 0 ? '−' : '±') + Math.abs(diff).toFixed(1) + ' vs line');
     tile('Preseason line', t.proj ?? '–');
     if (t.bonus) tile('Bonus pts', '+' + t.bonus, 'up');
-    box.append(tiles);
+    pin.append(tiles);
     const po = playoffOdds(t.team); if (po) box.append(po);
     // last 5 / next 5
     const games = mk('div', 'tc-games');
