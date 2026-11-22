@@ -454,7 +454,7 @@
       row('🔔', 'Alerts on: finals, tip-offs and your nightly recap', 'Turn off', async () => { await OS.User.PushSubscription.optOut(); renderPush(); }, 'on');
       syncPushOwner();
     } else if (Notification.permission === 'denied') {
-      row('🔕', 'Alerts are blocked. Allow them in Settings → Notifications → Hoop Squads', null, null, 'off');
+      row('🔕', isIOS() ? 'Alerts are blocked. Allow them in Settings → Notifications → Hoop Squads' : 'Alerts are blocked for this site. Allow notifications in your browser’s site settings', null, null, 'off');
     } else {
       row('🔔', 'Get alerts when your teams finish, tip off soon, and a nightly recap', 'Turn on', async () => {
         try { await OS.Notifications.requestPermission(); if (Notification.permission === 'granted') { await OS.User.PushSubscription.optIn(); await syncPushOwner(); } } catch (e) { /* ignore */ }
