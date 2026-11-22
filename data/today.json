@@ -15,12 +15,12 @@
   {
    "id": "401910030",
    "time": "3:00 PM",
-   "state": "pre",
-   "detail": "11/22 - 6:00 PM EST",
+   "state": "in",
+   "detail": "9:49 - 1st",
    "away": "Oklahoma City Thunder",
    "home": "Miami Heat",
-   "away_score": null,
-   "home_score": null,
+   "away_score": 2,
+   "home_score": 8,
    "cup": false
   },
   {
