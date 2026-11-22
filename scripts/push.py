@@ -64,6 +64,67 @@ def send(app_id, key, owner, title, body, log, sent):
         return False
 
 
+SUMMARY = "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event="
+_sum_cache = {}
+
+
+def summary(eid, log):
+    """ESPN's game page data (box score, injury report); cached per run, None on failure."""
+    if eid in _sum_cache:
+        return _sum_cache[eid]
+    js = None
+    try:
+        req = urllib.request.Request(SUMMARY + str(eid), headers={"User-Agent": "Mozilla/5.0 (hoop-squads)"})
+        with urllib.request.urlopen(req, timeout=20) as r:
+            js = json.loads(r.read().decode())
+    except Exception as ex:
+        log.append(f"push: summary {eid} failed: {ex!r}")
+    _sum_cache[eid] = js
+    return js
+
+
+def nm(full):
+    """'Cade Cunningham' -> 'C. Cunningham'"""
+    p = (full or "").split()
+    return f"{p[0][0]}. {' '.join(p[1:])}" if len(p) > 1 else (full or "")
+
+
+def box_lines(js):
+    """team name -> [ {id, name, pts, reb, ast, threes} ] from a summary's box score"""
+    out = {}
+    for tb in ((js or {}).get("boxscore") or {}).get("players") or []:
+        team = ESPN_FIX.get(tb["team"]["displayName"], tb["team"]["displayName"])
+        st = (tb.get("statistics") or [{}])[0]
+        keys = st.get("keys") or []
+        def ix(k):
+            return keys.index(k) if k in keys else None
+        ip, ir, ia, i3 = ix("points"), ix("rebounds"), ix("assists"), ix("threePointFieldGoalsMade-threePointFieldGoalsAttempted")
+        rows = []
+        for a in st.get("athletes") or []:
+            v = a.get("stats") or []
+            if not v or a.get("didNotPlay"):
+                continue
+            def num(i):
+                try:
+                    return int(v[i])
+                except (TypeError, ValueError, IndexError):
+                    return 0
+            rows.append({"id": a["athlete"]["id"], "name": a["athlete"]["displayName"], "pts": num(ip), "reb": num(ir), "ast": num(ia),
+                         "threes": (v[i3] if i3 is not None and i3 < len(v) else "").replace("-", "/")})
+        out[team] = rows
+    return out
+
+
+def stat_line(p):
+    bits = [f"{p['pts']} pts", f"{p['reb']} reb", f"{p['ast']} ast"]
+    if p.get("threes") and not p["threes"].startswith("0/"):
+        bits.append(f"{p['threes']} 3PT")
+    return " · ".join(bits)
+
+
+ESPN_FIX = {"Los Angeles Clippers": "LA Clippers"}
+
+
 def run(cfg, rosters, games, bonuses, events, today, now_utc, pt, load, save, log):
     app_id = cfg.get("onesignal_app_id") or ""
     key = os.environ.get("ONESIGNAL_API_KEY", "")
@@ -78,14 +139,14 @@ def run(cfg, rosters, games, bonuses, events, today, now_utc, pt, load, save, lo
     test_to = os.environ.get("PUSH_TEST", "").strip()
     if test_to:   # manual test from the Actions tab
         kind = os.environ.get("PUSH_TEST_KIND", "").strip()
-        if kind in ("recap", "samples", "more"):
+        if kind in ("recap", "samples", "more", "new"):
             pass   # handled below: builds the real recap for the latest game day, sent to this owner only
         elif kind == "upset":
             title, body = "🚨 Upset! Kings won (test)", "Kings beat the Celtics 97–96 as a +446 underdog. +1 for you. (This is a test alert.)"
         else:
             title, body = "Hoop Squads alerts are on 🏀", "This is a test. You'll get finals, tip-off reminders and a nightly recap for your teams."
         ok = True
-        if kind not in ("recap", "samples", "more"):
+        if kind not in ("recap", "samples", "more", "new"):
             ok = send(app_id, key, test_to, title, body, log, count)
         log.append(f"push test to {test_to}: {'sent' if ok and key else 'not sent (missing key)' if not key else 'failed'}")
     sent_ids = plog.get("sent", {})
@@ -193,7 +254,47 @@ def run(cfg, rosters, games, bonuses, events, today, now_utc, pt, load, save, lo
                 out.append((ol, f"❌ {short(l)} lose{cup}", "\n".join([score] + ctx(ol, day))))
         return out
 
-    def soon_msg(t, a, h, when, mins, cupg, a_ml, h_ml, day):
+    try:
+        import odds as _o2
+        _imp = _o2.player_impact
+    except Exception:
+        _imp = lambda p_: 0
+    _inj_by_id = {str(p_.get("id")): p_ for p_ in ((load("injuries.json", {}) or {}).get("players") or [])}
+
+    def injury_report(eid, teams):
+        """Pre-game injury lines for these teams, from ESPN's game page (freshest report)."""
+        js = summary(eid, log) if eid else None
+        if not js:
+            return []
+        by_team = {}
+        for tb in js.get("injuries") or []:
+            team = ESPN_FIX.get(tb["team"]["displayName"], tb["team"]["displayName"])
+            outs, gtd = [], []
+            for i in tb.get("injuries") or []:
+                ath = i.get("athlete") or {}
+                stt = (i.get("status") or "").lower()
+                fs = (((i.get("details") or {}).get("fantasyStatus") or {}).get("abbreviation") or "").upper()
+                rank = _imp(_inj_by_id.get(str(ath.get("id")), {}))
+                if stt.startswith("out") or fs == "OUT":
+                    outs.append((rank, nm(ath.get("displayName"))))
+                elif fs in ("GTD", "Q", "D") or "day-to-day" in stt or "questionable" in stt or "doubtful" in stt:
+                    gtd.append((rank, nm(ath.get("displayName"))))
+            by_team[team] = (sorted(outs, reverse=True), sorted(gtd, reverse=True))
+        lines = []
+        for t in teams:
+            outs, gtd = by_team.get(t, ([], []))
+            if not outs and not gtd:
+                lines.append(f"✅ {ab(t)}: no injuries listed")
+                continue
+            parts = []
+            if outs:
+                parts.append("out " + ", ".join(n for _, n in outs[:3]) + (f" +{len(outs) - 3}" if len(outs) > 3 else ""))
+            if gtd:
+                parts.append("GTD " + ", ".join(n for _, n in gtd[:2]))
+            lines.append(f"🩹 {ab(t)}: " + " · ".join(parts))
+        return lines
+
+    def soon_msg(t, a, h, when, mins, cupg, a_ml, h_ml, day, eid=None):
         o = owner.get(t)
         opp_ = h if t == a else a
         where = "vs" if t == h else "@"
@@ -208,6 +309,8 @@ def run(cfg, rosters, games, bonuses, events, today, now_utc, pt, load, save, lo
                 pass
         if cupg:
             lines.append(f"🏆 NBA Cup: a win counts {cup_win}")
+        opp_t = h if t == a else a
+        lines += injury_report(eid, [t, opp_t])
         wl = week_line(o, day)
         if wl:
             lines.append(wl)
@@ -217,7 +320,19 @@ def run(cfg, rosters, games, bonuses, events, today, now_utc, pt, load, save, lo
     for g in games:
         if g["date"] < cutoff or g.get("home_score") is None:
             continue
-        for o, t_, b_ in final_msgs(g):
+        msgs = [m_ for m_ in final_msgs(g) if f"final|{g['id']}|{m_[0]}" not in sent_ids]
+        if not msgs:
+            continue
+        box = box_lines(summary(g["id"], log)) if key else {}
+        for o, t_, b_ in msgs:
+            stars = []
+            for tm in (g["away"], g["home"]):
+                if owner.get(tm) == o and box.get(tm):
+                    p_ = max(box[tm], key=lambda r: (r["pts"], r["reb"] + r["ast"]))
+                    stars.append(f"⭐ {nm(p_['name'])} ({ab(tm)}): {stat_line(p_)}")
+            if stars:
+                first, *rest = b_.split("\n")
+                b_ = "\n".join([first] + stars + rest)
             once(f"final|{g['id']}|{o}", o, t_, b_)
 
     # 2. starting soon
@@ -233,7 +348,9 @@ def run(cfg, rosters, games, bonuses, events, today, now_utc, pt, load, save, lo
             o = owner.get(t)
             if not o:
                 continue
-            t_, b_ = soon_msg(t, a, h, e["time"], mins, "nba cup" in (e.get("notes") or "").lower(), od.get("away_ml"), od.get("home_ml"), today)
+            if f"soon|{e['id']}|{o}" in sent_ids:
+                continue
+            t_, b_ = soon_msg(t, a, h, e["time"], mins, "nba cup" in (e.get("notes") or "").lower(), od.get("away_ml"), od.get("home_ml"), today, e["id"])
             once(f"soon|{e['id']}|{o}", o, t_, b_)
 
     # test: one of each alert type for this owner, built from real games
@@ -510,6 +627,41 @@ def run(cfg, rosters, games, bonuses, events, today, now_utc, pt, load, save, lo
             t = gg["home"] if owner.get(gg["home"]) == test_more else gg["away"]
             deliver(f"close|test|{test_more}", test_more, f"🔥 Close one: {short(t)} game is tight", f"🏀 {ab(gg['away'])} 101, {ab(gg['home'])} 99 · 2:14 - 4th\n" + (week_line(test_more, today) or pts_line(test_more)))
 
+    # 6b. overtime
+    for e in events:
+        if e.get("state") == "in" and "OT" in (e.get("detail") or ""):
+            a, h = e["away"], e["home"]
+            for t in {a["name"], h["name"]}:
+                o = owner.get(t)
+                if o:
+                    deliver(f"ot|{e['id']}|{o}", o, f"⏱️ Overtime! {short(t)} game is going extra", f"🏀 {ab(a['name'])} {a['score']}, {ab(h['name'])} {h['score']} · {e.get('detail')}\n" + (week_line(o, today) or pts_line(o)))
+
+    # 6c. players going off on your teams: 30 / 40 / 50 points, or a triple-double (live games)
+    HOT = [(50, "50"), (40, "40"), (30, "30")]
+    for e in events:
+        if e.get("state") != "in":
+            continue
+        a, h = e["away"], e["home"]
+        mine_t = [t for t in (a["name"], h["name"]) if owner.get(t)]
+        if not mine_t or not key:
+            continue
+        box = box_lines(summary(e["id"], log))
+        for t in mine_t:
+            o = owner.get(t)
+            for p_ in box.get(t, []):
+                lvl = next((tag for th, tag in HOT if p_["pts"] >= th), None)
+                td = p_["pts"] >= 10 and p_["reb"] >= 10 and p_["ast"] >= 10
+                score = f"🏀 {ab(a['name'])} {a['score']}, {ab(h['name'])} {h['score']} · {e.get('detail')}"
+                if lvl:
+                    eid = f"hot|{e['id']}|{p_['id']}|{lvl}"
+                    if eid not in sent_ids:
+                        for th, tag in HOT:   # mark lower levels too, so a 42 never also sends "30"
+                            if p_["pts"] >= th:
+                                sent_ids.setdefault(f"hot|{e['id']}|{p_['id']}|{tag}", today.isoformat()) if tag != lvl else None
+                        deliver(eid, o, f"🔥 {p_['name']} has {p_['pts']} pts", f"📊 {stat_line(p_)}\n{score}")
+                if td:
+                    deliver(f"hot|{e['id']}|{p_['id']}|td", o, f"🔥 {p_['name']} has a triple-double", f"📊 {stat_line(p_)}\n{score}")
+
     # 7. injury news on key players (Out / Doubtful), once per player per status
     try:
         import odds as _odds
@@ -551,6 +703,30 @@ def run(cfg, rosters, games, bonuses, events, today, now_utc, pt, load, save, lo
                 mine.append(f"🏀 {ab(t)} {where} {ab(oth)} · {g.get('time', '')}" + (" 🏆" if g.get("cup") else ""))
             if mine:
                 deliver(f"lineup|{today}|{o}", o, f"📅 Game day: {len(mine)} game{'s' if len(mine) != 1 else ''} today", "\n".join(mine[:5]))
+
+    if test_to and os.environ.get("PUSH_TEST_KIND", "").strip() == "new":
+        # tip-off with injury report, from this owner's next game today/tomorrow
+        nx = next((e for e in sorted(events, key=lambda e: e["start"]) if e.get("state") == "pre" and test_to in (owner.get(e["away"]["name"]), owner.get(e["home"]["name"]))), None)
+        if nx:
+            a, h = nx["away"]["name"], nx["home"]["name"]; t = a if owner.get(a) == test_to else h
+            od = nx.get("odds") or {}
+            t_, b_ = soon_msg(t, a, h, nx["time"], 30, "nba cup" in (nx.get("notes") or "").lower(), od.get("away_ml"), od.get("home_ml"), date.fromisoformat(nx["date"]), nx["id"])
+            send(app_id, key, test_to, t_ + " (test)", b_, log, count)
+        # a big game, from this owner's most recent final
+        gg = next((g for g in reversed(games) if test_to in (owner.get(g["home"]), owner.get(g["away"]))), None)
+        if gg:
+            box = box_lines(summary(gg["id"], log))
+            t = gg["home"] if owner.get(gg["home"]) == test_to else gg["away"]
+            if box.get(t):
+                p_ = max(box[t], key=lambda r: (r["pts"], r["reb"] + r["ast"]))
+                send(app_id, key, test_to, f"🔥 {p_['name']} has {p_['pts']} pts (test)", f"📊 {stat_line(p_)}\n🏀 {ab(gg['away'])} {gg['away_score']}, {ab(gg['home'])} {gg['home_score']} · 4:12 - 4th", log, count)
+            send(app_id, key, test_to, f"⏱️ Overtime! {short(t)} game is going extra (test)", f"🏀 {ab(gg['away'])} 112, {ab(gg['home'])} 112 · 5:00 - OT\n" + (week_line(test_to, today) or pts_line(test_to)), log, count)
+            for o, t_, b_ in final_msgs(gg):   # final with the star line
+                if o == test_to and box.get(t):
+                    p_ = max(box[t], key=lambda r: (r["pts"], r["reb"] + r["ast"]))
+                    first, *rest = b_.split("\n")
+                    send(app_id, key, o, t_ + " (test)", "\n".join([first, f"⭐ {nm(p_['name'])} ({ab(t)}): {stat_line(p_)}"] + rest), log, count)
+                    break
 
     if not test_more:
         st["init"] = True
