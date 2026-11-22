@@ -1994,9 +1994,9 @@
   "away": "Boston Celtics",
   "home": "Golden State Warriors",
   "fav": "Boston Celtics",
-  "spread": 8.5,
-  "away_ml": -344,
-  "home_ml": 276,
+  "spread": 7.5,
+  "away_ml": -304,
+  "home_ml": 247,
   "book": "Draft Kings"
  },
  {
@@ -2024,9 +2024,9 @@
   "away": "Dallas Mavericks",
   "home": "Utah Jazz",
   "fav": "Dallas Mavericks",
-  "spread": 1.5,
-  "away_ml": -121,
-  "home_ml": 102,
+  "spread": 2.5,
+  "away_ml": -135,
+  "home_ml": 114,
   "book": "Draft Kings"
  },
  {
