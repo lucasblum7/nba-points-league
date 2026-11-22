@@ -3,14 +3,6 @@
  "games": [
   {
    "date": "2026-11-22",
-   "time": "12:30 PM",
-   "away": "Detroit Pistons",
-   "home": "Atlanta Hawks",
-   "away_ml": -124,
-   "home_ml": 105
-  },
-  {
-   "date": "2026-11-22",
    "time": "4:00 PM",
    "away": "Denver Nuggets",
    "home": "Chicago Bulls",
@@ -22,16 +14,16 @@
    "time": "5:30 PM",
    "away": "Boston Celtics",
    "home": "Golden State Warriors",
-   "away_ml": -344,
-   "home_ml": 276
+   "away_ml": -324,
+   "home_ml": 261
   },
   {
    "date": "2026-11-22",
    "time": "3:00 PM",
    "away": "Oklahoma City Thunder",
    "home": "Miami Heat",
-   "away_ml": 146,
-   "home_ml": -173
+   "away_ml": 217,
+   "home_ml": -264
   },
   {
    "date": "2026-11-22",
@@ -46,8 +38,8 @@
    "time": "4:00 PM",
    "away": "Dallas Mavericks",
    "home": "Utah Jazz",
-   "away_ml": -121,
-   "home_ml": 102
+   "away_ml": -135,
+   "home_ml": 114
   },
   {
    "date": "2026-11-22",
