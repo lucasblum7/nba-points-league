@@ -1,4 +1,6 @@
-2026-11-22T21:50:44+00:00 ok
+2026-11-22T21:56:33+00:00 ok
 checked 2026-11-19 through 2026-11-23
 fetched 36 events
-changed: lines, today, odds
+push test to Lucas: sent
+push: sent 4 notification(s)
+changed: lines, today
