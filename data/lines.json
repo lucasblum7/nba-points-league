@@ -1984,7 +1984,7 @@
   "away": "Denver Nuggets",
   "home": "Chicago Bulls",
   "fav": "Denver Nuggets",
-  "spread": 9.5,
+  "spread": 10.5,
   "away_ml": -437,
   "home_ml": 340,
   "book": "Draft Kings"
@@ -1995,8 +1995,8 @@
   "home": "Golden State Warriors",
   "fav": "Boston Celtics",
   "spread": 7.5,
-  "away_ml": -304,
-  "home_ml": 247,
+  "away_ml": -324,
+  "home_ml": 261,
   "book": "Draft Kings"
  },
  {
@@ -2004,9 +2004,9 @@
   "away": "Oklahoma City Thunder",
   "home": "Miami Heat",
   "fav": "Miami Heat",
-  "spread": 3.5,
-  "away_ml": 146,
-  "home_ml": -173,
+  "spread": 6.5,
+  "away_ml": 217,
+  "home_ml": -264,
   "book": "Draft Kings"
  },
  {
