@@ -36,7 +36,18 @@
   "recap|2026-11-21|Lucas": "2026-11-21",
   "recap|2026-11-21|OJ": "2026-11-21",
   "recap|2026-11-21|Parker": "2026-11-21",
-  "recap|2026-11-21|Rahul": "2026-11-21"
+  "recap|2026-11-21|Rahul": "2026-11-21",
+  "soon|401910029|OJ": "2026-11-22",
+  "soon|401910029|Parker": "2026-11-22",
+  "odds|Houston Rockets|lock": "2026-11-22",
+  "inj|2595516|Out": "2026-11-22",
+  "inj|3934719|Out": "2026-11-22",
+  "lineup|2026-11-22|Darin": "2026-11-22",
+  "lineup|2026-11-22|Dom": "2026-11-22",
+  "lineup|2026-11-22|Lucas": "2026-11-22",
+  "lineup|2026-11-22|OJ": "2026-11-22",
+  "lineup|2026-11-22|Parker": "2026-11-22",
+  "lineup|2026-11-22|Rahul": "2026-11-22"
  },
  "state": {
   "leads": {
@@ -63,7 +74,7 @@
    "Denver Nuggets": "mid",
    "Detroit Pistons": "lock",
    "Golden State Warriors": "mid",
-   "Houston Rockets": "mid",
+   "Houston Rockets": "lock",
    "Indiana Pacers": "mid",
    "LA Clippers": "out",
    "Los Angeles Lakers": "mid",
@@ -110,7 +121,9 @@
    "2490149": "Out",
    "4593803": "Out",
    "3078576": "Out",
-   "3913176": "Out"
+   "3913176": "Out",
+   "2595516": "Out",
+   "3934719": "Out"
   },
   "init": true
  }
