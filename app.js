@@ -1681,9 +1681,12 @@
   }
 
   function showTeam(t, C, slate, from, back) {
-    closeBonus();
-    if (back) backTo = back.open;   // opened from an owner's roster card: closing it goes back there
-    const ov = mk('div', 'bp-overlay'); ov.id = 'bonus-pop';
+    // opened from an owner's roster card: keep that card alive underneath, so closing this one just slides away to reveal it
+    const under = back && !from ? document.getElementById('bonus-pop') : null;
+    if (under) { under.id = 'bonus-pop-under'; underKeep = true; }
+    closeBonus(); underKeep = false;
+    if (back) backTo = back.open;
+    const ov = mk('div', 'bp-overlay' + (under ? ' stacked' : '')); ov.id = 'bonus-pop';
     const box = mk('div', 'bp-box tc-box'); box.setAttribute('role', 'dialog');
     { // team colors: a band across the top and a soft wash behind the header
       const tb = TEAM_BADGE[t.team] || ['', '#888888', '#bbbbbb'];
@@ -1866,12 +1869,13 @@
       if (y0 == null) return; const t = e.touches ? e.touches[0] : e; dy = t.clientY - y0;
       if (!dragging) { if (dy > 6 && dy > Math.abs(t.clientX - x0) && box.scrollTop <= 0) { dragging = true; box.style.transition = 'none'; } else if (dy < -4) { y0 = null; return; } else return; }
       e.preventDefault();
-      const d = Math.max(0, dy); box.style.transform = `translateY(${d}px)`; ov.style.background = `rgba(0,0,0,${Math.max(0, .35 - d / 900)})`;
+      const d = Math.max(0, dy); box.style.transform = `translateY(${d}px)`; if (!ov.classList.contains('stacked')) ov.style.background = `rgba(0,0,0,${Math.max(0, .35 - d / 900)})`;
     };
     const end = () => {
       if (y0 == null) return; const fast = dy / Math.max(1, Date.now() - t0) > 0.6; y0 = null;
       if (!dragging) return;
       box.style.transition = 'transform .22s ease';
+      if ((dy > 110 || (fast && dy > 30)) && ov.classList.contains('stacked') && close === dismiss) { dragging = false; dismiss(); return; }
       if (dy > 110 || (fast && dy > 30)) { box.style.transform = 'translateY(100%)'; ov.style.transition = 'opacity .22s ease'; ov.style.opacity = '0'; setTimeout(close, 210); }
       else { box.style.transform = ''; ov.style.background = ''; }
       dragging = false;
@@ -1883,9 +1887,19 @@
   new MutationObserver((ms) => ms.forEach((m) => m.addedNodes.forEach((n) => { if (n.id === 'bonus-pop') enableSwipe(n); else if (n.id === 'why-pop') enableSwipe(n, closeWhy); }))).observe(document.body, { childList: true });
 
   // backTo: where closing the current card should land (set when a team card is opened from a roster card)
-  let backTo = null;
-  function dismiss() { const f = backTo; closeBonus(); if (f) f(); }
-  function closeBonus() { backTo = null; closeWhy(); gcNav = null; clearInterval(boxTimer); const o = document.getElementById('bonus-pop'); if (o) o.remove(); document.removeEventListener('keydown', bonusKey); }
+  let backTo = null, underKeep = false;
+  function dismiss() {
+    const f = backTo, top = document.getElementById('bonus-pop'), under = document.getElementById('bonus-pop-under');
+    if (!f || !top || !under) { closeBonus(); if (f) f(); return; }
+    // slide the team card away; the roster card is already sitting underneath
+    backTo = null; closeWhy(); gcNav = null; clearInterval(boxTimer);
+    const box = top.querySelector('.bp-box'); top.id = 'bonus-pop-leaving'; top.style.pointerEvents = 'none'; under.id = 'bonus-pop';
+    const phone = matchMedia('(max-width: 600px)').matches;
+    box.style.animation = 'none'; box.style.transition = 'transform .3s cubic-bezier(.32,.72,0,1), opacity .3s ease';
+    requestAnimationFrame(() => { box.style.transform = phone ? 'translateY(105%)' : 'translateY(40px)'; if (!phone) box.style.opacity = '0'; });
+    setTimeout(() => top.remove(), 320);
+  }
+  function closeBonus() { backTo = null; if (!underKeep) { const u = document.getElementById('bonus-pop-under'); if (u) u.remove(); } closeWhy(); gcNav = null; clearInterval(boxTimer); const o = document.getElementById('bonus-pop'); if (o) o.remove(); document.removeEventListener('keydown', bonusKey); }
   function bonusKey(e) { if (e.key === 'Escape') dismiss(); else if (gcNav && (e.key === 'ArrowRight' || e.key === 'ArrowLeft')) { e.preventDefault(); gcNav(e.key === 'ArrowRight' ? 1 : -1); } }
 
   function medal(rank) { return rank === 1 ? 'p1' : rank === 2 ? 'p2' : rank === 3 ? 'p3' : null; }
