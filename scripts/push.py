@@ -65,7 +65,12 @@ def run(cfg, rosters, games, bonuses, events, today, now_utc, pt, load, save, lo
     plog = load("push_log.json", {}) or {}
     test_to = os.environ.get("PUSH_TEST", "").strip()
     if test_to:   # manual test from the Actions tab
-        ok = send(app_id, key, test_to, "Hoop Squads alerts are on 🏀", "This is a test. You'll get finals, tip-off reminders and a nightly recap for your teams.", log, count)
+        kind = os.environ.get("PUSH_TEST_KIND", "").strip()
+        if kind == "upset":
+            title, body = "🚨 Upset! Kings won (test)", "Kings beat the Celtics 97–96 as a +446 underdog. +1 for you. (This is a test alert.)"
+        else:
+            title, body = "Hoop Squads alerts are on 🏀", "This is a test. You'll get finals, tip-off reminders and a nightly recap for your teams."
+        ok = send(app_id, key, test_to, title, body, log, count)
         log.append(f"push test to {test_to}: {'sent' if ok and key else 'not sent (missing key)' if not key else 'failed'}")
     sent_ids = plog.get("sent", {})
 
