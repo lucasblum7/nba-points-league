@@ -268,6 +268,30 @@
     playerCache.set(team, res);
     return res;
   }
+  // team leaders (points / rebounds / assists per game) from ESPN, cached for the visit
+  const leaderCache = new Map(), athCache = new Map();
+  function teamLeaders(team) {
+    if (leaderCache.has(team)) return leaderCache.get(team);
+    const p = (async () => {
+      try {
+        const id = ESPN_ID[team]; if (!id) return null;
+        const j = await fetch(`https://sports.core.api.espn.com/v2/sports/basketball/leagues/nba/seasons/${seasonYear()}/types/2/teams/${id}/leaders`).then((r) => (r.ok ? r.json() : null));
+        if (!j) return null;
+        const out = {};
+        await Promise.all((j.categories || []).filter((c) => ['pointsPerGame', 'reboundsPerGame', 'assistsPerGame'].includes(c.name)).map(async (c) => {
+          const top = (c.leaders || [])[0]; if (!top) return;
+          const ref = ((top.athlete && top.athlete.$ref) || '').replace('http:', 'https:');
+          if (!athCache.has(ref)) athCache.set(ref, fetch(ref).then((r) => (r.ok ? r.json() : null)).catch(() => null));
+          const a = await athCache.get(ref);
+          const full = (a && a.displayName) || '', parts = full.split(' ');
+          out[c.name] = { v: Number(top.value).toFixed(1), name: parts.length > 1 ? parts.slice(1).join(' ') : full };
+        }));
+        return Object.keys(out).length ? out : null;
+      } catch (e) { return null; }
+    })();
+    leaderCache.set(team, p);
+    return p;
+  }
   function playersRow(team) {
     const tr = mk('tr', 'players-row'); const td = mk('td'); td.colSpan = 6; tr.append(td);
     const box = mk('div', 'players'); td.append(box);
@@ -1451,8 +1475,13 @@
       const nx = live ? null : nextGames(t.team, 1)[0];
       if (live) { const home = live.home === t.team; meta.append(mk('span', 'oc-sep', '·'), mk('b', 'oc-live', `● ${home ? live.home_score : live.away_score}–${home ? live.away_score : live.home_score} ${home ? 'vs' : '@'} ${abbr(home ? live.away : live.home)}`)); }
       else if (nx) { const home = nx.home === t.team; meta.append(mk('span', 'oc-sep', '·'), mk('span', 'oc-next', `${nx.date === today ? 'Tonight' : dayName(nx.date, { weekday: 'short' })} ${home ? 'vs' : '@'} ${abbr(home ? nx.away : nx.home)}`)); }
-      if (t.last5g && t.last5g.length) { const f = mk('span', 'oc-form'); t.last5g.forEach((g) => f.append(mk('i', g.w ? 'w' : 'l'))); meta.append(f); }
-      r.append(top, meta); r.addEventListener('click', () => showTeam(t, C, slate)); list.append(r);
+      // team leaders: points, rebounds and assists per game (filled in from ESPN once loaded)
+      const ld = mk('div', 'oc-lead');
+      [['PTS', 'pointsPerGame'], ['REB', 'reboundsPerGame'], ['AST', 'assistsPerGame']].forEach(([lab, k]) => {
+        const c = mk('span', 'oc-lc'); c.dataset.k = k; c.append(mk('span', 'oc-lk', lab), mk('b', 'oc-lv', '–'), mk('span', 'oc-ln', '')); ld.append(c);
+      });
+      teamLeaders(t.team).then((L) => { if (!L) { ld.hidden = true; return; } ld.querySelectorAll('.oc-lc').forEach((c) => { const x = L[c.dataset.k]; if (!x) return; c.querySelector('.oc-lv').textContent = x.v; c.querySelector('.oc-ln').textContent = x.name; }); });
+      r.append(top, meta, ld); r.addEventListener('click', () => showTeam(t, C, slate)); list.append(r);
     });
     box.append(list);
     box.append(mk('p', 'players-foot', 'Tap a team for its full team card'));
