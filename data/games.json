@@ -1963,5 +1963,13 @@
   "home": "San Antonio Spurs",
   "away_score": 91,
   "home_score": 114
+ },
+ {
+  "id": "401910029",
+  "date": "2026-11-22",
+  "away": "Detroit Pistons",
+  "home": "Atlanta Hawks",
+  "away_score": 97,
+  "home_score": 107
  }
 ]

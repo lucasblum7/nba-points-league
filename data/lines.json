@@ -1987,7 +1987,7 @@
   "spread": 10.5,
   "away_ml": -419,
   "home_ml": 328,
-  "book": "Draft Kings"
+  "book": "DraftKings"
  },
  {
   "date": "2026-11-22",
@@ -1997,7 +1997,7 @@
   "spread": 7.5,
   "away_ml": -324,
   "home_ml": 261,
-  "book": "Draft Kings"
+  "book": "DraftKings"
  },
  {
   "date": "2026-11-22",
@@ -2005,9 +2005,9 @@
   "home": "Miami Heat",
   "fav": "Miami Heat",
   "spread": 4.5,
-  "away_ml": 162,
-  "home_ml": -194,
-  "book": "Draft Kings"
+  "away_ml": 154,
+  "home_ml": -184,
+  "book": "DraftKings"
  },
  {
   "date": "2026-11-22",
@@ -2017,7 +2017,7 @@
   "spread": 7.5,
   "away_ml": 240,
   "home_ml": -296,
-  "book": "Draft Kings"
+  "book": "DraftKings"
  },
  {
   "date": "2026-11-22",
@@ -2027,7 +2027,7 @@
   "spread": 2.5,
   "away_ml": -135,
   "home_ml": 114,
-  "book": "Draft Kings"
+  "book": "DraftKings"
  },
  {
   "date": "2026-11-22",
@@ -2037,6 +2037,6 @@
   "spread": 4.5,
   "away_ml": -196,
   "home_ml": 164,
-  "book": "Draft Kings"
+  "book": "DraftKings"
  }
 ]

@@ -4,12 +4,12 @@
   {
    "id": "401910029",
    "time": "12:30 PM",
-   "state": "in",
-   "detail": "3:22 - 4th",
+   "state": "post",
+   "detail": "Final",
    "away": "Detroit Pistons",
    "home": "Atlanta Hawks",
-   "away_score": 90,
-   "home_score": 97,
+   "away_score": 97,
+   "home_score": 107,
    "cup": false
   },
   {

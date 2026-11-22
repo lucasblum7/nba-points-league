@@ -6,8 +6,8 @@
    "time": "4:00 PM",
    "away": "Denver Nuggets",
    "home": "Chicago Bulls",
-   "away_ml": -437,
-   "home_ml": 340
+   "away_ml": -419,
+   "home_ml": 328
   },
   {
    "date": "2026-11-22",
@@ -22,8 +22,8 @@
    "time": "3:00 PM",
    "away": "Oklahoma City Thunder",
    "home": "Miami Heat",
-   "away_ml": 217,
-   "home_ml": -264
+   "away_ml": 154,
+   "home_ml": -184
   },
   {
    "date": "2026-11-22",
@@ -46,8 +46,8 @@
    "time": "4:00 PM",
    "away": "Orlando Magic",
    "home": "Washington Wizards",
-   "away_ml": -197,
-   "home_ml": 165
+   "away_ml": -196,
+   "home_ml": 164
   },
   {
    "date": "2026-11-23",

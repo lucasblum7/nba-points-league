@@ -51,7 +51,14 @@
   "soon|401910030|Parker": "2026-11-22",
   "soon|401910030|Rahul": "2026-11-22",
   "close|401910029|OJ": "2026-11-22",
-  "close|401910029|Parker": "2026-11-22"
+  "close|401910029|Parker": "2026-11-22",
+  "final|401910029|Parker": "2026-11-22",
+  "final|401910029|OJ": "2026-11-22",
+  "move|Parker|3|2026-11-22": "2026-11-22",
+  "inj|3032977|Out": "2026-11-22",
+  "inj|4278073|Out": "2026-11-22",
+  "inj|4251|Out": "2026-11-22",
+  "inj|3135045|Out": "2026-11-22"
  },
  "state": {
   "leads": {
@@ -64,7 +71,7 @@
    "Dom": 5,
    "Lucas": 1,
    "OJ": 3,
-   "Parker": 4,
+   "Parker": 3,
    "Rahul": 2
   },
   "odds": {
@@ -76,9 +83,9 @@
    "Cleveland Cavaliers": "mid",
    "Dallas Mavericks": "mid",
    "Denver Nuggets": "mid",
-   "Detroit Pistons": "lock",
+   "Detroit Pistons": "mid",
    "Golden State Warriors": "mid",
-   "Houston Rockets": "mid",
+   "Houston Rockets": "lock",
    "Indiana Pacers": "mid",
    "LA Clippers": "out",
    "Los Angeles Lakers": "mid",
@@ -97,7 +104,7 @@
    "San Antonio Spurs": "lock",
    "Toronto Raptors": "mid",
    "Utah Jazz": "out",
-   "Washington Wizards": "out"
+   "Washington Wizards": "mid"
   },
   "inj": {
    "4594268": "Out",
@@ -127,7 +134,11 @@
    "3078576": "Out",
    "3913176": "Out",
    "2595516": "Out",
-   "3934719": "Out"
+   "3934719": "Out",
+   "3032977": "Out",
+   "4278073": "Out",
+   "4251": "Out",
+   "3135045": "Out"
   },
   "init": true
  }
