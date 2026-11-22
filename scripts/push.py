@@ -78,14 +78,14 @@ def run(cfg, rosters, games, bonuses, events, today, now_utc, pt, load, save, lo
     test_to = os.environ.get("PUSH_TEST", "").strip()
     if test_to:   # manual test from the Actions tab
         kind = os.environ.get("PUSH_TEST_KIND", "").strip()
-        if kind == "recap":
+        if kind in ("recap", "samples"):
             pass   # handled below: builds the real recap for the latest game day, sent to this owner only
         elif kind == "upset":
             title, body = "🚨 Upset! Kings won (test)", "Kings beat the Celtics 97–96 as a +446 underdog. +1 for you. (This is a test alert.)"
         else:
             title, body = "Hoop Squads alerts are on 🏀", "This is a test. You'll get finals, tip-off reminders and a nightly recap for your teams."
         ok = True
-        if kind != "recap":
+        if kind not in ("recap", "samples"):
             ok = send(app_id, key, test_to, title, body, log, count)
         log.append(f"push test to {test_to}: {'sent' if ok and key else 'not sent (missing key)' if not key else 'failed'}")
     sent_ids = plog.get("sent", {})
@@ -121,27 +121,104 @@ def run(cfg, rosters, games, bonuses, events, today, now_utc, pt, load, save, lo
                     if owner.get(t):
                         sent_ids[f"final|{g['id']}|{owner[t]}"] = today.isoformat()
         plog["started"] = today.isoformat()
-    # 1. finals for your teams (only last night / today, so old games never fire)
-    for g in games:
-        if g["date"] < cutoff or g.get("home_score") is None:
-            continue
+    # shared context: season points and this week's matchup, for every alert
+    sign = lambda n: f"+{n}" if n > 0 else (f"−{abs(n)}" if n < 0 else "0")
+    ordn = lambda n: f"{n}{'th' if 10 <= n % 100 <= 20 else {1: 'st', 2: 'nd', 3: 'rd'}.get(n % 10, 'th')}"
+    def season_pts():
+        P = {o: 0 for o in owners}
+        for g in games:
+            w = g["home"] if g["home_score"] > g["away_score"] else g["away"]
+            if owner.get(w):
+                P[owner[w]] += cup_win if g.get("cup") else win
+        for bb in bonuses:
+            o = owner.get(bb["team"])
+            if o:
+                P[o] += S.get("made_playoffs", 5) * bb.get("made_playoffs", 0) + S.get("playoff_win", 2) * bb.get("playoff_wins", 0) + S.get("won_cup", 5) * bb.get("won_cup", 0)
+        return P
+    PTS = season_pts()
+    def pts_line(o):
+        place = 1 + sum(1 for x in owners if PTS[x] > PTS[o]); tied = sum(1 for x in owners if PTS[x] == PTS[o]) > 1
+        return f"📊 {PTS[o]} pts, {'T-' if tied else ''}{ordn(place)} of {len(owners)}"
+    def week_line(o, day):
+        M = cfg.get("matchups") or {}
+        week1 = date.fromisoformat(cfg["week1_monday"]); wk = (day - week1).days // 7 + 1
+        if not M.get("rounds") or wk < M.get("start_week", 1):
+            return None
+        start = week1 + timedelta(days=(wk - 1) * 7)
+        opp = {}
+        for a_, b_ in M["rounds"][(wk - M.get("start_week", 1)) % len(M["rounds"])]:
+            opp[a_], opp[b_] = b_, a_
+        if o not in opp:
+            return None
+        net = {o: 0, opp[o]: 0}
+        for g in games:
+            d = date.fromisoformat(g["date"])
+            if not (start <= d <= day):
+                continue
+            hw = g["home_score"] > g["away_score"]
+            w, l = (g["home"], g["away"]) if hw else (g["away"], g["home"])
+            wt = 2 if g.get("cup") else 1
+            if owner.get(w) in net: net[owner[w]] += wt
+            if owner.get(l) in net: net[owner[l]] -= wt
+        p_ = opp[o]; dd = net[o] - net[p_]
+        state = f"up {dd}" if dd > 0 else f"down {abs(dd)}" if dd < 0 else "all square"
+        return f"⚔️ Week {wk} vs {p_}: {state} ({sign(net[o])} to {sign(net[p_])})"
+    def ctx(o, day):
+        return [x for x in (pts_line(o), week_line(o, day)) if x]
+
+    def final_msgs(g):
+        """(owner, title, body) for each owner with a team in this final."""
         hw = g["home_score"] > g["away_score"]
         w, l = (g["home"], g["away"]) if hw else (g["away"], g["home"])
         ws, ls = max(g["home_score"], g["away_score"]), min(g["home_score"], g["away_score"])
         pts = cup_win if g.get("cup") else win
         cup = " 🏆" if g.get("cup") else ""
+        score = f"🏀 {ab(w)} {ws}, {ab(l)} {ls}" + (" · NBA Cup" if g.get("cup") else "")
+        day = date.fromisoformat(g["date"])
         ow, ol = owner.get(w), owner.get(l)
+        out = []
         if ow and ow == ol:
-            once(f"final|{g['id']}|{ow}", ow, f"{short(w)} beat {short(l)}{cup}", f"{short(w)} won {ws}–{ls}. Both yours, so +{pts} either way.")
-            continue
+            out.append((ow, f"🤝 {short(w)} beat {short(l)} · +{pts}{cup}", "\n".join([score + " · both yours"] + ctx(ow, day))))
+            return out
         up = upset_label(g, w)
         if ow:
             if up:
-                once(f"final|{g['id']}|{ow}", ow, f"🚨 {up[0]}! {short(w)} won{cup}", f"{short(w)} beat the {short(l)} {ws}–{ls} as a +{up[1]} underdog. +{pts} for you.")
+                out.append((ow, f"🚨 {up[0]}! {short(w)} win · +{pts}{cup}", "\n".join([score, f"💰 Won as a +{up[1]} underdog"] + ctx(ow, day))))
             else:
-                once(f"final|{g['id']}|{ow}", ow, f"{short(w)} won{cup}", f"{short(w)} beat the {short(l)} {ws}–{ls}. +{pts} for you.")
+                out.append((ow, f"✅ {short(w)} win · +{pts}{cup}", "\n".join([score] + ctx(ow, day))))
         if ol:
-            once(f"final|{g['id']}|{ol}", ol, f"{short(l)} lost{cup}" + (" in an upset" if up else ""), f"{short(l)} fell to the {short(w)} {ls}–{ws}.")
+            if up:
+                out.append((ol, f"😬 {short(l)} lose in an upset{cup}", "\n".join([score, f"💰 {ab(w)} were +{up[1]} underdogs"] + ctx(ol, day))))
+            else:
+                out.append((ol, f"❌ {short(l)} lose{cup}", "\n".join([score] + ctx(ol, day))))
+        return out
+
+    def soon_msg(t, a, h, when, mins, cupg, a_ml, h_ml, day):
+        o = owner.get(t)
+        opp_ = h if t == a else a
+        where = "vs" if t == h else "@"
+        m = max(5, int(round(mins / 5.0)) * 5)
+        title = f"⏰ {short(t)} tip off in {m} min" if short(t).endswith("s") else f"⏰ {short(t)} tips off in {m} min"
+        lines = [f"🏀 {ab(t)} {where} {ab(opp_)} · {when} PT"]
+        mine = h_ml if t == h else a_ml
+        if mine is not None:
+            try:
+                v = int(float(mine)); lines.append(f"💵 {ab(t)} {'+' if v > 0 else '−'}{abs(v)} " + ("favorite" if v < 0 else "underdog"))
+            except (TypeError, ValueError):
+                pass
+        if cupg:
+            lines.append(f"🏆 NBA Cup: a win counts {cup_win}")
+        wl = week_line(o, day)
+        if wl:
+            lines.append(wl)
+        return title, "\n".join(lines)
+
+    # 1. finals for your teams (only last night / today, so old games never fire)
+    for g in games:
+        if g["date"] < cutoff or g.get("home_score") is None:
+            continue
+        for o, t_, b_ in final_msgs(g):
+            once(f"final|{g['id']}|{o}", o, t_, b_)
 
     # 2. starting soon
     for e in events:
@@ -151,14 +228,36 @@ def run(cfg, rosters, games, bonuses, events, today, now_utc, pt, load, save, lo
         if not (0 < mins <= SOON_MIN):
             continue
         a, h = e["away"]["name"], e["home"]["name"]
+        od = e.get("odds") or {}
         for t in (a, h):
             o = owner.get(t)
             if not o:
                 continue
-            opp = h if t == a else a
-            where = "vs" if t == h else "@"
-            cup = " 🏆 NBA Cup, wins count 2" if "nba cup" in (e.get("notes") or "").lower() else ""
-            once(f"soon|{e['id']}|{o}", o, (f"{short(t)} tip off soon" if short(t).endswith("s") else f"{short(t)} tips off soon"), f"{short(t)} {where} {short(opp)} at {e['time']} PT.{cup}")
+            t_, b_ = soon_msg(t, a, h, e["time"], mins, "nba cup" in (e.get("notes") or "").lower(), od.get("away_ml"), od.get("home_ml"), today)
+            once(f"soon|{e['id']}|{o}", o, t_, b_)
+
+    # test: one of each alert type for this owner, built from real games
+    if test_to and os.environ.get("PUSH_TEST_KIND", "").strip() == "samples":
+        mine_g = [g for g in games if test_to in (owner.get(g["home"]), owner.get(g["away"]))]
+        if mine_g:
+            g = mine_g[-1]
+            for o, t_, b_ in final_msgs(g):
+                if o == test_to:
+                    send(app_id, key, o, t_ + " (test)", b_, log, count)
+        for g in reversed(games):   # a real upset from this season
+            w = g["home"] if g["home_score"] > g["away_score"] else g["away"]
+            if upset_label(g, w) and owner.get(w):
+                gg = dict(g)
+                for o, t_, b_ in final_msgs(gg):
+                    if o == owner.get(w):
+                        send(app_id, key, test_to, t_ + " (test)", b_.split("\n📊")[0] + "\n" + "\n".join(ctx(test_to, date.fromisoformat(g["date"]))), log, count)
+                break
+        sched = (load("schedule.json", {}) or {}).get("games", [])
+        nx = next((x for x in sched if test_to in (owner.get(x["home"]), owner.get(x["away"]))), None)
+        if nx:
+            t = nx["home"] if owner.get(nx["home"]) == test_to else nx["away"]
+            t_, b_ = soon_msg(t, nx["away"], nx["home"], nx.get("time", ""), 30, bool(nx.get("cup")), nx.get("away_ml"), nx.get("home_ml"), date.fromisoformat(nx["date"]))
+            send(app_id, key, test_to, t_ + " (test)", b_, log, count)
 
     # 3. nightly recap, once every game on today's slate is final
     recap_test = test_to if os.environ.get("PUSH_TEST_KIND", "").strip() == "recap" else ""
@@ -236,7 +335,7 @@ def run(cfg, rosters, games, bonuses, events, today, now_utc, pt, load, save, lo
             move = " ▲ up from " + ordn(was) if place < was else " ▼ down from " + ordn(was) if place > was else ""
             lead = pts[order[0]] - pts[o]
             gap = (" · " + (f"{lead} back of 1st" if lead else ("tied for 1st" if tied else f"{pts[o] - max(pts[x] for x in owners if x != o)} ahead")))
-            lines.append(f"🏆 {pts[o]} pts, {'T-' if tied else ''}{ordn(place)} of {len(owners)}{move}{gap if not move else ''}")
+            lines.append(f"📊 {pts[o]} pts, {'T-' if tied else ''}{ordn(place)} of {len(owners)}{move}{gap if not move else ''}")
             if o in opp:
                 p = opp[o]
                 d = net[o] - net[p]
