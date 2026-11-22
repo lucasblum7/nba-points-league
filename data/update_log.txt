@@ -1,6 +1,6 @@
-2026-11-22T06:45:15+00:00 ok
+2026-11-22T06:50:40+00:00 ok
 checked 2026-11-18 through 2026-11-22
 fetched 38 events
 push test to Lucas: sent
-push: sent 3 notification(s)
-changed: nothing
+push: sent 9 notification(s)
+changed: lines
