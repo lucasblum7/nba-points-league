@@ -1525,15 +1525,17 @@
     }
     // the team name and its stat tiles stay pinned at the top while the card scrolls
     const pin = mk('div', 'tc-pin'); pin.append(head); box.append(pin);
-    box.addEventListener('scroll', () => pin.classList.toggle('stuck', box.scrollTop > 40), { passive: true });
+    let stuck = false, raf = 0;   // hysteresis so the header doesn't flicker while it resizes
+    box.addEventListener('scroll', () => { if (raf) return; raf = requestAnimationFrame(() => { raf = 0;
+      const y = box.scrollTop; if (!stuck && y > 70) stuck = true; else if (stuck && y < 8) stuck = false; pin.classList.toggle('stuck', stuck); }); }, { passive: true });
     // record / pace / projection
     const tiles = mk('div', 'tc-tiles');
     const tile = (label, value, cls, sub) => { const d = mk('div', 'tc-tile'); d.append(mk('span', 'tc-tl', label), mk('b', cls || null, value)); if (sub) d.append(mk('span', 'tc-ts ' + (cls || ''), sub)); tiles.append(d); };
     tile('Record', `${t.wins}–${t.losses}`);
     const diff = t.pace != null && t.proj != null ? Math.round((t.pace - t.proj) * 10) / 10 : null;
     tile('Win pace', t.pace == null ? '–' : t.pace.toFixed(1), paceClass(t.pace, t.proj), diff == null ? '' : (diff > 0 ? '+' : diff < 0 ? '−' : '±') + Math.abs(diff).toFixed(1) + ' vs line');
-    tile('Preseason line', t.proj ?? '–');
-    if (t.bonus) tile('Bonus pts', '+' + t.bonus, 'up');
+    tile('Line', t.proj ?? '–', null, 'preseason');
+    if (t.bonus) tile('Bonus', '+' + t.bonus, 'up', 'pts');
     pin.append(tiles);
     const po = playoffOdds(t.team); if (po) box.append(po);
     // last 5 / next 5

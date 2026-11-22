@@ -184,3 +184,15 @@ html.ld-on, html.ld-on body { overflow: hidden; }
 .tc-colored .tc-pin::before { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 8px; opacity: 0; transition: opacity .15s ease;
   background: linear-gradient(90deg, var(--tc1) 0 68%, var(--tc2) 68% 100%); }
 .tc-colored .tc-pin.stuck::before { opacity: 1; }
+/* smooth pinning: stripe always on, tiles always one row, sizes animate instead of jumping */
+.tc-colored .tc-pin::before { opacity: 1 !important; transition: none; }
+.tc-box .tc-pin .tc-tiles { display: grid !important; grid-template-columns: repeat(auto-fit, minmax(0, 1fr)) !important; grid-auto-flow: column; gap: 6px !important; }
+.tc-box .tc-pin .tc-tile { min-width: 0; transition: padding .22s ease; }
+.tc-box .tc-pin .tc-tl { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.tc-box .tc-pin .tc-tile b { transition: font-size .22s ease; }
+.tc-box .tc-pin .tc-ts { display: block !important; max-height: 2.6em; overflow: hidden; transition: max-height .22s ease, opacity .18s ease; }
+.tc-box .tc-pin.stuck .tc-ts { max-height: 0; opacity: 0; }
+.tc-box .tc-pin .badge.tc-badge { transition: width .22s ease, height .22s ease, font-size .22s ease; }
+.tc-box .tc-pin .tc-title b, .tc-box .tc-pin .tc-pts { transition: font-size .22s ease; }
+.tc-pin, .tc-pin .tc-tiles { transition: padding .22s ease, margin .22s ease, box-shadow .2s ease; }
+@media (prefers-reduced-motion: reduce) { .tc-pin *, .tc-pin { transition: none !important; } }
