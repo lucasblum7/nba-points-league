@@ -1,5 +1,5 @@
-2026-11-22T01:29:12+00:00 ok
+2026-11-22T04:39:36+00:00 ok
 checked 2026-11-18 through 2026-11-22
 fetched 38 events
-odds: 111 injured players, 111 in ESPN's report
-changed: lines, today, injuries, odds
+odds: 110 injured players, 110 in ESPN's report
+changed: games (4 new), lines, today, injuries, odds

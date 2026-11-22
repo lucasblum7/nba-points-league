@@ -1,5 +1,5 @@
 {
- "as_of": "2026-11-21T15",
+ "as_of": "2026-11-21T18",
  "players": [
   {
    "team": "Atlanta Hawks",
@@ -987,10 +987,10 @@
    "team": "New York Knicks",
    "id": "3934719",
    "name": "OG Anunoby",
-   "status": "Out",
+   "status": "Day-To-Day",
    "comment": "Anunoby (calf) has been ruled out for Saturday's game against the Trail Blazers.",
    "return": "2026-11-22",
-   "fantasy": "OUT",
+   "fantasy": "GTD",
    "stats": {
     "gp": 15.0,
     "min": 33.933334,
@@ -1004,10 +1004,10 @@
    "team": "New York Knicks",
    "id": "2528426",
    "name": "Jordan Clarkson",
-   "status": "Out",
+   "status": "Day-To-Day",
    "comment": "Clarkson (foot) won't play in Saturday's game against Portland.",
    "return": "2026-11-22",
-   "fantasy": "OUT",
+   "fantasy": "GTD",
    "stats": {
     "gp": 12.0,
     "min": 9.833333,
@@ -1021,10 +1021,10 @@
    "team": "New York Knicks",
    "id": "3136195",
    "name": "Karl-Anthony Towns",
-   "status": "Out",
+   "status": "Day-To-Day",
    "comment": "Towns (illness) won't play in Saturday's game versus the Trail Blazers.",
    "return": "2026-11-22",
-   "fantasy": "OUT",
+   "fantasy": "GTD",
    "stats": {
     "gp": 15.0,
     "min": 32.8,
@@ -1261,23 +1261,6 @@
     "min": 13.333333,
     "pts": 6.0,
     "reb": 1.3333334,
-    "ast": 1.0,
-    "this_season": true
-   }
-  },
-  {
-   "team": "Sacramento Kings",
-   "id": "4431679",
-   "name": "Precious Achiuwa",
-   "status": "Day-To-Day",
-   "comment": "Achiuwa (lower leg) is questionable for Saturday's game against the Celtics.",
-   "return": "2026-11-21",
-   "fantasy": "GTD",
-   "stats": {
-    "gp": 12.0,
-    "min": 24.666666,
-    "pts": 9.5,
-    "reb": 5.8333335,
     "ast": 1.0,
     "this_season": true
    }
