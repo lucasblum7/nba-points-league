@@ -244,3 +244,6 @@ html.ld-on, html.ld-on body { overflow: hidden; }
 .oc-lk { font-size: 9.5px; font-weight: 800; letter-spacing: .05em; color: var(--muted); }
 .oc-lv { font-size: 13px; font-weight: 800; font-variant-numeric: tabular-nums; }
 .oc-ln { grid-column: 1 / -1; font-size: 11px; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; min-width: 0; }
+
+/* Your team: the whole card opens your roster card */
+#me-card.me-open { cursor: pointer; }

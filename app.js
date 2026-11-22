@@ -682,8 +682,16 @@
     const t3 = tile('My Hoop Squad', `${w}–${l}`, 'combined record', null, big);
     t3.classList.add('me-roster');
     const strip = mk('span', 'me-badges'); mine.forEach((x) => strip.append(badge(x.team, 'sb-badge me-badge'))); t3.append(strip);
-    tap(t3, () => goToRoster(me), `My Hoop Squad, ${w}–${l}: open my roster`);
+    tap(t3, () => showOwner(me, C, slate), `My Hoop Squad, ${w}–${l}: open my roster card`);
     host.append(small, big);
+    // tap anywhere else on Your team to open your full roster card (buttons and the Today / matchup tiles keep their own jobs)
+    const card = $('me-card');
+    if (!card.dataset.wired) { card.dataset.wired = '1'; card.addEventListener('click', (e) => {
+      const m = getMe(); if (!m || !sbC || !sbC.owners.includes(m)) return;
+      if (e.target.closest('button, a, .me-tap, .me-grid, .push-row, .ux-tip')) return;
+      showOwner(m, sbC, sbSlate);
+    }); }
+    card.classList.add('me-open');
     const pr = mk('div', 'push-row'); pr.id = 'push-row'; pr.hidden = true; host.append(pr); renderPush();
   }
 
