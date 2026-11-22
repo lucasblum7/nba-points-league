@@ -139,3 +139,10 @@ html.ld-on, html.ld-on body { overflow: hidden; }
 .ph-head b { font-family: var(--disp); font-weight: 800; font-size: 24px; text-transform: uppercase; letter-spacing: .02em; }
 .ph-sub { font-size: 14px; color: var(--muted); margin: 0 0 10px; }
 .ph-steps { margin: 0; padding-left: 22px; display: flex; flex-direction: column; gap: 10px; font-size: 15px; line-height: 1.4; }
+/* alerts prompt: a call-to-action banner */
+.push-row.cta { background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%); box-shadow: inset 0 -3px 0 var(--accent), 0 6px 16px rgba(2,6,23,.18); padding: 12px 12px 14px; }
+.push-row.cta .push-ic { font-size: 24px; animation: bellRing 2.4s ease-in-out 1s 2; transform-origin: 50% 10%; }
+.push-row.cta .push-tx { color: #f1f5f9; font-size: 14px; font-weight: 700; }
+.push-row.cta .push-btn { background: var(--accent); color: #fff; font-size: 14px; padding: 10px 16px; box-shadow: 0 4px 12px rgba(242,107,29,.35); }
+@keyframes bellRing { 0%, 100% { transform: rotate(0); } 10% { transform: rotate(14deg); } 20% { transform: rotate(-12deg); } 30% { transform: rotate(8deg); } 40% { transform: rotate(-6deg); } 50% { transform: rotate(0); } }
+@media (prefers-reduced-motion: reduce) { .push-row.cta .push-ic { animation: none; } }

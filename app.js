@@ -447,7 +447,7 @@
     const row = (icon, text, btnText, fn, cls) => { host.replaceChildren(); host.className = 'push-row ' + (cls || ''); host.append(mk('span', 'push-ic', icon), mk('span', 'push-tx', text));
       if (btnText) { const b = mk('button', 'push-btn', btnText); b.type = 'button'; b.addEventListener('click', fn); host.append(b); } };
     if (!('Notification' in window) || (isIOS() && !isStandalone())) {
-      row('🔔', isIOS() ? 'Get alerts for your teams' : 'This browser can’t show alerts', isIOS() ? 'How' : null, showInstallHelp); return;
+      row('🔔', isIOS() ? 'Get updated with Hoop Squads: final scores, tip-offs, nightly recaps and more!' : 'This browser can’t show alerts', isIOS() ? 'Turn on' : null, showInstallHelp, isIOS() ? 'cta' : 'off'); return;
     }
     let OS; try { OS = await p; } catch (e) { row('🔕', 'Alerts aren’t available right now', null, null, 'off'); return; }
     if (OS.User.PushSubscription.optedIn) {
@@ -456,10 +456,10 @@
     } else if (Notification.permission === 'denied') {
       row('🔕', isIOS() ? 'Alerts are blocked. Allow them in Settings → Notifications → Hoop Squads' : 'Alerts are blocked for this site. Allow notifications in your browser’s site settings', null, null, 'off');
     } else {
-      row('🔔', 'Get alerts when your teams finish, tip off soon, and a nightly recap', 'Turn on', async () => {
+      row('🔔', 'Get updated with Hoop Squads: final scores, tip-offs, nightly recaps and more!', 'Turn on', async () => {
         try { await OS.Notifications.requestPermission(); if (Notification.permission === 'granted') { await OS.User.PushSubscription.optIn(); await syncPushOwner(); } } catch (e) { /* ignore */ }
         renderPush();
-      });
+      }, 'cta');
     }
   }
   // jump to an owner's roster on the Rosters tab and pulse it
