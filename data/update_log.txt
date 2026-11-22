@@ -1,4 +1,4 @@
-2026-11-22T22:00:20+00:00 ok
+2026-11-22T22:15:13+00:00 ok
 checked 2026-11-19 through 2026-11-23
 fetched 36 events
-changed: lines, today, schedule
+changed: lines, today, odds
