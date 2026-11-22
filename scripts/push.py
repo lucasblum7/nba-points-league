@@ -159,6 +159,7 @@ def run(cfg, rosters, games, bonuses, events, today, now_utc, pt, load, save, lo
             if o:
                 pts[o] += S.get("made_playoffs", 5) * b.get("made_playoffs", 0) + S.get("playoff_win", 2) * b.get("playoff_wins", 0) + S.get("won_cup", 5) * b.get("won_cup", 0)
         tonight = {o: [0, 0] for o in owners}
+        won_t = {o: [] for o in owners}; lost_t = {o: [] for o in owners}
         for g in games:
             if g["date"] != today.isoformat():
                 continue
@@ -166,8 +167,10 @@ def run(cfg, rosters, games, bonuses, events, today, now_utc, pt, load, save, lo
             w, l = (g["home"], g["away"]) if hw else (g["away"], g["home"])
             if owner.get(w):
                 tonight[owner[w]][0] += cup_win if g.get("cup") else win
+                won_t[owner[w]].append(short(w))
             if owner.get(l):
                 tonight[owner[l]][1] += 1
+                lost_t[owner[l]].append(short(l))
         # this week's matchup net (Cup games count double both ways)
         M = cfg.get("matchups") or {}
         week1 = date.fromisoformat(cfg["week1_monday"])
@@ -192,18 +195,34 @@ def run(cfg, rosters, games, bonuses, events, today, now_utc, pt, load, save, lo
         order = sorted(owners, key=lambda o: -pts[o])
         sign = lambda n: f"+{n}" if n > 0 else (f"−{abs(n)}" if n < 0 else "0")
         ordn = lambda n: f"{n}{'th' if 10 <= n % 100 <= 20 else {1: 'st', 2: 'nd', 3: 'rd'}.get(n % 10, 'th')}"
+        # yesterday's standings, to show movement
+        prev_pts = {o: pts[o] - tonight[o][0] for o in owners}
+        place_of = lambda o, P: 1 + sum(1 for x in owners if P[x] > P[o])
         for o in owners:
             w_pts, losses = tonight[o]
             if w_pts == 0 and losses == 0:
                 continue   # no games tonight for this owner
-            place = 1 + sum(1 for x in owners if pts[x] > pts[o])
+            place, was = place_of(o, pts), place_of(o, prev_pts)
             tied = sum(1 for x in owners if pts[x] == pts[o]) > 1
-            line = (f"+{w_pts} tonight" if w_pts else "No wins tonight") + f" · {pts[o]} pts, {'T-' if tied else ''}{ordn(place)} of {len(owners)}."
+            mood = "🔥" if w_pts >= 4 and not losses else "📈" if w_pts > losses else "🧊" if not w_pts else "🏀"
+            title = f"{mood} Nightly recap: " + (f"+{w_pts} tonight" if w_pts else "no wins tonight")
+            lines = []
+            res = []
+            if won_t[o]:
+                res.append("✅ " + ", ".join(won_t[o]))
+            if lost_t[o]:
+                res.append("❌ " + ", ".join(lost_t[o]))
+            lines.append("   ".join(res))
+            move = " ▲ up from " + ordn(was) if place < was else " ▼ down from " + ordn(was) if place > was else ""
+            lead = pts[order[0]] - pts[o]
+            gap = (" · " + (f"{lead} back of 1st" if lead else ("tied for 1st" if tied else f"{pts[o] - max(pts[x] for x in owners if x != o)} ahead")))
+            lines.append(f"🏆 {pts[o]} pts, {'T-' if tied else ''}{ordn(place)} of {len(owners)}{move}{gap if not move else ''}")
             if o in opp:
                 p = opp[o]
-                lead = "lead" if net[o] > net[p] else "trail" if net[o] < net[p] else "are tied with"
-                line += f" Week {wk}: you {lead} {p} {sign(net[o])} to {sign(net[p])}." if lead != "are tied with" else f" Week {wk}: tied with {p} at {sign(net[o])}."
-            once(f"recap|{today.isoformat()}|{o}", o, "Tonight in Hoop Squads", line)
+                d = net[o] - net[p]
+                state = f"up {d}" if d > 0 else f"down {abs(d)}" if d < 0 else "all square"
+                lines.append(f"⚔️ Week {wk} vs {p}: {state} ({sign(net[o])} to {sign(net[p])})")
+            once(f"recap|{today.isoformat()}|{o}", o, title, "\n".join(lines))
         plog.setdefault("recaps", []).append(f"recap|{today.isoformat()}")
 
     # forget old ids so the log stays small
