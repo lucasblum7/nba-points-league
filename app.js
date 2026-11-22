@@ -1525,9 +1525,10 @@
     }
     // the team name and its stat tiles stay pinned at the top while the card scrolls
     const pin = mk('div', 'tc-pin'); pin.append(head); box.append(pin);
-    let stuck = false, raf = 0;   // hysteresis so the header doesn't flicker while it resizes
-    box.addEventListener('scroll', () => { if (raf) return; raf = requestAnimationFrame(() => { raf = 0;
-      const y = box.scrollTop; if (!stuck && y > 70) stuck = true; else if (stuck && y < 8) stuck = false; pin.classList.toggle('stuck', stuck); }); }, { passive: true });
+    // shrink the pinned header gradually as you scroll (like iOS large titles), no on/off jump
+    let raf = 0; const RANGE = 90;
+    const setP = () => { raf = 0; const p = Math.max(0, Math.min(1, box.scrollTop / RANGE)); pin.style.setProperty('--p', p.toFixed(3)); pin.classList.toggle('stuck', p >= 1); };
+    box.addEventListener('scroll', () => { if (!raf) raf = requestAnimationFrame(setP); }, { passive: true }); setP();
     // record / pace / projection
     const tiles = mk('div', 'tc-tiles');
     const tile = (label, value, cls, sub) => { const d = mk('div', 'tc-tile'); d.append(mk('span', 'tc-tl', label), mk('b', cls || null, value)); if (sub) d.append(mk('span', 'tc-ts ' + (cls || ''), sub)); tiles.append(d); };
