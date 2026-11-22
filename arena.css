@@ -180,3 +180,7 @@ html.ld-on, html.ld-on body { overflow: hidden; }
 .tc-pin.stuck .tc-head { margin-bottom: 0; }
 .tc-box .tc-pin.stuck .badge.tc-badge { width: 40px !important; height: 40px !important; font-size: 11px !important; }
 .tc-pin.stuck { padding-bottom: 8px; }
+/* keep the team-color stripe on top once the header is pinned */
+.tc-colored .tc-pin::before { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 8px; opacity: 0; transition: opacity .15s ease;
+  background: linear-gradient(90deg, var(--tc1) 0 68%, var(--tc2) 68% 100%); }
+.tc-colored .tc-pin.stuck::before { opacity: 1; }
