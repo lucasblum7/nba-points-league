@@ -237,9 +237,10 @@ html.ld-on, html.ld-on body { overflow: hidden; }
 .oc-tk, .me-tl, .tc-tl { white-space: nowrap; }
 .oc-tk .ux-i, .tc-tl .ux-i { width: 13px; height: 13px; font-size: 9px; margin-left: 3px; }
 
-/* ---------- Owner roster card: team leaders on one slim row (PTS · AST · REB) ---------- */
-.oc-lead { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 4px; margin: 5px 0 0 38px; font-size: 12px; text-align: left; }
-.oc-lc { display: flex; align-items: baseline; gap: 4px; min-width: 0; padding: 3px 6px; border-radius: 7px; background: color-mix(in srgb, var(--muted) 10%, transparent); }
-.oc-lk { font-size: 9.5px; font-weight: 800; letter-spacing: .05em; color: var(--muted); flex: none; }
-.oc-lv { font-weight: 800; font-variant-numeric: tabular-nums; flex: none; }
-.oc-ln { color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; min-width: 0; }
+/* ---------- Owner roster card: team leaders, a slim PTS · AST · REB row (value on top, player under it) ---------- */
+.oc-lead { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 5px; margin: 6px 0 0 38px; text-align: left; }
+@media (max-width: 600px) { .oc-lead { margin-left: 0; } }
+.oc-lc { display: grid; grid-template-columns: auto 1fr; column-gap: 5px; align-items: baseline; min-width: 0; padding: 4px 7px; border-radius: 8px; background: color-mix(in srgb, var(--muted) 10%, transparent); line-height: 1.2; }
+.oc-lk { font-size: 9.5px; font-weight: 800; letter-spacing: .05em; color: var(--muted); }
+.oc-lv { font-size: 13px; font-weight: 800; font-variant-numeric: tabular-nums; }
+.oc-ln { grid-column: 1 / -1; font-size: 11px; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; min-width: 0; }
