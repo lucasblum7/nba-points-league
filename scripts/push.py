@@ -25,6 +25,18 @@ SOON_MIN = 40       # "starting soon" window, minutes before tip-off
 KEEP_DAYS = 10      # how long sent-message ids are remembered
 
 
+ABBR = {"Atlanta Hawks": "ATL", "Boston Celtics": "BOS", "Brooklyn Nets": "BKN", "Charlotte Hornets": "CHA", "Chicago Bulls": "CHI",
+        "Cleveland Cavaliers": "CLE", "Dallas Mavericks": "DAL", "Denver Nuggets": "DEN", "Detroit Pistons": "DET", "Golden State Warriors": "GSW",
+        "Houston Rockets": "HOU", "Indiana Pacers": "IND", "LA Clippers": "LAC", "Los Angeles Lakers": "LAL", "Memphis Grizzlies": "MEM",
+        "Miami Heat": "MIA", "Milwaukee Bucks": "MIL", "Minnesota Timberwolves": "MIN", "New Orleans Pelicans": "NOP", "New York Knicks": "NYK",
+        "Oklahoma City Thunder": "OKC", "Orlando Magic": "ORL", "Philadelphia 76ers": "PHI", "Phoenix Suns": "PHX", "Portland Trail Blazers": "POR",
+        "Sacramento Kings": "SAC", "San Antonio Spurs": "SAS", "Toronto Raptors": "TOR", "Utah Jazz": "UTA", "Washington Wizards": "WAS"}
+
+
+def ab(team):
+    return ABBR.get(team, short(team))
+
+
 def short(team):
     parts = team.split()
     if team.endswith("Trail Blazers"):
@@ -167,10 +179,10 @@ def run(cfg, rosters, games, bonuses, events, today, now_utc, pt, load, save, lo
             w, l = (g["home"], g["away"]) if hw else (g["away"], g["home"])
             if owner.get(w):
                 tonight[owner[w]][0] += cup_win if g.get("cup") else win
-                won_t[owner[w]].append(short(w))
+                won_t[owner[w]].append(ab(w))
             if owner.get(l):
                 tonight[owner[l]][1] += 1
-                lost_t[owner[l]].append(short(l))
+                lost_t[owner[l]].append(ab(l))
         # this week's matchup net (Cup games count double both ways)
         M = cfg.get("matchups") or {}
         week1 = date.fromisoformat(cfg["week1_monday"])
