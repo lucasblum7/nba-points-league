@@ -2061,6 +2061,16 @@
  },
  {
   "date": "2026-11-23",
+  "away": "Brooklyn Nets",
+  "home": "Minnesota Timberwolves",
+  "fav": "Minnesota Timberwolves",
+  "spread": 11.5,
+  "away_ml": 431,
+  "home_ml": -578,
+  "book": "DraftKings"
+ },
+ {
+  "date": "2026-11-23",
   "away": "Portland Trail Blazers",
   "home": "Philadelphia 76ers",
   "fav": "Philadelphia 76ers",
