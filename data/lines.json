@@ -2047,7 +2047,7 @@
   "spread": 2.5,
   "away_ml": -148,
   "home_ml": 125,
-  "book": "DraftKings"
+  "book": "Draft Kings"
  },
  {
   "date": "2026-11-23",
@@ -2057,7 +2057,7 @@
   "spread": 8.5,
   "away_ml": -352,
   "home_ml": 282,
-  "book": "DraftKings"
+  "book": "Draft Kings"
  },
  {
   "date": "2026-11-23",
@@ -2067,7 +2067,7 @@
   "spread": 12.5,
   "away_ml": 470,
   "home_ml": -650,
-  "book": "DraftKings"
+  "book": "Draft Kings"
  },
  {
   "date": "2026-11-23",
@@ -2077,7 +2077,7 @@
   "spread": 5.5,
   "away_ml": -228,
   "home_ml": 189,
-  "book": "DraftKings"
+  "book": "Draft Kings"
  },
  {
   "date": "2026-11-23",
@@ -2087,7 +2087,7 @@
   "spread": 13.5,
   "away_ml": 558,
   "home_ml": -800,
-  "book": "DraftKings"
+  "book": "Draft Kings"
  },
  {
   "date": "2026-11-23",
@@ -2097,7 +2097,7 @@
   "spread": 10.5,
   "away_ml": 413,
   "home_ml": -549,
-  "book": "DraftKings"
+  "book": "Draft Kings"
  },
  {
   "date": "2026-11-23",
@@ -2107,7 +2107,7 @@
   "spread": 3.5,
   "away_ml": -155,
   "home_ml": 131,
-  "book": "DraftKings"
+  "book": "Draft Kings"
  },
  {
   "date": "2026-11-23",
@@ -2115,9 +2115,9 @@
   "home": "Philadelphia 76ers",
   "fav": "Philadelphia 76ers",
   "spread": 2.5,
-  "away_ml": 120,
-  "home_ml": -142,
-  "book": "DraftKings"
+  "away_ml": 124,
+  "home_ml": -148,
+  "book": "Draft Kings"
  },
  {
   "date": "2026-11-23",
@@ -2127,7 +2127,7 @@
   "spread": 12.5,
   "away_ml": -597,
   "home_ml": 443,
-  "book": "DraftKings"
+  "book": "Draft Kings"
  },
  {
   "date": "2026-11-23",
@@ -2137,6 +2137,6 @@
   "spread": 10.5,
   "away_ml": 360,
   "home_ml": -467,
-  "book": "DraftKings"
+  "book": "Draft Kings"
  }
 ]
