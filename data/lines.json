@@ -1984,7 +1984,7 @@
   "away": "Denver Nuggets",
   "home": "Chicago Bulls",
   "fav": "Denver Nuggets",
-  "spread": 10.5,
+  "spread": 9.5,
   "away_ml": -419,
   "home_ml": 328,
   "book": "DraftKings"
@@ -2037,6 +2037,26 @@
   "spread": 4.5,
   "away_ml": -196,
   "home_ml": 164,
+  "book": "DraftKings"
+ },
+ {
+  "date": "2026-11-23",
+  "away": "LA Clippers",
+  "home": "Houston Rockets",
+  "fav": "Houston Rockets",
+  "spread": 13.5,
+  "away_ml": 448,
+  "home_ml": -610,
+  "book": "DraftKings"
+ },
+ {
+  "date": "2026-11-23",
+  "away": "Portland Trail Blazers",
+  "home": "Philadelphia 76ers",
+  "fav": "Philadelphia 76ers",
+  "spread": 2.5,
+  "away_ml": 121,
+  "home_ml": -144,
   "book": "DraftKings"
  }
 ]
