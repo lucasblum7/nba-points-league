@@ -333,9 +333,9 @@
    "prev": 99.0
   },
   "Indiana Pacers": {
-   "playoffs": 14.8,
+   "playoffs": 14.9,
    "top6": 1.0,
-   "playin": 48.2,
+   "playin": 48.3,
    "proj_w": 32.7,
    "proj_l": 49.3,
    "seed": 10.6,
@@ -354,11 +354,25 @@
      "comment": "Haliburton (hamstring) is expected to miss at least two more weeks, Shams Charania of ESPN reports."
     },
     {
+     "name": "Aaron Nesmith",
+     "status": "Out",
+     "games": 1,
+     "impact": 1.3,
+     "comment": "Nesmith is out for Monday's game against the Thunder due to right foot soreness."
+    },
+    {
      "name": "Johnny Furphy",
      "status": "Out",
      "games": 15,
      "impact": 0.08,
      "comment": "Furphy (knee) is practicing with the G League's Noblesville Boom, per Alex Golden of SI.com."
+    },
+    {
+     "name": "T.J. McConnell",
+     "status": "Out",
+     "games": 1,
+     "impact": 0.48,
+     "comment": "McConnell is out for Monday's game against the Thunder due to left hamstring soreness."
     }
    ],
    "injury_wins": -0.5,
@@ -402,8 +416,8 @@
   },
   "Los Angeles Lakers": {
    "playoffs": 92.9,
-   "top6": 79.3,
-   "playin": 20.1,
+   "top6": 79.4,
+   "playin": 20.0,
    "proj_w": 51.7,
    "proj_l": 30.3,
    "seed": 4.7,
@@ -602,8 +616,8 @@
   },
   "Oklahoma City Thunder": {
    "playoffs": 92.0,
-   "top6": 72.3,
-   "playin": 26.8,
+   "top6": 72.1,
+   "playin": 27.0,
    "proj_w": 50.2,
    "proj_l": 31.8,
    "seed": 5.3,
@@ -619,7 +633,7 @@
      "status": "Out",
      "games": 42,
      "impact": 2.25,
-     "comment": "Williams (leg) underwent successful surgery Wednesday to \"address a fractured left fibula and reconstruction of ankle ligaments following a "
+     "comment": "Williams (ankle) has been ruled out for Monday's game against the Pacers, according to the NBA's official injury report."
     },
     {
      "name": "Chet Holmgren",
@@ -634,15 +648,22 @@
      "games": 42,
      "impact": 0.17,
      "comment": "Wallace underwent surgery Friday to repair a torn labrum in his left shoulder and will be re-evaluated before the end of the regular season,"
+    },
+    {
+     "name": "Aday Mara",
+     "status": "Out",
+     "games": 1,
+     "impact": 1.56,
+     "comment": "Mara (shin) has been ruled out for Monday's game against the Pacers."
     }
    ],
-   "injury_wins": -2.7,
+   "injury_wins": -2.8,
    "sos_rank": 27,
    "games_left": 65,
    "prev": 92.5
   },
   "Orlando Magic": {
-   "playoffs": 47.3,
+   "playoffs": 47.2,
    "top6": 10.7,
    "playin": 75.5,
    "proj_w": 38.4,
@@ -810,7 +831,7 @@
    "prev": 100.0
   },
   "Toronto Raptors": {
-   "playoffs": 49.5,
+   "playoffs": 49.4,
    "top6": 10.1,
    "playin": 77.2,
    "proj_w": 38.5,
@@ -887,7 +908,7 @@
   "Washington Wizards": {
    "playoffs": 6.8,
    "top6": 0.4,
-   "playin": 30.1,
+   "playin": 30.0,
    "proj_w": 30.4,
    "proj_l": 51.6,
    "seed": 11.4,
