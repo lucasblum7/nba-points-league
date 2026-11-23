@@ -1,5 +1,5 @@
 {
- "as_of": "2026-11-22T18",
+ "as_of": "2026-11-22T21",
  "players": [
   {
    "team": "Atlanta Hawks",
@@ -1191,6 +1191,23 @@
    "stats": null
   },
   {
+   "team": "San Antonio Spurs",
+   "id": "5104157",
+   "name": "Victor Wembanyama",
+   "status": "Day-To-Day",
+   "comment": "Wembanyama (back) is questionable for Monday's game against the Kings, Jared Weiss of The Athletic reports.",
+   "return": "2026-11-23",
+   "fantasy": "GTD",
+   "stats": {
+    "gp": 17.0,
+    "min": 30.294117,
+    "pts": 29.882353,
+    "reb": 12.294118,
+    "ast": 3.1764705,
+    "this_season": true
+   }
+  },
+  {
    "team": "Oklahoma City Thunder",
    "id": "2991350",
    "name": "Alex Caruso",
@@ -1554,10 +1571,10 @@
    "team": "Memphis Grizzlies",
    "id": "2991070",
    "name": "Jerami Grant",
-   "status": "Day-To-Day",
+   "status": "Out",
    "comment": "Grant was diagnosed with a grade 1 left calf strain and will be re-evaluated in two weeks.",
    "return": "2026-12-12",
-   "fantasy": "GTD",
+   "fantasy": "OUT",
    "stats": {
     "gp": 15.0,
     "min": 22.266666,
