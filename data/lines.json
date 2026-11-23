@@ -2115,8 +2115,8 @@
   "home": "Philadelphia 76ers",
   "fav": "Philadelphia 76ers",
   "spread": 3.5,
-  "away_ml": 136,
-  "home_ml": -162,
+  "away_ml": 142,
+  "home_ml": -169,
   "book": "Draft Kings"
  },
  {
@@ -2125,8 +2125,8 @@
   "home": "Sacramento Kings",
   "fav": "San Antonio Spurs",
   "spread": 10.5,
-  "away_ml": -467,
-  "home_ml": 360,
+  "away_ml": -484,
+  "home_ml": 371,
   "book": "Draft Kings"
  },
  {
