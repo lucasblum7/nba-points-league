@@ -2065,8 +2065,8 @@
   "home": "Houston Rockets",
   "fav": "Houston Rockets",
   "spread": 12.5,
-  "away_ml": 501,
-  "home_ml": -700,
+  "away_ml": 487,
+  "home_ml": -670,
   "book": "DraftKings"
  },
  {
@@ -2094,9 +2094,9 @@
   "away": "Brooklyn Nets",
   "home": "Minnesota Timberwolves",
   "fav": "Minnesota Timberwolves",
-  "spread": 12.5,
-  "away_ml": 487,
-  "home_ml": -670,
+  "spread": 11.5,
+  "away_ml": 470,
+  "home_ml": -650,
   "book": "DraftKings"
  },
  {
@@ -2105,8 +2105,8 @@
   "home": "New Orleans Pelicans",
   "fav": "Phoenix Suns",
   "spread": 3.5,
-  "away_ml": -150,
-  "home_ml": 126,
+  "away_ml": -155,
+  "home_ml": 131,
   "book": "DraftKings"
  },
  {
@@ -2114,7 +2114,7 @@
   "away": "Portland Trail Blazers",
   "home": "Philadelphia 76ers",
   "fav": "Philadelphia 76ers",
-  "spread": 3.5,
+  "spread": 2.5,
   "away_ml": 130,
   "home_ml": -155,
   "book": "DraftKings"
