@@ -38,8 +38,8 @@
    "time": "7:00 PM",
    "away": "Utah Jazz",
    "home": "Los Angeles Lakers",
-   "away_ml": 554,
-   "home_ml": -790
+   "away_ml": 558,
+   "home_ml": -800
   },
   {
    "date": "2026-11-23",
@@ -62,8 +62,8 @@
    "time": "4:00 PM",
    "away": "Portland Trail Blazers",
    "home": "Philadelphia 76ers",
-   "away_ml": 131,
-   "home_ml": -155
+   "away_ml": 112,
+   "home_ml": -133
   },
   {
    "date": "2026-11-23",

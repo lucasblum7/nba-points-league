@@ -1,5 +1,5 @@
 {
- "as_of": "2026-11-23T06",
+ "as_of": "2026-11-23T09",
  "players": [
   {
    "team": "Atlanta Hawks",
@@ -946,6 +946,23 @@
     "pts": 22.571428,
     "reb": 6.642857,
     "ast": 3.5714285,
+    "this_season": true
+   }
+  },
+  {
+   "team": "Philadelphia 76ers",
+   "id": "3059318",
+   "name": "Joel Embiid",
+   "status": "Day-To-Day",
+   "comment": "Embiid (knee) has been downgraded to questionable for Monday's game against Portland.",
+   "return": "2026-11-23",
+   "fantasy": "GTD",
+   "stats": {
+    "gp": 14.0,
+    "min": 32.07143,
+    "pts": 20.428572,
+    "reb": 8.928572,
+    "ast": 4.142857,
     "this_season": true
    }
   },
