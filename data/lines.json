@@ -2074,9 +2074,9 @@
   "away": "Oklahoma City Thunder",
   "home": "Indiana Pacers",
   "fav": "Oklahoma City Thunder",
-  "spread": 4.5,
-  "away_ml": -191,
-  "home_ml": 160,
+  "spread": 5.5,
+  "away_ml": -204,
+  "home_ml": 170,
   "book": "DraftKings"
  },
  {
@@ -2094,7 +2094,7 @@
   "away": "Brooklyn Nets",
   "home": "Minnesota Timberwolves",
   "fav": "Minnesota Timberwolves",
-  "spread": 11.5,
+  "spread": 10.5,
   "away_ml": 455,
   "home_ml": -620,
   "book": "DraftKings"
