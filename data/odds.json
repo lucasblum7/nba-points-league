@@ -5,7 +5,7 @@
   "Atlanta Hawks": {
    "playoffs": 90.3,
    "top6": 64.3,
-   "playin": 35.2,
+   "playin": 35.1,
    "proj_w": 47.0,
    "proj_l": 35.0,
    "seed": 5.6,
@@ -49,15 +49,15 @@
    "prev": 99.6
   },
   "Brooklyn Nets": {
-   "playoffs": 0.4,
+   "playoffs": 0.5,
    "top6": 0.0,
-   "playin": 3.0,
-   "proj_w": 23.2,
-   "proj_l": 58.8,
+   "playin": 3.1,
+   "proj_w": 23.3,
+   "proj_l": 58.7,
    "seed": 13.5,
    "conf": "East",
-   "rating": -6.4,
-   "rating_wins": 23.8,
+   "rating": -6.3,
+   "rating_wins": 24.0,
    "prior_wins": 24.5,
    "last5_margin": -5.8,
    "season_margin": -7.9,
@@ -77,8 +77,8 @@
   },
   "Charlotte Hornets": {
    "playoffs": 9.1,
-   "top6": 0.5,
-   "playin": 33.0,
+   "top6": 0.4,
+   "playin": 32.9,
    "proj_w": 30.5,
    "proj_l": 51.5,
    "seed": 11.3,
@@ -117,15 +117,15 @@
    "prev": 8.3
   },
   "Chicago Bulls": {
-   "playoffs": 1.9,
+   "playoffs": 2.1,
    "top6": 0.0,
-   "playin": 10.7,
-   "proj_w": 26.7,
-   "proj_l": 55.3,
+   "playin": 11.0,
+   "proj_w": 26.8,
+   "proj_l": 55.2,
    "seed": 12.5,
    "conf": "East",
-   "rating": -5.6,
-   "rating_wins": 26.0,
+   "rating": -5.5,
+   "rating_wins": 26.1,
    "prior_wins": 29.5,
    "last5_margin": 4.0,
    "season_margin": -7.9,
@@ -146,20 +146,20 @@
     }
    ],
    "injury_wins": -0.5,
-   "sos_rank": 23,
+   "sos_rank": 24,
    "games_left": 66,
    "prev": 1.9
   },
   "Cleveland Cavaliers": {
-   "playoffs": 89.9,
-   "top6": 60.1,
-   "playin": 39.4,
-   "proj_w": 46.4,
-   "proj_l": 35.6,
+   "playoffs": 89.7,
+   "top6": 59.5,
+   "playin": 39.9,
+   "proj_w": 46.3,
+   "proj_l": 35.7,
    "seed": 5.9,
    "conf": "East",
-   "rating": 2.0,
-   "rating_wins": 46.3,
+   "rating": 1.9,
+   "rating_wins": 46.2,
    "prior_wins": 48.5,
    "last5_margin": 3.0,
    "season_margin": 2.4,
@@ -185,9 +185,9 @@
    "prev": 89.4
   },
   "Dallas Mavericks": {
-   "playoffs": 37.4,
-   "top6": 11.9,
-   "playin": 65.1,
+   "playoffs": 37.6,
+   "top6": 12.1,
+   "playin": 65.0,
    "proj_w": 41.3,
    "proj_l": 40.7,
    "seed": 8.9,
@@ -212,9 +212,9 @@
    "prev": 36.5
   },
   "Denver Nuggets": {
-   "playoffs": 95.1,
-   "top6": 83.0,
-   "playin": 16.6,
+   "playoffs": 95.2,
+   "top6": 83.2,
+   "playin": 16.4,
    "proj_w": 52.4,
    "proj_l": 29.6,
    "seed": 4.4,
@@ -239,9 +239,9 @@
    "prev": 95.0
   },
   "Detroit Pistons": {
-   "playoffs": 98.8,
-   "top6": 93.5,
-   "playin": 6.5,
+   "playoffs": 98.9,
+   "top6": 93.6,
+   "playin": 6.4,
    "proj_w": 53.0,
    "proj_l": 29.0,
    "seed": 3.4,
@@ -266,8 +266,8 @@
    "prev": 98.7
   },
   "Golden State Warriors": {
-   "playoffs": 23.4,
-   "top6": 5.3,
+   "playoffs": 23.3,
+   "top6": 5.4,
    "playin": 54.6,
    "proj_w": 38.9,
    "proj_l": 43.1,
@@ -315,7 +315,7 @@
   },
   "Houston Rockets": {
    "playoffs": 99.0,
-   "top6": 96.1,
+   "top6": 96.2,
    "playin": 3.8,
    "proj_w": 56.2,
    "proj_l": 25.8,
@@ -335,7 +335,7 @@
   "Indiana Pacers": {
    "playoffs": 15.0,
    "top6": 0.9,
-   "playin": 48.7,
+   "playin": 48.3,
    "proj_w": 32.7,
    "proj_l": 49.3,
    "seed": 10.6,
@@ -383,7 +383,7 @@
   "LA Clippers": {
    "playoffs": 0.6,
    "top6": 0.0,
-   "playin": 4.2,
+   "playin": 4.1,
    "proj_w": 28.5,
    "proj_l": 53.5,
    "seed": 12.5,
@@ -415,9 +415,9 @@
    "prev": 0.8
   },
   "Los Angeles Lakers": {
-   "playoffs": 93.0,
-   "top6": 79.2,
-   "playin": 20.2,
+   "playoffs": 92.9,
+   "top6": 79.3,
+   "playin": 20.0,
    "proj_w": 51.6,
    "proj_l": 30.4,
    "seed": 4.7,
@@ -490,9 +490,9 @@
    "prev": 54.9
   },
   "Miami Heat": {
-   "playoffs": 93.7,
-   "top6": 73.2,
-   "playin": 26.6,
+   "playoffs": 93.6,
+   "top6": 73.3,
+   "playin": 26.5,
    "proj_w": 48.2,
    "proj_l": 33.8,
    "seed": 5.2,
@@ -523,20 +523,20 @@
    "season_margin": -12.4,
    "injuries": [],
    "injury_wins": 0.0,
-   "sos_rank": 24,
+   "sos_rank": 23,
    "games_left": 65,
    "prev": 0.0
   },
   "Minnesota Timberwolves": {
-   "playoffs": 84.5,
-   "top6": 57.8,
-   "playin": 40.4,
-   "proj_w": 48.4,
-   "proj_l": 33.6,
+   "playoffs": 84.3,
+   "top6": 57.2,
+   "playin": 40.9,
+   "proj_w": 48.3,
+   "proj_l": 33.7,
    "seed": 6.1,
    "conf": "West",
    "rating": 3.5,
-   "rating_wins": 50.5,
+   "rating_wins": 50.4,
    "prior_wins": 48.5,
    "last5_margin": 0.8,
    "season_margin": 9.7,
@@ -597,8 +597,8 @@
   },
   "New York Knicks": {
    "playoffs": 99.3,
-   "top6": 95.6,
-   "playin": 4.4,
+   "top6": 95.7,
+   "playin": 4.3,
    "proj_w": 53.9,
    "proj_l": 28.1,
    "seed": 3.1,
@@ -615,9 +615,9 @@
    "prev": 99.6
   },
   "Oklahoma City Thunder": {
-   "playoffs": 91.9,
-   "top6": 71.9,
-   "playin": 27.2,
+   "playoffs": 92.0,
+   "top6": 72.0,
+   "playin": 27.1,
    "proj_w": 50.2,
    "proj_l": 31.8,
    "seed": 5.3,
@@ -663,9 +663,9 @@
    "prev": 92.5
   },
   "Orlando Magic": {
-   "playoffs": 46.8,
-   "top6": 10.4,
-   "playin": 75.6,
+   "playoffs": 47.0,
+   "top6": 10.6,
+   "playin": 75.5,
    "proj_w": 38.4,
    "proj_l": 43.6,
    "seed": 8.6,
@@ -736,7 +736,7 @@
    "prev": 34.2
   },
   "Portland Trail Blazers": {
-   "playoffs": 85.6,
+   "playoffs": 85.7,
    "top6": 61.0,
    "playin": 37.1,
    "proj_w": 48.8,
@@ -744,7 +744,7 @@
    "seed": 5.9,
    "conf": "West",
    "rating": 3.3,
-   "rating_wins": 50.0,
+   "rating_wins": 49.9,
    "prior_wins": 41.5,
    "last5_margin": 2.6,
    "season_margin": 5.8,
@@ -826,14 +826,14 @@
     }
    ],
    "injury_wins": -0.5,
-   "sos_rank": 12,
+   "sos_rank": 13,
    "games_left": 65,
    "prev": 100.0
   },
   "Toronto Raptors": {
-   "playoffs": 49.5,
-   "top6": 10.0,
-   "playin": 77.3,
+   "playoffs": 49.4,
+   "top6": 10.2,
+   "playin": 77.2,
    "proj_w": 38.5,
    "proj_l": 43.5,
    "seed": 8.6,
@@ -906,9 +906,9 @@
    "prev": 0.1
   },
   "Washington Wizards": {
-   "playoffs": 6.7,
+   "playoffs": 6.8,
    "top6": 0.4,
-   "playin": 30.0,
+   "playin": 30.1,
    "proj_w": 30.4,
    "proj_l": 51.6,
    "seed": 11.4,
@@ -935,7 +935,7 @@
     }
    ],
    "injury_wins": -1.0,
-   "sos_rank": 13,
+   "sos_rank": 12,
    "games_left": 64,
    "prev": 6.0
   }
