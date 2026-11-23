@@ -68,7 +68,11 @@
   "soon|401910034|Rahul": "2026-11-22",
   "soon|401910035|OJ": "2026-11-22",
   "soon|401910035|Rahul": "2026-11-22",
-  "hot|401910030|4066261|td": "2026-11-22"
+  "hot|401910030|4066261|td": "2026-11-22",
+  "final|401910030|Rahul": "2026-11-22",
+  "final|401910030|Parker": "2026-11-22",
+  "move|Rahul|1|2026-11-22": "2026-11-22",
+  "odds|Washington Wizards|out": "2026-11-22"
  },
  "state": {
   "leads": {
@@ -82,7 +86,7 @@
    "Lucas": 1,
    "OJ": 3,
    "Parker": 3,
-   "Rahul": 2
+   "Rahul": 1
   },
   "odds": {
    "Atlanta Hawks": "mid",
@@ -114,7 +118,7 @@
    "San Antonio Spurs": "lock",
    "Toronto Raptors": "mid",
    "Utah Jazz": "out",
-   "Washington Wizards": "mid"
+   "Washington Wizards": "out"
   },
   "inj": {
    "4594268": "Out",
