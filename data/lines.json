@@ -2071,6 +2071,16 @@
  },
  {
   "date": "2026-11-23",
+  "away": "Phoenix Suns",
+  "home": "New Orleans Pelicans",
+  "fav": "Phoenix Suns",
+  "spread": 3.5,
+  "away_ml": -149,
+  "home_ml": 125,
+  "book": "DraftKings"
+ },
+ {
+  "date": "2026-11-23",
   "away": "Portland Trail Blazers",
   "home": "Philadelphia 76ers",
   "fav": "Philadelphia 76ers",
