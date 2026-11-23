@@ -2044,7 +2044,7 @@
   "away": "Memphis Grizzlies",
   "home": "Charlotte Hornets",
   "fav": "Memphis Grizzlies",
-  "spread": null,
+  "spread": 4.5,
   "away_ml": -173,
   "home_ml": 145,
   "book": "DraftKings"
@@ -2057,6 +2057,16 @@
   "spread": 13.5,
   "away_ml": 448,
   "home_ml": -610,
+  "book": "DraftKings"
+ },
+ {
+  "date": "2026-11-23",
+  "away": "Utah Jazz",
+  "home": "Los Angeles Lakers",
+  "fav": "Los Angeles Lakers",
+  "spread": 12.5,
+  "away_ml": 501,
+  "home_ml": -700,
   "book": "DraftKings"
  },
  {
@@ -2095,8 +2105,8 @@
   "home": "Toronto Raptors",
   "fav": "Toronto Raptors",
   "spread": 11.5,
-  "away_ml": 368,
-  "home_ml": -479,
+  "away_ml": 356,
+  "home_ml": -460,
   "book": "DraftKings"
  }
 ]
