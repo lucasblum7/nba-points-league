@@ -60,22 +60,22 @@
    "id": "401910034",
    "time": "5:00 PM",
    "state": "in",
-   "detail": "6:47 - 4th",
+   "detail": "1:24 - 4th",
    "away": "Indiana Pacers",
    "home": "New York Knicks",
-   "away_score": 87,
-   "home_score": 98,
+   "away_score": 100,
+   "home_score": 112,
    "cup": false
   },
   {
    "id": "401910035",
    "time": "5:30 PM",
    "state": "in",
-   "detail": "32.5 - 3rd",
+   "detail": "6:32 - 4th",
    "away": "Boston Celtics",
    "home": "Golden State Warriors",
-   "away_score": 73,
-   "home_score": 66,
+   "away_score": 81,
+   "home_score": 83,
    "cup": false
   }
  ]
