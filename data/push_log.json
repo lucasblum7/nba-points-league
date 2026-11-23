@@ -113,7 +113,10 @@
   "leads": {
    "5|Lucas|OJ": "OJ",
    "5|Parker|Rahul": "Rahul",
-   "5|Darin|Dom": "Dom"
+   "5|Darin|Dom": "Dom",
+   "6|Lucas|Parker": null,
+   "6|Rahul|Darin": null,
+   "6|Dom|OJ": null
   },
   "places": {
    "Darin": 6,
