@@ -2044,10 +2044,10 @@
   "away": "Memphis Grizzlies",
   "home": "Charlotte Hornets",
   "fav": "Memphis Grizzlies",
-  "spread": 3.5,
-  "away_ml": -162,
-  "home_ml": 136,
-  "book": "DraftKings"
+  "spread": 2.5,
+  "away_ml": -148,
+  "home_ml": 125,
+  "book": "Draft Kings"
  },
  {
   "date": "2026-11-23",
@@ -2055,9 +2055,9 @@
   "home": "Chicago Bulls",
   "fav": "Cleveland Cavaliers",
   "spread": 8.5,
-  "away_ml": -337,
-  "home_ml": 271,
-  "book": "DraftKings"
+  "away_ml": -336,
+  "home_ml": 270,
+  "book": "Draft Kings"
  },
  {
   "date": "2026-11-23",
@@ -2065,9 +2065,9 @@
   "home": "Houston Rockets",
   "fav": "Houston Rockets",
   "spread": 12.5,
-  "away_ml": 471,
+  "away_ml": 470,
   "home_ml": -650,
-  "book": "DraftKings"
+  "book": "Draft Kings"
  },
  {
   "date": "2026-11-23",
@@ -2077,7 +2077,7 @@
   "spread": 4.5,
   "away_ml": -191,
   "home_ml": 160,
-  "book": "DraftKings"
+  "book": "Draft Kings"
  },
  {
   "date": "2026-11-23",
@@ -2087,7 +2087,7 @@
   "spread": 13.5,
   "away_ml": 554,
   "home_ml": -790,
-  "book": "DraftKings"
+  "book": "Draft Kings"
  },
  {
   "date": "2026-11-23",
@@ -2097,7 +2097,7 @@
   "spread": 11.5,
   "away_ml": 455,
   "home_ml": -620,
-  "book": "DraftKings"
+  "book": "Draft Kings"
  },
  {
   "date": "2026-11-23",
@@ -2107,17 +2107,17 @@
   "spread": 3.5,
   "away_ml": -155,
   "home_ml": 131,
-  "book": "DraftKings"
+  "book": "Draft Kings"
  },
  {
   "date": "2026-11-23",
   "away": "Portland Trail Blazers",
   "home": "Philadelphia 76ers",
   "fav": "Philadelphia 76ers",
-  "spread": 4.5,
-  "away_ml": 142,
-  "home_ml": -169,
-  "book": "DraftKings"
+  "spread": 3.5,
+  "away_ml": 131,
+  "home_ml": -155,
+  "book": "Draft Kings"
  },
  {
   "date": "2026-11-23",
@@ -2127,7 +2127,7 @@
   "spread": 10.5,
   "away_ml": -484,
   "home_ml": 371,
-  "book": "DraftKings"
+  "book": "Draft Kings"
  },
  {
   "date": "2026-11-23",
@@ -2135,8 +2135,8 @@
   "home": "Toronto Raptors",
   "fav": "Toronto Raptors",
   "spread": 10.5,
-  "away_ml": 378,
-  "home_ml": -494,
-  "book": "DraftKings"
+  "away_ml": 360,
+  "home_ml": -467,
+  "book": "Draft Kings"
  }
 ]
