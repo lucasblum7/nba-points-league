@@ -2094,7 +2094,7 @@
   "away": "Brooklyn Nets",
   "home": "Minnesota Timberwolves",
   "fav": "Minnesota Timberwolves",
-  "spread": 12.5,
+  "spread": 11.5,
   "away_ml": 455,
   "home_ml": -620,
   "book": "Draft Kings"
@@ -2114,7 +2114,7 @@
   "away": "Portland Trail Blazers",
   "home": "Philadelphia 76ers",
   "fav": "Philadelphia 76ers",
-  "spread": 3.5,
+  "spread": 4.5,
   "away_ml": 142,
   "home_ml": -169,
   "book": "Draft Kings"
