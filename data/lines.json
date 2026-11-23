@@ -1994,9 +1994,9 @@
   "away": "Boston Celtics",
   "home": "Golden State Warriors",
   "fav": "Boston Celtics",
-  "spread": 7.5,
-  "away_ml": -324,
-  "home_ml": 261,
+  "spread": 8.5,
+  "away_ml": -336,
+  "home_ml": 270,
   "book": "DraftKings"
  },
  {
@@ -2015,8 +2015,8 @@
   "home": "New York Knicks",
   "fav": "New York Knicks",
   "spread": 6.5,
-  "away_ml": 205,
-  "home_ml": -249,
+  "away_ml": 196,
+  "home_ml": -237,
   "book": "DraftKings"
  },
  {
@@ -2037,6 +2037,16 @@
   "spread": 4.5,
   "away_ml": -196,
   "home_ml": 164,
+  "book": "DraftKings"
+ },
+ {
+  "date": "2026-11-23",
+  "away": "Memphis Grizzlies",
+  "home": "Charlotte Hornets",
+  "fav": "Memphis Grizzlies",
+  "spread": 3.5,
+  "away_ml": -157,
+  "home_ml": 132,
   "book": "DraftKings"
  },
  {
