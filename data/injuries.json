@@ -1,5 +1,5 @@
 {
- "as_of": "2026-11-23T12",
+ "as_of": "2026-11-23T15",
  "players": [
   {
    "team": "Atlanta Hawks",
@@ -81,29 +81,12 @@
   },
   {
    "team": "Boston Celtics",
-   "id": "4251",
-   "name": "Paul George",
-   "status": "Day-To-Day",
-   "comment": "George (rest) has been ruled out for Sunday's game against Golden State, Justin Turpin of WEEI.com reports.",
-   "return": "2026-11-24",
-   "fantasy": "GTD",
-   "stats": {
-    "gp": 14.0,
-    "min": 30.142857,
-    "pts": 19.857143,
-    "reb": 5.642857,
-    "ast": 3.7857144,
-    "this_season": true
-   }
-  },
-  {
-   "team": "Boston Celtics",
    "id": "4351852",
    "name": "Mitchell Robinson",
    "status": "Out",
-   "comment": "Robinson (illness) has been ruled out for Sunday's game against Golden State, Justin Turpin of WEEI.com reports.",
-   "return": "2026-11-24",
-   "fantasy": "GTD",
+   "comment": "Robinson (illness) is out for Tuesday's game against Washington, Taylor Snow of the Celtics' official site reports.",
+   "return": "2026-11-27",
+   "fantasy": "OUT",
    "stats": {
     "gp": 14.0,
     "min": 17.571428,
@@ -397,12 +380,29 @@
   },
   {
    "team": "Detroit Pistons",
+   "id": "4432166",
+   "name": "Cade Cunningham",
+   "status": "Day-To-Day",
+   "comment": "Cunningham (knee) is probable for Tuesday's game against the Orlando.",
+   "return": "2026-11-24",
+   "fantasy": "GTD",
+   "stats": {
+    "gp": 15.0,
+    "min": 34.8,
+    "pts": 24.2,
+    "reb": 5.0666666,
+    "ast": 8.333333,
+    "this_season": true
+   }
+  },
+  {
+   "team": "Detroit Pistons",
    "id": "4433621",
    "name": "Jalen Duren",
    "status": "Out",
-   "comment": "Duren (hamstring) has begun on-court activity and will be re-evaluated in two weeks, Hunter Patterson of The Athletic reports.",
-   "return": "2026-11-24",
-   "fantasy": "GTD",
+   "comment": "Duren (hamstring) has been ruled out for Tuesday's game against the Magic.",
+   "return": "2026-11-30",
+   "fantasy": "OUT",
    "stats": {
     "gp": 2.0,
     "min": 19.0,
@@ -416,10 +416,10 @@
    "team": "Detroit Pistons",
    "id": "5258459",
    "name": "Ebuka Okorie",
-   "status": "Day-To-Day",
-   "comment": "Okorie (oblique) is out for Sunday's game in Atlanta.",
-   "return": "2026-11-24",
-   "fantasy": "GTD",
+   "status": "Out",
+   "comment": "Okorie (oblique) won't play Tuesday in Orlando.",
+   "return": "2026-11-30",
+   "fantasy": "OUT",
    "stats": {
     "gp": 5.0,
     "min": 4.0,
@@ -536,7 +536,7 @@
    "id": "4397040",
    "name": "Brandon Williams",
    "status": "Out",
-   "comment": "Williams (hamstring) is out for Sunday's game against the Celtics.",
+   "comment": "Head coach Steve Kerr said Monday that Williams (hamstring) is on track to return Wednesday against the Kings, Kenzo Fukuda of ClutchPoints.com reports.",
    "return": "2026-11-25",
    "fantasy": "GTD",
    "stats": {
@@ -630,23 +630,6 @@
     "pts": 3.0,
     "reb": 1.0,
     "ast": 0,
-    "this_season": true
-   }
-  },
-  {
-   "team": "Indiana Pacers",
-   "id": "3149673",
-   "name": "Pascal Siakam",
-   "status": "Day-To-Day",
-   "comment": "Siakam is questionable for Monday's game against Oklahoma City due to left hip injury management, according to the NBA's injury report.",
-   "return": "2026-11-23",
-   "fantasy": "GTD",
-   "stats": {
-    "gp": 16.0,
-    "min": 32.1875,
-    "pts": 23.125,
-    "reb": 6.125,
-    "ast": 3.625,
     "this_season": true
    }
   },
@@ -936,10 +919,10 @@
    "team": "Philadelphia 76ers",
    "id": "3059318",
    "name": "Joel Embiid",
-   "status": "Day-To-Day",
-   "comment": "Embiid (knee) has been downgraded to questionable for Monday's game against Portland.",
-   "return": "2026-11-23",
-   "fantasy": "GTD",
+   "status": "Out",
+   "comment": "Embiid (illness) is out for Monday's game against Portland, Austin Krell of OnPattison.com reports.",
+   "return": "2026-11-25",
+   "fantasy": "OUT",
    "stats": {
     "gp": 14.0,
     "min": 32.07143,
@@ -1323,10 +1306,10 @@
    "team": "Utah Jazz",
    "id": "4397077",
    "name": "Jaxson Hayes",
-   "status": "Day-To-Day",
-   "comment": "Hayes (knee) has been ruled out for the remainder of Sunday's game against the Mavericks, Grant Afseth of DallasHoopsJournal.com reports.",
-   "return": "2026-11-23",
-   "fantasy": "GTD",
+   "status": "Out",
+   "comment": "Hayes (knee) has been ruled out for Monday's game against the Lakers.",
+   "return": "2026-11-27",
+   "fantasy": "OUT",
    "stats": {
     "gp": 15.0,
     "min": 23.733334,
@@ -1426,9 +1409,9 @@
    "id": "4997537",
    "name": "Tristan Vukcevic",
    "status": "Out",
-   "comment": "Vukcevic (hip) has been ruled out for Monday's game against Memphis.",
-   "return": "2026-11-24",
-   "fantasy": "GTD",
+   "comment": "Vukcevic (hip) has been ruled out for Tuesday's game against Boston.",
+   "return": "2026-11-30",
+   "fantasy": "OUT",
    "stats": {
     "gp": 49.0,
     "min": 13.693877,
@@ -1488,8 +1471,8 @@
    "name": "Jaden Bradley",
    "status": "Day-To-Day",
    "comment": "Bradley is questionable for Monday's game against the Bucks due to an ankle sprain, Blake Murphy of Sportsnet.ca reports.",
-   "return": "2026-11-23",
-   "fantasy": "GTD",
+   "return": "",
+   "fantasy": "",
    "stats": {
     "gp": 9.0,
     "min": 4.6666665,
@@ -1642,23 +1625,6 @@
     "pts": 3.0,
     "reb": 0,
     "ast": 0,
-    "this_season": true
-   }
-  },
-  {
-   "team": "Charlotte Hornets",
-   "id": "4433287",
-   "name": "Brandon Miller",
-   "status": "Day-To-Day",
-   "comment": "Miller is probable for Monday's game against the Grizzlies due to a right knee contusion.",
-   "return": "2026-11-23",
-   "fantasy": "GTD",
-   "stats": {
-    "gp": 13.0,
-    "min": 30.76923,
-    "pts": 19.846153,
-    "reb": 4.769231,
-    "ast": 2.5384614,
     "this_season": true
    }
   },

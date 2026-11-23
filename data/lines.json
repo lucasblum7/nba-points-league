@@ -2114,9 +2114,9 @@
   "away": "Portland Trail Blazers",
   "home": "Philadelphia 76ers",
   "fav": "Philadelphia 76ers",
-  "spread": 2.5,
-  "away_ml": 124,
-  "home_ml": -148,
+  "spread": 1.5,
+  "away_ml": -103,
+  "home_ml": -115,
   "book": "DraftKings"
  },
  {
