@@ -30,8 +30,8 @@
    "time": "4:30 PM",
    "away": "Oklahoma City Thunder",
    "home": "Indiana Pacers",
-   "away_ml": -191,
-   "home_ml": 160
+   "away_ml": -228,
+   "home_ml": 189
   },
   {
    "date": "2026-11-23",
@@ -62,8 +62,8 @@
    "time": "4:00 PM",
    "away": "Portland Trail Blazers",
    "home": "Philadelphia 76ers",
-   "away_ml": 110,
-   "home_ml": -130
+   "away_ml": 114,
+   "home_ml": -135
   },
   {
    "date": "2026-11-23",
