@@ -1,5 +1,5 @@
 {
- "as_of": "2026-11-22T15",
+ "as_of": "2026-11-22T18",
  "players": [
   {
    "team": "Atlanta Hawks",
@@ -25,7 +25,7 @@
    "status": "Out",
    "comment": "Landale (hip) won't play Sunday against the Pistons.",
    "return": "2026-11-27",
-   "fantasy": "OUT",
+   "fantasy": "GTD",
    "stats": {
     "gp": 9.0,
     "min": 15.444445,
@@ -419,7 +419,7 @@
    "status": "Out",
    "comment": "Duren (hamstring) has begun on-court activity and will be re-evaluated in two weeks, Hunter Patterson of The Athletic reports.",
    "return": "2026-11-24",
-   "fantasy": "OUT",
+   "fantasy": "GTD",
    "stats": {
     "gp": 2.0,
     "min": 19.0,
@@ -634,23 +634,6 @@
    }
   },
   {
-   "team": "Indiana Pacers",
-   "id": "3149673",
-   "name": "Pascal Siakam",
-   "status": "Day-To-Day",
-   "comment": "Siakam (hip) is listed as questionable for Sunday's game against New York.",
-   "return": "2026-11-22",
-   "fantasy": "GTD",
-   "stats": {
-    "gp": 15.0,
-    "min": 32.133335,
-    "pts": 23.0,
-    "reb": 6.133333,
-    "ast": 3.8,
-    "this_season": true
-   }
-  },
-  {
    "team": "LA Clippers",
    "id": "6580",
    "name": "Bradley Beal",
@@ -664,23 +647,6 @@
     "pts": 8.166667,
     "reb": 0.8333333,
     "ast": 1.6666666,
-    "this_season": false
-   }
-  },
-  {
-   "team": "LA Clippers",
-   "id": "3913176",
-   "name": "Brandon Ingram",
-   "status": "Out",
-   "comment": "Ingram (Achilles) is expected to make his season and team debut Monday against the Rockets, per Shams Charania of ESPN.",
-   "return": "2026-11-23",
-   "fantasy": "GTD",
-   "stats": {
-    "gp": 77.0,
-    "min": 33.81818,
-    "pts": 21.493507,
-    "reb": 5.5844154,
-    "ast": 3.6883116,
     "this_season": false
    }
   },
@@ -706,9 +672,9 @@
    "id": "4066457",
    "name": "Austin Reaves",
    "status": "Out",
-   "comment": "Reaves (heel) was a full participant in Sunday's practice, Thuc Nhi Nguyen of the Los Angeles Times reports.",
-   "return": "2026-11-23",
-   "fantasy": "GTD",
+   "comment": "Reaves (heel) has been ruled out for Monday's game against the Jazz, Jovan Buha of The Athletic reports.",
+   "return": "2026-11-27",
+   "fantasy": "OUT",
    "stats": {
     "gp": 12.0,
     "min": 35.25,
@@ -873,18 +839,18 @@
   },
   {
    "team": "New York Knicks",
-   "id": "3136195",
-   "name": "Karl-Anthony Towns",
-   "status": "Day-To-Day",
-   "comment": "Towns (illness) is questionable to play in Sunday's game against the Pacers.",
-   "return": "2026-11-22",
-   "fantasy": "GTD",
+   "id": "4431823",
+   "name": "Miles McBride",
+   "status": "Out",
+   "comment": "McBride (abdomen) has been ruled out for Sunday's game against the Pacers.",
+   "return": "2026-11-25",
+   "fantasy": "OUT",
    "stats": {
-    "gp": 15.0,
-    "min": 32.8,
-    "pts": 21.266666,
-    "reb": 13.933333,
-    "ast": 3.9333334,
+    "gp": 16.0,
+    "min": 17.1875,
+    "pts": 6.75,
+    "reb": 1.1875,
+    "ast": 1.0,
     "this_season": true
    }
   },
@@ -1022,7 +988,7 @@
    "id": "4888725",
    "name": "Ryan Dunn",
    "status": "Day-To-Day",
-   "comment": "Dunn (quadriceps) was a full participant in Sunday's practice, Duane Rankin of The Arizona Republic reports.",
+   "comment": "Dunn (quadriceps) is listed as questionable for Monday's game against the Pelicans.",
    "return": "2026-11-23",
    "fantasy": "GTD",
    "stats": {
@@ -1148,6 +1114,23 @@
   },
   {
    "team": "San Antonio Spurs",
+   "id": "4066259",
+   "name": "De'Aaron Fox",
+   "status": "Day-To-Day",
+   "comment": "Fox is questionable for Monday's game against the Kings due to a right shin contusion, Jared Weiss of The Athletic reports.",
+   "return": "2026-11-23",
+   "fantasy": "GTD",
+   "stats": {
+    "gp": 16.0,
+    "min": 28.9375,
+    "pts": 12.375,
+    "reb": 3.9375,
+    "ast": 5.75,
+    "this_season": true
+   }
+  },
+  {
+   "team": "San Antonio Spurs",
    "id": "5037871",
    "name": "Dylan Harper",
    "status": "Out",
@@ -1178,6 +1161,23 @@
     "reb": 5.126984,
     "ast": 2.4920635,
     "this_season": false
+   }
+  },
+  {
+   "team": "San Antonio Spurs",
+   "id": "3134916",
+   "name": "Jordan McLaughlin",
+   "status": "Day-To-Day",
+   "comment": "McLaughlin (shoulder) is listed as questionable for Monday's game against the Kings.",
+   "return": "2026-11-23",
+   "fantasy": "GTD",
+   "stats": {
+    "gp": 11.0,
+    "min": 10.363636,
+    "pts": 2.4545455,
+    "reb": 1.7272727,
+    "ast": 1.7272727,
+    "this_season": true
    }
   },
   {
@@ -1338,6 +1338,23 @@
   },
   {
    "team": "Utah Jazz",
+   "id": "4397077",
+   "name": "Jaxson Hayes",
+   "status": "Out",
+   "comment": "Hayes (knee) has been ruled out for the remainder of Sunday's game against the Mavericks, Grant Afseth of DallasHoopsJournal.com reports.",
+   "return": "2026-11-23",
+   "fantasy": "OUT",
+   "stats": {
+    "gp": 14.0,
+    "min": 24.571428,
+    "pts": 9.285714,
+    "reb": 6.642857,
+    "ast": 1.5,
+    "this_season": true
+   }
+  },
+  {
+   "team": "Utah Jazz",
    "id": "4277961",
    "name": "Jaren Jackson Jr.",
    "status": "Out",
@@ -1389,23 +1406,6 @@
   },
   {
    "team": "Washington Wizards",
-   "id": "4278129",
-   "name": "Deandre Ayton",
-   "status": "Day-To-Day",
-   "comment": "Ayton (illness) is questionable to play in Sunday's game against Orlando.",
-   "return": "2026-11-22",
-   "fantasy": "GTD",
-   "stats": {
-    "gp": 17.0,
-    "min": 13.058824,
-    "pts": 3.8235295,
-    "reb": 4.117647,
-    "ast": 0.7058824,
-    "this_season": true
-   }
-  },
-  {
-   "team": "Washington Wizards",
    "id": "4432187",
    "name": "Reece Beekman",
    "status": "Out",
@@ -1418,23 +1418,6 @@
     "pts": 0,
     "reb": 0,
     "ast": 0,
-    "this_season": true
-   }
-  },
-  {
-   "team": "Washington Wizards",
-   "id": "4845374",
-   "name": "Bub Carrington",
-   "status": "Day-To-Day",
-   "comment": "Carrington (illness) has been downgraded to questionable for Sunday's game against the Magic.",
-   "return": "2026-11-22",
-   "fantasy": "GTD",
-   "stats": {
-    "gp": 16.0,
-    "min": 16.75,
-    "pts": 4.8125,
-    "reb": 1.3125,
-    "ast": 1.875,
     "this_season": true
    }
   },
@@ -1572,8 +1555,8 @@
    "id": "2991070",
    "name": "Jerami Grant",
    "status": "Day-To-Day",
-   "comment": "Grant (calf) has been ruled out for Monday's game against the Hornets.",
-   "return": "2026-11-23",
+   "comment": "Grant was diagnosed with a grade 1 left calf strain and will be re-evaluated in two weeks.",
+   "return": "2026-12-12",
    "fantasy": "GTD",
    "stats": {
     "gp": 15.0,

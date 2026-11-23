@@ -3,7 +3,7 @@
  "sims": 5000,
  "teams": {
   "Atlanta Hawks": {
-   "playoffs": 89.7,
+   "playoffs": 89.8,
    "top6": 63.8,
    "playin": 35.7,
    "proj_w": 46.8,
@@ -91,9 +91,9 @@
    "prev": 0.9
   },
   "Charlotte Hornets": {
-   "playoffs": 7.5,
+   "playoffs": 7.6,
    "top6": 0.3,
-   "playin": 30.1,
+   "playin": 30.2,
    "proj_w": 30.2,
    "proj_l": 51.8,
    "seed": 11.4,
@@ -207,9 +207,9 @@
    "prev": 88.1
   },
   "Dallas Mavericks": {
-   "playoffs": 35.4,
-   "top6": 11.1,
-   "playin": 65.2,
+   "playoffs": 35.6,
+   "top6": 11.3,
+   "playin": 65.4,
    "proj_w": 40.8,
    "proj_l": 41.2,
    "seed": 9.0,
@@ -242,8 +242,8 @@
   },
   "Denver Nuggets": {
    "playoffs": 94.8,
-   "top6": 83.9,
-   "playin": 15.8,
+   "top6": 84.0,
+   "playin": 15.7,
    "proj_w": 52.4,
    "proj_l": 29.6,
    "seed": 4.4,
@@ -295,8 +295,8 @@
    "prev": 99.4
   },
   "Golden State Warriors": {
-   "playoffs": 21.3,
-   "top6": 4.4,
+   "playoffs": 21.2,
+   "top6": 4.3,
    "playin": 51.8,
    "proj_w": 38.1,
    "proj_l": 43.9,
@@ -345,7 +345,7 @@
   "Houston Rockets": {
    "playoffs": 99.1,
    "top6": 96.2,
-   "playin": 3.8,
+   "playin": 3.7,
    "proj_w": 56.3,
    "proj_l": 25.7,
    "seed": 3.0,
@@ -405,7 +405,7 @@
   "LA Clippers": {
    "playoffs": 0.8,
    "top6": 0.0,
-   "playin": 4.4,
+   "playin": 4.5,
    "proj_w": 28.4,
    "proj_l": 53.6,
    "seed": 12.5,
@@ -438,10 +438,10 @@
   },
   "Los Angeles Lakers": {
    "playoffs": 92.6,
-   "top6": 79.2,
-   "playin": 20.4,
-   "proj_w": 51.6,
-   "proj_l": 30.4,
+   "top6": 79.0,
+   "playin": 20.6,
+   "proj_w": 51.5,
+   "proj_l": 30.5,
    "seed": 4.7,
    "conf": "West",
    "rating": 2.9,
@@ -449,18 +449,26 @@
    "prior_wins": 46.5,
    "last5_margin": 2.6,
    "season_margin": 6.2,
-   "injuries": [],
-   "injury_wins": 0.0,
+   "injuries": [
+    {
+     "name": "Austin Reaves",
+     "status": "Out",
+     "games": 1,
+     "impact": 4.45,
+     "comment": "Reaves (heel) has been ruled out for Monday's game against the Jazz, Jovan Buha of The Athletic reports."
+    }
+   ],
+   "injury_wins": -0.1,
    "sos_rank": 2,
    "games_left": 65,
    "prev": 92.8
   },
   "Memphis Grizzlies": {
-   "playoffs": 55.7,
-   "top6": 24.3,
-   "playin": 66.2,
-   "proj_w": 43.9,
-   "proj_l": 38.1,
+   "playoffs": 55.0,
+   "top6": 23.6,
+   "playin": 66.5,
+   "proj_w": 43.8,
+   "proj_l": 38.2,
    "seed": 7.9,
    "conf": "West",
    "rating": 0.3,
@@ -469,6 +477,13 @@
    "last5_margin": 11.4,
    "season_margin": 9.1,
    "injuries": [
+    {
+     "name": "Jerami Grant",
+     "status": "Day-To-Day",
+     "games": 6,
+     "impact": 0.96,
+     "comment": "Grant was diagnosed with a grade 1 left calf strain and will be re-evaluated in two weeks."
+    },
     {
      "name": "GG Jackson",
      "status": "Out",
@@ -491,7 +506,7 @@
      "comment": "Pippen (back) is progressing in his recovery but is still considered week-to-week."
     }
    ],
-   "injury_wins": -0.2,
+   "injury_wins": -0.3,
    "sos_rank": 1,
    "games_left": 65,
    "prev": 55.9
@@ -535,9 +550,9 @@
    "prev": 0.1
   },
   "Minnesota Timberwolves": {
-   "playoffs": 86.3,
-   "top6": 59.1,
-   "playin": 38.7,
+   "playoffs": 86.4,
+   "top6": 59.4,
+   "playin": 38.5,
    "proj_w": 48.4,
    "proj_l": 33.6,
    "seed": 6.0,
@@ -622,6 +637,13 @@
      "games": 1,
      "impact": 2.69,
      "comment": "Anunoby (calf) won't play Sunday against the Pacers."
+    },
+    {
+     "name": "Miles McBride",
+     "status": "Out",
+     "games": 1,
+     "impact": 0.04,
+     "comment": "McBride (abdomen) has been ruled out for Sunday's game against the Pacers."
     }
    ],
    "injury_wins": -0.0,
@@ -631,8 +653,8 @@
   },
   "Oklahoma City Thunder": {
    "playoffs": 91.2,
-   "top6": 70.3,
-   "playin": 28.7,
+   "top6": 70.5,
+   "playin": 28.6,
    "proj_w": 50.1,
    "proj_l": 31.9,
    "seed": 5.3,
@@ -671,7 +693,7 @@
    "prev": 93.6
   },
   "Orlando Magic": {
-   "playoffs": 53.2,
+   "playoffs": 53.1,
    "top6": 15.5,
    "playin": 74.2,
    "proj_w": 39.6,
@@ -717,9 +739,9 @@
    "prev": 98.5
   },
   "Phoenix Suns": {
-   "playoffs": 36.3,
-   "top6": 11.1,
-   "playin": 65.1,
+   "playoffs": 36.6,
+   "top6": 11.2,
+   "playin": 65.0,
    "proj_w": 40.8,
    "proj_l": 41.2,
    "seed": 9.0,
@@ -745,8 +767,8 @@
   },
   "Portland Trail Blazers": {
    "playoffs": 86.5,
-   "top6": 60.5,
-   "playin": 37.8,
+   "top6": 60.6,
+   "playin": 37.7,
    "proj_w": 48.7,
    "proj_l": 33.3,
    "seed": 5.9,
@@ -839,9 +861,9 @@
    "prev": 100.0
   },
   "Toronto Raptors": {
-   "playoffs": 48.1,
+   "playoffs": 48.0,
    "top6": 10.2,
-   "playin": 76.9,
+   "playin": 76.8,
    "proj_w": 38.5,
    "proj_l": 43.5,
    "seed": 8.6,
@@ -906,9 +928,16 @@
      "games": 3,
      "impact": 1.35,
      "comment": "Nurkic (foot) has been cleared for on-court work and will be re-evaluated in one week."
+    },
+    {
+     "name": "Jaxson Hayes",
+     "status": "Out",
+     "games": 1,
+     "impact": 1.4,
+     "comment": "Hayes (knee) has been ruled out for the remainder of Sunday's game against the Mavericks, Grant Afseth of DallasHoopsJournal.com reports."
     }
    ],
-   "injury_wins": -1.3,
+   "injury_wins": -1.4,
    "sos_rank": 12,
    "games_left": 65,
    "prev": 0.3
@@ -916,7 +945,7 @@
   "Washington Wizards": {
    "playoffs": 5.0,
    "top6": 0.3,
-   "playin": 23.1,
+   "playin": 23.0,
    "proj_w": 29.4,
    "proj_l": 52.6,
    "seed": 11.7,
