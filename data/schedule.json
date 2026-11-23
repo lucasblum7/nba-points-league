@@ -14,8 +14,8 @@
    "time": "5:00 PM",
    "away": "Cleveland Cavaliers",
    "home": "Chicago Bulls",
-   "away_ml": -378,
-   "home_ml": 300
+   "away_ml": -354,
+   "home_ml": 283
   },
   {
    "date": "2026-11-23",
@@ -29,15 +29,17 @@
    "date": "2026-11-23",
    "time": "4:30 PM",
    "away": "Oklahoma City Thunder",
-   "home": "Indiana Pacers"
+   "home": "Indiana Pacers",
+   "away_ml": -193,
+   "home_ml": 161
   },
   {
    "date": "2026-11-23",
    "time": "7:00 PM",
    "away": "Utah Jazz",
    "home": "Los Angeles Lakers",
-   "away_ml": 600,
-   "home_ml": -890
+   "away_ml": 558,
+   "home_ml": -800
   },
   {
    "date": "2026-11-23",

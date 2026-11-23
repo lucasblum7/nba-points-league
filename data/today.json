@@ -70,11 +70,11 @@
   {
    "id": "401910035",
    "time": "5:30 PM",
-   "state": "in",
-   "detail": "1:18 - 4th",
+   "state": "post",
+   "detail": "Final",
    "away": "Boston Celtics",
    "home": "Golden State Warriors",
-   "away_score": 86,
+   "away_score": 87,
    "home_score": 88,
    "cup": false
   }

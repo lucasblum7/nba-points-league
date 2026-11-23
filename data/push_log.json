@@ -1,7 +1,8 @@
 {
  "started": "2026-11-21",
  "recaps": [
-  "recap|2026-11-21"
+  "recap|2026-11-21",
+  "recap|2026-11-22"
  ],
  "sent": {
   "final|401909305|Parker": "2026-11-21",
@@ -98,7 +99,15 @@
   "hot|401910034|3062679|td": "2026-11-22",
   "final|401910034|Rahul": "2026-11-22",
   "move|Lucas|2|2026-11-22": "2026-11-22",
-  "odds|Detroit Pistons|lock": "2026-11-22"
+  "odds|Detroit Pistons|lock": "2026-11-22",
+  "final|401910035|Rahul": "2026-11-22",
+  "final|401910035|OJ": "2026-11-22",
+  "recap|2026-11-22|Darin": "2026-11-22",
+  "recap|2026-11-22|Dom": "2026-11-22",
+  "recap|2026-11-22|Lucas": "2026-11-22",
+  "recap|2026-11-22|OJ": "2026-11-22",
+  "recap|2026-11-22|Parker": "2026-11-22",
+  "recap|2026-11-22|Rahul": "2026-11-22"
  },
  "state": {
   "leads": {
@@ -123,7 +132,7 @@
    "Cleveland Cavaliers": "mid",
    "Dallas Mavericks": "mid",
    "Denver Nuggets": "mid",
-   "Detroit Pistons": "lock",
+   "Detroit Pistons": "mid",
    "Golden State Warriors": "mid",
    "Houston Rockets": "lock",
    "Indiana Pacers": "mid",
