@@ -2067,7 +2067,7 @@
   "spread": 13.5,
   "away_ml": 504,
   "home_ml": -700,
-  "book": "DraftKings"
+  "book": "Draft Kings"
  },
  {
   "date": "2026-11-23",
@@ -2087,7 +2087,7 @@
   "spread": 13.5,
   "away_ml": 558,
   "home_ml": -800,
-  "book": "DraftKings"
+  "book": "Draft Kings"
  },
  {
   "date": "2026-11-23",
@@ -2124,10 +2124,10 @@
   "away": "San Antonio Spurs",
   "home": "Sacramento Kings",
   "fav": "San Antonio Spurs",
-  "spread": 12.5,
-  "away_ml": -640,
-  "home_ml": 467,
-  "book": "DraftKings"
+  "spread": 11.5,
+  "away_ml": -620,
+  "home_ml": 455,
+  "book": "Draft Kings"
  },
  {
   "date": "2026-11-23",
@@ -2147,7 +2147,7 @@
   "spread": 8.5,
   "away_ml": 260,
   "home_ml": -322,
-  "book": "DraftKings"
+  "book": "Draft Kings"
  },
  {
   "date": "2026-11-24",
@@ -2157,7 +2157,7 @@
   "spread": 1.5,
   "away_ml": -125,
   "home_ml": 106,
-  "book": "DraftKings"
+  "book": "Draft Kings"
  },
  {
   "date": "2026-11-24",
@@ -2167,6 +2167,6 @@
   "spread": 10.5,
   "away_ml": -453,
   "home_ml": 351,
-  "book": "DraftKings"
+  "book": "Draft Kings"
  }
 ]
