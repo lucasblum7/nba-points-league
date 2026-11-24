@@ -1,5 +1,5 @@
 {
- "as_of": "2026-11-24T12",
+ "as_of": "2026-11-24T15",
  "players": [
   {
    "team": "Atlanta Hawks",
@@ -468,7 +468,7 @@
    "id": "4397040",
    "name": "Brandon Williams",
    "status": "Out",
-   "comment": "Head coach Steve Kerr said Monday that Williams (hamstring) is on track to return Wednesday against the Kings, Kenzo Fukuda of ClutchPoints.com reports.",
+   "comment": "Head coach Steve Kerr said Tuesday that Williams (hamstring) is questionable to play Wednesday against the Kings, per Dalton Johnson of NBC Sports Bay Area.",
    "return": "2026-11-25",
    "fantasy": "GTD",
    "stats": {
@@ -621,7 +621,7 @@
    "id": "3032977",
    "name": "Giannis Antetokounmpo",
    "status": "Day-To-Day",
-   "comment": "Antetokounmpo (groin) participated in most of Tuesday's practice, Zachary Weinberger of ClutchPoints.com reports.",
+   "comment": "Antetokounmpo (groin) is questionable for Wednesday's game in Philadelphia.",
    "return": "2026-11-25",
    "fantasy": "GTD",
    "stats": {
@@ -705,10 +705,10 @@
    "team": "New York Knicks",
    "id": "3934719",
    "name": "OG Anunoby",
-   "status": "Day-To-Day",
-   "comment": "Anunoby (calf) did not participate in Tuesday's practice, Jared Schwartz of the New York Post reports.",
-   "return": "2026-11-25",
-   "fantasy": "GTD",
+   "status": "Out",
+   "comment": "Anunoby (calf) is out for Wednesday's game against Cleveland.",
+   "return": "2026-11-27",
+   "fantasy": "OUT",
    "stats": {
     "gp": 15.0,
     "min": 33.933334,
@@ -723,9 +723,9 @@
    "id": "2528426",
    "name": "Jordan Clarkson",
    "status": "Out",
-   "comment": "Clarkson (foot) didn't participate in Tuesday's practice, Jared Schwartz of the New York Post reports.",
-   "return": "2026-11-25",
-   "fantasy": "GTD",
+   "comment": "Clarkson (foot) is out for Wednesday's game against Cleveland.",
+   "return": "2026-11-27",
+   "fantasy": "OUT",
    "stats": {
     "gp": 12.0,
     "min": 9.833333,
@@ -737,10 +737,27 @@
   },
   {
    "team": "New York Knicks",
+   "id": "3062679",
+   "name": "Josh Hart",
+   "status": "Day-To-Day",
+   "comment": "Hart (shoulder) is listed as questionable for Wednesday's game against Cleveland.",
+   "return": "2026-11-25",
+   "fantasy": "GTD",
+   "stats": {
+    "gp": 14.0,
+    "min": 30.785715,
+    "pts": 6.571429,
+    "reb": 6.714286,
+    "ast": 4.0,
+    "this_season": true
+   }
+  },
+  {
+   "team": "New York Knicks",
    "id": "4431823",
    "name": "Miles McBride",
    "status": "Day-To-Day",
-   "comment": "McBride (groin) practiced Tuesday, per Jared Schwartz of the New York Post.",
+   "comment": "McBride (adductor) is listed as questionable for Wednesday's game versus Cleveland.",
    "return": "2026-11-25",
    "fantasy": "GTD",
    "stats": {
@@ -749,6 +766,23 @@
     "pts": 6.75,
     "reb": 1.1875,
     "ast": 1.0,
+    "this_season": true
+   }
+  },
+  {
+   "team": "New York Knicks",
+   "id": "3136195",
+   "name": "Karl-Anthony Towns",
+   "status": "Day-To-Day",
+   "comment": "Towns (knee) is questionable for Wednesday's game against Cleveland.",
+   "return": "2026-11-25",
+   "fantasy": "GTD",
+   "stats": {
+    "gp": 16.0,
+    "min": 32.5625,
+    "pts": 21.8125,
+    "reb": 13.875,
+    "ast": 4.0,
     "this_season": true
    }
   },
@@ -818,8 +852,8 @@
    "id": "3059318",
    "name": "Joel Embiid",
    "status": "Day-To-Day",
-   "comment": "Embiid (illness) is out for Monday's game against Portland, Austin Krell of OnPattison.com reports.",
-   "return": "2026-11-25",
+   "comment": "Embiid (illness) is listed as doubtful for Wednesday's game versus Miami.",
+   "return": "2026-11-27",
    "fantasy": "GTD",
    "stats": {
     "gp": 14.0,
@@ -1351,7 +1385,7 @@
    "id": "6450",
    "name": "Kawhi Leonard",
    "status": "Out",
-   "comment": "Leonard (knee) could return in the next few weeks, per Shams Charania of ESPN.",
+   "comment": "Leonard has begun individual on-court workouts following treatment to address swelling in his left knee, and he will be re-evaluated in one week, Marc J. Spears of ESPN.com reports.",
    "return": "2026-12-03",
    "fantasy": "OUT",
    "stats": {
@@ -1446,7 +1480,7 @@
    "id": "3135045",
    "name": "Grayson Allen",
    "status": "Out",
-   "comment": "Allen (concussion) has been ruled out for Monday's game against the Grizzlies.",
+   "comment": "Allen (concussion) is listed as questionable for Wednesday's game versus Chicago.",
    "return": "2026-11-25",
    "fantasy": "GTD",
    "stats": {
@@ -1460,10 +1494,27 @@
   },
   {
    "team": "Charlotte Hornets",
+   "id": "4602025",
+   "name": "Sion James",
+   "status": "Day-To-Day",
+   "comment": "James is probable for Wednesday's game against the Bulls due to general soreness.",
+   "return": "2026-11-25",
+   "fantasy": "GTD",
+   "stats": {
+    "gp": 16.0,
+    "min": 27.3125,
+    "pts": 5.75,
+    "reb": 3.8125,
+    "ast": 3.0625,
+    "this_season": true
+   }
+  },
+  {
+   "team": "Charlotte Hornets",
    "id": "4576060",
    "name": "Ryan Kalkbrenner",
    "status": "Day-To-Day",
-   "comment": "Kalkbrenner has been ruled out for the rest of Monday's game against Memphis due to left hip soreness. He'll end with two rebounds in nine minutes.",
+   "comment": "Kalkbrenner (hip) is doubtful to play Wednesday against the Bulls.",
    "return": "2026-11-25",
    "fantasy": "GTD",
    "stats": {
@@ -1497,32 +1548,15 @@
    "id": "3032979",
    "name": "Dennis Schroder",
    "status": "Out",
-   "comment": "Schroder has been diagnosed with a left hamstring strain and will be reevaluated in two weeks, Michael Scotto of HoopsHype.com reports.",
-   "return": "2026-11-25",
-   "fantasy": "GTD",
+   "comment": "Schroder (hamstring) is out for Wednesday's game the Bulls.",
+   "return": "2026-12-12",
+   "fantasy": "OUT",
    "stats": {
     "gp": 9.0,
     "min": 29.88889,
     "pts": 10.222222,
     "reb": 3.5555556,
     "ast": 4.888889,
-    "this_season": true
-   }
-  },
-  {
-   "team": "Charlotte Hornets",
-   "id": "4066218",
-   "name": "Grant Williams",
-   "status": "Day-To-Day",
-   "comment": "Williams (hamstring) won't play Monday's game against the Grizzlies.",
-   "return": "2026-11-25",
-   "fantasy": "GTD",
-   "stats": {
-    "gp": 3.0,
-    "min": 22.0,
-    "pts": 11.333333,
-    "reb": 2.6666667,
-    "ast": 0.6666667,
     "this_season": true
    }
   }
