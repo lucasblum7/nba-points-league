@@ -92,12 +92,12 @@
   {
    "id": "401910044",
    "time": "7:00 PM",
-   "state": "in",
-   "detail": "2:13 - 4th",
+   "state": "post",
+   "detail": "Final",
    "away": "Utah Jazz",
    "home": "Los Angeles Lakers",
-   "away_score": 90,
-   "home_score": 107,
+   "away_score": 94,
+   "home_score": 109,
    "cup": false
   },
   {
