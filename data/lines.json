@@ -2147,17 +2147,17 @@
   "spread": 8.5,
   "away_ml": 260,
   "home_ml": -322,
-  "book": "Draft Kings"
+  "book": "DraftKings"
  },
  {
   "date": "2026-11-24",
   "away": "Detroit Pistons",
   "home": "Orlando Magic",
   "fav": "Detroit Pistons",
-  "spread": 1.5,
-  "away_ml": -125,
-  "home_ml": 106,
-  "book": "Draft Kings"
+  "spread": 2.5,
+  "away_ml": -130,
+  "home_ml": 110,
+  "book": "DraftKings"
  },
  {
   "date": "2026-11-24",
@@ -2167,6 +2167,6 @@
   "spread": 10.5,
   "away_ml": -453,
   "home_ml": 351,
-  "book": "Draft Kings"
+  "book": "DraftKings"
  }
 ]
