@@ -188,7 +188,10 @@
   "final|401910043|Parker": "2026-11-23",
   "final|401910043|Lucas": "2026-11-23",
   "final|401910042|OJ": "2026-11-23",
-  "final|401910042|Parker": "2026-11-23"
+  "final|401910042|Parker": "2026-11-23",
+  "final|401910045|Lucas": "2026-11-23",
+  "final|401910045|Dom": "2026-11-23",
+  "lead|6|Dom|OJ|OJ|2026-11-23": "2026-11-23"
  },
  "state": {
   "leads": {
@@ -197,7 +200,7 @@
    "5|Darin|Dom": "Dom",
    "6|Lucas|Parker": "Lucas",
    "6|Rahul|Darin": "Rahul",
-   "6|Dom|OJ": null
+   "6|Dom|OJ": "OJ"
   },
   "places": {
    "Darin": 6,
