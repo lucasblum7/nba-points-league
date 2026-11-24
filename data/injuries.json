@@ -1,5 +1,5 @@
 {
- "as_of": "2026-11-23T18",
+ "as_of": "2026-11-23T21",
  "players": [
   {
    "team": "Atlanta Hawks",
@@ -501,10 +501,10 @@
    "team": "Indiana Pacers",
    "id": "2530530",
    "name": "T.J. McConnell",
-   "status": "Out",
+   "status": "Day-To-Day",
    "comment": "McConnell is out for Monday's game against the Thunder due to left hamstring soreness.",
    "return": "2026-11-27",
-   "fantasy": "OUT",
+   "fantasy": "GTD",
    "stats": {
     "gp": 7.0,
     "min": 13.857142,
@@ -516,12 +516,29 @@
   },
   {
    "team": "Indiana Pacers",
+   "id": "2580365",
+   "name": "Larry Nance Jr.",
+   "status": "Day-To-Day",
+   "comment": "Nance exited Monday's game against the Thunder due to a sore right ankle and he will not return, Tony East of Forbes.com reports.",
+   "return": "2026-11-27",
+   "fantasy": "GTD",
+   "stats": {
+    "gp": 16.0,
+    "min": 13.3125,
+    "pts": 4.5,
+    "reb": 2.375,
+    "ast": 0.5625,
+    "this_season": true
+   }
+  },
+  {
+   "team": "Indiana Pacers",
    "id": "4396909",
    "name": "Aaron Nesmith",
-   "status": "Out",
+   "status": "Day-To-Day",
    "comment": "Nesmith is out for Monday's game against the Thunder due to right foot soreness.",
    "return": "2026-11-27",
-   "fantasy": "OUT",
+   "fantasy": "GTD",
    "stats": {
     "gp": 15.0,
     "min": 27.333334,
@@ -800,10 +817,10 @@
    "team": "Philadelphia 76ers",
    "id": "3059318",
    "name": "Joel Embiid",
-   "status": "Out",
+   "status": "Day-To-Day",
    "comment": "Embiid (illness) is out for Monday's game against Portland, Austin Krell of OnPattison.com reports.",
    "return": "2026-11-25",
-   "fantasy": "OUT",
+   "fantasy": "GTD",
    "stats": {
     "gp": 14.0,
     "min": 32.07143,
@@ -1027,7 +1044,7 @@
    "status": "Out",
    "comment": "Caruso (hip) has been ruled out for Monday's game against the Pacers, according to the NBA's official injury report.",
    "return": "2026-11-25",
-   "fantasy": "OUT",
+   "fantasy": "GTD",
    "stats": {
     "gp": 12.0,
     "min": 19.333334,
@@ -1058,10 +1075,10 @@
    "team": "Oklahoma City Thunder",
    "id": "5174983",
    "name": "Aday Mara",
-   "status": "Out",
+   "status": "Day-To-Day",
    "comment": "Mara (shin) has been ruled out for Monday's game against the Pacers.",
    "return": "2026-11-25",
-   "fantasy": "OUT",
+   "fantasy": "GTD",
    "stats": {
     "gp": 16.0,
     "min": 22.375,
@@ -1088,7 +1105,7 @@
    "status": "Out",
    "comment": "Topic (hip) has been ruled out for Monday's game against the Pacers, according to the NBA's official injury report.",
    "return": "2026-11-25",
-   "fantasy": "OUT",
+   "fantasy": "GTD",
    "stats": {
     "gp": 3.0,
     "min": 11.333333,
@@ -1136,10 +1153,10 @@
    "team": "Oklahoma City Thunder",
    "id": "4432823",
    "name": "Jaylin Williams",
-   "status": "Out",
+   "status": "Day-To-Day",
    "comment": "Williams (back) has been ruled out for Monday's game against the Pacers",
    "return": "2026-11-25",
-   "fantasy": "OUT",
+   "fantasy": "GTD",
    "stats": {
     "gp": 9.0,
     "min": 17.11111,
@@ -1387,7 +1404,7 @@
    "status": "Out",
    "comment": "Pippen (back) is progressing in his recovery but is still considered week-to-week.",
    "return": "2026-11-25",
-   "fantasy": "OUT",
+   "fantasy": "GTD",
    "stats": {
     "gp": 5.0,
     "min": 16.0,
@@ -1414,13 +1431,30 @@
    "status": "Out",
    "comment": "Allen (concussion) has been ruled out for Monday's game against the Grizzlies.",
    "return": "2026-11-25",
-   "fantasy": "OUT",
+   "fantasy": "GTD",
    "stats": {
     "gp": 13.0,
     "min": 27.076923,
     "pts": 14.923077,
     "reb": 3.0769231,
     "ast": 3.3076923,
+    "this_season": true
+   }
+  },
+  {
+   "team": "Charlotte Hornets",
+   "id": "4576060",
+   "name": "Ryan Kalkbrenner",
+   "status": "Day-To-Day",
+   "comment": "Kalkbrenner has been ruled out for the rest of Monday's game against Memphis due to left hip soreness. He'll end with two rebounds in nine minutes.",
+   "return": "2026-11-25",
+   "fantasy": "GTD",
+   "stats": {
+    "gp": 15.0,
+    "min": 18.133333,
+    "pts": 4.8,
+    "reb": 5.266667,
+    "ast": 1.3333334,
     "this_season": true
    }
   },
@@ -1448,7 +1482,7 @@
    "status": "Out",
    "comment": "Schroder has been diagnosed with a left hamstring strain and will be reevaluated in two weeks, Michael Scotto of HoopsHype.com reports.",
    "return": "2026-11-25",
-   "fantasy": "OUT",
+   "fantasy": "GTD",
    "stats": {
     "gp": 9.0,
     "min": 29.88889,
@@ -1462,10 +1496,10 @@
    "team": "Charlotte Hornets",
    "id": "4066218",
    "name": "Grant Williams",
-   "status": "Out",
+   "status": "Day-To-Day",
    "comment": "Williams (hamstring) won't play Monday's game against the Grizzlies.",
    "return": "2026-11-25",
-   "fantasy": "OUT",
+   "fantasy": "GTD",
    "stats": {
     "gp": 3.0,
     "min": 22.0,
