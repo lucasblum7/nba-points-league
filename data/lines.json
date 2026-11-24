@@ -2165,8 +2165,8 @@
   "home": "Washington Wizards",
   "fav": "Boston Celtics",
   "spread": 10.5,
-  "away_ml": -453,
-  "home_ml": 351,
+  "away_ml": -424,
+  "home_ml": 331,
   "book": "Draft Kings"
  },
  {
@@ -2174,7 +2174,7 @@
   "away": "Phoenix Suns",
   "home": "Houston Rockets",
   "fav": "Houston Rockets",
-  "spread": 9.5,
+  "spread": 8.5,
   "away_ml": 319,
   "home_ml": -406,
   "book": "Draft Kings"
@@ -2184,9 +2184,9 @@
   "away": "Cleveland Cavaliers",
   "home": "New York Knicks",
   "fav": "New York Knicks",
-  "spread": 5.5,
-  "away_ml": 171,
-  "home_ml": -205,
+  "spread": 4.5,
+  "away_ml": 165,
+  "home_ml": -197,
   "book": "Draft Kings"
  },
  {
@@ -2195,8 +2195,8 @@
   "home": "Oklahoma City Thunder",
   "fav": "Oklahoma City Thunder",
   "spread": 1.5,
-  "away_ml": 114,
-  "home_ml": -135,
+  "away_ml": 105,
+  "home_ml": -125,
   "book": "Draft Kings"
  },
  {
