@@ -2164,7 +2164,7 @@
   "away": "Boston Celtics",
   "home": "Washington Wizards",
   "fav": "Boston Celtics",
-  "spread": 11.5,
+  "spread": 10.5,
   "away_ml": -452,
   "home_ml": 351,
   "book": "DraftKings"
@@ -2194,7 +2194,7 @@
   "away": "Minnesota Timberwolves",
   "home": "Oklahoma City Thunder",
   "fav": "Oklahoma City Thunder",
-  "spread": 1.5,
+  "spread": 2.5,
   "away_ml": 105,
   "home_ml": -125,
   "book": "DraftKings"
