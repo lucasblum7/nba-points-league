@@ -180,7 +180,9 @@
   "hot|401910039|4395725|30": "2026-11-23",
   "hot|401910039|4433134|30": "2026-11-23",
   "final|401910039|Darin": "2026-11-23",
-  "final|401910039|Lucas": "2026-11-23"
+  "final|401910039|Lucas": "2026-11-23",
+  "final|401910041|Lucas": "2026-11-23",
+  "final|401910041|Dom": "2026-11-23"
  },
  "state": {
   "leads": {
@@ -208,7 +210,7 @@
    "Cleveland Cavaliers": "mid",
    "Dallas Mavericks": "mid",
    "Denver Nuggets": "mid",
-   "Detroit Pistons": "mid",
+   "Detroit Pistons": "lock",
    "Golden State Warriors": "mid",
    "Houston Rockets": "mid",
    "Indiana Pacers": "mid",
