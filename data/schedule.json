@@ -16,8 +16,8 @@
    "away": "Detroit Pistons",
    "home": "Orlando Magic",
    "cup": true,
-   "away_ml": -135,
-   "home_ml": 114
+   "away_ml": -130,
+   "home_ml": 110
   },
   {
    "date": "2026-11-24",
@@ -89,8 +89,8 @@
    "away": "Miami Heat",
    "home": "Philadelphia 76ers",
    "cup": true,
-   "away_ml": 136,
-   "home_ml": -162
+   "away_ml": 130,
+   "home_ml": -155
   },
   {
    "date": "2026-11-25",
