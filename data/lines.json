@@ -2144,10 +2144,10 @@
   "away": "Dallas Mavericks",
   "home": "Denver Nuggets",
   "fav": "Denver Nuggets",
-  "spread": 8.5,
+  "spread": 7.5,
   "away_ml": 261,
   "home_ml": -324,
-  "book": "Draft Kings"
+  "book": "DraftKings"
  },
  {
   "date": "2026-11-24",
@@ -2157,7 +2157,7 @@
   "spread": 2.5,
   "away_ml": -135,
   "home_ml": 114,
-  "book": "Draft Kings"
+  "book": "DraftKings"
  },
  {
   "date": "2026-11-24",
@@ -2167,6 +2167,6 @@
   "spread": 10.5,
   "away_ml": -453,
   "home_ml": 351,
-  "book": "Draft Kings"
+  "book": "DraftKings"
  }
 ]
