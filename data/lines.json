@@ -2084,10 +2084,10 @@
   "away": "Utah Jazz",
   "home": "Los Angeles Lakers",
   "fav": "Los Angeles Lakers",
-  "spread": 13.5,
-  "away_ml": 558,
-  "home_ml": -800,
-  "book": "Draft Kings"
+  "spread": 12.5,
+  "away_ml": 530,
+  "home_ml": -750,
+  "book": "DraftKings"
  },
  {
   "date": "2026-11-23",
@@ -2125,9 +2125,9 @@
   "home": "Sacramento Kings",
   "fav": "San Antonio Spurs",
   "spread": 8.5,
-  "away_ml": -309,
-  "home_ml": 250,
-  "book": "Draft Kings"
+  "away_ml": -308,
+  "home_ml": 249,
+  "book": "DraftKings"
  },
  {
   "date": "2026-11-23",
@@ -2147,7 +2147,7 @@
   "spread": 8.5,
   "away_ml": 260,
   "home_ml": -322,
-  "book": "Draft Kings"
+  "book": "DraftKings"
  },
  {
   "date": "2026-11-24",
@@ -2157,7 +2157,7 @@
   "spread": 1.5,
   "away_ml": -125,
   "home_ml": 106,
-  "book": "Draft Kings"
+  "book": "DraftKings"
  },
  {
   "date": "2026-11-24",
@@ -2167,6 +2167,6 @@
   "spread": 10.5,
   "away_ml": -453,
   "home_ml": 351,
-  "book": "Draft Kings"
+  "book": "DraftKings"
  }
 ]

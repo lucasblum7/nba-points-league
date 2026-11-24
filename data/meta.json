@@ -1,8 +1,10 @@
 {
- "updated": "2026-11-24T01:45:14+00:00",
+ "updated": "2026-11-24T02:00:20+00:00",
  "changed": [
   "lines",
   "today",
+  "schedule",
+  "injuries",
   "odds"
  ]
 }
