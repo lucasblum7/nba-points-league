@@ -2184,10 +2184,10 @@
   "away": "Cleveland Cavaliers",
   "home": "New York Knicks",
   "fav": "New York Knicks",
-  "spread": 4.5,
-  "away_ml": 165,
-  "home_ml": -197,
-  "book": "DraftKings"
+  "spread": 3.5,
+  "away_ml": 137,
+  "home_ml": -163,
+  "book": "Draft Kings"
  },
  {
   "date": "2026-11-25",
@@ -2204,9 +2204,9 @@
   "away": "Miami Heat",
   "home": "Philadelphia 76ers",
   "fav": "Philadelphia 76ers",
-  "spread": 2.5,
-  "away_ml": 124,
-  "home_ml": -148,
+  "spread": 1.5,
+  "away_ml": -103,
+  "home_ml": -115,
   "book": "Draft Kings"
  }
 ]
