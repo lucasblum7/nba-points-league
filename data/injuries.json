@@ -1,5 +1,5 @@
 {
- "as_of": "2026-11-24T00",
+ "as_of": "2026-11-24T06",
  "players": [
   {
    "team": "Atlanta Hawks",
@@ -103,7 +103,7 @@
    "status": "Out",
    "comment": "Mathurin (foot) has been ruled out for Friday's game against the Thunder.",
    "return": "2026-11-27",
-   "fantasy": "OUT",
+   "fantasy": "GTD",
    "stats": {
     "gp": 12.0,
     "min": 15.333333,
@@ -120,7 +120,7 @@
    "status": "Out",
    "comment": "Murray (ankle) is out for Friday's game against Memphis.",
    "return": "2026-11-27",
-   "fantasy": "OUT",
+   "fantasy": "GTD",
    "stats": {
     "gp": 9.0,
     "min": 31.333334,
@@ -137,7 +137,7 @@
    "status": "Out",
    "comment": "Watford (ankle) is out for Saturday's game against the Spurs.",
    "return": "2026-11-27",
-   "fantasy": "OUT",
+   "fantasy": "GTD",
    "stats": {
     "gp": 6.0,
     "min": 17.666666,
@@ -523,11 +523,11 @@
    "return": "2026-11-27",
    "fantasy": "GTD",
    "stats": {
-    "gp": 16.0,
-    "min": 13.3125,
-    "pts": 4.5,
-    "reb": 2.375,
-    "ast": 0.5625,
+    "gp": 17.0,
+    "min": 12.764706,
+    "pts": 4.2352943,
+    "reb": 2.235294,
+    "ast": 0.5294118,
     "this_season": true
    }
   },
@@ -939,7 +939,7 @@
    "status": "Out",
    "comment": "Raynaud (knee) will remain on the inactive list for Wednesday's game against the Suns.",
    "return": "2026-11-25",
-   "fantasy": "OUT",
+   "fantasy": "GTD",
    "stats": {
     "gp": 74.0,
     "min": 26.54054,
@@ -1450,11 +1450,11 @@
    "return": "2026-11-25",
    "fantasy": "GTD",
    "stats": {
-    "gp": 15.0,
-    "min": 18.133333,
-    "pts": 4.8,
-    "reb": 5.266667,
-    "ast": 1.3333334,
+    "gp": 16.0,
+    "min": 17.5625,
+    "pts": 4.5,
+    "reb": 5.0625,
+    "ast": 1.25,
     "this_season": true
    }
   },
