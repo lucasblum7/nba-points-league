@@ -152,16 +152,31 @@
   "inj|5104157|Out": "2026-11-23",
   "inj|4066259|Out": "2026-11-23",
   "hot|401910037|4683021|30": "2026-11-23",
-  "hot|401910038|4278073|30": "2026-11-23"
+  "hot|401910038|4278073|30": "2026-11-23",
+  "final|401910036|Rahul": "2026-11-23",
+  "final|401910036|Parker": "2026-11-23",
+  "final|401910037|Dom": "2026-11-23",
+  "final|401910037|Darin": "2026-11-23",
+  "soon|401910044|Darin": "2026-11-23",
+  "soon|401910044|Lucas": "2026-11-23",
+  "soon|401910045|Lucas": "2026-11-23",
+  "soon|401910045|Dom": "2026-11-23",
+  "lead|6|Lucas|Parker|Lucas|2026-11-23": "2026-11-23",
+  "lead|6|Rahul|Darin|Rahul|2026-11-23": "2026-11-23",
+  "lead|6|Dom|OJ|Dom|2026-11-23": "2026-11-23",
+  "close|401910038|Parker": "2026-11-23",
+  "close|401910038|Rahul": "2026-11-23",
+  "close|401910039|Darin": "2026-11-23",
+  "close|401910039|Lucas": "2026-11-23"
  },
  "state": {
   "leads": {
    "5|Lucas|OJ": "OJ",
    "5|Parker|Rahul": "Rahul",
    "5|Darin|Dom": "Dom",
-   "6|Lucas|Parker": null,
-   "6|Rahul|Darin": null,
-   "6|Dom|OJ": null
+   "6|Lucas|Parker": "Lucas",
+   "6|Rahul|Darin": "Rahul",
+   "6|Dom|OJ": "Dom"
   },
   "places": {
    "Darin": 6,
