@@ -93,22 +93,22 @@
    "id": "401910044",
    "time": "7:00 PM",
    "state": "in",
-   "detail": "End of 3rd",
+   "detail": "6:45 - 4th",
    "away": "Utah Jazz",
    "home": "Los Angeles Lakers",
-   "away_score": 77,
-   "home_score": 78,
+   "away_score": 82,
+   "home_score": 95,
    "cup": false
   },
   {
    "id": "401910045",
    "time": "7:00 PM",
    "state": "in",
-   "detail": "8:29 - 4th",
+   "detail": "3:04 - 4th",
    "away": "San Antonio Spurs",
    "home": "Sacramento Kings",
-   "away_score": 98,
-   "home_score": 85,
+   "away_score": 113,
+   "home_score": 97,
    "cup": false
   }
  ]
