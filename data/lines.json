@@ -2147,27 +2147,27 @@
   "spread": 8.5,
   "away_ml": 251,
   "home_ml": -310,
-  "book": "DraftKings"
+  "book": "Draft Kings"
  },
  {
   "date": "2026-11-24",
   "away": "Detroit Pistons",
   "home": "Orlando Magic",
   "fav": "Detroit Pistons",
-  "spread": 1.5,
+  "spread": 2.5,
   "away_ml": -130,
   "home_ml": 110,
-  "book": "DraftKings"
+  "book": "Draft Kings"
  },
  {
   "date": "2026-11-24",
   "away": "Boston Celtics",
   "home": "Washington Wizards",
   "fav": "Boston Celtics",
-  "spread": 11.5,
+  "spread": 10.5,
   "away_ml": -424,
   "home_ml": 331,
-  "book": "DraftKings"
+  "book": "Draft Kings"
  },
  {
   "date": "2026-11-25",
@@ -2177,7 +2177,7 @@
   "spread": 8.5,
   "away_ml": 319,
   "home_ml": -406,
-  "book": "DraftKings"
+  "book": "Draft Kings"
  },
  {
   "date": "2026-11-25",
@@ -2187,7 +2187,7 @@
   "spread": 3.5,
   "away_ml": 137,
   "home_ml": -163,
-  "book": "DraftKings"
+  "book": "Draft Kings"
  },
  {
   "date": "2026-11-25",
@@ -2197,7 +2197,7 @@
   "spread": 1.5,
   "away_ml": 105,
   "home_ml": -125,
-  "book": "DraftKings"
+  "book": "Draft Kings"
  },
  {
   "date": "2026-11-25",
@@ -2207,6 +2207,6 @@
   "spread": 1.5,
   "away_ml": -103,
   "home_ml": -115,
-  "book": "DraftKings"
+  "book": "Draft Kings"
  }
 ]
