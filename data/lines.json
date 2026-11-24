@@ -2057,7 +2057,7 @@
   "spread": 8.5,
   "away_ml": -352,
   "home_ml": 282,
-  "book": "DraftKings"
+  "book": "Draft Kings"
  },
  {
   "date": "2026-11-23",
@@ -2067,7 +2067,7 @@
   "spread": 12.5,
   "away_ml": 504,
   "home_ml": -700,
-  "book": "DraftKings"
+  "book": "Draft Kings"
  },
  {
   "date": "2026-11-23",
@@ -2077,7 +2077,7 @@
   "spread": 4.5,
   "away_ml": -191,
   "home_ml": 160,
-  "book": "DraftKings"
+  "book": "Draft Kings"
  },
  {
   "date": "2026-11-23",
@@ -2087,7 +2087,7 @@
   "spread": 13.5,
   "away_ml": 558,
   "home_ml": -800,
-  "book": "DraftKings"
+  "book": "Draft Kings"
  },
  {
   "date": "2026-11-23",
@@ -2095,9 +2095,9 @@
   "home": "Minnesota Timberwolves",
   "fav": "Minnesota Timberwolves",
   "spread": 10.5,
-  "away_ml": 413,
-  "home_ml": -549,
-  "book": "DraftKings"
+  "away_ml": 396,
+  "home_ml": -521,
+  "book": "Draft Kings"
  },
  {
   "date": "2026-11-23",
@@ -2107,7 +2107,7 @@
   "spread": 3.5,
   "away_ml": -155,
   "home_ml": 131,
-  "book": "DraftKings"
+  "book": "Draft Kings"
  },
  {
   "date": "2026-11-23",
@@ -2127,7 +2127,7 @@
   "spread": 12.5,
   "away_ml": -640,
   "home_ml": 467,
-  "book": "DraftKings"
+  "book": "Draft Kings"
  },
  {
   "date": "2026-11-23",
@@ -2137,7 +2137,17 @@
   "spread": 10.5,
   "away_ml": 348,
   "home_ml": -449,
-  "book": "DraftKings"
+  "book": "Draft Kings"
+ },
+ {
+  "date": "2026-11-24",
+  "away": "Detroit Pistons",
+  "home": "Orlando Magic",
+  "fav": "Detroit Pistons",
+  "spread": 1.5,
+  "away_ml": -125,
+  "home_ml": 106,
+  "book": "Draft Kings"
  },
  {
   "date": "2026-11-24",
@@ -2147,6 +2157,6 @@
   "spread": 10.5,
   "away_ml": -453,
   "home_ml": 351,
-  "book": "DraftKings"
+  "book": "Draft Kings"
  }
 ]

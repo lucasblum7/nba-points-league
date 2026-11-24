@@ -5,22 +5,22 @@
    "id": "401910036",
    "time": "4:00 PM",
    "state": "in",
-   "detail": "7:59 - 1st",
+   "detail": "2:23 - 1st",
    "away": "Memphis Grizzlies",
    "home": "Charlotte Hornets",
-   "away_score": 11,
-   "home_score": 7,
+   "away_score": 28,
+   "home_score": 26,
    "cup": false
   },
   {
    "id": "401910037",
    "time": "4:00 PM",
    "state": "in",
-   "detail": "10:08 - 1st",
+   "detail": "3:21 - 1st",
    "away": "Portland Trail Blazers",
    "home": "Philadelphia 76ers",
-   "away_score": 2,
-   "home_score": 9,
+   "away_score": 26,
+   "home_score": 26,
    "cup": false
   },
   {
