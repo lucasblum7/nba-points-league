@@ -1,5 +1,5 @@
 {
- "as_of": "2026-11-24T06",
+ "as_of": "2026-11-24T09",
  "players": [
   {
    "team": "Atlanta Hawks",
@@ -465,27 +465,10 @@
   },
   {
    "team": "Indiana Pacers",
-   "id": "5157066",
-   "name": "Johnny Furphy",
-   "status": "Out",
-   "comment": "Furphy (knee) is practicing with the G League's Noblesville Boom, per Alex Golden of SI.com.",
-   "return": "2027-01-02",
-   "fantasy": "OUT",
-   "stats": {
-    "gp": 35.0,
-    "min": 18.37143,
-    "pts": 5.142857,
-    "reb": 4.3714285,
-    "ast": 1.1714286,
-    "this_season": false
-   }
-  },
-  {
-   "team": "Indiana Pacers",
    "id": "4396993",
    "name": "Tyrese Haliburton",
    "status": "Out",
-   "comment": "Haliburton (hamstring) is expected to miss at least two more weeks, Shams Charania of ESPN reports.",
+   "comment": "Haliburton (hamstring) was assigned to the G League's Noblesville Boom on Tuesday.",
    "return": "2026-12-13",
    "fantasy": "OUT",
    "stats": {
@@ -502,7 +485,7 @@
    "id": "2530530",
    "name": "T.J. McConnell",
    "status": "Day-To-Day",
-   "comment": "McConnell is out for Monday's game against the Thunder due to left hamstring soreness.",
+   "comment": "McConnell (hamstring) was assigned to the G League's Noblesville Boom on Tuesday.",
    "return": "2026-11-27",
    "fantasy": "GTD",
    "stats": {
@@ -1265,6 +1248,23 @@
     "pts": 7.25,
     "reb": 7.5,
     "ast": 1.25,
+    "this_season": true
+   }
+  },
+  {
+   "team": "Washington Wizards",
+   "id": "4432819",
+   "name": "Tre Mann",
+   "status": "Day-To-Day",
+   "comment": "Mann (illness) has been downgraded to questionable for Tuesday's game against Boston.",
+   "return": "2026-11-24",
+   "fantasy": "GTD",
+   "stats": {
+    "gp": 8.0,
+    "min": 5.125,
+    "pts": 1.25,
+    "reb": 0.125,
+    "ast": 0.5,
     "this_season": true
    }
   },
