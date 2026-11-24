@@ -1,5 +1,5 @@
 {
- "as_of": "2026-11-23T21",
+ "as_of": "2026-11-24T00",
  "players": [
   {
    "team": "Atlanta Hawks",
@@ -606,7 +606,7 @@
    "status": "Out",
    "comment": "Coach JJ Redick stated Monday that the team is optimistic Reaves (heel) will return for Friday's game against San Antonio, Daniel Starkand of LakersNation.com reports.",
    "return": "2026-11-27",
-   "fantasy": "OUT",
+   "fantasy": "GTD",
    "stats": {
     "gp": 12.0,
     "min": 35.25,
@@ -963,10 +963,10 @@
    "team": "San Antonio Spurs",
    "id": "4066259",
    "name": "De'Aaron Fox",
-   "status": "Out",
+   "status": "Day-To-Day",
    "comment": "Fox (shin) has been ruled out for Monday's game against the Kings, Jeff McDonald of the San Antonio Express-News reports.",
    "return": "2026-11-25",
-   "fantasy": "OUT",
+   "fantasy": "GTD",
    "stats": {
     "gp": 16.0,
     "min": 28.9375,
@@ -1024,10 +1024,10 @@
    "team": "San Antonio Spurs",
    "id": "5104157",
    "name": "Victor Wembanyama",
-   "status": "Out",
+   "status": "Day-To-Day",
    "comment": "Wembanyama (back) won't play Monday against the Kings, Jeff McDonald of the San Antonio Express-News reports.",
    "return": "2026-11-25",
-   "fantasy": "OUT",
+   "fantasy": "GTD",
    "stats": {
     "gp": 17.0,
     "min": 30.294117,
@@ -1170,10 +1170,10 @@
    "team": "Utah Jazz",
    "id": "4397077",
    "name": "Jaxson Hayes",
-   "status": "Out",
+   "status": "Day-To-Day",
    "comment": "Hayes (knee) has been ruled out for Monday's game against the Lakers.",
    "return": "2026-11-27",
-   "fantasy": "OUT",
+   "fantasy": "GTD",
    "stats": {
     "gp": 15.0,
     "min": 23.733334,
