@@ -2153,10 +2153,10 @@
   "date": "2026-11-24",
   "away": "Detroit Pistons",
   "home": "Orlando Magic",
-  "fav": "Detroit Pistons",
+  "fav": "Orlando Magic",
   "spread": 2.5,
-  "away_ml": -130,
-  "home_ml": 110,
+  "away_ml": 119,
+  "home_ml": -141,
   "book": "DraftKings"
  },
  {
@@ -2194,7 +2194,7 @@
   "away": "Minnesota Timberwolves",
   "home": "Oklahoma City Thunder",
   "fav": "Oklahoma City Thunder",
-  "spread": 2.5,
+  "spread": 1.5,
   "away_ml": 105,
   "home_ml": -125,
   "book": "DraftKings"
