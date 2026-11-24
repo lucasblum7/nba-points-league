@@ -168,7 +168,17 @@
   "close|401910038|Rahul": "2026-11-23",
   "close|401910039|Darin": "2026-11-23",
   "close|401910039|Lucas": "2026-11-23",
-  "hot|401910040|4431671|30": "2026-11-23"
+  "hot|401910040|4431671|30": "2026-11-23",
+  "final|401910038|Rahul": "2026-11-23",
+  "final|401910038|Parker": "2026-11-23",
+  "final|401910040|Darin": "2026-11-23",
+  "final|401910040|OJ": "2026-11-23",
+  "close|401910041|Dom": "2026-11-23",
+  "close|401910041|Lucas": "2026-11-23",
+  "close|401910042|OJ": "2026-11-23",
+  "close|401910042|Parker": "2026-11-23",
+  "hot|401910039|4395725|30": "2026-11-23",
+  "hot|401910039|4433134|30": "2026-11-23"
  },
  "state": {
   "leads": {
@@ -198,7 +208,7 @@
    "Denver Nuggets": "mid",
    "Detroit Pistons": "mid",
    "Golden State Warriors": "mid",
-   "Houston Rockets": "lock",
+   "Houston Rockets": "mid",
    "Indiana Pacers": "mid",
    "LA Clippers": "out",
    "Los Angeles Lakers": "mid",
