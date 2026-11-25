@@ -15,9 +15,7 @@
    "time": "7:00 PM",
    "away": "Sacramento Kings",
    "home": "Golden State Warriors",
-   "cup": true,
-   "away_ml": 217,
-   "home_ml": -264
+   "cup": true
   },
   {
    "date": "2026-11-25",
@@ -70,8 +68,8 @@
    "away": "Miami Heat",
    "home": "Philadelphia 76ers",
    "cup": true,
-   "away_ml": 101,
-   "home_ml": -119
+   "away_ml": -125,
+   "home_ml": 105
   },
   {
    "date": "2026-11-25",

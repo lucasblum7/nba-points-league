@@ -2177,7 +2177,7 @@
   "spread": 3.5,
   "away_ml": 140,
   "home_ml": -167,
-  "book": "Draft Kings"
+  "book": "DraftKings"
  },
  {
   "date": "2026-11-25",
@@ -2197,7 +2197,7 @@
   "spread": 9.5,
   "away_ml": 312,
   "home_ml": -395,
-  "book": "Draft Kings"
+  "book": "DraftKings"
  },
  {
   "date": "2026-11-25",
@@ -2207,7 +2207,7 @@
   "spread": 7.5,
   "away_ml": 220,
   "home_ml": -269,
-  "book": "Draft Kings"
+  "book": "DraftKings"
  },
  {
   "date": "2026-11-25",
@@ -2217,7 +2217,7 @@
   "spread": 1.5,
   "away_ml": -101,
   "home_ml": -117,
-  "book": "Draft Kings"
+  "book": "DraftKings"
  },
  {
   "date": "2026-11-25",
@@ -2227,7 +2227,7 @@
   "spread": 1.5,
   "away_ml": 110,
   "home_ml": -130,
-  "book": "Draft Kings"
+  "book": "DraftKings"
  },
  {
   "date": "2026-11-25",
@@ -2237,7 +2237,7 @@
   "spread": 1.5,
   "away_ml": 105,
   "home_ml": -125,
-  "book": "Draft Kings"
+  "book": "DraftKings"
  },
  {
   "date": "2026-11-25",
@@ -2246,8 +2246,8 @@
   "fav": "Miami Heat",
   "spread": 1.5,
   "away_ml": -125,
-  "home_ml": 106,
-  "book": "Draft Kings"
+  "home_ml": 105,
+  "book": "DraftKings"
  },
  {
   "date": "2026-11-25",
@@ -2257,6 +2257,6 @@
   "spread": 3.5,
   "away_ml": -162,
   "home_ml": 136,
-  "book": "Draft Kings"
+  "book": "DraftKings"
  }
 ]
