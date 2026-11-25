@@ -1,5 +1,5 @@
 {
- "as_of": "2026-11-25T06",
+ "as_of": "2026-11-25T09",
  "players": [
   {
    "team": "Atlanta Hawks",
@@ -127,6 +127,23 @@
     "pts": 13.444445,
     "reb": 4.5555553,
     "ast": 4.4444447,
+    "this_season": true
+   }
+  },
+  {
+   "team": "New Orleans Pelicans",
+   "id": "4683742",
+   "name": "Julian Reese",
+   "status": "Day-To-Day",
+   "comment": "The Pelicans transferred Reese from the G League's Laketown Squadron, and he will be available for New Orleans' game against the Warriors on Monday.",
+   "return": "2026-11-25",
+   "fantasy": "GTD",
+   "stats": {
+    "gp": 6.0,
+    "min": 5.3333335,
+    "pts": 1.0,
+    "reb": 1.0,
+    "ast": 0.16666667,
     "this_season": true
    }
   },
@@ -971,7 +988,7 @@
    "id": "4898371",
    "name": "Maxime Raynaud",
    "status": "Out",
-   "comment": "Raynaud (knee) is out for Wednesday's game against the Warriors.",
+   "comment": "Raynaud (knee) was assigned to the G League's Stockton Kings on Wednesday, James Ham of ESPN 1320 Sacramento reports.",
    "return": "2026-12-02",
    "fantasy": "OUT",
    "stats": {
