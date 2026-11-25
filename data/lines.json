@@ -2225,8 +2225,8 @@
   "home": "New York Knicks",
   "fav": "New York Knicks",
   "spread": 1.5,
-  "away_ml": 103,
-  "home_ml": -121,
+  "away_ml": 110,
+  "home_ml": -130,
   "book": "DraftKings"
  },
  {
@@ -2235,8 +2235,8 @@
   "home": "Oklahoma City Thunder",
   "fav": "Oklahoma City Thunder",
   "spread": 1.5,
-  "away_ml": 110,
-  "home_ml": -130,
+  "away_ml": 105,
+  "home_ml": -125,
   "book": "DraftKings"
  },
  {
