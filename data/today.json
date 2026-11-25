@@ -27,11 +27,11 @@
    "id": "401909316",
    "time": "7:00 PM",
    "state": "in",
-   "detail": "4:01 - 2nd",
+   "detail": "Halftime",
    "away": "Dallas Mavericks",
    "home": "Denver Nuggets",
-   "away_score": 41,
-   "home_score": 36,
+   "away_score": 58,
+   "home_score": 39,
    "cup": true
   }
  ]
