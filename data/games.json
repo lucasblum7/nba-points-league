@@ -2108,5 +2108,14 @@
   "away_score": 104,
   "home_score": 86,
   "cup": true
+ },
+ {
+  "id": "401909315",
+  "date": "2026-11-24",
+  "away": "Boston Celtics",
+  "home": "Washington Wizards",
+  "away_score": 131,
+  "home_score": 116,
+  "cup": true
  }
 ]

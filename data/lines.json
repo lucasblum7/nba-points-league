@@ -2175,8 +2175,8 @@
   "home": "Charlotte Hornets",
   "fav": "Charlotte Hornets",
   "spread": 3.5,
-  "away_ml": 137,
-  "home_ml": -163,
+  "away_ml": 130,
+  "home_ml": -155,
   "book": "DraftKings"
  },
  {
@@ -2184,7 +2184,7 @@
   "away": "Sacramento Kings",
   "home": "Golden State Warriors",
   "fav": "Golden State Warriors",
-  "spread": 5.5,
+  "spread": 6.5,
   "away_ml": 199,
   "home_ml": -241,
   "book": "DraftKings"
