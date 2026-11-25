@@ -200,7 +200,7 @@
   "Denver Nuggets": {
    "playoffs": 95.3,
    "top6": 82.3,
-   "playin": 17.5,
+   "playin": 17.6,
    "proj_w": 52.4,
    "proj_l": 29.6,
    "seed": 4.5,
@@ -244,11 +244,11 @@
    "prev": 99.1
   },
   "Golden State Warriors": {
-   "playoffs": 20.4,
+   "playoffs": 20.5,
    "top6": 4.3,
    "playin": 53.3,
-   "proj_w": 38.6,
-   "proj_l": 43.4,
+   "proj_w": 38.7,
+   "proj_l": 43.3,
    "seed": 9.9,
    "conf": "West",
    "rating": -1.1,
@@ -391,9 +391,9 @@
    "prev": 93.3
   },
   "Memphis Grizzlies": {
-   "playoffs": 51.7,
+   "playoffs": 51.6,
    "top6": 18.9,
-   "playin": 69.8,
+   "playin": 69.9,
    "proj_w": 43.5,
    "proj_l": 38.5,
    "seed": 8.2,
@@ -477,9 +477,9 @@
    "prev": 0.1
   },
   "Minnesota Timberwolves": {
-   "playoffs": 90.6,
-   "top6": 67.9,
-   "playin": 31.3,
+   "playoffs": 90.7,
+   "top6": 68.2,
+   "playin": 31.0,
    "proj_w": 50.2,
    "proj_l": 31.8,
    "seed": 5.4,
@@ -687,8 +687,8 @@
   },
   "Portland Trail Blazers": {
    "playoffs": 90.5,
-   "top6": 70.6,
-   "playin": 28.5,
+   "top6": 70.5,
+   "playin": 28.6,
    "proj_w": 50.4,
    "proj_l": 31.6,
    "seed": 5.3,
@@ -723,8 +723,8 @@
    "playoffs": 0.0,
    "top6": 0.0,
    "playin": 0.1,
-   "proj_w": 19.6,
-   "proj_l": 62.4,
+   "proj_w": 19.5,
+   "proj_l": 62.5,
    "seed": 14.4,
    "conf": "West",
    "rating": -8.4,
@@ -732,8 +732,16 @@
    "prior_wins": 20.5,
    "last5_margin": -12.0,
    "season_margin": -12.5,
-   "injuries": [],
-   "injury_wins": 0.0,
+   "injuries": [
+    {
+     "name": "Maxime Raynaud",
+     "status": "Out",
+     "games": 3,
+     "impact": 1.07,
+     "comment": "Raynaud (knee) is out for Wednesday's game against the Warriors."
+    }
+   ],
+   "injury_wins": -0.1,
    "sos_rank": 16,
    "games_left": 65,
    "prev": 0.0

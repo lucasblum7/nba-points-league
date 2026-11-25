@@ -1,5 +1,5 @@
 {
- "as_of": "2026-11-24T18",
+ "as_of": "2026-11-24T21",
  "players": [
   {
    "team": "Atlanta Hawks",
@@ -291,23 +291,6 @@
     "reb": 5.285714,
     "ast": 1.8571428,
     "this_season": false
-   }
-  },
-  {
-   "team": "Dallas Mavericks",
-   "id": "4278078",
-   "name": "P.J. Washington",
-   "status": "Day-To-Day",
-   "comment": "Washington (illness) is questionable for Tuesday's game against the Nuggets.",
-   "return": "2026-11-24",
-   "fantasy": "GTD",
-   "stats": {
-    "gp": 15.0,
-    "min": 30.8,
-    "pts": 14.0,
-    "reb": 6.6666665,
-    "ast": 1.3333334,
-    "this_season": true
    }
   },
   {
@@ -988,9 +971,9 @@
    "id": "4898371",
    "name": "Maxime Raynaud",
    "status": "Out",
-   "comment": "Raynaud (knee) will remain on the inactive list for Wednesday's game against the Suns.",
-   "return": "2026-11-25",
-   "fantasy": "GTD",
+   "comment": "Raynaud (knee) is out for Wednesday's game against the Warriors.",
+   "return": "2026-12-02",
+   "fantasy": "OUT",
    "stats": {
     "gp": 74.0,
     "min": 26.54054,

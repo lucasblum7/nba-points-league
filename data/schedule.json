@@ -43,8 +43,8 @@
    "away": "Brooklyn Nets",
    "home": "Milwaukee Bucks",
    "cup": true,
-   "away_ml": 101,
-   "home_ml": -119
+   "away_ml": -106,
+   "home_ml": -111
   },
   {
    "date": "2026-11-25",
@@ -79,8 +79,8 @@
    "away": "San Antonio Spurs",
    "home": "Portland Trail Blazers",
    "cup": true,
-   "away_ml": -162,
-   "home_ml": 136
+   "away_ml": -155,
+   "home_ml": 130
   },
   {
    "date": "2026-11-27",
