@@ -1,5 +1,5 @@
 {
- "as_of": "2026-11-25T09",
+ "as_of": "2026-11-25T12",
  "players": [
   {
    "team": "Atlanta Hawks",
@@ -86,7 +86,7 @@
    "status": "Out",
    "comment": "Robinson (illness) is out for Tuesday's game against Washington, Taylor Snow of the Celtics' official site reports.",
    "return": "2026-11-27",
-   "fantasy": "OUT",
+   "fantasy": "GTD",
    "stats": {
     "gp": 14.0,
     "min": 17.571428,
@@ -256,7 +256,7 @@
    "status": "Out",
    "comment": "Biberovic (heel) is out for Wednesday's game against the Warriors.",
    "return": "2026-11-27",
-   "fantasy": "OUT",
+   "fantasy": "GTD",
    "stats": null
   },
   {
@@ -266,7 +266,7 @@
    "status": "Out",
    "comment": "De Larrea (knee) is listed as out for Wednesday's game against the Warriors.",
    "return": "2026-11-27",
-   "fantasy": "OUT",
+   "fantasy": "GTD",
    "stats": {
     "gp": 4.0,
     "min": 11.5,
@@ -283,7 +283,7 @@
    "status": "Out",
    "comment": "Lawal (groin) is out for Tuesday's game against Denver.",
    "return": "2026-11-27",
-   "fantasy": "OUT",
+   "fantasy": "GTD",
    "stats": {
     "gp": 8.0,
     "min": 4.5,
@@ -300,7 +300,7 @@
    "status": "Out",
    "comment": "Head coach Dusty May said Friday that Lively (foot) is moving well and progressing in his recovery, and the big man told May he's \"close\" to returning, Mike Curtis of The Dallas Morning News reports.",
    "return": "2026-11-27",
-   "fantasy": "OUT",
+   "fantasy": "GTD",
    "stats": {
     "gp": 7.0,
     "min": 16.428572,
@@ -314,10 +314,10 @@
    "team": "Detroit Pistons",
    "id": "4432166",
    "name": "Cade Cunningham",
-   "status": "Out",
+   "status": "Day-To-Day",
    "comment": "Cunningham (knee) is listed as out for Tuesday's game against Orlando.",
    "return": "2026-11-27",
-   "fantasy": "OUT",
+   "fantasy": "GTD",
    "stats": {
     "gp": 15.0,
     "min": 34.8,
@@ -385,7 +385,7 @@
    "status": "Out",
    "comment": "Robinson (quadriceps) is considered day-to-day as he progresses in his rehab, Eric Vincent of ClutchPoints.com reports.",
    "return": "2026-11-27",
-   "fantasy": "OUT",
+   "fantasy": "GTD",
    "stats": {
     "gp": 12.0,
     "min": 30.5,
@@ -737,6 +737,23 @@
   },
   {
    "team": "New York Knicks",
+   "id": "3934672",
+   "name": "Jalen Brunson",
+   "status": "Day-To-Day",
+   "comment": "Brunson (illness) has been downgraded to questionable for Wednesday's game against the Cavaliers.",
+   "return": "2026-11-25",
+   "fantasy": "GTD",
+   "stats": {
+    "gp": 17.0,
+    "min": 34.411766,
+    "pts": 26.529411,
+    "reb": 3.1176472,
+    "ast": 5.9411764,
+    "this_season": true
+   }
+  },
+  {
+   "team": "New York Knicks",
    "id": "2528426",
    "name": "Jordan Clarkson",
    "status": "Out",
@@ -757,7 +774,7 @@
    "id": "3062679",
    "name": "Josh Hart",
    "status": "Day-To-Day",
-   "comment": "Hart (shoulder) is listed as questionable for Wednesday's game against Cleveland.",
+   "comment": "Hart (shoulder) has been upgraded to probable for Wednesday's game against the Cavaliers.",
    "return": "2026-11-25",
    "fantasy": "GTD",
    "stats": {
@@ -773,10 +790,10 @@
    "team": "New York Knicks",
    "id": "4431823",
    "name": "Miles McBride",
-   "status": "Day-To-Day",
-   "comment": "McBride (adductor) is listed as questionable for Wednesday's game versus Cleveland.",
-   "return": "2026-11-25",
-   "fantasy": "GTD",
+   "status": "Out",
+   "comment": "McBride (adductor) has been ruled out for Wednesday's game against the Cavaliers.",
+   "return": "2026-11-27",
+   "fantasy": "OUT",
    "stats": {
     "gp": 16.0,
     "min": 17.1875,
@@ -791,7 +808,7 @@
    "id": "3136195",
    "name": "Karl-Anthony Towns",
    "status": "Day-To-Day",
-   "comment": "Towns (knee) is questionable for Wednesday's game against Cleveland.",
+   "comment": "Towns (knee) is probable for Wednesday's game against Cleveland.",
    "return": "2026-11-25",
    "fantasy": "GTD",
    "stats": {
@@ -1463,9 +1480,9 @@
    "id": "3135045",
    "name": "Grayson Allen",
    "status": "Out",
-   "comment": "Allen (concussion) is listed as questionable for Wednesday's game versus Chicago.",
-   "return": "2026-11-25",
-   "fantasy": "GTD",
+   "comment": "Allen (concussion) has been ruled out for Wednesday's game against Chicago.",
+   "return": "2026-11-28",
+   "fantasy": "OUT",
    "stats": {
     "gp": 13.0,
     "min": 27.076923,
@@ -1496,10 +1513,10 @@
    "team": "Charlotte Hornets",
    "id": "4576060",
    "name": "Ryan Kalkbrenner",
-   "status": "Day-To-Day",
-   "comment": "Kalkbrenner (hip) is doubtful to play Wednesday against the Bulls.",
-   "return": "2026-11-25",
-   "fantasy": "GTD",
+   "status": "Out",
+   "comment": "Kalkbrenner (hip) has been ruled out for Wednesday's matchup with Chicago.",
+   "return": "2026-11-28",
+   "fantasy": "OUT",
    "stats": {
     "gp": 16.0,
     "min": 17.5625,
