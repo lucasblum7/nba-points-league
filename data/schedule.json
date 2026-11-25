@@ -7,22 +7,26 @@
    "away": "Dallas Mavericks",
    "home": "Denver Nuggets",
    "cup": true,
-   "away_ml": 241,
-   "home_ml": -297
+   "away_ml": 227,
+   "home_ml": -277
   },
   {
    "date": "2026-11-25",
    "time": "4:00 PM",
    "away": "Chicago Bulls",
    "home": "Charlotte Hornets",
-   "cup": true
+   "cup": true,
+   "away_ml": 137,
+   "home_ml": -163
   },
   {
    "date": "2026-11-25",
    "time": "7:00 PM",
    "away": "Sacramento Kings",
    "home": "Golden State Warriors",
-   "cup": true
+   "cup": true,
+   "away_ml": 199,
+   "home_ml": -241
   },
   {
    "date": "2026-11-25",
@@ -38,14 +42,18 @@
    "time": "5:00 PM",
    "away": "LA Clippers",
    "home": "Memphis Grizzlies",
-   "cup": true
+   "cup": true,
+   "away_ml": 226,
+   "home_ml": -276
   },
   {
    "date": "2026-11-25",
    "time": "5:00 PM",
    "away": "Brooklyn Nets",
    "home": "Milwaukee Bucks",
-   "cup": true
+   "cup": true,
+   "away_ml": 101,
+   "home_ml": -119
   },
   {
    "date": "2026-11-25",
@@ -79,7 +87,9 @@
    "time": "7:00 PM",
    "away": "San Antonio Spurs",
    "home": "Portland Trail Blazers",
-   "cup": true
+   "cup": true,
+   "away_ml": -152,
+   "home_ml": 128
   },
   {
    "date": "2026-11-27",
