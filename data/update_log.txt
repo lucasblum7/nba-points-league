@@ -1,5 +1,4 @@
-2026-11-25T21:30:17+00:00 ok
+2026-11-25T21:45:17+00:00 ok
 checked 2026-11-22 through 2026-11-26
 fetched 29 events
-push: sent 2 notification(s)
-changed: nothing
+changed: lines, odds
