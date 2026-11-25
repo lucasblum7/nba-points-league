@@ -3,9 +3,9 @@
  "sims": 5000,
  "teams": {
   "Atlanta Hawks": {
-   "playoffs": 90.6,
-   "top6": 65.6,
-   "playin": 33.8,
+   "playoffs": 90.5,
+   "top6": 65.5,
+   "playin": 33.9,
    "proj_w": 46.7,
    "proj_l": 35.3,
    "seed": 5.5,
@@ -86,7 +86,7 @@
   "Charlotte Hornets": {
    "playoffs": 6.5,
    "top6": 0.3,
-   "playin": 24.9,
+   "playin": 24.8,
    "proj_w": 29.6,
    "proj_l": 52.4,
    "seed": 11.6,
@@ -146,7 +146,7 @@
   },
   "Cleveland Cavaliers": {
    "playoffs": 87.0,
-   "top6": 54.2,
+   "top6": 54.1,
    "playin": 44.9,
    "proj_w": 45.1,
    "proj_l": 36.9,
@@ -181,7 +181,7 @@
   "Dallas Mavericks": {
    "playoffs": 33.5,
    "top6": 10.0,
-   "playin": 65.3,
+   "playin": 65.2,
    "proj_w": 41.0,
    "proj_l": 41.0,
    "seed": 9.1,
@@ -226,10 +226,10 @@
   },
   "Detroit Pistons": {
    "playoffs": 98.9,
-   "top6": 93.1,
-   "playin": 6.8,
-   "proj_w": 52.2,
-   "proj_l": 29.8,
+   "top6": 92.9,
+   "playin": 7.1,
+   "proj_w": 52.1,
+   "proj_l": 29.9,
    "seed": 3.5,
    "conf": "East",
    "rating": 3.8,
@@ -246,6 +246,13 @@
      "comment": "Duren (hamstring) is being assigned to the Motor City Cruise on Wednesday for practice as he ramps up for a return, Eric Vincent of ClutchPo"
     },
     {
+     "name": "Cade Cunningham",
+     "status": "Out",
+     "games": 1,
+     "impact": 5.12,
+     "comment": "Cunningham (knee) is listed as out for Tuesday's game against Orlando."
+    },
+    {
      "name": "Duncan Robinson",
      "status": "Out",
      "games": 1,
@@ -253,7 +260,7 @@
      "comment": "Robinson (quadriceps) is considered day-to-day as he progresses in his rehab, Eric Vincent of ClutchPoints.com reports."
     }
    ],
-   "injury_wins": -0.2,
+   "injury_wins": -0.3,
    "sos_rank": 30,
    "games_left": 66,
    "prev": 99.1
@@ -326,9 +333,9 @@
    "prev": 99.1
   },
   "Indiana Pacers": {
-   "playoffs": 19.6,
+   "playoffs": 19.4,
    "top6": 1.9,
-   "playin": 56.8,
+   "playin": 56.6,
    "proj_w": 33.8,
    "proj_l": 48.2,
    "seed": 10.2,
@@ -389,7 +396,7 @@
   "Los Angeles Lakers": {
    "playoffs": 93.8,
    "top6": 81.1,
-   "playin": 18.5,
+   "playin": 18.4,
    "proj_w": 52.2,
    "proj_l": 29.8,
    "seed": 4.6,
@@ -406,9 +413,9 @@
    "prev": 93.3
   },
   "Memphis Grizzlies": {
-   "playoffs": 50.5,
-   "top6": 18.7,
-   "playin": 67.9,
+   "playoffs": 50.4,
+   "top6": 18.5,
+   "playin": 68.0,
    "proj_w": 43.4,
    "proj_l": 38.6,
    "seed": 8.3,
@@ -439,6 +446,13 @@
      "games": 5,
      "impact": 0.96,
      "comment": "Grant was diagnosed with a grade 1 left calf strain and will be re-evaluated in two weeks."
+    },
+    {
+     "name": "Scotty Pippen Jr.",
+     "status": "Out",
+     "games": 5,
+     "impact": 0.22,
+     "comment": "Pippen (back) is out for Wednesday's game against the Clippers."
     }
    ],
    "injury_wins": -1.0,
@@ -448,7 +462,7 @@
   },
   "Miami Heat": {
    "playoffs": 94.7,
-   "top6": 78.9,
+   "top6": 78.8,
    "playin": 21.0,
    "proj_w": 48.5,
    "proj_l": 33.5,
@@ -485,12 +499,12 @@
    "prev": 0.1
   },
   "Minnesota Timberwolves": {
-   "playoffs": 88.8,
-   "top6": 67.9,
-   "playin": 31.0,
+   "playoffs": 88.9,
+   "top6": 68.2,
+   "playin": 30.7,
    "proj_w": 50.2,
    "proj_l": 31.8,
-   "seed": 5.5,
+   "seed": 5.4,
    "conf": "West",
    "rating": 3.8,
    "rating_wins": 51.3,
@@ -543,7 +557,7 @@
    "playin": 4.1,
    "proj_w": 53.8,
    "proj_l": 28.2,
-   "seed": 3.0,
+   "seed": 2.9,
    "conf": "East",
    "rating": 4.9,
    "rating_wins": 54.2,
@@ -565,9 +579,9 @@
    "prev": 99.4
   },
   "Oklahoma City Thunder": {
-   "playoffs": 87.8,
-   "top6": 59.3,
-   "playin": 39.3,
+   "playoffs": 87.7,
+   "top6": 59.0,
+   "playin": 39.6,
    "proj_w": 49.0,
    "proj_l": 33.0,
    "seed": 5.9,
@@ -598,19 +612,26 @@
      "games": 41,
      "impact": 0.17,
      "comment": "Wallace underwent surgery Friday to repair a torn labrum in his left shoulder and will be re-evaluated before the end of the regular season,"
+    },
+    {
+     "name": "Aday Mara",
+     "status": "Out",
+     "games": 1,
+     "impact": 1.56,
+     "comment": "Mara (leg) is out for Wednesday's game versus the Timberwolves."
     }
    ],
-   "injury_wins": -2.6,
+   "injury_wins": -2.7,
    "sos_rank": 25,
    "games_left": 64,
    "prev": 88.9
   },
   "Orlando Magic": {
-   "playoffs": 51.7,
-   "top6": 13.4,
+   "playoffs": 52.2,
+   "top6": 13.9,
    "playin": 73.7,
-   "proj_w": 38.8,
-   "proj_l": 43.2,
+   "proj_w": 38.9,
+   "proj_l": 43.1,
    "seed": 8.4,
    "conf": "East",
    "rating": -0.8,
@@ -633,12 +654,12 @@
    "prev": 48.7
   },
   "Philadelphia 76ers": {
-   "playoffs": 97.8,
+   "playoffs": 97.7,
    "top6": 88.7,
    "playin": 11.3,
-   "proj_w": 50.6,
-   "proj_l": 31.4,
-   "seed": 4.1,
+   "proj_w": 50.7,
+   "proj_l": 31.3,
+   "seed": 4.0,
    "conf": "East",
    "rating": 2.2,
    "rating_wins": 47.1,
@@ -660,9 +681,9 @@
    "prev": 97.8
   },
   "Phoenix Suns": {
-   "playoffs": 36.5,
+   "playoffs": 36.6,
    "top6": 10.5,
-   "playin": 66.8,
+   "playin": 66.7,
    "proj_w": 41.4,
    "proj_l": 40.6,
    "seed": 9.0,
@@ -687,7 +708,7 @@
    "prev": 37.4
   },
   "Portland Trail Blazers": {
-   "playoffs": 90.3,
+   "playoffs": 90.4,
    "top6": 70.0,
    "playin": 29.0,
    "proj_w": 50.4,
@@ -774,9 +795,9 @@
    "prev": 100.0
   },
   "Toronto Raptors": {
-   "playoffs": 44.3,
+   "playoffs": 44.2,
    "top6": 9.0,
-   "playin": 73.5,
+   "playin": 73.4,
    "proj_w": 37.5,
    "proj_l": 44.5,
    "seed": 8.9,
@@ -851,7 +872,7 @@
   "Washington Wizards": {
    "playoffs": 5.7,
    "top6": 0.2,
-   "playin": 27.9,
+   "playin": 27.8,
    "proj_w": 30.1,
    "proj_l": 51.9,
    "seed": 11.5,

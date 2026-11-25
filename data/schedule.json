@@ -11,15 +11,6 @@
    "home_ml": -297
   },
   {
-   "date": "2026-11-24",
-   "time": "5:00 PM",
-   "away": "Boston Celtics",
-   "home": "Washington Wizards",
-   "cup": true,
-   "away_ml": -452,
-   "home_ml": 351
-  },
-  {
    "date": "2026-11-25",
    "time": "4:00 PM",
    "away": "Chicago Bulls",
@@ -71,8 +62,8 @@
    "away": "Minnesota Timberwolves",
    "home": "Oklahoma City Thunder",
    "cup": true,
-   "away_ml": 105,
-   "home_ml": -125
+   "away_ml": 101,
+   "home_ml": -119
   },
   {
    "date": "2026-11-25",

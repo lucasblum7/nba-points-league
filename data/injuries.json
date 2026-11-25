@@ -1,5 +1,5 @@
 {
- "as_of": "2026-11-24T15",
+ "as_of": "2026-11-24T18",
  "players": [
   {
    "team": "Atlanta Hawks",
@@ -314,10 +314,10 @@
    "team": "Detroit Pistons",
    "id": "4432166",
    "name": "Cade Cunningham",
-   "status": "Day-To-Day",
-   "comment": "Cunningham (knee) is probable for Tuesday's game against the Orlando.",
-   "return": "2026-11-24",
-   "fantasy": "GTD",
+   "status": "Out",
+   "comment": "Cunningham (knee) is listed as out for Tuesday's game against Orlando.",
+   "return": "2026-11-27",
+   "fantasy": "OUT",
    "stats": {
     "gp": 15.0,
     "min": 34.8,
@@ -426,6 +426,23 @@
     "pts": 27.8,
     "reb": 3.7,
     "ast": 3.9,
+    "this_season": true
+   }
+  },
+  {
+   "team": "Golden State Warriors",
+   "id": "5175737",
+   "name": "Yaxel Lendeborg",
+   "status": "Day-To-Day",
+   "comment": "Lendeborg is questionable for Wednesday's game against the Kings with an illness.",
+   "return": "2026-11-25",
+   "fantasy": "GTD",
+   "stats": {
+    "gp": 17.0,
+    "min": 31.764706,
+    "pts": 19.235294,
+    "reb": 7.352941,
+    "ast": 3.6470587,
     "this_season": true
    }
   },
@@ -998,7 +1015,7 @@
    "id": "4066259",
    "name": "De'Aaron Fox",
    "status": "Day-To-Day",
-   "comment": "Fox (shin) has been ruled out for Monday's game against the Kings, Jeff McDonald of the San Antonio Express-News reports.",
+   "comment": "Fox (shin) is questionable to play Wednesday's game against the Trail Blazers.",
    "return": "2026-11-25",
    "fantasy": "GTD",
    "stats": {
@@ -1059,7 +1076,7 @@
    "id": "5104157",
    "name": "Victor Wembanyama",
    "status": "Day-To-Day",
-   "comment": "Wembanyama (back) won't play Monday against the Kings, Jeff McDonald of the San Antonio Express-News reports.",
+   "comment": "Wembanyama (back) is questionable for Wednesday's game in Portland.",
    "return": "2026-11-25",
    "fantasy": "GTD",
    "stats": {
@@ -1068,23 +1085,6 @@
     "pts": 29.882353,
     "reb": 12.294118,
     "ast": 3.1764705,
-    "this_season": true
-   }
-  },
-  {
-   "team": "Oklahoma City Thunder",
-   "id": "2991350",
-   "name": "Alex Caruso",
-   "status": "Out",
-   "comment": "Caruso (hip) has been ruled out for Monday's game against the Pacers, according to the NBA's official injury report.",
-   "return": "2026-11-25",
-   "fantasy": "GTD",
-   "stats": {
-    "gp": 12.0,
-    "min": 19.333334,
-    "pts": 7.4166665,
-    "reb": 3.6666667,
-    "ast": 2.8333333,
     "this_season": true
    }
   },
@@ -1109,10 +1109,10 @@
    "team": "Oklahoma City Thunder",
    "id": "5174983",
    "name": "Aday Mara",
-   "status": "Day-To-Day",
-   "comment": "Mara (shin) has been ruled out for Monday's game against the Pacers.",
-   "return": "2026-11-25",
-   "fantasy": "GTD",
+   "status": "Out",
+   "comment": "Mara (leg) is out for Wednesday's game versus the Timberwolves.",
+   "return": "2026-11-28",
+   "fantasy": "OUT",
    "stats": {
     "gp": 16.0,
     "min": 22.375,
@@ -1137,9 +1137,9 @@
    "id": "5159925",
    "name": "Nikola Topic",
    "status": "Out",
-   "comment": "Topic (hip) has been ruled out for Monday's game against the Pacers, according to the NBA's official injury report.",
-   "return": "2026-11-25",
-   "fantasy": "GTD",
+   "comment": "Topic (hip) is listed as out for Wednesday's game versus Minnesota.",
+   "return": "2026-11-28",
+   "fantasy": "OUT",
    "stats": {
     "gp": 3.0,
     "min": 11.333333,
@@ -1187,10 +1187,10 @@
    "team": "Oklahoma City Thunder",
    "id": "4432823",
    "name": "Jaylin Williams",
-   "status": "Day-To-Day",
-   "comment": "Williams (back) has been ruled out for Monday's game against the Pacers",
-   "return": "2026-11-25",
-   "fantasy": "GTD",
+   "status": "Out",
+   "comment": "Williams (back) is listed as out for Wednesday's game against Minnesota.",
+   "return": "2026-11-28",
+   "fantasy": "OUT",
    "stats": {
     "gp": 9.0,
     "min": 17.11111,
@@ -1299,23 +1299,6 @@
     "pts": 7.25,
     "reb": 7.5,
     "ast": 1.25,
-    "this_season": true
-   }
-  },
-  {
-   "team": "Washington Wizards",
-   "id": "4432819",
-   "name": "Tre Mann",
-   "status": "Day-To-Day",
-   "comment": "Mann (illness) has been downgraded to questionable for Tuesday's game against Boston.",
-   "return": "2026-11-24",
-   "fantasy": "GTD",
-   "stats": {
-    "gp": 8.0,
-    "min": 5.125,
-    "pts": 1.25,
-    "reb": 0.125,
-    "ast": 0.5,
     "this_season": true
    }
   },
@@ -1453,9 +1436,9 @@
    "id": "4431785",
    "name": "Scotty Pippen Jr.",
    "status": "Out",
-   "comment": "Pippen (back) is progressing in his recovery but is still considered week-to-week.",
-   "return": "2026-11-25",
-   "fantasy": "GTD",
+   "comment": "Pippen (back) is out for Wednesday's game against the Clippers.",
+   "return": "2026-12-12",
+   "fantasy": "OUT",
    "stats": {
     "gp": 5.0,
     "min": 16.0,
