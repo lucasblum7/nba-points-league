@@ -2175,8 +2175,8 @@
   "home": "Charlotte Hornets",
   "fav": "Charlotte Hornets",
   "spread": 3.5,
-  "away_ml": 136,
-  "home_ml": -162,
+  "away_ml": 140,
+  "home_ml": -167,
   "book": "DraftKings"
  },
  {
@@ -2254,9 +2254,9 @@
   "away": "San Antonio Spurs",
   "home": "Portland Trail Blazers",
   "fav": "San Antonio Spurs",
-  "spread": 2.5,
-  "away_ml": -148,
-  "home_ml": 124,
+  "spread": 3.5,
+  "away_ml": -162,
+  "home_ml": 136,
   "book": "DraftKings"
  }
 ]
