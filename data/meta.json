@@ -1,10 +1,6 @@
 {
- "updated": "2026-11-25T08:00:20+00:00",
+ "updated": "2026-11-25T08:45:15+00:00",
  "changed": [
-  "lines",
-  "today",
-  "schedule",
-  "injuries",
-  "odds"
+  "lines"
  ]
 }
