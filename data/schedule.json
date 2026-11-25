@@ -70,8 +70,8 @@
    "away": "Miami Heat",
    "home": "Philadelphia 76ers",
    "cup": true,
-   "away_ml": 105,
-   "home_ml": -125
+   "away_ml": 101,
+   "home_ml": -119
   },
   {
    "date": "2026-11-25",
