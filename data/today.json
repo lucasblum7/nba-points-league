@@ -5,22 +5,22 @@
    "id": "401909314",
    "time": "4:00 PM",
    "state": "in",
-   "detail": "8:35 - 4th",
+   "detail": "1:18 - 4th",
    "away": "Detroit Pistons",
    "home": "Orlando Magic",
-   "away_score": 83,
-   "home_score": 70,
+   "away_score": 101,
+   "home_score": 86,
    "cup": true
   },
   {
    "id": "401909315",
    "time": "5:00 PM",
    "state": "in",
-   "detail": "4:42 - 2nd",
+   "detail": "Halftime",
    "away": "Boston Celtics",
    "home": "Washington Wizards",
-   "away_score": 57,
-   "home_score": 34,
+   "away_score": 80,
+   "home_score": 49,
    "cup": true
   },
   {
