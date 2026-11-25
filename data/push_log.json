@@ -208,7 +208,11 @@
   "soon|401909314|Darin": "2026-11-24",
   "soon|401909315|OJ": "2026-11-24",
   "soon|401909315|Dom": "2026-11-24",
-  "inj|4432166|Out": "2026-11-24"
+  "inj|4432166|Out": "2026-11-24",
+  "final|401909314|OJ": "2026-11-24",
+  "final|401909314|Darin": "2026-11-24",
+  "soon|401909316|OJ": "2026-11-24",
+  "soon|401909316|Dom": "2026-11-24"
  },
  "state": {
   "leads": {
@@ -238,7 +242,7 @@
    "Denver Nuggets": "mid",
    "Detroit Pistons": "mid",
    "Golden State Warriors": "mid",
-   "Houston Rockets": "lock",
+   "Houston Rockets": "mid",
    "Indiana Pacers": "mid",
    "LA Clippers": "out",
    "Los Angeles Lakers": "mid",

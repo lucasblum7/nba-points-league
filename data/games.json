@@ -2099,5 +2099,14 @@
   "home": "Toronto Raptors",
   "away_score": 116,
   "home_score": 111
+ },
+ {
+  "id": "401909314",
+  "date": "2026-11-24",
+  "away": "Detroit Pistons",
+  "home": "Orlando Magic",
+  "away_score": 104,
+  "home_score": 86,
+  "cup": true
  }
 ]
