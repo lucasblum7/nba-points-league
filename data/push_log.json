@@ -212,7 +212,8 @@
   "final|401909314|OJ": "2026-11-24",
   "final|401909314|Darin": "2026-11-24",
   "soon|401909316|OJ": "2026-11-24",
-  "soon|401909316|Dom": "2026-11-24"
+  "soon|401909316|Dom": "2026-11-24",
+  "hot|401909315|4065648|30": "2026-11-24"
  },
  "state": {
   "leads": {
@@ -242,7 +243,7 @@
    "Denver Nuggets": "mid",
    "Detroit Pistons": "mid",
    "Golden State Warriors": "mid",
-   "Houston Rockets": "mid",
+   "Houston Rockets": "lock",
    "Indiana Pacers": "mid",
    "LA Clippers": "out",
    "Los Angeles Lakers": "mid",
