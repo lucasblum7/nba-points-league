@@ -26,12 +26,12 @@
   {
    "id": "401909316",
    "time": "7:00 PM",
-   "state": "in",
-   "detail": "1:37 - 4th",
+   "state": "post",
+   "detail": "Final",
    "away": "Dallas Mavericks",
    "home": "Denver Nuggets",
-   "away_score": 118,
-   "home_score": 96,
+   "away_score": 120,
+   "home_score": 101,
    "cup": true
   }
  ]

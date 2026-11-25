@@ -2101,6 +2101,15 @@
   "home_score": 111
  },
  {
+  "id": "401909316",
+  "date": "2026-11-24",
+  "away": "Dallas Mavericks",
+  "home": "Denver Nuggets",
+  "away_score": 120,
+  "home_score": 101,
+  "cup": true
+ },
+ {
   "id": "401909314",
   "date": "2026-11-24",
   "away": "Detroit Pistons",
