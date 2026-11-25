@@ -2224,7 +2224,7 @@
   "away": "Cleveland Cavaliers",
   "home": "New York Knicks",
   "fav": "New York Knicks",
-  "spread": 3.5,
+  "spread": 4.5,
   "away_ml": 151,
   "home_ml": -180,
   "book": "DraftKings"
@@ -2234,9 +2234,9 @@
   "away": "Minnesota Timberwolves",
   "home": "Oklahoma City Thunder",
   "fav": "Oklahoma City Thunder",
-  "spread": 1.5,
-  "away_ml": 105,
-  "home_ml": -125,
+  "spread": 2.5,
+  "away_ml": 114,
+  "home_ml": -135,
   "book": "DraftKings"
  },
  {
