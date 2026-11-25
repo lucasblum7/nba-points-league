@@ -2224,9 +2224,9 @@
   "away": "Cleveland Cavaliers",
   "home": "New York Knicks",
   "fav": "New York Knicks",
-  "spread": 2.5,
-  "away_ml": 114,
-  "home_ml": -135,
+  "spread": 4.5,
+  "away_ml": 145,
+  "home_ml": -173,
   "book": "Draft Kings"
  },
  {
@@ -2245,8 +2245,8 @@
   "home": "Philadelphia 76ers",
   "fav": "Miami Heat",
   "spread": 1.5,
-  "away_ml": -113,
-  "home_ml": -105,
+  "away_ml": -109,
+  "home_ml": -108,
   "book": "Draft Kings"
  },
  {
