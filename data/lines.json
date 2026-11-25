@@ -2184,10 +2184,10 @@
   "away": "Sacramento Kings",
   "home": "Golden State Warriors",
   "fav": "Golden State Warriors",
-  "spread": 6.5,
-  "away_ml": 217,
-  "home_ml": -264,
-  "book": "Draft Kings"
+  "spread": 7.5,
+  "away_ml": 247,
+  "home_ml": -304,
+  "book": "DraftKings"
  },
  {
   "date": "2026-11-25",
@@ -2245,8 +2245,8 @@
   "home": "Philadelphia 76ers",
   "fav": "Miami Heat",
   "spread": 1.5,
-  "away_ml": -125,
-  "home_ml": 105,
+  "away_ml": -113,
+  "home_ml": -105,
   "book": "DraftKings"
  },
  {
