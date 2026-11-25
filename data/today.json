@@ -4,12 +4,12 @@
   {
    "id": "401909317",
    "time": "2:00 PM",
-   "state": "pre",
-   "detail": "11/25 - 5:00 PM EST",
+   "state": "in",
+   "detail": "9:39 - 1st",
    "away": "Miami Heat",
    "home": "Philadelphia 76ers",
-   "away_score": null,
-   "home_score": null,
+   "away_score": 6,
+   "home_score": 2,
    "cup": true
   },
   {
