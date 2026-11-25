@@ -16,22 +16,22 @@
    "id": "401909315",
    "time": "5:00 PM",
    "state": "in",
-   "detail": "End of 3rd",
+   "detail": "7:01 - 4th",
    "away": "Boston Celtics",
    "home": "Washington Wizards",
-   "away_score": 104,
-   "home_score": 89,
+   "away_score": 113,
+   "home_score": 99,
    "cup": true
   },
   {
    "id": "401909316",
    "time": "7:00 PM",
-   "state": "pre",
-   "detail": "11/24 - 10:00 PM EST",
+   "state": "in",
+   "detail": "10:42 - 1st",
    "away": "Dallas Mavericks",
    "home": "Denver Nuggets",
-   "away_score": null,
-   "home_score": null,
+   "away_score": 0,
+   "home_score": 3,
    "cup": true
   }
  ]
