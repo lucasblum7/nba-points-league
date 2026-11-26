@@ -1,5 +1,5 @@
 {
- "as_of": "2026-11-25T15",
+ "as_of": "2026-11-25T18",
  "players": [
   {
    "team": "Atlanta Hawks",
@@ -417,7 +417,7 @@
    "id": "3975",
    "name": "Stephen Curry",
    "status": "Out",
-   "comment": "Curry has been diagnosed with an oblique abdominal tear and will be re-evaluated in two weeks, Shams Charania of ESPN reports.",
+   "comment": "Curry (abdomen) will be re-evaluated Friday after Thanksgiving, Anthony Slater of ESPN.com reports.",
    "return": "2026-12-12",
    "fantasy": "OUT",
    "stats": {
@@ -426,23 +426,6 @@
     "pts": 27.8,
     "reb": 3.7,
     "ast": 3.9,
-    "this_season": true
-   }
-  },
-  {
-   "team": "Golden State Warriors",
-   "id": "5175737",
-   "name": "Yaxel Lendeborg",
-   "status": "Day-To-Day",
-   "comment": "Lendeborg is questionable for Wednesday's game against the Kings with an illness.",
-   "return": "2026-11-25",
-   "fantasy": "GTD",
-   "stats": {
-    "gp": 17.0,
-    "min": 31.764706,
-    "pts": 19.235294,
-    "reb": 7.352941,
-    "ast": 3.6470587,
     "this_season": true
    }
   },
@@ -706,7 +689,7 @@
    "id": "3934719",
    "name": "OG Anunoby",
    "status": "Out",
-   "comment": "Anunoby (calf) is out for Wednesday's game against Cleveland.",
+   "comment": "Anunoby (calf) participated in on-court work for the first time since sustaining the injury, Ian Begley of SportsNet New York reports.",
    "return": "2026-11-27",
    "fantasy": "OUT",
    "stats": {
@@ -715,23 +698,6 @@
     "pts": 16.266666,
     "reb": 5.4,
     "ast": 2.0,
-    "this_season": true
-   }
-  },
-  {
-   "team": "New York Knicks",
-   "id": "3934672",
-   "name": "Jalen Brunson",
-   "status": "Day-To-Day",
-   "comment": "Brunson (illness) is probable for Wednesday's game against Cleveland.",
-   "return": "2026-11-25",
-   "fantasy": "GTD",
-   "stats": {
-    "gp": 17.0,
-    "min": 34.411766,
-    "pts": 26.529411,
-    "reb": 3.1176472,
-    "ast": 5.9411764,
     "this_season": true
    }
   },
@@ -754,23 +720,6 @@
   },
   {
    "team": "New York Knicks",
-   "id": "3062679",
-   "name": "Josh Hart",
-   "status": "Day-To-Day",
-   "comment": "Hart (shoulder) has been upgraded to probable for Wednesday's game against the Cavaliers.",
-   "return": "2026-11-25",
-   "fantasy": "GTD",
-   "stats": {
-    "gp": 14.0,
-    "min": 30.785715,
-    "pts": 6.571429,
-    "reb": 6.714286,
-    "ast": 4.0,
-    "this_season": true
-   }
-  },
-  {
-   "team": "New York Knicks",
    "id": "4431823",
    "name": "Miles McBride",
    "status": "Out",
@@ -783,23 +732,6 @@
     "pts": 6.75,
     "reb": 1.1875,
     "ast": 1.0,
-    "this_season": true
-   }
-  },
-  {
-   "team": "New York Knicks",
-   "id": "3136195",
-   "name": "Karl-Anthony Towns",
-   "status": "Day-To-Day",
-   "comment": "Towns (knee) is probable for Wednesday's game against Cleveland.",
-   "return": "2026-11-25",
-   "fantasy": "GTD",
-   "stats": {
-    "gp": 16.0,
-    "min": 32.5625,
-    "pts": 21.8125,
-    "reb": 13.875,
-    "ast": 4.0,
     "this_season": true
    }
   },
@@ -866,12 +798,29 @@
   },
   {
    "team": "Philadelphia 76ers",
+   "id": "3917376",
+   "name": "Jaylen Brown",
+   "status": "Day-To-Day",
+   "comment": "Brown (hamstring) will receive imaging, and the Sixers will provide an update Thursday, Ky Carlin of USA Today reports.",
+   "return": "2026-11-27",
+   "fantasy": "GTD",
+   "stats": {
+    "gp": 15.0,
+    "min": 34.333332,
+    "pts": 22.4,
+    "reb": 6.3333335,
+    "ast": 3.6,
+    "this_season": true
+   }
+  },
+  {
+   "team": "Philadelphia 76ers",
    "id": "3059318",
    "name": "Joel Embiid",
-   "status": "Out",
+   "status": "Day-To-Day",
    "comment": "Embiid (illness) is out for Wednesday's game against Miami, Ira Winderman of the South Florida Sun Sentinel reports.",
    "return": "2026-11-27",
-   "fantasy": "OUT",
+   "fantasy": "GTD",
    "stats": {
     "gp": 14.0,
     "min": 32.07143,
