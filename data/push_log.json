@@ -289,7 +289,10 @@
   "final|401909322|OJ": "2026-11-25",
   "final|401909322|Darin": "2026-11-25",
   "move|Lucas|3|2026-11-25": "2026-11-25",
-  "hot|401909323|4871144|td": "2026-11-25"
+  "hot|401909323|4871144|td": "2026-11-25",
+  "final|401909323|Parker": "2026-11-25",
+  "final|401909323|OJ": "2026-11-25",
+  "move|Parker|4|2026-11-25": "2026-11-25"
  },
  "state": {
   "leads": {
@@ -301,11 +304,11 @@
    "6|Dom|OJ": "OJ"
   },
   "places": {
-   "Darin": 4,
+   "Darin": 5,
    "Dom": 6,
    "Lucas": 3,
    "OJ": 2,
-   "Parker": 5,
+   "Parker": 4,
    "Rahul": 1
   },
   "odds": {
@@ -319,7 +322,7 @@
    "Denver Nuggets": "mid",
    "Detroit Pistons": "lock",
    "Golden State Warriors": "mid",
-   "Houston Rockets": "mid",
+   "Houston Rockets": "lock",
    "Indiana Pacers": "mid",
    "LA Clippers": "out",
    "Los Angeles Lakers": "mid",

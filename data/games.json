@@ -2137,6 +2137,15 @@
   "cup": true
  },
  {
+  "id": "401909323",
+  "date": "2026-11-25",
+  "away": "Phoenix Suns",
+  "home": "Houston Rockets",
+  "away_score": 104,
+  "home_score": 116,
+  "cup": true
+ },
+ {
   "id": "401909321",
   "date": "2026-11-25",
   "away": "LA Clippers",
