@@ -5,7 +5,7 @@
   "Atlanta Hawks": {
    "playoffs": 90.4,
    "top6": 65.9,
-   "playin": 33.5,
+   "playin": 33.3,
    "proj_w": 46.5,
    "proj_l": 35.5,
    "seed": 5.6,
@@ -22,6 +22,13 @@
      "games": 7,
      "impact": 2.27,
      "comment": "McCollum (calf) will miss at least four weeks, per Brad Rowland of the Locked On Podcast Network."
+    },
+    {
+     "name": "Jock Landale",
+     "status": "Out",
+     "games": 1,
+     "impact": 0.48,
+     "comment": "Landale (hip) is out for Friday's game against the Celtics."
     }
    ],
    "injury_wins": -0.3,
@@ -68,6 +75,13 @@
      "games": 28,
      "impact": 1.49,
      "comment": "Traore will be re-evaluated in approximately 8-10 weeks due to a right hamstring strain, Michael Scotto of HoopsHype.com reports."
+    },
+    {
+     "name": "Moritz Wagner",
+     "status": "Out",
+     "games": 1,
+     "impact": 0.72,
+     "comment": "Wagner (knee) won't be available for Friday's game against Toronto."
     }
    ],
    "injury_wins": -0.8,
@@ -76,7 +90,7 @@
    "prev": 0.4
   },
   "Charlotte Hornets": {
-   "playoffs": 5.9,
+   "playoffs": 5.8,
    "top6": 0.4,
    "playin": 21.1,
    "proj_w": 28.8,
@@ -105,7 +119,7 @@
   "Chicago Bulls": {
    "playoffs": 4.5,
    "top6": 0.2,
-   "playin": 20.0,
+   "playin": 19.8,
    "proj_w": 28.9,
    "proj_l": 53.1,
    "seed": 11.9,
@@ -130,9 +144,9 @@
    "prev": 4.6
   },
   "Cleveland Cavaliers": {
-   "playoffs": 85.3,
-   "top6": 49.4,
-   "playin": 49.5,
+   "playoffs": 85.2,
+   "top6": 49.5,
+   "playin": 49.3,
    "proj_w": 44.5,
    "proj_l": 37.5,
    "seed": 6.4,
@@ -188,11 +202,11 @@
   },
   "Detroit Pistons": {
    "playoffs": 98.9,
-   "top6": 94.2,
-   "playin": 5.8,
-   "proj_w": 52.5,
-   "proj_l": 29.5,
-   "seed": 3.4,
+   "top6": 94.1,
+   "playin": 5.9,
+   "proj_w": 52.4,
+   "proj_l": 29.6,
+   "seed": 3.5,
    "conf": "East",
    "rating": 3.8,
    "rating_wins": 51.2,
@@ -201,14 +215,28 @@
    "season_margin": 5.6,
    "injuries": [
     {
+     "name": "Cade Cunningham",
+     "status": "Out",
+     "games": 1,
+     "impact": 5.12,
+     "comment": "Cunningham (knee) is out for Friday's game against the Bucks."
+    },
+    {
      "name": "Jalen Duren",
      "status": "Out",
      "games": 2,
      "impact": 1.94,
      "comment": "Detroit recalled Duren (hamstring) from the G League's Motor City Cruise on Wednesday."
+    },
+    {
+     "name": "Duncan Robinson",
+     "status": "Out",
+     "games": 1,
+     "impact": 2.43,
+     "comment": "Robinson (quadriceps) is out for Friday's game against the Bucks."
     }
    ],
-   "injury_wins": -0.1,
+   "injury_wins": -0.2,
    "sos_rank": 30,
    "games_left": 65,
    "prev": 99.2
@@ -281,11 +309,11 @@
    "prev": 99.1
   },
   "Indiana Pacers": {
-   "playoffs": 23.5,
-   "top6": 2.5,
-   "playin": 60.1,
-   "proj_w": 34.1,
-   "proj_l": 47.9,
+   "playoffs": 23.9,
+   "top6": 2.7,
+   "playin": 60.4,
+   "proj_w": 34.2,
+   "proj_l": 47.8,
    "seed": 10.0,
    "conf": "East",
    "rating": -2.4,
@@ -311,8 +339,8 @@
    "playoffs": 0.4,
    "top6": 0.0,
    "playin": 2.3,
-   "proj_w": 27.5,
-   "proj_l": 54.5,
+   "proj_w": 27.6,
+   "proj_l": 54.4,
    "seed": 12.6,
    "conf": "West",
    "rating": -4.6,
@@ -409,9 +437,9 @@
    "prev": 53.8
   },
   "Miami Heat": {
-   "playoffs": 95.0,
+   "playoffs": 95.1,
    "top6": 80.0,
-   "playin": 19.8,
+   "playin": 19.7,
    "proj_w": 48.3,
    "proj_l": 33.7,
    "seed": 4.9,
@@ -430,9 +458,9 @@
   "Milwaukee Bucks": {
    "playoffs": 0.0,
    "top6": 0.0,
-   "playin": 0.6,
-   "proj_w": 20.6,
-   "proj_l": 61.4,
+   "playin": 0.7,
+   "proj_w": 20.7,
+   "proj_l": 61.3,
    "seed": 14.3,
    "conf": "East",
    "rating": -7.5,
@@ -484,8 +512,8 @@
    "playoffs": 0.1,
    "top6": 0.0,
    "playin": 0.6,
-   "proj_w": 25.3,
-   "proj_l": 56.7,
+   "proj_w": 25.2,
+   "proj_l": 56.8,
    "seed": 13.2,
    "conf": "West",
    "rating": -5.6,
@@ -493,8 +521,16 @@
    "prior_wins": 28.5,
    "last5_margin": -5.0,
    "season_margin": -8.0,
-   "injuries": [],
-   "injury_wins": 0.0,
+   "injuries": [
+    {
+     "name": "Dejounte Murray",
+     "status": "Out",
+     "games": 1,
+     "impact": 2.35,
+     "comment": "Murray (ankle) is out for Friday's game against Memphis."
+    }
+   ],
+   "injury_wins": -0.1,
    "sos_rank": 3,
    "games_left": 63,
    "prev": 0.1
@@ -560,9 +596,9 @@
    "prev": 83.8
   },
   "Orlando Magic": {
-   "playoffs": 47.2,
+   "playoffs": 47.0,
    "top6": 10.5,
-   "playin": 74.8,
+   "playin": 74.7,
    "proj_w": 37.9,
    "proj_l": 44.1,
    "seed": 8.7,
@@ -587,11 +623,11 @@
    "prev": 47.3
   },
   "Philadelphia 76ers": {
-   "playoffs": 98.2,
-   "top6": 91.8,
-   "playin": 8.2,
-   "proj_w": 51.2,
-   "proj_l": 30.8,
+   "playoffs": 98.1,
+   "top6": 91.5,
+   "playin": 8.5,
+   "proj_w": 51.1,
+   "proj_l": 30.9,
    "seed": 3.9,
    "conf": "East",
    "rating": 2.2,
@@ -599,8 +635,16 @@
    "prior_wins": 50.5,
    "last5_margin": 2.0,
    "season_margin": 2.1,
-   "injuries": [],
-   "injury_wins": 0.0,
+   "injuries": [
+    {
+     "name": "Jaylen Brown",
+     "status": "Out",
+     "games": 1,
+     "impact": 4.0,
+     "comment": "Brown (hamstring) is out for Friday's game against the Pacers."
+    }
+   ],
+   "injury_wins": -0.1,
    "sos_rank": 22,
    "games_left": 63,
    "prev": 98.1
@@ -730,7 +774,7 @@
   "Toronto Raptors": {
    "playoffs": 45.1,
    "top6": 8.0,
-   "playin": 75.1,
+   "playin": 75.0,
    "proj_w": 37.4,
    "proj_l": 44.6,
    "seed": 8.9,
@@ -805,7 +849,7 @@
   "Washington Wizards": {
    "playoffs": 5.8,
    "top6": 0.3,
-   "playin": 24.8,
+   "playin": 24.7,
    "proj_w": 29.6,
    "proj_l": 52.4,
    "seed": 11.6,
