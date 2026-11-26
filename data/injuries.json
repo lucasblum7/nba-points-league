@@ -1,5 +1,5 @@
 {
- "as_of": "2026-11-26T00",
+ "as_of": "2026-11-26T06",
  "players": [
   {
    "team": "Atlanta Hawks",
@@ -332,7 +332,7 @@
    "id": "4433621",
    "name": "Jalen Duren",
    "status": "Out",
-   "comment": "Duren (hamstring) is being assigned to the Motor City Cruise on Wednesday for practice as he ramps up for a return, Eric Vincent of ClutchPoints.com reports.",
+   "comment": "Detroit recalled Duren (hamstring) from the G League's Motor City Cruise on Wednesday.",
    "return": "2026-11-30",
    "fantasy": "OUT",
    "stats": {
@@ -608,11 +608,11 @@
    "return": "2026-11-27",
    "fantasy": "GTD",
    "stats": {
-    "gp": 18.0,
-    "min": 28.333334,
-    "pts": 17.222221,
-    "reb": 4.2222223,
-    "ast": 5.611111,
+    "gp": 19.0,
+    "min": 28.368422,
+    "pts": 17.31579,
+    "reb": 4.368421,
+    "ast": 5.736842,
     "this_season": true
    }
   },
@@ -693,11 +693,11 @@
    "return": "2026-11-27",
    "fantasy": "OUT",
    "stats": {
-    "gp": 16.0,
-    "min": 17.875,
-    "pts": 9.9375,
-    "reb": 3.3125,
-    "ast": 1.5625,
+    "gp": 17.0,
+    "min": 17.058823,
+    "pts": 9.470589,
+    "reb": 3.1176472,
+    "ast": 1.4705882,
     "this_season": true
    }
   },
@@ -744,11 +744,11 @@
    "return": "2026-11-27",
    "fantasy": "GTD",
    "stats": {
-    "gp": 17.0,
-    "min": 14.0,
-    "pts": 3.764706,
-    "reb": 7.7647057,
-    "ast": 1.0,
+    "gp": 18.0,
+    "min": 13.666667,
+    "pts": 3.7222223,
+    "reb": 7.4444447,
+    "ast": 0.9444444,
     "this_season": true
    }
   },
@@ -839,11 +839,11 @@
    "return": "2026-11-27",
    "fantasy": "GTD",
    "stats": {
-    "gp": 15.0,
-    "min": 34.333332,
-    "pts": 22.4,
-    "reb": 6.3333335,
-    "ast": 3.6,
+    "gp": 16.0,
+    "min": 33.1875,
+    "pts": 21.375,
+    "reb": 6.0,
+    "ast": 3.4375,
     "this_season": true
    }
   },
@@ -1389,11 +1389,11 @@
    "return": "2026-11-27",
    "fantasy": "GTD",
    "stats": {
-    "gp": 14.0,
-    "min": 21.0,
-    "pts": 9.0,
-    "reb": 7.285714,
-    "ast": 0.85714287,
+    "gp": 15.0,
+    "min": 20.2,
+    "pts": 8.866667,
+    "reb": 7.0666666,
+    "ast": 0.93333334,
     "this_season": true
    }
   },
