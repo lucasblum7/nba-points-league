@@ -2184,10 +2184,10 @@
   "away": "Sacramento Kings",
   "home": "Golden State Warriors",
   "fav": "Golden State Warriors",
-  "spread": 7.5,
-  "away_ml": 247,
-  "home_ml": -304,
-  "book": "DraftKings"
+  "spread": 8.5,
+  "away_ml": 261,
+  "home_ml": -324,
+  "book": "Draft Kings"
  },
  {
   "date": "2026-11-25",
@@ -2257,6 +2257,6 @@
   "spread": 3.5,
   "away_ml": -162,
   "home_ml": 136,
-  "book": "DraftKings"
+  "book": "Draft Kings"
  }
 ]
