@@ -2198,5 +2198,14 @@
   "away_score": 104,
   "home_score": 111,
   "cup": true
+ },
+ {
+  "id": "401909325",
+  "date": "2026-11-25",
+  "away": "San Antonio Spurs",
+  "home": "Portland Trail Blazers",
+  "away_score": 111,
+  "home_score": 116,
+  "cup": true
  }
 ]

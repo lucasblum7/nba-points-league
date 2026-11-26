@@ -92,12 +92,12 @@
   {
    "id": "401909325",
    "time": "7:00 PM",
-   "state": "in",
-   "detail": "2:34 - 4th",
+   "state": "post",
+   "detail": "Final",
    "away": "San Antonio Spurs",
    "home": "Portland Trail Blazers",
-   "away_score": 107,
-   "home_score": 109,
+   "away_score": 111,
+   "home_score": 116,
    "cup": true
   }
  ]
