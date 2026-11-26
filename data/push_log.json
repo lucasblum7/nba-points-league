@@ -249,7 +249,12 @@
   "soon|401909322|OJ": "2026-11-25",
   "soon|401909322|Darin": "2026-11-25",
   "hot|401909317|1966|td": "2026-11-25",
-  "hot|401909317|4431678|30": "2026-11-25"
+  "hot|401909317|4431678|30": "2026-11-25",
+  "final|401909317|Darin": "2026-11-25",
+  "final|401909317|Rahul": "2026-11-25",
+  "lead|6|Rahul|Darin|Darin|2026-11-25": "2026-11-25",
+  "move|Darin|5|2026-11-25": "2026-11-25",
+  "move|Dom|6|2026-11-25": "2026-11-25"
  },
  "state": {
   "leads": {
@@ -257,12 +262,12 @@
    "5|Parker|Rahul": "Rahul",
    "5|Darin|Dom": "Dom",
    "6|Lucas|Parker": "Lucas",
-   "6|Rahul|Darin": "Rahul",
+   "6|Rahul|Darin": "Darin",
    "6|Dom|OJ": "OJ"
   },
   "places": {
-   "Darin": 6,
-   "Dom": 5,
+   "Darin": 5,
+   "Dom": 6,
    "Lucas": 3,
    "OJ": 1,
    "Parker": 4,
@@ -279,7 +284,7 @@
    "Denver Nuggets": "mid",
    "Detroit Pistons": "lock",
    "Golden State Warriors": "mid",
-   "Houston Rockets": "lock",
+   "Houston Rockets": "mid",
    "Indiana Pacers": "mid",
    "LA Clippers": "out",
    "Los Angeles Lakers": "mid",
