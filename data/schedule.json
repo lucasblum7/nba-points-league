@@ -1,5 +1,5 @@
 {
- "as_of": "2026-11-25",
+ "as_of": "2026-11-26",
  "games": [
   {
    "date": "2026-11-27",
@@ -23,8 +23,8 @@
    "away": "Philadelphia 76ers",
    "home": "Indiana Pacers",
    "cup": true,
-   "away_ml": -185,
-   "home_ml": 155
+   "away_ml": -174,
+   "home_ml": 146
   },
   {
    "date": "2026-11-27",
@@ -69,8 +69,8 @@
    "away": "Los Angeles Lakers",
    "home": "San Antonio Spurs",
    "cup": true,
-   "away_ml": 164,
-   "home_ml": -196
+   "away_ml": 171,
+   "home_ml": -205
   },
   {
    "date": "2026-11-27",

@@ -1,5 +1,5 @@
 {
- "as_of": "2026-11-25T21",
+ "as_of": "2026-11-26T00",
  "players": [
   {
    "team": "Atlanta Hawks",
@@ -136,7 +136,7 @@
    "name": "Julian Reese",
    "status": "Day-To-Day",
    "comment": "The Pelicans transferred Reese from the G League's Laketown Squadron, and he will be available for New Orleans' game against the Warriors on Monday.",
-   "return": "2026-11-25",
+   "return": "2026-12-01",
    "fantasy": "GTD",
    "stats": {
     "gp": 6.0,
@@ -185,10 +185,10 @@
    "team": "Chicago Bulls",
    "id": "4397189",
    "name": "Jalen Smith",
-   "status": "Out",
+   "status": "Day-To-Day",
    "comment": "Smith (illness) is listed as out for Wednesday's game against Charlotte.",
    "return": "2026-11-28",
-   "fantasy": "OUT",
+   "fantasy": "GTD",
    "stats": {
     "gp": 15.0,
     "min": 25.266666,
@@ -708,7 +708,7 @@
    "status": "Out",
    "comment": "Anunoby (calf) participated in on-court work for the first time since sustaining the injury, Ian Begley of SportsNet New York reports.",
    "return": "2026-11-27",
-   "fantasy": "OUT",
+   "fantasy": "GTD",
    "stats": {
     "gp": 15.0,
     "min": 33.933334,
@@ -725,7 +725,7 @@
    "status": "Out",
    "comment": "Clarkson (foot) is out for Wednesday's game against Cleveland.",
    "return": "2026-11-27",
-   "fantasy": "OUT",
+   "fantasy": "GTD",
    "stats": {
     "gp": 12.0,
     "min": 9.833333,
@@ -756,10 +756,10 @@
    "team": "New York Knicks",
    "id": "4431823",
    "name": "Miles McBride",
-   "status": "Out",
+   "status": "Day-To-Day",
    "comment": "McBride (adductor) has been ruled out for Wednesday's game against the Cavaliers.",
    "return": "2026-11-27",
-   "fantasy": "OUT",
+   "fantasy": "GTD",
    "stats": {
     "gp": 16.0,
     "min": 17.1875,
@@ -970,10 +970,10 @@
    "team": "Sacramento Kings",
    "id": "3064440",
    "name": "Zach LaVine",
-   "status": "Out",
+   "status": "Day-To-Day",
    "comment": "LaVine (knee) is listed as out for Wednesday's game versus the Warriors.",
    "return": "2026-11-29",
-   "fantasy": "OUT",
+   "fantasy": "GTD",
    "stats": {
     "gp": 16.0,
     "min": 33.0,
@@ -1014,10 +1014,10 @@
    "team": "San Antonio Spurs",
    "id": "4066259",
    "name": "De'Aaron Fox",
-   "status": "Out",
+   "status": "Day-To-Day",
    "comment": "Fox (shin) has been ruled out for Wednesday's game against Portland, Jeff McDonald of the San Antonio Express-News reports.",
    "return": "2026-11-27",
-   "fantasy": "OUT",
+   "fantasy": "GTD",
    "stats": {
     "gp": 16.0,
     "min": 28.9375,
@@ -1095,7 +1095,7 @@
    "status": "Out",
    "comment": "Mara (leg) is out for Wednesday's game versus the Timberwolves.",
    "return": "2026-11-28",
-   "fantasy": "OUT",
+   "fantasy": "GTD",
    "stats": {
     "gp": 16.0,
     "min": 22.375,
@@ -1122,7 +1122,7 @@
    "status": "Out",
    "comment": "Topic (hip) is listed as out for Wednesday's game versus Minnesota.",
    "return": "2026-11-28",
-   "fantasy": "OUT",
+   "fantasy": "GTD",
    "stats": {
     "gp": 3.0,
     "min": 11.333333,
@@ -1465,7 +1465,7 @@
    "status": "Out",
    "comment": "Allen (concussion) has been ruled out for Wednesday's game against Chicago.",
    "return": "2026-11-28",
-   "fantasy": "OUT",
+   "fantasy": "GTD",
    "stats": {
     "gp": 13.0,
     "min": 27.076923,
@@ -1479,10 +1479,10 @@
    "team": "Charlotte Hornets",
    "id": "4576060",
    "name": "Ryan Kalkbrenner",
-   "status": "Out",
+   "status": "Day-To-Day",
    "comment": "Kalkbrenner (hip) has been ruled out for Wednesday's matchup with Chicago.",
    "return": "2026-11-28",
-   "fantasy": "OUT",
+   "fantasy": "GTD",
    "stats": {
     "gp": 16.0,
     "min": 17.5625,
