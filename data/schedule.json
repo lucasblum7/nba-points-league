@@ -6,7 +6,9 @@
    "time": "5:00 PM",
    "away": "Atlanta Hawks",
    "home": "Boston Celtics",
-   "cup": true
+   "cup": true,
+   "away_ml": 288,
+   "home_ml": -361
   },
   {
    "date": "2026-11-27",
@@ -20,7 +22,9 @@
    "time": "4:30 PM",
    "away": "Philadelphia 76ers",
    "home": "Indiana Pacers",
-   "cup": true
+   "cup": true,
+   "away_ml": -185,
+   "home_ml": 155
   },
   {
    "date": "2026-11-27",
