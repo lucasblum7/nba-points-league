@@ -1,5 +1,5 @@
 {
- "as_of": "2026-11-26T06",
+ "as_of": "2026-11-26T09",
  "players": [
   {
    "team": "Atlanta Hawks",
@@ -783,6 +783,23 @@
     "pts": 24.5,
     "reb": 6.5,
     "ast": 7.5,
+    "this_season": true
+   }
+  },
+  {
+   "team": "Orlando Magic",
+   "id": "4397204",
+   "name": "Colin Castleton",
+   "status": "Day-To-Day",
+   "comment": "Castleton totaled five points (2-4 FG, 1-1 3Pt) and four rebounds in seven minutes during Tuesday's 132-116 preseason win over the Cavaliers.",
+   "return": "2026-11-27",
+   "fantasy": "GTD",
+   "stats": {
+    "gp": 4.0,
+    "min": 3.25,
+    "pts": 2.25,
+    "reb": 1.0,
+    "ast": 0.5,
     "this_season": true
    }
   },
