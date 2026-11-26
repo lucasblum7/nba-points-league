@@ -71,33 +71,33 @@
    "id": "401909323",
    "time": "5:30 PM",
    "state": "in",
-   "detail": "17.4 - 3rd",
+   "detail": "6:33 - 4th",
    "away": "Phoenix Suns",
    "home": "Houston Rockets",
-   "away_score": 81,
-   "home_score": 92,
+   "away_score": 93,
+   "home_score": 99,
    "cup": true
   },
   {
    "id": "401909324",
    "time": "7:00 PM",
    "state": "in",
-   "detail": "3:14 - 1st",
+   "detail": "9:19 - 2nd",
    "away": "Sacramento Kings",
    "home": "Golden State Warriors",
-   "away_score": 16,
-   "home_score": 33,
+   "away_score": 22,
+   "home_score": 48,
    "cup": true
   },
   {
    "id": "401909325",
    "time": "7:00 PM",
    "state": "in",
-   "detail": "4:49 - 1st",
+   "detail": "0.0 - 1st",
    "away": "San Antonio Spurs",
    "home": "Portland Trail Blazers",
-   "away_score": 18,
-   "home_score": 22,
+   "away_score": 35,
+   "home_score": 38,
    "cup": true
   }
  ]
