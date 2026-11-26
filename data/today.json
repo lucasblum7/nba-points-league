@@ -81,23 +81,23 @@
   {
    "id": "401909324",
    "time": "7:00 PM",
-   "state": "in",
-   "detail": "3:36 - 4th",
+   "state": "post",
+   "detail": "Final",
    "away": "Sacramento Kings",
    "home": "Golden State Warriors",
-   "away_score": 95,
-   "home_score": 114,
+   "away_score": 110,
+   "home_score": 129,
    "cup": true
   },
   {
    "id": "401909325",
    "time": "7:00 PM",
    "state": "in",
-   "detail": "6:23 - 4th",
+   "detail": "2:34 - 4th",
    "away": "San Antonio Spurs",
    "home": "Portland Trail Blazers",
-   "away_score": 97,
-   "home_score": 101,
+   "away_score": 107,
+   "home_score": 109,
    "cup": true
   }
  ]

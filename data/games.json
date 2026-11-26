@@ -2137,6 +2137,15 @@
   "cup": true
  },
  {
+  "id": "401909324",
+  "date": "2026-11-25",
+  "away": "Sacramento Kings",
+  "home": "Golden State Warriors",
+  "away_score": 110,
+  "home_score": 129,
+  "cup": true
+ },
+ {
   "id": "401909323",
   "date": "2026-11-25",
   "away": "Phoenix Suns",
