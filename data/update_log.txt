@@ -1,4 +1,4 @@
-2026-11-26T06:00:19+00:00 ok
+2026-11-26T06:15:21+00:00 ok
 checked 2026-11-22 through 2026-11-26
 fetched 29 events
-changed: schedule
+changed: nothing
