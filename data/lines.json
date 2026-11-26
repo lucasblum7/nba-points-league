@@ -2267,7 +2267,7 @@
   "spread": 9.5,
   "away_ml": 322,
   "home_ml": -410,
-  "book": "Draft Kings"
+  "book": "DraftKings"
  },
  {
   "date": "2026-11-27",
@@ -2277,7 +2277,7 @@
   "spread": 11.5,
   "away_ml": 371,
   "home_ml": -484,
-  "book": "Draft Kings"
+  "book": "DraftKings"
  },
  {
   "date": "2026-11-27",
@@ -2287,7 +2287,7 @@
   "spread": 3.5,
   "away_ml": -174,
   "home_ml": 146,
-  "book": "Draft Kings"
+  "book": "DraftKings"
  },
  {
   "date": "2026-11-27",
@@ -2297,7 +2297,7 @@
   "spread": 3.5,
   "away_ml": 130,
   "home_ml": -155,
-  "book": "Draft Kings"
+  "book": "DraftKings"
  },
  {
   "date": "2026-11-27",
@@ -2307,7 +2307,7 @@
   "spread": 3.5,
   "away_ml": 124,
   "home_ml": -148,
-  "book": "Draft Kings"
+  "book": "DraftKings"
  },
  {
   "date": "2026-11-27",
@@ -2317,7 +2317,7 @@
   "spread": 3.5,
   "away_ml": 142,
   "home_ml": -169,
-  "book": "Draft Kings"
+  "book": "DraftKings"
  },
  {
   "date": "2026-11-27",
@@ -2327,17 +2327,17 @@
   "spread": 2.5,
   "away_ml": 120,
   "home_ml": -142,
-  "book": "Draft Kings"
+  "book": "DraftKings"
  },
  {
   "date": "2026-11-27",
   "away": "Golden State Warriors",
   "home": "Portland Trail Blazers",
   "fav": "Portland Trail Blazers",
-  "spread": 7.5,
+  "spread": 8.5,
   "away_ml": 276,
   "home_ml": -344,
-  "book": "Draft Kings"
+  "book": "DraftKings"
  },
  {
   "date": "2026-11-27",
@@ -2347,7 +2347,7 @@
   "spread": 5.5,
   "away_ml": 171,
   "home_ml": -205,
-  "book": "Draft Kings"
+  "book": "DraftKings"
  },
  {
   "date": "2026-11-27",
@@ -2357,7 +2357,7 @@
   "spread": 7.5,
   "away_ml": 268,
   "home_ml": -333,
-  "book": "Draft Kings"
+  "book": "DraftKings"
  },
  {
   "date": "2026-11-27",
@@ -2367,6 +2367,6 @@
   "spread": 9.5,
   "away_ml": -416,
   "home_ml": 326,
-  "book": "Draft Kings"
+  "book": "DraftKings"
  }
 ]
