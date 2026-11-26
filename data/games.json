@@ -2137,6 +2137,15 @@
   "cup": true
  },
  {
+  "id": "401909319",
+  "date": "2026-11-25",
+  "away": "Cleveland Cavaliers",
+  "home": "New York Knicks",
+  "away_score": 102,
+  "home_score": 121,
+  "cup": true
+ },
+ {
   "id": "401909317",
   "date": "2026-11-25",
   "away": "Miami Heat",

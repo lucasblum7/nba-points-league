@@ -272,7 +272,14 @@
   "close|401909319|Rahul": "2026-11-25",
   "close|401909320|Darin": "2026-11-25",
   "close|401909320|Parker": "2026-11-25",
-  "hot|401909320|4278073|30": "2026-11-25"
+  "hot|401909320|4278073|30": "2026-11-25",
+  "final|401909319|Rahul": "2026-11-25",
+  "final|401909319|Dom": "2026-11-25",
+  "lead|6|Rahul|Darin|Rahul|2026-11-25": "2026-11-25",
+  "move|Lucas|2|2026-11-25": "2026-11-25",
+  "move|OJ|2|2026-11-25": "2026-11-25",
+  "move|Rahul|1|2026-11-25": "2026-11-25",
+  "hot|401909320|4431671|30": "2026-11-25"
  },
  "state": {
   "leads": {
@@ -280,16 +287,16 @@
    "5|Parker|Rahul": "Rahul",
    "5|Darin|Dom": "Dom",
    "6|Lucas|Parker": "Lucas",
-   "6|Rahul|Darin": "Darin",
+   "6|Rahul|Darin": "Rahul",
    "6|Dom|OJ": "OJ"
   },
   "places": {
    "Darin": 5,
    "Dom": 6,
-   "Lucas": 1,
-   "OJ": 1,
+   "Lucas": 2,
+   "OJ": 2,
    "Parker": 4,
-   "Rahul": 3
+   "Rahul": 1
   },
   "odds": {
    "Atlanta Hawks": "mid",
