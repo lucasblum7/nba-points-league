@@ -23,8 +23,8 @@
    "away": "Philadelphia 76ers",
    "home": "Indiana Pacers",
    "cup": true,
-   "away_ml": -180,
-   "home_ml": 151
+   "away_ml": -174,
+   "home_ml": 146
   },
   {
    "date": "2026-11-27",
@@ -38,7 +38,9 @@
    "time": "5:30 PM",
    "away": "Memphis Grizzlies",
    "home": "Minnesota Timberwolves",
-   "cup": true
+   "cup": true,
+   "away_ml": 117,
+   "home_ml": -139
   },
   {
    "date": "2026-11-27",
@@ -61,7 +63,9 @@
    "time": "6:30 PM",
    "away": "Golden State Warriors",
    "home": "Portland Trail Blazers",
-   "cup": true
+   "cup": true,
+   "away_ml": 262,
+   "home_ml": -325
   },
   {
    "date": "2026-11-27",
@@ -85,8 +89,8 @@
    "away": "Denver Nuggets",
    "home": "Utah Jazz",
    "cup": true,
-   "away_ml": -345,
-   "home_ml": 277
+   "away_ml": -416,
+   "home_ml": 326
   },
   {
    "date": "2026-11-28",
