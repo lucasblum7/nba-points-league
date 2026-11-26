@@ -3,21 +3,12 @@
  "games": [
   {
    "date": "2026-11-25",
-   "time": "4:00 PM",
-   "away": "Chicago Bulls",
-   "home": "Charlotte Hornets",
-   "cup": true,
-   "away_ml": 151,
-   "home_ml": -180
-  },
-  {
-   "date": "2026-11-25",
    "time": "7:00 PM",
    "away": "Sacramento Kings",
    "home": "Golden State Warriors",
    "cup": true,
-   "away_ml": 261,
-   "home_ml": -324
+   "away_ml": 247,
+   "home_ml": -304
   },
   {
    "date": "2026-11-25",
@@ -45,24 +36,6 @@
    "cup": true,
    "away_ml": -101,
    "home_ml": -117
-  },
-  {
-   "date": "2026-11-25",
-   "time": "4:30 PM",
-   "away": "Cleveland Cavaliers",
-   "home": "New York Knicks",
-   "cup": true,
-   "away_ml": 151,
-   "home_ml": -180
-  },
-  {
-   "date": "2026-11-25",
-   "time": "4:30 PM",
-   "away": "Minnesota Timberwolves",
-   "home": "Oklahoma City Thunder",
-   "cup": true,
-   "away_ml": 114,
-   "home_ml": -135
   },
   {
    "date": "2026-11-25",
