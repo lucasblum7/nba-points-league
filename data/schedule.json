@@ -41,7 +41,9 @@
    "time": "4:00 PM",
    "away": "Miami Heat",
    "home": "New York Knicks",
-   "cup": true
+   "cup": true,
+   "away_ml": 142,
+   "home_ml": -169
   },
   {
    "date": "2026-11-27",
@@ -62,7 +64,9 @@
    "time": "6:30 PM",
    "away": "Los Angeles Lakers",
    "home": "San Antonio Spurs",
-   "cup": true
+   "cup": true,
+   "away_ml": 164,
+   "home_ml": -196
   },
   {
    "date": "2026-11-27",

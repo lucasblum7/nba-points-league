@@ -1,5 +1,5 @@
 {
- "as_of": "2026-11-25T18",
+ "as_of": "2026-11-25T21",
  "players": [
   {
    "team": "Atlanta Hawks",
@@ -464,23 +464,6 @@
    }
   },
   {
-   "team": "Golden State Warriors",
-   "id": "4397040",
-   "name": "Brandon Williams",
-   "status": "Out",
-   "comment": "Head coach Steve Kerr said Tuesday that Williams (hamstring) is questionable to play Wednesday against the Kings, per Dalton Johnson of NBC Sports Bay Area.",
-   "return": "2026-11-25",
-   "fantasy": "GTD",
-   "stats": {
-    "gp": 10.0,
-    "min": 16.1,
-    "pts": 10.4,
-    "reb": 2.1,
-    "ast": 2.3,
-    "this_season": true
-   }
-  },
-  {
    "team": "Indiana Pacers",
    "id": "4396993",
    "name": "Tyrese Haliburton",
@@ -618,6 +601,23 @@
   },
   {
    "team": "Minnesota Timberwolves",
+   "id": "4432816",
+   "name": "LaMelo Ball",
+   "status": "Day-To-Day",
+   "comment": "Ball (ankle) did not return to Wednesday's 113-106 win over the Thunder.",
+   "return": "2026-11-27",
+   "fantasy": "GTD",
+   "stats": {
+    "gp": 18.0,
+    "min": 28.333334,
+    "pts": 17.222221,
+    "reb": 4.2222223,
+    "ast": 5.611111,
+    "this_season": true
+   }
+  },
+  {
+   "team": "Minnesota Timberwolves",
    "id": "4432247",
    "name": "Jaylen Clark",
    "status": "Out",
@@ -685,6 +685,23 @@
    }
   },
   {
+   "team": "Brooklyn Nets",
+   "id": "3150844",
+   "name": "Moritz Wagner",
+   "status": "Out",
+   "comment": "Wagner (knee) will not return to Wednesday's game against the Bucks, C.J. Holmes of the New York Daily News reports.",
+   "return": "2026-11-27",
+   "fantasy": "OUT",
+   "stats": {
+    "gp": 16.0,
+    "min": 17.875,
+    "pts": 9.9375,
+    "reb": 3.3125,
+    "ast": 1.5625,
+    "this_season": true
+   }
+  },
+  {
    "team": "New York Knicks",
    "id": "3934719",
    "name": "OG Anunoby",
@@ -715,6 +732,23 @@
     "pts": 4.9166665,
     "reb": 1.5833334,
     "ast": 0.41666666,
+    "this_season": true
+   }
+  },
+  {
+   "team": "New York Knicks",
+   "id": "6585",
+   "name": "Andre Drummond",
+   "status": "Day-To-Day",
+   "comment": "Drummond (head) did not return to Wednesday's 121-102 win over the Cavaliers.",
+   "return": "2026-11-27",
+   "fantasy": "GTD",
+   "stats": {
+    "gp": 17.0,
+    "min": 14.0,
+    "pts": 3.764706,
+    "reb": 7.7647057,
+    "ast": 1.0,
     "this_season": true
    }
   },
@@ -980,10 +1014,10 @@
    "team": "San Antonio Spurs",
    "id": "4066259",
    "name": "De'Aaron Fox",
-   "status": "Day-To-Day",
-   "comment": "Fox (shin) is questionable to play Wednesday's game against the Trail Blazers.",
-   "return": "2026-11-25",
-   "fantasy": "GTD",
+   "status": "Out",
+   "comment": "Fox (shin) has been ruled out for Wednesday's game against Portland, Jeff McDonald of the San Antonio Express-News reports.",
+   "return": "2026-11-27",
+   "fantasy": "OUT",
    "stats": {
     "gp": 16.0,
     "min": 28.9375,
@@ -1036,23 +1070,6 @@
    "return": "2026-12-03",
    "fantasy": "OUT",
    "stats": null
-  },
-  {
-   "team": "San Antonio Spurs",
-   "id": "5104157",
-   "name": "Victor Wembanyama",
-   "status": "Day-To-Day",
-   "comment": "Wembanyama (back) is questionable for Wednesday's game in Portland.",
-   "return": "2026-11-25",
-   "fantasy": "GTD",
-   "stats": {
-    "gp": 17.0,
-    "min": 30.294117,
-    "pts": 29.882353,
-    "reb": 12.294118,
-    "ast": 3.1764705,
-    "this_season": true
-   }
   },
   {
    "team": "Oklahoma City Thunder",
@@ -1360,6 +1377,23 @@
     "pts": 16.5625,
     "reb": 9.1875,
     "ast": 5.3125,
+    "this_season": true
+   }
+  },
+  {
+   "team": "Memphis Grizzlies",
+   "id": "4600663",
+   "name": "Zach Edey",
+   "status": "Day-To-Day",
+   "comment": "Edey (ankle) did not return to Wednesday's 115-97 win over the Clippers. He finished with seven points (3-4 FG, 1-1 FT), four rebounds, two assists and two blocks across nine minutes.",
+   "return": "2026-11-27",
+   "fantasy": "GTD",
+   "stats": {
+    "gp": 14.0,
+    "min": 21.0,
+    "pts": 9.0,
+    "reb": 7.285714,
+    "ast": 0.85714287,
     "this_season": true
    }
   },

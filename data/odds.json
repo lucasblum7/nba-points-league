@@ -149,7 +149,7 @@
    "prev": 87.5
   },
   "Dallas Mavericks": {
-   "playoffs": 44.0,
+   "playoffs": 44.1,
    "top6": 16.5,
    "playin": 67.2,
    "proj_w": 42.8,
@@ -447,7 +447,7 @@
    "prev": 0.1
   },
   "Minnesota Timberwolves": {
-   "playoffs": 92.0,
+   "playoffs": 91.9,
    "top6": 74.0,
    "playin": 25.2,
    "proj_w": 51.1,
@@ -633,9 +633,9 @@
    "prev": 35.4
   },
   "Portland Trail Blazers": {
-   "playoffs": 90.4,
-   "top6": 70.9,
-   "playin": 28.4,
+   "playoffs": 90.6,
+   "top6": 71.1,
+   "playin": 28.2,
    "proj_w": 50.5,
    "proj_l": 31.5,
    "seed": 5.3,
@@ -727,9 +727,16 @@
      "games": 4,
      "impact": 1.06,
      "comment": "Harris (calf) is likely to be sidelined until early December, per Jeff Garcia of KENS 5 San Antonio."
+    },
+    {
+     "name": "De'Aaron Fox",
+     "status": "Out",
+     "games": 1,
+     "impact": 2.23,
+     "comment": "Fox (shin) has been ruled out for Wednesday's game against Portland, Jeff McDonald of the San Antonio Express-News reports."
     }
    ],
-   "injury_wins": -0.4,
+   "injury_wins": -0.5,
    "sos_rank": 6,
    "games_left": 64,
    "prev": 100.0
