@@ -2284,9 +2284,9 @@
   "away": "Philadelphia 76ers",
   "home": "Indiana Pacers",
   "fav": "Philadelphia 76ers",
-  "spread": 3.5,
-  "away_ml": -155,
-  "home_ml": 130,
+  "spread": 1.5,
+  "away_ml": -148,
+  "home_ml": 124,
   "book": "DraftKings"
  },
  {
@@ -2324,7 +2324,7 @@
   "away": "Dallas Mavericks",
   "home": "Phoenix Suns",
   "fav": "Phoenix Suns",
-  "spread": 2.5,
+  "spread": 1.5,
   "away_ml": 120,
   "home_ml": -142,
   "book": "DraftKings"
