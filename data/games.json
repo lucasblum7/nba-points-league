@@ -2137,6 +2137,24 @@
   "cup": true
  },
  {
+  "id": "401909321",
+  "date": "2026-11-25",
+  "away": "LA Clippers",
+  "home": "Memphis Grizzlies",
+  "away_score": 97,
+  "home_score": 115,
+  "cup": true
+ },
+ {
+  "id": "401909322",
+  "date": "2026-11-25",
+  "away": "Brooklyn Nets",
+  "home": "Milwaukee Bucks",
+  "away_score": 104,
+  "home_score": 97,
+  "cup": true
+ },
+ {
   "id": "401909319",
   "date": "2026-11-25",
   "away": "Cleveland Cavaliers",
