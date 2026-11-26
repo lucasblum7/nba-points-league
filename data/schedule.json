@@ -84,7 +84,9 @@
    "time": "6:30 PM",
    "away": "Denver Nuggets",
    "home": "Utah Jazz",
-   "cup": true
+   "cup": true,
+   "away_ml": -345,
+   "home_ml": 277
   },
   {
    "date": "2026-11-28",
