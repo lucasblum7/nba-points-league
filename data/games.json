@@ -2128,6 +2128,15 @@
   "cup": true
  },
  {
+  "id": "401909318",
+  "date": "2026-11-25",
+  "away": "Chicago Bulls",
+  "home": "Charlotte Hornets",
+  "away_score": 107,
+  "home_score": 105,
+  "cup": true
+ },
+ {
   "id": "401909317",
   "date": "2026-11-25",
   "away": "Miami Heat",
