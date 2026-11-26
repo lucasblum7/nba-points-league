@@ -2146,6 +2146,15 @@
   "cup": true
  },
  {
+  "id": "401909320",
+  "date": "2026-11-25",
+  "away": "Minnesota Timberwolves",
+  "home": "Oklahoma City Thunder",
+  "away_score": 113,
+  "home_score": 106,
+  "cup": true
+ },
+ {
   "id": "401909317",
   "date": "2026-11-25",
   "away": "Miami Heat",
