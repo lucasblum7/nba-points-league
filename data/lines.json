@@ -2275,8 +2275,8 @@
   "home": "Detroit Pistons",
   "fav": "Detroit Pistons",
   "spread": 9.5,
-  "away_ml": 320,
-  "home_ml": -407,
+  "away_ml": 322,
+  "home_ml": -410,
   "book": "DraftKings"
  },
  {
@@ -2284,9 +2284,9 @@
   "away": "Philadelphia 76ers",
   "home": "Indiana Pacers",
   "fav": "Philadelphia 76ers",
-  "spread": 1.5,
-  "away_ml": -155,
-  "home_ml": 130,
+  "spread": 2.5,
+  "away_ml": -156,
+  "home_ml": 131,
   "book": "DraftKings"
  },
  {
