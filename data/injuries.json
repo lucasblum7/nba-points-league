@@ -1,5 +1,5 @@
 {
- "as_of": "2026-11-26T15",
+ "as_of": "2026-11-26T18",
  "players": [
   {
    "team": "Atlanta Hawks",
@@ -254,9 +254,9 @@
    "id": "5148538",
    "name": "Tarik Biberovic",
    "status": "Out",
-   "comment": "Biberovic (heel) is out for Wednesday's game against the Warriors.",
-   "return": "2026-11-27",
-   "fantasy": "GTD",
+   "comment": "Biberovic (heel) is out for Friday's game against the Suns.",
+   "return": "2026-12-04",
+   "fantasy": "OUT",
    "stats": null
   },
   {
@@ -264,9 +264,9 @@
    "id": "5279129",
    "name": "Sergio de Larrea",
    "status": "Out",
-   "comment": "De Larrea (knee) is listed as out for Wednesday's game against the Warriors.",
-   "return": "2026-11-27",
-   "fantasy": "GTD",
+   "comment": "De Larrea (knee) is out for Friday's game against the Suns.",
+   "return": "2026-12-14",
+   "fantasy": "OUT",
    "stats": {
     "gp": 4.0,
     "min": 11.5,
@@ -281,9 +281,9 @@
    "id": "5106040",
    "name": "Tobi Lawal",
    "status": "Out",
-   "comment": "Lawal (groin) is out for Tuesday's game against Denver.",
-   "return": "2026-11-27",
-   "fantasy": "GTD",
+   "comment": "Lawal (groin) is out for Friday's game against the Suns.",
+   "return": "2026-11-30",
+   "fantasy": "OUT",
    "stats": {
     "gp": 8.0,
     "min": 4.5,
@@ -298,9 +298,9 @@
    "id": "4683688",
    "name": "Dereck Lively II",
    "status": "Out",
-   "comment": "Head coach Dusty May said Friday that Lively (foot) is moving well and progressing in his recovery, and the big man told May he's \"close\" to returning, Mike Curtis of The Dallas Morning News reports.",
-   "return": "2026-11-27",
-   "fantasy": "GTD",
+   "comment": "Lively (foot) is out for Friday's game against the Suns.",
+   "return": "2026-11-30",
+   "fantasy": "OUT",
    "stats": {
     "gp": 7.0,
     "min": 16.428572,
@@ -516,18 +516,18 @@
   },
   {
    "team": "Indiana Pacers",
-   "id": "4396909",
-   "name": "Aaron Nesmith",
+   "id": "3133603",
+   "name": "Kelly Oubre Jr.",
    "status": "Day-To-Day",
-   "comment": "Nesmith (foot) is questionable for Friday's game against the 76ers.",
+   "comment": "Oubre is questionable for Friday's game against the 76ers due to a right hand laceration.",
    "return": "2026-11-27",
    "fantasy": "GTD",
    "stats": {
-    "gp": 15.0,
-    "min": 27.333334,
-    "pts": 10.666667,
-    "reb": 3.2,
-    "ast": 2.2666667,
+    "gp": 16.0,
+    "min": 24.6875,
+    "pts": 12.3125,
+    "reb": 3.4375,
+    "ast": 1.125,
     "this_season": true
    }
   },
@@ -587,7 +587,7 @@
    "id": "4066457",
    "name": "Austin Reaves",
    "status": "Out",
-   "comment": "Reaves (heel) was a full participant in Wednesday's practice, Daniel Starkand of LakersNation.com reports.",
+   "comment": "Reaves (heel) is questionable for Friday's game against the Spurs.",
    "return": "2026-11-27",
    "fantasy": "GTD",
    "stats": {
@@ -638,7 +638,7 @@
    "id": "4432816",
    "name": "LaMelo Ball",
    "status": "Day-To-Day",
-   "comment": "Ball (ankle) did not return to Wednesday's 113-106 win over the Thunder.",
+   "comment": "Ball (ankle) is questionable for Friday's game against the Grizzlies.",
    "return": "2026-11-27",
    "fantasy": "GTD",
    "stats": {
@@ -1005,8 +1005,8 @@
    "id": "4706557",
    "name": "Chris Youngblood",
    "status": "Out",
-   "comment": "Youngblood (heel) has been ruled out for Saturday's game against the Knicks.",
-   "return": "2026-11-27",
+   "comment": "Youngblood (heel) is out for Friday's game against the Warriors.",
+   "return": "2026-11-29",
    "fantasy": "OUT",
    "stats": {
     "gp": 6.0,
@@ -1066,7 +1066,7 @@
    "id": "4066259",
    "name": "De'Aaron Fox",
    "status": "Day-To-Day",
-   "comment": "Fox (shin) has been ruled out for Wednesday's game against Portland, Jeff McDonald of the San Antonio Express-News reports.",
+   "comment": "Fox (shin) is questionable for Friday's game against the Lakers.",
    "return": "2026-11-27",
    "fantasy": "GTD",
    "stats": {
@@ -1083,9 +1083,9 @@
    "id": "5037871",
    "name": "Dylan Harper",
    "status": "Out",
-   "comment": "Harper (hip) is expected to miss two to three weeks, Brett Siegel of ClutchPoints.com reports.",
-   "return": "2026-12-13",
-   "fantasy": "OUT",
+   "comment": "Harper (hip) is questionable for Friday's game against the Lakers.",
+   "return": "2026-11-27",
+   "fantasy": "GTD",
    "stats": {
     "gp": 15.0,
     "min": 31.666666,
@@ -1239,7 +1239,7 @@
    "id": "4397077",
    "name": "Jaxson Hayes",
    "status": "Day-To-Day",
-   "comment": "Hayes (knee) has been ruled out for Monday's game against the Lakers.",
+   "comment": "Hayes (knee) is questionable for Friday's game against the Nuggets.",
    "return": "2026-11-27",
    "fantasy": "GTD",
    "stats": {
@@ -1290,9 +1290,9 @@
    "id": "3102530",
    "name": "Jusuf Nurkic",
    "status": "Out",
-   "comment": "Nurkic (foot) has been cleared for on-court work and will be re-evaluated in one week.",
-   "return": "2026-11-29",
-   "fantasy": "OUT",
+   "comment": "Nurkic (foot) is questionable for Friday's game against the Nuggets.",
+   "return": "2026-11-27",
+   "fantasy": "GTD",
    "stats": {
     "gp": 41.0,
     "min": 26.414635,
@@ -1453,7 +1453,7 @@
    "id": "4600663",
    "name": "Zach Edey",
    "status": "Day-To-Day",
-   "comment": "Edey (ankle) did not return to Wednesday's 115-97 win over the Clippers. He finished with seven points (3-4 FG, 1-1 FT), four rebounds, two assists and two blocks across nine minutes.",
+   "comment": "Edey (ankle) is questionable for Friday's game against the Timberwolves.",
    "return": "2026-11-27",
    "fantasy": "GTD",
    "stats": {
@@ -1525,6 +1525,23 @@
    "return": "2026-12-01",
    "fantasy": "OUT",
    "stats": null
+  },
+  {
+   "team": "Memphis Grizzlies",
+   "id": "4432810",
+   "name": "Isaiah Stewart",
+   "status": "Day-To-Day",
+   "comment": "Stewart is questionable for Friday's game against the Timberwolves due to right hip soreness.",
+   "return": "2026-11-27",
+   "fantasy": "GTD",
+   "stats": {
+    "gp": 14.0,
+    "min": 18.214285,
+    "pts": 10.571428,
+    "reb": 3.2857144,
+    "ast": 0.85714287,
+    "this_season": true
+   }
   },
   {
    "team": "Charlotte Hornets",

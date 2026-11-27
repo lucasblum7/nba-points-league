@@ -3,9 +3,9 @@
  "sims": 5000,
  "teams": {
   "Atlanta Hawks": {
-   "playoffs": 90.4,
-   "top6": 65.8,
-   "playin": 33.5,
+   "playoffs": 90.3,
+   "top6": 66.0,
+   "playin": 33.3,
    "proj_w": 46.5,
    "proj_l": 35.5,
    "seed": 5.6,
@@ -38,14 +38,14 @@
   },
   "Boston Celtics": {
    "playoffs": 99.9,
-   "top6": 99.0,
-   "playin": 1.0,
-   "proj_w": 56.8,
-   "proj_l": 25.2,
+   "top6": 98.9,
+   "playin": 1.1,
+   "proj_w": 56.7,
+   "proj_l": 25.3,
    "seed": 2.1,
    "conf": "East",
    "rating": 6.3,
-   "rating_wins": 58.0,
+   "rating_wins": 57.9,
    "prior_wins": 51.5,
    "last5_margin": -0.2,
    "season_margin": 9.4,
@@ -58,7 +58,7 @@
   "Brooklyn Nets": {
    "playoffs": 0.6,
    "top6": 0.0,
-   "playin": 3.6,
+   "playin": 3.7,
    "proj_w": 23.7,
    "proj_l": 58.3,
    "seed": 13.5,
@@ -90,9 +90,9 @@
    "prev": 0.4
   },
   "Charlotte Hornets": {
-   "playoffs": 5.8,
+   "playoffs": 5.7,
    "top6": 0.3,
-   "playin": 21.3,
+   "playin": 21.2,
    "proj_w": 28.8,
    "proj_l": 53.2,
    "seed": 11.9,
@@ -117,7 +117,7 @@
    "prev": 5.6
   },
   "Chicago Bulls": {
-   "playoffs": 4.5,
+   "playoffs": 4.6,
    "top6": 0.2,
    "playin": 19.9,
    "proj_w": 28.9,
@@ -144,9 +144,9 @@
    "prev": 4.6
   },
   "Cleveland Cavaliers": {
-   "playoffs": 85.2,
+   "playoffs": 85.1,
    "top6": 49.5,
-   "playin": 49.3,
+   "playin": 49.4,
    "proj_w": 44.5,
    "proj_l": 37.5,
    "seed": 6.4,
@@ -163,27 +163,35 @@
    "prev": 85.5
   },
   "Dallas Mavericks": {
-   "playoffs": 42.1,
-   "top6": 14.4,
-   "playin": 68.7,
-   "proj_w": 42.7,
-   "proj_l": 39.3,
+   "playoffs": 41.4,
+   "top6": 14.1,
+   "playin": 68.3,
+   "proj_w": 42.6,
+   "proj_l": 39.4,
    "seed": 8.6,
    "conf": "West",
    "rating": -0.3,
-   "rating_wins": 40.2,
+   "rating_wins": 40.1,
    "prior_wins": 34.5,
    "last5_margin": 3.2,
    "season_margin": 1.0,
-   "injuries": [],
-   "injury_wins": 0.0,
+   "injuries": [
+    {
+     "name": "Dereck Lively II",
+     "status": "Out",
+     "games": 1,
+     "impact": 0.1,
+     "comment": "Lively (foot) is out for Friday's game against the Suns."
+    }
+   ],
+   "injury_wins": -0.0,
    "sos_rank": 9,
    "games_left": 64,
    "prev": 40.8
   },
   "Denver Nuggets": {
-   "playoffs": 92.5,
-   "top6": 75.1,
+   "playoffs": 92.4,
+   "top6": 75.0,
    "playin": 24.4,
    "proj_w": 51.1,
    "proj_l": 30.9,
@@ -201,12 +209,12 @@
    "prev": 90.7
   },
   "Detroit Pistons": {
-   "playoffs": 99.0,
+   "playoffs": 98.9,
    "top6": 94.3,
    "playin": 5.7,
    "proj_w": 52.5,
    "proj_l": 29.5,
-   "seed": 3.5,
+   "seed": 3.4,
    "conf": "East",
    "rating": 3.8,
    "rating_wins": 51.3,
@@ -242,9 +250,9 @@
    "prev": 99.2
   },
   "Golden State Warriors": {
-   "playoffs": 22.2,
-   "top6": 5.2,
-   "playin": 54.1,
+   "playoffs": 22.4,
+   "top6": 5.3,
+   "playin": 54.0,
    "proj_w": 39.4,
    "proj_l": 42.6,
    "seed": 9.8,
@@ -310,7 +318,7 @@
   },
   "Indiana Pacers": {
    "playoffs": 23.3,
-   "top6": 2.6,
+   "top6": 2.5,
    "playin": 60.0,
    "proj_w": 34.1,
    "proj_l": 47.9,
@@ -370,11 +378,11 @@
    "prev": 0.3
   },
   "Los Angeles Lakers": {
-   "playoffs": 93.8,
-   "top6": 79.6,
-   "playin": 19.9,
-   "proj_w": 52.3,
-   "proj_l": 29.7,
+   "playoffs": 93.6,
+   "top6": 79.3,
+   "playin": 20.2,
+   "proj_w": 52.2,
+   "proj_l": 29.8,
    "seed": 4.6,
    "conf": "West",
    "rating": 3.2,
@@ -391,7 +399,7 @@
   "Memphis Grizzlies": {
    "playoffs": 53.2,
    "top6": 22.5,
-   "playin": 66.6,
+   "playin": 66.8,
    "proj_w": 44.3,
    "proj_l": 37.7,
    "seed": 8.0,
@@ -438,7 +446,7 @@
   },
   "Miami Heat": {
    "playoffs": 95.1,
-   "top6": 80.0,
+   "top6": 79.9,
    "playin": 19.8,
    "proj_w": 48.3,
    "proj_l": 33.7,
@@ -470,13 +478,13 @@
    "season_margin": -11.2,
    "injuries": [],
    "injury_wins": 0.0,
-   "sos_rank": 21,
+   "sos_rank": 20,
    "games_left": 63,
    "prev": 0.1
   },
   "Minnesota Timberwolves": {
    "playoffs": 91.2,
-   "top6": 72.8,
+   "top6": 72.7,
    "playin": 26.5,
    "proj_w": 51.0,
    "proj_l": 31.0,
@@ -596,8 +604,8 @@
    "prev": 83.8
   },
   "Orlando Magic": {
-   "playoffs": 47.3,
-   "top6": 10.5,
+   "playoffs": 47.5,
+   "top6": 10.6,
    "playin": 74.8,
    "proj_w": 37.9,
    "proj_l": 44.1,
@@ -624,7 +632,7 @@
   },
   "Philadelphia 76ers": {
    "playoffs": 98.2,
-   "top6": 91.6,
+   "top6": 91.7,
    "playin": 8.3,
    "proj_w": 51.1,
    "proj_l": 30.9,
@@ -650,15 +658,15 @@
    "prev": 98.1
   },
   "Phoenix Suns": {
-   "playoffs": 30.0,
-   "top6": 7.8,
-   "playin": 62.2,
-   "proj_w": 40.7,
-   "proj_l": 41.3,
+   "playoffs": 30.7,
+   "top6": 8.1,
+   "playin": 62.4,
+   "proj_w": 40.8,
+   "proj_l": 41.2,
    "seed": 9.3,
    "conf": "West",
-   "rating": -0.5,
-   "rating_wins": 39.7,
+   "rating": -0.4,
+   "rating_wins": 39.8,
    "prior_wins": 40.5,
    "last5_margin": 7.0,
    "season_margin": -1.2,
@@ -672,14 +680,14 @@
     }
    ],
    "injury_wins": -0.6,
-   "sos_rank": 20,
+   "sos_rank": 21,
    "games_left": 65,
    "prev": 30.7
   },
   "Portland Trail Blazers": {
    "playoffs": 92.6,
-   "top6": 74.6,
-   "playin": 24.8,
+   "top6": 74.8,
+   "playin": 24.6,
    "proj_w": 51.2,
    "proj_l": 30.8,
    "seed": 5.0,
@@ -738,11 +746,11 @@
    "prev": 0.0
   },
   "San Antonio Spurs": {
-   "playoffs": 99.9,
+   "playoffs": 100.0,
    "top6": 99.8,
    "playin": 0.2,
-   "proj_w": 61.8,
-   "proj_l": 20.2,
+   "proj_w": 62.0,
+   "proj_l": 20.0,
    "seed": 1.5,
    "conf": "West",
    "rating": 8.9,
@@ -752,13 +760,6 @@
    "season_margin": 11.3,
    "injuries": [
     {
-     "name": "Dylan Harper",
-     "status": "Out",
-     "games": 4,
-     "impact": 3.47,
-     "comment": "Harper (hip) is expected to miss two to three weeks, Brett Siegel of ClutchPoints.com reports."
-    },
-    {
      "name": "Tobias Harris",
      "status": "Out",
      "games": 3,
@@ -766,17 +767,17 @@
      "comment": "Harris (calf) is likely to be sidelined until early December, per Jeff Garcia of KENS 5 San Antonio."
     }
    ],
-   "injury_wins": -0.3,
+   "injury_wins": -0.1,
    "sos_rank": 8,
    "games_left": 63,
    "prev": 100.0
   },
   "Toronto Raptors": {
-   "playoffs": 45.2,
-   "top6": 8.0,
+   "playoffs": 45.1,
+   "top6": 7.9,
    "playin": 75.2,
-   "proj_w": 37.4,
-   "proj_l": 44.6,
+   "proj_w": 37.3,
+   "proj_l": 44.7,
    "seed": 8.9,
    "conf": "East",
    "rating": -0.4,
@@ -832,13 +833,6 @@
      "games": 5,
      "impact": 2.63,
      "comment": "Jackson has been diagnosed with a torn MCL in his right knee and will be sidelined for 6-to-8 weeks, per Shams Charania of ESPN."
-    },
-    {
-     "name": "Jusuf Nurkic",
-     "status": "Out",
-     "games": 1,
-     "impact": 1.35,
-     "comment": "Nurkic (foot) has been cleared for on-court work and will be re-evaluated in one week."
     }
    ],
    "injury_wins": -1.1,
@@ -849,7 +843,7 @@
   "Washington Wizards": {
    "playoffs": 5.8,
    "top6": 0.3,
-   "playin": 24.7,
+   "playin": 24.8,
    "proj_w": 29.7,
    "proj_l": 52.3,
    "seed": 11.6,
