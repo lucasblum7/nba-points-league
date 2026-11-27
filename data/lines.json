@@ -2364,9 +2364,9 @@
   "away": "Denver Nuggets",
   "home": "Utah Jazz",
   "fav": "Denver Nuggets",
-  "spread": 9.5,
-  "away_ml": -468,
-  "home_ml": 361,
+  "spread": 10.5,
+  "away_ml": -497,
+  "home_ml": 380,
   "book": "DraftKings"
  }
 ]
