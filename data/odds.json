@@ -190,9 +190,9 @@
    "prev": 41.3
   },
   "Denver Nuggets": {
-   "playoffs": 90.6,
+   "playoffs": 90.7,
    "top6": 73.2,
-   "playin": 26.1,
+   "playin": 26.0,
    "proj_w": 51.0,
    "proj_l": 31.0,
    "seed": 5.1,
@@ -319,7 +319,7 @@
   "Indiana Pacers": {
    "playoffs": 21.8,
    "top6": 2.5,
-   "playin": 59.1,
+   "playin": 59.0,
    "proj_w": 34.0,
    "proj_l": 48.0,
    "seed": 10.1,
@@ -335,7 +335,7 @@
      "status": "Out",
      "games": 4,
      "impact": 4.71,
-     "comment": "Haliburton (hamstring) was recalled from the G League's Noblesville Boom on Tuesday, Tony East of Forbes.com reports."
+     "comment": "Haliburton (hamstring) has been ruled out per Scott Agness of FieldhouseFiles.com for Friday's game against the 76ers. The guard participate"
     }
    ],
    "injury_wins": -0.4,
@@ -380,7 +380,7 @@
   "Los Angeles Lakers": {
    "playoffs": 92.9,
    "top6": 79.2,
-   "playin": 20.3,
+   "playin": 20.4,
    "proj_w": 52.1,
    "proj_l": 29.9,
    "seed": 4.7,
@@ -446,10 +446,10 @@
   },
   "Miami Heat": {
    "playoffs": 94.9,
-   "top6": 79.0,
-   "playin": 20.8,
-   "proj_w": 48.4,
-   "proj_l": 33.6,
+   "top6": 78.9,
+   "playin": 20.9,
+   "proj_w": 48.3,
+   "proj_l": 33.7,
    "seed": 4.9,
    "conf": "East",
    "rating": 2.4,
@@ -457,8 +457,16 @@
    "prior_wins": 46.5,
    "last5_margin": 9.6,
    "season_margin": 0.8,
-   "injuries": [],
-   "injury_wins": 0.0,
+   "injuries": [
+    {
+     "name": "Andrew Wiggins",
+     "status": "Day-To-Day",
+     "games": 1,
+     "impact": 0.83,
+     "comment": "Wiggins is probable for Friday's game against the Knicks due to a right ankle sprain."
+    }
+   ],
+   "injury_wins": -0.0,
    "sos_rank": 29,
    "games_left": 65,
    "prev": 95.1
@@ -641,7 +649,7 @@
   "Philadelphia 76ers": {
    "playoffs": 98.6,
    "top6": 91.6,
-   "playin": 8.4,
+   "playin": 8.3,
    "proj_w": 51.1,
    "proj_l": 30.9,
    "seed": 3.9,
@@ -694,7 +702,7 @@
   },
   "Portland Trail Blazers": {
    "playoffs": 92.3,
-   "top6": 76.1,
+   "top6": 76.0,
    "playin": 23.3,
    "proj_w": 51.3,
    "proj_l": 30.7,
@@ -841,6 +849,13 @@
      "games": 5,
      "impact": 2.63,
      "comment": "Jackson has been diagnosed with a torn MCL in his right knee and will be sidelined for 6-to-8 weeks, per Shams Charania of ESPN."
+    },
+    {
+     "name": "Mo Bamba",
+     "status": "Day-To-Day",
+     "games": 1,
+     "impact": 1.11,
+     "comment": "Bamba (illness) is listed as questionable for Friday's game against the Nuggets, according to the Jazz's injury report."
     }
    ],
    "injury_wins": -1.1,
