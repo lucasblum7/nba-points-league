@@ -7,8 +7,8 @@
    "away": "Atlanta Hawks",
    "home": "Boston Celtics",
    "cup": true,
-   "away_ml": 312,
-   "home_ml": -395
+   "away_ml": 300,
+   "home_ml": -378
   },
   {
    "date": "2026-11-27",
@@ -52,8 +52,8 @@
    "away": "Miami Heat",
    "home": "New York Knicks",
    "cup": true,
-   "away_ml": 130,
-   "home_ml": -155
+   "away_ml": 124,
+   "home_ml": -148
   },
   {
    "date": "2026-11-27",
@@ -79,8 +79,8 @@
    "away": "Los Angeles Lakers",
    "home": "San Antonio Spurs",
    "cup": true,
-   "away_ml": 171,
-   "home_ml": -205
+   "away_ml": 180,
+   "home_ml": -217
   },
   {
    "date": "2026-11-27",
