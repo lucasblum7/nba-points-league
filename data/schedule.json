@@ -16,8 +16,8 @@
    "away": "Milwaukee Bucks",
    "home": "Detroit Pistons",
    "cup": true,
-   "away_ml": 322,
-   "home_ml": -410
+   "away_ml": 312,
+   "home_ml": -395
   },
   {
    "date": "2026-11-27",
@@ -71,7 +71,7 @@
    "home": "Portland Trail Blazers",
    "cup": true,
    "away_ml": 312,
-   "home_ml": -396
+   "home_ml": -395
   },
   {
    "date": "2026-11-27",
@@ -97,8 +97,8 @@
    "away": "Denver Nuggets",
    "home": "Utah Jazz",
    "cup": true,
-   "away_ml": -468,
-   "home_ml": 361
+   "away_ml": -497,
+   "home_ml": 380
   },
   {
    "date": "2026-11-28",
