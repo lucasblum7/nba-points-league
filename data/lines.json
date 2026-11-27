@@ -2264,9 +2264,9 @@
   "away": "Atlanta Hawks",
   "home": "Boston Celtics",
   "fav": "Boston Celtics",
-  "spread": 9.5,
-  "away_ml": 312,
-  "home_ml": -395,
+  "spread": 8.5,
+  "away_ml": 300,
+  "home_ml": -378,
   "book": "DraftKings"
  },
  {
