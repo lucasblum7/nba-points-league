@@ -2314,9 +2314,9 @@
   "away": "Miami Heat",
   "home": "New York Knicks",
   "fav": "New York Knicks",
-  "spread": 3.5,
-  "away_ml": 131,
-  "home_ml": -156,
+  "spread": 2.5,
+  "away_ml": 124,
+  "home_ml": -148,
   "book": "DraftKings"
  },
  {
