@@ -52,8 +52,8 @@
    "away": "Miami Heat",
    "home": "New York Knicks",
    "cup": true,
-   "away_ml": 140,
-   "home_ml": -166
+   "away_ml": 146,
+   "home_ml": -174
   },
   {
    "date": "2026-11-27",
@@ -88,8 +88,8 @@
    "away": "Brooklyn Nets",
    "home": "Toronto Raptors",
    "cup": true,
-   "away_ml": 268,
-   "home_ml": -333
+   "away_ml": 251,
+   "home_ml": -310
   },
   {
    "date": "2026-11-27",
