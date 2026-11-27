@@ -2285,8 +2285,8 @@
   "home": "Indiana Pacers",
   "fav": "Philadelphia 76ers",
   "spread": 2.5,
-  "away_ml": -148,
-  "home_ml": 124,
+  "away_ml": -155,
+  "home_ml": 130,
   "book": "DraftKings"
  },
  {
@@ -2334,9 +2334,9 @@
   "away": "Golden State Warriors",
   "home": "Portland Trail Blazers",
   "fav": "Portland Trail Blazers",
-  "spread": 8.5,
-  "away_ml": 299,
-  "home_ml": -378,
+  "spread": 9.5,
+  "away_ml": 312,
+  "home_ml": -396,
   "book": "DraftKings"
  },
  {
