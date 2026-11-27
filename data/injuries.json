@@ -1,5 +1,5 @@
 {
- "as_of": "2026-11-27T12",
+ "as_of": "2026-11-27T15",
  "players": [
   {
    "team": "Atlanta Hawks",
@@ -299,7 +299,7 @@
    "name": "Kyrie Irving",
    "status": "Day-To-Day",
    "comment": "Irving (knee) is listed as questionable for Friday's game against the Suns due to left knee injury management.",
-   "return": "2026-11-30",
+   "return": "2026-11-27",
    "fantasy": "GTD",
    "stats": {
     "gp": 15.0,
@@ -498,6 +498,23 @@
    }
   },
   {
+   "team": "Houston Rockets",
+   "id": "2991235",
+   "name": "Steven Adams",
+   "status": "Day-To-Day",
+   "comment": "Adams (knee) is questionable for Saturday's game against the 76ers.",
+   "return": "2026-11-28",
+   "fantasy": "GTD",
+   "stats": {
+    "gp": 6.0,
+    "min": 13.5,
+    "pts": 4.3333335,
+    "reb": 4.8333335,
+    "ast": 1.1666666,
+    "this_season": true
+   }
+  },
+  {
    "team": "Indiana Pacers",
    "id": "4396993",
    "name": "Tyrese Haliburton",
@@ -614,23 +631,6 @@
     "reb": 3.0333333,
     "ast": 2.2666667,
     "this_season": false
-   }
-  },
-  {
-   "team": "Miami Heat",
-   "id": "3032977",
-   "name": "Giannis Antetokounmpo",
-   "status": "Day-To-Day",
-   "comment": "Antetokounmpo is probable for Friday's game against the Knicks due to right groin tendinitis.",
-   "return": "2026-11-27",
-   "fantasy": "GTD",
-   "stats": {
-    "gp": 16.0,
-    "min": 32.375,
-    "pts": 28.4375,
-    "reb": 12.6875,
-    "ast": 5.375,
-    "this_season": true
    }
   },
   {
@@ -856,6 +856,23 @@
   },
   {
    "team": "Orlando Magic",
+   "id": "4712849",
+   "name": "Anthony Black",
+   "status": "Day-To-Day",
+   "comment": "Black (back) is questionable for Saturday's game against the Wizards.",
+   "return": "2026-11-28",
+   "fantasy": "GTD",
+   "stats": {
+    "gp": 14.0,
+    "min": 32.714287,
+    "pts": 15.285714,
+    "reb": 5.0,
+    "ast": 5.142857,
+    "this_season": true
+   }
+  },
+  {
+   "team": "Orlando Magic",
    "id": "4397204",
    "name": "Colin Castleton",
    "status": "Day-To-Day",
@@ -912,6 +929,23 @@
     "pts": 3.8474576,
     "reb": 3.1694915,
     "ast": 1.1864407,
+    "this_season": false
+   }
+  },
+  {
+   "team": "Orlando Magic",
+   "id": "4397140",
+   "name": "Kevin Porter Jr.",
+   "status": "Out",
+   "comment": "Porter won't play Saturday against the Wizards as he's still in the process of getting up to speed on his conditioning.",
+   "return": "2026-11-29",
+   "fantasy": "OUT",
+   "stats": {
+    "gp": 38.0,
+    "min": 33.18421,
+    "pts": 17.394737,
+    "reb": 5.2105265,
+    "ast": 7.368421,
     "this_season": false
    }
   },
@@ -1291,7 +1325,7 @@
    "name": "Mo Bamba",
    "status": "Day-To-Day",
    "comment": "Bamba (illness) is listed as questionable for Friday's game against the Nuggets, according to the Jazz's injury report.",
-   "return": "2026-11-29",
+   "return": "2026-11-27",
    "fantasy": "GTD",
    "stats": {
     "gp": 15.0,
@@ -1616,7 +1650,7 @@
    "id": "3135045",
    "name": "Grayson Allen",
    "status": "Out",
-   "comment": "Allen (concussion) has been ruled out for Wednesday's game against Chicago.",
+   "comment": "Allen (concussion) is questionable for Saturday's game against the Nets.",
    "return": "2026-11-28",
    "fantasy": "GTD",
    "stats": {
@@ -1633,7 +1667,7 @@
    "id": "4576060",
    "name": "Ryan Kalkbrenner",
    "status": "Day-To-Day",
-   "comment": "Kalkbrenner (hip) has been ruled out for Wednesday's matchup with Chicago.",
+   "comment": "Kalkbrenner (hip) is probable for Saturday's matchup with Brooklyn.",
    "return": "2026-11-28",
    "fantasy": "GTD",
    "stats": {
