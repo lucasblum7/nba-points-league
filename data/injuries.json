@@ -1,5 +1,5 @@
 {
- "as_of": "2026-11-27T00",
+ "as_of": "2026-11-27T06",
  "players": [
   {
    "team": "Atlanta Hawks",
@@ -773,10 +773,10 @@
    "team": "New York Knicks",
    "id": "6585",
    "name": "Andre Drummond",
-   "status": "Day-To-Day",
-   "comment": "Drummond (head) is questionable for Friday's game against the Heat.",
-   "return": "2026-11-27",
-   "fantasy": "GTD",
+   "status": "Out",
+   "comment": "Drummond (concussion) has been ruled out for Friday's game against the Heat.",
+   "return": "2026-11-29",
+   "fantasy": "OUT",
    "stats": {
     "gp": 18.0,
     "min": 13.666667,
