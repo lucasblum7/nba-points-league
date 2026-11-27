@@ -2315,8 +2315,8 @@
   "home": "New York Knicks",
   "fav": "New York Knicks",
   "spread": 3.5,
-  "away_ml": 140,
-  "home_ml": -166,
+  "away_ml": 146,
+  "home_ml": -174,
   "book": "DraftKings"
  },
  {
@@ -2355,8 +2355,8 @@
   "home": "Toronto Raptors",
   "fav": "Toronto Raptors",
   "spread": 7.5,
-  "away_ml": 268,
-  "home_ml": -333,
+  "away_ml": 251,
+  "home_ml": -310,
   "book": "DraftKings"
  },
  {
