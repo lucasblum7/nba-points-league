@@ -2265,8 +2265,8 @@
   "home": "Boston Celtics",
   "fav": "Boston Celtics",
   "spread": 9.5,
-  "away_ml": 286,
-  "home_ml": -359,
+  "away_ml": 312,
+  "home_ml": -395,
   "book": "DraftKings"
  },
  {
@@ -2304,7 +2304,7 @@
   "away": "Memphis Grizzlies",
   "home": "Minnesota Timberwolves",
   "fav": "Minnesota Timberwolves",
-  "spread": 3.5,
+  "spread": 2.5,
   "away_ml": 130,
   "home_ml": -155,
   "book": "DraftKings"

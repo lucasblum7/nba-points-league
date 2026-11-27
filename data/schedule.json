@@ -7,8 +7,8 @@
    "away": "Atlanta Hawks",
    "home": "Boston Celtics",
    "cup": true,
-   "away_ml": 298,
-   "home_ml": -375
+   "away_ml": 312,
+   "home_ml": -395
   },
   {
    "date": "2026-11-27",
@@ -52,8 +52,8 @@
    "away": "Miami Heat",
    "home": "New York Knicks",
    "cup": true,
-   "away_ml": 136,
-   "home_ml": -162
+   "away_ml": 130,
+   "home_ml": -155
   },
   {
    "date": "2026-11-27",
@@ -61,8 +61,8 @@
    "away": "Dallas Mavericks",
    "home": "Phoenix Suns",
    "cup": true,
-   "away_ml": 103,
-   "home_ml": -121
+   "away_ml": 130,
+   "home_ml": -155
   },
   {
    "date": "2026-11-27",
@@ -70,8 +70,8 @@
    "away": "Golden State Warriors",
    "home": "Portland Trail Blazers",
    "cup": true,
-   "away_ml": 254,
-   "home_ml": -313
+   "away_ml": 241,
+   "home_ml": -297
   },
   {
    "date": "2026-11-27",
@@ -79,8 +79,8 @@
    "away": "Los Angeles Lakers",
    "home": "San Antonio Spurs",
    "cup": true,
-   "away_ml": 196,
-   "home_ml": -237
+   "away_ml": 171,
+   "home_ml": -205
   },
   {
    "date": "2026-11-27",
@@ -88,8 +88,8 @@
    "away": "Brooklyn Nets",
    "home": "Toronto Raptors",
    "cup": true,
-   "away_ml": 298,
-   "home_ml": -375
+   "away_ml": 297,
+   "home_ml": -374
   },
   {
    "date": "2026-11-27",
