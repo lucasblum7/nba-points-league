@@ -2274,7 +2274,7 @@
   "away": "Milwaukee Bucks",
   "home": "Detroit Pistons",
   "fav": "Detroit Pistons",
-  "spread": 10.5,
+  "spread": 9.5,
   "away_ml": 351,
   "home_ml": -452,
   "book": "DraftKings"
@@ -2345,8 +2345,8 @@
   "home": "San Antonio Spurs",
   "fav": "San Antonio Spurs",
   "spread": 6.5,
-  "away_ml": 186,
-  "home_ml": -224,
+  "away_ml": 196,
+  "home_ml": -237,
   "book": "DraftKings"
  },
  {
