@@ -34,8 +34,8 @@
    "away": "New Orleans Pelicans",
    "home": "LA Clippers",
    "cup": true,
-   "away_ml": 136,
-   "home_ml": -162
+   "away_ml": 130,
+   "home_ml": -155
   },
   {
    "date": "2026-11-27",
@@ -79,8 +79,8 @@
    "away": "Los Angeles Lakers",
    "home": "San Antonio Spurs",
    "cup": true,
-   "away_ml": 165,
-   "home_ml": -197
+   "away_ml": 171,
+   "home_ml": -205
   },
   {
    "date": "2026-11-27",
