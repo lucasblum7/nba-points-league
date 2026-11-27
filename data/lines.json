@@ -2265,8 +2265,8 @@
   "home": "Boston Celtics",
   "fav": "Boston Celtics",
   "spread": 8.5,
-  "away_ml": 286,
-  "home_ml": -359,
+  "away_ml": 298,
+  "home_ml": -375,
   "book": "Draft Kings"
  },
  {
@@ -2334,9 +2334,9 @@
   "away": "Golden State Warriors",
   "home": "Portland Trail Blazers",
   "fav": "Portland Trail Blazers",
-  "spread": 9.5,
-  "away_ml": 322,
-  "home_ml": -410,
+  "spread": 7.5,
+  "away_ml": 254,
+  "home_ml": -313,
   "book": "Draft Kings"
  },
  {
