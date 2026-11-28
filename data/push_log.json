@@ -354,7 +354,10 @@
   "final|401909330|Parker": "2026-11-27",
   "final|401909330|OJ": "2026-11-27",
   "move|Darin|5|2026-11-27": "2026-11-27",
-  "move|Parker|4|2026-11-27": "2026-11-27"
+  "move|Parker|4|2026-11-27": "2026-11-27",
+  "final|401909331|Rahul": "2026-11-27",
+  "final|401909331|Darin": "2026-11-27",
+  "odds|Charlotte Hornets|out": "2026-11-27"
  },
  "state": {
   "leads": {
@@ -377,12 +380,12 @@
    "Atlanta Hawks": "mid",
    "Boston Celtics": "lock",
    "Brooklyn Nets": "out",
-   "Charlotte Hornets": "mid",
+   "Charlotte Hornets": "out",
    "Chicago Bulls": "out",
    "Cleveland Cavaliers": "mid",
    "Dallas Mavericks": "mid",
    "Denver Nuggets": "mid",
-   "Detroit Pistons": "mid",
+   "Detroit Pistons": "lock",
    "Golden State Warriors": "mid",
    "Houston Rockets": "lock",
    "Indiana Pacers": "mid",

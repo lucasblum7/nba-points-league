@@ -2236,6 +2236,15 @@
   "cup": true
  },
  {
+  "id": "401909331",
+  "date": "2026-11-27",
+  "away": "Memphis Grizzlies",
+  "home": "Minnesota Timberwolves",
+  "away_score": 114,
+  "home_score": 109,
+  "cup": true
+ },
+ {
   "id": "401909326",
   "date": "2026-11-27",
   "away": "Miami Heat",

@@ -251,6 +251,13 @@
   },
   {
    "date": "2026-12-03",
+   "time": "9:00 PM",
+   "away": "Philadelphia 76ers",
+   "home": "Atlanta Hawks",
+   "cup": true
+  },
+  {
+   "date": "2026-12-03",
    "time": "5:00 PM",
    "away": "Cleveland Cavaliers",
    "home": "Chicago Bulls"
@@ -281,10 +288,10 @@
    "cup": true
   },
   {
-   "date": "2026-12-03",
+   "date": "2026-12-04",
    "time": "9:00 PM",
-   "away": "TBD",
-   "home": "TBD",
+   "away": "Boston Celtics",
+   "home": "Detroit Pistons",
    "cup": true
   },
   {
@@ -295,7 +302,14 @@
    "cup": true
   },
   {
-   "date": "2026-12-04",
+   "date": "2026-12-07",
+   "time": "9:00 PM",
+   "away": "TBD",
+   "home": "TBD",
+   "cup": true
+  },
+  {
+   "date": "2026-12-07",
    "time": "9:00 PM",
    "away": "TBD",
    "home": "TBD",
