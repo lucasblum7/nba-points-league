@@ -2,51 +2,6 @@
  "as_of": "2026-11-27",
  "games": [
   {
-   "date": "2026-11-27",
-   "time": "6:30 PM",
-   "away": "New Orleans Pelicans",
-   "home": "LA Clippers",
-   "cup": true,
-   "away_ml": 114,
-   "home_ml": -135
-  },
-  {
-   "date": "2026-11-27",
-   "time": "6:00 PM",
-   "away": "Dallas Mavericks",
-   "home": "Phoenix Suns",
-   "cup": true,
-   "away_ml": 146,
-   "home_ml": -174
-  },
-  {
-   "date": "2026-11-27",
-   "time": "6:30 PM",
-   "away": "Golden State Warriors",
-   "home": "Portland Trail Blazers",
-   "cup": true,
-   "away_ml": 271,
-   "home_ml": -337
-  },
-  {
-   "date": "2026-11-27",
-   "time": "6:30 PM",
-   "away": "Los Angeles Lakers",
-   "home": "San Antonio Spurs",
-   "cup": true,
-   "away_ml": 196,
-   "home_ml": -237
-  },
-  {
-   "date": "2026-11-27",
-   "time": "6:30 PM",
-   "away": "Denver Nuggets",
-   "home": "Utah Jazz",
-   "cup": true,
-   "away_ml": -410,
-   "home_ml": 322
-  },
-  {
    "date": "2026-11-28",
    "time": "3:00 PM",
    "away": "Brooklyn Nets",

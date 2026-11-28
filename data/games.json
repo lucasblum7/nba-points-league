@@ -2207,5 +2207,32 @@
   "away_score": 111,
   "home_score": 116,
   "cup": true
+ },
+ {
+  "id": "401909327",
+  "date": "2026-11-27",
+  "away": "Milwaukee Bucks",
+  "home": "Detroit Pistons",
+  "away_score": 98,
+  "home_score": 113,
+  "cup": true
+ },
+ {
+  "id": "401909328",
+  "date": "2026-11-27",
+  "away": "Philadelphia 76ers",
+  "home": "Indiana Pacers",
+  "away_score": 111,
+  "home_score": 87,
+  "cup": true
+ },
+ {
+  "id": "401909326",
+  "date": "2026-11-27",
+  "away": "Miami Heat",
+  "home": "New York Knicks",
+  "away_score": 108,
+  "home_score": 105,
+  "cup": true
  }
 ]

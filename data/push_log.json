@@ -338,7 +338,16 @@
   "odds|Chicago Bulls|out": "2026-11-27",
   "inj|6442|Out": "2026-11-27",
   "close|401909326|Rahul": "2026-11-27",
-  "hot|401909329|4433134|30": "2026-11-27"
+  "hot|401909329|4433134|30": "2026-11-27",
+  "final|401909327|OJ": "2026-11-27",
+  "final|401909327|Darin": "2026-11-27",
+  "final|401909328|Darin": "2026-11-27",
+  "final|401909328|Rahul": "2026-11-27",
+  "final|401909326|Rahul": "2026-11-27",
+  "move|Darin|4|2026-11-27": "2026-11-27",
+  "move|Parker|5|2026-11-27": "2026-11-27",
+  "close|401909330|Parker": "2026-11-27",
+  "close|401909330|OJ": "2026-11-27"
  },
  "state": {
   "leads": {
@@ -350,11 +359,11 @@
    "6|Dom|OJ": "OJ"
   },
   "places": {
-   "Darin": 5,
+   "Darin": 4,
    "Dom": 6,
    "Lucas": 3,
    "OJ": 2,
-   "Parker": 4,
+   "Parker": 5,
    "Rahul": 1
   },
   "odds": {
@@ -366,7 +375,7 @@
    "Cleveland Cavaliers": "mid",
    "Dallas Mavericks": "mid",
    "Denver Nuggets": "mid",
-   "Detroit Pistons": "mid",
+   "Detroit Pistons": "lock",
    "Golden State Warriors": "mid",
    "Houston Rockets": "lock",
    "Indiana Pacers": "mid",
