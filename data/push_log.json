@@ -365,7 +365,8 @@
   "close|401909335|Parker": "2026-11-27",
   "close|401909335|Lucas": "2026-11-27",
   "hot|401909332|5041939|30": "2026-11-27",
-  "hot|401909332|3136193|30": "2026-11-27"
+  "hot|401909332|3136193|30": "2026-11-27",
+  "final|401909332|OJ": "2026-11-27"
  },
  "state": {
   "leads": {
@@ -393,7 +394,7 @@
    "Cleveland Cavaliers": "mid",
    "Dallas Mavericks": "mid",
    "Denver Nuggets": "mid",
-   "Detroit Pistons": "lock",
+   "Detroit Pistons": "mid",
    "Golden State Warriors": "mid",
    "Houston Rockets": "lock",
    "Indiana Pacers": "mid",

@@ -2254,6 +2254,15 @@
   "cup": true
  },
  {
+  "id": "401909332",
+  "date": "2026-11-27",
+  "away": "Dallas Mavericks",
+  "home": "Phoenix Suns",
+  "away_score": 113,
+  "home_score": 109,
+  "cup": true
+ },
+ {
   "id": "401909329",
   "date": "2026-11-27",
   "away": "Brooklyn Nets",
