@@ -2209,6 +2209,15 @@
   "cup": true
  },
  {
+  "id": "401909330",
+  "date": "2026-11-27",
+  "away": "Atlanta Hawks",
+  "home": "Boston Celtics",
+  "away_score": 87,
+  "home_score": 86,
+  "cup": true
+ },
+ {
   "id": "401909327",
   "date": "2026-11-27",
   "away": "Milwaukee Bucks",
