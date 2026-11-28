@@ -5,7 +5,8 @@
   "recap|2026-11-22",
   "recap|2026-11-23",
   "recap|2026-11-24",
-  "recap|2026-11-25"
+  "recap|2026-11-25",
+  "recap|2026-11-27"
  ],
  "sent": {
   "final|401909305|Parker": "2026-11-21",
@@ -372,7 +373,18 @@
   "final|401909334|Dom": "2026-11-27",
   "final|401909334|Darin": "2026-11-27",
   "lead|6|Lucas|Parker|Parker|2026-11-27": "2026-11-27",
-  "hot|401909333|3945274|30": "2026-11-27"
+  "hot|401909333|3945274|30": "2026-11-27",
+  "final|401909336|Dom": "2026-11-27",
+  "final|401909336|Rahul": "2026-11-27",
+  "final|401909333|Lucas": "2026-11-27",
+  "recap|2026-11-27|Darin": "2026-11-27",
+  "recap|2026-11-27|Dom": "2026-11-27",
+  "recap|2026-11-27|Lucas": "2026-11-27",
+  "recap|2026-11-27|OJ": "2026-11-27",
+  "recap|2026-11-27|Parker": "2026-11-27",
+  "recap|2026-11-27|Rahul": "2026-11-27",
+  "move|Darin|6|2026-11-27": "2026-11-27",
+  "move|Dom|5|2026-11-27": "2026-11-27"
  },
  "state": {
   "leads": {
@@ -384,8 +396,8 @@
    "6|Dom|OJ": "OJ"
   },
   "places": {
-   "Darin": 5,
-   "Dom": 6,
+   "Darin": 6,
+   "Dom": 5,
    "Lucas": 3,
    "OJ": 2,
    "Parker": 4,
@@ -400,7 +412,7 @@
    "Cleveland Cavaliers": "mid",
    "Dallas Mavericks": "mid",
    "Denver Nuggets": "mid",
-   "Detroit Pistons": "lock",
+   "Detroit Pistons": "mid",
    "Golden State Warriors": "mid",
    "Houston Rockets": "lock",
    "Indiana Pacers": "mid",

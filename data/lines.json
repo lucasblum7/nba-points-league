@@ -2377,7 +2377,7 @@
   "spread": 5.5,
   "away_ml": 186,
   "home_ml": -224,
-  "book": "Draft Kings"
+  "book": "DraftKings"
  },
  {
   "date": "2026-11-28",
@@ -2387,7 +2387,7 @@
   "spread": 2.5,
   "away_ml": 119,
   "home_ml": -141,
-  "book": "Draft Kings"
+  "book": "DraftKings"
  },
  {
   "date": "2026-11-28",
@@ -2397,7 +2397,7 @@
   "spread": 10.5,
   "away_ml": 365,
   "home_ml": -473,
-  "book": "Draft Kings"
+  "book": "DraftKings"
  },
  {
   "date": "2026-11-28",
@@ -2407,7 +2407,7 @@
   "spread": 12.5,
   "away_ml": -561,
   "home_ml": 420,
-  "book": "Draft Kings"
+  "book": "DraftKings"
  },
  {
   "date": "2026-11-28",
@@ -2417,6 +2417,6 @@
   "spread": 3.5,
   "away_ml": -169,
   "home_ml": 142,
-  "book": "Draft Kings"
+  "book": "DraftKings"
  }
 ]
