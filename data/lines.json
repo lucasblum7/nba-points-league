@@ -2374,7 +2374,7 @@
   "away": "Brooklyn Nets",
   "home": "Charlotte Hornets",
   "fav": "Charlotte Hornets",
-  "spread": 6.5,
+  "spread": 5.5,
   "away_ml": 197,
   "home_ml": -238,
   "book": "DraftKings"
@@ -2385,8 +2385,8 @@
   "home": "Chicago Bulls",
   "fav": "Chicago Bulls",
   "spread": 2.5,
-  "away_ml": 119,
-  "home_ml": -141,
+  "away_ml": 120,
+  "home_ml": -142,
   "book": "DraftKings"
  },
  {
@@ -2395,8 +2395,8 @@
   "home": "Houston Rockets",
   "fav": "Houston Rockets",
   "spread": 12.5,
-  "away_ml": 396,
-  "home_ml": -521,
+  "away_ml": 378,
+  "home_ml": -494,
   "book": "DraftKings"
  },
  {

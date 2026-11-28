@@ -1,5 +1,5 @@
 {
- "as_of": "2026-11-27T21",
+ "as_of": "2026-11-28T00",
  "players": [
   {
    "team": "Atlanta Hawks",
@@ -325,6 +325,23 @@
     "reb": 5.285714,
     "ast": 1.8571428,
     "this_season": false
+   }
+  },
+  {
+   "team": "Dallas Mavericks",
+   "id": "3138160",
+   "name": "Caleb Martin",
+   "status": "Day-To-Day",
+   "comment": "Martin didn't return for the second half of Friday's win over the Suns due to a left ankle sprain, Grant Afseth of DallasHoopsJournal.com reports.",
+   "return": "2026-11-30",
+   "fantasy": "GTD",
+   "stats": {
+    "gp": 14.0,
+    "min": 22.5,
+    "pts": 6.642857,
+    "reb": 3.5714285,
+    "ast": 2.5714285,
+    "this_season": true
    }
   },
   {
@@ -934,6 +951,23 @@
   },
   {
    "team": "Philadelphia 76ers",
+   "id": "3059318",
+   "name": "Joel Embiid",
+   "status": "Out",
+   "comment": "Embiid has been ruled out for Saturday's game against the Rockets due to right foot plantar fasciitis management, Kris Rhim of ESPN.com reports.",
+   "return": "2026-12-01",
+   "fantasy": "OUT",
+   "stats": {
+    "gp": 14.0,
+    "min": 32.07143,
+    "pts": 20.428572,
+    "reb": 8.928572,
+    "ast": 4.142857,
+    "this_season": true
+   }
+  },
+  {
+   "team": "Philadelphia 76ers",
    "id": "4871141",
    "name": "Ariel Hukporti",
    "status": "Out",
@@ -947,6 +981,23 @@
     "reb": 2.9444444,
     "ast": 0.537037,
     "this_season": false
+   }
+  },
+  {
+   "team": "Philadelphia 76ers",
+   "id": "1966",
+   "name": "LeBron James",
+   "status": "Out",
+   "comment": "James (back injury management) won't be available for Saturday's game against the Rockets, according to Kris Rhim of ESPN.",
+   "return": "2026-12-01",
+   "fantasy": "OUT",
+   "stats": {
+    "gp": 15.0,
+    "min": 32.666668,
+    "pts": 17.133333,
+    "reb": 6.9333334,
+    "ast": 6.866667,
+    "this_season": true
    }
   },
   {

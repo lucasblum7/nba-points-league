@@ -1,29 +1,29 @@
 {
- "as_of": "2026-11-27",
+ "as_of": "2026-11-28",
  "games": [
   {
    "date": "2026-11-28",
    "time": "3:00 PM",
    "away": "Brooklyn Nets",
    "home": "Charlotte Hornets",
-   "away_ml": 186,
-   "home_ml": -224
+   "away_ml": 197,
+   "home_ml": -238
   },
   {
    "date": "2026-11-28",
    "time": "5:00 PM",
    "away": "Indiana Pacers",
    "home": "Chicago Bulls",
-   "away_ml": 119,
-   "home_ml": -141
+   "away_ml": 120,
+   "home_ml": -142
   },
   {
    "date": "2026-11-28",
    "time": "5:30 PM",
    "away": "Philadelphia 76ers",
    "home": "Houston Rockets",
-   "away_ml": 396,
-   "home_ml": -521
+   "away_ml": 378,
+   "home_ml": -494
   },
   {
    "date": "2026-11-28",
@@ -38,8 +38,8 @@
    "time": "2:00 PM",
    "away": "Orlando Magic",
    "home": "Washington Wizards",
-   "away_ml": -169,
-   "home_ml": 142
+   "away_ml": -167,
+   "home_ml": 140
   },
   {
    "date": "2026-11-29",
@@ -461,6 +461,54 @@
    "date": "2026-12-10",
    "time": "4:00 PM",
    "away": "Indiana Pacers",
+   "home": "Washington Wizards"
+  },
+  {
+   "date": "2026-12-12",
+   "time": "5:00 PM",
+   "away": "Golden State Warriors",
+   "home": "Cleveland Cavaliers"
+  },
+  {
+   "date": "2026-12-12",
+   "time": "2:00 PM",
+   "away": "Milwaukee Bucks",
+   "home": "Memphis Grizzlies"
+  },
+  {
+   "date": "2026-12-12",
+   "time": "5:30 PM",
+   "away": "New York Knicks",
+   "home": "Miami Heat"
+  },
+  {
+   "date": "2026-12-12",
+   "time": "4:30 PM",
+   "away": "Orlando Magic",
+   "home": "Philadelphia 76ers"
+  },
+  {
+   "date": "2026-12-12",
+   "time": "6:00 PM",
+   "away": "Minnesota Timberwolves",
+   "home": "Phoenix Suns"
+  },
+  {
+   "date": "2026-12-12",
+   "time": "7:00 PM",
+   "away": "Atlanta Hawks",
+   "home": "Portland Trail Blazers"
+  },
+  {
+   "date": "2026-12-12",
+   "time": "6:30 PM",
+   "away": "Denver Nuggets",
+   "home": "Utah Jazz"
+  },
+  {
+   "date": "2026-12-12",
+   "time": "4:00 PM",
+   "away": "Charlotte Hornets",
    "home": "Washington Wizards"
   }
  ]

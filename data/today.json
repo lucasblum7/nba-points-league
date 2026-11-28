@@ -1,126 +1,60 @@
 {
- "date": "2026-11-27",
+ "date": "2026-11-28",
  "games": [
   {
-   "id": "401909326",
-   "time": "4:00 PM",
-   "state": "post",
-   "detail": "Final",
-   "away": "Miami Heat",
-   "home": "New York Knicks",
-   "away_score": 108,
-   "home_score": 105,
-   "cup": true
+   "id": "401910046",
+   "time": "2:00 PM",
+   "state": "pre",
+   "detail": "11/28 - 5:00 PM EST",
+   "away": "Orlando Magic",
+   "home": "Washington Wizards",
+   "away_score": null,
+   "home_score": null,
+   "cup": false
   },
   {
-   "id": "401909327",
-   "time": "4:30 PM",
-   "state": "post",
-   "detail": "Final",
-   "away": "Milwaukee Bucks",
-   "home": "Detroit Pistons",
-   "away_score": 98,
-   "home_score": 113,
-   "cup": true
-  },
-  {
-   "id": "401909328",
-   "time": "4:30 PM",
-   "state": "post",
-   "detail": "Final",
-   "away": "Philadelphia 76ers",
-   "home": "Indiana Pacers",
-   "away_score": 111,
-   "home_score": 87,
-   "cup": true
-  },
-  {
-   "id": "401909329",
-   "time": "4:30 PM",
-   "state": "post",
-   "detail": "Final",
+   "id": "401910047",
+   "time": "3:00 PM",
+   "state": "pre",
+   "detail": "11/28 - 6:00 PM EST",
    "away": "Brooklyn Nets",
-   "home": "Toronto Raptors",
-   "away_score": 100,
-   "home_score": 124,
-   "cup": true
+   "home": "Charlotte Hornets",
+   "away_score": null,
+   "home_score": null,
+   "cup": false
   },
   {
-   "id": "401909330",
+   "id": "401910048",
    "time": "5:00 PM",
-   "state": "post",
-   "detail": "Final",
-   "away": "Atlanta Hawks",
-   "home": "Boston Celtics",
-   "away_score": 87,
-   "home_score": 86,
-   "cup": true
+   "state": "pre",
+   "detail": "11/28 - 8:00 PM EST",
+   "away": "Indiana Pacers",
+   "home": "Chicago Bulls",
+   "away_score": null,
+   "home_score": null,
+   "cup": false
   },
   {
-   "id": "401909331",
+   "id": "401910049",
+   "time": "5:00 PM",
+   "state": "pre",
+   "detail": "11/28 - 8:00 PM EST",
+   "away": "Oklahoma City Thunder",
+   "home": "Milwaukee Bucks",
+   "away_score": null,
+   "home_score": null,
+   "cup": false
+  },
+  {
+   "id": "401910050",
    "time": "5:30 PM",
-   "state": "post",
-   "detail": "Final",
-   "away": "Memphis Grizzlies",
-   "home": "Minnesota Timberwolves",
-   "away_score": 114,
-   "home_score": 109,
-   "cup": true
-  },
-  {
-   "id": "401909332",
-   "time": "6:00 PM",
-   "state": "post",
-   "detail": "Final",
-   "away": "Dallas Mavericks",
-   "home": "Phoenix Suns",
-   "away_score": 113,
-   "home_score": 109,
-   "cup": true
-  },
-  {
-   "id": "401909333",
-   "time": "6:30 PM",
-   "state": "post",
-   "detail": "Final",
-   "away": "Los Angeles Lakers",
-   "home": "San Antonio Spurs",
-   "away_score": 96,
-   "home_score": 99,
-   "cup": true
-  },
-  {
-   "id": "401909334",
-   "time": "6:30 PM",
-   "state": "post",
-   "detail": "Final",
-   "away": "Denver Nuggets",
-   "home": "Utah Jazz",
-   "away_score": 120,
-   "home_score": 107,
-   "cup": true
-  },
-  {
-   "id": "401909335",
-   "time": "6:30 PM",
-   "state": "post",
-   "detail": "Final",
-   "away": "New Orleans Pelicans",
-   "home": "LA Clippers",
-   "away_score": 105,
-   "home_score": 104,
-   "cup": true
-  },
-  {
-   "id": "401909336",
-   "time": "6:30 PM",
-   "state": "post",
-   "detail": "Final",
-   "away": "Golden State Warriors",
-   "home": "Portland Trail Blazers",
-   "away_score": 94,
-   "home_score": 116,
-   "cup": true
+   "state": "pre",
+   "detail": "11/28 - 8:30 PM EST",
+   "away": "Philadelphia 76ers",
+   "home": "Houston Rockets",
+   "away_score": null,
+   "home_score": null,
+   "cup": false
   }
  ]
 }

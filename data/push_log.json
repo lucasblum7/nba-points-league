@@ -384,7 +384,8 @@
   "recap|2026-11-27|Parker": "2026-11-27",
   "recap|2026-11-27|Rahul": "2026-11-27",
   "move|Darin|6|2026-11-27": "2026-11-27",
-  "move|Dom|5|2026-11-27": "2026-11-27"
+  "move|Dom|5|2026-11-27": "2026-11-27",
+  "inj|1966|Out": "2026-11-28"
  },
  "state": {
   "leads": {
@@ -412,7 +413,7 @@
    "Cleveland Cavaliers": "mid",
    "Dallas Mavericks": "mid",
    "Denver Nuggets": "mid",
-   "Detroit Pistons": "mid",
+   "Detroit Pistons": "lock",
    "Golden State Warriors": "mid",
    "Houston Rockets": "lock",
    "Indiana Pacers": "mid",
@@ -433,7 +434,7 @@
    "San Antonio Spurs": "lock",
    "Toronto Raptors": "mid",
    "Utah Jazz": "out",
-   "Washington Wizards": "mid"
+   "Washington Wizards": "out"
   },
   "inj": {
    "4594268": "Out",
@@ -476,7 +477,8 @@
    "4397189": "Out",
    "6606": "Out",
    "4432816": "Out",
-   "6442": "Out"
+   "6442": "Out",
+   "1966": "Out"
   },
   "init": true
  }
