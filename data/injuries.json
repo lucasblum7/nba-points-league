@@ -1,5 +1,5 @@
 {
- "as_of": "2026-11-27T18",
+ "as_of": "2026-11-27T21",
  "players": [
   {
    "team": "Atlanta Hawks",
@@ -481,6 +481,23 @@
    }
   },
   {
+   "team": "Golden State Warriors",
+   "id": "4997536",
+   "name": "Gui Santos",
+   "status": "Out",
+   "comment": "Santos exited Friday's game against the Trail Blazers with a knee injury in the second half and won't return.",
+   "return": "2026-11-29",
+   "fantasy": "OUT",
+   "stats": {
+    "gp": 15.0,
+    "min": 19.466667,
+    "pts": 7.8,
+    "reb": 4.2,
+    "ast": 1.7333333,
+    "this_season": true
+   }
+  },
+  {
    "team": "Houston Rockets",
    "id": "2991235",
    "name": "Steven Adams",
@@ -580,6 +597,23 @@
     "reb": 3.0333333,
     "ast": 2.2666667,
     "this_season": false
+   }
+  },
+  {
+   "team": "LA Clippers",
+   "id": "5108024",
+   "name": "Yanic Konan Niederhauser",
+   "status": "Out",
+   "comment": "Niederhauser suffered a right toe injury during Friday's game against the Pelicans and won't return, Joey Linn of SI.com reports.",
+   "return": "2026-11-29",
+   "fantasy": "OUT",
+   "stats": {
+    "gp": 4.0,
+    "min": 13.0,
+    "pts": 3.5,
+    "reb": 3.5,
+    "ast": 0.5,
+    "this_season": true
    }
   },
   {
@@ -807,7 +841,7 @@
    "team": "Orlando Magic",
    "id": "4397204",
    "name": "Colin Castleton",
-   "status": "Day-To-Day",
+   "status": "Out",
    "comment": "Castleton totaled five points (2-4 FG, 1-1 3Pt) and four rebounds in seven minutes during Tuesday's 132-116 preseason win over the Cavaliers.",
    "return": "2026-11-29",
    "fantasy": "OUT",
@@ -1077,40 +1111,6 @@
    "return": "2027-10-01",
    "fantasy": "OFS",
    "stats": null
-  },
-  {
-   "team": "San Antonio Spurs",
-   "id": "4066259",
-   "name": "De'Aaron Fox",
-   "status": "Day-To-Day",
-   "comment": "Fox (shin) is questionable for Friday's game against the Lakers.",
-   "return": "",
-   "fantasy": "",
-   "stats": {
-    "gp": 16.0,
-    "min": 28.9375,
-    "pts": 12.375,
-    "reb": 3.9375,
-    "ast": 5.75,
-    "this_season": true
-   }
-  },
-  {
-   "team": "San Antonio Spurs",
-   "id": "5037871",
-   "name": "Dylan Harper",
-   "status": "Out",
-   "comment": "Harper (hip) participated in Friday's morning shootaround, per Matt Guzman of SI.com.",
-   "return": "",
-   "fantasy": "",
-   "stats": {
-    "gp": 15.0,
-    "min": 31.666666,
-    "pts": 18.4,
-    "reb": 5.4,
-    "ast": 4.5333333,
-    "this_season": true
-   }
   },
   {
    "team": "San Antonio Spurs",
@@ -1394,7 +1394,7 @@
    "status": "Out",
    "comment": "Bittle (foot) has been ruled out for Monday's game against the Bucks, Blake Murphy of Sportsnet.ca reports.",
    "return": "2026-11-27",
-   "fantasy": "OUT",
+   "fantasy": "GTD",
    "stats": null
   },
   {
@@ -1411,6 +1411,23 @@
     "pts": 19.5,
     "reb": 7.5,
     "ast": 1.5,
+    "this_season": true
+   }
+  },
+  {
+   "team": "Toronto Raptors",
+   "id": "4684272",
+   "name": "Ja'Kobe Walter",
+   "status": "Out",
+   "comment": "Walter won't return to Friday's game against Brooklyn due to a right quad contusion, Josh Lewenberg of TSN.ca reports.",
+   "return": "2026-11-29",
+   "fantasy": "OUT",
+   "stats": {
+    "gp": 17.0,
+    "min": 31.647058,
+    "pts": 12.117647,
+    "reb": 4.0588236,
+    "ast": 2.1764705,
     "this_season": true
    }
   },

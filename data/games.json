@@ -2236,6 +2236,15 @@
   "cup": true
  },
  {
+  "id": "401909335",
+  "date": "2026-11-27",
+  "away": "New Orleans Pelicans",
+  "home": "LA Clippers",
+  "away_score": 105,
+  "home_score": 104,
+  "cup": true
+ },
+ {
   "id": "401909331",
   "date": "2026-11-27",
   "away": "Memphis Grizzlies",
@@ -2269,6 +2278,15 @@
   "home": "Toronto Raptors",
   "away_score": 100,
   "home_score": 124,
+  "cup": true
+ },
+ {
+  "id": "401909334",
+  "date": "2026-11-27",
+  "away": "Denver Nuggets",
+  "home": "Utah Jazz",
+  "away_score": 120,
+  "home_score": 107,
   "cup": true
  }
 ]

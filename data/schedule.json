@@ -21,7 +21,9 @@
    "date": "2026-11-28",
    "time": "5:30 PM",
    "away": "Philadelphia 76ers",
-   "home": "Houston Rockets"
+   "home": "Houston Rockets",
+   "away_ml": 365,
+   "home_ml": -473
   },
   {
    "date": "2026-11-28",
@@ -251,13 +253,6 @@
   },
   {
    "date": "2026-12-03",
-   "time": "9:00 PM",
-   "away": "Philadelphia 76ers",
-   "home": "Atlanta Hawks",
-   "cup": true
-  },
-  {
-   "date": "2026-12-03",
    "time": "5:00 PM",
    "away": "Cleveland Cavaliers",
    "home": "Chicago Bulls"
@@ -288,10 +283,10 @@
    "cup": true
   },
   {
-   "date": "2026-12-04",
+   "date": "2026-12-03",
    "time": "9:00 PM",
-   "away": "Boston Celtics",
-   "home": "Detroit Pistons",
+   "away": "TBD",
+   "home": "TBD",
    "cup": true
   },
   {
@@ -302,7 +297,7 @@
    "cup": true
   },
   {
-   "date": "2026-12-07",
+   "date": "2026-12-04",
    "time": "9:00 PM",
    "away": "TBD",
    "home": "TBD",
