@@ -22,8 +22,8 @@
    "time": "5:30 PM",
    "away": "Philadelphia 76ers",
    "home": "Houston Rockets",
-   "away_ml": 365,
-   "home_ml": -473
+   "away_ml": 395,
+   "home_ml": -521
   },
   {
    "date": "2026-11-28",
@@ -193,6 +193,12 @@
   },
   {
    "date": "2026-12-02",
+   "time": "5:00 PM",
+   "away": "Indiana Pacers",
+   "home": "Atlanta Hawks"
+  },
+  {
+   "date": "2026-12-02",
    "time": "4:30 PM",
    "away": "Charlotte Hornets",
    "home": "Boston Celtics"
@@ -246,10 +252,10 @@
    "home": "Phoenix Suns"
   },
   {
-   "date": "2026-12-03",
-   "time": "4:00 PM",
-   "away": "Indiana Pacers",
-   "home": "Atlanta Hawks"
+   "date": "2026-12-02",
+   "time": "5:00 PM",
+   "away": "Toronto Raptors",
+   "home": "San Antonio Spurs"
   },
   {
    "date": "2026-12-03",
@@ -270,38 +276,40 @@
    "home": "Portland Trail Blazers"
   },
   {
-   "date": "2026-12-03",
-   "time": "5:00 PM",
-   "away": "Toronto Raptors",
-   "home": "San Antonio Spurs"
-  },
-  {
-   "date": "2026-12-03",
-   "time": "9:00 PM",
-   "away": "TBD",
-   "home": "TBD",
-   "cup": true
-  },
-  {
-   "date": "2026-12-03",
-   "time": "9:00 PM",
-   "away": "TBD",
-   "home": "TBD",
-   "cup": true
+   "date": "2026-12-04",
+   "time": "4:00 PM",
+   "away": "Philadelphia 76ers",
+   "home": "Atlanta Hawks",
+   "cup": true,
+   "away_ml": -155,
+   "home_ml": 130
   },
   {
    "date": "2026-12-04",
-   "time": "9:00 PM",
-   "away": "TBD",
-   "home": "TBD",
-   "cup": true
+   "time": "6:30 PM",
+   "away": "San Antonio Spurs",
+   "home": "Dallas Mavericks",
+   "cup": true,
+   "away_ml": -361,
+   "home_ml": 288
   },
   {
-   "date": "2026-12-04",
-   "time": "9:00 PM",
-   "away": "TBD",
-   "home": "TBD",
-   "cup": true
+   "date": "2026-12-05",
+   "time": "4:30 PM",
+   "away": "Boston Celtics",
+   "home": "Detroit Pistons",
+   "cup": true,
+   "away_ml": -120,
+   "home_ml": 101
+  },
+  {
+   "date": "2026-12-05",
+   "time": "7:00 PM",
+   "away": "Memphis Grizzlies",
+   "home": "Portland Trail Blazers",
+   "cup": true,
+   "away_ml": 113,
+   "home_ml": -134
   },
   {
    "date": "2026-12-07",
