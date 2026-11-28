@@ -326,7 +326,8 @@
   "soon|401909330|Parker": "2026-11-27",
   "soon|401909330|OJ": "2026-11-27",
   "soon|401909331|Rahul": "2026-11-27",
-  "soon|401909331|Darin": "2026-11-27"
+  "soon|401909331|Darin": "2026-11-27",
+  "soon|401909332|OJ": "2026-11-27"
  },
  "state": {
   "leads": {
@@ -350,7 +351,7 @@
    "Boston Celtics": "lock",
    "Brooklyn Nets": "out",
    "Charlotte Hornets": "mid",
-   "Chicago Bulls": "out",
+   "Chicago Bulls": "mid",
    "Cleveland Cavaliers": "mid",
    "Dallas Mavericks": "mid",
    "Denver Nuggets": "mid",
