@@ -5,7 +5,7 @@
   "Atlanta Hawks": {
    "playoffs": 91.4,
    "top6": 66.4,
-   "playin": 33.1,
+   "playin": 33.2,
    "proj_w": 46.5,
    "proj_l": 35.5,
    "seed": 5.6,
@@ -66,7 +66,7 @@
   "Brooklyn Nets": {
    "playoffs": 0.5,
    "top6": 0.0,
-   "playin": 2.9,
+   "playin": 3.0,
    "proj_w": 23.5,
    "proj_l": 58.5,
    "seed": 13.6,
@@ -98,7 +98,7 @@
    "prev": 0.6
   },
   "Charlotte Hornets": {
-   "playoffs": 5.7,
+   "playoffs": 5.6,
    "top6": 0.2,
    "playin": 21.1,
    "proj_w": 28.8,
@@ -125,11 +125,11 @@
    "prev": 5.8
   },
   "Chicago Bulls": {
-   "playoffs": 5.1,
-   "top6": 0.3,
-   "playin": 23.2,
-   "proj_w": 29.1,
-   "proj_l": 52.9,
+   "playoffs": 4.9,
+   "top6": 0.2,
+   "playin": 22.7,
+   "proj_w": 29.0,
+   "proj_l": 53.0,
    "seed": 11.8,
    "conf": "East",
    "rating": -5.1,
@@ -144,9 +144,16 @@
      "games": 3,
      "impact": 3.31,
      "comment": "Wilson (hand) is expected to miss four to six weeks, Shams Charania of ESPN reports."
+    },
+    {
+     "name": "Norman Powell",
+     "status": "Out",
+     "games": 1,
+     "impact": 3.3,
+     "comment": "Powell (hamstring) is out for Saturday's game against the Pacers."
     }
    ],
-   "injury_wins": -0.2,
+   "injury_wins": -0.3,
    "sos_rank": 24,
    "games_left": 64,
    "prev": 4.6
@@ -154,7 +161,7 @@
   "Cleveland Cavaliers": {
    "playoffs": 86.1,
    "top6": 49.5,
-   "playin": 49.4,
+   "playin": 49.3,
    "proj_w": 44.4,
    "proj_l": 37.6,
    "seed": 6.4,
@@ -171,11 +178,11 @@
    "prev": 85.2
   },
   "Dallas Mavericks": {
-   "playoffs": 38.3,
-   "top6": 13.0,
-   "playin": 66.6,
-   "proj_w": 42.3,
-   "proj_l": 39.7,
+   "playoffs": 37.6,
+   "top6": 12.6,
+   "playin": 66.4,
+   "proj_w": 42.2,
+   "proj_l": 39.8,
    "seed": 8.8,
    "conf": "West",
    "rating": -0.4,
@@ -185,6 +192,13 @@
    "season_margin": 1.0,
    "injuries": [
     {
+     "name": "Kyrie Irving",
+     "status": "Out",
+     "games": 1,
+     "impact": 3.84,
+     "comment": "Irving (knee) has been ruled out for Friday's game against the Suns, Noah Weber of TheSmokingCuban.com reports."
+    },
+    {
      "name": "Dereck Lively II",
      "status": "Out",
      "games": 1,
@@ -192,15 +206,15 @@
      "comment": "Lively (foot) is out for Friday's game against the Suns."
     }
    ],
-   "injury_wins": -0.0,
+   "injury_wins": -0.1,
    "sos_rank": 9,
    "games_left": 64,
    "prev": 41.3
   },
   "Denver Nuggets": {
-   "playoffs": 90.3,
-   "top6": 73.2,
-   "playin": 25.9,
+   "playoffs": 90.5,
+   "top6": 73.4,
+   "playin": 25.8,
    "proj_w": 51.0,
    "proj_l": 31.0,
    "seed": 5.1,
@@ -217,9 +231,9 @@
    "prev": 92.8
   },
   "Detroit Pistons": {
-   "playoffs": 99.0,
+   "playoffs": 98.9,
    "top6": 93.8,
-   "playin": 6.1,
+   "playin": 6.2,
    "proj_w": 52.4,
    "proj_l": 29.6,
    "seed": 3.4,
@@ -259,8 +273,8 @@
   },
   "Golden State Warriors": {
    "playoffs": 22.5,
-   "top6": 5.1,
-   "playin": 55.3,
+   "top6": 5.0,
+   "playin": 55.4,
    "proj_w": 39.6,
    "proj_l": 42.4,
    "seed": 9.7,
@@ -290,7 +304,7 @@
      "status": "Out",
      "games": 3,
      "impact": 5.02,
-     "comment": "Curry (abdomen) will be re-evaluated Friday after Thanksgiving, Anthony Slater of ESPN.com reports."
+     "comment": "Curry (abdomen/oblique) has been ruled out for each of the Warriors' next three games, Anthony Slater of ESPN.com reports"
     },
     {
      "name": "Moses Moody",
@@ -307,10 +321,10 @@
   },
   "Houston Rockets": {
    "playoffs": 99.2,
-   "top6": 96.3,
-   "playin": 3.7,
-   "proj_w": 56.7,
-   "proj_l": 25.3,
+   "top6": 96.4,
+   "playin": 3.6,
+   "proj_w": 56.8,
+   "proj_l": 25.2,
    "seed": 2.9,
    "conf": "West",
    "rating": 5.7,
@@ -325,11 +339,11 @@
    "prev": 99.2
   },
   "Indiana Pacers": {
-   "playoffs": 20.4,
+   "playoffs": 20.6,
    "top6": 2.1,
-   "playin": 57.4,
-   "proj_w": 33.6,
-   "proj_l": 48.4,
+   "playin": 57.8,
+   "proj_w": 33.7,
+   "proj_l": 48.3,
    "seed": 10.2,
    "conf": "East",
    "rating": -2.7,
@@ -344,6 +358,13 @@
      "games": 4,
      "impact": 4.71,
      "comment": "Haliburton (hamstring) has been ruled out per Scott Agness of FieldhouseFiles.com for Friday's game against the 76ers. The guard participate"
+    },
+    {
+     "name": "T.J. McConnell",
+     "status": "Out",
+     "games": 1,
+     "impact": 0.48,
+     "comment": "McConnell (hamstring) has been ruled out for Friday's game against the 76ers, Alex Golden of SI.com reports."
     }
    ],
    "injury_wins": -0.4,
@@ -355,8 +376,8 @@
    "playoffs": 0.3,
    "top6": 0.0,
    "playin": 2.0,
-   "proj_w": 27.5,
-   "proj_l": 54.5,
+   "proj_w": 27.6,
+   "proj_l": 54.4,
    "seed": 12.7,
    "conf": "West",
    "rating": -4.6,
@@ -386,12 +407,12 @@
    "prev": 0.4
   },
   "Los Angeles Lakers": {
-   "playoffs": 92.8,
-   "top6": 78.8,
-   "playin": 20.8,
-   "proj_w": 52.1,
-   "proj_l": 29.9,
-   "seed": 4.7,
+   "playoffs": 92.9,
+   "top6": 79.5,
+   "playin": 20.1,
+   "proj_w": 52.3,
+   "proj_l": 29.7,
+   "seed": 4.6,
    "conf": "West",
    "rating": 3.2,
    "rating_wins": 49.5,
@@ -405,11 +426,11 @@
    "prev": 93.8
   },
   "Memphis Grizzlies": {
-   "playoffs": 56.0,
-   "top6": 24.0,
-   "playin": 65.1,
-   "proj_w": 44.6,
-   "proj_l": 37.4,
+   "playoffs": 56.1,
+   "top6": 23.9,
+   "playin": 65.2,
+   "proj_w": 44.5,
+   "proj_l": 37.5,
    "seed": 7.9,
    "conf": "West",
    "rating": 0.6,
@@ -454,7 +475,7 @@
   },
   "Miami Heat": {
    "playoffs": 94.9,
-   "top6": 79.2,
+   "top6": 79.1,
    "playin": 20.6,
    "proj_w": 48.4,
    "proj_l": 33.6,
@@ -475,8 +496,8 @@
    "playoffs": 0.1,
    "top6": 0.0,
    "playin": 0.6,
-   "proj_w": 20.4,
-   "proj_l": 61.6,
+   "proj_w": 20.5,
+   "proj_l": 61.5,
    "seed": 14.3,
    "conf": "East",
    "rating": -7.7,
@@ -568,7 +589,7 @@
   },
   "New York Knicks": {
    "playoffs": 99.6,
-   "top6": 97.4,
+   "top6": 97.3,
    "playin": 2.6,
    "proj_w": 54.3,
    "proj_l": 27.7,
@@ -608,12 +629,12 @@
    "prev": 99.8
   },
   "Oklahoma City Thunder": {
-   "playoffs": 85.0,
-   "top6": 53.5,
-   "playin": 44.2,
+   "playoffs": 84.9,
+   "top6": 53.2,
+   "playin": 44.4,
    "proj_w": 48.4,
    "proj_l": 33.6,
-   "seed": 6.2,
+   "seed": 6.3,
    "conf": "West",
    "rating": 4.6,
    "rating_wins": 53.4,
@@ -641,15 +662,22 @@
      "games": 40,
      "impact": 0.17,
      "comment": "Wallace underwent surgery Friday to repair a torn labrum in his left shoulder and will be re-evaluated before the end of the regular season,"
+    },
+    {
+     "name": "Aday Mara",
+     "status": "Out",
+     "games": 1,
+     "impact": 1.56,
+     "comment": "Mara (leg) is out for Saturday's game versus the Bucks, per Clemente Almanza of USA Today."
     }
    ],
-   "injury_wins": -2.5,
+   "injury_wins": -2.6,
    "sos_rank": 27,
    "games_left": 63,
    "prev": 82.8
   },
   "Orlando Magic": {
-   "playoffs": 47.2,
+   "playoffs": 47.1,
    "top6": 10.5,
    "playin": 75.0,
    "proj_w": 38.1,
@@ -684,10 +712,10 @@
   },
   "Philadelphia 76ers": {
    "playoffs": 98.5,
-   "top6": 91.8,
-   "playin": 8.2,
-   "proj_w": 51.2,
-   "proj_l": 30.8,
+   "top6": 91.7,
+   "playin": 8.3,
+   "proj_w": 51.1,
+   "proj_l": 30.9,
    "seed": 3.9,
    "conf": "East",
    "rating": 2.3,
@@ -699,22 +727,29 @@
     {
      "name": "Jaylen Brown",
      "status": "Out",
-     "games": 1,
+     "games": 2,
      "impact": 4.0,
-     "comment": "Brown (hamstring) is out for Friday's game against the Pacers."
+     "comment": "Brown (hamstring) underwent an MRI that showed no signs of a new injury or re-aggravation, but he didn't travel with the team for the road t"
+    },
+    {
+     "name": "Dean Wade",
+     "status": "Out",
+     "games": 1,
+     "impact": 0.18,
+     "comment": "Wade (hamstring) is out for Friday's game against the Pacers, Austin Krell of Vertical 76 reports."
     }
    ],
-   "injury_wins": -0.1,
+   "injury_wins": -0.2,
    "sos_rank": 22,
    "games_left": 63,
    "prev": 98.2
   },
   "Phoenix Suns": {
-   "playoffs": 31.7,
-   "top6": 8.9,
-   "playin": 64.4,
-   "proj_w": 41.1,
-   "proj_l": 40.9,
+   "playoffs": 32.2,
+   "top6": 9.2,
+   "playin": 64.8,
+   "proj_w": 41.2,
+   "proj_l": 40.8,
    "seed": 9.2,
    "conf": "West",
    "rating": -0.3,
@@ -738,11 +773,11 @@
   },
   "Portland Trail Blazers": {
    "playoffs": 92.4,
-   "top6": 75.3,
-   "playin": 24.0,
+   "top6": 75.1,
+   "playin": 24.3,
    "proj_w": 51.2,
    "proj_l": 30.8,
-   "seed": 5.0,
+   "seed": 5.1,
    "conf": "West",
    "rating": 3.9,
    "rating_wins": 51.6,
@@ -805,11 +840,11 @@
    "prev": 0.0
   },
   "San Antonio Spurs": {
-   "playoffs": 99.9,
-   "top6": 99.7,
-   "playin": 0.3,
-   "proj_w": 62.2,
-   "proj_l": 19.8,
+   "playoffs": 99.8,
+   "top6": 99.6,
+   "playin": 0.4,
+   "proj_w": 61.9,
+   "proj_l": 20.1,
    "seed": 1.5,
    "conf": "West",
    "rating": 8.9,
@@ -819,22 +854,36 @@
    "season_margin": 11.3,
    "injuries": [
     {
+     "name": "Dylan Harper",
+     "status": "Out",
+     "games": 5,
+     "impact": 3.47,
+     "comment": "Harper (hip) participated in Friday's morning shootaround, per Matt Guzman of SI.com."
+    },
+    {
      "name": "Tobias Harris",
      "status": "Out",
      "games": 3,
      "impact": 1.06,
      "comment": "Harris (calf) is likely to be sidelined until early December, per Jeff Garcia of KENS 5 San Antonio."
+    },
+    {
+     "name": "De'Aaron Fox",
+     "status": "Day-To-Day",
+     "games": 1,
+     "impact": 2.23,
+     "comment": "Fox (shin) is questionable for Friday's game against the Lakers."
     }
    ],
-   "injury_wins": -0.1,
+   "injury_wins": -0.4,
    "sos_rank": 8,
    "games_left": 63,
    "prev": 100.0
   },
   "Toronto Raptors": {
-   "playoffs": 46.5,
-   "top6": 9.2,
-   "playin": 74.8,
+   "playoffs": 46.7,
+   "top6": 9.4,
+   "playin": 74.6,
    "proj_w": 37.6,
    "proj_l": 44.4,
    "seed": 8.8,
@@ -892,6 +941,13 @@
      "games": 5,
      "impact": 2.63,
      "comment": "Jackson has been diagnosed with a torn MCL in his right knee and will be sidelined for 6-to-8 weeks, per Shams Charania of ESPN."
+    },
+    {
+     "name": "Mo Bamba",
+     "status": "Out",
+     "games": 1,
+     "impact": 1.11,
+     "comment": "Bamba (illness) has been ruled out for Friday's game against the Nuggets."
     }
    ],
    "injury_wins": -1.1,

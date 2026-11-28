@@ -1,5 +1,5 @@
 {
- "as_of": "2026-11-27T15",
+ "as_of": "2026-11-27T18",
  "players": [
   {
    "team": "Atlanta Hawks",
@@ -101,9 +101,9 @@
    "id": "4683634",
    "name": "Bennedict Mathurin",
    "status": "Out",
-   "comment": "Mathurin (foot) is doubtful for Friday's game against the Clippers.",
-   "return": "2026-11-27",
-   "fantasy": "GTD",
+   "comment": "Mathurin (foot) is out for Friday's game against the Clippers.",
+   "return": "2026-11-29",
+   "fantasy": "OUT",
    "stats": {
     "gp": 12.0,
     "min": 15.333333,
@@ -148,23 +148,6 @@
    }
   },
   {
-   "team": "New Orleans Pelicans",
-   "id": "4431675",
-   "name": "Trendon Watford",
-   "status": "Out",
-   "comment": "Watford (ankle) is probable for Friday's game against the Clippers.",
-   "return": "2026-11-27",
-   "fantasy": "GTD",
-   "stats": {
-    "gp": 6.0,
-    "min": 17.666666,
-    "pts": 7.1666665,
-    "reb": 3.5,
-    "ast": 1.0,
-    "this_season": true
-   }
-  },
-  {
    "team": "Chicago Bulls",
    "id": "5242496",
    "name": "Noa Essengue",
@@ -186,8 +169,8 @@
    "id": "2595516",
    "name": "Norman Powell",
    "status": "Out",
-   "comment": "Powell has been diagnosed with a mild right hamstring strain and will be re-evaluated later this week.",
-   "return": "2026-11-28",
+   "comment": "Powell (hamstring) is out for Saturday's game against the Pacers.",
+   "return": "2026-12-01",
    "fantasy": "OUT",
    "stats": {
     "gp": 13.0,
@@ -297,10 +280,10 @@
    "team": "Dallas Mavericks",
    "id": "6442",
    "name": "Kyrie Irving",
-   "status": "Day-To-Day",
-   "comment": "Irving (knee) is listed as questionable for Friday's game against the Suns due to left knee injury management.",
-   "return": "2026-11-27",
-   "fantasy": "GTD",
+   "status": "Out",
+   "comment": "Irving (knee) has been ruled out for Friday's game against the Suns, Noah Weber of TheSmokingCuban.com reports.",
+   "return": "2026-11-30",
+   "fantasy": "OUT",
    "stats": {
     "gp": 15.0,
     "min": 30.933332,
@@ -451,7 +434,7 @@
    "id": "3975",
    "name": "Stephen Curry",
    "status": "Out",
-   "comment": "Curry (abdomen) will be re-evaluated Friday after Thanksgiving, Anthony Slater of ESPN.com reports.",
+   "comment": "Curry (abdomen/oblique) has been ruled out for each of the Warriors' next three games, Anthony Slater of ESPN.com reports",
    "return": "2026-12-12",
    "fantasy": "OUT",
    "stats": {
@@ -535,50 +518,16 @@
    "team": "Indiana Pacers",
    "id": "2530530",
    "name": "T.J. McConnell",
-   "status": "Day-To-Day",
-   "comment": "McConnell (hamstring) is questionable for Friday's game against the 76ers.",
-   "return": "2026-11-27",
-   "fantasy": "GTD",
+   "status": "Out",
+   "comment": "McConnell (hamstring) has been ruled out for Friday's game against the 76ers, Alex Golden of SI.com reports.",
+   "return": "2026-11-28",
+   "fantasy": "OUT",
    "stats": {
     "gp": 7.0,
     "min": 13.857142,
     "pts": 7.0,
     "reb": 2.2857144,
     "ast": 4.285714,
-    "this_season": true
-   }
-  },
-  {
-   "team": "Indiana Pacers",
-   "id": "2580365",
-   "name": "Larry Nance Jr.",
-   "status": "Day-To-Day",
-   "comment": "Nance (ankle) is probable for Friday's game against the 76ers.",
-   "return": "2026-11-27",
-   "fantasy": "GTD",
-   "stats": {
-    "gp": 17.0,
-    "min": 12.764706,
-    "pts": 4.2352943,
-    "reb": 2.235294,
-    "ast": 0.5294118,
-    "this_season": true
-   }
-  },
-  {
-   "team": "Indiana Pacers",
-   "id": "3133603",
-   "name": "Kelly Oubre Jr.",
-   "status": "Day-To-Day",
-   "comment": "Oubre is questionable for Friday's game against the 76ers due to a right hand laceration.",
-   "return": "2026-11-27",
-   "fantasy": "GTD",
-   "stats": {
-    "gp": 16.0,
-    "min": 24.6875,
-    "pts": 12.3125,
-    "reb": 3.4375,
-    "ast": 1.125,
     "this_season": true
    }
   },
@@ -821,23 +770,6 @@
    }
   },
   {
-   "team": "New York Knicks",
-   "id": "3136195",
-   "name": "Karl-Anthony Towns",
-   "status": "Day-To-Day",
-   "comment": "Towns is questionable for Friday's game against the Heat due to a right abdominal contusion.",
-   "return": "2026-11-27",
-   "fantasy": "GTD",
-   "stats": {
-    "gp": 17.0,
-    "min": 32.588234,
-    "pts": 21.235294,
-    "reb": 13.6470585,
-    "ast": 4.1764708,
-    "this_season": true
-   }
-  },
-  {
    "team": "Orlando Magic",
    "id": "4432573",
    "name": "Paolo Banchero",
@@ -877,8 +809,8 @@
    "name": "Colin Castleton",
    "status": "Day-To-Day",
    "comment": "Castleton totaled five points (2-4 FG, 1-1 3Pt) and four rebounds in seven minutes during Tuesday's 132-116 preseason win over the Cavaliers.",
-   "return": "2026-11-27",
-   "fantasy": "GTD",
+   "return": "2026-11-29",
+   "fantasy": "OUT",
    "stats": {
     "gp": 4.0,
     "min": 3.25,
@@ -954,8 +886,8 @@
    "id": "3917376",
    "name": "Jaylen Brown",
    "status": "Out",
-   "comment": "Brown (hamstring) is out for Friday's game against the Pacers.",
-   "return": "2026-11-28",
+   "comment": "Brown (hamstring) underwent an MRI that showed no signs of a new injury or re-aggravation, but he didn't travel with the team for the road trip, so he will miss the team's next two games, Kris Rhim of ESPN reports.",
+   "return": "2026-12-01",
    "fantasy": "OUT",
    "stats": {
     "gp": 16.0,
@@ -963,23 +895,6 @@
     "pts": 21.375,
     "reb": 6.0,
     "ast": 3.4375,
-    "this_season": true
-   }
-  },
-  {
-   "team": "Philadelphia 76ers",
-   "id": "3059318",
-   "name": "Joel Embiid",
-   "status": "Day-To-Day",
-   "comment": "Embiid (illness) was at shootaround for the 76ers on Friday, Chris Hine of The Philly Inquirer reports.",
-   "return": "2026-11-27",
-   "fantasy": "GTD",
-   "stats": {
-    "gp": 14.0,
-    "min": 32.07143,
-    "pts": 20.428572,
-    "reb": 8.928572,
-    "ast": 4.142857,
     "this_season": true
    }
   },
@@ -998,6 +913,23 @@
     "reb": 2.9444444,
     "ast": 0.537037,
     "this_season": false
+   }
+  },
+  {
+   "team": "Philadelphia 76ers",
+   "id": "3912848",
+   "name": "Dean Wade",
+   "status": "Out",
+   "comment": "Wade (hamstring) is out for Friday's game against the Pacers, Austin Krell of Vertical 76 reports.",
+   "return": "2026-11-28",
+   "fantasy": "OUT",
+   "stats": {
+    "gp": 15.0,
+    "min": 26.6,
+    "pts": 4.6666665,
+    "reb": 4.4,
+    "ast": 1.6666666,
+    "this_season": true
    }
   },
   {
@@ -1152,8 +1084,8 @@
    "name": "De'Aaron Fox",
    "status": "Day-To-Day",
    "comment": "Fox (shin) is questionable for Friday's game against the Lakers.",
-   "return": "2026-11-27",
-   "fantasy": "GTD",
+   "return": "",
+   "fantasy": "",
    "stats": {
     "gp": 16.0,
     "min": 28.9375,
@@ -1169,8 +1101,8 @@
    "name": "Dylan Harper",
    "status": "Out",
    "comment": "Harper (hip) participated in Friday's morning shootaround, per Matt Guzman of SI.com.",
-   "return": "2026-11-27",
-   "fantasy": "GTD",
+   "return": "",
+   "fantasy": "",
    "stats": {
     "gp": 15.0,
     "min": 31.666666,
@@ -1229,9 +1161,9 @@
    "id": "5174983",
    "name": "Aday Mara",
    "status": "Out",
-   "comment": "Mara (leg) is out for Wednesday's game versus the Timberwolves.",
-   "return": "2026-11-28",
-   "fantasy": "GTD",
+   "comment": "Mara (leg) is out for Saturday's game versus the Bucks, per Clemente Almanza of USA Today.",
+   "return": "2026-11-30",
+   "fantasy": "OUT",
    "stats": {
     "gp": 16.0,
     "min": 22.375,
@@ -1256,9 +1188,9 @@
    "id": "5159925",
    "name": "Nikola Topic",
    "status": "Out",
-   "comment": "Topic (hip) is listed as out for Wednesday's game versus Minnesota.",
-   "return": "2026-11-28",
-   "fantasy": "GTD",
+   "comment": "Topic (hip) is out for Saturday's game against the Bucks, Brandon Rahbar of DailyThunder.com reports.",
+   "return": "2026-12-13",
+   "fantasy": "OUT",
    "stats": {
     "gp": 3.0,
     "min": 11.333333,
@@ -1323,33 +1255,16 @@
    "team": "Utah Jazz",
    "id": "4277919",
    "name": "Mo Bamba",
-   "status": "Day-To-Day",
-   "comment": "Bamba (illness) is listed as questionable for Friday's game against the Nuggets, according to the Jazz's injury report.",
-   "return": "2026-11-27",
-   "fantasy": "GTD",
+   "status": "Out",
+   "comment": "Bamba (illness) has been ruled out for Friday's game against the Nuggets.",
+   "return": "2026-11-29",
+   "fantasy": "OUT",
    "stats": {
     "gp": 15.0,
     "min": 21.333334,
     "pts": 8.533334,
     "reb": 6.866667,
     "ast": 1.0666667,
-    "this_season": true
-   }
-  },
-  {
-   "team": "Utah Jazz",
-   "id": "4397077",
-   "name": "Jaxson Hayes",
-   "status": "Day-To-Day",
-   "comment": "Hayes (knee) is questionable for Friday's game against the Nuggets.",
-   "return": "2026-11-27",
-   "fantasy": "GTD",
-   "stats": {
-    "gp": 15.0,
-    "min": 23.733334,
-    "pts": 9.2,
-    "reb": 6.4,
-    "ast": 1.4666667,
     "this_season": true
    }
   },
@@ -1385,23 +1300,6 @@
     "reb": 6.75,
     "ast": 2.0,
     "this_season": true
-   }
-  },
-  {
-   "team": "Utah Jazz",
-   "id": "3102530",
-   "name": "Jusuf Nurkic",
-   "status": "Out",
-   "comment": "Nurkic (foot) is questionable for Friday's game against the Nuggets.",
-   "return": "2026-11-27",
-   "fantasy": "GTD",
-   "stats": {
-    "gp": 41.0,
-    "min": 26.414635,
-    "pts": 10.902439,
-    "reb": 10.365853,
-    "ast": 4.780488,
-    "this_season": false
    }
   },
   {
@@ -1517,23 +1415,6 @@
    }
   },
   {
-   "team": "Toronto Raptors",
-   "id": "4702656",
-   "name": "Alijah Martin",
-   "status": "Day-To-Day",
-   "comment": "Martin is questionable for Friday's game against the Nets due to left knee soreness.",
-   "return": "2026-11-27",
-   "fantasy": "GTD",
-   "stats": {
-    "gp": 16.0,
-    "min": 12.25,
-    "pts": 4.6875,
-    "reb": 1.9375,
-    "ast": 0.75,
-    "this_season": true
-   }
-  },
-  {
    "team": "Memphis Grizzlies",
    "id": "5041935",
    "name": "Cameron Boozer",
@@ -1547,23 +1428,6 @@
     "pts": 16.5625,
     "reb": 9.1875,
     "ast": 5.3125,
-    "this_season": true
-   }
-  },
-  {
-   "team": "Memphis Grizzlies",
-   "id": "4600663",
-   "name": "Zach Edey",
-   "status": "Day-To-Day",
-   "comment": "Edey (ankle) is questionable for Friday's game against the Timberwolves.",
-   "return": "2026-11-27",
-   "fantasy": "GTD",
-   "stats": {
-    "gp": 15.0,
-    "min": 20.2,
-    "pts": 8.866667,
-    "reb": 7.0666666,
-    "ast": 0.93333334,
     "this_season": true
    }
   },
@@ -1632,10 +1496,10 @@
    "team": "Memphis Grizzlies",
    "id": "4432810",
    "name": "Isaiah Stewart",
-   "status": "Day-To-Day",
-   "comment": "Stewart is questionable for Friday's game against the Timberwolves due to right hip soreness.",
-   "return": "2026-11-27",
-   "fantasy": "GTD",
+   "status": "Out",
+   "comment": "Stewart (hip) is out for Friday's game against the Timberwolves, Jon Krawczynski of The Athletic reports.",
+   "return": "2026-11-29",
+   "fantasy": "OUT",
    "stats": {
     "gp": 14.0,
     "min": 18.214285,

@@ -327,7 +327,16 @@
   "soon|401909330|OJ": "2026-11-27",
   "soon|401909331|Rahul": "2026-11-27",
   "soon|401909331|Darin": "2026-11-27",
-  "soon|401909332|OJ": "2026-11-27"
+  "soon|401909332|OJ": "2026-11-27",
+  "soon|401909333|Lucas": "2026-11-27",
+  "soon|401909334|Dom": "2026-11-27",
+  "soon|401909334|Darin": "2026-11-27",
+  "soon|401909335|Parker": "2026-11-27",
+  "soon|401909335|Lucas": "2026-11-27",
+  "soon|401909336|Rahul": "2026-11-27",
+  "soon|401909336|Dom": "2026-11-27",
+  "odds|Chicago Bulls|out": "2026-11-27",
+  "inj|6442|Out": "2026-11-27"
  },
  "state": {
   "leads": {
@@ -351,11 +360,11 @@
    "Boston Celtics": "lock",
    "Brooklyn Nets": "out",
    "Charlotte Hornets": "mid",
-   "Chicago Bulls": "mid",
+   "Chicago Bulls": "out",
    "Cleveland Cavaliers": "mid",
    "Dallas Mavericks": "mid",
    "Denver Nuggets": "mid",
-   "Detroit Pistons": "lock",
+   "Detroit Pistons": "mid",
    "Golden State Warriors": "mid",
    "Houston Rockets": "lock",
    "Indiana Pacers": "mid",
@@ -418,7 +427,8 @@
    "3064440": "Out",
    "4397189": "Out",
    "6606": "Out",
-   "4432816": "Out"
+   "4432816": "Out",
+   "6442": "Out"
   },
   "init": true
  }
