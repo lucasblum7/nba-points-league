@@ -1,5 +1,5 @@
 {
- "as_of": "2026-11-28T00",
+ "as_of": "2026-11-28T06",
  "players": [
   {
    "team": "Atlanta Hawks",
@@ -336,11 +336,11 @@
    "return": "2026-11-30",
    "fantasy": "GTD",
    "stats": {
-    "gp": 14.0,
-    "min": 22.5,
-    "pts": 6.642857,
-    "reb": 3.5714285,
-    "ast": 2.5714285,
+    "gp": 15.0,
+    "min": 21.933332,
+    "pts": 6.5333333,
+    "reb": 3.5333333,
+    "ast": 2.6666667,
     "this_season": true
    }
   },
@@ -506,11 +506,11 @@
    "return": "2026-11-29",
    "fantasy": "OUT",
    "stats": {
-    "gp": 15.0,
-    "min": 19.466667,
-    "pts": 7.8,
-    "reb": 4.2,
-    "ast": 1.7333333,
+    "gp": 16.0,
+    "min": 18.75,
+    "pts": 7.625,
+    "reb": 4.0625,
+    "ast": 1.625,
     "this_season": true
    }
   },
@@ -555,7 +555,7 @@
    "status": "Out",
    "comment": "McConnell (hamstring) has been ruled out for Friday's game against the 76ers, Alex Golden of SI.com reports.",
    "return": "2026-11-28",
-   "fantasy": "OUT",
+   "fantasy": "GTD",
    "stats": {
     "gp": 7.0,
     "min": 13.857142,
@@ -620,16 +620,16 @@
    "team": "LA Clippers",
    "id": "5108024",
    "name": "Yanic Konan Niederhauser",
-   "status": "Out",
+   "status": "Day-To-Day",
    "comment": "Niederhauser suffered a right toe injury during Friday's game against the Pelicans and won't return, Joey Linn of SI.com reports.",
    "return": "2026-11-29",
-   "fantasy": "OUT",
+   "fantasy": "GTD",
    "stats": {
-    "gp": 4.0,
-    "min": 13.0,
-    "pts": 3.5,
-    "reb": 3.5,
-    "ast": 0.5,
+    "gp": 5.0,
+    "min": 12.4,
+    "pts": 3.2,
+    "reb": 2.8,
+    "ast": 0.4,
     "this_season": true
    }
   },
@@ -637,10 +637,10 @@
    "team": "Milwaukee Bucks",
    "id": "5214640",
    "name": "Kasparas Jakucionis",
-   "status": "Out",
+   "status": "Day-To-Day",
    "comment": "Jakucionis (ankle) won't play Friday's game against the Pistons.",
    "return": "2026-11-28",
-   "fantasy": "OUT",
+   "fantasy": "GTD",
    "stats": {
     "gp": 18.0,
     "min": 17.555555,
@@ -739,10 +739,10 @@
    "team": "Brooklyn Nets",
    "id": "3150844",
    "name": "Moritz Wagner",
-   "status": "Out",
+   "status": "Day-To-Day",
    "comment": "Wagner (knee) won't be available for Friday's game against Toronto.",
    "return": "2026-11-28",
-   "fantasy": "OUT",
+   "fantasy": "GTD",
    "stats": {
     "gp": 17.0,
     "min": 17.058823,
@@ -958,11 +958,11 @@
    "return": "2026-12-01",
    "fantasy": "OUT",
    "stats": {
-    "gp": 14.0,
-    "min": 32.07143,
-    "pts": 20.428572,
-    "reb": 8.928572,
-    "ast": 4.142857,
+    "gp": 15.0,
+    "min": 31.8,
+    "pts": 20.0,
+    "reb": 9.066667,
+    "ast": 4.0666666,
     "this_season": true
    }
   },
@@ -992,11 +992,11 @@
    "return": "2026-12-01",
    "fantasy": "OUT",
    "stats": {
-    "gp": 15.0,
-    "min": 32.666668,
-    "pts": 17.133333,
-    "reb": 6.9333334,
-    "ast": 6.866667,
+    "gp": 16.0,
+    "min": 32.3125,
+    "pts": 17.375,
+    "reb": 6.9375,
+    "ast": 6.8125,
     "this_season": true
    }
   },
@@ -1004,10 +1004,10 @@
    "team": "Philadelphia 76ers",
    "id": "3912848",
    "name": "Dean Wade",
-   "status": "Out",
+   "status": "Day-To-Day",
    "comment": "Wade (hamstring) is out for Friday's game against the Pacers, Austin Krell of Vertical 76 reports.",
    "return": "2026-11-28",
-   "fantasy": "OUT",
+   "fantasy": "GTD",
    "stats": {
     "gp": 15.0,
     "min": 26.6,
@@ -1292,7 +1292,7 @@
    "status": "Out",
    "comment": "Williams (back) is listed as out for Wednesday's game against Minnesota.",
    "return": "2026-11-28",
-   "fantasy": "OUT",
+   "fantasy": "GTD",
    "stats": {
     "gp": 9.0,
     "min": 17.11111,
@@ -1469,16 +1469,16 @@
    "team": "Toronto Raptors",
    "id": "4684272",
    "name": "Ja'Kobe Walter",
-   "status": "Out",
+   "status": "Day-To-Day",
    "comment": "Walter won't return to Friday's game against Brooklyn due to a right quad contusion, Josh Lewenberg of TSN.ca reports.",
    "return": "2026-11-29",
-   "fantasy": "OUT",
+   "fantasy": "GTD",
    "stats": {
-    "gp": 17.0,
-    "min": 31.647058,
-    "pts": 12.117647,
-    "reb": 4.0588236,
-    "ast": 2.1764705,
+    "gp": 18.0,
+    "min": 31.222221,
+    "pts": 11.611111,
+    "reb": 4.0,
+    "ast": 2.2222223,
     "this_season": true
    }
   },

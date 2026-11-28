@@ -2374,10 +2374,10 @@
   "away": "Brooklyn Nets",
   "home": "Charlotte Hornets",
   "fav": "Charlotte Hornets",
-  "spread": 5.5,
-  "away_ml": 197,
-  "home_ml": -238,
-  "book": "Draft Kings"
+  "spread": 6.5,
+  "away_ml": 205,
+  "home_ml": -248,
+  "book": "DraftKings"
  },
  {
   "date": "2026-11-28",
@@ -2385,19 +2385,19 @@
   "home": "Chicago Bulls",
   "fav": "Chicago Bulls",
   "spread": 2.5,
-  "away_ml": 120,
-  "home_ml": -142,
-  "book": "Draft Kings"
+  "away_ml": 124,
+  "home_ml": -148,
+  "book": "DraftKings"
  },
  {
   "date": "2026-11-28",
   "away": "Philadelphia 76ers",
   "home": "Houston Rockets",
   "fav": "Houston Rockets",
-  "spread": 12.5,
-  "away_ml": 394,
-  "home_ml": -518,
-  "book": "Draft Kings"
+  "spread": 13.5,
+  "away_ml": 411,
+  "home_ml": -545,
+  "book": "DraftKings"
  },
  {
   "date": "2026-11-28",
@@ -2407,7 +2407,7 @@
   "spread": 11.5,
   "away_ml": -561,
   "home_ml": 420,
-  "book": "Draft Kings"
+  "book": "DraftKings"
  },
  {
   "date": "2026-11-28",
@@ -2415,8 +2415,8 @@
   "home": "Washington Wizards",
   "fav": "Orlando Magic",
   "spread": 3.5,
-  "away_ml": -167,
-  "home_ml": 140,
-  "book": "Draft Kings"
+  "away_ml": -173,
+  "home_ml": 145,
+  "book": "DraftKings"
  }
 ]

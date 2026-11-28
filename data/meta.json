@@ -1,6 +1,8 @@
 {
- "updated": "2026-11-28T08:45:14+00:00",
+ "updated": "2026-11-28T14:58:06+00:00",
  "changed": [
-  "lines"
+  "lines",
+  "injuries",
+  "odds"
  ]
 }
