@@ -347,7 +347,10 @@
   "move|Darin|4|2026-11-27": "2026-11-27",
   "move|Parker|5|2026-11-27": "2026-11-27",
   "close|401909330|Parker": "2026-11-27",
-  "close|401909330|OJ": "2026-11-27"
+  "close|401909330|OJ": "2026-11-27",
+  "final|401909329|Lucas": "2026-11-27",
+  "final|401909329|OJ": "2026-11-27",
+  "odds|Philadelphia 76ers|lock": "2026-11-27"
  },
  "state": {
   "leads": {
@@ -375,7 +378,7 @@
    "Cleveland Cavaliers": "mid",
    "Dallas Mavericks": "mid",
    "Denver Nuggets": "mid",
-   "Detroit Pistons": "lock",
+   "Detroit Pistons": "mid",
    "Golden State Warriors": "mid",
    "Houston Rockets": "lock",
    "Indiana Pacers": "mid",
@@ -389,7 +392,7 @@
    "New York Knicks": "lock",
    "Oklahoma City Thunder": "mid",
    "Orlando Magic": "mid",
-   "Philadelphia 76ers": "mid",
+   "Philadelphia 76ers": "lock",
    "Phoenix Suns": "mid",
    "Portland Trail Blazers": "mid",
    "Sacramento Kings": "out",

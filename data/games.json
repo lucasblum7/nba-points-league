@@ -2234,5 +2234,14 @@
   "away_score": 108,
   "home_score": 105,
   "cup": true
+ },
+ {
+  "id": "401909329",
+  "date": "2026-11-27",
+  "away": "Brooklyn Nets",
+  "home": "Toronto Raptors",
+  "away_score": 100,
+  "home_score": 124,
+  "cup": true
  }
 ]
