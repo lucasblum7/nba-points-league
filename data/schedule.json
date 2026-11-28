@@ -43,8 +43,8 @@
    "away": "Memphis Grizzlies",
    "home": "Minnesota Timberwolves",
    "cup": true,
-   "away_ml": 130,
-   "home_ml": -155
+   "away_ml": 124,
+   "home_ml": -148
   },
   {
    "date": "2026-11-27",
@@ -70,8 +70,8 @@
    "away": "Golden State Warriors",
    "home": "Portland Trail Blazers",
    "cup": true,
-   "away_ml": 241,
-   "home_ml": -297
+   "away_ml": 261,
+   "home_ml": -324
   },
   {
    "date": "2026-11-27",
